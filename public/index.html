@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Observatorio de Educación Superior de Antioquia</title>
+<meta name="description" content="Observatorio de la educación superior de Antioquia — pregrado y posgrado, pública y privada: oferta, demanda, mercado laboral, calidad, innovación e impacto social. Fuentes oficiales SNIES, ICFES, OLE y MinCiencias. Por Santiago Jiménez Londoño.">
+<style>
+:root{
+  --page:#0d0d0d; --surface:#1a1a19; --surface-2:#222220;
+  --ink:#ffffff; --ink-2:#c3c2b7; --muted:#898781;
+  --grid:#2c2c2a; --baseline:#383835; --border:rgba(255,255,255,.10);
+  --s1:#3987e5; --s2:#199e70; --s3:#c98500; --s4:#008300;
+  --ok:#0ca30c;
+  --ramp1:#b7d3f6; --ramp2:#6da7ec; --ramp3:#3987e5; --ramp4:#256abf; --ramp5:#184f95;
+  --o1:#86b6ef; --o2:#3987e5; --o3:#184f95;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{background:var(--page);color:var(--ink-2);font:15px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--s1);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+nav{position:sticky;top:0;z-index:50;background:rgba(13,13,13,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
+nav .wrap{display:flex;align-items:center;gap:18px;height:52px;overflow-x:auto;white-space:nowrap}
+nav .logo{font-weight:700;color:var(--ink);font-size:14px;letter-spacing:.02em}
+nav .logo span{color:var(--s1)}
+nav a.sec{color:var(--muted);font-size:13px}
+nav a.sec:hover{color:var(--ink);text-decoration:none}
+header{padding:56px 0 8px}
+.kicker{color:var(--s1);font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:14px}
+h1{color:var(--ink);font-size:clamp(28px,4.4vw,44px);line-height:1.12;font-weight:750;letter-spacing:-.015em;max-width:920px}
+.lede{margin:18px 0 6px;max-width:840px;font-size:16.5px;color:var(--ink-2)}
+.byline{margin:14px 0 34px;color:var(--muted);font-size:13.5px}
+.byline b{color:var(--ink-2);font-weight:600}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:12px;margin:8px 0 26px}
+.kpi{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px 16px 14px}
+.kpi .lbl{font-size:12.5px;color:var(--muted);margin-bottom:6px}
+.kpi .val{font-size:26px;font-weight:700;color:var(--ink);letter-spacing:-.01em;white-space:nowrap}
+.kpi .val.small{font-size:20px;line-height:2}
+.kpi .sub{font-size:12.5px;color:var(--muted);margin-top:4px}
+.kpi .up{color:var(--ok);font-weight:600}
+.kpi .down{color:#e66767;font-weight:600}
+section{padding:34px 0 6px}
+.sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:6px}
+.sec-num{color:var(--s1);font-weight:700;font-size:13px;letter-spacing:.1em}
+h2{color:var(--ink);font-size:24px;font-weight:700;letter-spacing:-.01em}
+.sec-desc{color:var(--muted);max-width:860px;margin:6px 0 20px;font-size:14.5px}
+.cards{display:grid;gap:14px;grid-template-columns:repeat(12,1fr)}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px;grid-column:span 12;min-width:0}
+.card.half{grid-column:span 6}
+.card.third{grid-column:span 4}
+@media(max-width:900px){.card.half,.card.third{grid-column:span 12}}
+.card h3{color:var(--ink);font-size:15.5px;font-weight:650;margin-bottom:2px}
+.card .note{color:var(--muted);font-size:12.5px;margin-bottom:14px}
+.callout{border-left:3px solid var(--s1);background:var(--surface);border-radius:0 12px 12px 0;padding:14px 18px;margin:16px 0;color:var(--ink-2);font-size:14.5px}
+.callout b{color:var(--ink)}
+.legend{display:flex;flex-wrap:wrap;gap:14px;margin:2px 0 12px;font-size:12.5px;color:var(--ink-2)}
+.legend .it{display:flex;align-items:center;gap:6px}
+.legend .sw{width:12px;height:12px;border-radius:3px;flex:none}
+.legend .ln{width:16px;height:2px;border-radius:1px;flex:none}
+.chart{position:relative;width:100%}
+.chart svg{display:block;width:100%;height:auto}
+#tip{position:fixed;z-index:99;pointer-events:none;background:var(--surface-2);border:1px solid var(--border);border-radius:9px;padding:9px 12px;font-size:12.5px;box-shadow:0 6px 24px rgba(0,0,0,.5);display:none;max-width:320px}
+#tip .t-title{color:var(--muted);font-size:11.5px;margin-bottom:5px}
+#tip .row{display:flex;align-items:center;gap:7px;margin:2px 0}
+#tip .row .k{width:14px;height:2.5px;border-radius:2px;flex:none}
+#tip .row .v{color:var(--ink);font-weight:650}
+#tip .row .n{color:var(--ink-2)}
+details.tw{margin-top:12px}
+details.tw summary{cursor:pointer;color:var(--muted);font-size:12.5px;user-select:none}
+details.tw summary:hover{color:var(--ink)}
+.tscroll{overflow-x:auto;margin-top:10px;border:1px solid var(--border);border-radius:10px}
+table{border-collapse:collapse;width:100%;font-size:13px;min-width:520px}
+th{position:sticky;top:0;background:var(--surface-2);color:var(--muted);font-weight:600;text-align:left;padding:9px 12px;font-size:12px;white-space:nowrap;cursor:pointer;user-select:none}
+th.num,td.num{text-align:right;font-variant-numeric:tabular-nums}
+td{padding:8px 12px;border-top:1px solid var(--grid);color:var(--ink-2);white-space:nowrap}
+td.wrapcell{white-space:normal;min-width:220px}
+tr:hover td{background:var(--surface-2)}
+.tag{display:inline-block;padding:2px 8px;border-radius:20px;font-size:11.5px;font-weight:600;border:1px solid var(--border)}
+.tag.of{color:#7fb8ff;background:rgba(57,135,229,.12)}
+.tag.pr{color:#66d3a8;background:rgba(25,158,112,.12)}
+.filters{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 16px;align-items:center}
+.filters input,.filters select{background:var(--surface-2);border:1px solid var(--border);color:var(--ink);border-radius:9px;padding:8px 12px;font-size:13.5px;font-family:inherit;max-width:230px}
+.filters input{min-width:210px}
+.filters .count{color:var(--muted);font-size:12.5px;margin-left:auto}
+footer{margin-top:56px;border-top:1px solid var(--border);padding:36px 0 48px;color:var(--muted);font-size:13.5px}
+footer h4{color:var(--ink);font-size:14px;margin-bottom:10px}
+footer ul{list-style:none}
+footer li{margin:7px 0;padding-left:16px;position:relative}
+footer li::before{content:"—";position:absolute;left:0;color:var(--s1)}
+.fgrid{display:grid;grid-template-columns:1.4fr 1fr;gap:36px}
+@media(max-width:800px){.fgrid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <a class="logo" href="#top">Observatorio <span>ES</span> Antioquia</a>
+  <a class="sec" href="#panorama">Panorama</a>
+  <a class="sec" href="#instituciones">Instituciones</a>
+  <a class="sec" href="#territorio">Territorio</a>
+  <a class="sec" href="#oferta">Oferta</a>
+  <a class="sec" href="#laboral">Mercado laboral</a>
+  <a class="sec" href="#calidad">Calidad</a>
+  <a class="sec" href="#innovacion">Innovación</a>
+  <a class="sec" href="#social">Impacto social</a>
+  <a class="sec" href="#metodologia">Metodología</a>
+</div></nav>
+
+<div class="wrap" id="top">
+<header>
+  <div class="kicker">Observatorio · Educación superior de Antioquia</div>
+  <h1>La educación superior de Antioquia, medida con datos oficiales</h1>
+  <p class="lede">Pregrado y posgrado, pública y privada: oferta académica, demanda estudiantil, resultados en el mercado laboral, calidad, capacidad de innovación e impacto social del sistema de educación superior del departamento — con lente de detalle sobre la formación técnica y tecnológica.</p>
+  <p class="byline">Por <b>Santiago Jiménez Londoño</b> · Fuentes: SNIES-MEN, ICFES (Saber TyT), OLE y MinCiencias · Corte de datos: julio de 2026</p>
+  <div class="kpis" id="kpis"></div>
+  <div class="callout" id="hallazgo-hero"></div>
+</header>
+
+<!-- ================= PANORAMA ================= -->
+<section id="panorama">
+  <div class="sec-head"><span class="sec-num">01</span><h2>Panorama: un sistema que se recompone</h2></div>
+  <p class="sec-desc">Matrícula en programas ofertados en Antioquia según las bases consolidadas del SNIES, 2018–2024 (semestre pico de cada vigencia).</p>
+  <div class="cards">
+    <div class="card half">
+      <h3>Pregrado: universitaria, tecnológica y técnica</h3>
+      <p class="note">Estudiantes matriculados por nivel de formación.</p>
+      <div id="ch-serie-pre" class="chart"></div>
+    </div>
+    <div class="card half">
+      <h3>Posgrado: especialización, maestría y doctorado</h3>
+      <p class="note">Incluye especializaciones universitarias, médico-quirúrgicas y técnico-tecnológicas.</p>
+      <div id="ch-serie-pos" class="chart"></div>
+    </div>
+    <div class="card half">
+      <h3>Matrícula por sector de la IES</h3>
+      <p class="note">Instituciones oficiales y privadas, todos los niveles.</p>
+      <div id="ch-sector" class="chart"></div>
+    </div>
+    <div class="card half">
+      <h3>Matrícula por modalidad</h3>
+      <p class="note">Presencial, virtual, a distancia y combinadas.</p>
+      <div id="ch-modalidad" class="chart"></div>
+    </div>
+  </div>
+  <div class="callout" id="hallazgo-panorama"></div>
+</section>
+
+<!-- ================= INSTITUCIONES ================= -->
+<section id="instituciones">
+  <div class="sec-head"><span class="sec-num">02</span><h2>Instituciones: quién forma a Antioquia</h2></div>
+  <p class="sec-desc" id="desc-ies"></p>
+  <div class="cards">
+    <div class="card">
+      <h3>Las 15 IES con mayor matrícula en Antioquia (2024)</h3>
+      <p class="note">Estudiantes matriculados en programas ofertados en el departamento, todos los niveles.</p>
+      <div id="ch-ies" class="chart"></div>
+    </div>
+    <div class="card half">
+      <h3>Docentes de las IES antioqueñas</h3>
+      <p class="note">Máximo nivel de formación de los docentes en IES con domicilio en Antioquia (2024).</p>
+      <div id="ch-docentes" class="chart"></div>
+    </div>
+    <div class="card half">
+      <h3>Explorador de instituciones</h3>
+      <p class="note">Todas las IES con oferta en el departamento. Clic en las columnas para ordenar. ★ = acreditada en alta calidad.</p>
+      <div class="tscroll" style="max-height:440px;overflow-y:auto" id="tb-ies"></div>
+    </div>
+  </div>
+  <div class="callout" id="hallazgo-ies"></div>
+</section>
+
+<!-- ================= TERRITORIO ================= -->
+<section id="territorio">
+  <div class="sec-head"><span class="sec-num">03</span><h2>Territorio: dónde llega (y dónde no) la oferta</h2></div>
+  <p class="sec-desc">Municipios de Antioquia con oferta activa en 2024, por lugar de oferta del programa.</p>
+  <div class="cards">
+    <div class="card half">
+      <h3>Municipios con mayor matrícula (2024)</h3>
+      <p class="note">Los 12 primeros; todos los niveles de formación.</p>
+      <div id="ch-munis" class="chart"></div>
+    </div>
+    <div class="card half">
+      <h3>Todos los municipios con oferta</h3>
+      <p class="note">Matrícula total, componente TyT y posgrado por municipio.</p>
+      <div class="tscroll" style="max-height:440px;overflow-y:auto" id="tb-munis"></div>
+    </div>
+  </div>
+  <div class="callout" id="hallazgo-territorio"></div>
+</section>
+
+<!-- ================= OFERTA ================= -->
+<section id="oferta">
+  <div class="sec-head"><span class="sec-num">04</span><h2>Oferta académica: qué se puede estudiar</h2></div>
+  <p class="sec-desc" id="desc-oferta"></p>
+  <div class="cards">
+    <div class="card half">
+      <h3>Matrícula por área de conocimiento (2024)</h3>
+      <p class="note">Pase el cursor para ver la variación desde 2018 y los graduados.</p>
+      <div id="ch-areas" class="chart"></div>
+    </div>
+    <div class="card half">
+      <h3>Núcleos básicos con más estudiantes (2024)</h3>
+      <p class="note">Los 12 núcleos básicos del conocimiento (NBC) con mayor matrícula.</p>
+      <div id="ch-nbc" class="chart"></div>
+    </div>
+    <div class="card">
+      <h3>Explorador de programas</h3>
+      <p class="note">Todos los programas con matrícula en 2024. Filtre por nivel, área, sector, modalidad o municipio. ★ = acreditado en alta calidad.</p>
+      <div class="filters">
+        <input id="f-q" type="search" placeholder="Buscar programa o institución…" aria-label="Buscar programa">
+        <select id="f-nivel" aria-label="Nivel"></select>
+        <select id="f-area" aria-label="Área"></select>
+        <select id="f-sector" aria-label="Sector"></select>
+        <select id="f-modalidad" aria-label="Modalidad"></select>
+        <select id="f-muni" aria-label="Municipio"></select>
+        <span class="count" id="f-count"></span>
+      </div>
+      <div class="tscroll" style="max-height:480px;overflow-y:auto" id="tb-progs"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MERCADO LABORAL ================= -->
+<section id="laboral">
+  <div class="sec-head"><span class="sec-num">05</span><h2>Mercado laboral: del aula a la cotización</h2></div>
+  <p class="sec-desc">La cadena completa: cuántos aspiran, cuántos entran, cuántos se gradúan y cómo les va en el mercado laboral formal, según el Observatorio Laboral para la Educación (OLE).</p>
+  <div class="cards">
+    <div class="card half">
+      <h3>Embudo de acceso 2024</h3>
+      <p class="note">Inscripciones, admisiones y matrículas de primer curso en Antioquia, todos los niveles (suma de ambos semestres).</p>
+      <div id="ch-embudo" class="chart"></div>
+    </div>
+    <div class="card half">
+      <h3>Graduados por año y nivel</h3>
+      <p class="note">Nueva fuerza laboral que entra al mercado cada año.</p>
+      <div id="ch-grad" class="chart"></div>
+    </div>
+    <div class="card half">
+      <h3>Vinculación laboral formal por nivel</h3>
+      <p class="note">Graduados 2022 de IES antioqueñas que cotizaban a seguridad social en 2023. La especialización se omite por cobertura insuficiente en la base OLE.</p>
+      <div id="ch-vinculacion" class="chart"></div>
+    </div>
+    <div class="card half">
+      <h3>Programas TyT con más graduados cotizando (2023)</h3>
+      <p class="note">Lente técnica y tecnológica: graduados 2018–2022 de IES antioqueñas.</p>
+      <div id="ch-oleprog" class="chart"></div>
+    </div>
+    <div class="card">
+      <h3>Salario de enganche: en qué rango cotizan los graduados recientes</h3>
+      <p class="note">Distribución del ingreso base de cotización (IBC) 2023 de graduados 2018–2022 de IES con domicilio en Antioquia, por nivel de formación. Fuente: OLE.</p>
+      <div id="ch-salario" class="chart"></div>
+    </div>
+  </div>
+  <div class="callout" id="hallazgo-laboral"></div>
+</section>
+
+<!-- ================= CALIDAD ================= -->
+<section id="calidad">
+  <div class="sec-head"><span class="sec-num">06</span><h2>Calidad: acreditación y pruebas Saber</h2></div>
+  <p class="sec-desc">Dos medidas complementarias: la acreditación de alta calidad (CNA) de los programas, y los resultados de la prueba Saber TyT para el nivel técnico y tecnológico (escala 0–200). Antioquia en azul; promedio nacional en gris.</p>
+  <div class="cards">
+    <div class="card">
+      <h3>Acreditación de alta calidad por nivel de formación (2024)</h3>
+      <p class="note">Porcentaje de la matrícula que cursa programas acreditados en alta calidad. Pase el cursor para ver programas y estudiantes.</p>
+      <div id="ch-acred" class="chart"></div>
+    </div>
+    <div class="card">
+      <h3>Saber TyT: cinco módulos, ocho semestres de aplicación</h3>
+      <p class="note">Promedios de los evaluados de programas TyT ofertados en Antioquia vs. el promedio nacional. Misma escala en los cinco paneles.</p>
+      <div id="ch-saber" class="chart"></div>
+    </div>
+    <div class="card">
+      <h3>Saber TyT: puntaje global por institución (aplicaciones 2022)</h3>
+      <p class="note">Promedio simple de los cinco módulos. Solo sedes con 100 o más evaluados en Antioquia.</p>
+      <div class="tscroll" style="max-height:420px;overflow-y:auto" id="tb-saber"></div>
+    </div>
+  </div>
+  <div class="callout" id="hallazgo-calidad"></div>
+</section>
+
+<!-- ================= INNOVACIÓN ================= -->
+<section id="innovacion">
+  <div class="sec-head"><span class="sec-num">07</span><h2>Innovación: capacidad investigativa del ecosistema</h2></div>
+  <p class="sec-desc">Grupos de investigación reconocidos por MinCiencias en Antioquia (Convocatoria 894 de 2021) y qué instituciones del departamento los avalan.</p>
+  <div class="cards">
+    <div class="card third">
+      <h3>Grupos por clasificación</h3>
+      <p class="note">834 grupos reconocidos en Antioquia. A1 es la máxima categoría.</p>
+      <div id="ch-grupos-clas" class="chart"></div>
+    </div>
+    <div class="card third">
+      <h3>Grupos por gran área</h3>
+      <p class="note">Gran área de conocimiento OCDE del grupo.</p>
+      <div id="ch-grupos-area" class="chart"></div>
+    </div>
+    <div class="card third">
+      <h3>IES que más grupos avalan</h3>
+      <p class="note">Instituciones avaladoras con presencia en Antioquia. Pase el cursor para ver la clasificación.</p>
+      <div id="ch-grupos-ies" class="chart"></div>
+    </div>
+  </div>
+  <div class="callout" id="hallazgo-innovacion"></div>
+</section>
+
+<!-- ================= IMPACTO SOCIAL ================= -->
+<section id="social">
+  <div class="sec-head"><span class="sec-num">08</span><h2>Impacto social: quiénes estudian (lente TyT)</h2></div>
+  <p class="sec-desc">Perfil socioeconómico de los 32.175 evaluados en Saber TyT 2022 de programas ofertados en Antioquia. El nivel técnico y tecnológico es la puerta de entrada a la educación superior de los hogares de menores ingresos — por eso este lente importa.</p>
+  <div class="kpis" id="kpis-social"></div>
+  <div class="cards">
+    <div class="card third">
+      <h3>Estrato de la vivienda</h3>
+      <p class="note">Evaluados Saber TyT 2022, Antioquia.</p>
+      <div id="ch-estrato" class="chart"></div>
+    </div>
+    <div class="card third">
+      <h3>Horas de trabajo semanales mientras estudia</h3>
+      <p class="note">La mayoría estudia y trabaja a la vez.</p>
+      <div id="ch-trabaja" class="chart"></div>
+    </div>
+    <div class="card third">
+      <h3>Máximo nivel educativo de la madre</h3>
+      <p class="note">Primera generación en educación superior.</p>
+      <div id="ch-madre" class="chart"></div>
+    </div>
+  </div>
+  <div class="callout" id="hallazgo-social"></div>
+</section>
+
+<!-- ================= METODOLOGÍA ================= -->
+<footer id="metodologia">
+  <div class="fgrid">
+    <div>
+      <h4>Metodología y fuentes</h4>
+      <ul id="fuentes"></ul>
+      <p style="margin-top:14px">Notas: (1) La matrícula anual corresponde al semestre con mayor total de cada vigencia — sumar semestres duplicaría estudiantes. (2) Los indicadores OLE se restringen a IES con domicilio en Antioquia; se excluyen SENA y UNAD por ser instituciones de alcance nacional cuyos graduados no son separables por departamento en esa base; la especialización se omite de la tasa de vinculación por cobertura insuficiente. (3) La serie 2015–2017 de la base histórica del MEN se descartó por inconsistencias de reporte semestral. (4) Saber TyT usa la escala 0–200 vigente desde 2017-3; el sector de cada IES se toma del SNIES por errores de registro en la base ICFES. (5) El corte de grupos de investigación corresponde a la última convocatoria de medición publicada en datos abiertos (894 de 2021). (6) Los resultados Saber Pro (nivel universitario) no están disponibles como microdato abierto completo en datos.gov.co; se incorporarán desde DataIcfes en la próxima versión.</p>
+    </div>
+    <div>
+      <h4>Sobre este observatorio</h4>
+      <p>Construido por <b style="color:var(--ink)">Santiago Jiménez Londoño</b> con datos abiertos oficiales descargados y procesados de forma automatizada desde los portales del Ministerio de Educación Nacional (SNIES y OLE), el ICFES y MinCiencias vía datos.gov.co.</p>
+      <p style="margin-top:12px">Los microdatos y el código de procesamiento son reproducibles. Actualización con cada nueva vigencia publicada por el MEN.</p>
+      <p style="margin-top:12px;color:var(--ink-2)">© 2026 · Santiago Jiménez Londoño</p>
+    </div>
+  </div>
+</footer>
+</div>
+
+<div id="tip" role="status" aria-hidden="true"></div>
+<script src="datos.js"></script>
+<script>
+"use strict";
+const D = window.OBS;
+const CSS = getComputedStyle(document.documentElement);
+const C = n => CSS.getPropertyValue(n).trim();
+const S1=C('--s1'), S2=C('--s2'), S3=C('--s3'), S4=C('--s4'), MUT=C('--muted'),
+      INK=C('--ink'), INK2=C('--ink-2'), GRID=C('--grid'), BASE=C('--baseline'), SURF=C('--surface');
+const RAMP5=[C('--ramp1'),C('--ramp2'),C('--ramp3'),C('--ramp4'),C('--ramp5')];
+const ORD3=[C('--o1'),C('--o2'),C('--o3')];
+const fmt = n => n.toLocaleString('es-CO');
+const fmtK = n => n>=1e6 ? (n/1e6).toLocaleString('es-CO',{maximumFractionDigits:1})+' M' : n>=10000 ? Math.round(n/1000).toLocaleString('es-CO')+' mil' : fmt(n);
+const pct = (a,b) => (100*a/b).toLocaleString('es-CO',{maximumFractionDigits:1})+' %';
+
+/* ============ tooltip ============ */
+const tip = document.getElementById('tip');
+function showTip(ev, title, rows){
+  tip.innerHTML='';
+  if(title){const t=document.createElement('div');t.className='t-title';t.textContent=title;tip.appendChild(t);}
+  rows.forEach(r=>{
+    if(!r.value&&!r.name) return;
+    const d=document.createElement('div');d.className='row';
+    if(r.color){const k=document.createElement('span');k.className='k';k.style.background=r.color;d.appendChild(k);}
+    const v=document.createElement('span');v.className='v';v.textContent=r.value;d.appendChild(v);
+    const n=document.createElement('span');n.className='n';n.textContent=r.name;d.appendChild(n);
+    tip.appendChild(d);
+  });
+  tip.style.display='block';
+  moveTip(ev);
+}
+function moveTip(ev){
+  const pad=14, w=tip.offsetWidth, h=tip.offsetHeight;
+  let x=ev.clientX+pad, y=ev.clientY+pad;
+  if(x+w>innerWidth-8) x=ev.clientX-w-pad;
+  if(y+h>innerHeight-8) y=ev.clientY-h-pad;
+  tip.style.left=x+'px'; tip.style.top=y+'px';
+}
+function hideTip(){tip.style.display='none';}
+
+/* ============ svg helpers ============ */
+const NS='http://www.w3.org/2000/svg';
+function el(tag,attrs,parent){
+  const e=document.createElementNS(NS,tag);
+  for(const k in attrs) e.setAttribute(k,attrs[k]);
+  if(parent) parent.appendChild(e);
+  return e;
+}
+function txt(parent,x,y,str,{size=11.5,fill=MUT,anchor='start',weight=400,tabular=false}={}){
+  const t=el('text',{x,y,'text-anchor':anchor,fill,'font-size':size,'font-weight':weight,'font-family':'system-ui,-apple-system,sans-serif'},parent);
+  if(tabular) t.setAttribute('font-variant-numeric','tabular-nums');
+  t.textContent=str; return t;
+}
+function niceTicks(max,n=4){
+  const raw=max/n, mag=Math.pow(10,Math.floor(Math.log10(raw)));
+  const step=[1,2,2.5,5,10].map(m=>m*mag).find(s=>s>=raw);
+  const ticks=[]; for(let v=0;v<=max+1e-9;v+=step) ticks.push(Math.round(v));
+  return ticks;
+}
+function niceTicksRange(min,max,n){
+  const step=(max-min)/n, out=[];
+  for(let v=min;v<=max+1e-9;v+=step) out.push(Math.round(v));
+  return out;
+}
+function hbarPath(x,y,w,h,r=4){
+  r=Math.min(r,w,h/2);
+  return `M${x},${y} h${Math.max(0,w-r)} a${r},${r} 0 0 1 ${r},${r} v${h-2*r} a${r},${r} 0 0 1 -${r},${r} h-${Math.max(0,w-r)} z`;
+}
+function vbarPath(x,yTop,w,h,r=4){
+  r=Math.min(r,h,w/2);
+  return `M${x},${yTop+r} a${r},${r} 0 0 1 ${r},-${r} h${w-2*r} a${r},${r} 0 0 1 ${r},${r} v${Math.max(0,h-r)} h-${w} z`;
+}
+
+/* ============ table twin & legend ============ */
+function tableTwin(container, headers, rows, label){
+  const det=document.createElement('details'); det.className='tw';
+  const sum=document.createElement('summary'); sum.textContent=label||'Ver datos en tabla'; det.appendChild(sum);
+  const scr=document.createElement('div'); scr.className='tscroll';
+  const t=document.createElement('table');
+  const thead=document.createElement('thead'); const trh=document.createElement('tr');
+  headers.forEach((h,i)=>{const th=document.createElement('th'); th.textContent=h; if(i>0)th.className='num'; th.style.cursor='default'; trh.appendChild(th);});
+  thead.appendChild(trh); t.appendChild(thead);
+  const tb=document.createElement('tbody');
+  rows.forEach(r=>{const tr=document.createElement('tr');
+    r.forEach((c,i)=>{const td=document.createElement('td'); td.textContent=typeof c==='number'?fmt(c):c; if(i>0)td.className='num'; tr.appendChild(td);});
+    tb.appendChild(tr);});
+  t.appendChild(tb); scr.appendChild(t); det.appendChild(scr); container.appendChild(det);
+}
+function legend(container, items, kind='rect'){
+  const lg=document.createElement('div'); lg.className='legend';
+  items.forEach(it=>{
+    const d=document.createElement('span'); d.className='it';
+    const sw=document.createElement('span'); sw.className=kind==='line'?'ln':'sw'; sw.style.background=it.color;
+    d.appendChild(sw);
+    const s=document.createElement('span'); s.textContent=it.name; d.appendChild(s);
+    lg.appendChild(d);
+  });
+  container.prepend(lg);
+}
+
+/* ============ LINE CHART ============ */
+function lineChart(id, xLabels, series, {height=300, yDomain=null, unit=''}={}){
+  const box=document.getElementById(id); box.innerHTML='';
+  const W=Math.max(box.clientWidth||640, 320), H=height;
+  const m={t:16,r:104,b:30,l:52};
+  const iw=W-m.l-m.r, ih=H-m.t-m.b;
+  const allVals=series.flatMap(s=>s.values).filter(v=>v!=null);
+  const yMax=yDomain?yDomain[1]:Math.max(...allVals)*1.08;
+  const yMin=yDomain?yDomain[0]:0;
+  const X=i=>m.l+(xLabels.length===1?iw/2:i*iw/(xLabels.length-1));
+  const Y=v=>m.t+ih-(v-yMin)/(yMax-yMin)*ih;
+  const svg=el('svg',{viewBox:`0 0 ${W} ${H}`,role:'img'},box);
+  const ticks=yDomain?niceTicksRange(yMin,yMax,4):niceTicks(yMax,4);
+  ticks.forEach(v=>{
+    if(v<yMin||v>yMax)return;
+    el('line',{x1:m.l,x2:W-m.r,y1:Y(v),y2:Y(v),stroke:GRID,'stroke-width':1},svg);
+    txt(svg,m.l-8,Y(v)+4,fmtK(v),{anchor:'end',tabular:true});
+  });
+  el('line',{x1:m.l,x2:W-m.r,y1:m.t+ih,y2:m.t+ih,stroke:BASE,'stroke-width':1},svg);
+  xLabels.forEach((lb,i)=>{
+    if(xLabels.length>8 && i%2===1) return;
+    txt(svg,X(i),H-8,lb,{anchor:'middle'});
+  });
+  series.forEach(s=>{
+    const pts=s.values.map((v,i)=>v==null?null:[X(i),Y(v)]).filter(Boolean);
+    el('path',{d:'M'+pts.map(p=>p.join(',')).join(' L'),fill:'none',stroke:s.color,'stroke-width':2,'stroke-linejoin':'round','stroke-linecap':'round'},svg);
+    const last=pts[pts.length-1];
+    el('circle',{cx:last[0],cy:last[1],r:4,fill:s.color,stroke:SURF,'stroke-width':2},svg);
+    txt(svg,last[0]+9,last[1]+4,fmtK(s.values[s.values.length-1]),{fill:INK2,size:11.5,weight:600,tabular:true});
+  });
+  const cross=el('line',{y1:m.t,y2:m.t+ih,stroke:BASE,'stroke-width':1,visibility:'hidden'},svg);
+  const dots=series.map(s=>el('circle',{r:4.5,fill:s.color,stroke:SURF,'stroke-width':2,visibility:'hidden'},svg));
+  const hit=el('rect',{x:m.l,y:m.t,width:iw,height:ih,fill:'transparent'},svg);
+  hit.addEventListener('pointermove',ev=>{
+    const r=svg.getBoundingClientRect();
+    const px=(ev.clientX-r.left)*(W/r.width);
+    let i=Math.round((px-m.l)/(iw/(xLabels.length-1)));
+    i=Math.max(0,Math.min(xLabels.length-1,i));
+    cross.setAttribute('x1',X(i)); cross.setAttribute('x2',X(i)); cross.setAttribute('visibility','visible');
+    series.forEach((s,k)=>{
+      if(s.values[i]==null){dots[k].setAttribute('visibility','hidden');return;}
+      dots[k].setAttribute('cx',X(i)); dots[k].setAttribute('cy',Y(s.values[i])); dots[k].setAttribute('visibility','visible');
+    });
+    showTip(ev, xLabels[i], series.map(s=>({color:s.color,value:s.values[i]==null?'—':fmt(s.values[i])+unit,name:s.name})));
+  });
+  hit.addEventListener('pointerleave',()=>{cross.setAttribute('visibility','hidden');dots.forEach(d=>d.setAttribute('visibility','hidden'));hideTip();});
+  if(series.length>1) legend(box, series.map(s=>({name:s.name,color:s.color})), 'line');
+  tableTwin(box, ['Periodo',...series.map(s=>s.name)], xLabels.map((lb,i)=>[lb,...series.map(s=>s.values[i]==null?'—':s.values[i])]));
+}
+
+/* ============ STACKED COLUMNS ============ */
+function stackedCols(id, xLabels, series, {height=290}={}){
+  const box=document.getElementById(id); box.innerHTML='';
+  const W=Math.max(box.clientWidth||560, 320), H=height;
+  const m={t:14,r:10,b:30,l:52};
+  const iw=W-m.l-m.r, ih=H-m.t-m.b;
+  const totals=xLabels.map((_,i)=>series.reduce((a,s)=>a+(s.values[i]||0),0));
+  const yMax=Math.max(...totals)*1.06;
+  const Y=v=>m.t+ih-v/yMax*ih;
+  const bw=Math.min(24, iw/xLabels.length*0.55);
+  const svg=el('svg',{viewBox:`0 0 ${W} ${H}`,role:'img'},box);
+  niceTicks(yMax,4).forEach(v=>{
+    el('line',{x1:m.l,x2:W-m.r,y1:Y(v),y2:Y(v),stroke:GRID,'stroke-width':1},svg);
+    txt(svg,m.l-8,Y(v)+4,fmtK(v),{anchor:'end',tabular:true});
+  });
+  el('line',{x1:m.l,x2:W-m.r,y1:m.t+ih,y2:m.t+ih,stroke:BASE,'stroke-width':1},svg);
+  xLabels.forEach((lb,i)=>{
+    const xc=m.l+(i+0.5)*iw/xLabels.length;
+    txt(svg,xc,H-8,lb,{anchor:'middle'});
+    let acc=0;
+    series.forEach((s,k)=>{
+      const v=s.values[i]||0; if(!v) return;
+      const yTop=Y(acc+v), h=Math.max(1,Y(acc)-Y(acc+v)-(k<series.length-1&&acc+v<totals[i]?2:0));
+      const isTop = acc+v===totals[i];
+      const p = isTop ? el('path',{d:vbarPath(xc-bw/2,yTop,bw,h,4)},svg)
+                      : el('rect',{x:xc-bw/2,y:yTop,width:bw,height:h},svg);
+      p.setAttribute('fill',s.color);
+      p.addEventListener('pointermove',ev=>{p.setAttribute('opacity','0.85');
+        showTip(ev, lb, series.map(ss=>({color:ss.color,value:fmt(ss.values[i]||0),name:ss.name})).concat([{value:fmt(totals[i]),name:'Total'}]));});
+      p.addEventListener('pointerleave',()=>{p.setAttribute('opacity','1');hideTip();});
+      acc+=v;
+    });
+  });
+  legend(box, series.map(s=>({name:s.name,color:s.color})));
+  tableTwin(box, ['Año',...series.map(s=>s.name),'Total'], xLabels.map((lb,i)=>[lb,...series.map(s=>s.values[i]||0),totals[i]]));
+}
+
+/* ============ HORIZONTAL BARS ============ */
+function hbars(id, rows, {color=S1, colors=null, valueFmt=fmt, tipRows=null, labelW=null}={}){
+  const box=document.getElementById(id); box.innerHTML='';
+  const W=Math.max(box.clientWidth||560, 320);
+  const rowH=30, barH=18;
+  const maxLabel=Math.max(...rows.map(r=>r.label.length));
+  const lw=labelW||Math.min(215,Math.max(96,maxLabel*7));
+  const m={t:6,r:64,b:6,l:lw};
+  const H=rows.length*rowH+m.t+m.b;
+  const iw=W-m.l-m.r;
+  const vMax=Math.max(...rows.map(r=>r.value));
+  const svg=el('svg',{viewBox:`0 0 ${W} ${H}`,role:'img'},box);
+  rows.forEach((r,i)=>{
+    const y=m.t+i*rowH+(rowH-barH)/2;
+    const w=Math.max(2, r.value/vMax*iw);
+    const fill=colors?colors[i]:color;
+    const maxCh=Math.floor((m.l-14)/6);
+    const labStr=r.label.length>maxCh?r.label.slice(0,Math.max(3,maxCh-1))+'…':r.label;
+    txt(svg,m.l-10,y+barH/2+4,labStr,{anchor:'end',fill:INK2,size:12});
+    const p=el('path',{d:hbarPath(m.l,y,w,barH,4),fill},svg);
+    txt(svg,m.l+w+8,y+barH/2+4,valueFmt(r.value),{fill:INK2,size:12,weight:600,tabular:true});
+    const hit=el('rect',{x:0,y:m.t+i*rowH,width:W,height:rowH,fill:'transparent'},svg);
+    hit.addEventListener('pointermove',ev=>{p.setAttribute('opacity','0.85');
+      showTip(ev, r.label, tipRows?tipRows(r):[{color:fill,value:valueFmt(r.value),name:r.tipName||''}]);});
+    hit.addEventListener('pointerleave',()=>{p.setAttribute('opacity','1');hideTip();});
+  });
+  return svg;
+}
+
+/* ============================================================
+   RENDER
+============================================================ */
+const YEARS=D.serie.map(s=>String(s.anio));
+const tot=s=>Object.values(s.niveles).reduce((a,b)=>a+b,0);
+const s24=D.serie[D.serie.length-1], s23=D.serie[D.serie.length-2], s18=D.serie[0];
+const pre=s=>(s.niveles['Universitaria']||0)+(s.niveles['Tecnológica']||0)+(s.niveles['Técnica profesional']||0);
+const pos=s=>(s.niveles['Especialización']||0)+(s.niveles['Maestría']||0)+(s.niveles['Doctorado']||0);
+
+/* ---- KPIs hero ---- */
+(function(){
+  const t24=tot(s24), t23=tot(s23);
+  const g24=D.serie_graduados[D.serie_graduados.length-1].total;
+  const kp=[
+    {lbl:'Matrícula total 2024',val:fmt(t24),sub:`<span class="up">▲ ${pct(t24-t23,t23)}</span> vs. 2023`},
+    {lbl:'Pregrado · Posgrado',val:`<span class="small">${fmtK(pre(s24))} · ${fmtK(pos(s24))}</span>`,sub:'todos los niveles de formación'},
+    {lbl:'Graduados 2024',val:fmt(g24),sub:'nueva fuerza laboral'},
+    {lbl:'Programas activos',val:fmt(D.programas.length),sub:'con matrícula en 2024'},
+    {lbl:'IES con oferta',val:fmt(D.ies.length),sub:`${D.ies.filter(i=>i.sector==='Oficial').length} oficiales · ${D.ies.filter(i=>i.sector!=='Oficial').length} privadas`},
+    {lbl:'Municipios con oferta',val:fmt(D.municipios.length),sub:'de 125 en Antioquia'},
+  ];
+  document.getElementById('kpis').innerHTML=kp.map(k=>`<div class="kpi"><div class="lbl">${k.lbl}</div><div class="val">${k.val}</div><div class="sub">${k.sub}</div></div>`).join('');
+  const uni24=s24.niveles['Universitaria'], uni18=s18.niveles['Universitaria'];
+  document.getElementById('hallazgo-hero').innerHTML=`<b>El hallazgo central:</b> la educación superior de Antioquia se está recomponiendo. Desde 2018, la matrícula universitaria creció <b>${pct(uni24-uni18,uni18)}</b> (${fmt(uni18)} → ${fmt(uni24)}), el posgrado está plano y la formación técnica y tecnológica cayó <b>${pct(s18.tyt-s24.tyt,s18.tyt)}</b> (${fmt(s18.tyt)} → ${fmt(s24.tyt)}). El sistema se sostiene por lo universitario mientras se angosta la base técnica — justo la puerta de entrada de los hogares de menores ingresos.`;
+})();
+
+/* ---- 01 Panorama ---- */
+lineChart('ch-serie-pre', YEARS, [
+  {name:'Universitaria',color:S1,values:D.serie.map(s=>s.niveles['Universitaria']||0)},
+  {name:'Tecnológica',color:S2,values:D.serie.map(s=>s.niveles['Tecnológica']||0)},
+  {name:'Técnica profesional',color:S3,values:D.serie.map(s=>s.niveles['Técnica profesional']||0)},
+],{height:300});
+lineChart('ch-serie-pos', YEARS, [
+  {name:'Especialización',color:S1,values:D.serie.map(s=>s.niveles['Especialización']||0)},
+  {name:'Maestría',color:S2,values:D.serie.map(s=>s.niveles['Maestría']||0)},
+  {name:'Doctorado',color:S3,values:D.serie.map(s=>s.niveles['Doctorado']||0)},
+],{height:300});
+
+stackedCols('ch-sector', YEARS, [
+  {name:'Oficial',color:S1,values:D.serie.map(s=>s.sector['Oficial']||0)},
+  {name:'Privada',color:S2,values:D.serie.map(s=>s.sector['Privada']||0)},
+]);
+const MODS_M=['Presencial','Virtual','A distancia','Híbrida/combinada'];
+stackedCols('ch-modalidad', YEARS, MODS_M.map((mo,i)=>({
+  name:mo,color:[S1,S2,S3,S4][i],values:D.modalidad.map(r=>r[mo]||0)
+})));
+
+(function(){
+  const of24=s24.sector['Oficial'], t24=tot(s24);
+  const v24=D.modalidad[D.modalidad.length-1]['Virtual']||0, v18=D.modalidad[0]['Virtual']||0;
+  document.getElementById('hallazgo-panorama').innerHTML=`<b>Dos motores del cambio:</b> la matrícula oficial es el <b>${pct(of24,t24)}</b> del sistema (${fmt(of24)} estudiantes) y la virtualidad pasó de ${fmt(v18)} matriculados en 2018 a <b>${fmt(v24)}</b> en 2024 (${pct(v24,t24)} del total). El posgrado, en cambio, sigue siendo pequeño: ${pct(pos(s24),t24)} de la matrícula del departamento.`;
+})();
+
+/* ---- 02 Instituciones ---- */
+document.getElementById('desc-ies').textContent=`${D.ies.length} instituciones de educación superior ofertaron programas en Antioquia en 2024. Aquí su tamaño, carácter, mezcla de niveles y cuerpo docente.`;
+hbars('ch-ies', D.ies.slice(0,15).map(i=>({label:i.nombre,value:i.matricula24,ies:i})),{
+  color:S1,
+  tipRows:r=>[
+    {color:S1,value:fmt(r.value),name:'matriculados 2024'},
+    {value:fmt(r.ies.pregrado24)+' · '+fmt(r.ies.posgrado24),name:'pregrado · posgrado'},
+    {value:fmt(r.ies.tyt24),name:'de ellos, TyT'},
+    {value:fmt(r.ies.graduados24),name:'graduados 2024'},
+    {value:r.ies.sector+' · '+r.ies.caracter,name:''},
+  ]});
+(function(){const box=document.getElementById('ch-ies');
+  tableTwin(box,['IES','Matriculados 2024'],D.ies.slice(0,15).map(i=>[i.nombre,i.matricula24]));})();
+
+hbars('ch-docentes', Object.entries(D.docentes.formacion).sort((a,b)=>b[1]-a[1]).map(([k,v])=>({label:k,value:v,tipName:'docentes'})),{color:S1});
+(function(){const box=document.getElementById('ch-docentes');
+  const note=document.createElement('p'); note.className='note'; note.style.marginTop='10px';
+  note.textContent=`Total: ${fmt(D.docentes.total)} docentes; ${fmt(D.docentes.total_tyt)} en instituciones de carácter técnico, tecnológico o IU/escuela tecnológica.`;
+  box.appendChild(note);
+  tableTwin(box,['Nivel de formación','Docentes'],Object.entries(D.docentes.formacion).sort((a,b)=>b[1]-a[1]));})();
+
+(function(){
+  const cols=[
+    {k:'nombre',h:'Institución'},
+    {k:'sector',h:'Sector'},
+    {k:'matricula24',h:'Mat. 2024',num:true},
+    {k:'delta',h:'Δ 23-24',num:true},
+    {k:'pregrado24',h:'Pregrado',num:true},
+    {k:'posgrado24',h:'Posgrado',num:true},
+    {k:'tyt24',h:'TyT',num:true},
+    {k:'graduados24',h:'Grad.',num:true},
+    {k:'programas',h:'Prog.',num:true},
+    {k:'municipios',h:'Mpios.',num:true},
+  ];
+  const data=D.ies.map(i=>({...i,delta:i.matricula23?Math.round(1000*(i.matricula24-i.matricula23)/i.matricula23)/10:null}));
+  let sortK='matricula24', asc=false;
+  const host=document.getElementById('tb-ies');
+  function render(){
+    host.innerHTML='';
+    const t=document.createElement('table');
+    const thead=document.createElement('thead'),trh=document.createElement('tr');
+    cols.forEach(c=>{const th=document.createElement('th'); th.textContent=c.h+(sortK===c.k?(asc?' ↑':' ↓'):''); if(c.num)th.className='num';
+      th.addEventListener('click',()=>{if(sortK===c.k)asc=!asc;else{sortK=c.k;asc=false;}render();}); trh.appendChild(th);});
+    thead.appendChild(trh);t.appendChild(thead);
+    const tb=document.createElement('tbody');
+    [...data].sort((a,b)=>{const va=a[sortK],vb=b[sortK];
+      if(typeof va==='string')return asc?va.localeCompare(vb):vb.localeCompare(va);
+      return asc?(va??-1)-(vb??-1):(vb??-1)-(va??-1);}).forEach(i=>{
+      const tr=document.createElement('tr');
+      const tdN=document.createElement('td');tdN.className='wrapcell';tdN.textContent=i.nombre+(i.acreditada?' ★':'');tdN.title=i.caracter;tr.appendChild(tdN);
+      const tdS=document.createElement('td');const tg=document.createElement('span');tg.className='tag '+(i.sector==='Oficial'?'of':'pr');tg.textContent=i.sector;tdS.appendChild(tg);tr.appendChild(tdS);
+      [i.matricula24,(i.delta==null?'—':(i.delta>0?'+':'')+i.delta.toLocaleString('es-CO')+' %'),i.pregrado24,i.posgrado24,i.tyt24,i.graduados24,i.programas,i.municipios].forEach(v=>{
+        const td=document.createElement('td');td.className='num';td.textContent=typeof v==='number'?fmt(v):v;tr.appendChild(td);});
+      tb.appendChild(tr);});
+    t.appendChild(tb);host.appendChild(t);
+  }
+  render();
+  const sena=D.ies.find(i=>i.nombre==='SENA');
+  const udea=D.ies.find(i=>i.caracter==='Universidad'&&i.sector==='Oficial');
+  const acreditadas=D.ies.filter(i=>i.acreditada).length;
+  document.getElementById('hallazgo-ies').innerHTML=`<b>Dos gigantes públicos encabezan el sistema:</b> la ${udea?udea.nombre:'Universidad de Antioquia'} (${udea?fmt(udea.matricula24):'—'} estudiantes) y el SENA (${sena?fmt(sena.matricula24):'—'}). <b>${acreditadas} de las ${D.ies.length} IES</b> con oferta en Antioquia están acreditadas en alta calidad (★).`;
+})();
+
+/* ---- 03 Territorio ---- */
+hbars('ch-munis', D.municipios.slice(0,12).map(mu=>({label:mu.municipio,value:mu.matricula24,mu})),{
+  color:S1,
+  tipRows:r=>[
+    {color:S1,value:fmt(r.value),name:'matriculados 2024'},
+    {value:fmt(r.mu.tyt24),name:'de ellos, TyT'},
+    {value:fmt(r.mu.posgrado24),name:'posgrado'},
+    {value:fmt(r.mu.ies),name:'IES presentes'},
+    {value:pct(r.mu.oficial,r.mu.matricula24),name:'matrícula oficial'},
+  ]});
+(function(){const box=document.getElementById('ch-munis');
+  tableTwin(box,['Municipio','Matriculados 2024'],D.municipios.slice(0,12).map(m=>[m.municipio,m.matricula24]));})();
+
+(function(){
+  const host=document.getElementById('tb-munis');
+  const t=document.createElement('table');
+  const thead=document.createElement('thead'),trh=document.createElement('tr');
+  ['Municipio','Matriculados','TyT','Posgrado','IES','Programas','% oficial'].forEach((h,i)=>{const th=document.createElement('th');th.textContent=h;if(i>0)th.className='num';th.style.cursor='default';trh.appendChild(th);});
+  thead.appendChild(trh);t.appendChild(thead);
+  const tb=document.createElement('tbody');
+  D.municipios.forEach(mu=>{
+    const tr=document.createElement('tr');
+    [mu.municipio,fmt(mu.matricula24),fmt(mu.tyt24),fmt(mu.posgrado24),fmt(mu.ies),fmt(mu.programas),pct(mu.oficial,mu.matricula24)].forEach((v,i)=>{
+      const td=document.createElement('td');if(i>0)td.className='num';td.textContent=v;tr.appendChild(td);});
+    tb.appendChild(tr);});
+  t.appendChild(tb);host.appendChild(t);
+  const med=D.municipios[0],totM=D.municipios.reduce((a,m)=>a+m.matricula24,0);
+  document.getElementById('hallazgo-territorio').innerHTML=`<b>La brecha territorial es la noticia:</b> solo <b>${D.municipios.length} de 125 municipios</b> tienen oferta activa y Medellín concentra el <b>${pct(med.matricula24,totM)}</b> de la matrícula. El posgrado está aún más concentrado: ${pct(med.posgrado24,D.municipios.reduce((a,m)=>a+m.posgrado24,0))} en la capital. Fuera del Valle de Aburrá y Oriente, la puerta de entrada masiva sigue siendo el SENA.`;
+})();
+
+/* ---- 04 Oferta ---- */
+document.getElementById('desc-oferta').textContent=`${fmt(D.programas.length)} programas con matrícula activa en 2024 — del técnico profesional al doctorado — por área de conocimiento y núcleo básico.`;
+(function(){
+  const rows=D.areas.filter(a=>(a.mat['2024']||0)>0).map(a=>({
+    label:a.area.replace(' y afines',''),value:a.mat['2024']||0,a}));
+  hbars('ch-areas',rows,{color:S1,tipRows:r=>{
+    const m18=r.a.mat['2018']||0,m24=r.a.mat['2024']||0;
+    return [
+      {color:S1,value:fmt(m24),name:'matriculados 2024'},
+      {value:(m18?((m24>=m18?'+':'')+pct(m24-m18,m18)):'—'),name:'variación vs. 2018'},
+      {value:fmt(r.a.grad['2024']||0),name:'graduados 2024'},
+    ];}});
+  const box=document.getElementById('ch-areas');
+  tableTwin(box,['Área','Mat. 2018','Mat. 2024','Grad. 2024'],D.areas.map(a=>[a.area,a.mat['2018']||0,a.mat['2024']||0,a.grad['2024']||0]));
+})();
+
+hbars('ch-nbc', D.nbc.slice(0,12).map(n=>({label:n.nbc,value:n.matricula24,n})),{
+  color:S1,
+  tipRows:r=>[{color:S1,value:fmt(r.value),name:'matriculados 2024'},{value:fmt(r.n.graduados24),name:'graduados 2024'}]});
+(function(){const box=document.getElementById('ch-nbc');
+  tableTwin(box,['Núcleo básico','Matriculados 2024','Graduados 2024'],D.nbc.slice(0,12).map(n=>[n.nbc,n.matricula24,n.graduados24]));})();
+
+(function(){
+  const P=D.programas;
+  const NIVEL_ORDEN=['Técnica profesional','Tecnológica','Universitaria','Especialización','Maestría','Doctorado'];
+  const selN=document.getElementById('f-nivel'),selA=document.getElementById('f-area'),
+        selS=document.getElementById('f-sector'),selM=document.getElementById('f-modalidad'),
+        selMu=document.getElementById('f-muni'),q=document.getElementById('f-q'),
+        host=document.getElementById('tb-progs'),count=document.getElementById('f-count');
+  function opts(sel,vals,lbl){
+    sel.innerHTML='';const o0=document.createElement('option');o0.value='';o0.textContent=lbl;sel.appendChild(o0);
+    vals.forEach(v=>{const o=document.createElement('option');o.value=v;o.textContent=v;sel.appendChild(o);});
+  }
+  opts(selN,NIVEL_ORDEN.filter(n=>P.some(p=>p.nivel===n)),'Nivel: todos');
+  opts(selA,[...new Set(P.map(p=>p.area))].sort(),'Área: todas');
+  opts(selS,[...new Set(P.map(p=>p.sector))].sort(),'Sector: todos');
+  opts(selM,[...new Set(P.map(p=>p.modalidad))].sort(),'Modalidad: todas');
+  opts(selMu,[...new Set(P.flatMap(p=>p.municipios))].sort(),'Municipio: todos');
+  let shown=400;
+  function render(){
+    const nq=q.value.trim().toLowerCase();
+    const rows=P.filter(p=>
+      (!selN.value||p.nivel===selN.value)&&(!selA.value||p.area===selA.value)&&
+      (!selS.value||p.sector===selS.value)&&(!selM.value||p.modalidad===selM.value)&&
+      (!selMu.value||p.municipios.includes(selMu.value))&&
+      (!nq||p.programa.toLowerCase().includes(nq)||p.ies.toLowerCase().includes(nq)));
+    count.textContent=`${fmt(rows.length)} programas · ${fmt(rows.reduce((a,p)=>a+p.matricula24,0))} estudiantes`;
+    host.innerHTML='';
+    const t=document.createElement('table');
+    const thead=document.createElement('thead'),trh=document.createElement('tr');
+    ['Programa','Institución','Nivel','Área','Municipios','Modalidad','Mat. 2024'].forEach((h,i)=>{
+      const th=document.createElement('th');th.textContent=h;if(i===6)th.className='num';th.style.cursor='default';trh.appendChild(th);});
+    thead.appendChild(trh);t.appendChild(thead);
+    const tb=document.createElement('tbody');
+    rows.slice(0,shown).forEach(p=>{
+      const tr=document.createElement('tr');
+      const c1=document.createElement('td');c1.className='wrapcell';c1.textContent=p.programa+(p.acreditado?' ★':'');if(p.acreditado)c1.title='Programa acreditado en alta calidad';tr.appendChild(c1);
+      const c2=document.createElement('td');c2.className='wrapcell';c2.textContent=p.ies;tr.appendChild(c2);
+      [p.nivel,p.area.replace(' y afines',''),p.municipios.length>2?p.municipios.length+' municipios':p.municipios.join(', '),p.modalidad].forEach(v=>{
+        const td=document.createElement('td');td.textContent=v;if(String(v).includes('municipios'))td.title=p.municipios.join(', ');tr.appendChild(td);});
+      const c7=document.createElement('td');c7.className='num';c7.textContent=fmt(p.matricula24);tr.appendChild(c7);
+      tb.appendChild(tr);});
+    t.appendChild(tb);host.appendChild(t);
+    if(rows.length>shown){
+      const more=document.createElement('button');
+      more.textContent=`Mostrar 400 más (${fmt(rows.length-shown)} restantes)`;
+      more.style.cssText='margin:10px;padding:8px 14px;background:var(--surface-2);color:var(--ink);border:1px solid var(--border);border-radius:8px;cursor:pointer;font-family:inherit';
+      more.addEventListener('click',()=>{shown+=400;render();});
+      host.appendChild(more);
+    }
+  }
+  [selN,selA,selS,selM,selMu].forEach(s=>s.addEventListener('change',()=>{shown=400;render();}));
+  q.addEventListener('input',()=>{shown=400;render();});
+  render();
+})();
+
+/* ---- 05 Mercado laboral ---- */
+(function(){
+  const E=D.embudo;
+  const rows=[
+    {label:'Inscripciones',value:E.inscritos,tyt:E.inscritos_tyt},
+    {label:'Admisiones',value:E.admitidos,tyt:E.admitidos_tyt},
+    {label:'Primer curso',value:E.primer_curso,tyt:E.primer_curso_tyt},
+  ];
+  hbars('ch-embudo',rows,{colors:ORD3,tipRows:r=>{
+    const i=rows.findIndex(x=>x===r);
+    const prev=i>0?rows[i-1].value:null;
+    return [{color:ORD3[i],value:fmt(r.value),name:'2024 (S1+S2)'},
+            {value:fmt(r.tyt),name:'de ellas, TyT'},
+            ...(prev?[{value:pct(r.value,prev),name:'del paso anterior'}]:[])];
+  }});
+  const box=document.getElementById('ch-embudo');
+  const note=document.createElement('p');note.className='note';note.style.marginTop='10px';
+  note.textContent=`Se admite el ${pct(E.admitidos,E.inscritos)} de las inscripciones; el ${pct(E.primer_curso,E.admitidos)} de los admitidos inicia primer curso. Matrícula total 2024: ${fmt(E.matriculados)}.`;
+  box.appendChild(note);
+  tableTwin(box,['Etapa','Total 2024','TyT'],rows.map(r=>[r.label,r.value,r.tyt]));
+})();
+
+lineChart('ch-grad', D.serie_graduados.map(s=>String(s.anio)), [
+  {name:'Universitaria',color:S1,values:D.serie_graduados.map(s=>s.niveles['Universitaria']||0)},
+  {name:'Tecnológica',color:S2,values:D.serie_graduados.map(s=>s.niveles['Tecnológica']||0)},
+  {name:'Posgrado',color:S3,values:D.serie_graduados.map(s=>(s.niveles['Especialización']||0)+(s.niveles['Maestría']||0)+(s.niveles['Doctorado']||0))},
+  {name:'Técnica profesional',color:S4,values:D.serie_graduados.map(s=>s.niveles['Técnica profesional']||0)},
+],{height:280});
+
+(function(){
+  const V=D.ole.vinculacion_por_nivel;
+  const NIV=['Técnica profesional','Tecnológica','Universitaria','Maestría','Doctorado'].filter(n=>V[n]);
+  hbars('ch-vinculacion',NIV.map((n,i)=>({label:n,value:V[n].tasa,v:V[n]})),{
+    colors:RAMP5.slice(0,NIV.length),
+    valueFmt:v=>v.toLocaleString('es-CO')+' %',
+    tipRows:r=>[{value:r.value.toLocaleString('es-CO')+' %',name:'cotizando en 2023'},
+                {value:fmt(r.v.vinculados)+' de '+fmt(r.v.graduados),name:'graduados 2022'}]});
+  tableTwin(document.getElementById('ch-vinculacion'),['Nivel','Vinculados 2023','Graduados 2022','Tasa %'],
+    NIV.map(n=>[n,V[n].vinculados,V[n].graduados,V[n].tasa.toLocaleString('es-CO')]));
+})();
+
+hbars('ch-oleprog', D.ole.top_programas_tyt.slice(0,10).map(p=>({label:p.programa,value:p.vinculados,tipName:'graduados cotizando en 2023'})),{color:S1});
+(function(){const box=document.getElementById('ch-oleprog');
+  tableTwin(box,['Programa','Cotizantes 2023'],D.ole.top_programas_tyt.map(p=>[p.programa,p.vinculados]));})();
+
+(function(){
+  const box=document.getElementById('ch-salario'); box.innerHTML='';
+  const RANGOS=['1 SMMLV','Entre 1 y 1,5 SMMLV','Entre 1,5 y 2,5 SMMLV','Entre 2,5 y 4 SMMLV','Entre 4 y 6 SMMLV','Entre 6 y 9 SMMLV','Más de 9 SMMLV'];
+  const CORTO=['≤ 1','1 – 1,5','1,5 – 2,5','2,5 – 4','4 – 6','6 – 9','> 9'];
+  const NIVELES_S=['Técnica profesional','Tecnológica','Universitaria','Maestría','Doctorado'].filter(n=>D.ole.salario_por_nivel[n]);
+  const grid=document.createElement('div');
+  grid.style.cssText='display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:18px';
+  box.appendChild(grid);
+  NIVELES_S.forEach(niv=>{
+    const d=D.ole.salario_por_nivel[niv]||{};
+    const totN=RANGOS.reduce((a,r)=>a+(d[r]||0),0)||1;
+    const cell=document.createElement('div');
+    const h=document.createElement('div');h.style.cssText='font-size:13px;color:var(--ink);font-weight:650;margin-bottom:8px';
+    h.textContent=`${niv} · ${fmt(totN)} cotizantes`;cell.appendChild(h);
+    const cid='sal-'+niv.replace(/[^a-z]/gi,'');
+    const cdiv=document.createElement('div');cdiv.id=cid;cdiv.className='chart';cell.appendChild(cdiv);
+    grid.appendChild(cell);
+    hbars(cid,RANGOS.map((r,i)=>({label:CORTO[i],value:Math.round(1000*(d[r]||0)/totN)/10,personas:d[r]||0})),{
+      color:S1, labelW:70,
+      valueFmt:v=>v.toLocaleString('es-CO')+' %',
+      tipRows:rr=>[{color:S1,value:rr.value.toLocaleString('es-CO')+' %',name:'de los cotizantes'},{value:fmt(rr.personas),name:'personas'}]
+    });
+  });
+  const note=document.createElement('p');note.className='note';note.style.marginTop='8px';
+  note.textContent='Rangos en salarios mínimos mensuales legales vigentes (SMMLV).';
+  box.appendChild(note);
+  tableTwin(box,['Rango (SMMLV)',...NIVELES_S],
+    RANGOS.map((r,i)=>[CORTO[i],...NIVELES_S.map(n=>D.ole.salario_por_nivel[n]?.[r]||0)]));
+})();
+
+(function(){
+  const V=D.ole.vinculacion_por_nivel;
+  const dU=D.ole.salario_por_nivel['Universitaria']||{};const totU=Object.values(dU).reduce((a,b)=>a+b,0)||1;
+  const dT=D.ole.salario_por_nivel['Tecnológica']||{};const totT=Object.values(dT).reduce((a,b)=>a+b,0)||1;
+  const bajoT=((dT['1 SMMLV']||0)+(dT['Entre 1 y 1,5 SMMLV']||0));
+  const altoU=((dU['Entre 2,5 y 4 SMMLV']||0)+(dU['Entre 4 y 6 SMMLV']||0)+(dU['Entre 6 y 9 SMMLV']||0)+(dU['Más de 9 SMMLV']||0));
+  document.getElementById('hallazgo-laboral').innerHTML=`<b>La escalera salarial existe, pero arranca abajo:</b> los tecnólogos se vinculan al empleo formal a tasas casi idénticas a los universitarios (${V['Tecnológica'].tasa.toLocaleString('es-CO')} % vs. ${V['Universitaria'].tasa.toLocaleString('es-CO')} %), pero el <b>${pct(bajoT,totT)}</b> de los tecnólogos recientes gana menos de 1,5 SMMLV, mientras el ${pct(altoU,totU)} de los universitarios ya supera los 2,5. La maestría es el nivel con mayor vinculación (${V['Maestría'].tasa.toLocaleString('es-CO')} %). ${D.ole.nota}`;
+})();
+
+/* ---- 06 Calidad ---- */
+(function(){
+  const rows=D.acreditacion.filter(a=>a.matricula>0).map(a=>({
+    label:a.nivel,value:Math.round(1000*a.mat_acreditada/a.matricula)/10,a}));
+  hbars('ch-acred',rows,{color:S1,
+    valueFmt:v=>v.toLocaleString('es-CO')+' %',
+    tipRows:r=>[{color:S1,value:r.value.toLocaleString('es-CO')+' %',name:'de la matrícula en programas acreditados'},
+                {value:fmt(r.a.prog_acreditados)+' de '+fmt(r.a.programas),name:'programas acreditados'},
+                {value:fmt(r.a.mat_acreditada)+' de '+fmt(r.a.matricula),name:'estudiantes'}]});
+  tableTwin(document.getElementById('ch-acred'),['Nivel','Matrícula','En prog. acreditados','%','Prog. acreditados','Programas'],
+    D.acreditacion.map(a=>[a.nivel,a.matricula,a.mat_acreditada,a.matricula?Math.round(1000*a.mat_acreditada/a.matricula)/10:0,a.prog_acreditados,a.programas]));
+})();
+
+(function(){
+  const box=document.getElementById('ch-saber'); box.innerHTML='';
+  const MODULOS=[['rc','Razonamiento cuantitativo'],['lc','Lectura crítica'],['cc','Competencias ciudadanas'],['ce','Comunicación escrita'],['ing','Inglés']];
+  const per=D.saber.serie.map(s=>s.periodo.slice(2,4)+'-'+s.periodo.slice(4));
+  const grid=document.createElement('div');
+  grid.style.cssText='display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px';
+  box.appendChild(grid);
+  MODULOS.forEach(([k,nombre])=>{
+    const cell=document.createElement('div');
+    const h=document.createElement('div');h.style.cssText='font-size:13px;color:var(--ink);font-weight:650;margin-bottom:6px';
+    h.textContent=nombre;cell.appendChild(h);
+    const cid='saber-'+k;const cdiv=document.createElement('div');cdiv.id=cid;cdiv.className='chart';cell.appendChild(cdiv);
+    grid.appendChild(cell);
+    lineChart(cid, per, [
+      {name:'Antioquia',color:S1,values:D.saber.serie.map(s=>s[k]??null)},
+      {name:'Nacional',color:MUT,values:D.saber.serie.map(s=>s.nal?.[k]??null)},
+    ],{height:190,yDomain:[60,115]});
+    cdiv.querySelector('details')?.remove();
+    cdiv.querySelector('.legend')?.remove();
+  });
+  legend(box,[{name:'Antioquia',color:S1},{name:'Promedio nacional',color:MUT}],'line');
+  tableTwin(box,['Periodo','RC Ant','RC Nal','LC Ant','LC Nal','CC Ant','CC Nal','CE Ant','CE Nal','Inglés Ant','Inglés Nal','Evaluados Ant'],
+    D.saber.serie.map(s=>[s.periodo,s.rc,s.nal?.rc??'—',s.lc,s.nal?.lc??'—',s.cc,s.nal?.cc??'—',s.ce,s.nal?.ce??'—',s.ing,s.nal?.ing??'—',s.n]));
+})();
+
+(function(){
+  const host=document.getElementById('tb-saber');
+  const t=document.createElement('table');
+  const thead=document.createElement('thead'),trh=document.createElement('tr');
+  ['Institución (sede)','Sector','Evaluados','Global','Raz. cuant.','Lect. crítica','Comp. ciud.','Com. escrita','Inglés'].forEach((h,i)=>{
+    const th=document.createElement('th');th.textContent=h;if(i>1)th.className='num';th.style.cursor='default';trh.appendChild(th);});
+  thead.appendChild(trh);t.appendChild(thead);
+  const tb=document.createElement('tbody');
+  D.saber.ies.forEach(s=>{
+    const tr=document.createElement('tr');
+    const c1=document.createElement('td');c1.className='wrapcell';c1.textContent=s.ies;tr.appendChild(c1);
+    const c2=document.createElement('td');const tg=document.createElement('span');tg.className='tag '+(s.origen==='Oficial'?'of':'pr');tg.textContent=s.origen;c2.appendChild(tg);tr.appendChild(c2);
+    [s.n,s.global,s.rc,s.lc,s.cc,s.ce,s.ing].forEach(v=>{const td=document.createElement('td');td.className='num';td.textContent=typeof v==='number'?v.toLocaleString('es-CO'):v;tr.appendChild(td);});
+    tb.appendChild(tr);});
+  t.appendChild(tb);host.appendChild(t);
+  const s=D.saber.serie[D.saber.serie.length-1];
+  const top=D.saber.ies[0];
+  const acU=D.acreditacion.find(a=>a.nivel==='Universitaria'), acT=D.acreditacion.find(a=>a.nivel==='Tecnológica');
+  document.getElementById('hallazgo-calidad').innerHTML=`<b>La calidad certificada se concentra arriba:</b> el ${pct(acU.mat_acreditada,acU.matricula)} de la matrícula universitaria cursa programas acreditados en alta calidad, contra el ${pct(acT.mat_acreditada,acT.matricula)} de la tecnológica. En Saber TyT, Antioquia rinde al nivel del país: en 2022-4 (${fmt(s.n)} evaluados) supera el promedio nacional en comunicación escrita, lectura crítica e inglés; la sede mejor puntuada es <b>${top.ies}</b> (global ${top.global.toLocaleString('es-CO')}).`;
+})();
+
+/* ---- 07 Innovación ---- */
+(function(){
+  const CL=['A1','A','B','C','Reconocido'];
+  const cl=D.grupos.clasificacion;
+  hbars('ch-grupos-clas',CL.map((k,i)=>({label:k,value:cl[k]||0,tipName:'grupos'})),{colors:[RAMP5[4],RAMP5[3],RAMP5[2],RAMP5[1],RAMP5[0]],labelW:96});
+  tableTwin(document.getElementById('ch-grupos-clas'),['Clasificación','Grupos'],CL.map(k=>[k,cl[k]||0]));
+
+  const areasG=Object.entries(D.grupos.por_area).sort((a,b)=>b[1]-a[1]);
+  hbars('ch-grupos-area',areasG.map(([k,v])=>({label:k,value:v,tipName:'grupos'})),{color:S1,labelW:150});
+  tableTwin(document.getElementById('ch-grupos-area'),['Gran área','Grupos'],areasG);
+
+  const topI=D.grupos.por_ies.slice(0,10);
+  hbars('ch-grupos-ies',topI.map(g=>({label:g.ies,value:g.grupos,g})),{color:S1,labelW:170,
+    tipRows:r=>[{color:S1,value:fmt(r.value),name:'grupos avalados'},
+      {value:CL.map(k=>`${k}: ${r.g.clas[k]||0}`).join(' · '),name:''},
+      ...(r.g.oferta_tyt?[{value:'Con oferta TyT en Antioquia',name:''}]:[])]});
+  tableTwin(document.getElementById('ch-grupos-ies'),['IES','Grupos','A1','A','B','C'],topI.map(g=>[g.ies,g.grupos,g.clas['A1']||0,g.clas['A']||0,g.clas['B']||0,g.clas['C']||0]));
+
+  const a1a=(cl['A1']||0)+(cl['A']||0);
+  const itm=D.grupos.por_ies.find(g=>g.ies.toLowerCase().includes('tecnologico metropolitano'));
+  document.getElementById('hallazgo-innovacion').innerHTML=`<b>Ecosistema fuerte, con lugar para las TyT:</b> Antioquia tiene <b>${fmt(D.grupos.total)}</b> grupos de investigación reconocidos —el ${pct(a1a,D.grupos.total)} en las categorías más altas (A1 y A)—. La Universidad de Antioquia avala uno de cada tres. Entre las instituciones con oferta técnica y tecnológica, el ITM (${itm?itm.grupos:'—'} grupos) y el Politécnico JIC muestran que investigar y formar tecnólogos no son mundos separados.`;
+})();
+
+/* ---- 08 Impacto social ---- */
+(function(){
+  const so=D.saber.social;
+  const sum=o=>Object.values(o).reduce((a,b)=>a+b,0);
+  const conInfo=k=>{const o={...so[k]};delete o['Sin información'];return o;};
+  const est=conInfo('estrato'), estT=sum(est);
+  const e12=(est['Estrato 1']||0)+(est['Estrato 2']||0);
+  const tra=conInfo('trabaja'), traT=sum(tra);
+  const mas30=tra['Más de 30 horas']||0;
+  const trabaja=traT-(tra['No trabaja']||0);
+  const net=conInfo('internet'); const beca=conInfo('beca');
+  const madre=conInfo('edu_madre');
+  const madreBasica=(madre['Primaria incompleta']||0)+(madre['Primaria completa']||0)+(madre['Secundaria (Bachillerato) incompleta']||0)+(madre['Secundaria (Bachillerato) completa']||0)+(madre['Ninguno']||0);
+  const sx=D.sexo[D.sexo.length-1];
+  document.getElementById('kpis-social').innerHTML=[
+    {lbl:'Viven en estratos 1 y 2',val:pct(e12,estT),sub:fmt(e12)+' evaluados TyT'},
+    {lbl:'Trabajan mientras estudian',val:pct(trabaja,traT),sub:pct(mas30,traT)+' más de 30 h/semana'},
+    {lbl:'Madre con secundaria o menos',val:pct(madreBasica,sum(madre)),sub:'primera generación en ed. superior'},
+    {lbl:'Sin internet en casa',val:pct(net['No']||0,sum(net)),sub:fmt(net['No']||0)+' evaluados'},
+    {lbl:'Estudian con beca',val:pct(beca['Sí']||0,sum(beca)),sub:'incluye gratuidad'},
+    {lbl:'Mujeres en la matrícula 2024',val:pct(sx['Femenino']||0,(sx['Femenino']||0)+(sx['Masculino']||0)),sub:'todos los niveles (SNIES)'},
+  ].map(k=>`<div class="kpi"><div class="lbl">${k.lbl}</div><div class="val">${k.val}</div><div class="sub">${k.sub}</div></div>`).join('');
+
+  const EST=['Estrato 1','Estrato 2','Estrato 3','Estrato 4','Estrato 5','Estrato 6'];
+  hbars('ch-estrato',EST.map((k,i)=>({label:k,value:est[k]||0,tipName:'evaluados'})),{
+    colors:[RAMP5[0],RAMP5[1],RAMP5[2],RAMP5[3],RAMP5[4],RAMP5[4]],labelW:82});
+  tableTwin(document.getElementById('ch-estrato'),['Estrato','Evaluados'],EST.map(k=>[k,est[k]||0]));
+
+  const TRA=['No trabaja','Menos de 10 horas','Entre 11 y 20 horas','Entre 21 y 30 horas','Más de 30 horas'];
+  hbars('ch-trabaja',TRA.map((k,i)=>({label:k,value:tra[k]||0,tipName:'evaluados'})),{
+    colors:RAMP5,labelW:140});
+  tableTwin(document.getElementById('ch-trabaja'),['Horas semanales','Evaluados'],TRA.map(k=>[k,tra[k]||0]));
+
+  const M=Object.entries(madre).sort((a,b)=>b[1]-a[1]).slice(0,8);
+  hbars('ch-madre',M.map(([k,v])=>({label:k.replace(' (Bachillerato)',''),value:v,tipName:'evaluados'})),{color:S1,labelW:180});
+  tableTwin(document.getElementById('ch-madre'),['Nivel educativo de la madre','Evaluados'],M);
+
+  document.getElementById('hallazgo-social').innerHTML=`<b>La escalera social del departamento:</b> ${pct(e12,estT)} de quienes presentan Saber TyT en Antioquia viven en estratos 1 y 2, ${pct(madreBasica,sum(madre))} tienen madres que no pasaron de la secundaria y ${pct(trabaja,traT)} trabaja mientras estudia. La formación técnica y tecnológica no es la hermana menor de la universidad: es el principal vehículo de movilidad social del sistema — y por eso su caída de matrícula, mientras la universitaria crece, es un problema de equidad, no solo de educación.`;
+})();
+
+/* ---- fuentes ---- */
+document.getElementById('fuentes').innerHTML=D.meta.fuentes.map(f=>`<li>${f}</li>`).join('');
+
+let rz;addEventListener('resize',()=>{clearTimeout(rz);rz=setTimeout(()=>location.reload(),500);});
+</script>
+</body>
+</html>
