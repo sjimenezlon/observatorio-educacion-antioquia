@@ -356,6 +356,92 @@ tp = rec_tyt.groupby(["PROGRAMA ACADÉMICO"])["GRADUADOS"].sum().sort_values(asc
 salida_ole["top_programas_tyt"] = [{"programa": str(k).strip().title(), "vinculados": int(v)} for k, v in tp.items()]
 print("OLE vinculación por nivel:", {k: v["tasa"] for k, v in salida_ole["vinculacion_por_nivel"].items()})
 
+
+# ---------- Subregiones de Antioquia (mapping Gobernación, datos.gov.co t2ca-uae5) ----------
+sub_map_raw = json.load(open(DATA / "subregiones.json"))
+sub_map = {norm(k): v.replace("Aburra", "Aburrá") for k, v in sub_map_raw.items()}
+sub_map["san pedro de los milagros"] = sub_map.get("san pedro", "Norte")
+m24["SUBREGION"] = m24["MUNICIPIO DE OFERTA DEL PROGRAMA"].map(lambda x: sub_map.get(norm(x)))
+g24["SUBREGION"] = g24["MUNICIPIO DE OFERTA DEL PROGRAMA"].map(lambda x: sub_map.get(norm(x)))
+print("municipios 2024 sin subregión:", m24.loc[m24["SUBREGION"].isna(), "MUNICIPIO DE OFERTA DEL PROGRAMA"].unique())
+subregiones = []
+for sr, sub in m24[m24["SUBREGION"].notna()].groupby("SUBREGION"):
+    gsub = g24[g24["SUBREGION"] == sr]
+    subregiones.append({
+        "subregion": sr,
+        "matricula24": int(sub["MATRICULADOS"].sum()),
+        "tyt24": int(sub.loc[sub["NIVEL_G"].isin(TYT), "MATRICULADOS"].sum()),
+        "posgrado24": int(sub.loc[sub["NIVEL_ACAD"] == "Posgrado", "MATRICULADOS"].sum()),
+        "graduados24": int(gsub["GRADUADOS"].sum()),
+        "ies": int(sub["CÓDIGO DE LA INSTITUCIÓN"].nunique()),
+        "programas": int(sub["CÓDIGO SNIES DEL PROGRAMA"].nunique()),
+        "municipios_oferta": int(sub["MUNICIPIO DE OFERTA DEL PROGRAMA"].nunique()),
+    })
+subregiones.sort(key=lambda x: -x["matricula24"])
+for mu in munis:
+    mu["subregion"] = sub_map.get(norm(mu["municipio"]))
+
+# ---------- Bilingüismo: niveles MCER de inglés en Saber TyT (API agregada) ----------
+MCER = {"pre-a1": "Bajo A1", "-a1": "Bajo A1", "a-": "Bajo A1",
+        "a1": "A1", "a2": "A2", "b1": "B1", "b2": "B2 o más", "b+": "B2 o más"}
+NIVELES_MCER = ["Bajo A1", "A1", "A2", "B1", "B2 o más"]
+def agg_mcer(rows):
+    out = {}
+    for r in rows:
+        per = r.get("periodo")
+        lvl = MCER.get(str(r.get("mod_ingles_desem", "")).lower().strip())
+        if not per or not lvl: continue
+        out.setdefault(per, {n: 0 for n in NIVELES_MCER})
+        out[per][lvl] += int(r["count"])
+    return out
+ing_ant = agg_mcer(json.load(open(DATA / "ingles_ant_periodo.json")))
+ing_nal = agg_mcer(json.load(open(DATA / "ingles_nal_periodo.json")))
+periodos_ok = [s_["periodo"] for s_ in serie_saber]
+ingles_serie = []
+for per in periodos_ok:
+    a, n = ing_ant.get(per), ing_nal.get(per)
+    if not a or not n: continue
+    ta, tn = sum(a.values()), sum(n.values())
+    ingles_serie.append({"periodo": per, "n": ta,
+                         "dist": {k: round(100 * v / ta, 1) for k, v in a.items()},
+                         "b1mas_ant": round(100 * (a["B1"] + a["B2 o más"]) / ta, 1),
+                         "b1mas_nal": round(100 * (n["B1"] + n["B2 o más"]) / tn, 1)})
+ing_ies_raw = {}
+for r in json.load(open(DATA / "ingles_ies_2022.json")):
+    lvl = MCER.get(str(r.get("mod_ingles_desem", "")).lower().strip())
+    if not lvl: continue
+    d = ing_ies_raw.setdefault(str(r["inst_nombre_institucion"]).strip().title(), {n: 0 for n in NIVELES_MCER})
+    d[lvl] += int(r["count"])
+ingles_ies = []
+for nom, d in ing_ies_raw.items():
+    t = sum(d.values())
+    if t < 100: continue
+    ingles_ies.append({"ies": nom, "n": t, "b1mas": round(100 * (d["B1"] + d["B2 o más"]) / t, 1),
+                       "dist": {k: round(100 * v / t, 1) for k, v in d.items()},
+                       "origen": _sector_snies(nom) or "Privada"})
+ingles_ies.sort(key=lambda x: -x["b1mas"])
+print("Inglés B1+ Antioquia último periodo:", ingles_serie[-1]["b1mas_ant"], "% | nacional:", ingles_serie[-1]["b1mas_nal"], "%")
+
+# ---------- Empleabilidad por área de conocimiento (OLE, IES antioqueñas, todos los niveles) ----------
+ole_area = ole[ole["COD_IES"].isin(ies_ant_codes) & ole["NIVEL_G"].notna()].copy()
+grad22_area = grad22.copy()
+RANGOS_ALTOS = ["Entre 2,5 y 4 SMMLV", "Entre 4 y 6 SMMLV", "Entre 6 y 9 SMMLV", "Más de 9 SMMLV"]
+ole_areas_out = []
+for ar, sub in ole_area.groupby("ÁREA DE CONOCIMIENTO"):
+    ar_n = norm(ar)
+    vin22 = int(sub.loc[sub["ANIO_GRADO"] == 2022, "GRADUADOS"].sum())
+    g22 = int(grad22_area.loc[grad22_area["ÁREA DE CONOCIMIENTO"].map(norm) == ar_n, "GRADUADOS"].sum())
+    rec = sub[sub["ANIO_GRADO"] >= 2018]
+    cot = int(rec["GRADUADOS"].sum())
+    altos = int(rec.loc[rec["INGRESO"].isin(RANGOS_ALTOS), "GRADUADOS"].sum())
+    if g22 < 100 or cot < 200: continue
+    ole_areas_out.append({"area": str(ar).strip().capitalize(), "vinculados": vin22, "graduados": g22,
+                          "tasa": round(100 * vin22 / g22, 1), "cotizantes": cot,
+                          "pct_25mas": round(100 * altos / cot, 1)})
+ole_areas_out.sort(key=lambda x: -x["tasa"])
+salida_ole["areas"] = ole_areas_out
+print("Empleabilidad por área:", [(a["area"][:30], a["tasa"]) for a in ole_areas_out[:4]])
+
 # ---------- Salida ----------
 salida = {
     "meta": {
@@ -365,7 +451,9 @@ salida = {
         "fuentes": [
             "SNIES – Bases consolidadas del MEN: matriculados, graduados, inscritos, admitidos, primer curso y docentes, vigencias 2018-2024 (todos los niveles de formación).",
             "OLE – Observatorio Laboral para la Educación: base de ingreso base de cotización (IBC) 2023 por programa e institución, descargada del portal OLE.",
-            "ICFES vía datos.gov.co (iwgf-bkfk): Resultados únicos Saber TyT 2017-2022, microdato de 161.281 evaluados de programas ofertados en Antioquia.",
+            "ICFES vía datos.gov.co (iwgf-bkfk): Resultados únicos Saber TyT 2017-2022, microdato de 161.281 evaluados de programas ofertados en Antioquia; niveles MCER de inglés por agregación API.",
+            "Gobernación de Antioquia vía datos.gov.co (t2ca-uae5): correspondencia municipio-subregión.",
+            "DANE — GEIH: tasa de desempleo Medellín A.M. 8,6 % (trimestre móvil mar-may 2026).",
             "MinCiencias: resultados finales de la Convocatoria 957 de 2024 (Resolución 1531, dic. 2025), listado oficial PDF; departamento y gran área asignados por código GrupLAC contra la base histórica de convocatorias (datos.gov.co hrhc-c4wu).",
             "MEN vía datos.gov.co (5wck-szir): base histórica de matrícula (descartada para la serie por inconsistencias de reporte semestral 2015-2017).",
         ],
@@ -373,6 +461,8 @@ salida = {
     "serie": serie, "serie_graduados": serie_grad, "ies": ies, "municipios": munis,
     "areas": areas_final, "nbc": nbc_final[:30], "modalidad": modalidad, "sexo": sexo,
     "programas": progs, "embudo": embudo, "docentes": docentes, "acreditacion": acred,
+    "subregiones": {"agg": subregiones, "mapa": {k: v.replace("Aburra", "Aburrá") for k, v in sub_map_raw.items()}},
+    "ingles": {"serie": ingles_serie, "ies": ingles_ies},
     "saber": {"serie": serie_saber, "ies": saber_ies, "social": social},
     "grupos": grupos_out, "ole": salida_ole,
 }

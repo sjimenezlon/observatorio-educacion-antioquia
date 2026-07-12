@@ -211,13 +211,23 @@ footer li::before{content:"—";position:absolute;left:0;color:var(--s1)}
   <div class="cards">
     <div class="card">
       <h3>Mapa de la matrícula municipal (2024)</h3>
-      <p class="note">Cada municipio coloreado por la métrica elegida; más claro = más estudiantes. Gris = sin oferta activa. Pase el cursor para el detalle, haga clic para fijarlo, arrastre para mover y use +/− para acercar.</p>
+      <p class="note">Cada municipio coloreado por la métrica elegida; más claro = más estudiantes. Gris = sin oferta activa. Pase el cursor para el detalle, haga clic para fijarlo, arrastre para mover, acerque con doble clic, ⌘/Ctrl + rueda o los botones +/−, y navegue con el buscador o por subregión.</p>
       <div class="seg" id="map-metrics" role="tablist" aria-label="Métrica del mapa"></div>
+      <div class="filters" style="margin-bottom:12px">
+        <input id="map-buscar" type="search" list="map-munis" placeholder="Buscar municipio…" aria-label="Buscar municipio en el mapa">
+        <datalist id="map-munis"></datalist>
+        <select id="map-subregion" aria-label="Subregión"></select>
+      </div>
       <div class="map-flex">
         <div class="map-box" id="mapa"></div>
         <aside class="mpanel" id="map-panel" aria-live="polite"></aside>
       </div>
       <div class="map-legend" id="map-legend"></div>
+    </div>
+    <div class="card">
+      <h3>Las nueve subregiones (2024)</h3>
+      <p class="note">Matrícula por subregión de Antioquia. Pase el cursor para ver TyT, posgrado, IES y municipios con oferta.</p>
+      <div id="ch-subregiones" class="chart"></div>
     </div>
     <div class="card half">
       <h3>Municipios con mayor matrícula (2024)</h3>
@@ -268,7 +278,7 @@ footer li::before{content:"—";position:absolute;left:0;color:var(--s1)}
 <!-- ================= MERCADO LABORAL ================= -->
 <section id="laboral">
   <div class="sec-head"><span class="sec-num">05</span><h2>Mercado laboral: del aula a la cotización</h2></div>
-  <p class="sec-desc">La cadena completa: cuántos aspiran, cuántos entran, cuántos se gradúan y cómo les va en el mercado laboral formal, según el Observatorio Laboral para la Educación (OLE).</p>
+  <p class="sec-desc">La cadena completa: cuántos aspiran, cuántos entran, cuántos se gradúan y cómo les va en el mercado laboral formal, según el Observatorio Laboral para la Educación (OLE). Contexto DANE: la tasa de desempleo de Medellín A.M. fue <b style="color:var(--ink)">8,6 %</b> en el trimestre marzo–mayo de 2026 (GEIH).</p>
   <div class="cards">
     <div class="card half">
       <h3>Embudo de acceso 2024</h3>
@@ -291,6 +301,11 @@ footer li::before{content:"—";position:absolute;left:0;color:var(--s1)}
       <div id="ch-oleprog" class="chart"></div>
     </div>
     <div class="card">
+      <h3>Empleabilidad por área de conocimiento</h3>
+      <p class="note">Graduados 2022 de IES antioqueñas que cotizaban a seguridad social en 2023, por área. En el tooltip: qué porcentaje de los cotizantes recientes del área gana 2,5 SMMLV o más.</p>
+      <div id="ch-ole-areas" class="chart"></div>
+    </div>
+    <div class="card">
       <h3>Salario de enganche: en qué rango cotizan los graduados recientes</h3>
       <p class="note">Distribución del ingreso base de cotización (IBC) 2023 de graduados 2018–2022 de IES con domicilio en Antioquia, por nivel de formación. Fuente: OLE.</p>
       <div id="ch-salario" class="chart"></div>
@@ -308,6 +323,21 @@ footer li::before{content:"—";position:absolute;left:0;color:var(--s1)}
       <h3>Acreditación de alta calidad por nivel de formación (2024)</h3>
       <p class="note">Porcentaje de la matrícula que cursa programas acreditados en alta calidad. Pase el cursor para ver programas y estudiantes.</p>
       <div id="ch-acred" class="chart"></div>
+    </div>
+    <div class="card half">
+      <h3>Bilingüismo: % con inglés B1 o superior (MCER)</h3>
+      <p class="note">Evaluados Saber TyT de programas ofertados en Antioquia que alcanzan B1 o más en el módulo de inglés, frente al promedio nacional.</p>
+      <div id="ch-ingles-serie" class="chart"></div>
+    </div>
+    <div class="card half">
+      <h3>Bilingüismo: distribución por nivel MCER</h3>
+      <p class="note">Composición porcentual de los evaluados de Antioquia por nivel de inglés, por periodo de aplicación.</p>
+      <div id="ch-ingles-dist" class="chart"></div>
+    </div>
+    <div class="card">
+      <h3>Bilingüismo: instituciones con mayor % de inglés B1+ (2022)</h3>
+      <p class="note">Sedes con 100 o más evaluados Saber TyT en Antioquia, aplicaciones 2022.</p>
+      <div id="ch-ingles-ies" class="chart"></div>
     </div>
     <div class="card">
       <h3>Saber TyT: cinco módulos, ocho semestres de aplicación</h3>
@@ -378,7 +408,7 @@ footer li::before{content:"—";position:absolute;left:0;color:var(--s1)}
     <div>
       <h4>Metodología y fuentes</h4>
       <ul id="fuentes"></ul>
-      <p style="margin-top:14px">Notas: (1) La matrícula anual corresponde al semestre con mayor total de cada vigencia — sumar semestres duplicaría estudiantes. (2) Los indicadores OLE se restringen a IES con domicilio en Antioquia; se excluyen SENA y UNAD por ser instituciones de alcance nacional cuyos graduados no son separables por departamento en esa base; la especialización se omite de la tasa de vinculación por cobertura insuficiente. (3) La serie 2015–2017 de la base histórica del MEN se descartó por inconsistencias de reporte semestral. (4) Saber TyT usa la escala 0–200 vigente desde 2017-3; el sector de cada IES se toma del SNIES por errores de registro en la base ICFES. (5) Los grupos de investigación corresponden a los resultados finales de la Convocatoria 957 de 2024 (Resolución 1531 de dic. 2025, listado oficial de Minciencias); como el listado no trae departamento, este se asigna por código GrupLAC contra la base histórica de convocatorias (90 % de cobertura) y, para grupos nuevos, por institución avaladora domiciliada en Antioquia. (6) Los resultados Saber Pro (nivel universitario) no están disponibles como microdato abierto completo en datos.gov.co; se incorporarán desde DataIcfes en la próxima versión.</p>
+      <p style="margin-top:14px">Notas: (1) La matrícula anual corresponde al semestre con mayor total de cada vigencia — sumar semestres duplicaría estudiantes. (2) Los indicadores OLE se restringen a IES con domicilio en Antioquia; se excluyen SENA y UNAD por ser instituciones de alcance nacional cuyos graduados no son separables por departamento en esa base; la especialización se omite de la tasa de vinculación por cobertura insuficiente. (3) La serie 2015–2017 de la base histórica del MEN se descartó por inconsistencias de reporte semestral. (4) Saber TyT usa la escala 0–200 vigente desde 2017-3; el sector de cada IES se toma del SNIES por errores de registro en la base ICFES. (5) Los grupos de investigación corresponden a los resultados finales de la Convocatoria 957 de 2024 (Resolución 1531 de dic. 2025, listado oficial de Minciencias); como el listado no trae departamento, este se asigna por código GrupLAC contra la base histórica de convocatorias (90 % de cobertura) y, para grupos nuevos, por institución avaladora domiciliada en Antioquia. (6) Los resultados Saber Pro (nivel universitario) no están disponibles como microdato abierto completo en datos.gov.co; se incorporarán desde DataIcfes en la próxima versión. (7) Los niveles MCER de inglés se agregan desde el microdato Saber TyT vía API; los rótulos históricos (A-, -A1, Pre-A1, B+) se homologan a la escala vigente. (8) La división subregional corresponde a la usada por la Gobernación de Antioquia. (9) El radar institucional recoge cifras autorreportadas en notas de prensa, informes de gestión y rendiciones de cuentas de las IES; sus cortes y definiciones no son directamente comparables con el SNIES.</p>
     </div>
     <div>
       <h4>Sobre este observatorio</h4>
@@ -969,7 +999,7 @@ hbars('ch-oleprog', D.ole.top_programas_tyt.slice(0,10).map(p=>({label:p.program
   const s=D.saber.serie[D.saber.serie.length-1];
   const top=D.saber.ies[0];
   const acU=D.acreditacion.find(a=>a.nivel==='Universitaria'), acT=D.acreditacion.find(a=>a.nivel==='Tecnológica');
-  document.getElementById('hallazgo-calidad').innerHTML=`<b>La calidad certificada se concentra arriba:</b> el ${pct(acU.mat_acreditada,acU.matricula)} de la matrícula universitaria cursa programas acreditados en alta calidad, contra el ${pct(acT.mat_acreditada,acT.matricula)} de la tecnológica. En Saber TyT, Antioquia rinde al nivel del país: en 2022-4 (${fmt(s.n)} evaluados) supera el promedio nacional en comunicación escrita, lectura crítica e inglés; la sede mejor puntuada es <b>${top.ies}</b> (global ${top.global.toLocaleString('es-CO')}).`;
+  document.getElementById('hallazgo-calidad').innerHTML=`<b>La calidad certificada se concentra arriba:</b> el ${pct(acU.mat_acreditada,acU.matricula)} de la matrícula universitaria cursa programas acreditados en alta calidad, contra el ${pct(acT.mat_acreditada,acT.matricula)} de la tecnológica. En Saber TyT, Antioquia rinde al nivel del país: en 2022-4 (${fmt(s.n)} evaluados) supera el promedio nacional en comunicación escrita, lectura crítica e inglés; la sede mejor puntuada es <b>${top.ies}</b> (global ${top.global.toLocaleString('es-CO')}). En bilingüismo la brecha es estructural: solo el <b>${D.ingles.serie[D.ingles.serie.length-1].b1mas_ant.toLocaleString('es-CO')} %</b> de los evaluados TyT de Antioquia alcanza inglés B1 o superior — apenas por encima del ${D.ingles.serie[D.ingles.serie.length-1].b1mas_nal.toLocaleString('es-CO')} % nacional.`;
 })();
 
 /* ---- 07 Innovación ---- */
@@ -1152,9 +1182,27 @@ hbars('ch-oleprog', D.ole.top_programas_tyt.slice(0,10).map(p=>({label:p.program
     if(selected) panelMuni(selected.code,selected.nombre); else panelDefault();
   }
 
+  const normJS=t=>String(t).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().trim();
+  const SUBMAP={};
+  Object.entries(D.subregiones.mapa).forEach(([k,v])=>{SUBMAP[normJS(k)]=v;});
+  SUBMAP['san pedro de los milagros']=SUBMAP['san pedro']||'Norte';
+  const bboxOf=g=>{
+    let x0=1e9,y0=1e9,x1=-1e9,y1=-1e9;
+    eachCoord(g,([lo,la])=>{const x=X(lo),y=Y(la);
+      if(x<x0)x0=x; if(x>x1)x1=x; if(y<y0)y0=y; if(y>y1)y1=y;});
+    return [x0,y0,x1,y1];
+  };
+  function zoomTo(bb,factor=1.35){
+    const bw=(bb[2]-bb[0])*factor, bh=(bb[3]-bb[1])*factor;
+    const w=Math.max(W/12,Math.max(bw,bh*(W/H))), h=w*(H/W);
+    vb={x:Math.max(0,Math.min(W-w,(bb[0]+bb[2])/2-w/2)), y:Math.max(0,Math.min(H-h,(bb[1]+bb[3])/2-h/2)), w, h};
+    if(w>=W){vb={x:0,y:0,w:W,h:H};}
+    applyVB();
+  }
   GEO.features.forEach(f=>{
     const code=f.properties.c, nombre=f.properties.n;
     const p=el('path',{d:pathOf(f.geometry),stroke:'#0d0d0d','stroke-width':0.7,'vector-effect':'non-scaling-stroke'},gMap);
+    f._bb=bboxOf(f.geometry); f._path=p;
     p.style.cursor='pointer';
     p.addEventListener('pointermove',ev=>{
       if(dragging)return;
@@ -1224,7 +1272,134 @@ hbars('ch-oleprog', D.ole.top_programas_tyt.slice(0,10).map(p=>({label:p.program
   });
   addEventListener('pointerup',()=>{dstart=null;setTimeout(()=>{dragging=false;},50);svg.classList.remove('panning');});
 
+  // ---- panel de subregión ----
+  function panelSub(sr){
+    const a=D.subregiones.agg.find(x=>x.subregion===sr);
+    const totalMun=GEO.features.filter(f=>SUBMAP[normJS(f.properties.n)]===sr).length;
+    panel.innerHTML='';
+    const h=document.createElement('h4');h.textContent=sr;panel.appendChild(h);
+    const sub=document.createElement('div');sub.className='sub';sub.textContent='Subregión de Antioquia';panel.appendChild(sub);
+    const rows=a?[
+      ['Matriculados 2024',fmt(a.matricula24)],
+      ['Técnica y tecnológica',fmt(a.tyt24)],
+      ['Posgrado',fmt(a.posgrado24)],
+      ['Graduados 2024',fmt(a.graduados24)],
+      ['IES presentes',fmt(a.ies)],
+      ['Programas',fmt(a.programas)],
+      ['Municipios con oferta',`${a.municipios_oferta} de ${totalMun}`],
+    ]:[['Municipios con oferta',`0 de ${totalMun}`]];
+    rows.forEach(([k,v])=>{
+      const r=document.createElement('div');r.className='row';
+      const n=document.createElement('span');n.textContent=k;r.appendChild(n);
+      const b=document.createElement('b');b.textContent=v;r.appendChild(b);
+      panel.appendChild(r);
+    });
+  }
+  // ---- selector de subregión ----
+  const selSub=document.getElementById('map-subregion');
+  const SUBS=[...new Set(Object.values(SUBMAP))].sort();
+  const o0=document.createElement('option');o0.value='';o0.textContent='Subregión: todas';selSub.appendChild(o0);
+  SUBS.forEach(sr=>{const o=document.createElement('option');o.value=sr;o.textContent=sr;selSub.appendChild(o);});
+  selSub.addEventListener('change',()=>{
+    selected=null;
+    paths.forEach(({p})=>{p.setAttribute('stroke','#0d0d0d');p.setAttribute('stroke-width',0.7);p.setAttribute('opacity','1');});
+    if(!selSub.value){vb={x:0,y:0,w:W,h:H};applyVB();panelDefault();return;}
+    const fs=GEO.features.filter(f=>SUBMAP[normJS(f.properties.n)]===selSub.value);
+    let bb=[1e9,1e9,-1e9,-1e9];
+    fs.forEach(f=>{bb=[Math.min(bb[0],f._bb[0]),Math.min(bb[1],f._bb[1]),Math.max(bb[2],f._bb[2]),Math.max(bb[3],f._bb[3])];});
+    GEO.features.forEach(f=>f._path.setAttribute('opacity',SUBMAP[normJS(f.properties.n)]===selSub.value?'1':'0.25'));
+    zoomTo(bb,1.15);
+    panelSub(selSub.value);
+  });
+  // ---- búsqueda de municipio ----
+  const dl=document.getElementById('map-munis'), qm=document.getElementById('map-buscar');
+  GEO.features.map(f=>f.properties.n).sort().forEach(n=>{const o=document.createElement('option');o.value=n;dl.appendChild(o);});
+  qm.addEventListener('change',()=>{
+    const f=GEO.features.find(x=>normJS(x.properties.n)===normJS(qm.value));
+    if(!f)return;
+    selSub.value='';GEO.features.forEach(x=>x._path.setAttribute('opacity','1'));
+    paths.forEach(({p})=>{p.setAttribute('stroke','#0d0d0d');p.setAttribute('stroke-width',0.7);});
+    selected={code:f.properties.c,nombre:f.properties.n};
+    f._path.setAttribute('stroke','#ffffff');f._path.setAttribute('stroke-width',2);gMap.appendChild(f._path);
+    zoomTo(f._bb,2.6);
+    panelMuni(f.properties.c,f.properties.n);
+  });
+  // ---- zoom con ⌘/Ctrl + rueda y doble clic ----
+  function zoomAt(cx,cy,factor){
+    const r=svg.getBoundingClientRect();
+    const mx=vb.x+(cx-r.left)/r.width*vb.w, my=vb.y+(cy-r.top)/r.height*vb.h;
+    const nw=Math.min(W,Math.max(W/12,vb.w*factor)), nh=nw*(H/W);
+    vb={x:Math.max(0,Math.min(W-nw,mx-(mx-vb.x)*(nw/vb.w))),
+        y:Math.max(0,Math.min(H-nh,my-(my-vb.y)*(nh/vb.h))), w:nw, h:nh};
+    applyVB();
+  }
+  svg.addEventListener('wheel',ev=>{
+    if(!ev.ctrlKey&&!ev.metaKey)return;
+    ev.preventDefault();
+    zoomAt(ev.clientX,ev.clientY,ev.deltaY>0?1.2:0.8);
+  },{passive:false});
+  svg.addEventListener('dblclick',ev=>{ev.preventDefault();zoomAt(ev.clientX,ev.clientY,0.6);});
+
   paint();
+})();
+
+/* ---- 03c Subregiones (barras) ---- */
+(function(){
+  const A=D.subregiones.agg;
+  hbars('ch-subregiones',A.map(a=>({label:a.subregion,value:a.matricula24,a})),{
+    color:S1,labelW:150,
+    tipRows:r=>[
+      {color:S1,value:fmt(r.value),name:'matriculados 2024'},
+      {value:fmt(r.a.tyt24),name:'técnica y tecnológica'},
+      {value:fmt(r.a.posgrado24),name:'posgrado'},
+      {value:fmt(r.a.ies),name:'IES presentes'},
+      {value:fmt(r.a.municipios_oferta),name:'municipios con oferta'},
+    ]});
+  tableTwin(document.getElementById('ch-subregiones'),
+    ['Subregión','Matriculados','TyT','Posgrado','Graduados','IES','Programas','Mpios. con oferta'],
+    A.map(a=>[a.subregion,a.matricula24,a.tyt24,a.posgrado24,a.graduados24,a.ies,a.programas,a.municipios_oferta]));
+})();
+
+/* ---- 05b Empleabilidad por área ---- */
+(function(){
+  const A=D.ole.areas||[];
+  if(!A.length)return;
+  hbars('ch-ole-areas',A.map(a=>({label:a.area.replace(' y afines',''),value:a.tasa,a})),{
+    color:S1,labelW:210,
+    valueFmt:v=>v.toLocaleString('es-CO')+' %',
+    tipRows:r=>[
+      {color:S1,value:r.value.toLocaleString('es-CO')+' %',name:'cotizando en 2023'},
+      {value:fmt(r.a.vinculados)+' de '+fmt(r.a.graduados),name:'graduados 2022'},
+      {value:r.a.pct_25mas.toLocaleString('es-CO')+' %',name:'de los cotizantes gana ≥ 2,5 SMMLV'},
+    ]});
+  tableTwin(document.getElementById('ch-ole-areas'),
+    ['Área','Vinculados 2023','Graduados 2022','Tasa %','% ≥ 2,5 SMMLV'],
+    A.map(a=>[a.area,a.vinculados,a.graduados,a.tasa.toLocaleString('es-CO'),a.pct_25mas.toLocaleString('es-CO')]));
+})();
+
+/* ---- 06b Bilingüismo ---- */
+(function(){
+  const I=D.ingles; if(!I||!I.serie.length)return;
+  const per=I.serie.map(x=>x.periodo.slice(2,4)+'-'+x.periodo.slice(4));
+  lineChart('ch-ingles-serie',per,[
+    {name:'Antioquia',color:S1,values:I.serie.map(x=>x.b1mas_ant)},
+    {name:'Nacional',color:MUT,values:I.serie.map(x=>x.b1mas_nal)},
+  ],{height:260,yDomain:[0,30],unit:' %'});
+  const NIV=['Bajo A1','A1','A2','B1','B2 o más'];
+  stackedCols('ch-ingles-dist',per,NIV.map((n,i)=>({
+    name:n,color:RAMP5[i],values:I.serie.map(x=>x.dist[n]||0)
+  })),{height:280});
+  hbars('ch-ingles-ies',I.ies.slice(0,12).map(x=>({label:x.ies,value:x.b1mas,x})),{
+    color:S1,labelW:210,
+    valueFmt:v=>v.toLocaleString('es-CO')+' %',
+    tipRows:r=>[
+      {color:S1,value:r.value.toLocaleString('es-CO')+' %',name:'con B1 o más'},
+      {value:fmt(r.x.n),name:'evaluados 2022'},
+      {value:(r.x.dist['B2 o más']||0).toLocaleString('es-CO')+' %',name:'con B2 o más'},
+    ]});
+  tableTwin(document.getElementById('ch-ingles-ies'),
+    ['Institución (sede)','Evaluados','% B1+','% B2+'],
+    I.ies.map(x=>[x.ies,x.n,x.b1mas.toLocaleString('es-CO'),(x.dist['B2 o más']||0).toLocaleString('es-CO')]));
 })();
 
 /* ---- pulido: scrollspy + revelado ---- */
@@ -1245,6 +1420,10 @@ hbars('ch-oleprog', D.ole.top_programas_tyt.slice(0,10).map(p=>({label:p.program
       es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');rev.unobserve(e.target);}});
     },{rootMargin:'0px 0px -8% 0px'});
     document.querySelectorAll('.card,.callout').forEach(x=>{x.classList.add('reveal');rev.observe(x);});
+    setTimeout(()=>document.querySelectorAll('.reveal:not(.in)').forEach(x=>{
+      const r=x.getBoundingClientRect();
+      if(r.top<innerHeight&&r.bottom>0)x.classList.add('in');
+    }),900);
   }
 })();
 
