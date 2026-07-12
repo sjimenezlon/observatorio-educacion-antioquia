@@ -288,27 +288,42 @@ social = {"n": int(len(s22)),
           "beca": dist("estu_pagomatriculabeca"), "credito": dist("estu_pagomatriculacredito"),
           "propio": dist("estu_pagomatriculapropio"), "valor_matricula": dist("estu_valormatriculauniversidad")}
 
-# ---------- Grupos de investigación ----------
-grupos = json.load(open(DATA / "grupos_antioquia_2021.json"))
-grupos_out = {"total": len(grupos),
-              "clasificacion": dict(Counter(x.get("nme_clasificacion_gr", "¿?") for x in grupos)),
-              "por_area": dict(Counter(x.get("nme_gran_area_gr", "¿?") for x in grupos).most_common()),
-              "por_ies": []}
-aval, aval_clas = Counter(), {}
-for x in grupos:
-    for inst in str(x.get("inst_aval", "")).split("|"):
-        inst = inst.strip().title()
-        if not inst: continue
-        aval[inst] += 1
-        aval_clas.setdefault(inst, Counter())[x.get("nme_clasificacion_gr", "¿?")] += 1
+# ---------- Grupos de investigación — Convocatoria 957 de 2024 (resultados dic. 2025) ----------
+# Listado PDF de Minciencias (sin departamento): se asigna por código GrupLAC contra la base
+# histórica de convocatorias (90 % de cobertura) y, para grupos nuevos, por institución avaladora
+# con domicilio en Antioquia.
+g957 = [g for g in json.load(open(DATA / "grupos_957.json")) if g["reconocido"]]
+cod_map = json.load(open(DATA / "grupos_cod_map.json"))
 ies_norm_set = {norm(i["nombre"]) for i in ies}
 ies_tyt_norm = {norm(i["nombre"]) for i in ies if i["tyt24"] > 0}
+ies_ant_norm = {norm(i["nombre"]) for i in ies if i["domicilio_ant"]}
 def _match(inst, nombres):
     ni = norm(inst)
     return any(ni == x or ni.startswith(x) or x.startswith(ni) for x in nombres if len(x) > 8)
+grupos_ant = []
+for g in g957:
+    avales = [a.strip() for a in g["avales"].split(";") if a.strip()]
+    info = cod_map.get(g["cod"])
+    if info:
+        es_ant = info.get("depto") == "Antioquia"
+    else:
+        es_ant = any(_match(a, ies_ant_norm) for a in avales)
+    if es_ant:
+        grupos_ant.append({**g, "avales_l": avales, "area": (info or {}).get("area")})
+grupos_out = {"total": len(grupos_ant),
+              "clasificacion": dict(Counter(g["clas"] or "Reconocido" for g in grupos_ant)),
+              "por_area": dict(Counter(g["area"] or "Sin dato (grupo nuevo)" for g in grupos_ant).most_common()),
+              "por_ies": []}
+aval, aval_clas = Counter(), {}
+for g in grupos_ant:
+    for inst in g["avales_l"]:
+        inst = inst.strip().title()
+        aval[inst] += 1
+        aval_clas.setdefault(inst, Counter())[g["clas"] or "Reconocido"] += 1
 for inst, n in aval.most_common(40):
     grupos_out["por_ies"].append({"ies": inst, "grupos": n, "clas": dict(aval_clas[inst]),
                                   "oferta_ant": _match(inst, ies_norm_set), "oferta_tyt": _match(inst, ies_tyt_norm)})
+print("Grupos 957 Antioquia:", grupos_out["total"], grupos_out["clasificacion"])
 
 # ---------- OLE: vinculación y salario por nivel — IES antioqueñas ----------
 ies_ant_codes = {i["codigo"] for i in ies if i["domicilio_ant"]}
@@ -351,7 +366,7 @@ salida = {
             "SNIES – Bases consolidadas del MEN: matriculados, graduados, inscritos, admitidos, primer curso y docentes, vigencias 2018-2024 (todos los niveles de formación).",
             "OLE – Observatorio Laboral para la Educación: base de ingreso base de cotización (IBC) 2023 por programa e institución, descargada del portal OLE.",
             "ICFES vía datos.gov.co (iwgf-bkfk): Resultados únicos Saber TyT 2017-2022, microdato de 161.281 evaluados de programas ofertados en Antioquia.",
-            "MinCiencias vía datos.gov.co (hrhc-c4wu): Grupos de investigación reconocidos, Convocatoria 894 de 2021.",
+            "MinCiencias: resultados finales de la Convocatoria 957 de 2024 (Resolución 1531, dic. 2025), listado oficial PDF; departamento y gran área asignados por código GrupLAC contra la base histórica de convocatorias (datos.gov.co hrhc-c4wu).",
             "MEN vía datos.gov.co (5wck-szir): base histórica de matrícula (descartada para la serie por inconsistencias de reporte semestral 2015-2017).",
         ],
     },

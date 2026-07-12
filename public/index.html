@@ -282,16 +282,16 @@ footer li::before{content:"—";position:absolute;left:0;color:var(--s1)}
 <!-- ================= INNOVACIÓN ================= -->
 <section id="innovacion">
   <div class="sec-head"><span class="sec-num">07</span><h2>Innovación: capacidad investigativa del ecosistema</h2></div>
-  <p class="sec-desc">Grupos de investigación reconocidos por MinCiencias en Antioquia (Convocatoria 894 de 2021) y qué instituciones del departamento los avalan.</p>
+  <p class="sec-desc">Grupos de investigación reconocidos por MinCiencias en Antioquia según la Convocatoria 957 de 2024 (resultados finales de diciembre de 2025) y qué instituciones del departamento los avalan.</p>
   <div class="cards">
     <div class="card third">
       <h3>Grupos por clasificación</h3>
-      <p class="note">834 grupos reconocidos en Antioquia. A1 es la máxima categoría.</p>
+      <p class="note" id="note-grupos">A1 es la máxima categoría.</p>
       <div id="ch-grupos-clas" class="chart"></div>
     </div>
     <div class="card third">
       <h3>Grupos por gran área</h3>
-      <p class="note">Gran área de conocimiento OCDE del grupo.</p>
+      <p class="note">Gran área OCDE del grupo (según base histórica de convocatorias; los grupos nuevos aparecen sin dato).</p>
       <div id="ch-grupos-area" class="chart"></div>
     </div>
     <div class="card third">
@@ -334,7 +334,7 @@ footer li::before{content:"—";position:absolute;left:0;color:var(--s1)}
     <div>
       <h4>Metodología y fuentes</h4>
       <ul id="fuentes"></ul>
-      <p style="margin-top:14px">Notas: (1) La matrícula anual corresponde al semestre con mayor total de cada vigencia — sumar semestres duplicaría estudiantes. (2) Los indicadores OLE se restringen a IES con domicilio en Antioquia; se excluyen SENA y UNAD por ser instituciones de alcance nacional cuyos graduados no son separables por departamento en esa base; la especialización se omite de la tasa de vinculación por cobertura insuficiente. (3) La serie 2015–2017 de la base histórica del MEN se descartó por inconsistencias de reporte semestral. (4) Saber TyT usa la escala 0–200 vigente desde 2017-3; el sector de cada IES se toma del SNIES por errores de registro en la base ICFES. (5) El corte de grupos de investigación corresponde a la última convocatoria de medición publicada en datos abiertos (894 de 2021). (6) Los resultados Saber Pro (nivel universitario) no están disponibles como microdato abierto completo en datos.gov.co; se incorporarán desde DataIcfes en la próxima versión.</p>
+      <p style="margin-top:14px">Notas: (1) La matrícula anual corresponde al semestre con mayor total de cada vigencia — sumar semestres duplicaría estudiantes. (2) Los indicadores OLE se restringen a IES con domicilio en Antioquia; se excluyen SENA y UNAD por ser instituciones de alcance nacional cuyos graduados no son separables por departamento en esa base; la especialización se omite de la tasa de vinculación por cobertura insuficiente. (3) La serie 2015–2017 de la base histórica del MEN se descartó por inconsistencias de reporte semestral. (4) Saber TyT usa la escala 0–200 vigente desde 2017-3; el sector de cada IES se toma del SNIES por errores de registro en la base ICFES. (5) Los grupos de investigación corresponden a los resultados finales de la Convocatoria 957 de 2024 (Resolución 1531 de dic. 2025, listado oficial de Minciencias); como el listado no trae departamento, este se asigna por código GrupLAC contra la base histórica de convocatorias (90 % de cobertura) y, para grupos nuevos, por institución avaladora domiciliada en Antioquia. (6) Los resultados Saber Pro (nivel universitario) no están disponibles como microdato abierto completo en datos.gov.co; se incorporarán desde DataIcfes en la próxima versión.</p>
     </div>
     <div>
       <h4>Sobre este observatorio</h4>
@@ -947,7 +947,8 @@ hbars('ch-oleprog', D.ole.top_programas_tyt.slice(0,10).map(p=>({label:p.program
 
   const a1a=(cl['A1']||0)+(cl['A']||0);
   const itm=D.grupos.por_ies.find(g=>g.ies.toLowerCase().includes('tecnologico metropolitano'));
-  document.getElementById('hallazgo-innovacion').innerHTML=`<b>Ecosistema fuerte, con lugar para las TyT:</b> Antioquia tiene <b>${fmt(D.grupos.total)}</b> grupos de investigación reconocidos —el ${pct(a1a,D.grupos.total)} en las categorías más altas (A1 y A)—. La Universidad de Antioquia avala uno de cada tres. Entre las instituciones con oferta técnica y tecnológica, el ITM (${itm?itm.grupos:'—'} grupos) y el Politécnico JIC muestran que investigar y formar tecnólogos no son mundos separados.`;
+  document.getElementById('note-grupos').textContent=`${fmt(D.grupos.total)} grupos reconocidos en Antioquia (Conv. 957 de 2024). A1 es la máxima categoría.`;
+  document.getElementById('hallazgo-innovacion').innerHTML=`<b>Ecosistema fuerte, con lugar para las TyT:</b> Antioquia tiene <b>${fmt(D.grupos.total)}</b> grupos de investigación reconocidos en la medición más reciente (Conv. 957 de 2024, resultados dic. 2025) —el ${pct(a1a,D.grupos.total)} en las categorías más altas (A1 y A)—. La Universidad de Antioquia avala uno de cada tres. Entre las instituciones con oferta técnica y tecnológica, el ITM (${itm?itm.grupos:'—'} grupos) y el Politécnico JIC muestran que investigar y formar tecnólogos no son mundos separados.`;
 })();
 
 /* ---- 08 Impacto social ---- */
