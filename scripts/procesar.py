@@ -145,7 +145,7 @@ munis = []
 for mun, sub in m24.groupby("MUNICIPIO DE OFERTA DEL PROGRAMA"):
     gsub = g24[g24["MUNICIPIO DE OFERTA DEL PROGRAMA"] == mun]
     munis.append({
-        "municipio": mun.strip(), "codigo": str(sub["CÓDIGO DEL MUNICIPIO (PROGRAMA)"].iloc[0]),
+        "municipio": mun.strip(), "codigo": str(int(float(sub["CÓDIGO DEL MUNICIPIO (PROGRAMA)"].iloc[0]))).zfill(5),
         "matricula24": int(sub["MATRICULADOS"].sum()),
         "tyt24": int(sub.loc[sub["NIVEL_G"].isin(TYT), "MATRICULADOS"].sum()),
         "posgrado24": int(sub.loc[sub["NIVEL_ACAD"] == "Posgrado", "MATRICULADOS"].sum()),

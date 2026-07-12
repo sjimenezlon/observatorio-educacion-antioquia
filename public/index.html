@@ -84,6 +84,40 @@ tr:hover td{background:var(--surface-2)}
 .filters input,.filters select{background:var(--surface-2);border:1px solid var(--border);color:var(--ink);border-radius:9px;padding:8px 12px;font-size:13.5px;font-family:inherit;max-width:230px}
 .filters input{min-width:210px}
 .filters .count{color:var(--muted);font-size:12.5px;margin-left:auto}
+/* ---------- pulido visual ---------- */
+header{position:relative}
+header::before{content:"";position:absolute;inset:-120px -40% auto;height:520px;pointer-events:none;
+  background:radial-gradient(ellipse 60% 55% at 30% 20%,rgba(57,135,229,.14),transparent 65%),
+             radial-gradient(ellipse 40% 45% at 75% 10%,rgba(25,158,112,.07),transparent 60%);z-index:-1}
+.card{transition:border-color .25s ease,transform .25s ease}
+.card:hover{border-color:rgba(255,255,255,.20)}
+nav a.sec.active{color:var(--ink);font-weight:600}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){.reveal{opacity:1;transform:none;transition:none}.card{transition:none}}
+:focus-visible{outline:2px solid var(--s1);outline-offset:2px;border-radius:4px}
+/* ---------- mapa ---------- */
+.map-flex{display:grid;grid-template-columns:1.6fr 1fr;gap:20px;align-items:start}
+@media(max-width:900px){.map-flex{grid-template-columns:1fr}}
+.map-box{position:relative;background:var(--page);border:1px solid var(--border);border-radius:12px;overflow:hidden}
+.map-box svg{display:block;width:100%;height:auto;touch-action:none;cursor:grab}
+.map-box svg.panning{cursor:grabbing}
+.map-zoom{position:absolute;top:10px;right:10px;display:flex;flex-direction:column;gap:6px}
+.map-zoom button{width:32px;height:32px;border-radius:8px;background:var(--surface-2);border:1px solid var(--border);color:var(--ink);font-size:16px;cursor:pointer;line-height:1}
+.map-zoom button:hover{background:var(--baseline)}
+.seg{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 14px}
+.seg button{padding:7px 14px;border-radius:20px;background:var(--surface-2);border:1px solid var(--border);color:var(--ink-2);font-size:13px;cursor:pointer;font-family:inherit;transition:all .2s}
+.seg button:hover{color:var(--ink)}
+.seg button.on{background:rgba(57,135,229,.18);border-color:var(--s1);color:var(--ink);font-weight:600}
+.map-legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:12px;font-size:12px;color:var(--muted);align-items:center}
+.map-legend .it{display:flex;align-items:center;gap:6px}
+.map-legend .sw{width:14px;height:14px;border-radius:4px;flex:none}
+.mpanel{background:var(--surface-2);border:1px solid var(--border);border-radius:12px;padding:16px}
+.mpanel h4{color:var(--ink);font-size:16px;margin-bottom:2px}
+.mpanel .sub{color:var(--muted);font-size:12px;margin-bottom:12px}
+.mpanel .row{display:flex;justify-content:space-between;padding:7px 0;border-top:1px solid var(--grid);font-size:13.5px}
+.mpanel .row:first-of-type{border-top:none}
+.mpanel .row b{color:var(--ink);font-variant-numeric:tabular-nums}
 footer{margin-top:56px;border-top:1px solid var(--border);padding:36px 0 48px;color:var(--muted);font-size:13.5px}
 footer h4{color:var(--ink);font-size:14px;margin-bottom:10px}
 footer ul{list-style:none}
@@ -175,6 +209,16 @@ footer li::before{content:"—";position:absolute;left:0;color:var(--s1)}
   <div class="sec-head"><span class="sec-num">03</span><h2>Territorio: dónde llega (y dónde no) la oferta</h2></div>
   <p class="sec-desc">Municipios de Antioquia con oferta activa en 2024, por lugar de oferta del programa.</p>
   <div class="cards">
+    <div class="card">
+      <h3>Mapa de la matrícula municipal (2024)</h3>
+      <p class="note">Cada municipio coloreado por la métrica elegida; más claro = más estudiantes. Gris = sin oferta activa. Pase el cursor para el detalle, haga clic para fijarlo, arrastre para mover y use +/− para acercar.</p>
+      <div class="seg" id="map-metrics" role="tablist" aria-label="Métrica del mapa"></div>
+      <div class="map-flex">
+        <div class="map-box" id="mapa"></div>
+        <aside class="mpanel" id="map-panel" aria-live="polite"></aside>
+      </div>
+      <div class="map-legend" id="map-legend"></div>
+    </div>
     <div class="card half">
       <h3>Municipios con mayor matrícula (2024)</h3>
       <p class="note">Los 12 primeros; todos los niveles de formación.</p>
@@ -348,6 +392,7 @@ footer li::before{content:"—";position:absolute;left:0;color:var(--s1)}
 
 <div id="tip" role="status" aria-hidden="true"></div>
 <script src="datos.js"></script>
+<script src="mapa.js"></script>
 <script>
 "use strict";
 const D = window.OBS;
@@ -991,10 +1036,223 @@ hbars('ch-oleprog', D.ole.top_programas_tyt.slice(0,10).map(p=>({label:p.program
   document.getElementById('hallazgo-social').innerHTML=`<b>La escalera social del departamento:</b> ${pct(e12,estT)} de quienes presentan Saber TyT en Antioquia viven en estratos 1 y 2, ${pct(madreBasica,sum(madre))} tienen madres que no pasaron de la secundaria y ${pct(trabaja,traT)} trabaja mientras estudia. La formación técnica y tecnológica no es la hermana menor de la universidad: es el principal vehículo de movilidad social del sistema — y por eso su caída de matrícula, mientras la universitaria crece, es un problema de equidad, no solo de educación.`;
 })();
 
+
+/* ---- 03b Mapa interactivo ---- */
+(function(){
+  const GEO=window.GEO; if(!GEO) return;
+  const RAMP_MAP=['#104281','#1c5cab','#2a78d6','#5598e7','#9ec5f4']; // secuencial azul: en superficie oscura, lo bajo recede hacia el fondo
+  const SIN='#242422';
+  const MET=[
+    {k:'matricula24',lbl:'Matrícula total',fmtV:fmt},
+    {k:'tyt24',lbl:'Técnica y tecnológica',fmtV:fmt},
+    {k:'posgrado24',lbl:'Posgrado',fmtV:fmt},
+    {k:'ies',lbl:'IES presentes',fmtV:fmt},
+  ];
+  const byCode={};
+  D.municipios.forEach(m=>{byCode[String(parseInt(m.codigo)).padStart(5,'0')]=m;});
+
+  // proyección equirectangular con corrección de latitud
+  let minLon=1e9,maxLon=-1e9,minLat=1e9,maxLat=-1e9;
+  const eachCoord=(g,cb)=>{
+    const polys=g.type==='Polygon'?[g.coordinates]:g.coordinates;
+    polys.forEach(p=>p.forEach(ring=>ring.forEach(cb)));
+  };
+  GEO.features.forEach(f=>eachCoord(f.geometry,([lon,lat])=>{
+    if(lon<minLon)minLon=lon; if(lon>maxLon)maxLon=lon;
+    if(lat<minLat)minLat=lat; if(lat>maxLat)maxLat=lat;
+  }));
+  const cosMid=Math.cos((minLat+maxLat)/2*Math.PI/180);
+  const W=820, PAD=12;
+  const kx=(W-2*PAD)/((maxLon-minLon)*cosMid);
+  const H=Math.round((maxLat-minLat)*kx+2*PAD);
+  const X=lon=>PAD+(lon-minLon)*cosMid*kx;
+  const Y=lat=>PAD+(maxLat-lat)*kx;
+  const pathOf=g=>{
+    const polys=g.type==='Polygon'?[g.coordinates]:g.coordinates;
+    return polys.map(p=>p.map(ring=>'M'+ring.map(([lo,la])=>X(lo).toFixed(1)+','+Y(la).toFixed(1)).join('L')+'Z').join('')).join('');
+  };
+
+  const box=document.getElementById('mapa');
+  const svg=el('svg',{viewBox:`0 0 ${W} ${H}`,role:'img','aria-label':'Mapa de municipios de Antioquia'},box);
+  const gMap=el('g',{},svg);
+  let vb={x:0,y:0,w:W,h:H};
+  const applyVB=()=>svg.setAttribute('viewBox',`${vb.x} ${vb.y} ${vb.w} ${vb.h}`);
+
+  const panel=document.getElementById('map-panel');
+  let metric=MET[0], selected=null, paths=[];
+
+  function breaks(){
+    const vals=D.municipios.map(m=>m[metric.k]).filter(v=>v>0).sort((a,b)=>a-b);
+    return [0.2,0.4,0.6,0.8].map(q=>vals[Math.min(vals.length-1,Math.floor(q*vals.length))]);
+  }
+  function colorOf(v,br){
+    if(!v||v<=0) return SIN;
+    let i=0; while(i<4&&v>br[i]) i++;
+    return RAMP_MAP[i];
+  }
+  function panelDefault(){
+    panel.innerHTML='';
+    const h=document.createElement('h4');h.textContent='Antioquia';panel.appendChild(h);
+    const sub=document.createElement('div');sub.className='sub';sub.textContent=`${D.municipios.length} de 125 municipios con oferta · ${metric.lbl}`;panel.appendChild(sub);
+    const tops=[...D.municipios].sort((a,b)=>(b[metric.k]||0)-(a[metric.k]||0)).slice(0,6);
+    tops.forEach(m=>{
+      const r=document.createElement('div');r.className='row';
+      const n=document.createElement('span');n.textContent=m.municipio;r.appendChild(n);
+      const v=document.createElement('b');v.textContent=metric.fmtV(m[metric.k]||0);r.appendChild(v);
+      panel.appendChild(r);
+    });
+    const note=document.createElement('div');note.className='sub';note.style.marginTop='10px';
+    note.textContent='Clic en un municipio para fijar su detalle.';panel.appendChild(note);
+  }
+  function panelMuni(code,nombre){
+    const m=byCode[code];
+    panel.innerHTML='';
+    const h=document.createElement('h4');h.textContent=nombre;panel.appendChild(h);
+    const sub=document.createElement('div');sub.className='sub';sub.textContent=m?'Con oferta activa en 2024':'Sin oferta activa en 2024';panel.appendChild(sub);
+    const rows=m?[
+      ['Matriculados 2024',fmt(m.matricula24)],
+      ['Técnica y tecnológica',fmt(m.tyt24)],
+      ['Posgrado',fmt(m.posgrado24)],
+      ['IES presentes',fmt(m.ies)],
+      ['Programas',fmt(m.programas)],
+      ['Graduados 2024',fmt(m.graduados24)],
+      ['Matrícula oficial',pct(m.oficial,m.matricula24)],
+    ]:[['Matriculados 2024','0']];
+    rows.forEach(([k,v])=>{
+      const r=document.createElement('div');r.className='row';
+      const n=document.createElement('span');n.textContent=k;r.appendChild(n);
+      const b=document.createElement('b');b.textContent=v;r.appendChild(b);
+      panel.appendChild(r);
+    });
+  }
+  function paint(){
+    const br=breaks();
+    paths.forEach(({p,code})=>{
+      const m=byCode[code];
+      p.setAttribute('fill',colorOf(m?m[metric.k]:0,br));
+    });
+    // leyenda
+    const lg=document.getElementById('map-legend');lg.innerHTML='';
+    const items=[];
+    let prev=1;
+    const br2=[...br, Math.max(...D.municipios.map(m=>m[metric.k]||0))];
+    br2.forEach((b,i)=>{
+      items.push({c:RAMP_MAP[i],t:`${fmt(prev)} – ${fmt(b)}`});
+      prev=b+1;
+    });
+    items.push({c:SIN,t:'Sin oferta'});
+    items.forEach(it=>{
+      const d=document.createElement('span');d.className='it';
+      const sw=document.createElement('span');sw.className='sw';sw.style.background=it.c;
+      if(it.c===SIN)sw.style.border='1px solid var(--border)';
+      d.appendChild(sw);
+      const t=document.createElement('span');t.textContent=it.t;d.appendChild(t);
+      lg.appendChild(d);
+    });
+    if(selected) panelMuni(selected.code,selected.nombre); else panelDefault();
+  }
+
+  GEO.features.forEach(f=>{
+    const code=f.properties.c, nombre=f.properties.n;
+    const p=el('path',{d:pathOf(f.geometry),stroke:'#0d0d0d','stroke-width':0.7,'vector-effect':'non-scaling-stroke'},gMap);
+    p.style.cursor='pointer';
+    p.addEventListener('pointermove',ev=>{
+      if(dragging)return;
+      const m=byCode[code];
+      p.setAttribute('stroke','#ffffff');p.setAttribute('stroke-width',1.4);gMap.appendChild(p);
+      showTip(ev,nombre, m?[
+        {value:fmt(m.matricula24),name:'matriculados 2024'},
+        {value:fmt(m.tyt24),name:'TyT'},
+        {value:fmt(m.ies),name:'IES'},
+      ]:[{value:'Sin oferta activa',name:''}]);
+      if(!selected) panelMuni(code,nombre);
+    });
+    p.addEventListener('pointerleave',()=>{
+      if(!selected||selected.code!==code){p.setAttribute('stroke','#0d0d0d');p.setAttribute('stroke-width',0.7);}
+      hideTip();
+      if(!selected) panelDefault();
+    });
+    p.addEventListener('click',ev=>{
+      ev.stopPropagation();
+      paths.forEach(({p:pp})=>{pp.setAttribute('stroke','#0d0d0d');pp.setAttribute('stroke-width',0.7);});
+      if(selected&&selected.code===code){selected=null;panelDefault();return;}
+      selected={code,nombre};
+      p.setAttribute('stroke','#ffffff');p.setAttribute('stroke-width',2);gMap.appendChild(p);
+      panelMuni(code,nombre);
+    });
+    paths.push({p,code});
+  });
+  svg.addEventListener('click',()=>{if(selected){selected=null;paths.forEach(({p})=>{p.setAttribute('stroke','#0d0d0d');p.setAttribute('stroke-width',0.7);});panelDefault();}});
+
+  // controles de métrica
+  const segEl=document.getElementById('map-metrics');
+  MET.forEach((m,i)=>{
+    const b=document.createElement('button');b.textContent=m.lbl;if(i===0)b.className='on';
+    b.addEventListener('click',()=>{
+      metric=m;segEl.querySelectorAll('button').forEach(x=>x.className='');b.className='on';paint();
+    });
+    segEl.appendChild(b);
+  });
+
+  // zoom y pan
+  const zdiv=document.createElement('div');zdiv.className='map-zoom';
+  [['+',0.8],['−',1.25],['⌂',0]].forEach(([t,fct])=>{
+    const b=document.createElement('button');b.textContent=t;b.setAttribute('aria-label',t==='+'?'Acercar':t==='−'?'Alejar':'Restablecer');
+    b.addEventListener('click',()=>{
+      if(!fct){vb={x:0,y:0,w:W,h:H};}
+      else{
+        const nw=Math.min(W,Math.max(W/8,vb.w*fct)), nh=nw*(H/W);
+        vb={x:Math.max(0,Math.min(W-nw,vb.x+(vb.w-nw)/2)), y:Math.max(0,Math.min(H-nh,vb.y+(vb.h-nh)/2)), w:nw, h:nh};
+      }
+      applyVB();
+    });
+    zdiv.appendChild(b);
+  });
+  box.appendChild(zdiv);
+  let dragging=false,dstart=null;
+  svg.addEventListener('pointerdown',ev=>{dstart={x:ev.clientX,y:ev.clientY,vx:vb.x,vy:vb.y};});
+  svg.addEventListener('pointermove',ev=>{
+    if(!dstart)return;
+    const r=svg.getBoundingClientRect(), sc=vb.w/r.width;
+    const dx=(ev.clientX-dstart.x)*sc, dy=(ev.clientY-dstart.y)*sc;
+    if(Math.abs(ev.clientX-dstart.x)+Math.abs(ev.clientY-dstart.y)>4){dragging=true;svg.classList.add('panning');hideTip();}
+    if(dragging){
+      vb.x=Math.max(0,Math.min(W-vb.w,dstart.vx-dx));
+      vb.y=Math.max(0,Math.min(H-vb.h,dstart.vy-dy));
+      applyVB();
+    }
+  });
+  addEventListener('pointerup',()=>{dstart=null;setTimeout(()=>{dragging=false;},50);svg.classList.remove('panning');});
+
+  paint();
+})();
+
+/* ---- pulido: scrollspy + revelado ---- */
+(function(){
+  const links=[...document.querySelectorAll('nav a.sec')];
+  const secs=links.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);
+  const spy=new IntersectionObserver(es=>{
+    es.forEach(e=>{
+      if(e.isIntersecting){
+        links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id));
+      }
+    });
+  },{rootMargin:'-30% 0px -60% 0px'});
+  secs.forEach(x=>spy.observe(x));
+
+  if(!matchMedia('(prefers-reduced-motion: reduce)').matches){
+    const rev=new IntersectionObserver(es=>{
+      es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');rev.unobserve(e.target);}});
+    },{rootMargin:'0px 0px -8% 0px'});
+    document.querySelectorAll('.card,.callout').forEach(x=>{x.classList.add('reveal');rev.observe(x);});
+  }
+})();
+
 /* ---- fuentes ---- */
 document.getElementById('fuentes').innerHTML=D.meta.fuentes.map(f=>`<li>${f}</li>`).join('');
 
-let rz;addEventListener('resize',()=>{clearTimeout(rz);rz=setTimeout(()=>location.reload(),500);});
+let rz,lastW=innerWidth;
+addEventListener('resize',()=>{clearTimeout(rz);rz=setTimeout(()=>{if(Math.abs(innerWidth-lastW)>80)location.reload();},500);});
 </script>
 </body>
 </html>
