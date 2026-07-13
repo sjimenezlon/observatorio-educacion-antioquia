@@ -1,3 +1,6 @@
+# Insumos crudos (~500 MB): se regeneran con scripts/descargar_datos.py
 data/
+
+# Vercel / sistema
 .vercel
 .DS_Store
