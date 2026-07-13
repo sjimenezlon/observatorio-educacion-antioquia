@@ -56,8 +56,10 @@ def leer_snies(archivo, valor, semestre_pico=False):
     df = df.rename(columns={"METODOLOGÍA": "MODALIDAD", "CARACTER IES": "CARÁCTER IES",
                             "ID ÁREA DE CONOCIMIENTO": "ID ÁREA", "GÉNERO": "SEXO"})
     df = df.rename(columns={c: valor for c in df.columns if c.startswith(valor) and c != valor})
-    df["SECTOR IES"] = df["SECTOR IES"].astype(str).str.strip().str.capitalize().replace({"Privado": "Privada"})
-    df["SEXO"] = df["SEXO"].astype(str).str.strip().str.capitalize()
+    if "SECTOR IES" in df.columns:
+        df["SECTOR IES"] = df["SECTOR IES"].astype(str).str.strip().str.capitalize().replace({"Privado": "Privada"})
+    if "SEXO" in df.columns:
+        df["SEXO"] = df["SEXO"].astype(str).str.strip().str.capitalize()
     df[valor] = pd.to_numeric(df[valor], errors="coerce").fillna(0)
     df = df[df["DEPARTAMENTO DE OFERTA DEL PROGRAMA"].astype(str).str.strip().str.upper() == "ANTIOQUIA"]
     niv = df["NIVEL DE FORMACIÓN"].map(lambda x: NIVELES.get(norm(x)))
@@ -442,6 +444,105 @@ ole_areas_out.sort(key=lambda x: -x["tasa"])
 salida_ole["areas"] = ole_areas_out
 print("Empleabilidad por área:", [(a["area"][:30], a["tasa"]) for a in ole_areas_out[:4]])
 
+
+# ---------- Serie de demanda 2018-2024: inscripciones y primer curso ----------
+def leer_variantes(archivo, candidatos):
+    for val in candidatos:
+        try:
+            return leer_snies(archivo, val), val
+        except ValueError:
+            continue
+    raise ValueError(f"Sin columna de valor en {archivo}: {candidatos}")
+serie_demanda = []
+for anio in ANIOS:
+    di, vi = leer_variantes(f"inscritos_{anio}.xlsx", ["INSCRITOS", "INSCRIPCIONES"])
+    dp, vp = leer_variantes(f"primer_curso_{anio}.xlsx", ["MATRICULADOS PRIMER CURSO", "PRIMER CURSO"])
+    serie_demanda.append({"anio": anio,
+                          "inscritos": int(di[vi].sum()),
+                          "inscritos_tyt": int(di.loc[di["NIVEL_G"].isin(TYT), vi].sum()),
+                          "primer_curso": int(dp[vp].sum()),
+                          "primer_curso_tyt": int(dp.loc[dp["NIVEL_G"].isin(TYT), vp].sum())})
+print("Demanda:", [(d["anio"], d["inscritos"], d["primer_curso"]) for d in serie_demanda][::3])
+
+# ---------- Saber TyT por municipio (2022) ----------
+sm_raw = json.load(open(DATA / "saber_municipio_2022.json"))
+# fusiona variantes con U+FFFD (promedios ponderados por n)
+sm_acc = {}
+for r in sm_raw:
+    mu = str(r.get("estu_prgm_municipio", "")).strip()
+    key = norm(mu.replace("\ufffd", "?"))
+    key2 = None
+    for k in sm_acc:
+        if len(k) == len(key) and all(a == b or "?" in (a, b) for a, b in zip(k, key)):
+            key2 = k; break
+    key = key2 or key.replace("?", "")
+    n = int(r["n"])
+    d = sm_acc.setdefault(key, {"n": 0, "suma": 0.0})
+    mods = [float(r[k]) for k in ("rc", "lc", "cc", "ce", "ing") if r.get(k)]
+    if not mods: continue
+    d["n"] += n
+    d["suma"] += n * (sum(mods) / len(mods))
+saber_muni = []
+munis_norm = {norm(m["municipio"]): m for m in munis}
+for key, d in sm_acc.items():
+    if d["n"] < 50 or key not in munis_norm: continue
+    m = munis_norm[key]
+    saber_muni.append({"municipio": m["municipio"], "codigo": m["codigo"],
+                       "global": round(d["suma"] / d["n"], 1), "n": d["n"]})
+saber_muni.sort(key=lambda x: -x["global"])
+print("Saber por municipio (n>=50):", len(saber_muni), "| top:", [(x["municipio"], x["global"]) for x in saber_muni[:3]])
+
+# ---------- Participación femenina por nivel (2024) ----------
+mujeres_nivel = []
+for niv in ORDEN_NIVEL:
+    sub = m24[m24["NIVEL_G"] == niv]
+    f = int(sub.loc[sub["SEXO"] == "Femenino", "MATRICULADOS"].sum())
+    t = int(sub.loc[sub["SEXO"].isin(["Femenino", "Masculino"]), "MATRICULADOS"].sum())
+    if t: mujeres_nivel.append({"nivel": niv, "pct": round(100 * f / t, 1), "mujeres": f, "total": t})
+
+# ---------- Cobertura bruta (oferta) 17-21 por subregión — DANE proyecciones 2024 ----------
+# Requiere data/pob_antioquia_17_21.json generado por scripts/preparar_poblacion.py
+cobertura = None
+pob_file = DATA / "pob_antioquia_17_21.json"
+if pob_file.exists():
+    pob = json.load(open(pob_file))  # {"municipios": {cod: pob}, "subregiones": {nombre: pob}}
+    for mu in munis:
+        mu["pob_17_21"] = pob["municipios"].get(mu["codigo"])
+    cobertura = []
+    for s_ in subregiones:
+        pobs = pob["subregiones"].get(s_["subregion"])
+        preg = int(m24.loc[(m24["SUBREGION"] == s_["subregion"]) & (m24["NIVEL_ACAD"] == "Pregrado"), "MATRICULADOS"].sum())
+        if pobs:
+            cobertura.append({"subregion": s_["subregion"], "pregrado": preg, "pob_17_21": pobs,
+                              "cobertura": round(100 * preg / pobs, 1)})
+    cobertura.sort(key=lambda x: -x["cobertura"])
+    tot_p = sum(c["pregrado"] for c in cobertura); tot_pob = sum(c["pob_17_21"] for c in cobertura)
+    cobertura.append({"subregion": "Antioquia (total)", "pregrado": tot_p, "pob_17_21": tot_pob,
+                      "cobertura": round(100 * tot_p / tot_pob, 1)})
+    print("Cobertura subregional:", [(c["subregion"], c["cobertura"]) for c in cobertura])
+else:
+    print("Cobertura pendiente: falta", pob_file)
+
+
+# ---------- Brecha de género por área (2024) y STEM ----------
+STEM = {"ingenieria, arquitectura, urbanismo y afines", "matematicas y ciencias naturales",
+        "ingenieria, arquitectura, urbanismo", "matematicas y ciencias naturales y afines"}
+genero_area = []
+for ar, sub in m24.groupby("ÁREA DE CONOCIMIENTO"):
+    f = int(sub.loc[sub["SEXO"] == "Femenino", "MATRICULADOS"].sum())
+    t = int(sub.loc[sub["SEXO"].isin(["Femenino", "Masculino"]), "MATRICULADOS"].sum())
+    if t < 500: continue
+    genero_area.append({"area": str(ar).strip().capitalize(), "pct": round(100 * f / t, 1),
+                        "mujeres": f, "total": t, "stem": norm(ar) in STEM})
+genero_area.sort(key=lambda x: -x["pct"])
+stem_f = sum(a["mujeres"] for a in genero_area if a["stem"])
+stem_t = sum(a["total"] for a in genero_area if a["stem"])
+stem_pct = round(100 * stem_f / stem_t, 1) if stem_t else None
+print("Mujeres en STEM:", stem_pct, "%")
+
+# ---------- Financiación de la matrícula (Saber TyT 2022) ----------
+social["stem_mujeres_pct"] = stem_pct
+
 # ---------- Salida ----------
 salida = {
     "meta": {
@@ -454,6 +555,7 @@ salida = {
             "ICFES vía datos.gov.co (iwgf-bkfk): Resultados únicos Saber TyT 2017-2022, microdato de 161.281 evaluados de programas ofertados en Antioquia; niveles MCER de inglés por agregación API.",
             "Gobernación de Antioquia vía datos.gov.co (t2ca-uae5): correspondencia municipio-subregión.",
             "DANE — GEIH: tasa de desempleo Medellín A.M. 8,6 % (trimestre móvil mar-may 2026).",
+            "DANE — Proyecciones de población municipal por área, sexo y edad (base CNPV 2018, act. 2025): población de 17 a 21 años para la cobertura bruta subregional.",
             "MinCiencias: resultados finales de la Convocatoria 957 de 2024 (Resolución 1531, dic. 2025), listado oficial PDF; departamento y gran área asignados por código GrupLAC contra la base histórica de convocatorias (datos.gov.co hrhc-c4wu).",
             "MEN vía datos.gov.co (5wck-szir): base histórica de matrícula (descartada para la serie por inconsistencias de reporte semestral 2015-2017).",
         ],
@@ -461,7 +563,9 @@ salida = {
     "serie": serie, "serie_graduados": serie_grad, "ies": ies, "municipios": munis,
     "areas": areas_final, "nbc": nbc_final[:30], "modalidad": modalidad, "sexo": sexo,
     "programas": progs, "embudo": embudo, "docentes": docentes, "acreditacion": acred,
-    "subregiones": {"agg": subregiones, "mapa": {k: v.replace("Aburra", "Aburrá") for k, v in sub_map_raw.items()}},
+    "subregiones": {"agg": subregiones, "mapa": {k: v.replace("Aburra", "Aburrá") for k, v in sub_map_raw.items()}, "cobertura": cobertura},
+    "serie_demanda": serie_demanda, "saber_municipio": saber_muni, "mujeres_nivel": mujeres_nivel,
+    "genero_area": genero_area,
     "ingles": {"serie": ingles_serie, "ies": ingles_ies},
     "saber": {"serie": serie_saber, "ies": saber_ies, "social": social},
     "grupos": grupos_out, "ole": salida_ole,
