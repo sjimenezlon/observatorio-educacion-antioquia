@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Observatorio de Educación Superior de Antioquia</title>
-<meta name="description" content="Observatorio de la educación superior de Antioquia — pregrado y posgrado, pública y privada: oferta, demanda, mercado laboral, calidad, innovación e impacto social. Fuentes oficiales SNIES, ICFES, OLE y MinCiencias. Por Santiago Jiménez Londoño.">
+<title>MaterIA Gris · El cerebro de datos de la educación superior de Antioquia</title>
+<meta name="description" content="MaterIA Gris — el cerebro de datos de la educación superior de Antioquia: pregrado y posgrado, pública y privada: oferta, demanda, mercado laboral, calidad, innovación e impacto social. Fuentes oficiales SNIES, ICFES, OLE y MinCiencias. Por Santiago Jiménez Londoño.">
 <style>
 :root{
   --page:#0d0d0d; --surface:#1a1a19; --surface-2:#222220;
   --ink:#ffffff; --ink-2:#c3c2b7; --muted:#898781;
   --grid:#2c2c2a; --baseline:#383835; --border:rgba(255,255,255,.10);
-  --s1:#3987e5; --s2:#199e70; --s3:#c98500; --s4:#008300;
+  --s1:#3987e5; --s2:#199e70; --s3:#c98500; --s4:#9a7ce8;
   --ok:#0ca30c;
   --ramp1:#b7d3f6; --ramp2:#6da7ec; --ramp3:#3987e5; --ramp4:#256abf; --ramp5:#184f95;
   --o1:#86b6ef; --o2:#3987e5; --o3:#184f95;
@@ -181,12 +181,47 @@ footer li{margin:7px 0;padding-left:16px;position:relative}
 footer li::before{content:"—";position:absolute;left:0;color:var(--s1)}
 .fgrid{display:grid;grid-template-columns:1.4fr 1fr;gap:36px}
 @media(max-width:800px){.fgrid{grid-template-columns:1fr}}
+/* ---------- tema claro ---------- */
+html.light{--page:#f7f6f1;--surface:#ffffff;--surface-2:#efeee8;--ink:#191918;--ink-2:#3c3b36;--muted:#6f6d64;
+  --grid:#e5e3da;--baseline:#c9c7bd;--border:rgba(20,20,15,.14);
+  --s1:#2b66c2;--s2:#0d7a53;--s3:#8f6400;--s4:#6d4fc4;--ok:#0b7a2f;
+  --ramp1:#cfe0f7;--ramp2:#8db6ee;--ramp3:#4a86d8;--ramp4:#2b66c2;--ramp5:#174a92;
+  --o1:#8db6ee;--o2:#2b66c2;--o3:#174a92}
+html.light nav{background:rgba(247,246,241,.92)}
+html.light header::before{opacity:.45}
+html.light .kpi .down{color:#b33636}
+html.light .tag.of{color:#1e56a8}
+html.light .tag.pr{color:#0c6b47}
+html.light .tag.vg{color:#0c6b47;background:rgba(12,122,55,.10)}
+html.light .tag.rn{color:#8a5a00;background:rgba(201,133,0,.12)}
+html.light .trend.up{color:#0b7a2f;background:rgba(12,122,55,.10)}
+html.light .trend.down{color:#b33636;background:rgba(200,60,60,.10)}
+html.light .trend.flat{color:var(--ink-2);background:rgba(0,0,0,.06)}
+html.light .card:hover{border-color:rgba(0,0,0,.28)}
+html.light #tip{box-shadow:0 6px 24px rgba(0,0,0,.16)}
+html.light .chip{background:rgba(43,102,194,.10)}
+html.light .seg button.on{background:rgba(43,102,194,.12)}
+html.light #arriba{box-shadow:0 4px 18px rgba(0,0,0,.15)}
+/* ---------- impresión ---------- */
+@media print{
+  :root,html.light{--page:#ffffff;--surface:#ffffff;--surface-2:#f2f1ec;--ink:#111;--ink-2:#333;--muted:#666;
+    --grid:#ddd;--baseline:#bbb;--border:rgba(0,0,0,.2);
+    --s1:#2b66c2;--s2:#0d7a53;--s3:#8f6400;--s4:#6d4fc4}
+  nav,#arriba,#progreso,#pal,.dl,.map-zoom,#radar-filtro,#tema{display:none!important}
+  .reveal{opacity:1!important;transform:none!important}
+  body{background:#fff}
+  header::before{display:none}
+  .card,.callout{break-inside:avoid;box-shadow:none}
+  a{color:#2b66c2}
+  html{scroll-behavior:auto}
+}
 </style>
+<script>try{if(localStorage.getItem('obs-theme')==='light')document.documentElement.classList.add('light')}catch(e){}</script>
 </head>
 <body>
 <div id="progreso" aria-hidden="true"></div>
 <nav><div class="wrap">
-  <a class="logo" href="#top">Observatorio <span>ES</span> Antioquia</a>
+  <a class="logo" href="#top">Mater<span>IA</span> Gris</a>
   <a class="sec" href="#panorama">Panorama</a>
   <a class="sec" href="#instituciones">Instituciones</a>
   <a class="sec" href="#territorio">Territorio</a>
@@ -198,6 +233,7 @@ footer li::before{content:"—";position:absolute;left:0;color:var(--s1)}
   <a class="sec" href="#social">Impacto social</a>
   <a class="sec" href="#metodologia">Metodología</a>
   <button id="pal-open" style="margin-left:auto;background:var(--surface-2);border:1px solid var(--border);color:var(--muted);border-radius:8px;padding:5px 10px;font-size:12px;cursor:pointer;font-family:inherit;white-space:nowrap">Buscar ⌘K</button>
+  <button id="tema" type="button" aria-label="Cambiar tema" style="background:var(--surface-2);border:1px solid var(--border);color:var(--muted);border-radius:8px;padding:5px 10px;font-size:12px;cursor:pointer;font-family:inherit;white-space:nowrap"></button>
 </div></nav>
 <div id="pal" role="dialog" aria-modal="true" aria-label="Búsqueda global"><div class="box">
   <input id="pal-q" type="search" placeholder="Buscar sección, institución, municipio o programa…" autocomplete="off">
@@ -207,7 +243,7 @@ footer li::before{content:"—";position:absolute;left:0;color:var(--s1)}
 
 <div class="wrap" id="top">
 <header>
-  <div class="kicker">Observatorio · Educación superior de Antioquia</div>
+  <div class="kicker">MaterIA Gris · El cerebro de datos de la educación superior de Antioquia</div>
   <h1>La educación superior de Antioquia, medida con datos oficiales</h1>
   <p class="lede">Pregrado y posgrado, pública y privada: oferta académica, demanda estudiantil, resultados en el mercado laboral, calidad, capacidad de innovación e impacto social del sistema de educación superior del departamento — con lente de detalle sobre la formación técnica y tecnológica.</p>
   <p class="byline">Por <b>Santiago Jiménez Londoño</b> · Fuentes: SNIES-MEN, ICFES (Saber TyT), OLE y MinCiencias · Corte de datos: julio de 2026</p>
@@ -239,6 +275,12 @@ footer li::before{content:"—";position:absolute;left:0;color:var(--s1)}
       <h3>Matrícula por modalidad</h3>
       <p class="note">Presencial, virtual, a distancia y combinadas.</p>
       <div id="ch-modalidad" class="chart"></div>
+    </div>
+    <div class="card">
+      <h3>Antioquia frente a los grandes departamentos (índice 2018 = 100)</h3>
+      <p class="note">Matrícula total (todos los niveles, semestre pico) de los cinco departamentos con más estudiantes, indexada a su propio nivel de 2018 para hacerlas comparables. Cálculo propio sobre las bases consolidadas nacionales del SNIES (<code style="font-size:11px">scripts/benchmark_deptos.py</code>). Atlántico (+6,5&nbsp;% a 2024, 139.393 estudiantes) se omite de la gráfica por legibilidad. En 2024: Bogotá 863.337 · Antioquia 313.583 · Valle 186.364 · Santander 124.145.</p>
+      <div id="ch-bench" class="chart"></div>
+      <p class="note" style="margin-top:12px;margin-bottom:0"><b style="color:var(--ink)">La lectura incómoda:</b> mientras Bogotá ya supera en <b>+11,2&nbsp;%</b> su matrícula de 2018 y Valle y Atlántico también la superaron, <b>Antioquia sigue 5,6&nbsp;% por debajo</b> — la brecha más grande entre los departamentos grandes (Santander: −1,7&nbsp;%). El repunte 2024 (+5,7&nbsp;%) apenas empieza a cerrarla.</p>
     </div>
   </div>
   <div class="callout" id="hallazgo-panorama"></div>
@@ -277,7 +319,7 @@ footer li::before{content:"—";position:absolute;left:0;color:var(--s1)}
     </div>
     <div class="card">
       <h3>La foto 2025–2026: lo que las propias IES ya publicaron</h3>
-      <p class="note">El SNIES consolidado llega hasta 2024 (el cierre 2025 se publica hacia julio–agosto de 2026). Esta tabla adelanta la foto con la <b>cifra más reciente que cada institución reportó en su rendición de cuentas, informe de gestión o boletín estadístico oficial</b>. Los cortes y definiciones varían entre instituciones — compare la tendencia de cada fila, no las filas entre sí (nota 9 de metodología).</p>
+      <p class="note">El SNIES consolidado llega hasta 2024 (el cierre 2025 se publica hacia julio–agosto de 2026). Esta tabla adelanta la foto con la <b>cifra más reciente que cada institución reportó en su rendición de cuentas, informe de gestión o boletín estadístico oficial</b>. Los cortes y definiciones varían entre instituciones — compare la tendencia de cada fila, no las filas entre sí (nota 9 de metodología). <b style="color:var(--ink-2)">Última verificación de fuentes: 13 de julio de 2026.</b></p>
       <div class="seg" id="radar-filtro" role="tablist" aria-label="Filtro del radar">
         <button class="on" data-f="todas">Todas</button>
         <button data-f="Oficial">Oficiales</button>
@@ -642,7 +684,7 @@ footer li::before{content:"—";position:absolute;left:0;color:var(--s1)}
       <p style="margin-top:14px">Notas: (1) La matrícula anual corresponde al semestre con mayor total de cada vigencia — sumar semestres duplicaría estudiantes. (2) Los indicadores OLE se restringen a IES con domicilio en Antioquia; se excluyen SENA y UNAD por ser instituciones de alcance nacional cuyos graduados no son separables por departamento en esa base; la especialización se omite de la tasa de vinculación por cobertura insuficiente. (3) La serie 2015–2017 de la base histórica del MEN se descartó por inconsistencias de reporte semestral. (4) Saber TyT usa la escala 0–200 vigente desde 2017-3; el sector de cada IES se toma del SNIES por errores de registro en la base ICFES. (5) Los grupos de investigación corresponden a los resultados finales de la Convocatoria 957 de 2024 (Resolución 1531 de dic. 2025, listado oficial de Minciencias); como el listado no trae departamento, este se asigna por código GrupLAC contra la base histórica de convocatorias (90 % de cobertura) y, para grupos nuevos, por institución avaladora domiciliada en Antioquia. (6) Los resultados Saber Pro (nivel universitario) no están disponibles como microdato abierto completo en datos.gov.co; se incorporarán desde DataIcfes en la próxima versión. (7) Los niveles MCER de inglés se agregan desde el microdato Saber TyT vía API; los rótulos históricos (A-, -A1, Pre-A1, B+) se homologan a la escala vigente. (8) La división subregional corresponde a la usada por la Gobernación de Antioquia. (9) El radar «La foto 2025–2026» recoge cifras autorreportadas en rendiciones de cuentas, informes de gestión, boletines estadísticos y tableros oficiales de las IES (verificadas documento por documento en julio de 2026); sus cortes y definiciones varían entre instituciones y no son directamente comparables entre sí ni con el SNIES — la tendencia de cada fila sí es consistente porque proviene de la serie de la misma fuente. Las bases consolidadas SNIES 2025 no estaban publicadas al corte (patrón anual: se publican hacia julio–agosto del año siguiente). (10) La cobertura bruta subregional divide la matrícula de pregrado ofertada en la subregión por la población proyectada de 17 a 21 años (DANE, 2024): mide capacidad instalada de oferta, no asistencia de residentes, por lo que las subregiones que atraen estudiantes pueden superar el 100 %. (11) El puntaje Saber TyT por municipio promedia los cinco módulos y solo se reporta con 50 o más evaluados. (12) La sección de acreditación se construyó sobre las fuentes primarias del régimen (Ley 30 de 1992, Decreto 1330 de 2019, Acuerdos CESU 02 de 2020 y 01 de 2025 con su transición 2026-2027) y la verificación resolución por resolución del estado de cada IES en julio de 2026; los estados «en renovación» reflejan la información pública disponible y pueden resolverse en el segundo semestre de 2026.</p>
     </div>
     <div>
-      <h4>Sobre este observatorio</h4>
+      <h4>Sobre MaterIA Gris</h4>
       <p>Construido por <b style="color:var(--ink)">Santiago Jiménez Londoño</b> con datos abiertos oficiales descargados y procesados de forma automatizada desde los portales del Ministerio de Educación Nacional (SNIES y OLE), el ICFES y MinCiencias vía datos.gov.co.</p>
       <p style="margin-top:12px">Los microdatos y el código de procesamiento son reproducibles. Actualización con cada nueva vigencia publicada por el MEN.</p>
       <p style="margin-top:12px;color:var(--ink-2)">© 2026 · Santiago Jiménez Londoño</p>
@@ -920,6 +962,23 @@ stackedCols('ch-modalidad', YEARS, MODS_M.map((mo,i)=>({
   const of24=s24.sector['Oficial'], t24=tot(s24);
   const v24=D.modalidad[D.modalidad.length-1]['Virtual']||0, v18=D.modalidad[0]['Virtual']||0;
   document.getElementById('hallazgo-panorama').innerHTML=`<b>Dos motores del cambio:</b> la matrícula oficial es el <b>${pct(of24,t24)}</b> del sistema (${fmt(of24)} estudiantes) y la virtualidad pasó de ${fmt(v18)} matriculados en 2018 a <b>${fmt(v24)}</b> en 2024 (${pct(v24,t24)} del total). El posgrado, en cambio, sigue siendo pequeño: ${pct(pos(s24),t24)} de la matrícula del departamento.`;
+})();
+
+/* ---- 01b Benchmark interdepartamental (scripts/benchmark_deptos.py, SNIES nacional) ---- */
+(function(){
+  const B={
+    'Antioquia':      [332060,326883,306089,326306,301570,296737,313583],
+    'Bogotá D.C.':    [776656,753318,693059,816315,830517,836112,863337],
+    'Valle del Cauca':[176489,178885,173659,175939,177174,175949,186364],
+    'Santander':      [126233,122671,124581,129658,118936,118302,124145],
+  };
+  const idx=v=>v.map(x=>Math.round(1000*x/v[0])/10);
+  lineChart('ch-bench', YEARS, [
+    {name:'Antioquia',color:S1,values:idx(B['Antioquia'])},
+    {name:'Bogotá D.C.',color:S2,values:idx(B['Bogotá D.C.'])},
+    {name:'Valle del Cauca',color:S3,values:idx(B['Valle del Cauca'])},
+    {name:'Santander',color:S4,values:idx(B['Santander'])},
+  ],{height:300,yDomain:[85,115]});
 })();
 
 /* ---- 02 Instituciones ---- */
@@ -1837,6 +1896,18 @@ lineChart('ch-demanda', D.serie_demanda.map(x=>String(x.anio)), [
   }
 })();
 
+
+/* ---- tema claro/oscuro (los SVG leen la paleta al construirse → reload) ---- */
+(function(){
+  const b=document.getElementById('tema');
+  const light=document.documentElement.classList.contains('light');
+  b.textContent=light?'🌙 Oscuro':'☀️ Claro';
+  b.title=light?'Cambiar a tema oscuro':'Cambiar a tema claro';
+  b.addEventListener('click',()=>{
+    try{localStorage.setItem('obs-theme',light?'dark':'light')}catch(e){}
+    location.reload();
+  });
+})();
 
 /* ---- barra de progreso + volver arriba ---- */
 (function(){

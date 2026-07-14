@@ -546,7 +546,7 @@ social["stem_mujeres_pct"] = stem_pct
 # ---------- Salida ----------
 salida = {
     "meta": {
-        "titulo": "Observatorio de Educación Superior de Antioquia",
+        "titulo": "MaterIA Gris · Educación superior de Antioquia",
         "autor": "Santiago Jiménez Londoño",
         "corte": "2026-07-12",
         "fuentes": [
