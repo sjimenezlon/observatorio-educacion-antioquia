@@ -589,6 +589,16 @@ html.light #arriba{box-shadow:0 4px 18px rgba(0,0,0,.15)}
       <div id="ch-acred" class="chart"></div>
     </div>
     <div class="card half">
+      <h3>Saber Pro y Saber TyT: la serie llega a 2025</h3>
+      <p class="note">Puntaje global promedio, Antioquia vs. país — agregados oficiales ICFES por institución (XLSX directos, sin login; <code style="font-size:11px">scripts/saber_agregados.py</code>). Antioquia supera al país en ambas pruebas los tres años, y la brecha crece.</p>
+      <div class="tscroll" id="tb-saber25"></div>
+    </div>
+    <div class="card half">
+      <h3>Las IES antioqueñas mejor puntuadas (2025)</h3>
+      <p class="note">Promedio global por institución con 100+ evaluados. Saber Pro (universitario) y Saber TyT (técnico-tecnológico).</p>
+      <div class="tscroll" id="tb-saber25-ies"></div>
+    </div>
+    <div class="card half">
       <h3>Bilingüismo: % con inglés B1 o superior (MCER)</h3>
       <p class="note">Evaluados Saber TyT de programas ofertados en Antioquia que alcanzan B1 o más en el módulo de inglés, frente al promedio nacional.</p>
       <div id="ch-ingles-serie" class="chart"></div>
@@ -1628,6 +1638,37 @@ hbars('ch-oleprog', D.ole.top_programas_tyt.slice(0,10).map(p=>({label:p.program
   const top=D.saber.ies[0];
   const acU=D.acreditacion.find(a=>a.nivel==='Universitaria'), acT=D.acreditacion.find(a=>a.nivel==='Tecnológica');
   document.getElementById('hallazgo-calidad').innerHTML=`<b>La calidad certificada se concentra arriba:</b> el ${pct(acU.mat_acreditada,acU.matricula)} de la matrícula universitaria cursa programas acreditados en alta calidad, contra el ${pct(acT.mat_acreditada,acT.matricula)} de la tecnológica. En Saber TyT, Antioquia rinde al nivel del país: en 2022-4 (${fmt(s.n)} evaluados) supera el promedio nacional en comunicación escrita, lectura crítica e inglés; la sede mejor puntuada es <b>${top.ies}</b> (global ${top.global.toLocaleString('es-CO')}). En bilingüismo la brecha es estructural: solo el <b>${D.ingles.serie[D.ingles.serie.length-1].b1mas_ant.toLocaleString('es-CO')} %</b> de los evaluados TyT de Antioquia alcanza inglés B1 o superior — apenas por encima del ${D.ingles.serie[D.ingles.serie.length-1].b1mas_nal.toLocaleString('es-CO')} % nacional.`;
+})();
+
+/* ---- 07e Saber agregados 2023-2025 ---- */
+const SAB25={"serie": [{"examen": "pro", "anio": 2023, "antioquia": 150.0, "nacional": 145.0, "evaluados_ant": 25694}, {"examen": "pro", "anio": 2024, "antioquia": 151.0, "nacional": 146.0, "evaluados_ant": 29923}, {"examen": "pro", "anio": 2025, "antioquia": 154.0, "nacional": 148.0, "evaluados_ant": 30810}, {"examen": "tyt", "anio": 2023, "antioquia": 98.0, "nacional": 93.0, "evaluados_ant": 6163}, {"examen": "tyt", "anio": 2024, "antioquia": 99.0, "nacional": 91.0, "evaluados_ant": 5502}, {"examen": "tyt", "anio": 2025, "antioquia": 102.0, "nacional": 94.0, "evaluados_ant": 5027}], "pro25": [{"ies": "Universidad Eia", "prom": 188.0, "n": 291}, {"ies": "Universidad Eafit-", "prom": 179.0, "n": 2159}, {"ies": "Universidad Ces", "prom": 168.0, "n": 805}, {"ies": "Universidad De Antioquia", "prom": 166.0, "n": 3769}, {"ies": "Universidad Pontificia Bolivariana", "prom": 165.0, "n": 2828}, {"ies": "Universidad De Medellin", "prom": 160.0, "n": 944}, {"ies": "Fundacion Universitaria Bellas Artes", "prom": 157.0, "n": 147}, {"ies": "Corporacion Colegiatura Colombiana", "prom": 155.0, "n": 147}], "tyt25": [{"ies": "ITM", "prom": 107.0, "n": 1212}, {"ies": "Escuela Superior Tecnologica De Artes Debora Arango", "prom": 106.0, "n": 360}, {"ies": "Universidad Ces", "prom": 106.0, "n": 119}, {"ies": "Universidad De Antioquia", "prom": 105.0, "n": 153}, {"ies": "IU Digital De Antioquia", "prom": 103.0, "n": 137}, {"ies": "Politecnico Colombiano", "prom": 103.0, "n": 400}, {"ies": "Tecnologico De Antioquia", "prom": 102.0, "n": 373}, {"ies": "IU Fundacion Educativa Esumer", "prom": 101.0, "n": 170}]};
+(function(){
+  const h1=document.getElementById('tb-saber25'); if(!h1)return;
+  const t=document.createElement('table');t.style.minWidth='420px';
+  t.innerHTML='<thead><tr><th>Prueba · año</th><th class="num">Antioquia</th><th class="num">Nacional</th><th class="num">Brecha</th></tr></thead>';
+  const tb=document.createElement('tbody');
+  SAB25.serie.forEach(r=>{
+    const tr=document.createElement('tr');
+    tr.innerHTML=`<td><b style="color:var(--ink)">${r.examen==='pro'?'Saber Pro':'Saber TyT'} ${r.anio}</b></td>`+
+      `<td class="num" style="color:var(--ink);font-weight:650">${r.antioquia.toLocaleString('es-CO')}</td>`+
+      `<td class="num">${r.nacional.toLocaleString('es-CO')}</td>`+
+      `<td class="num"><span class="trend up">▲</span> +${(r.antioquia-r.nacional).toLocaleString('es-CO')}</td>`;
+    tb.appendChild(tr);
+  });
+  t.appendChild(tb);h1.appendChild(t);
+  csvDownload(h1.parentElement.querySelector('h3'),['Prueba','Año','Antioquia','Nacional'],SAB25.serie.map(r=>[r.examen,r.anio,r.antioquia,r.nacional]),'materia-gris-saber-2023-2025');
+  const h2=document.getElementById('tb-saber25-ies');
+  const t2=document.createElement('table');t2.style.minWidth='460px';
+  t2.innerHTML='<thead><tr><th>Saber Pro 2025</th><th class="num">Prom.</th><th>Saber TyT 2025</th><th class="num">Prom.</th></tr></thead>';
+  const tb2=document.createElement('tbody');
+  for(let i=0;i<8;i++){
+    const a=SAB25.pro25[i]||{}, b=SAB25.tyt25[i]||{};
+    const tr=document.createElement('tr');
+    tr.innerHTML=`<td class="wrapcell">${a.ies?(i+1)+'. '+a.ies:''}</td><td class="num" style="color:var(--ink);font-weight:650">${a.prom??''}</td>`+
+      `<td class="wrapcell">${b.ies?(i+1)+'. '+b.ies:''}</td><td class="num" style="color:var(--ink);font-weight:650">${b.prom??''}</td>`;
+    tb2.appendChild(tr);
+  }
+  t2.appendChild(tb2);h2.appendChild(t2);
 })();
 
 /* ---- 08 Acreditación ---- */
