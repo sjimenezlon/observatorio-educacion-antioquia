@@ -4,6 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MaterIA Gris · El cerebro de datos de la educación superior de Antioquia</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
+<meta property="og:title" content="MaterIA Gris · El cerebro de datos de la educación superior de Antioquia">
+<meta property="og:description" content="Matrícula, oferta y demanda, territorio, calidad, acreditación, rankings e impacto social — datos oficiales SNIES, ICFES, OLE y MinCiencias, verificados y al día.">
+<meta property="og:url" content="https://materia-gris.vercel.app/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
 <meta name="description" content="MaterIA Gris — el cerebro de datos de la educación superior de Antioquia: pregrado y posgrado, pública y privada: oferta, demanda, mercado laboral, calidad, innovación e impacto social. Fuentes oficiales SNIES, ICFES, OLE y MinCiencias. Por Santiago Jiménez Londoño.">
 <style>
 :root{
@@ -137,6 +143,22 @@ nav a.sec.active{color:var(--ink);font-weight:600}
 .tline .mes{position:absolute;left:0;top:3px;font-size:11px;font-weight:700;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
 .tline p{font-size:13.5px;color:var(--ink-2)}
 .tline b{color:var(--ink)}
+#ficha{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.6);display:none;align-items:flex-start;justify-content:center;padding:7vh 16px;overflow-y:auto}
+#ficha.on{display:flex}
+#ficha .fbox{width:min(760px,94vw);background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:22px 24px 18px;box-shadow:0 20px 60px rgba(0,0,0,.55);max-height:86vh;overflow-y:auto}
+#ficha h4{color:var(--ink);font-size:20px;margin:0 0 2px}
+#ficha .fsub{color:var(--muted);font-size:12.5px;margin-bottom:4px}
+#ficha .fk{display:grid;grid-template-columns:repeat(auto-fit,minmax(128px,1fr));gap:10px;margin:14px 0 8px}
+#ficha .fk>div{background:var(--surface-2);border:1px solid var(--border);border-radius:10px;padding:10px 12px}
+#ficha .fk .l{font-size:11.5px;color:var(--muted)}
+#ficha .fk .v{font-size:18px;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums;white-space:nowrap}
+#ficha .fk .s{font-size:11.5px;color:var(--muted)}
+#ficha .fr{display:flex;justify-content:space-between;gap:14px;padding:9px 0;border-top:1px solid var(--grid);font-size:13.5px;align-items:baseline}
+#ficha .fr span:first-child{color:var(--muted);flex:none}
+#ficha .fr b{color:var(--ink);text-align:right;font-weight:600}
+#ficha .fbtn{background:var(--surface-2);border:1px solid var(--border);color:var(--ink);border-radius:8px;padding:5px 11px;cursor:pointer;font-size:12.5px;font-family:inherit}
+#ficha .fbtn:hover{background:var(--baseline)}
+#tb-ies tbody tr{cursor:pointer}
 /* ---------- mapa ---------- */
 .map-flex{display:grid;grid-template-columns:1.6fr 1fr;gap:20px;align-items:start}
 @media(max-width:900px){.map-flex{grid-template-columns:1fr}}
@@ -328,6 +350,7 @@ html.light #arriba{box-shadow:0 4px 18px rgba(0,0,0,.15)}
     <div class="card half">
       <h3>Explorador de instituciones</h3>
       <p class="note">Todas las IES con oferta en el departamento. Clic en las columnas para ordenar. ★ = acreditada en alta calidad.</p>
+      <p class="note" style="margin-bottom:8px">Clic en cualquier institución para abrir su <b>ficha completa</b> (matrícula, radar 2025-2026, acreditación, rankings, investigación) con enlace compartible.</p>
       <div class="tscroll" style="max-height:440px;overflow-y:auto" id="tb-ies"></div>
     </div>
     <div class="card">
@@ -788,6 +811,7 @@ html.light #arriba{box-shadow:0 4px 18px rgba(0,0,0,.15)}
 </footer>
 </div>
 
+<div id="ficha" role="dialog" aria-modal="true" aria-label="Ficha de la institución"><div class="fbox" id="ficha-box"></div></div>
 <button id="arriba" type="button" aria-label="Volver arriba" title="Volver arriba">↑</button>
 <div id="tip" role="status" aria-hidden="true"></div>
 <script src="datos.js"></script>
@@ -2199,6 +2223,63 @@ lineChart('ch-demanda', D.serie_demanda.map(x=>String(x.anio)), [
   });
 })();
 
+/* ---- Ficha por institución (deep link #ies=codigo) ---- */
+(function(){
+  const wrap=document.getElementById('ficha'), box=document.getElementById('ficha-box');
+  const NF=t=>String(t).normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase().replace(/[^a-z0-9 ]/g,' ').replace(/\s+/g,' ').trim();
+  const ALIAS={'unal sede medellin':'universidad nacional','u nacional multicampus':'universidad nacional','upb campus medellin':'universidad pontificia bolivariana','upb':'universidad pontificia bolivariana','upb multicampus':'universidad pontificia bolivariana','usb medellin':'san buenaventura','u catolica de oriente':'universidad catolica de oriente','u catolica luis amigo':'catolica luis amigo','iu de envigado':'de envigado','politecnico colombiano jic':'jaime isaza cadavid','iu pascual bravo':'pascual bravo','iu digital de antioquia':'iu digital','sena regional antioquia':'servicio nacional','uniremington':'remington','unilasallista':'lasallista','universidad eafit':'eafit','itm':'metropolitano','universidad eia':'eia','universidad ces':'ces','universidad de medellin':'universidad de medellin','tecnologico de antioquia':'tecnologico de antioquia','colegio mayor de antioquia':'colegio mayor','universidad de antioquia':'universidad de antioquia','u de antioquia':'universidad de antioquia'};
+  const canon=n=>{const x=NF(n);return ALIAS[x]||x;};
+  function enc(list,key,nombre){
+    const t=NF(nombre);
+    return (list||[]).find(x=>{const c=canon(x[key]);return t.includes(c)||c.includes(t);});
+  }
+  function cerrar(){wrap.classList.remove('on');history.replaceState(null,'',location.pathname+location.search);}
+  wrap.addEventListener('click',ev=>{if(ev.target===wrap)cerrar();});
+  addEventListener('keydown',ev=>{if(ev.key==='Escape'&&wrap.classList.contains('on'))cerrar();});
+  window.abrirFicha=function(codigo){
+    const m=D.ies.find(i=>String(i.codigo)===String(codigo)); if(!m)return;
+    const delta=m.matricula23?Math.round(1000*(m.matricula24-m.matricula23)/m.matricula23)/10:null;
+    const rad=enc(RADAR26,'ies',m.nombre), acr=enc(ACRED_IES,'ies',m.nombre), rk=enc(RANKINGS,'u',m.nombre);
+    const sab=enc(D.saber.ies,'ies',m.nombre), gru=enc(D.grupos.por_ies,'ies',m.nombre);
+    const TRN={up:['▲','trend up'],flat:['▬','trend flat'],down:['▼','trend down']};
+    let h='<div style="display:flex;justify-content:space-between;gap:12px;align-items:flex-start">'
+      +`<div><h4>${m.nombre}${m.acreditada?' <span title="Acreditación institucional de alta calidad">★</span>':''}</h4>`
+      +`<div class="fsub">${m.caracter} · <span class="tag ${m.sector==='Oficial'?'of':'pr'}">${m.sector}</span></div></div>`
+      +'<div style="display:flex;gap:8px;flex:none"><button class="fbtn" id="f-copiar">Copiar enlace</button><button class="fbtn" id="f-cerrar">✕</button></div></div>';
+    h+='<div class="fk">'
+      +`<div><div class="l">Matrícula 2024</div><div class="v">${fmt(m.matricula24)}</div><div class="s">${delta==null?'':(delta>=0?'▲ +':'▼ ')+delta.toLocaleString('es-CO')+' % vs 2023'}</div></div>`
+      +`<div><div class="l">Pregrado · Posgrado</div><div class="v">${fmtK(m.pregrado24)} · ${fmtK(m.posgrado24)}</div></div>`
+      +`<div><div class="l">Técnica y tecnológica</div><div class="v">${fmt(m.tyt24)}</div></div>`
+      +`<div><div class="l">Graduados 2024</div><div class="v">${fmt(m.graduados24)}</div></div>`
+      +`<div><div class="l">Programas</div><div class="v">${fmt(m.programas)}</div></div>`
+      +`<div><div class="l">Municipios</div><div class="v">${fmt(m.municipios)}</div></div>`
+      +'</div>';
+    if(rad){const [sy,cl]=TRN[rad.t];h+=`<div class="fr"><span>Lo último (${rad.corte})</span><b><span class="${cl}">${sy}</span> ${fmt(rad.cifra)} — ${rad.ttxt} · <a href="${rad.url}" target="_blank" rel="noopener">${rad.fu} ↗</a></b></div>`;}
+    if(acr)h+=`<div class="fr"><span>Acreditación institucional</span><b>${acr.res} · ${acr.anios} años · <span class="tag ${acr.estado==='vg'?'vg':'rn'}">${acr.estado==='vg'?'Vigente':'En renovación'}</span></b></div>`;
+    else if(!m.acreditada)h+='<div class="fr"><span>Acreditación institucional</span><b>Sin acreditación institucional (puede tener programas acreditados)</b></div>';
+    if(rk){const partes=[];if(rk.qsl!=='—')partes.push('QS LatAm 2026: '+rk.qsl);if(rk.qsw!=='—')partes.push('QS Mundial 2027: '+rk.qsw);if(rk.thel!=='—')partes.push('THE LatAm: '+rk.thel);if(rk.usap)partes.push('U-Sapiens: '+rk.usap+' ('+rk.q+')');
+      h+=`<div class="fr"><span>Rankings</span><b>${partes.join(' · ')}</b></div>`;}
+    if(sab&&sab.global)h+=`<div class="fr"><span>Saber TyT (global 2022)</span><b>${sab.global.toLocaleString('es-CO')}</b></div>`;
+    if(gru)h+=`<div class="fr"><span>Grupos de investigación (Conv. 957)</span><b>${fmt(gru.grupos)} grupos avalados</b></div>`;
+    h+='<p class="note" style="margin:12px 0 0">Fuentes: SNIES 2024 (cifras base), rendiciones de cuentas e informes 2025-2026 (radar), CNA/MEN (acreditación), QS/THE/Scimago/U-Sapiens (rankings), ICFES (Saber TyT), MinCiencias (grupos). Enlace directo: <code style="font-size:11px">#ies='+m.codigo+'</code></p>';
+    box.innerHTML=h;
+    box.querySelector('#f-cerrar').addEventListener('click',cerrar);
+    box.querySelector('#f-copiar').addEventListener('click',ev=>{
+      navigator.clipboard&&navigator.clipboard.writeText(location.origin+location.pathname+'#ies='+m.codigo);
+      ev.target.textContent='¡Copiado!';setTimeout(()=>ev.target.textContent='Copiar enlace',1400);
+    });
+    history.replaceState(null,'','#ies='+m.codigo);
+    wrap.classList.add('on');box.scrollTop=0;
+  };
+  const tbi=document.getElementById('tb-ies');
+  if(tbi)tbi.addEventListener('click',ev=>{
+    const tr=ev.target.closest('tbody tr'); if(!tr)return;
+    const nombre=(tr.querySelector('td')||{}).textContent.replace(' ★','').trim();
+    const m=D.ies.find(i=>i.nombre===nombre); if(m)abrirFicha(m.codigo);
+  });
+  const mh=location.hash.match(/ies=(\d+)/); if(mh)setTimeout(()=>abrirFicha(mh[1]),150);
+})();
+
 /* ---- barra de progreso + volver arriba ---- */
 (function(){
   const bar=document.getElementById('progreso'), up=document.getElementById('arriba');
@@ -2338,11 +2419,7 @@ function csvDownload(container, headers, rows, nombre){
   document.querySelectorAll('section[id]').forEach(s=>{
     items.push({t:s.querySelector('h2').textContent,k:'Sección',go:()=>goTo(s.id)});
   });
-  D.ies.slice(0,40).forEach(i=>items.push({t:i.nombre,k:`IES · ${fmt(i.matricula24)} est.`,go:()=>{
-    goTo('instituciones');
-    const cq=document.getElementById('cmp-q');
-    if(cq){cq.value=i.nombre;cq.dispatchEvent(new Event('change'));}
-  }}));
+  D.ies.slice(0,40).forEach(i=>items.push({t:i.nombre,k:`IES · ${fmt(i.matricula24)} est. · ficha`,go:()=>abrirFicha(i.codigo)}));
   D.municipios.forEach(m=>items.push({t:m.municipio,k:`Municipio · ${fmt(m.matricula24)} est.`,go:()=>{
     goTo('territorio');
     const mq=document.getElementById('map-buscar');

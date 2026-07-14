@@ -1,6 +1,8 @@
-# Observatorio de Educación Superior de Antioquia
+# MaterIA Gris · El cerebro de datos de la educación superior de Antioquia
 
-Observatorio de la educación superior del departamento de Antioquia — **pregrado y posgrado, pública y privada** — con lente de detalle sobre la formación técnica y tecnológica (TyT).
+**https://materia-gris.vercel.app** (antes «Observatorio de Educación Superior de Antioquia»; la URL vieja sigue activa como espejo).
+
+Tablero de la educación superior del departamento de Antioquia — **pregrado y posgrado, pública y privada** — con lente de detalle sobre la formación técnica y tecnológica (TyT).
 
 **En línea:** https://observatorio-educacion-antioquia.vercel.app
 **Autor:** Santiago Jiménez Londoño · Última versión: V4 (julio de 2026)
@@ -102,3 +104,10 @@ Cuando el MEN publique la vigencia siguiente (histórico: hacia julio de cada a�
 ---
 
 © 2026 · Santiago Jiménez Londoño
+
+
+## Scripts de análisis adicionales
+
+- `scripts/benchmark_deptos.py` — matrícula por departamento (semestre pico) desde las bases SNIES nacionales → benchmark interdepartamental indexado 2018=100.
+- `scripts/proyeccion_demografica.py` — población 17-21 por subregión 2018-2042 (proyecciones municipales DANE CNPV-2018) → «el impuesto demográfico».
+- `scripts/oferta_demanda.py` — demanda revelada por área (inscritos 2018 vs 2024), aspirantes por silla y salario típico de enganche (bandas OLE 2023).
