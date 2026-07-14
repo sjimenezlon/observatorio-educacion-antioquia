@@ -226,6 +226,7 @@ html.light #arriba{box-shadow:0 4px 18px rgba(0,0,0,.15)}
   <a class="sec" href="#instituciones">Instituciones</a>
   <a class="sec" href="#territorio">Territorio</a>
   <a class="sec" href="#oferta">Oferta</a>
+  <a class="sec" href="#economia">Oferta y demanda</a>
   <a class="sec" href="#laboral">Mercado laboral</a>
   <a class="sec" href="#calidad">Calidad</a>
   <a class="sec" href="#acreditacion">Acreditación</a>
@@ -411,9 +412,61 @@ html.light #arriba{box-shadow:0 4px 18px rgba(0,0,0,.15)}
   </div>
 </section>
 
+<!-- ================= OFERTA Y DEMANDA ================= -->
+<section id="economia">
+  <div class="sec-head"><span class="sec-num">05</span><h2>Oferta y demanda: la economía del sistema</h2></div>
+  <p class="sec-desc">La educación superior también es un mercado: las instituciones ofrecen cupos y programas, los hogares deciden si estudiar, qué y dónde — y los salarios de los graduados son la señal de precio que conecta ambos lados. Esta sección lo explica con los datos de Antioquia: qué áreas gana y pierde la demanda, dónde hay fila por un cupo y qué paga el mercado.</p>
+  <div class="cards">
+    <div class="card">
+      <h3>Los dos lados del mercado, en una lectura</h3>
+      <div class="duo">
+        <div>
+          <h4>La oferta — quién ofrece qué</h4>
+          <ul>
+            <li><b>73 IES</b> con 2.107 programas activos en 51 municipios; capacidad usada: 313.583 matriculados (2024).</li>
+            <li>La oferta pública se expandió con la gratuidad (97&nbsp;% de la matrícula pública sin costo) y la virtual crece: 43.707 matriculados virtuales (13,9&nbsp;% del total).</li>
+            <li>La restricción dura está en programas de cupo limitado: en Ciencias de la salud hay <b>7,8 aspirantes por silla</b>.</li>
+          </ul>
+        </div>
+        <div>
+          <h4>La demanda — quién quiere entrar</h4>
+          <ul>
+            <li><b>343.927 inscripciones</b> en 2024 (+18&nbsp;% desde 2018); solo 120.979 llegan a primer curso.</li>
+            <li>El financiamiento mueve la demanda: la gratuidad la empuja hacia lo público; el desplome del ICETEX (−83&nbsp;% en créditos nuevos en 2025) se la quita a lo privado.</li>
+            <li>El límite de fondo es demográfico: la población de 17-21 años cae <b>−13,2&nbsp;% a 2035</b> (sección Territorio).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <h3>Las señales de precio: qué paga el mercado y cómo responde la demanda</h3>
+      <p class="note">Cada burbuja es un área de conocimiento. Horizontal: salario típico de enganche de los pregrados de IES antioqueñas (punto medio ponderado de las bandas de ingreso OLE 2023, en salarios mínimos). Vertical: cuánto creció o cayó la demanda (inscripciones 2018 → 2024). Tamaño: inscripciones 2024. Pase el cursor por cada burbuja.</p>
+      <div id="ch-precio" class="chart"></div>
+      <p class="note" style="margin-top:12px;margin-bottom:0"><b style="color:var(--ink)">Lectura:</b> la demanda sí responde al precio — Ingeniería (3,1 SMMLV) creció +31&nbsp;% y Matemáticas +42&nbsp;% — con una excepción reveladora: <b>Salud paga lo máximo (3,6 SMMLV) y sus inscripciones caen −7,7&nbsp;%</b>, no por falta de interesados sino porque el cupo es la restricción: es el área con más aspirantes por silla. Y Educación crece +22&nbsp;% pese a pagar lo mínimo (2,1 SMMLV): la vocación — y la gratuidad — también son fuerzas de demanda.</p>
+    </div>
+    <div class="card half">
+      <h3>La fila: aspirantes por silla (2024)</h3>
+      <p class="note">Inscripciones por cada estudiante que efectivamente entró a primer curso. Más de 2 es lo normal (la gente se inscribe en varios lados); más de 4 señala cupo restringido.</p>
+      <div id="ch-fila" class="chart"></div>
+    </div>
+    <div class="card half">
+      <h3>Explorador: elija un área y véala completa</h3>
+      <p class="note">Todos los indicadores del área en un solo lugar.</p>
+      <div class="seg" id="exp-areas" role="tablist" aria-label="Elegir área"></div>
+      <div class="kpis" id="exp-kpis" style="grid-template-columns:repeat(auto-fit,minmax(140px,1fr))"></div>
+    </div>
+    <div class="card" id="card-economia-contexto">
+      <h3>El contexto: educación y desarrollo económico</h3>
+      <p class="note">Por qué esto importa más allá del aula — cifras verificadas en julio de 2026.</p>
+      <ul id="eco-contexto" style="list-style:none;font-size:13.5px;display:grid;gap:9px"></ul>
+    </div>
+  </div>
+  <div class="callout" id="hallazgo-economia"></div>
+</section>
+
 <!-- ================= MERCADO LABORAL ================= -->
 <section id="laboral">
-  <div class="sec-head"><span class="sec-num">05</span><h2>Mercado laboral: del aula a la cotización</h2></div>
+  <div class="sec-head"><span class="sec-num">06</span><h2>Mercado laboral: del aula a la cotización</h2></div>
   <p class="sec-desc">La cadena completa: cuántos aspiran, cuántos entran, cuántos se gradúan y cómo les va en el mercado laboral formal, según el Observatorio Laboral para la Educación (OLE). Contexto DANE: la tasa de desempleo de Medellín A.M. fue <b style="color:var(--ink)">8,6 %</b> en el trimestre marzo–mayo de 2026 (GEIH).</p>
   <div class="cards">
     <div class="card half">
@@ -457,7 +510,7 @@ html.light #arriba{box-shadow:0 4px 18px rgba(0,0,0,.15)}
 
 <!-- ================= CALIDAD ================= -->
 <section id="calidad">
-  <div class="sec-head"><span class="sec-num">06</span><h2>Calidad: acreditación y pruebas Saber</h2></div>
+  <div class="sec-head"><span class="sec-num">07</span><h2>Calidad: acreditación y pruebas Saber</h2></div>
   <p class="sec-desc">Dos medidas complementarias: la acreditación de alta calidad (CNA) de los programas, y los resultados de la prueba Saber TyT para el nivel técnico y tecnológico (escala 0–200). Antioquia en azul; promedio nacional en gris.</p>
   <div class="cards">
     <div class="card">
@@ -506,7 +559,7 @@ html.light #arriba{box-shadow:0 4px 18px rgba(0,0,0,.15)}
 
 <!-- ================= ACREDITACIÓN ================= -->
 <section id="acreditacion">
-  <div class="sec-head"><span class="sec-num">07</span><h2>Acreditación de alta calidad: el sello y el camino</h2></div>
+  <div class="sec-head"><span class="sec-num">08</span><h2>Acreditación de alta calidad: el sello y el camino</h2></div>
   <p class="sec-desc">La acreditación es el reconocimiento público de excelencia que el Ministerio de Educación otorga —con concepto del Consejo Nacional de Acreditación (CNA)— a las instituciones y programas que demuestran los más altos niveles de calidad (Ley 30 de 1992, art. 53). Es <b>voluntaria y temporal</b>, y desde 2025 se rige por un modelo nuevo. Esta guía explica qué es, qué le significa a un estudiante, el paso a paso del proceso y cómo está Antioquia. Cifras verificadas al 13 de julio de 2026.</p>
   <div class="cards">
     <div class="card">
@@ -625,7 +678,7 @@ html.light #arriba{box-shadow:0 4px 18px rgba(0,0,0,.15)}
 
 <!-- ================= INNOVACIÓN ================= -->
 <section id="innovacion">
-  <div class="sec-head"><span class="sec-num">08</span><h2>Innovación: capacidad investigativa del ecosistema</h2></div>
+  <div class="sec-head"><span class="sec-num">09</span><h2>Innovación: capacidad investigativa del ecosistema</h2></div>
   <p class="sec-desc">Grupos de investigación reconocidos por MinCiencias en Antioquia según la Convocatoria 957 de 2024 (resultados finales de diciembre de 2025) y qué instituciones del departamento los avalan.</p>
   <div class="cards">
     <div class="card third">
@@ -649,7 +702,7 @@ html.light #arriba{box-shadow:0 4px 18px rgba(0,0,0,.15)}
 
 <!-- ================= IMPACTO SOCIAL ================= -->
 <section id="social">
-  <div class="sec-head"><span class="sec-num">09</span><h2>Impacto social: quiénes estudian (lente TyT)</h2></div>
+  <div class="sec-head"><span class="sec-num">10</span><h2>Impacto social: quiénes estudian (lente TyT)</h2></div>
   <p class="sec-desc">Perfil socioeconómico de los 32.175 evaluados en Saber TyT 2022 de programas ofertados en Antioquia. El nivel técnico y tecnológico es la puerta de entrada a la educación superior de los hogares de menores ingresos — por eso este lente importa.</p>
   <div class="kpis" id="kpis-social"></div>
   <div class="cards">
@@ -1246,7 +1299,90 @@ hbars('ch-nbc', D.nbc.slice(0,12).map(n=>({label:n.nbc,value:n.matricula24,n})),
   render();
 })();
 
-/* ---- 05 Mercado laboral ---- */
+/* ---- 05 Oferta y demanda (scripts/oferta_demanda.py, SNIES+OLE locales) ---- */
+const OD=[
+ {a:'Ingeniería, arquitectura y afines',sal:3.10,d:30.9,insc:94887,insc18:72490,fila:2.8,lx:10,ly:4},
+ {a:'Economía y administración',sal:2.46,d:-1.4,insc:83918,insc18:85093,fila:2.2,lx:12,ly:4},
+ {a:'Ciencias sociales y humanas',sal:2.35,d:14.7,insc:53522,insc18:46652,fila:2.6,lx:12,ly:-12},
+ {a:'Ciencias de la salud',sal:3.61,d:-7.7,insc:45363,insc18:49138,fila:7.8,lx:-10,ly:-16,anchor:'end'},
+ {a:'Ciencias de la educación',sal:2.08,d:22.4,insc:14873,insc18:12151,fila:2.9,lx:9,ly:14},
+ {a:'Bellas artes',sal:2.20,d:44.0,insc:14534,insc18:10096,fila:2.5,lx:9,ly:-8},
+ {a:'Agronomía y veterinaria',sal:2.06,d:34.0,insc:10625,insc18:7932,fila:4.4,lx:9,ly:4},
+ {a:'Matemáticas y cs. naturales',sal:2.85,d:42.3,insc:10346,insc18:7269,fila:3.5,lx:9,ly:-6},
+];
+(function(){
+  const box=document.getElementById('ch-precio'); if(!box)return;
+  const W=Math.max(box.clientWidth||760,320), H=380, m={t:18,r:150,b:42,l:56};
+  const iw=W-m.l-m.r, ih=H-m.t-m.b;
+  const x0=1.8,x1=4.0,y0=-15,y1=50;
+  const X=v=>m.l+(v-x0)/(x1-x0)*iw, Y=v=>m.t+ih-(v-y0)/(y1-y0)*ih;
+  const R=v=>8+Math.sqrt(v/95000)*20;
+  const svg=el('svg',{viewBox:`0 0 ${W} ${H}`,role:'img','aria-label':'Salario de enganche vs crecimiento de la demanda por área'},box);
+  [2,2.5,3,3.5,4].forEach(v=>{el('line',{x1:X(v),x2:X(v),y1:m.t,y2:m.t+ih,stroke:GRID,'stroke-width':1},svg);
+    txt(svg,X(v),H-22,v.toLocaleString('es-CO'),{anchor:'middle',tabular:true});});
+  [-10,0,10,20,30,40,50].forEach(v=>{el('line',{x1:m.l,x2:W-m.r,y1:Y(v),y2:Y(v),stroke:v===0?BASE:GRID,'stroke-width':v===0?1.5:1},svg);
+    txt(svg,m.l-8,Y(v)+4,(v>0?'+':'')+v+' %',{anchor:'end',tabular:true});});
+  txt(svg,m.l+iw/2,H-4,'Salario típico de enganche (SMMLV, pregrado, OLE 2023)',{anchor:'middle',size:11});
+  const yl=txt(svg,0,0,'Δ inscripciones 2018→2024',{anchor:'middle',size:11});
+  yl.setAttribute('transform',`translate(13,${m.t+ih/2}) rotate(-90)`);
+  OD.forEach(o=>{
+    const c=el('circle',{cx:X(o.sal),cy:Y(o.d),r:R(o.insc),fill:S1,'fill-opacity':.55,stroke:SURF,'stroke-width':2},svg);
+    txt(svg,X(o.sal)+(o.lx??10),Y(o.d)+(o.ly??4),o.a,{fill:INK2,size:11.5,weight:600,anchor:o.anchor||'start'});
+    c.style.cursor='pointer';
+    c.addEventListener('pointerenter',ev=>{c.setAttribute('fill-opacity','.85');
+      showTip(ev,o.a,[
+        {color:S1,value:o.sal.toLocaleString('es-CO')+' SMMLV',name:'salario típico de enganche'},
+        {value:(o.d>0?'+':'')+o.d.toLocaleString('es-CO')+' %',name:'Δ inscripciones 2018→2024'},
+        {value:fmt(o.insc),name:'inscripciones 2024'},
+        {value:o.fila.toLocaleString('es-CO'),name:'aspirantes por silla'},
+      ]);});
+    c.addEventListener('pointermove',moveTip);
+    c.addEventListener('pointerleave',()=>{c.setAttribute('fill-opacity','.55');hideTip();});
+  });
+  tableTwin(box,['Área','Salario típico (SMMLV)','Δ inscripciones 18→24 (%)','Inscripciones 2024','Aspirantes por silla'],
+    OD.map(o=>[o.a,o.sal,o.d,o.insc,o.fila]));
+})();
+hbars('ch-fila',[...OD].sort((a,b)=>b.fila-a.fila).map(o=>({label:o.a,value:o.fila,o})),{
+  color:S1,valueFmt:v=>v.toLocaleString('es-CO',{minimumFractionDigits:1}),
+  tipRows:r=>[
+    {color:S1,value:r.value.toLocaleString('es-CO'),name:'aspirantes por silla'},
+    {value:fmt(r.o.insc),name:'inscripciones 2024'},
+    {value:fmt(r.o.insc-Math.round(r.o.insc/r.o.fila)),name:'no consiguieron o no tomaron cupo'},
+  ]});
+(function(){
+  const seg=document.getElementById('exp-areas'), kp=document.getElementById('exp-kpis'); if(!seg)return;
+  const normE=t=>String(t).normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase();
+  function match(list,key,nombre){
+    const n=normE(nombre).slice(0,14);
+    return list.find(x=>normE(x[key]).startsWith(n));
+  }
+  function render(o){
+    const area=match(D.areas,'area',o.a), ole=match(D.ole.areas,'area',o.a);
+    const mat=area?area.mat['2024']:null, grad=area?area.grad['2024']:null;
+    kp.innerHTML=[
+      {l:'Inscripciones 2024',v:fmt(o.insc),s:`<span class="${o.d>=0?'up':'down'}">${o.d>=0?'▲ +':'▼ '}${o.d.toLocaleString('es-CO')} %</span> desde 2018`},
+      {l:'Aspirantes por silla',v:o.fila.toLocaleString('es-CO'),s:o.fila>4?'cupo restringido':'competencia normal'},
+      {l:'Salario de enganche',v:o.sal.toLocaleString('es-CO')+' <span style="font-size:14px">SMMLV</span>',s:'pregrado, OLE 2023'},
+      {l:'Matrícula 2024',v:mat?fmt(mat):'—',s:'estudiantes en el área'},
+      {l:'Graduados 2024',v:grad?fmt(grad):'—',s:'nueva oferta laboral'},
+      {l:'Vinculación laboral',v:ole?ole.tasa.toLocaleString('es-CO')+' %':'—',s:'graduados 2022 cotizando en 2023'},
+    ].map(k=>`<div class="kpi"><div class="lbl">${k.l}</div><div class="val small">${k.v}</div><div class="sub">${k.s}</div></div>`).join('');
+  }
+  OD.forEach((o,i)=>{
+    const b=document.createElement('button');b.type='button';b.textContent=o.a.split(',')[0].split(' y ')[0];
+    if(i===0)b.classList.add('on');
+    b.addEventListener('click',()=>{seg.querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b));render(o);});
+    seg.appendChild(b);
+  });
+  render(OD[0]);
+  document.getElementById('eco-contexto').innerHTML=[
+    '<li style="padding-left:16px;position:relative"><b style="position:absolute;left:0;color:var(--s1)">→</b><b style="color:var(--ink)">El crédito se desplomó y la gratuidad lo reemplazó:</b> los créditos nuevos del ICETEX cayeron de 47.137 (2024) a 9.342 (2025), −83 %, el mínimo en una década (<a href="https://www.portafolio.co/economia/en-cifras-asi-fue-el-desplome-del-credito-del-icetex-en-un-ano-mientras-84-empresas-invierten-millones-en-becas-497865" target="_blank" rel="noopener">Portafolio, jul. 2026</a>); mientras, la gratuidad cubrió 930.000 estudiantes en 2025 — el 97 % de la matrícula pública de pregrado (<a href="https://www.mineducacion.gov.co/portal/salaprensa/Comunicados/427387:347-mil-nuevos-estudiantes-acceden-a-educacion-superior-sin-endeudarse-en-Colombia" target="_blank" rel="noopener">MEN, feb. 2026</a>).</li>',
+    '<li style="padding-left:16px;position:relative"><b style="position:absolute;left:0;color:var(--s1)">→</b><b style="color:var(--ink)">La demanda de largo plazo se encoge:</b> los nacimientos en Colombia cayeron a 433.678 en 2025 (−4,5 %, cifra preliminar DANE) tras caídas de −7 % a −12 % en 2022-2024 (<a href="https://www.portafolio.co/economia/la-natalidad-cayo-4-5-en-2025-y-mantuvo-su-tendencia-a-la-baja-pero-con-desaceleracion-dane-490470" target="_blank" rel="noopener">Portafolio, mar. 2026</a>); en Antioquia, la población de 17-21 años cae −13,2 % a 2035 (cálculo propio, sección Territorio).</li>',
+  ].join('');
+  document.getElementById('hallazgo-economia').innerHTML=`<b>El mercado habla, pero no manda solo:</b> donde el salario es alto la demanda crece (Ingeniería +31&nbsp;%, Matemáticas +42&nbsp;%), salvo cuando el cupo la contiene — Salud paga lo máximo y aun así sus inscripciones caen, con <b>7,8 aspirantes por silla</b>. Y donde el salario es bajo la demanda no siempre huye: Educación crece +22&nbsp;% pagando 2,1 SMMLV. Entre el precio, el cupo, la gratuidad y la vocación, el sistema asigna 343.927 aspiraciones a 120.979 sillas cada año.`;
+})();
+
+/* ---- 06 Mercado laboral ---- */
 (function(){
   const E=D.embudo;
   const rows=[
@@ -1330,7 +1466,7 @@ hbars('ch-oleprog', D.ole.top_programas_tyt.slice(0,10).map(p=>({label:p.program
   document.getElementById('hallazgo-laboral').innerHTML=`<b>La escalera salarial existe, pero arranca abajo:</b> los tecnólogos se vinculan al empleo formal a tasas casi idénticas a los universitarios (${V['Tecnológica'].tasa.toLocaleString('es-CO')} % vs. ${V['Universitaria'].tasa.toLocaleString('es-CO')} %), pero el <b>${pct(bajoT,totT)}</b> de los tecnólogos recientes gana menos de 1,5 SMMLV, mientras el ${pct(altoU,totU)} de los universitarios ya supera los 2,5. La maestría es el nivel con mayor vinculación (${V['Maestría'].tasa.toLocaleString('es-CO')} %). ${D.ole.nota}`;
 })();
 
-/* ---- 06 Calidad ---- */
+/* ---- 07 Calidad ---- */
 (function(){
   const rows=D.acreditacion.filter(a=>a.matricula>0).map(a=>({
     label:a.nivel,value:Math.round(1000*a.mat_acreditada/a.matricula)/10,a}));
@@ -1389,7 +1525,7 @@ hbars('ch-oleprog', D.ole.top_programas_tyt.slice(0,10).map(p=>({label:p.program
   document.getElementById('hallazgo-calidad').innerHTML=`<b>La calidad certificada se concentra arriba:</b> el ${pct(acU.mat_acreditada,acU.matricula)} de la matrícula universitaria cursa programas acreditados en alta calidad, contra el ${pct(acT.mat_acreditada,acT.matricula)} de la tecnológica. En Saber TyT, Antioquia rinde al nivel del país: en 2022-4 (${fmt(s.n)} evaluados) supera el promedio nacional en comunicación escrita, lectura crítica e inglés; la sede mejor puntuada es <b>${top.ies}</b> (global ${top.global.toLocaleString('es-CO')}). En bilingüismo la brecha es estructural: solo el <b>${D.ingles.serie[D.ingles.serie.length-1].b1mas_ant.toLocaleString('es-CO')} %</b> de los evaluados TyT de Antioquia alcanza inglés B1 o superior — apenas por encima del ${D.ingles.serie[D.ingles.serie.length-1].b1mas_nal.toLocaleString('es-CO')} % nacional.`;
 })();
 
-/* ---- 07 Acreditación ---- */
+/* ---- 08 Acreditación ---- */
 const ACRED_IES=[
  {ies:'Universidad de Antioquia',res:'Res. 012029 · jul. 2023',anios:'10',estado:'vg',txt:'Vigente hasta 2033'},
  {ies:'U. Nacional (multicampus, sede Medellín)',res:'Res. 015859 · ago. 2021',anios:'10',estado:'vg',txt:'Vigente hasta 2031'},
@@ -1433,7 +1569,7 @@ const ACRED_IES=[
   document.getElementById('hallazgo-acreditacion').innerHTML=`<b>Antioquia es potencia acreditadora:</b> 16 IES domiciliadas en el departamento tienen el sello institucional —cerca del 39&nbsp;% de sus IES, frente a ~33&nbsp;% nacional— y, de las 9 instituciones del país con la vigencia máxima de 10 años, <b>3 están aquí</b>: UdeA, UNAL y EAFIT, que en junio de 2026 se convirtió en la primera privada de Antioquia en lograrla. Lo que hay que vigilar este semestre: <b>cinco renovaciones en trámite</b> (Colegio Mayor, Politécnico JIC, CEIPA, UNAULA e IU de Envigado), todas colas del modelo anterior de 4 años.`;
 })();
 
-/* ---- 08 Innovación ---- */
+/* ---- 09 Innovación ---- */
 (function(){
   const CL=['A1','A','B','C','Reconocido'];
   const cl=D.grupos.clasificacion;
@@ -1457,7 +1593,7 @@ const ACRED_IES=[
   document.getElementById('hallazgo-innovacion').innerHTML=`<b>Ecosistema fuerte, con lugar para las TyT:</b> Antioquia tiene <b>${fmt(D.grupos.total)}</b> grupos de investigación reconocidos en la medición más reciente (Conv. 957 de 2024, resultados dic. 2025) —el ${pct(a1a,D.grupos.total)} en las categorías más altas (A1 y A)—. La Universidad de Antioquia avala uno de cada tres. Entre las instituciones con oferta técnica y tecnológica, el ITM (${itm?itm.grupos:'—'} grupos) y el Politécnico JIC muestran que investigar y formar tecnólogos no son mundos separados.`;
 })();
 
-/* ---- 09 Impacto social ---- */
+/* ---- 10 Impacto social ---- */
 (function(){
   const so=D.saber.social;
   const sum=o=>Object.values(o).reduce((a,b)=>a+b,0);
@@ -1802,7 +1938,7 @@ const ACRED_IES=[
     A.map(a=>[a.subregion,a.matricula24,a.tyt24,a.posgrado24,a.graduados24,a.ies,a.programas,a.municipios_oferta]));
 })();
 
-/* ---- 05b Empleabilidad por área ---- */
+/* ---- 06b Empleabilidad por área ---- */
 (function(){
   const A=D.ole.areas||[];
   if(!A.length)return;
@@ -1819,7 +1955,7 @@ const ACRED_IES=[
     A.map(a=>[a.area,a.vinculados,a.graduados,a.tasa.toLocaleString('es-CO'),a.pct_25mas.toLocaleString('es-CO')]));
 })();
 
-/* ---- 05c Demanda ---- */
+/* ---- 06c Demanda ---- */
 lineChart('ch-demanda', D.serie_demanda.map(x=>String(x.anio)), [
   {name:'Inscripciones',color:S1,values:D.serie_demanda.map(x=>x.inscritos)},
   {name:'Primer curso',color:S2,values:D.serie_demanda.map(x=>x.primer_curso)},
@@ -1832,7 +1968,7 @@ lineChart('ch-demanda', D.serie_demanda.map(x=>String(x.anio)), [
   box.appendChild(note);
 })();
 
-/* ---- 06c Saber por municipio ---- */
+/* ---- 07c Saber por municipio ---- */
 (function(){
   const SM=D.saber_municipio||[];
   if(!SM.length)return;
@@ -1845,7 +1981,7 @@ lineChart('ch-demanda', D.serie_demanda.map(x=>String(x.anio)), [
     SM.map(x=>[x.municipio,x.global,x.n]));
 })();
 
-/* ---- 06d Cobertura subregional ---- */
+/* ---- 07d Cobertura subregional ---- */
 (function(){
   const C=D.subregiones.cobertura;
   const card=document.getElementById('ch-cobertura')?.closest('.card');
@@ -1867,7 +2003,7 @@ lineChart('ch-demanda', D.serie_demanda.map(x=>String(x.anio)), [
     C.map(c=>[c.subregion,c.pregrado,c.pob_17_21,c.cobertura.toLocaleString('es-CO')]));
 })();
 
-/* ---- 09b Mujeres por nivel ---- */
+/* ---- 10b Mujeres por nivel ---- */
 (function(){
   const M=D.mujeres_nivel||[];
   if(!M.length)return;
