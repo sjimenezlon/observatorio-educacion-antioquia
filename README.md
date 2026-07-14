@@ -4,8 +4,9 @@
 
 Tablero de la educación superior del departamento de Antioquia — **pregrado y posgrado, pública y privada** — con lente de detalle sobre la formación técnica y tecnológica (TyT).
 
-**En línea:** https://observatorio-educacion-antioquia.vercel.app
-**Autor:** Santiago Jiménez Londoño · Última versión: V4 (julio de 2026)
+**En línea:** https://materia-gris.vercel.app
+**Espejo:** https://observatorio-educacion-antioquia.vercel.app
+**Autor:** Santiago Jiménez Londoño · Última versión: V14 (julio de 2026)
 
 ---
 
@@ -21,6 +22,8 @@ Tablero de la educación superior del departamento de Antioquia — **pregrado y
 | **Calidad** | Acreditación de alta calidad, Saber TyT vs. nacional (y por municipio), bilingüismo (MCER) |
 | **Innovación** | 815 grupos de investigación reconocidos (Conv. 957 de 2024) |
 | **Impacto social** | ¿Quiénes estudian? Estrato, trabajo, educación de la madre, brecha de género y STEM |
+
+El panorama incorpora además un bloque de **acceso e infraestructura 2025–2027**: gratuidad, nuevos estudiantes de primer ingreso, Educación Superior en tu Colegio y cartera de proyectos de infraestructura, siempre separado de las estadísticas SNIES para evitar mezclar indicadores administrativos con matrícula consolidada.
 
 ### Hallazgos que sostiene el dato
 
@@ -82,6 +85,7 @@ Cuando el MEN publique la vigencia siguiente (histórico: hacia julio de cada a�
 | **DANE — GEIH** | Desempleo Medellín A.M. (8,6 %) | trimestre mar–may **2026** |
 | **Gobernación de Antioquia** (`t2ca-uae5`) | Correspondencia municipio ↔ subregión | — |
 | **Rendiciones de cuentas de las IES** | Radar institucional (cifras autorreportadas, con enlace) | **2025–2026** |
+| **MEN — balance territorial e infraestructura** | Gratuidad, primer ingreso, articulación con colegios y proyectos de infraestructura | **2025–2027** |
 
 ## Decisiones metodológicas (las trampas de los datos oficiales)
 
