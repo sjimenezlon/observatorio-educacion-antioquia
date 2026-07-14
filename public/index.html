@@ -80,6 +80,12 @@ tr:hover td{background:var(--surface-2)}
 .tag{display:inline-block;padding:2px 8px;border-radius:20px;font-size:11.5px;font-weight:600;border:1px solid var(--border)}
 .tag.of{color:#7fb8ff;background:rgba(57,135,229,.12)}
 .tag.pr{color:#66d3a8;background:rgba(25,158,112,.12)}
+.trend{display:inline-block;width:20px;text-align:center;border-radius:6px;font-size:11px;font-weight:700;padding:1px 0;margin-right:2px}
+.trend.up{color:#5fd08a;background:rgba(12,163,12,.14)}
+.trend.down{color:#e88a8a;background:rgba(230,103,103,.12)}
+.trend.flat{color:var(--ink-2);background:rgba(255,255,255,.08)}
+.tag.vg{color:#5fd08a;background:rgba(12,163,12,.14)}
+.tag.rn{color:#ffb84d;background:rgba(201,133,0,.14)}
 .filters{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 16px;align-items:center}
 .filters input,.filters select{background:var(--surface-2);border:1px solid var(--border);color:var(--ink);border-radius:9px;padding:8px 12px;font-size:13.5px;font-family:inherit;max-width:230px}
 .filters input{min-width:210px}
@@ -96,6 +102,32 @@ nav a.sec.active{color:var(--ink);font-weight:600}
 .reveal.in{opacity:1;transform:none}
 @media (prefers-reduced-motion: reduce){.reveal{opacity:1;transform:none;transition:none}.card{transition:none}}
 :focus-visible{outline:2px solid var(--s1);outline-offset:2px;border-radius:4px}
+#progreso{position:fixed;top:0;left:0;height:2px;width:0;background:linear-gradient(90deg,var(--s1),var(--s2));z-index:60;transition:width .1s linear}
+#arriba{position:fixed;right:18px;bottom:18px;z-index:55;width:40px;height:40px;border-radius:12px;background:var(--surface-2);border:1px solid var(--border);color:var(--ink);font-size:17px;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .3s ease;box-shadow:0 4px 18px rgba(0,0,0,.4)}
+#arriba.on{opacity:1;pointer-events:auto}
+#arriba:hover{background:var(--baseline)}
+/* ---------- acreditación ---------- */
+.steps{list-style:none;counter-reset:paso;display:grid;gap:0;margin-top:6px}
+.steps li{counter-increment:paso;position:relative;padding:0 0 22px 54px}
+.steps li::before{content:counter(paso);position:absolute;left:0;top:0;width:34px;height:34px;border-radius:50%;background:rgba(57,135,229,.16);border:1px solid var(--s1);color:var(--ink);font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center}
+.steps li::after{content:"";position:absolute;left:16.5px;top:38px;bottom:4px;width:1.5px;background:var(--grid)}
+.steps li:last-child::after{display:none}
+.steps li:last-child{padding-bottom:4px}
+.steps h4{color:var(--ink);font-size:14.5px;font-weight:650;margin-bottom:3px;padding-top:6px}
+.steps p{font-size:13.5px;color:var(--ink-2)}
+.steps .quien{display:inline-block;margin-top:6px;font-size:11.5px;color:var(--muted);background:var(--surface-2);border:1px solid var(--border);border-radius:14px;padding:2px 9px}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-top:8px}
+@media(max-width:700px){.duo{grid-template-columns:1fr}}
+.duo>div{padding:16px 18px}
+.duo>div:first-child{border-right:1px solid var(--border);background:var(--surface-2)}
+@media(max-width:700px){.duo>div:first-child{border-right:none;border-bottom:1px solid var(--border)}}
+.duo h4{color:var(--ink);font-size:14px;margin-bottom:8px}
+.duo ul{list-style:none;font-size:13px}
+.duo li{margin:6px 0;padding-left:14px;position:relative}
+.duo li::before{content:"·";position:absolute;left:2px;color:var(--s1);font-weight:700}
+.factores{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px;margin-top:8px}
+.factores span{background:var(--surface-2);border:1px solid var(--border);border-radius:9px;padding:9px 12px;font-size:12.5px;color:var(--ink-2)}
+.factores span b{color:var(--s1);font-weight:700;margin-right:6px}
 /* ---------- mapa ---------- */
 .map-flex{display:grid;grid-template-columns:1.6fr 1fr;gap:20px;align-items:start}
 @media(max-width:900px){.map-flex{grid-template-columns:1fr}}
@@ -152,6 +184,7 @@ footer li::before{content:"—";position:absolute;left:0;color:var(--s1)}
 </style>
 </head>
 <body>
+<div id="progreso" aria-hidden="true"></div>
 <nav><div class="wrap">
   <a class="logo" href="#top">Observatorio <span>ES</span> Antioquia</a>
   <a class="sec" href="#panorama">Panorama</a>
@@ -160,6 +193,7 @@ footer li::before{content:"—";position:absolute;left:0;color:var(--s1)}
   <a class="sec" href="#oferta">Oferta</a>
   <a class="sec" href="#laboral">Mercado laboral</a>
   <a class="sec" href="#calidad">Calidad</a>
+  <a class="sec" href="#acreditacion">Acreditación</a>
   <a class="sec" href="#innovacion">Innovación</a>
   <a class="sec" href="#social">Impacto social</a>
   <a class="sec" href="#metodologia">Metodología</a>
@@ -242,22 +276,16 @@ footer li::before{content:"—";position:absolute;left:0;color:var(--s1)}
       <div class="cmp-grid" id="cmp-grid"></div>
     </div>
     <div class="card">
-      <h3>Radar institucional: lo que las IES reportan de 2025 y 2026</h3>
-      <p class="note">Cifras autorreportadas en rendiciones de cuentas, informes de gestión y notas de prensa institucionales — más recientes que el corte SNIES 2024, pero con cortes y definiciones propias de cada institución (ver nota 9 de metodología).</p>
-      <ul id="radar" style="list-style:none;display:grid;gap:10px">
-        <li style="padding:12px 14px;background:var(--surface-2);border:1px solid var(--border);border-radius:10px"><b style="color:var(--ink)">ITM</b> — 28.148 matriculados en 2025 y ejecución del 98,3 % del presupuesto; la matrícula en las subregiones pasó de 68 estudiantes (2023) a 788 (2025). <a href="https://www.itm.edu.co/noticias-principales/el-itm-alcanza-un-historico-98-de-cumplimiento-en-su-rendicion-de-cuentas-2025/" target="_blank" rel="noopener">Rendición de cuentas 2025 (abr. 2026) ↗</a></li>
-        <li style="padding:12px 14px;background:var(--surface-2);border:1px solid var(--border);border-radius:10px"><b style="color:var(--ink)">Tecnológico de Antioquia</b> — 23.863 matriculados en 2026-1, tras pasar de 12.385 (2022-1) a 21.087 (2025-2): el mayor crecimiento de su década; retención del 91,3 %. <a href="https://tdea.edu.co/tdeacerrosuplandedesarrollo2022-2026lohicimosparatrascender/" target="_blank" rel="noopener">Cierre del Plan de Desarrollo (mar. 2026) ↗</a></li>
-        <li style="padding:12px 14px;background:var(--surface-2);border:1px solid var(--border);border-radius:10px"><b style="color:var(--ink)">IU Pascual Bravo</b> — 9.971 matriculados en 2025-2 (126 % de la meta) y reacreditación de Ingeniería Mecánica por 6 años (feb. 2026). <a href="https://pascualbravo.edu.co/wp-content/uploads/2026/04/Informe-Preliminar-Rendicion-de-cuentas-.pdf" target="_blank" rel="noopener">Informe de rendición de cuentas 2025 ↗</a></li>
-        <li style="padding:12px 14px;background:var(--surface-2);border:1px solid var(--border);border-radius:10px"><b style="color:var(--ink)">Politécnico Colombiano JIC</b> — 11.874 estudiantes en 2025-2 y cobertura de gratuidad del 92 % (10.714 becados); radicó la renovación de su acreditación institucional ante el CNA. <a href="https://www.politecnicojic.edu.co/images/documents/planes-institucionales/informes-de-gestion/informe-de-gestion-2025.pdf" target="_blank" rel="noopener">Informe de gestión 2025 ↗</a></li>
-        <li style="padding:12px 14px;background:var(--surface-2);border:1px solid var(--border);border-radius:10px"><b style="color:var(--ink)">IU Digital de Antioquia</b> — 12.877 matriculados en 2025 (8.409 en Antioquia, presencia en 123 municipios) y 70 % de sus 2.406 egresados activos laboralmente. <a href="https://www.iudigital.edu.co/index.php/rendicion-de-cuentas" target="_blank" rel="noopener">Informe de gestión 2025 ↗</a></li>
-        <li style="padding:12px 14px;background:var(--surface-2);border:1px solid var(--border);border-radius:10px"><b style="color:var(--ink)">Colegio Mayor de Antioquia</b> — 5.763 matriculados en 2025-2, cifra histórica; eficacia del 95,1 % en su plan de desarrollo. <a href="https://sapiencia.gov.co/medellin-acceso-educacion-superior-publica-43-000-estudiantes-matriculados/" target="_blank" rel="noopener">Sapiencia (sep. 2025) ↗</a></li>
-        <li style="padding:12px 14px;background:var(--surface-2);border:1px solid var(--border);border-radius:10px"><b style="color:var(--ink)">Sapiencia — Matrícula Cero (Distrito de Medellín)</b> — 46.667 beneficios de matrícula para 2026-1 con inversión superior a $37.000 millones; las tres IU distritales (ITM, Pascual Bravo, Colmayor) suman 43.801 estudiantes en 2025-2. <a href="https://sapiencia.gov.co/matricula-cero-46667-oportunidades-educacion-superior-primer-semestre-2026/" target="_blank" rel="noopener">Sapiencia (nov. 2025) ↗</a></li>
-        <li style="padding:12px 14px;background:var(--surface-2);border:1px solid var(--border);border-radius:10px"><b style="color:var(--ink)">Universidad de Antioquia</b> — 8 de cada 10 estudiantes de pregrado con matrícula en cero pesos (31.879 de 37.456, corte dic. 2024); al cierre de 2025 reporta un desfinanciamiento de $377.537 millones en fondos generales. <a href="https://www.udea.edu.co/wps/portal/udea/web/inicio/udea-noticias/udea-noticia/Contenido/asNoticias/Sociedad/rendicion-cuentasUdeA2025" target="_blank" rel="noopener">Rendición de cuentas 2025 (may. 2026) ↗</a></li>
-        <li style="padding:12px 14px;background:var(--surface-2);border:1px solid var(--border);border-radius:10px"><b style="color:var(--ink)">Universidad Nacional — Sede Medellín</b> — 12.078 matriculados y 1.698 graduados en 2025; a nivel nacional, el 91 % de su matrícula de pregrado proviene de estratos 1, 2 y 3. <a href="https://launalcuenta.unal.edu.co/fileadmin/user_upload/documentos/Informes/Nacional/2025/20260519/2026.05.19_RC2025_Brochure_Paginas.pdf" target="_blank" rel="noopener">Balance social 2025 (may. 2026) ↗</a></li>
-        <li style="padding:12px 14px;background:var(--surface-2);border:1px solid var(--border);border-radius:10px"><b style="color:var(--ink)">SENA Regional Antioquia</b> — 7.872 aprendices con apoyos de sostenimiento en 2025 (la regional con más beneficiarios del país); su primera convocatoria de 2026 ofertó 9.552 cupos en 154 programas y 16 centros. <a href="https://www.sena.edu.co/es-co/Noticias/Paginas/noticia.aspx?IdNoticia=8969" target="_blank" rel="noopener">SENA (ene. 2026) ↗</a></li>
-        <li style="padding:12px 14px;background:var(--surface-2);border:1px solid var(--border);border-radius:10px"><b style="color:var(--ink)">Universidad EAFIT</b> — 9.831 matrículas de pregrado y 3.181 de posgrado en 2025-1; empleabilidad de egresados: tasa global de ocupación del 83 % en pregrado y 92,6 % en posgrado. <a href="https://www.eafit.edu.co/informes-de-gestion-y-sostenibilidad/informe-sostenibilidad-2025" target="_blank" rel="noopener">Informe de sostenibilidad 2025 (mar. 2026) ↗</a></li>
-        <li style="padding:12px 14px;background:var(--surface-2);border:1px solid var(--border);border-radius:10px"><b style="color:var(--ink)">Universidad Pontificia Bolivariana</b> — proyecta 23.079 estudiantes en su sede central de Medellín para 2026 (11.619 en 2026-1), según el documento de derechos pecuniarios radicado ante el MEN. <a href="https://www.upb.edu.co/es/documentos/doc-justificacionderechospecuniarios-1464294831540.pdf" target="_blank" rel="noopener">UPB (dic. 2025) ↗</a></li>
-      </ul>
+      <h3>La foto 2025–2026: lo que las propias IES ya publicaron</h3>
+      <p class="note">El SNIES consolidado llega hasta 2024 (el cierre 2025 se publica hacia julio–agosto de 2026). Esta tabla adelanta la foto con la <b>cifra más reciente que cada institución reportó en su rendición de cuentas, informe de gestión o boletín estadístico oficial</b>. Los cortes y definiciones varían entre instituciones — compare la tendencia de cada fila, no las filas entre sí (nota 9 de metodología).</p>
+      <div class="seg" id="radar-filtro" role="tablist" aria-label="Filtro del radar">
+        <button class="on" data-f="todas">Todas</button>
+        <button data-f="Oficial">Oficiales</button>
+        <button data-f="Privada">Privadas</button>
+        <button data-f="2026">Con dato 2026-1</button>
+      </div>
+      <div class="tscroll" style="max-height:600px;overflow-y:auto" id="tb-radar"></div>
+      <p class="note" style="margin-top:12px;margin-bottom:0">Contexto de política: la gratuidad en Antioquia pasó de 86.150 beneficiarios (2023-1) a <b>118.117 (2025-1)</b> según el <a href="https://www.mineducacion.gov.co/portal/salaprensa/Comunicados/426943:Gobierno-del-Cambio-ha-invertido-mas-de-8-3-billones-para-fortalecer-todos-los-niveles-educativos-en-Antioquia" target="_blank" rel="noopener">MEN (dic. 2025)</a>, y Sapiencia ofertó <b>46.667 beneficios de Matrícula Cero para 2026-1</b> en las IES públicas de Medellín (<a href="https://sapiencia.gov.co/matricula-cero-46667-oportunidades-educacion-superior-primer-semestre-2026/" target="_blank" rel="noopener">Sapiencia, nov. 2025</a>). En contravía, los créditos nuevos del ICETEX cayeron <b>−83 % en 2025</b> (47.137 → 9.342), el mínimo en una década (<a href="https://www.portafolio.co/economia/en-cifras-asi-fue-el-desplome-del-credito-del-icetex-en-un-ano-mientras-84-empresas-invierten-millones-en-becas-497865" target="_blank" rel="noopener">Portafolio, jul. 2026</a>).</p>
     </div>
   </div>
   <div class="callout" id="hallazgo-ies"></div>
@@ -427,9 +455,128 @@ footer li::before{content:"—";position:absolute;left:0;color:var(--s1)}
   <div class="callout" id="hallazgo-calidad"></div>
 </section>
 
+<!-- ================= ACREDITACIÓN ================= -->
+<section id="acreditacion">
+  <div class="sec-head"><span class="sec-num">07</span><h2>Acreditación de alta calidad: el sello y el camino</h2></div>
+  <p class="sec-desc">La acreditación es el reconocimiento público de excelencia que el Ministerio de Educación otorga —con concepto del Consejo Nacional de Acreditación (CNA)— a las instituciones y programas que demuestran los más altos niveles de calidad (Ley 30 de 1992, art. 53). Es <b>voluntaria y temporal</b>, y desde 2025 se rige por un modelo nuevo. Esta guía explica qué es, qué le significa a un estudiante, el paso a paso del proceso y cómo está Antioquia. Cifras verificadas al 13 de julio de 2026.</p>
+  <div class="cards">
+    <div class="card">
+      <h3>Lo primero: no confunda la licencia con el sello</h3>
+      <p class="note">Todo programa necesita <b>registro calificado</b> para poder operar; la acreditación distingue a los que van más allá. Un programa acreditado tiene, por definición, su registro asegurado.</p>
+      <div class="duo">
+        <div>
+          <h4>Registro calificado — la licencia</h4>
+          <ul>
+            <li><b>Obligatorio y habilitante</b>: sin él, el programa no puede ofrecerse ni otorgar títulos.</li>
+            <li>Vigencia de <b>7 años</b>. Lo evalúa CONACES y lo otorga el MEN.</li>
+            <li>Base legal: Ley 1188 de 2008 y <a href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=98270" target="_blank" rel="noopener">Decreto 1330 de 2019</a>.</li>
+            <li>Tiene tarifa: en 2024, ≈ $3,5 millones (técnico/tecnológico) y ≈ $14,1 millones (universitario/posgrado).</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Acreditación de alta calidad — el sello</h4>
+          <ul>
+            <li><b>Voluntaria y temporal</b>: reconocimiento público de excelencia, no un permiso.</li>
+            <li>Vigencia de <b>6, 8 o 10 años</b>. La evalúa el CNA y la resuelve el MEN.</li>
+            <li>Base legal: Ley 30 de 1992 (arts. 53-56) y <a href="https://www.mineducacion.gov.co/1780/articles-424592_recurso_07.pdf" target="_blank" rel="noopener">Acuerdo CESU 01 de 2025</a>.</li>
+            <li><b>El trámite ante el CNA es gratuito</b> (incluidas las visitas de pares); lo que cuesta es la preparación interna.</li>
+          </ul>
+        </div>
+      </div>
+      <p class="note" style="margin-top:12px;margin-bottom:0">La acreditación existe en tres niveles: <b>programas</b>, <b>instituciones</b> y —novedad de 2025— <b>unidades académicas</b> (facultades o escuelas). Acreditar la institución no es prerrequisito para acreditar programas, pero sí al revés: para presentarse a la acreditación institucional la IES necesita tener acreditado al menos el 30&nbsp;% de sus programas acreditables.</p>
+    </div>
+
+    <div class="card half">
+      <h3>Qué gana un estudiante con el sello</h3>
+      <p class="note">Beneficios concretos, cada uno con norma o programa que lo respalda.</p>
+      <ul style="list-style:none;font-size:13.5px;display:grid;gap:9px">
+        <li style="padding-left:16px;position:relative"><b style="position:absolute;left:0;color:var(--s1)">✓</b><b style="color:var(--ink)">Calidad verificada por terceros:</b> pares académicos, CNA y MEN revisan el programa o la institución al menos cada 6–10 años.</li>
+        <li style="padding-left:16px;position:relative"><b style="position:absolute;left:0;color:var(--s1)">✓</b><b style="color:var(--ink)">Becas y créditos condonables:</b> el componente Excelencia de <a href="https://web.icetex.gov.co/es/-/generacion-e-excelencia-4ta-convocatoria" target="_blank" rel="noopener">Generación E</a> exige IES o programa acreditado; igual lo hacían Ser Pilo Paga y las Becas para la Excelencia Docente.</li>
+        <li style="padding-left:16px;position:relative"><b style="position:absolute;left:0;color:var(--s1)">✓</b><b style="color:var(--ink)">Estabilidad del programa:</b> al programa acreditado el MEN le renueva el registro calificado <b>de oficio</b> (Decreto 1075 de 2015, art. 2.5.3.2.9.2) — la licencia no caduca mientras usted estudia. Y si pierde el sello, el programa no se cierra: vuelve al régimen ordinario.</li>
+        <li style="padding-left:16px;position:relative"><b style="position:absolute;left:0;color:var(--s1)">✓</b><b style="color:var(--ink)">Movilidad y reconocimiento:</b> facilita homologaciones e intercambios; el CNA administra además el sello regional ARCU-SUR (Mercosur).</li>
+        <li style="padding-left:16px;position:relative"><b style="position:absolute;left:0;color:var(--s1)">✓</b><b style="color:var(--ink)">Para las instituciones:</b> trámites expeditos ante el MEN — nuevos registros con pre-radicación surtida, modificaciones sin pasar por CONACES y ampliación ágil de sedes.</li>
+      </ul>
+    </div>
+
+    <div class="card half">
+      <h3>Ojo: el modelo cambió en 2025 (y hoy conviven dos)</h3>
+      <p class="note">El <b>Acuerdo CESU 01 de 2025</b> (Diario Oficial del 28-may-2025) derogó el modelo de 2020, con aplicación gradual. Los trámites ya radicados se deciden con la norma vigente al momento de radicarlos.</p>
+      <ul style="list-style:none;font-size:13.5px;display:grid;gap:9px">
+        <li style="padding-left:16px;position:relative"><b style="position:absolute;left:0;color:var(--s3)">→</b><b style="color:var(--ink)">Desde el 1-ene-2026:</b> las apreciaciones de condiciones iniciales entran por el modelo nuevo (ya rige).</li>
+        <li style="padding-left:16px;position:relative"><b style="position:absolute;left:0;color:var(--s3)">→</b><b style="color:var(--ink)">Desde el 1-ene-2027:</b> los informes de autoevaluación se presentan bajo el modelo nuevo.</li>
+        <li style="padding-left:16px;position:relative"><b style="position:absolute;left:0;color:var(--s3)">→</b><b style="color:var(--ink)">Desde el 1-jun-2027:</b> también las renovaciones.</li>
+      </ul>
+      <p class="note" style="margin-top:12px;margin-bottom:0">Novedades del modelo 2025: acreditación de <b>unidades académicas</b>, exigencia de ≥ 4 cohortes de graduados para programas, factor explícito de <b>Sistema Interno de Aseguramiento de la Calidad</b> y ≥ 50&nbsp;% de programas acreditados para aspirar a la vigencia máxima. La reforma financiera de la Ley 30 (Ley 2568 de 2026) no tocó el régimen de acreditación.</p>
+    </div>
+
+    <div class="card">
+      <h3>El paso a paso, en versión ciudadana</h3>
+      <p class="note">Las cinco etapas oficiales (condiciones iniciales → autoevaluación → pares → evaluación integral → acto administrativo), desplegadas en ocho pasos. El plazo normativo desde la radicación del informe es de 10 meses; el ciclo completo real toma entre 2 y 3 años.</p>
+      <ol class="steps">
+        <li><h4>Cumplir los requisitos de entrada</h4><p>Programas: registro calificado vigente, 8 años continuos de funcionamiento y —desde el modelo 2025— al menos 4 cohortes de graduados y matrícula reportada al SNIES. Instituciones: mínimo 5 años en su carácter académico y ≥ 30&nbsp;% de los programas acreditables ya acreditados. En ambos casos: sin sanciones ni vigilancia especial en los últimos 5 años.</p><span class="quien">Responsable: la institución</span></li>
+        <li><h4>Apreciación de condiciones iniciales</h4><p>Solo la primera vez. No es un examen exhaustivo: los consejeros del CNA visitan la institución y conceptúan si tiene potencial para lograr el sello (≈ 3-4 meses). El concepto favorable vale un año para radicar la autoevaluación. Las IES ya acreditadas institucionalmente se saltan esta etapa al acreditar programas.</p><span class="quien">Responsable: consejeros del CNA</span></li>
+        <li><h4>Autoevaluación</h4><p>El corazón del proceso y el paso más largo: la comunidad se examina contra los 12 factores del modelo (abajo), con participación de estudiantes, profesores y egresados. Termina en un informe con juicios soportados en evidencia y un plan de mejoramiento.</p><span class="quien">Responsable: la institución (1–2 años típicos)</span></li>
+        <li><h4>Radicación en SACES-CNA</h4><p>El informe se radica en la plataforma del MEN. Para renovar el sello de un programa: radicar al menos 18 meses antes del vencimiento del registro calificado.</p><span class="quien">Responsable: la institución</span></li>
+        <li><h4>Evaluación externa con pares académicos</h4><p>Una comisión de pares del banco del CNA visita la institución (≈ 2,5 días para un programa; 3-4 para la institucional), coteja el informe con la realidad y produce su informe en máximo 20 días. El rector puede comentarlo en 15 días hábiles. La IES puede pedir cambio de pares una única vez, motivado.</p><span class="quien">Responsable: pares designados por el CNA</span></li>
+        <li><h4>Concepto del CNA</h4><p>Con la autoevaluación, el informe de pares y los comentarios, el CNA emite su evaluación integral. Si es favorable, recomienda al MEN acreditar y por cuántos años. Si no alcanza, emite recomendaciones de mejora <b>confidenciales</b> — no hay «reprobados públicos». Cabe reconsideración dentro de los 30 días.</p><span class="quien">Responsable: sala plena del CNA</span></li>
+        <li><h4>Resolución del Ministerio</h4><p>El MEN expide la resolución con la vigencia: <b>6, 8 o 10 años</b> (la de 4 años ya no existe; las que aún se ven son colas del modelo anterior). A mitad de la vigencia, la institución debe reportar el avance de su plan de mejoramiento.</p><span class="quien">Responsable: MEN · procede recurso de reposición</span></li>
+        <li><h4>Renovación</h4><p>Radicar el nuevo informe al menos 12 meses antes del vencimiento: si lo hace, <b>la acreditación queda prorrogada</b> mientras concluye el trámite. Si el plazo vence sin radicar, se vuelve a empezar desde condiciones iniciales. El sello también puede decaer antes de tiempo si la institución recibe sanciones o vigilancia especial.</p><span class="quien">Responsable: la institución</span></li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h3>Los 12 factores que se autoevalúan (programas, modelo 2025)</h3>
+      <p class="note">Todo el proceso gira alrededor de demostrar calidad en estos frentes. Para la acreditación institucional los factores son análogos, con énfasis en gobierno, transparencia y el sistema interno de aseguramiento de la calidad.</p>
+      <div class="factores">
+        <span><b>1</b>Proyecto educativo e identidad</span>
+        <span><b>2</b>Comunidad de estudiantes</span>
+        <span><b>3</b>Comunidad de profesores</span>
+        <span><b>4</b>Comunidad de egresados</span>
+        <span><b>5</b>Aspectos académicos y evaluación</span>
+        <span><b>6</b>Permanencia y graduación</span>
+        <span><b>7</b>Proyección e interacción con el entorno</span>
+        <span><b>8</b>Investigación, innovación y creación</span>
+        <span><b>9</b>Bienestar</span>
+        <span><b>10</b>Recursos físicos y tecnológicos</span>
+        <span><b>11</b>Organización, administración y financiación</span>
+        <span><b>12</b>Aseguramiento de la alta calidad</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Antioquia acreditada: el estado institucional, sello por sello</h3>
+      <p class="note">Acreditación institucional de las IES con presencia en Antioquia, verificada resolución por resolución (julio de 2026). Antioquia concentra además <b>345 programas activos acreditados</b> (los que más: UdeA 99, UNAL 45, UPB 32, EAFIT 29, ITM 22) — la distribución por nivel de formación está en la sección <a href="#calidad">Calidad</a>.</p>
+      <div class="tscroll" style="max-height:520px;overflow-y:auto" id="tb-acred-ies"></div>
+    </div>
+
+    <div class="card half">
+      <h3>Cómo verificar antes de matricularse</h3>
+      <p class="note">Dos consultas públicas del MEN bastan. Cruce siempre el código SNIES que anuncia la institución.</p>
+      <ul style="list-style:none;font-size:13.5px;display:grid;gap:9px">
+        <li>¿Este <b>programa</b> está acreditado? → <a href="https://hecaa.mineducacion.gov.co/consultaspublicas/programas" target="_blank" rel="noopener">consulta HECAA de programas ↗</a> (filtro «Reconocimiento del Ministerio»).</li>
+        <li>¿Esta <b>institución</b> está acreditada? → <a href="https://hecaa.mineducacion.gov.co/consultaspublicas/ies" target="_blank" rel="noopener">consulta HECAA de IES ↗</a>.</li>
+        <li>Modelo, normativa y preguntas frecuentes → <a href="https://www.cna.gov.co/portal/" target="_blank" rel="noopener">portal del CNA ↗</a>.</li>
+        <li>Datos abiertos de programas (columna de acreditación) → <a href="https://www.datos.gov.co/d/upr9-nkiz" target="_blank" rel="noopener">datos.gov.co ↗</a>.</li>
+      </ul>
+    </div>
+
+    <div class="card half">
+      <h3>Los sellos internacionales, de propina</h3>
+      <p class="note">No sustituyen la acreditación nacional, pero señalan estándares globales.</p>
+      <ul style="list-style:none;font-size:13.5px;display:grid;gap:9px">
+        <li><b style="color:var(--ink)">EAFIT — AACSB</b> (mar. 2024): primera escuela de negocios acreditada AACSB de Antioquia y sexta de Colombia; también tiene AMBA y BGA.</li>
+        <li><b style="color:var(--ink)">UPB — ABET</b> (oct. 2025): Ingeniería Química y Mecánica, las primeras ingenierías de Antioquia con el sello estadounidense.</li>
+        <li><b style="color:var(--ink)">ARCU-SUR (Mercosur):</b> UdeA (Veterinaria, Odontología, Ing. Eléctrica), CES (Medicina, MVZ, Odontología), EIA (Ing. Biomédica y Sistemas) y UNAL Medellín (Ing. Biológica).</li>
+        <li>El propio CNA está certificado internacionalmente (INQAAHE, RIACES, SIACES).</li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout" id="hallazgo-acreditacion"></div>
+</section>
+
 <!-- ================= INNOVACIÓN ================= -->
 <section id="innovacion">
-  <div class="sec-head"><span class="sec-num">07</span><h2>Innovación: capacidad investigativa del ecosistema</h2></div>
+  <div class="sec-head"><span class="sec-num">08</span><h2>Innovación: capacidad investigativa del ecosistema</h2></div>
   <p class="sec-desc">Grupos de investigación reconocidos por MinCiencias en Antioquia según la Convocatoria 957 de 2024 (resultados finales de diciembre de 2025) y qué instituciones del departamento los avalan.</p>
   <div class="cards">
     <div class="card third">
@@ -453,7 +600,7 @@ footer li::before{content:"—";position:absolute;left:0;color:var(--s1)}
 
 <!-- ================= IMPACTO SOCIAL ================= -->
 <section id="social">
-  <div class="sec-head"><span class="sec-num">08</span><h2>Impacto social: quiénes estudian (lente TyT)</h2></div>
+  <div class="sec-head"><span class="sec-num">09</span><h2>Impacto social: quiénes estudian (lente TyT)</h2></div>
   <p class="sec-desc">Perfil socioeconómico de los 32.175 evaluados en Saber TyT 2022 de programas ofertados en Antioquia. El nivel técnico y tecnológico es la puerta de entrada a la educación superior de los hogares de menores ingresos — por eso este lente importa.</p>
   <div class="kpis" id="kpis-social"></div>
   <div class="cards">
@@ -492,7 +639,7 @@ footer li::before{content:"—";position:absolute;left:0;color:var(--s1)}
     <div>
       <h4>Metodología y fuentes</h4>
       <ul id="fuentes"></ul>
-      <p style="margin-top:14px">Notas: (1) La matrícula anual corresponde al semestre con mayor total de cada vigencia — sumar semestres duplicaría estudiantes. (2) Los indicadores OLE se restringen a IES con domicilio en Antioquia; se excluyen SENA y UNAD por ser instituciones de alcance nacional cuyos graduados no son separables por departamento en esa base; la especialización se omite de la tasa de vinculación por cobertura insuficiente. (3) La serie 2015–2017 de la base histórica del MEN se descartó por inconsistencias de reporte semestral. (4) Saber TyT usa la escala 0–200 vigente desde 2017-3; el sector de cada IES se toma del SNIES por errores de registro en la base ICFES. (5) Los grupos de investigación corresponden a los resultados finales de la Convocatoria 957 de 2024 (Resolución 1531 de dic. 2025, listado oficial de Minciencias); como el listado no trae departamento, este se asigna por código GrupLAC contra la base histórica de convocatorias (90 % de cobertura) y, para grupos nuevos, por institución avaladora domiciliada en Antioquia. (6) Los resultados Saber Pro (nivel universitario) no están disponibles como microdato abierto completo en datos.gov.co; se incorporarán desde DataIcfes en la próxima versión. (7) Los niveles MCER de inglés se agregan desde el microdato Saber TyT vía API; los rótulos históricos (A-, -A1, Pre-A1, B+) se homologan a la escala vigente. (8) La división subregional corresponde a la usada por la Gobernación de Antioquia. (9) El radar institucional recoge cifras autorreportadas en notas de prensa, informes de gestión y rendiciones de cuentas de las IES; sus cortes y definiciones no son directamente comparables con el SNIES. (10) La cobertura bruta subregional divide la matrícula de pregrado ofertada en la subregión por la población proyectada de 17 a 21 años (DANE, 2024): mide capacidad instalada de oferta, no asistencia de residentes, por lo que las subregiones que atraen estudiantes pueden superar el 100 %. (11) El puntaje Saber TyT por municipio promedia los cinco módulos y solo se reporta con 50 o más evaluados.</p>
+      <p style="margin-top:14px">Notas: (1) La matrícula anual corresponde al semestre con mayor total de cada vigencia — sumar semestres duplicaría estudiantes. (2) Los indicadores OLE se restringen a IES con domicilio en Antioquia; se excluyen SENA y UNAD por ser instituciones de alcance nacional cuyos graduados no son separables por departamento en esa base; la especialización se omite de la tasa de vinculación por cobertura insuficiente. (3) La serie 2015–2017 de la base histórica del MEN se descartó por inconsistencias de reporte semestral. (4) Saber TyT usa la escala 0–200 vigente desde 2017-3; el sector de cada IES se toma del SNIES por errores de registro en la base ICFES. (5) Los grupos de investigación corresponden a los resultados finales de la Convocatoria 957 de 2024 (Resolución 1531 de dic. 2025, listado oficial de Minciencias); como el listado no trae departamento, este se asigna por código GrupLAC contra la base histórica de convocatorias (90 % de cobertura) y, para grupos nuevos, por institución avaladora domiciliada en Antioquia. (6) Los resultados Saber Pro (nivel universitario) no están disponibles como microdato abierto completo en datos.gov.co; se incorporarán desde DataIcfes en la próxima versión. (7) Los niveles MCER de inglés se agregan desde el microdato Saber TyT vía API; los rótulos históricos (A-, -A1, Pre-A1, B+) se homologan a la escala vigente. (8) La división subregional corresponde a la usada por la Gobernación de Antioquia. (9) El radar «La foto 2025–2026» recoge cifras autorreportadas en rendiciones de cuentas, informes de gestión, boletines estadísticos y tableros oficiales de las IES (verificadas documento por documento en julio de 2026); sus cortes y definiciones varían entre instituciones y no son directamente comparables entre sí ni con el SNIES — la tendencia de cada fila sí es consistente porque proviene de la serie de la misma fuente. Las bases consolidadas SNIES 2025 no estaban publicadas al corte (patrón anual: se publican hacia julio–agosto del año siguiente). (10) La cobertura bruta subregional divide la matrícula de pregrado ofertada en la subregión por la población proyectada de 17 a 21 años (DANE, 2024): mide capacidad instalada de oferta, no asistencia de residentes, por lo que las subregiones que atraen estudiantes pueden superar el 100 %. (11) El puntaje Saber TyT por municipio promedia los cinco módulos y solo se reporta con 50 o más evaluados. (12) La sección de acreditación se construyó sobre las fuentes primarias del régimen (Ley 30 de 1992, Decreto 1330 de 2019, Acuerdos CESU 02 de 2020 y 01 de 2025 con su transición 2026-2027) y la verificación resolución por resolución del estado de cada IES en julio de 2026; los estados «en renovación» reflejan la información pública disponible y pueden resolverse en el segundo semestre de 2026.</p>
     </div>
     <div>
       <h4>Sobre este observatorio</h4>
@@ -504,6 +651,7 @@ footer li::before{content:"—";position:absolute;left:0;color:var(--s1)}
 </footer>
 </div>
 
+<button id="arriba" type="button" aria-label="Volver arriba" title="Volver arriba">↑</button>
 <div id="tip" role="status" aria-hidden="true"></div>
 <script src="datos.js"></script>
 <script src="mapa.js"></script>
@@ -744,7 +892,7 @@ const pos=s=>(s.niveles['Especialización']||0)+(s.niveles['Maestría']||0)+(s.n
   ];
   document.getElementById('kpis').innerHTML=kp.map(k=>`<div class="kpi"><div class="lbl">${k.lbl}</div><div class="val">${k.val}</div><div class="sub">${k.sub}</div></div>`).join('');
   const uni24=s24.niveles['Universitaria'], uni18=s18.niveles['Universitaria'];
-  document.getElementById('hallazgo-hero').innerHTML=`<b>El hallazgo central:</b> la educación superior de Antioquia se está recomponiendo. Desde 2018, la matrícula universitaria creció <b>${pct(uni24-uni18,uni18)}</b> (${fmt(uni18)} → ${fmt(uni24)}), el posgrado está plano y la formación técnica y tecnológica cayó <b>${pct(s18.tyt-s24.tyt,s18.tyt)}</b> (${fmt(s18.tyt)} → ${fmt(s24.tyt)}). El sistema se sostiene por lo universitario mientras se angosta la base técnica — justo la puerta de entrada de los hogares de menores ingresos.`;
+  document.getElementById('hallazgo-hero').innerHTML=`<b>El hallazgo central:</b> la educación superior de Antioquia se está recomponiendo. Desde 2018, la matrícula universitaria creció <b>${pct(uni24-uni18,uni18)}</b> (${fmt(uni18)} → ${fmt(uni24)}), el posgrado está plano y la formación técnica y tecnológica cayó <b>${pct(s18.tyt-s24.tyt,s18.tyt)}</b> (${fmt(s18.tyt)} → ${fmt(s24.tyt)}). El sistema se sostiene por lo universitario mientras se angosta la base técnica — justo la puerta de entrada de los hogares de menores ingresos. <b>Actualización jul-2026:</b> el SNIES 2025 aún no se publica, pero las rendiciones de cuentas de las IES ya adelantan la foto 2025–2026 — véala en <a href="#instituciones">el radar institucional</a>.`;
 })();
 
 /* ---- 01 Panorama ---- */
@@ -835,6 +983,68 @@ hbars('ch-docentes', Object.entries(D.docentes.formacion).sort((a,b)=>b[1]-a[1])
   const udea=D.ies.find(i=>i.caracter==='Universidad'&&i.sector==='Oficial');
   const acreditadas=D.ies.filter(i=>i.acreditada).length;
   document.getElementById('hallazgo-ies').innerHTML=`<b>Dos gigantes públicos encabezan el sistema:</b> la ${udea?udea.nombre:'Universidad de Antioquia'} (${udea?fmt(udea.matricula24):'—'} estudiantes) y el SENA (${sena?fmt(sena.matricula24):'—'}). <b>${acreditadas} de las ${D.ies.length} IES</b> con oferta en Antioquia están acreditadas en alta calidad (★).`;
+})();
+
+/* ---- 02b Radar 2025-2026 (cifras autorreportadas, verificadas jul-2026) ---- */
+const RADAR26=[
+ {ies:'Universidad de Antioquia',sector:'Oficial',cifra:41089,corte:'2025-2',alcance:'Pregrado y posgrado, todas las sedes',t:'up',ttxt:'+7,8 % desde 2023, pese a la crisis financiera',fu:'Data UdeA (feb. 2026)',url:'https://www.udea.edu.co/wps/portal/udea/web/inicio/institucional/data-udea/formacion/matriculados'},
+ {ies:'ITM',sector:'Oficial',cifra:29600,corte:'2026-1',alcance:'Total institucional — récord histórico',t:'up',ttxt:'+4,9 % interanual; +18,7 % desde 2022',fu:'ITM (feb. 2026)',url:'https://www.itm.edu.co/noticias-principales/casi-30-000-estudiantes-posicionan-al-itm-como-lider-en-educacion-superior-regional/'},
+ {ies:'Tecnológico de Antioquia',sector:'Oficial',cifra:23863,corte:'2026-1',alcance:'Total (SNIES, corte 31-ene-2026)',t:'up',ttxt:'+93 % desde 2022-1, el mayor de la década',fu:'Rendición de cuentas 2025 (mar. 2026)',url:'https://tdea.edu.co/wp-content/uploads/2026/03/Rendicion-de-Cuentas-2025.pdf'},
+ {ies:'Uniremington',sector:'Privada',cifra:16079,corte:'2025-2',alcance:'Nacional, todos los niveles (Medellín: 3.622)',t:'down',ttxt:'−15 % desde el pico de 2022',fu:'Rendición de cuentas 2025 (may. 2026)',url:'https://www.uniremington.edu.co/wp-content/uploads/2026/05/Rendicion-de-Cuentas-Uniremington-2025.pdf'},
+ {ies:'U. Católica Luis Amigó',sector:'Privada',cifra:13232,corte:'2025-2',alcance:'Nacional (Medellín: 10.583)',t:'down',ttxt:'−21 % desde 2020, caída sostenida',fu:'Informe de gestión 2025 (jul. 2026)',url:'https://www.funlam.edu.co/uploads/institucionalfunlam/75_Informe_de_Gestion_Universidad_Catolica_Luis_Amigo_2025.pdf'},
+ {ies:'Universidad EAFIT',sector:'Privada',cifra:13012,corte:'2025-1',alcance:'Pregrado 9.831 + posgrado 3.181 (Medellín)',t:'flat',ttxt:'Estable; pregrado +2,6 % en 2025',fu:'Informe de sostenibilidad 2025 (mar. 2026)',url:'https://www.eafit.edu.co/informes-de-gestion-y-sostenibilidad/informe-sostenibilidad-2025'},
+ {ies:'IU Digital de Antioquia',sector:'Oficial',cifra:12877,corte:'cierre 2025',alcance:'100 % virtual; 123 municipios de Antioquia',t:'up',ttxt:'298 → 12.877 en seis años',fu:'Informe de gestión 2025 (feb. 2026)',url:'https://www.iudigital.edu.co/index.php/rendicion-de-cuentas'},
+ {ies:'UNAL — Sede Medellín',sector:'Oficial',cifra:11948,corte:'2025-2',alcance:'Solo sede Medellín (pregrado 11.023)',t:'down',ttxt:'−3,7 % en dos años; posgrado −43 % desde 2019',fu:'Boletín estadístico UNAL (jun. 2026)',url:'https://estadisticaun.github.io/BoletinMedellin/Matriculados.html'},
+ {ies:'UPB — Campus Medellín',sector:'Privada',cifra:11932,corte:'2025-2',alcance:'Pregrado 8.817 + posgrado 3.115 (multicampus ≈ 22.000)',t:'down',ttxt:'Caída moderada; −1.594 a nivel nacional desde 2021',fu:'Reporte de sostenibilidad 2025 (mar. 2026)',url:'https://repository.upb.edu.co/bitstreams/d7e84136-3e7f-4542-a28d-a9a2370304f1/download'},
+ {ies:'Politécnico Colombiano JIC',sector:'Oficial',cifra:11874,corte:'2025-2',alcance:'Pregrado (posgrado aparte: 349)',t:'flat',ttxt:'Estancado; +8,4 % interanual de recuperación',fu:'Informe de gestión 2025 (ene. 2026)',url:'https://www.politecnicojic.edu.co/informes-de-gestion/category/332-informes-de-gestion'},
+ {ies:'IU Pascual Bravo',sector:'Oficial',cifra:9971,corte:'2025-2',alcance:'Total — récord histórico (126 % de la meta)',t:'up',ttxt:'+37 % desde 2022',fu:'Rendición de cuentas 2025 (abr. 2026)',url:'https://pascualbravo.edu.co/wp-content/uploads/2026/04/Rendicion-de-cuentas-Vigencia-2025.pdf'},
+ {ies:'IU de Envigado',sector:'Oficial',cifra:8369,corte:'2026-1',alcance:'Total (reporte SNIES, corte mar-2026)',t:'up',ttxt:'+23,1 % interanual, la que más acelera',fu:'La IUE en Cifras (jul. 2026)',url:'https://www.iue.edu.co/cifras-iue/'},
+ {ies:'Universidad de Medellín',sector:'Privada',cifra:7088,corte:'2024-2 *',alcance:'SNIES; no publica 2025 (su página «en cifras» quedó en 2023)',t:'down',ttxt:'−25 % desde 2021, la caída más fuerte',fu:'SNIES 2024 · El Colombiano (ene. 2026)',url:'https://www.elcolombiano.com/colombia/educacion/niversidades-colombia-ranking-estudiantes-matriculados-2026-KB32997481'},
+ {ies:'UNIMINUTO — Antioquia-Chocó',sector:'Privada',cifra:6354,corte:'2025-2',alcance:'Sede regional (aparte: 3.067 antioqueños en su sede virtual)',t:'down',ttxt:'−16 % desde 2023; lo nacional crece +4,4 % vía virtual',fu:'Informe de gestión 2025',url:'https://www.uniminuto.edu/informes-gestion-y-rendicion-de-cuentas'},
+ {ies:'Universidad CES',sector:'Privada',cifra:6259,corte:'cierre 2024 *',alcance:'Todos los niveles; el dato 2025 vive en DataCES (restringido)',t:'down',ttxt:'Declive leve: −4,5 % en dos años',fu:'Reporte de sostenibilidad 2024 (jul. 2025)',url:'https://www.ces.edu.co/content/uploads/2025/07/universidad-ces-reporte-sostenibilidad-2024.pdf'},
+ {ies:'Colegio Mayor de Antioquia',sector:'Oficial',cifra:5781,corte:'2025-2',alcance:'Total — cifra histórica',t:'up',ttxt:'Recuperación en U desde el piso de 4.789 (2023)',fu:'Rendición de cuentas 2025 (mar. 2026)',url:'https://www.colmayor.edu.co/wp-content/uploads/2026/03/Presentacion-RC-Final-3.pdf'},
+ {ies:'CEIPA',sector:'Privada',cifra:4622,corte:'2024-2 *',alcance:'SNIES (59 % virtual); sus informes no traen totales',t:'down',ttxt:'−6,8 % interanual',fu:'SNIES 2024',url:'https://snies.mineducacion.gov.co/portal/ESTADISTICAS/Bases-consolidadas/'},
+ {ies:'U. Católica de Oriente',sector:'Privada',cifra:4133,corte:'2025-2',alcance:'Sede única Rionegro (pregrado 3.914)',t:'flat',ttxt:'Estable (−0,6 % anual)',fu:'Informe de gestión 2025 (jun. 2026)',url:'https://uco.edu.co/wp-content/uploads/2026/06/3.-Informe-de-Gestion-UCO-2025-comprimido.pdf'},
+ {ies:'USB — Medellín',sector:'Privada',cifra:2954,corte:'2024-2 *',alcance:'SNIES seccional; su sitio solo dice «+3.000»',t:'down',ttxt:'−14 % en dos años',fu:'SNIES 2024',url:'https://snies.mineducacion.gov.co/portal/ESTADISTICAS/Bases-consolidadas/'},
+ {ies:'Universidad EIA',sector:'Privada',cifra:2650,corte:'2025-2',alcance:'Pregrado 2.433 + posgrado 217',t:'up',ttxt:'+24 % desde 2023, la privada que más crece',fu:'Informe integrado 2025 (mar. 2026)',url:'https://www.eia.edu.co/wp-content/uploads/2026/03/Informe-integrado-de-gestion-y-sostenibilidad-2025_V2-1-WEB.pdf'},
+ {ies:'Unilasallista',sector:'Privada',cifra:2184,corte:'2024-2 *',alcance:'Caldas; incluye técnico laboral (380)',t:'flat',ttxt:'Leve caída en pregrado (−6 %)',fu:'Informe de gestión 2024 (may. 2025)',url:'https://www.unilasallista.edu.co/wp-content/uploads/2025/05/Informe-de-gestion-2024-V.Final_compressed-1.pdf'},
+ {ies:'IU Salazar y Herrera',sector:'Privada',cifra:1902,corte:'2024-2 *',alcance:'SNIES; su informe 2024 reconoce déficit por menor matrícula',t:'down',ttxt:'−23 % en dos años, la más golpeada',fu:'SNIES 2024 · Informe IUSH 2024',url:'https://www.iush.edu.co/uploads/aterrizaje/2024/informe-gestion-sostenibilidad-iush-2024.pdf'},
+ {ies:'SENA — Regional Antioquia',sector:'Oficial',cifra:63470,corte:'ene–sep 2025',alcance:'Cupos de nivel tecnólogo (no personas únicas)',t:'up',ttxt:'Tecnólogo +8,6 %; técnico laboral regular −68 %',fu:'Rendición de cuentas regional (oct. 2025)',url:'https://www.sena.edu.co/es-co/transparencia/rendicionCuentas/Informe%20de%20Rendici%C3%B3n%20de%20Cuentas%20Antioquia.pdf'},
+];
+(function(){
+  const host=document.getElementById('tb-radar'); if(!host)return;
+  const TR={up:['▲','trend up'],flat:['▬','trend flat'],down:['▼','trend down']};
+  let filtro='todas';
+  function render(){
+    const rows=RADAR26.filter(r=>filtro==='todas'||(filtro==='2026'?r.corte.startsWith('2026'):r.sector===filtro));
+    host.innerHTML='';
+    const t=document.createElement('table');t.style.minWidth='860px';
+    t.innerHTML='<thead><tr><th>Institución</th><th>Sector</th><th class="num">Última cifra</th><th>Corte</th><th>Qué incluye</th><th>Tendencia</th><th>Fuente</th></tr></thead>';
+    const tb=document.createElement('tbody');
+    rows.forEach(r=>{
+      const tr=document.createElement('tr');
+      const [sym,cls]=TR[r.t];
+      tr.innerHTML=`<td class="wrapcell" style="min-width:170px"><b style="color:var(--ink)">${r.ies}</b></td>`+
+        `<td><span class="tag ${r.sector==='Oficial'?'of':'pr'}">${r.sector}</span></td>`+
+        `<td class="num" style="color:var(--ink);font-weight:650">${fmt(r.cifra)}</td>`+
+        `<td>${r.corte}</td>`+
+        `<td class="wrapcell" style="min-width:220px">${r.alcance}</td>`+
+        `<td class="wrapcell" style="min-width:200px"><span class="${cls}">${sym}</span> ${r.ttxt}</td>`+
+        `<td class="wrapcell" style="min-width:170px"><a href="${r.url}" target="_blank" rel="noopener">${r.fu} ↗</a></td>`;
+      tb.appendChild(tr);
+    });
+    t.appendChild(tb);host.appendChild(t);
+    const foot=document.createElement('p');foot.className='note';foot.style.margin='10px 12px';
+    foot.innerHTML='* Institución sin cifra 2025/2026 publicada a julio de 2026: se muestra su último dato oficial (SNIES 2024).';
+    host.appendChild(foot);
+  }
+  document.querySelectorAll('#radar-filtro button').forEach(b=>b.addEventListener('click',()=>{
+    document.querySelectorAll('#radar-filtro button').forEach(x=>x.classList.toggle('on',x===b));
+    filtro=b.dataset.f;render();
+  }));
+  render();
+  csvDownload(host.parentElement.querySelector('h3'),['Institución','Sector','Última cifra','Corte','Qué incluye','Tendencia','Fuente'],
+    RADAR26.map(r=>[r.ies,r.sector,r.cifra,r.corte,r.alcance,r.ttxt+' ('+({up:'sube',flat:'estable',down:'baja'})[r.t]+')',r.url]),'obs-antioquia-radar-2025-2026');
 })();
 
 /* ---- 03 Territorio ---- */
@@ -1086,7 +1296,51 @@ hbars('ch-oleprog', D.ole.top_programas_tyt.slice(0,10).map(p=>({label:p.program
   document.getElementById('hallazgo-calidad').innerHTML=`<b>La calidad certificada se concentra arriba:</b> el ${pct(acU.mat_acreditada,acU.matricula)} de la matrícula universitaria cursa programas acreditados en alta calidad, contra el ${pct(acT.mat_acreditada,acT.matricula)} de la tecnológica. En Saber TyT, Antioquia rinde al nivel del país: en 2022-4 (${fmt(s.n)} evaluados) supera el promedio nacional en comunicación escrita, lectura crítica e inglés; la sede mejor puntuada es <b>${top.ies}</b> (global ${top.global.toLocaleString('es-CO')}). En bilingüismo la brecha es estructural: solo el <b>${D.ingles.serie[D.ingles.serie.length-1].b1mas_ant.toLocaleString('es-CO')} %</b> de los evaluados TyT de Antioquia alcanza inglés B1 o superior — apenas por encima del ${D.ingles.serie[D.ingles.serie.length-1].b1mas_nal.toLocaleString('es-CO')} % nacional.`;
 })();
 
-/* ---- 07 Innovación ---- */
+/* ---- 07 Acreditación ---- */
+const ACRED_IES=[
+ {ies:'Universidad de Antioquia',res:'Res. 012029 · jul. 2023',anios:'10',estado:'vg',txt:'Vigente hasta 2033'},
+ {ies:'U. Nacional (multicampus, sede Medellín)',res:'Res. 015859 · ago. 2021',anios:'10',estado:'vg',txt:'Vigente hasta 2031'},
+ {ies:'Universidad EAFIT',res:'Res. 016360 · jun. 2026',anios:'10',estado:'vg',txt:'Primera privada de Antioquia con la vigencia máxima; 4.ª acreditación (2003, 2010, 2018, 2026)'},
+ {ies:'UPB (multicampus)',res:'Res. 020198 · oct. 2024',anios:'8',estado:'vg',txt:'Vigente hasta 2032'},
+ {ies:'ITM',res:'Res. 013595 · jul. 2020',anios:'8',estado:'vg',txt:'Vigente hasta 2028 · primera IU acreditada del país (2014)'},
+ {ies:'Tecnológico de Antioquia',res:'Res. 13167 · jul. 2020',anios:'8',estado:'vg',txt:'Vigente hasta 2028'},
+ {ies:'Universidad CES',res:'Renovación anunciada · jun. 2026',anios:'6',estado:'vg',txt:'Renovada; número de resolución en publicación'},
+ {ies:'Universidad EIA',res:'Renovada · nov. 2024',anios:'n.d.',estado:'vg',txt:'Renovación comunicada por el MEN'},
+ {ies:'Universidad de Medellín',res:'Res. 007470 · abr. 2021',anios:'6',estado:'vg',txt:'Vigente hasta 2027'},
+ {ies:'IU Pascual Bravo',res:'Res. 012512 · jun. 2022',anios:'6',estado:'vg',txt:'Vigente hasta 2028 · primera acreditación'},
+ {ies:'U. Católica de Oriente',res:'Res. 8912 · may. 2023',anios:'6',estado:'vg',txt:'Vigente hasta 2029'},
+ {ies:'Unilasallista',res:'Res. 007577 · may. 2024',anios:'6',estado:'vg',txt:'Vigente hasta 2030 · primera acreditación'},
+ {ies:'USB (seccional Medellín)',res:'Res. 014620 · ago. 2021',anios:'6',estado:'vg',txt:'Vigente hasta ago. 2027'},
+ {ies:'Colegio Mayor de Antioquia',res:'Res. 13165 · jul. 2020',anios:'6',estado:'rn',txt:'Radicó renovación en jul. 2025: sello prorrogado mientras concluye el trámite'},
+ {ies:'Politécnico Colombiano JIC',res:'Res. 015158 · ago. 2022',anios:'4 *',estado:'rn',txt:'Visita de pares de renovación en may. 2026; resolución pendiente'},
+ {ies:'CEIPA',res:'Res. 000679 · ene. 2022',anios:'4 *',estado:'rn',txt:'Renovación en curso'},
+ {ies:'UNAULA',res:'Res. 8607 · may. 2022',anios:'4 *',estado:'rn',txt:'Renovación en trámite'},
+ {ies:'IU de Envigado',res:'Res. 012511 · jun. 2022',anios:'4 *',estado:'rn',txt:'Renovación en trámite'},
+];
+(function(){
+  const host=document.getElementById('tb-acred-ies'); if(!host)return;
+  const t=document.createElement('table');t.style.minWidth='760px';
+  t.innerHTML='<thead><tr><th>Institución</th><th>Acreditación</th><th class="num">Vigencia (años)</th><th>Estado</th><th>Detalle</th></tr></thead>';
+  const tb=document.createElement('tbody');
+  ACRED_IES.forEach(r=>{
+    const tr=document.createElement('tr');
+    tr.innerHTML=`<td class="wrapcell" style="min-width:180px"><b style="color:var(--ink)">${r.ies}</b></td>`+
+      `<td>${r.res}</td>`+
+      `<td class="num" style="color:var(--ink);font-weight:650">${r.anios}</td>`+
+      `<td><span class="tag ${r.estado}">${r.estado==='vg'?'Vigente':'En renovación'}</span></td>`+
+      `<td class="wrapcell" style="min-width:240px">${r.txt}</td>`;
+    tb.appendChild(tr);
+  });
+  t.appendChild(tb);host.appendChild(t);
+  const foot=document.createElement('p');foot.className='note';foot.style.margin='10px 12px';
+  foot.innerHTML='* Vigencias de 4 años: expedientes del régimen de transición del modelo anterior (hoy la vigencia mínima es de 6). Sin acreditación institucional a la fecha: U. Católica Luis Amigó (con programas acreditados), Uniremington, IU Digital, María Cano, ESCOLME, IU Salazar y Herrera y Colegiatura, entre otras.';
+  host.appendChild(foot);
+  csvDownload(host.parentElement.querySelector('h3'),['Institución','Acreditación','Vigencia (años)','Estado','Detalle'],
+    ACRED_IES.map(r=>[r.ies,r.res,r.anios,r.estado==='vg'?'Vigente':'En renovación',r.txt]),'obs-antioquia-acreditacion-ies');
+  document.getElementById('hallazgo-acreditacion').innerHTML=`<b>Antioquia es potencia acreditadora:</b> 16 IES domiciliadas en el departamento tienen el sello institucional —cerca del 39&nbsp;% de sus IES, frente a ~33&nbsp;% nacional— y, de las 9 instituciones del país con la vigencia máxima de 10 años, <b>3 están aquí</b>: UdeA, UNAL y EAFIT, que en junio de 2026 se convirtió en la primera privada de Antioquia en lograrla. Lo que hay que vigilar este semestre: <b>cinco renovaciones en trámite</b> (Colegio Mayor, Politécnico JIC, CEIPA, UNAULA e IU de Envigado), todas colas del modelo anterior de 4 años.`;
+})();
+
+/* ---- 08 Innovación ---- */
 (function(){
   const CL=['A1','A','B','C','Reconocido'];
   const cl=D.grupos.clasificacion;
@@ -1110,7 +1364,7 @@ hbars('ch-oleprog', D.ole.top_programas_tyt.slice(0,10).map(p=>({label:p.program
   document.getElementById('hallazgo-innovacion').innerHTML=`<b>Ecosistema fuerte, con lugar para las TyT:</b> Antioquia tiene <b>${fmt(D.grupos.total)}</b> grupos de investigación reconocidos en la medición más reciente (Conv. 957 de 2024, resultados dic. 2025) —el ${pct(a1a,D.grupos.total)} en las categorías más altas (A1 y A)—. La Universidad de Antioquia avala uno de cada tres. Entre las instituciones con oferta técnica y tecnológica, el ITM (${itm?itm.grupos:'—'} grupos) y el Politécnico JIC muestran que investigar y formar tecnólogos no son mundos separados.`;
 })();
 
-/* ---- 08 Impacto social ---- */
+/* ---- 09 Impacto social ---- */
 (function(){
   const so=D.saber.social;
   const sum=o=>Object.values(o).reduce((a,b)=>a+b,0);
@@ -1520,7 +1774,7 @@ lineChart('ch-demanda', D.serie_demanda.map(x=>String(x.anio)), [
     C.map(c=>[c.subregion,c.pregrado,c.pob_17_21,c.cobertura.toLocaleString('es-CO')]));
 })();
 
-/* ---- 08b Mujeres por nivel ---- */
+/* ---- 09b Mujeres por nivel ---- */
 (function(){
   const M=D.mujeres_nivel||[];
   if(!M.length)return;
@@ -1583,6 +1837,19 @@ lineChart('ch-demanda', D.serie_demanda.map(x=>String(x.anio)), [
   }
 })();
 
+
+/* ---- barra de progreso + volver arriba ---- */
+(function(){
+  const bar=document.getElementById('progreso'), up=document.getElementById('arriba');
+  function onScroll(){
+    const h=document.documentElement;
+    const max=h.scrollHeight-h.clientHeight;
+    bar.style.width=(max>0?100*h.scrollTop/max:0)+'%';
+    up.classList.toggle('on',h.scrollTop>900);
+  }
+  addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  up.addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}));
+})();
 
 /* ---- CSV en todas las tablas ---- */
 function csvDownload(container, headers, rows, nombre){
