@@ -1044,10 +1044,10 @@ const pos=s=>(s.niveles['Especialización']||0)+(s.niveles['Maestría']||0)+(s.n
   const t24=tot(s24), t23=tot(s23);
   const g24=D.serie_graduados[D.serie_graduados.length-1].total;
   const kp=[
-    {lbl:'Matrícula total 2024',val:fmt(t24),sub:`<span class="up">▲ ${pct(t24-t23,t23)}</span> vs. 2023`},
-    {lbl:'Pregrado · Posgrado',val:`<span class="small">${fmtK(pre(s24))} · ${fmtK(pos(s24))}</span>`,sub:'todos los niveles de formación'},
-    {lbl:'Graduados 2024',val:fmt(g24),sub:'nueva fuerza laboral'},
-    {lbl:'Programas activos',val:fmt(D.programas.length),sub:'con matrícula en 2024'},
+    {lbl:'Matrícula total (cierre 2024)',val:fmt(t24),sub:`<span class="up">▲ ${pct(t24-t23,t23)}</span> vs. 2023 · el cierre 2025 sale en semanas`},
+    {lbl:'Ya reportado en 2026-1',val:fmt(61832),sub:'ITM, TdeA e IU Envigado — récords históricos (radar)'},
+    {lbl:'Gratuidad 2025-2026',val:fmt(118117),sub:'beneficiarios en Antioquia (2025-1) · 46.667 cupos de Matrícula Cero 2026-1'},
+    {lbl:'Acreditación 2026',val:'<span class="small">10 años</span>',sub:'EAFIT se sumó a UdeA y UNAL con la vigencia máxima (jun. 2026)'},
     {lbl:'IES con oferta',val:fmt(D.ies.length),sub:`${D.ies.filter(i=>i.sector==='Oficial').length} oficiales · ${D.ies.filter(i=>i.sector!=='Oficial').length} privadas`},
     {lbl:'Municipios con oferta',val:fmt(D.municipios.length),sub:'de 125 en Antioquia'},
   ];
