@@ -368,6 +368,13 @@ html.light #arriba{box-shadow:0 4px 18px rgba(0,0,0,.15)}
       <p class="note">Matrícula total, componente TyT y posgrado por municipio.</p>
       <div class="tscroll" style="max-height:440px;overflow-y:auto" id="tb-munis"></div>
     </div>
+    <div class="card">
+      <h3>El impuesto demográfico: los jóvenes que vienen (2018 → 2042)</h3>
+      <p class="note">Población proyectada de 17 a 21 años en Antioquia — el mercado natural de la educación superior. Cálculo propio sobre las proyecciones municipales del DANE (CNPV 2018, área total; <code style="font-size:11px">scripts/proyeccion_demografica.py</code>). El pico ya pasó: fue en 2020, con 550.160 jóvenes.</p>
+      <div id="ch-demo" class="chart"></div>
+      <div class="tscroll" style="margin-top:16px" id="tb-demo"></div>
+      <p class="note" style="margin-top:12px;margin-bottom:0"><b style="color:var(--ink)">La cuenta regresiva:</b> de los <b>541.548</b> jóvenes de 17-21 años de 2024, Antioquia pasará a <b>469.972 en 2035 (−13,2&nbsp;%)</b> y a <b>422.704 en 2042 (−21,9&nbsp;%)</b> — 118.844 menos. Ninguna subregión crece; el Suroeste pierde casi uno de cada cinco. La pregunta del sistema dejará de ser cuántos cupos faltan y pasará a ser de dónde saldrán los estudiantes.</p>
+    </div>
   </div>
   <div class="callout" id="hallazgo-territorio"></div>
 </section>
@@ -681,7 +688,7 @@ html.light #arriba{box-shadow:0 4px 18px rgba(0,0,0,.15)}
     <div>
       <h4>Metodología y fuentes</h4>
       <ul id="fuentes"></ul>
-      <p style="margin-top:14px">Notas: (1) La matrícula anual corresponde al semestre con mayor total de cada vigencia — sumar semestres duplicaría estudiantes. (2) Los indicadores OLE se restringen a IES con domicilio en Antioquia; se excluyen SENA y UNAD por ser instituciones de alcance nacional cuyos graduados no son separables por departamento en esa base; la especialización se omite de la tasa de vinculación por cobertura insuficiente. (3) La serie 2015–2017 de la base histórica del MEN se descartó por inconsistencias de reporte semestral. (4) Saber TyT usa la escala 0–200 vigente desde 2017-3; el sector de cada IES se toma del SNIES por errores de registro en la base ICFES. (5) Los grupos de investigación corresponden a los resultados finales de la Convocatoria 957 de 2024 (Resolución 1531 de dic. 2025, listado oficial de Minciencias); como el listado no trae departamento, este se asigna por código GrupLAC contra la base histórica de convocatorias (90 % de cobertura) y, para grupos nuevos, por institución avaladora domiciliada en Antioquia. (6) Los resultados Saber Pro (nivel universitario) no están disponibles como microdato abierto completo en datos.gov.co; se incorporarán desde DataIcfes en la próxima versión. (7) Los niveles MCER de inglés se agregan desde el microdato Saber TyT vía API; los rótulos históricos (A-, -A1, Pre-A1, B+) se homologan a la escala vigente. (8) La división subregional corresponde a la usada por la Gobernación de Antioquia. (9) El radar «La foto 2025–2026» recoge cifras autorreportadas en rendiciones de cuentas, informes de gestión, boletines estadísticos y tableros oficiales de las IES (verificadas documento por documento en julio de 2026); sus cortes y definiciones varían entre instituciones y no son directamente comparables entre sí ni con el SNIES — la tendencia de cada fila sí es consistente porque proviene de la serie de la misma fuente. Las bases consolidadas SNIES 2025 no estaban publicadas al corte (patrón anual: se publican hacia julio–agosto del año siguiente). (10) La cobertura bruta subregional divide la matrícula de pregrado ofertada en la subregión por la población proyectada de 17 a 21 años (DANE, 2024): mide capacidad instalada de oferta, no asistencia de residentes, por lo que las subregiones que atraen estudiantes pueden superar el 100 %. (11) El puntaje Saber TyT por municipio promedia los cinco módulos y solo se reporta con 50 o más evaluados. (12) La sección de acreditación se construyó sobre las fuentes primarias del régimen (Ley 30 de 1992, Decreto 1330 de 2019, Acuerdos CESU 02 de 2020 y 01 de 2025 con su transición 2026-2027) y la verificación resolución por resolución del estado de cada IES en julio de 2026; los estados «en renovación» reflejan la información pública disponible y pueden resolverse en el segundo semestre de 2026.</p>
+      <p style="margin-top:14px">Notas: (1) La matrícula anual corresponde al semestre con mayor total de cada vigencia — sumar semestres duplicaría estudiantes. (2) Los indicadores OLE se restringen a IES con domicilio en Antioquia; se excluyen SENA y UNAD por ser instituciones de alcance nacional cuyos graduados no son separables por departamento en esa base; la especialización se omite de la tasa de vinculación por cobertura insuficiente. (3) La serie 2015–2017 de la base histórica del MEN se descartó por inconsistencias de reporte semestral. (4) Saber TyT usa la escala 0–200 vigente desde 2017-3; el sector de cada IES se toma del SNIES por errores de registro en la base ICFES. (5) Los grupos de investigación corresponden a los resultados finales de la Convocatoria 957 de 2024 (Resolución 1531 de dic. 2025, listado oficial de Minciencias); como el listado no trae departamento, este se asigna por código GrupLAC contra la base histórica de convocatorias (90 % de cobertura) y, para grupos nuevos, por institución avaladora domiciliada en Antioquia. (6) Los resultados Saber Pro (nivel universitario) no están disponibles como microdato abierto completo en datos.gov.co; se incorporarán desde DataIcfes en la próxima versión. (7) Los niveles MCER de inglés se agregan desde el microdato Saber TyT vía API; los rótulos históricos (A-, -A1, Pre-A1, B+) se homologan a la escala vigente. (8) La división subregional corresponde a la usada por la Gobernación de Antioquia. (9) El radar «La foto 2025–2026» recoge cifras autorreportadas en rendiciones de cuentas, informes de gestión, boletines estadísticos y tableros oficiales de las IES (verificadas documento por documento en julio de 2026); sus cortes y definiciones varían entre instituciones y no son directamente comparables entre sí ni con el SNIES — la tendencia de cada fila sí es consistente porque proviene de la serie de la misma fuente. Las bases consolidadas SNIES 2025 no estaban publicadas al corte (patrón anual: se publican hacia julio–agosto del año siguiente). (10) La cobertura bruta subregional divide la matrícula de pregrado ofertada en la subregión por la población proyectada de 17 a 21 años (DANE, 2024): mide capacidad instalada de oferta, no asistencia de residentes, por lo que las subregiones que atraen estudiantes pueden superar el 100 %. (11) El puntaje Saber TyT por municipio promedia los cinco módulos y solo se reporta con 50 o más evaluados. (12) El benchmark interdepartamental y la proyección de población 17-21 son cálculos propios sobre las bases consolidadas nacionales del SNIES y las proyecciones municipales del DANE (CNPV 2018), reproducibles con scripts/benchmark_deptos.py y scripts/proyeccion_demografica.py. (13) La sección de acreditación se construyó sobre las fuentes primarias del régimen (Ley 30 de 1992, Decreto 1330 de 2019, Acuerdos CESU 02 de 2020 y 01 de 2025 con su transición 2026-2027) y la verificación resolución por resolución del estado de cada IES en julio de 2026; los estados «en renovación» reflejan la información pública disponible y pueden resolverse en el segundo semestre de 2026.</p>
     </div>
     <div>
       <h4>Sobre MaterIA Gris</h4>
@@ -1134,6 +1141,33 @@ hbars('ch-munis', D.municipios.slice(0,12).map(mu=>({label:mu.municipio,value:mu
   t.appendChild(tb);host.appendChild(t);
   const med=D.municipios[0],totM=D.municipios.reduce((a,m)=>a+m.matricula24,0);
   document.getElementById('hallazgo-territorio').innerHTML=`<b>La brecha territorial es la noticia:</b> solo <b>${D.municipios.length} de 125 municipios</b> tienen oferta activa y Medellín concentra el <b>${pct(med.matricula24,totM)}</b> de la matrícula. El posgrado está aún más concentrado: ${pct(med.posgrado24,D.municipios.reduce((a,m)=>a+m.posgrado24,0))} en la capital. Fuera del Valle de Aburrá y Oriente, la puerta de entrada masiva sigue siendo el SENA.`;
+})();
+
+/* ---- 03d Impuesto demográfico (scripts/proyeccion_demografica.py, DANE CNPV-2018) ---- */
+(function(){
+  const ANIOS_P=Array.from({length:25},(_,i)=>String(2018+i));
+  const TOT_P=[545241,547236,550160,548805,545772,542680,541548,538993,534330,528513,521676,513864,506354,499056,491862,484644,477398,469972,462758,456149,449349,442643,436264,429811,422704];
+  lineChart('ch-demo', ANIOS_P, [
+    {name:'Población 17-21 de Antioquia',color:S1,values:TOT_P},
+  ],{height:280,yDomain:[400000,560000]});
+  const P35={'Valle de Aburrá':[292446,254217],'Oriente':[63996,56879],'Urabá':[53736,46165],'Suroeste':[32217,26349],'Bajo Cauca':[26625,24054],'Norte':[23660,19876],'Nordeste':[19770,17679],'Occidente':[19592,16531],'Magdalena Medio':[9506,8222]};
+  const matSub={}; D.subregiones.agg.forEach(s=>{matSub[s.subregion]=s.matricula24;});
+  const host=document.getElementById('tb-demo');
+  const t=document.createElement('table');t.style.minWidth='640px';
+  t.innerHTML='<thead><tr><th>Subregión</th><th class="num">Jóvenes 17-21 (2024)</th><th class="num">Proyección 2035</th><th class="num">Δ 2024→2035</th><th class="num">Matrícula 2024</th></tr></thead>';
+  const tb=document.createElement('tbody');
+  Object.entries(P35).forEach(([s,[p24,p35]])=>{
+    const d=Math.round(1000*(p35-p24)/p24)/10;
+    const tr=document.createElement('tr');
+    tr.innerHTML=`<td class="wrapcell"><b style="color:var(--ink)">${s}</b></td>`+
+      `<td class="num">${fmt(p24)}</td><td class="num">${fmt(p35)}</td>`+
+      `<td class="num"><span class="trend down">▼</span> ${d.toLocaleString('es-CO')} %</td>`+
+      `<td class="num">${matSub[s]!=null?fmt(matSub[s]):'—'}</td>`;
+    tb.appendChild(tr);
+  });
+  t.appendChild(tb);host.appendChild(t);
+  csvDownload(host.parentElement.querySelector('h3'),['Subregión','Jóvenes 17-21 (2024)','Proyección 2035','Δ % 2024→2035','Matrícula 2024'],
+    Object.entries(P35).map(([s,[p24,p35]])=>[s,p24,p35,Math.round(1000*(p35-p24)/p24)/10,matSub[s]??'']),'materia-gris-impuesto-demografico');
 })();
 
 /* ---- 04 Oferta ---- */
