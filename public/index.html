@@ -292,6 +292,7 @@ html.light #arriba{box-shadow:0 4px 18px rgba(0,0,0,.15)}
 <div id="progreso" aria-hidden="true"></div>
 <nav><div class="wrap">
   <a class="logo" href="#top">Mater<span>IA</span> Gris</a>
+  <a class="sec" href="#inicio">Inicio</a>
   <a class="sec" href="#panorama">Panorama</a>
   <a class="sec" href="#instituciones">Instituciones</a>
   <a class="sec" href="#territorio">Territorio</a>
@@ -313,7 +314,7 @@ html.light #arriba{box-shadow:0 4px 18px rgba(0,0,0,.15)}
 </div></div>
 
 <div class="wrap" id="top">
-<header>
+<header id="inicio">
   <div class="kicker">MaterIA Gris · El cerebro de datos de la educación superior de Antioquia</div>
   <h1>La educación superior de Antioquia, medida con datos oficiales</h1>
   <p class="lede">Pregrado y posgrado, pública y privada: oferta académica, demanda estudiantil, resultados en el mercado laboral, calidad, capacidad de innovación e impacto social del sistema de educación superior del departamento — con lente de detalle sobre la formación técnica y tecnológica.</p>
@@ -476,6 +477,12 @@ html.light #arriba{box-shadow:0 4px 18px rgba(0,0,0,.15)}
       <div id="ch-demo" class="chart"></div>
       <div class="tscroll" style="margin-top:16px" id="tb-demo"></div>
       <p class="note" style="margin-top:12px;margin-bottom:0"><b style="color:var(--ink)">La cuenta regresiva:</b> de los <b>541.548</b> jóvenes de 17-21 años de 2024, Antioquia pasará a <b>469.972 en 2035 (−13,2&nbsp;%)</b> y a <b>422.704 en 2042 (−21,9&nbsp;%)</b> — 118.844 menos. Ninguna subregión crece; el Suroeste pierde casi uno de cada cinco. La pregunta del sistema dejará de ser cuántos cupos faltan y pasará a ser de dónde saldrán los estudiantes.</p>
+    </div>
+    <div class="card">
+      <h3>La economía de cada subregión: dónde está la plata y dónde los cupos</h3>
+      <p class="note">Valor agregado municipal 2024 provisional del DANE (base 2015, precios corrientes) agregado a las nueve subregiones, cruzado con población (proyecciones DANE 2024) y matrícula. Cálculo propio (<code style="font-size:11px">data/va_subregion_2024p.json</code>).</p>
+      <div class="tscroll" id="tb-vasub"></div>
+      <p class="note" style="margin-top:12px;margin-bottom:0"><b style="color:var(--ink)">La lectura:</b> el Valle de Aburrá concentra el 63,6&nbsp;% del valor agregado y el 88&nbsp;% de la matrícula — pero el per cápita cuenta otra historia: Oriente (33,5&nbsp;M) y Magdalena Medio (34,2&nbsp;M) generan casi tanto valor por habitante como Aburrá (35,1&nbsp;M) con una fracción de la oferta educativa. Y las subregiones más primarias (Bajo Cauca 52&nbsp;% agro-minería, Suroeste 42&nbsp;%) son justo donde la matrícula por habitante es más baja: la economía extractiva convive con el desierto de cupos.</p>
     </div>
   </div>
   <div class="callout" id="hallazgo-territorio"></div>
@@ -2388,6 +2395,53 @@ lineChart('ch-demanda', D.serie_demanda.map(x=>String(x.anio)), [
   const mh=location.hash.match(/ies=(\d+)/); if(mh)setTimeout(()=>abrirFicha(mh[1]),150);
 })();
 
+/* ---- economía subregional (DANE VA municipal 2024p) ---- */
+const VASUB={"Bajo Cauca": {"va": 8065.8, "prim": 52.3, "sec": 3.0, "ter": 44.7, "pob": 262987, "vapc": 30.7, "peso": 3.5}, "Magdalena Medio": {"va": 3748.7, "prim": 36.7, "sec": 6.1, "ter": 57.2, "pob": 109658, "vapc": 34.2, "peso": 1.6}, "Nordeste": {"va": 6711.2, "prim": 39.3, "sec": 3.9, "ter": 56.8, "pob": 213389, "vapc": 31.5, "peso": 2.9}, "Norte": {"va": 8036.1, "prim": 25.6, "sec": 21.4, "ter": 53.0, "pob": 254501, "vapc": 31.6, "peso": 3.5}, "Occidente": {"va": 5889.9, "prim": 47.2, "sec": 4.1, "ter": 48.7, "pob": 224343, "vapc": 26.3, "peso": 2.6}, "Oriente": {"va": 24918.9, "prim": 18.9, "sec": 23.8, "ter": 57.3, "pob": 744375, "vapc": 33.5, "peso": 10.8}, "Suroeste": {"va": 11115.1, "prim": 42.5, "sec": 9.6, "ter": 47.9, "pob": 385210, "vapc": 28.9, "peso": 4.8}, "Urabá": {"va": 15268.0, "prim": 40.2, "sec": 5.7, "ter": 54.1, "pob": 519078, "vapc": 29.4, "peso": 6.6}, "Valle de Aburrá": {"va": 146216.5, "prim": 0.6, "sec": 22.0, "ter": 77.4, "pob": 4167258, "vapc": 35.1, "peso": 63.6}};
+(function(){
+  const host=document.getElementById('tb-vasub'); if(!host)return;
+  const matSub={}; D.subregiones.agg.forEach(x=>{matSub[x.subregion]=x.matricula24;});
+  const t=document.createElement('table');t.style.minWidth='780px';
+  t.innerHTML='<thead><tr><th>Subregión</th><th class="num">Valor agregado 2024p</th><th class="num">Peso</th><th class="num">VA per cápita</th><th>Perfil (prim/sec/terc)</th><th class="num">Matrícula 2024</th><th class="num">Matríc. por 10 mil hab.</th></tr></thead>';
+  const tb=document.createElement('tbody');
+  Object.entries(VASUB).sort((a,b)=>b[1].va-a[1].va).forEach(([sr,v])=>{
+    const m=matSub[sr]||0, m10=Math.round(1e4*m/v.pob);
+    const tr=document.createElement('tr');
+    tr.innerHTML=`<td class="wrapcell"><b style="color:var(--ink)">${sr}</b></td>`+
+      `<td class="num" style="color:var(--ink);font-weight:650">$${v.va.toLocaleString('es-CO',{maximumFractionDigits:0})} mil M</td>`+
+      `<td class="num">${v.peso.toLocaleString('es-CO')} %</td>`+
+      `<td class="num">$${v.vapc.toLocaleString('es-CO')} M</td>`+
+      `<td>${v.prim.toLocaleString('es-CO')} / ${v.sec.toLocaleString('es-CO')} / ${v.ter.toLocaleString('es-CO')} %</td>`+
+      `<td class="num">${fmt(m)}</td><td class="num" style="color:var(--ink);font-weight:650">${fmt(m10)}</td>`;
+    tb.appendChild(tr);
+  });
+  t.appendChild(tb);host.appendChild(t);
+  csvDownload(host.parentElement.querySelector('h3'),['Subregión','VA 2024p (miles de millones)','Peso %','VA per cápita (millones)','% primarias','% secundarias','% terciarias','Población 2024','Matrícula 2024','Matrícula por 10 mil hab.'],
+    Object.entries(VASUB).sort((a,b)=>b[1].va-a[1].va).map(([sr,v])=>[sr,v.va,v.peso,v.vapc,v.prim,v.sec,v.ter,v.pob,matSub[sr]||0,Math.round(1e4*(matSub[sr]||0)/v.pob)]),'materia-gris-economia-subregional');
+})();
+
+/* ---- modo dashboard: una vista por sección ---- */
+(function(){
+  const vistas=['inicio',...[...document.querySelectorAll('section[id]')].map(x=>x.id),'metodologia'];
+  const de=id=>document.getElementById(id);
+  window.mostrarVista=function(id){
+    if(!vistas.includes(id))return;
+    vistas.forEach(v=>{const el=de(v); if(el)el.style.display=(v===id)?'':'none';});
+    document.querySelectorAll('nav a.sec').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+id));
+    de(id).querySelectorAll('.reveal:not(.in)').forEach(x=>x.classList.add('in'));
+    if(de(id).classList&&de(id).classList.contains('reveal'))de(id).classList.add('in');
+    scrollTo({top:0,behavior:'instant'});
+    history.replaceState(null,'','#'+id);
+  };
+  document.addEventListener('click',ev=>{
+    const a=ev.target.closest('a[href^="#"]'); if(!a)return;
+    const id=a.getAttribute('href').slice(1);
+    if(vistas.includes(id)){ev.preventDefault();mostrarVista(id);}
+    else if(id==='top'){ev.preventDefault();mostrarVista('inicio');}
+  });
+  const h=location.hash.slice(1);
+  mostrarVista(vistas.includes(h)?h:'inicio');
+})();
+
 /* ---- barra de progreso + volver arriba ---- */
 (function(){
   const bar=document.getElementById('progreso'), up=document.getElementById('arriba');
@@ -2521,9 +2575,7 @@ function csvDownload(container, headers, rows, nombre){
   const pal=document.getElementById('pal'), q=document.getElementById('pal-q'), list=document.getElementById('pal-list');
   const N=t=>String(t).normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase();
   const items=[];
-  const goTo=id=>{const el=document.getElementById(id);
-    if(el)el.scrollIntoView({behavior:'smooth',block:'start'});
-    history.replaceState(null,'','#'+id);};
+  const goTo=id=>{if(window.mostrarVista)mostrarVista(id);};
   document.querySelectorAll('section[id]').forEach(s=>{
     items.push({t:s.querySelector('h2').textContent,k:'Sección',go:()=>goTo(s.id)});
   });
