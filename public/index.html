@@ -303,6 +303,7 @@ html.light #arriba{box-shadow:0 4px 18px rgba(0,0,0,.15)}
   <a class="sec" href="#acreditacion">Acreditación</a>
   <a class="sec" href="#innovacion">Innovación</a>
   <a class="sec" href="#social">Impacto social</a>
+  <a class="sec" href="#finanzas">Finanzas</a>
   <a class="sec" href="#metodologia">Metodología</a>
   <button id="pal-open" style="margin-left:auto;background:var(--surface-2);border:1px solid var(--border);color:var(--muted);border-radius:8px;padding:5px 10px;font-size:12px;cursor:pointer;font-family:inherit;white-space:nowrap">Buscar ⌘K</button>
   <button id="tema" type="button" aria-label="Cambiar tema" style="background:var(--surface-2);border:1px solid var(--border);color:var(--muted);border-radius:8px;padding:5px 10px;font-size:12px;cursor:pointer;font-family:inherit;white-space:nowrap"></button>
@@ -853,13 +854,45 @@ html.light #arriba{box-shadow:0 4px 18px rgba(0,0,0,.15)}
   <div class="callout" id="hallazgo-social"></div>
 </section>
 
+<!-- ================= FINANZAS PÚBLICAS ================= -->
+<section id="finanzas">
+  <div class="sec-head"><span class="sec-num">11</span><h2>Finanzas públicas: de qué viven las IES oficiales</h2></div>
+  <p class="sec-desc">Los presupuestos 2026, la ejecución real 2025 y los estados financieros de las nueve IES públicas con domicilio u operación en Antioquia — leídos de los documentos primarios de cada institución (acuerdos de presupuesto, EEFF auditados) y contrastados con la ejecución CUIPO que reportan a la Contraloría (verificada por API al centavo). Cifras verificadas al 14 de julio de 2026.</p>
+  <div class="cards">
+    <div class="card">
+      <h3>La tabla maestra: presupuesto, dependencia y resultado</h3>
+      <p class="note">Millones de pesos. «% Estado» = transferencias formales sobre ingresos; donde la gratuidad fluye como «matrícula» pagada por el MEN la dependencia real es mayor (TdeA ≈ 90 %, marcada como estimación). El presupuesto por estudiante usa el aprobado 2026 y la matrícula más reciente.</p>
+      <div class="tscroll" style="max-height:560px;overflow-y:auto" id="tb-fin"></div>
+    </div>
+    <div class="card half">
+      <h3>Presupuesto 2026 por estudiante</h3>
+      <p class="note">Millones de pesos por matriculado. La UdeA quintuplica al TdeA — investigación, posgrados y hospital explican parte; la masificación con gratuidad, el resto.</p>
+      <div id="ch-finpe" class="chart"></div>
+    </div>
+    <div class="card half">
+      <h3>La deuda de Matrícula Cero: la foto envejeció</h3>
+      <p class="note">Qué se denunció vs. qué dicen los libros.</p>
+      <ul style="list-style:none;font-size:13.5px;display:grid;gap:9px">
+        <li style="padding-left:16px;position:relative"><b style="position:absolute;left:0;color:var(--s3)">→</b><b style="color:var(--ink)">La denuncia (may. 2025):</b> la Nación debía <b>$103.868 M</b> a las IES antioqueñas por Matrícula Cero — TdeA $54.382 M, ITM $19.939 M, UdeA $10.484 M, Colmayor $9.961 M, Poli JIC $9.100 M (<a href="https://www.elcolombiano.com/antioquia/deuda-gobierno-gustavo-petro-matricula-cero-universidades-antioquia-MC27524383" target="_blank" rel="noopener">El Colombiano</a>).</li>
+        <li style="padding-left:16px;position:relative"><b style="position:absolute;left:0;color:var(--s1)">→</b><b style="color:var(--ink)">Los libros (dic. 2025):</b> el MEN se puso al día con casi todas — el TdeA cerró con solo $3.017 M por cobrar, Colmayor certifica giros completos e ITM recaudó el 104 % de lo presupuestado del MEN.</li>
+        <li style="padding-left:16px;position:relative"><b style="position:absolute;left:0;color:#e88a8a">→</b><b style="color:var(--ink)">La deuda viva está en Envigado:</b> la IUE cerró 2025 con <b>$17.663 M pendientes de la Nación por gratuidad</b> (54 % de sus cuentas por cobrar), excedente casi nulo y la única deuda bancaria del grupo (<a href="https://www.iue.edu.co/download/753/2025/45369/12-estadosfinancierosdiciembre-2025.pdf" target="_blank" rel="noopener">EEFF IUE</a>). Crecer +23 % con la plata llegando tarde tiene precio.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Alertas y lecturas, institución por institución</h3>
+      <div class="tscroll" id="tb-finalertas"></div>
+    </div>
+  </div>
+  <div class="callout" id="hallazgo-finanzas"></div>
+</section>
+
 <!-- ================= METODOLOGÍA ================= -->
 <footer id="metodologia">
   <div class="fgrid">
     <div>
       <h4>Metodología y fuentes</h4>
       <ul id="fuentes"></ul>
-      <p style="margin-top:14px">Notas: (1) La matrícula anual corresponde al semestre con mayor total de cada vigencia — sumar semestres duplicaría estudiantes. (2) Los indicadores OLE se restringen a IES con domicilio en Antioquia; se excluyen SENA y UNAD por ser instituciones de alcance nacional cuyos graduados no son separables por departamento en esa base; la especialización se omite de la tasa de vinculación por cobertura insuficiente. (3) La serie 2015–2017 de la base histórica del MEN se descartó por inconsistencias de reporte semestral. (4) Saber TyT usa la escala 0–200 vigente desde 2017-3; el sector de cada IES se toma del SNIES por errores de registro en la base ICFES. (5) Los grupos de investigación corresponden a los resultados finales de la Convocatoria 957 de 2024 (Resolución 1531 de dic. 2025, listado oficial de Minciencias); como el listado no trae departamento, este se asigna por código GrupLAC contra la base histórica de convocatorias (90 % de cobertura) y, para grupos nuevos, por institución avaladora domiciliada en Antioquia. (6) Los resultados Saber Pro (nivel universitario) no están disponibles como microdato abierto completo en datos.gov.co; se incorporarán desde DataIcfes en la próxima versión. (7) Los niveles MCER de inglés se agregan desde el microdato Saber TyT vía API; los rótulos históricos (A-, -A1, Pre-A1, B+) se homologan a la escala vigente. (8) La división subregional corresponde a la usada por la Gobernación de Antioquia. (9) El radar «La foto 2025–2026» recoge cifras autorreportadas en rendiciones de cuentas, informes de gestión, boletines estadísticos y tableros oficiales de las IES (verificadas documento por documento en julio de 2026); sus cortes y definiciones varían entre instituciones y no son directamente comparables entre sí ni con el SNIES — la tendencia de cada fila sí es consistente porque proviene de la serie de la misma fuente. Las bases consolidadas SNIES 2025 no estaban publicadas al corte (patrón anual: se publican hacia julio–agosto del año siguiente). (10) La cobertura bruta subregional divide la matrícula de pregrado ofertada en la subregión por la población proyectada de 17 a 21 años (DANE, 2024): mide capacidad instalada de oferta, no asistencia de residentes, por lo que las subregiones que atraen estudiantes pueden superar el 100 %. (11) El puntaje Saber TyT por municipio promedia los cinco módulos y solo se reporta con 50 o más evaluados. (12) El benchmark interdepartamental y la proyección de población 17-21 son cálculos propios sobre las bases consolidadas nacionales del SNIES y las proyecciones municipales del DANE (CNPV 2018), reproducibles con scripts/benchmark_deptos.py y scripts/proyeccion_demografica.py. (13) La sección de acreditación se construyó sobre las fuentes primarias del régimen (Ley 30 de 1992, Decreto 1330 de 2019, Acuerdos CESU 02 de 2020 y 01 de 2025 con su transición 2026-2027) y la verificación resolución por resolución del estado de cada IES en julio de 2026; los estados «en renovación» reflejan la información pública disponible y pueden resolverse en el segundo semestre de 2026.</p>
+      <p style="margin-top:14px">Notas: (1) La matrícula anual corresponde al semestre con mayor total de cada vigencia — sumar semestres duplicaría estudiantes. (2) Los indicadores OLE se restringen a IES con domicilio en Antioquia; se excluyen SENA y UNAD por ser instituciones de alcance nacional cuyos graduados no son separables por departamento en esa base; la especialización se omite de la tasa de vinculación por cobertura insuficiente. (3) La serie 2015–2017 de la base histórica del MEN se descartó por inconsistencias de reporte semestral. (4) Saber TyT usa la escala 0–200 vigente desde 2017-3; el sector de cada IES se toma del SNIES por errores de registro en la base ICFES. (5) Los grupos de investigación corresponden a los resultados finales de la Convocatoria 957 de 2024 (Resolución 1531 de dic. 2025, listado oficial de Minciencias); como el listado no trae departamento, este se asigna por código GrupLAC contra la base histórica de convocatorias (90 % de cobertura) y, para grupos nuevos, por institución avaladora domiciliada en Antioquia. (6) Los resultados Saber Pro (nivel universitario) no están disponibles como microdato abierto completo en datos.gov.co; se incorporarán desde DataIcfes en la próxima versión. (7) Los niveles MCER de inglés se agregan desde el microdato Saber TyT vía API; los rótulos históricos (A-, -A1, Pre-A1, B+) se homologan a la escala vigente. (8) La división subregional corresponde a la usada por la Gobernación de Antioquia. (9) El radar «La foto 2025–2026» recoge cifras autorreportadas en rendiciones de cuentas, informes de gestión, boletines estadísticos y tableros oficiales de las IES (verificadas documento por documento en julio de 2026); sus cortes y definiciones varían entre instituciones y no son directamente comparables entre sí ni con el SNIES — la tendencia de cada fila sí es consistente porque proviene de la serie de la misma fuente. Las bases consolidadas SNIES 2025 no estaban publicadas al corte (patrón anual: se publican hacia julio–agosto del año siguiente). (10) La cobertura bruta subregional divide la matrícula de pregrado ofertada en la subregión por la población proyectada de 17 a 21 años (DANE, 2024): mide capacidad instalada de oferta, no asistencia de residentes, por lo que las subregiones que atraen estudiantes pueden superar el 100 %. (11) El puntaje Saber TyT por municipio promedia los cinco módulos y solo se reporta con 50 o más evaluados. (12) El benchmark interdepartamental y la proyección de población 17-21 son cálculos propios sobre las bases consolidadas nacionales del SNIES y las proyecciones municipales del DANE (CNPV 2018), reproducibles con scripts/benchmark_deptos.py y scripts/proyeccion_demografica.py. (13) La sección de acreditación se construyó sobre las fuentes primarias del régimen (Ley 30 de 1992, Decreto 1330 de 2019, Acuerdos CESU 02 de 2020 y 01 de 2025 con su transición 2026-2027) y la verificación resolución por resolución del estado de cada IES en julio de 2026; los estados «en renovación» reflejan la información pública disponible y pueden resolverse en el segundo semestre de 2026. (14) La sección de finanzas lee los documentos primarios de cada IES (acuerdos de presupuesto 2026, ejecuciones y EEFF a dic-2025) y verifica las ejecuciones contra el CUIPO de la Contraloría vía datos.gov.co (ingresos 9axr-9gnb, gastos 4f7r-epif; códigos CHIP: UdeA 120205000, UNAL 27400000, ITM 260105001, Pascual Bravo 821505000, Colmayor 824505000, TdeA 121705000, Poli JIC 120305000, IU Digital 923272870, IUE 262505266); los porcentajes de dependencia «real» son estimaciones documentadas.</p>
     </div>
     <div>
       <h4>Sobre MaterIA Gris</h4>
@@ -2417,6 +2450,58 @@ const VASUB={"Bajo Cauca": {"va": 8065.8, "prim": 52.3, "sec": 3.0, "ter": 44.7,
   t.appendChild(tb);host.appendChild(t);
   csvDownload(host.parentElement.querySelector('h3'),['Subregión','VA 2024p (miles de millones)','Peso %','VA per cápita (millones)','% primarias','% secundarias','% terciarias','Población 2024','Matrícula 2024','Matrícula por 10 mil hab.'],
     Object.entries(VASUB).sort((a,b)=>b[1].va-a[1].va).map(([sr,v])=>[sr,v.va,v.peso,v.vapc,v.prim,v.sec,v.ter,v.pob,matSub[sr]||0,Math.round(1e4*(matSub[sr]||0)/v.pob)]),'materia-gris-economia-subregional');
+})();
+
+/* ---- 11 Finanzas públicas (docs primarios + CUIPO/CGR, jul-2026) ---- */
+const FIN=[
+ {ies:'UdeA',p26:'$1.777.420',r25:'$1.820.218',dep:'50,0 %',pe:43.3,res:'Desfinanciación −$377.537 M',t:'down',deuda:'Créditos $54.000 M; servicio 2026 $88.423 M',url:'https://www.udea.edu.co/wps/portal/udea/web/inicio/udea-noticias/udea-noticia/Contenido/asNoticias/Sociedad/rendicion-cuentasUdeA2025'},
+ {ies:'UNAL (nacional)',p26:'$3.681.000',r25:'$4.024.513',dep:'59 %',pe:null,res:'Superávit +$261.118 M (ene-sep)',t:'flat',deuda:'Préstamos $45.500 M · pasivo pensional ~$3,7 B',url:'https://gerencia.unal.edu.co/fileadmin/Gestion-Financiera/presupuesto/presentaciones/2026/Proyecto_Presupuesto_2026_aprobado_CSU.pdf'},
+ {ies:'ITM',p26:'$276.368',r25:'$709.115',dep:'50,3 % (≈75 % real)',pe:9.3,res:'Superávit +$96.722 M',t:'up',deuda:'$0',url:'https://www.itm.edu.co/download/12-estado-de-ejecucion-pptal-diciembre/?wpdmdl=101073'},
+ {ies:'TdeA',p26:'$180.615',r25:'$250.251',dep:'20 % (≈90 % real)',pe:7.6,res:'Excedente +$52.043 M',t:'up',deuda:'$0',url:'https://tdea.edu.co/wp-content/uploads/2026/02/5-NOTAS-ESTADOS-FINANCIEROS-CGN-VIGENCIA-2025-V2.pdf'},
+ {ies:'Pascual Bravo',p26:'$152.205',r25:'$287.987',dep:'52,7 %',pe:15.3,res:'Superávit (T1-26 +$29.685 M)',t:'up',deuda:'$0',url:'https://pascualbravo.edu.co/wp-content/uploads/2026/05/FIRMADO_ANEXOS_FINANCIEROS_MARZO.pdf'},
+ {ies:'Poli JIC',p26:'$179.657',r25:'$184.155',dep:'55,7 %',pe:14.7,res:'Equilibrio +$386 M; operacional −$5.728 M',t:'flat',deuda:'$0',url:'https://www.politecnicojic.edu.co/estados-financieros-e-informacion-presupuestal'},
+ {ies:'Colmayor',p26:'$112.107',r25:'$170.623',dep:'76,4 %',pe:19.4,res:'+$9.263 M (recuperó 2024)',t:'up',deuda:'$0',url:'https://www.colmayor.edu.co/wp-content/uploads/2026/02/12.-NOTAS-A-LOS-ESTADOS-FINANCIEROS-2025.pdf'},
+ {ies:'IU Digital',p26:'$106.782',r25:'$145.411',dep:'51,5 %',pe:8.3,res:'Excedente +$45.245 M (+165 %)',t:'up',deuda:'$0',url:'https://www.iudigital.edu.co/pdfs//transparencia/Estados%20Financieros/2025/Estados%20Financieros%20y%20notas%2012%202025.pdf'},
+ {ies:'IU de Envigado',p26:'$93.437',r25:'$141.409',dep:'46,7 %',pe:11.2,res:'Excedente +$1.478 M (−97 %); CxC Nación $17.663 M',t:'down',deuda:'$3.000 M Banco Popular (2028)',url:'https://www.iue.edu.co/download/753/2025/45369/12-estadosfinancierosdiciembre-2025.pdf'},
+];
+const FIN_AL=[
+ ['UdeA','La única en crisis abierta: impago temporal de nómina en dic-2025, normalizado con giro extraordinario del MEN de $70.000 M (ene-2026) más $138.000 M ordinarios tras el cambio de rector.'],
+ ['UNAL','Sin crisis de caja, pero la Contraloría alerta un pasivo (pensional) cercano a $4,5 billones y la inversión 2025 solo se ejecutó al 33 %.'],
+ ['ITM','Sólido; su presupuesto se triplica en ejecución por convenios con el Distrito — la dependencia real del sector público ronda el 75 %.'],
+ ['TdeA','La paradoja: superávit récord y cero deuda, pero ~90 % de sus ingresos reales vienen del Estado vía gratuidad; su riesgo es de liquidez si el MEN gira tarde. Menor presupuesto por estudiante del grupo.'],
+ ['Pascual Bravo','Sano y sin deuda; salvedad: $36.039 M en «transferencias por cobrar» a mar-2026 sin desglose público.'],
+ ['Poli JIC','Casi en punto de equilibrio: déficit operacional de −$5.728 M cubierto con otros ingresos; matrículas recaudadas al 86,4 % — coherente con giros incompletos de gratuidad.'],
+ ['Colmayor','La más dependiente del Estado (76,4 %); en 2025 recuperó la pérdida de 2024.'],
+ ['IU Digital','La tensión de 2024 quedó atrás: excedente +$45.245 M, cuentas por cobrar −69 % y la estampilla rindiendo $9.483 M al año.'],
+ ['IU de Envigado','La nueva tensión por gratuidad: $17.663 M pendientes de la Nación, excedente casi nulo y la única deuda bancaria viva del grupo.'],
+];
+(function(){
+  const host=document.getElementById('tb-fin'); if(!host)return;
+  const TR={up:['▲','trend up'],flat:['▬','trend flat'],down:['▼','trend down']};
+  const t=document.createElement('table');t.style.minWidth='920px';
+  t.innerHTML='<thead><tr><th>IES</th><th class="num">Ppto 2026 (M)</th><th class="num">Recaudo 2025 (M)</th><th class="num">% Estado</th><th class="num">Ppto/estudiante</th><th>Resultado 2025</th><th>Deuda financiera</th><th>Fuente</th></tr></thead>';
+  const tb=document.createElement('tbody');
+  FIN.forEach(r=>{const [sy,cl]=TR[r.t];
+    const tr=document.createElement('tr');
+    tr.innerHTML=`<td class="wrapcell"><b style="color:var(--ink)">${r.ies}</b></td>`+
+      `<td class="num" style="color:var(--ink);font-weight:650">${r.p26}</td><td class="num">${r.r25}</td>`+
+      `<td class="num">${r.dep}</td><td class="num">${r.pe!=null?('$'+r.pe.toLocaleString('es-CO')+' M'):'—'}</td>`+
+      `<td class="wrapcell"><span class="${cl}">${sy}</span> ${r.res}</td><td class="wrapcell">${r.deuda}</td>`+
+      `<td><a href="${r.url}" target="_blank" rel="noopener">doc ↗</a></td>`;
+    tb.appendChild(tr);});
+  t.appendChild(tb);host.appendChild(t);
+  const foot=document.createElement('p');foot.className='note';foot.style.margin='10px 12px';
+  foot.innerHTML='UNAL: cifras de la universidad multicampus (la sede Medellín no publica presupuesto separable). «≈ real» = estimación: incluye gratuidad girada como matrícula (TdeA) y convenios públicos (ITM). Ejecuciones verificadas contra CUIPO/Contraloría vía datos.gov.co (códigos CHIP en metodología).';
+  host.appendChild(foot);
+  csvDownload(host.parentElement.querySelector('h3'),['IES','Ppto 2026 (M)','Recaudo 2025 (M)','% Estado','Ppto/estudiante (M)','Resultado 2025','Deuda','Fuente'],FIN.map(r=>[r.ies,r.p26,r.r25,r.dep,r.pe??'',r.res,r.deuda,r.url]),'materia-gris-finanzas-ies');
+  hbars('ch-finpe',FIN.filter(r=>r.pe!=null).sort((a,b)=>b.pe-a.pe).map(r=>({label:r.ies,value:r.pe})),{color:S1,valueFmt:v=>'$'+v.toLocaleString('es-CO')+' M'});
+  const ha=document.getElementById('tb-finalertas');
+  const t2=document.createElement('table');t2.style.minWidth='640px';
+  t2.innerHTML='<thead><tr><th>IES</th><th>Alerta / lectura</th></tr></thead>';
+  const tb2=document.createElement('tbody');
+  FIN_AL.forEach(([a,b])=>{const tr=document.createElement('tr');tr.innerHTML=`<td style="min-width:120px"><b style="color:var(--ink)">${a}</b></td><td class="wrapcell">${b}</td>`;tb2.appendChild(tr);});
+  t2.appendChild(tb2);ha.appendChild(t2);
+  document.getElementById('hallazgo-finanzas').innerHTML=`<b>La paradoja fiscal del sistema:</b> las IU públicas baten récords de matrícula CON superávits (ITM +$96.722 M, TdeA +$52.043 M, IU Digital +$45.245 M) porque la gratuidad les llega como ingreso — mientras la única universidad en crisis abierta es la <b>UdeA (−$377.537 M de desfinanciación)</b>, cuyo problema no es la gratuidad sino la base presupuestal de la Ley 30. Y el costo de crecer rápido lo paga hoy la IU de Envigado: +23 % de matrícula con $17.663 M de la Nación sin llegar. El Estado ya no financia la oferta: compra cupos — y a veces paga tarde.`;
 })();
 
 /* ---- modo dashboard: una vista por sección ---- */
