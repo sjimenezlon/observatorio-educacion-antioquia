@@ -159,6 +159,14 @@ nav a.sec.active{color:var(--ink);font-weight:600}
 #ficha .fbtn{background:var(--surface-2);border:1px solid var(--border);color:var(--ink);border-radius:8px;padding:5px 11px;cursor:pointer;font-size:12.5px;font-family:inherit}
 #ficha .fbtn:hover{background:var(--baseline)}
 #tb-ies tbody tr{cursor:pointer}
+.cinta{display:flex;align-items:center;gap:12px;margin:2px 0 18px;border:1px solid var(--border);background:var(--surface);border-radius:12px;padding:8px 14px;overflow:hidden;cursor:pointer}
+.cinta .anio{flex:none;background:rgba(57,135,229,.16);border:1px solid var(--s1);color:var(--ink);font-weight:700;font-size:12px;border-radius:8px;padding:3px 10px;letter-spacing:.08em}
+.cinta .pista{overflow:hidden;flex:1;-webkit-mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent);mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent)}
+.cinta .rollo{display:inline-flex;gap:34px;white-space:nowrap;font-size:13px;color:var(--ink-2);animation:cinta 55s linear infinite;padding-right:34px}
+.cinta:hover .rollo{animation-play-state:paused}
+.cinta b{color:var(--ink)}
+@keyframes cinta{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion: reduce){.cinta .rollo{animation:none;white-space:normal;flex-wrap:wrap;gap:8px 20px}}
 /* ---------- mapa ---------- */
 .map-flex{display:grid;grid-template-columns:1.6fr 1fr;gap:20px;align-items:start}
 @media(max-width:900px){.map-flex{grid-template-columns:1fr}}
@@ -279,6 +287,10 @@ html.light #arriba{box-shadow:0 4px 18px rgba(0,0,0,.15)}
   <h1>La educación superior de Antioquia, medida con datos oficiales</h1>
   <p class="lede">Pregrado y posgrado, pública y privada: oferta académica, demanda estudiantil, resultados en el mercado laboral, calidad, capacidad de innovación e impacto social del sistema de educación superior del departamento — con lente de detalle sobre la formación técnica y tecnológica.</p>
   <p class="byline">Por <b>Santiago Jiménez Londoño</b> · Fuentes: SNIES-MEN, ICFES (Saber TyT), OLE y MinCiencias · Corte de datos: julio de 2026</p>
+  <div class="cinta" id="cinta2026" title="Ver la línea de tiempo 2026" role="link" aria-label="Novedades 2026 — ir a la línea de tiempo">
+    <span class="anio">2026</span>
+    <div class="pista"><div class="rollo" id="rollo2026"></div></div>
+  </div>
   <div class="kpis" id="kpis"></div>
   <div class="callout" id="hallazgo-hero"></div>
 </header>
@@ -2204,6 +2216,27 @@ lineChart('ch-demanda', D.serie_demanda.map(x=>String(x.anio)), [
   b.addEventListener('click',()=>{
     try{localStorage.setItem('obs-theme',light?'dark':'light')}catch(e){}
     location.reload();
+  });
+})();
+
+/* ---- cinta 2026 del hero ---- */
+(function(){
+  const rollo=document.getElementById('rollo2026'); if(!rollo)return;
+  const items=[
+    '<b>ITM: 29.600</b> matriculados en 2026-1, récord histórico',
+    '<b>TdeA: 23.863</b> en 2026-1 (+93 % desde 2022)',
+    '<b>IU de Envigado: 8.369</b> (+23,1 %, la que más acelera)',
+    '<b>Matrícula Cero:</b> 46.667 cupos para 2026-1',
+    '<b>EAFIT:</b> acreditación por 10 años (jun. 2026)',
+    '<b>Medicina UdeA:</b> #1 de Colombia (QS 2026)',
+    '<b>ICETEX:</b> 12.900 créditos nuevos para 2026-2',
+    '<b>PIB Antioquia:</b> +3,0 % en 2025 (DANE, jul. 2026)',
+    '<b>SNIES 2025:</b> el cierre oficial sale en semanas — este tablero se actualizará',
+  ];
+  const html=items.map(t=>'<span>'+t+'</span>').join('<span style="color:var(--muted)">•</span>');
+  rollo.innerHTML=html+'<span style="color:var(--muted)">•</span>'+html+'<span style="color:var(--muted)">•</span>';
+  document.getElementById('cinta2026').addEventListener('click',()=>{
+    const t=document.querySelector('.tline'); if(t)t.closest('.card').scrollIntoView({behavior:'smooth',block:'start'});
   });
 })();
 
