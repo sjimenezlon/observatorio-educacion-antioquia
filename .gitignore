@@ -4,3 +4,5 @@ data/
 # Vercel / sistema
 .vercel
 .DS_Store
+.vercel
+.vercel.old-observatorio
