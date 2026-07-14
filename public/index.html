@@ -128,6 +128,15 @@ nav a.sec.active{color:var(--ink);font-weight:600}
 .factores{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px;margin-top:8px}
 .factores span{background:var(--surface-2);border:1px solid var(--border);border-radius:9px;padding:9px 12px;font-size:12.5px;color:var(--ink-2)}
 .factores span b{color:var(--s1);font-weight:700;margin-right:6px}
+.tline{list-style:none;display:grid;gap:0;margin-top:6px}
+.tline li{position:relative;padding:0 0 18px 96px}
+.tline li::before{content:"";position:absolute;left:72px;top:6px;width:9px;height:9px;border-radius:50%;background:var(--s1)}
+.tline li::after{content:"";position:absolute;left:76px;top:20px;bottom:-2px;width:1.5px;background:var(--grid)}
+.tline li:last-child::after{display:none}
+.tline li:last-child{padding-bottom:2px}
+.tline .mes{position:absolute;left:0;top:3px;font-size:11px;font-weight:700;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+.tline p{font-size:13.5px;color:var(--ink-2)}
+.tline b{color:var(--ink)}
 /* ---------- mapa ---------- */
 .map-flex{display:grid;grid-template-columns:1.6fr 1fr;gap:20px;align-items:start}
 @media(max-width:900px){.map-flex{grid-template-columns:1fr}}
@@ -283,6 +292,20 @@ html.light #arriba{box-shadow:0 4px 18px rgba(0,0,0,.15)}
       <div id="ch-bench" class="chart"></div>
       <p class="note" style="margin-top:12px;margin-bottom:0"><b style="color:var(--ink)">La lectura incómoda:</b> mientras Bogotá ya supera en <b>+11,2&nbsp;%</b> su matrícula de 2018 y Valle y Atlántico también la superaron, <b>Antioquia sigue 5,6&nbsp;% por debajo</b> — la brecha más grande entre los departamentos grandes (Santander: −1,7&nbsp;%). El repunte 2024 (+5,7&nbsp;%) apenas empieza a cerrarla.</p>
     </div>
+    <div class="card">
+      <h3>2026 en vivo: lo que ya se sabe del año</h3>
+      <p class="note">El cierre estadístico oficial (SNIES 2025) aún no existe — estas son las cifras 2026 verificadas documento por documento, mes a mes.</p>
+      <ul class="tline">
+        <li><span class="mes">Enero</span><p>El <b>SENA Antioquia</b> abre el año con <b>9.552 cupos</b> en su primera convocatoria (luego vendrían 7.350 y 8.370 más).</p></li>
+        <li><span class="mes">Febrero</span><p><b>ITM: 29.600 matriculados en 2026-1</b>, récord histórico (+4,9&nbsp;% interanual); la <b>IU de Envigado llega a 8.369</b> (+23,1&nbsp;%, la que más acelera). El MEN reporta <b>930.000 beneficiarios de gratuidad</b> y fija meta de más de 950.000 para 2026.</p></li>
+        <li><span class="mes">Marzo</span><p>El <b>TdeA cierra su plan de desarrollo con 23.863 matriculados en 2026-1</b> (+93&nbsp;% desde 2022). QS por materia: <b>Medicina de la UdeA, #1 de Colombia</b> y top 10 de Latinoamérica.</p></li>
+        <li><span class="mes">Abril</span><p><b>U-Sapiens 2026-1</b>: la UdeA se sostiene como #2 nacional en investigación (cuartil 1). Temporada de rendiciones de cuentas 2025: ITM, Pascual Bravo y Colmayor reportan récords de matrícula.</p></li>
+        <li><span class="mes">Mayo</span><p>El <b>ICETEX abre 12.900 créditos nuevos para 2026-2</b> — recuperación parcial tras el desplome de −83,6&nbsp;% en 2025. Visita de pares para la renovación de la acreditación del Politécnico JIC.</p></li>
+        <li><span class="mes">Junio</span><p><b>EAFIT logra la acreditación por 10 años</b> (Res. 016360, primera privada de Antioquia con la vigencia máxima). QS Mundial 2027: <b>10 de las 12 colombianas bajan</b>. Decreto 0616: gratuidad también en derechos de grado desde 2026-2.</p></li>
+        <li><span class="mes">Julio</span><p>El DANE confirma que <b>Antioquia creció 3,0&nbsp;% en 2025</b> (segunda economía, 15&nbsp;% del PIB nacional). La U. Católica Luis Amigó publica su informe 2025: 13.232 estudiantes, −21&nbsp;% desde 2020. Desempleo de Medellín A.M.: 8,6&nbsp;%.</p></li>
+        <li><span class="mes">Viene</span><p><b>Bases SNIES 2025</b> (julio-agosto, según el patrón anual — este tablero se actualizará al publicarse); resolución de <b>cinco renovaciones de acreditación</b> antioqueñas (Colmayor, Poli JIC, CEIPA, UNAULA, IUE); rendición de cuentas del SENA (oct-nov).</p></li>
+      </ul>
+    </div>
   </div>
   <div class="callout" id="hallazgo-panorama"></div>
 </section>
@@ -352,12 +375,13 @@ html.light #arriba{box-shadow:0 4px 18px rgba(0,0,0,.15)}
   <div class="cards">
     <div class="card">
       <h3>Mapa de la matrícula municipal (2024)</h3>
-      <p class="note">Cada municipio coloreado por la métrica elegida; más claro = más estudiantes. Gris = sin oferta activa. Pase el cursor para el detalle, haga clic para fijarlo, arrastre para mover, acerque con doble clic, ⌘/Ctrl + rueda o los botones +/−, y navegue con el buscador o por subregión.</p>
+      <p class="note">Cada municipio coloreado por la métrica elegida; más claro = más estudiantes. Gris = sin oferta activa. Pase el cursor para el detalle, haga clic para fijarlo, arrastre para mover, acerque con doble clic, ⌘/Ctrl + rueda o los botones +/−, y navegue con el buscador, por subregión o <b>filtrando por área de conocimiento</b> — el mapa se convierte en el mapa de la oferta de esa área.</p>
       <div class="seg" id="map-metrics" role="tablist" aria-label="Métrica del mapa"></div>
       <div class="filters" style="margin-bottom:12px">
         <input id="map-buscar" type="search" list="map-munis" placeholder="Buscar municipio…" aria-label="Buscar municipio en el mapa">
         <datalist id="map-munis"></datalist>
         <select id="map-subregion" aria-label="Subregión"></select>
+        <select id="map-area" aria-label="Área de conocimiento"></select>
       </div>
       <div class="map-flex">
         <div class="map-box" id="mapa"></div>
@@ -1682,15 +1706,22 @@ const ACRED_IES=[
 /* ---- 03b Mapa interactivo ---- */
 (function(){
   const GEO=window.GEO; if(!GEO) return;
-  const RAMP_MAP=['#104281','#1c5cab','#2a78d6','#5598e7','#9ec5f4']; // secuencial azul: en superficie oscura, lo bajo recede hacia el fondo
-  const SIN='#242422';
+  const IS_LIGHT=document.documentElement.classList.contains('light');
+  const RAMP_MAP=IS_LIGHT?['#cfe0f7','#8db6ee','#4a86d8','#2b66c2','#174a92']:['#104281','#1c5cab','#2a78d6','#5598e7','#9ec5f4']; // secuencial azul: lo bajo recede hacia la superficie
+  const SIN=IS_LIGHT?'#e8e6df':'#242422';
+  const MSTROKE=IS_LIGHT?'#f7f6f1':'#0d0d0d';
+  const MSEL=IS_LIGHT?'#191918':'#ffffff';
   const SABER_MUNI={};
   (D.saber_municipio||[]).forEach(x=>{SABER_MUNI[String(parseInt(x.codigo)).padStart(5,'0')]=x.global;});
+  // Matrícula 2024 por municipio y área de conocimiento (semestre pico; suma = 313.583)
+  const AREA_MUNI={"Agronomía, veterinaria y afines":{"05001":4461,"05042":41,"05045":519,"05129":1326,"05148":27,"05154":198,"05579":110,"05615":359,"05686":52,"05756":23,"05837":318},"Bellas artes":{"05001":14011,"05042":12,"05045":179,"05148":83,"05154":6,"05266":1094,"05360":903,"05837":21,"05887":25},"Ciencias de la educación":{"05001":10357,"05031":49,"05034":65,"05042":26,"05045":718,"05088":596,"05129":67,"05147":13,"05148":480,"05154":194,"05579":87,"05615":625,"05631":36,"05686":159,"05756":18,"05837":812,"05887":60},"Ciencias de la salud":{"05001":17546,"05045":553,"05088":739,"05129":9,"05148":245,"05266":1013,"05615":598,"05631":704,"05686":21,"05837":62},"Ciencias sociales y humanas":{"05001":43468,"05034":119,"05042":81,"05045":784,"05088":2880,"05101":12,"05129":466,"05147":41,"05148":250,"05154":239,"05212":100,"05266":2813,"05360":358,"05364":1,"05380":1011,"05440":15,"05579":39,"05615":1439,"05631":20,"05664":29,"05686":1580,"05736":38,"05756":3,"05837":503,"05887":89},"Economía, administración, contaduría y afines":{"05001":62577,"05030":17,"05031":26,"05034":111,"05042":522,"05045":3119,"05051":4,"05088":1484,"05101":4,"05125":6,"05129":732,"05148":376,"05154":1276,"05172":17,"05190":157,"05212":124,"05234":31,"05240":17,"05250":176,"05266":1947,"05282":8,"05306":14,"05318":48,"05360":3344,"05361":20,"05364":8,"05376":130,"05390":12,"05440":59,"05480":8,"05490":14,"05579":821,"05615":4623,"05631":4415,"05649":11,"05656":5,"05665":7,"05686":1084,"05697":24,"05736":124,"05756":56,"05809":8,"05837":1267,"05847":30,"05854":6,"05858":8,"05887":38},"Ingeniería, arquitectura, urbanismo y afines":{"05001":72637,"05034":67,"05042":237,"05045":1680,"05088":406,"05129":920,"05147":372,"05148":605,"05154":461,"05190":153,"05250":293,"05266":1565,"05318":67,"05360":1724,"05376":102,"05440":16,"05579":264,"05615":2592,"05631":142,"05686":855,"05697":21,"05756":1,"05837":923,"05887":1},"Matemáticas y ciencias naturales":{"05001":7620,"05034":42,"05045":59,"05129":165,"05147":27,"05148":84,"05154":17,"05266":48,"05579":121,"05615":68,"05659":57,"05837":126},"Sin información":{"05001":10495,"05034":98,"05042":44,"05045":75,"05088":669,"05129":1,"05147":155,"05148":208,"05154":129,"05266":573,"05380":1,"05579":30,"05615":26,"05631":505,"05686":851,"05736":67,"05756":63,"05837":71,"05887":71}};
+  let areaFiltro='';
   const MET=[
     {k:'matricula24',lbl:'Matrícula total',fmtV:fmt},
     {k:'tyt24',lbl:'Técnica y tecnológica',fmtV:fmt},
     {k:'posgrado24',lbl:'Posgrado',fmtV:fmt},
     {k:'ies',lbl:'IES presentes',fmtV:fmt},
+    {k:'programas',lbl:'Programas',fmtV:fmt},
     {k:'_saber',lbl:'Saber TyT (global)',fmtV:v=>v.toLocaleString('es-CO',{minimumFractionDigits:1}),saber:true},
   ];
   const byCode={};
@@ -1728,12 +1759,15 @@ const ACRED_IES=[
 
   function metricVal(m,code){
     if(metric.saber) return SABER_MUNI[code]||0;
+    if(areaFiltro&&metric.k==='matricula24') return (AREA_MUNI[areaFiltro]||{})[code]||0;
     return m?m[metric.k]:0;
   }
   function breaks(){
     const vals=metric.saber
       ? Object.values(SABER_MUNI).sort((a,b)=>a-b)
-      : D.municipios.map(m=>m[metric.k]).filter(v=>v>0).sort((a,b)=>a-b);
+      : (areaFiltro&&metric.k==='matricula24')
+        ? Object.values(AREA_MUNI[areaFiltro]||{}).sort((a,b)=>a-b)
+        : D.municipios.map(m=>m[metric.k]).filter(v=>v>0).sort((a,b)=>a-b);
     return [0.2,0.4,0.6,0.8].map(q=>vals[Math.min(vals.length-1,Math.floor(q*vals.length))]);
   }
   function colorOf(v,br){
@@ -1744,10 +1778,15 @@ const ACRED_IES=[
   function panelDefault(){
     panel.innerHTML='';
     const h=document.createElement('h4');h.textContent='Antioquia';panel.appendChild(h);
-    const sub=document.createElement('div');sub.className='sub';sub.textContent=`${D.municipios.length} de 125 municipios con oferta · ${metric.lbl}`;panel.appendChild(sub);
+    const esArea=areaFiltro&&metric.k==='matricula24'&&!metric.saber;
+    const sub=document.createElement('div');sub.className='sub';sub.textContent=esArea
+      ? `Matrícula 2024 en ${areaFiltro} · ${Object.keys(AREA_MUNI[areaFiltro]||{}).length} municipios con oferta del área`
+      : `${D.municipios.length} de 125 municipios con oferta · ${metric.lbl}`;panel.appendChild(sub);
     const tops=metric.saber
       ? (D.saber_municipio||[]).slice(0,6).map(x=>({municipio:x.municipio,_v:x.global}))
-      : [...D.municipios].sort((a,b)=>(b[metric.k]||0)-(a[metric.k]||0)).slice(0,6).map(m=>({municipio:m.municipio,_v:m[metric.k]||0}));
+      : esArea
+        ? [...D.municipios].map(m=>({municipio:m.municipio,_v:(AREA_MUNI[areaFiltro]||{})[m.codigo]||0})).filter(x=>x._v>0).sort((a,b)=>b._v-a._v).slice(0,6)
+        : [...D.municipios].sort((a,b)=>(b[metric.k]||0)-(a[metric.k]||0)).slice(0,6).map(m=>({municipio:m.municipio,_v:m[metric.k]||0}));
     tops.forEach(m=>{
       const r=document.createElement('div');r.className='row';
       const n=document.createElement('span');n.textContent=m.municipio;r.appendChild(n);
@@ -1763,6 +1802,7 @@ const ACRED_IES=[
     const h=document.createElement('h4');h.textContent=nombre;panel.appendChild(h);
     const sub=document.createElement('div');sub.className='sub';sub.textContent=m?'Con oferta activa en 2024':'Sin oferta activa en 2024';panel.appendChild(sub);
     const rows=m?[
+      ...(areaFiltro?[['Matrícula · '+areaFiltro.split(',')[0],fmt((AREA_MUNI[areaFiltro]||{})[code]||0)]]:[]),
       ['Matriculados 2024',fmt(m.matricula24)],
       ['Técnica y tecnológica',fmt(m.tyt24)],
       ['Posgrado',fmt(m.posgrado24)],
@@ -1786,14 +1826,16 @@ const ACRED_IES=[
     // leyenda
     const lg=document.getElementById('map-legend');lg.innerHTML='';
     const items=[];
-    const maxV=metric.saber?Math.max(...Object.values(SABER_MUNI)):Math.max(...D.municipios.map(m=>m[metric.k]||0));
+    const maxV=metric.saber?Math.max(...Object.values(SABER_MUNI))
+      :(areaFiltro&&metric.k==='matricula24')?Math.max(...Object.values(AREA_MUNI[areaFiltro]||{0:0}))
+      :Math.max(...D.municipios.map(m=>m[metric.k]||0));
     let prev=metric.saber?Math.min(...Object.values(SABER_MUNI)):1;
     const br2=[...br, maxV];
     br2.forEach((b,i)=>{
       items.push({c:RAMP_MAP[i],t:`${metric.fmtV(prev)} – ${metric.fmtV(b)}`});
       prev=metric.saber?b:b+1;
     });
-    items.push({c:SIN,t:metric.saber?'Sin dato (menos de 50 evaluados)':'Sin oferta'});
+    items.push({c:SIN,t:metric.saber?'Sin dato (menos de 50 evaluados)':(areaFiltro&&metric.k==='matricula24')?'Sin oferta del área':'Sin oferta'});
     items.forEach(it=>{
       const d=document.createElement('span');d.className='it';
       const sw=document.createElement('span');sw.className='sw';sw.style.background=it.c;
@@ -1824,13 +1866,13 @@ const ACRED_IES=[
   }
   GEO.features.forEach(f=>{
     const code=f.properties.c, nombre=f.properties.n;
-    const p=el('path',{d:pathOf(f.geometry),stroke:'#0d0d0d','stroke-width':0.7,'vector-effect':'non-scaling-stroke'},gMap);
+    const p=el('path',{d:pathOf(f.geometry),stroke:MSTROKE,'stroke-width':0.7,'vector-effect':'non-scaling-stroke'},gMap);
     f._bb=bboxOf(f.geometry); f._path=p;
     p.style.cursor='pointer';
     p.addEventListener('pointermove',ev=>{
       if(dragging)return;
       const m=byCode[code];
-      p.setAttribute('stroke','#ffffff');p.setAttribute('stroke-width',1.4);gMap.appendChild(p);
+      p.setAttribute('stroke',MSEL);p.setAttribute('stroke-width',1.4);gMap.appendChild(p);
       showTip(ev,nombre, m?[
         {value:fmt(m.matricula24),name:'matriculados 2024'},
         {value:fmt(m.tyt24),name:'TyT'},
@@ -1839,31 +1881,48 @@ const ACRED_IES=[
       if(!selected) panelMuni(code,nombre);
     });
     p.addEventListener('pointerleave',()=>{
-      if(!selected||selected.code!==code){p.setAttribute('stroke','#0d0d0d');p.setAttribute('stroke-width',0.7);}
+      if(!selected||selected.code!==code){p.setAttribute('stroke',MSTROKE);p.setAttribute('stroke-width',0.7);}
       hideTip();
       if(!selected) panelDefault();
     });
     p.addEventListener('click',ev=>{
       ev.stopPropagation();
-      paths.forEach(({p:pp})=>{pp.setAttribute('stroke','#0d0d0d');pp.setAttribute('stroke-width',0.7);});
+      paths.forEach(({p:pp})=>{pp.setAttribute('stroke',MSTROKE);pp.setAttribute('stroke-width',0.7);});
       if(selected&&selected.code===code){selected=null;panelDefault();return;}
       selected={code,nombre};
-      p.setAttribute('stroke','#ffffff');p.setAttribute('stroke-width',2);gMap.appendChild(p);
+      p.setAttribute('stroke',MSEL);p.setAttribute('stroke-width',2);gMap.appendChild(p);
       panelMuni(code,nombre);
     });
     paths.push({p,code});
   });
-  svg.addEventListener('click',()=>{if(selected){selected=null;paths.forEach(({p})=>{p.setAttribute('stroke','#0d0d0d');p.setAttribute('stroke-width',0.7);});panelDefault();}});
+  svg.addEventListener('click',()=>{if(selected){selected=null;paths.forEach(({p})=>{p.setAttribute('stroke',MSTROKE);p.setAttribute('stroke-width',0.7);});panelDefault();}});
 
   // controles de métrica
   const segEl=document.getElementById('map-metrics');
   MET.forEach((m,i)=>{
     const b=document.createElement('button');b.textContent=m.lbl;if(i===0)b.className='on';
     b.addEventListener('click',()=>{
-      metric=m;segEl.querySelectorAll('button').forEach(x=>x.className='');b.className='on';paint();
+      metric=m;segEl.querySelectorAll('button').forEach(x=>x.className='');b.className='on';
+      if(m.k!=='matricula24'){areaFiltro='';const sa=document.getElementById('map-area');if(sa)sa.value='';}
+      paint();if(!selected)panelDefault();
     });
     segEl.appendChild(b);
   });
+  // selector de área de conocimiento (filtra la métrica de matrícula)
+  (function(){
+    const sa=document.getElementById('map-area'); if(!sa)return;
+    const op0=document.createElement('option');op0.value='';op0.textContent='Todas las áreas';sa.appendChild(op0);
+    Object.keys(AREA_MUNI).sort().forEach(a=>{
+      const o=document.createElement('option');o.value=a;o.textContent=a;sa.appendChild(o);
+    });
+    sa.addEventListener('change',()=>{
+      areaFiltro=sa.value;
+      metric=MET[0];
+      segEl.querySelectorAll('button').forEach((x,i)=>x.className=i===0?'on':'');
+      paint();
+      if(selected)panelMuni(selected.code,selected.nombre);else panelDefault();
+    });
+  })();
 
   // zoom y pan
   const zdiv=document.createElement('div');zdiv.className='map-zoom';
@@ -1925,7 +1984,7 @@ const ACRED_IES=[
   SUBS.forEach(sr=>{const o=document.createElement('option');o.value=sr;o.textContent=sr;selSub.appendChild(o);});
   selSub.addEventListener('change',()=>{
     selected=null;
-    paths.forEach(({p})=>{p.setAttribute('stroke','#0d0d0d');p.setAttribute('stroke-width',0.7);p.setAttribute('opacity','1');});
+    paths.forEach(({p})=>{p.setAttribute('stroke',MSTROKE);p.setAttribute('stroke-width',0.7);p.setAttribute('opacity','1');});
     if(!selSub.value){vb={x:0,y:0,w:W,h:H};applyVB();panelDefault();return;}
     const fs=GEO.features.filter(f=>SUBMAP[normJS(f.properties.n)]===selSub.value);
     let bb=[1e9,1e9,-1e9,-1e9];
@@ -1941,9 +2000,9 @@ const ACRED_IES=[
     const f=GEO.features.find(x=>normJS(x.properties.n)===normJS(qm.value));
     if(!f)return;
     selSub.value='';GEO.features.forEach(x=>x._path.setAttribute('opacity','1'));
-    paths.forEach(({p})=>{p.setAttribute('stroke','#0d0d0d');p.setAttribute('stroke-width',0.7);});
+    paths.forEach(({p})=>{p.setAttribute('stroke',MSTROKE);p.setAttribute('stroke-width',0.7);});
     selected={code:f.properties.c,nombre:f.properties.n};
-    f._path.setAttribute('stroke','#ffffff');f._path.setAttribute('stroke-width',2);gMap.appendChild(f._path);
+    f._path.setAttribute('stroke',MSEL);f._path.setAttribute('stroke-width',2);gMap.appendChild(f._path);
     zoomTo(f._bb,2.6);
     panelMuni(f.properties.c,f.properties.n);
   });
@@ -2121,6 +2180,22 @@ lineChart('ch-demanda', D.serie_demanda.map(x=>String(x.anio)), [
   b.addEventListener('click',()=>{
     try{localStorage.setItem('obs-theme',light?'dark':'light')}catch(e){}
     location.reload();
+  });
+})();
+
+/* ---- contadores animados del hero ---- */
+(function(){
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  document.querySelectorAll('#kpis .kpi .val').forEach(v=>{
+    const raw=v.textContent.trim();
+    if(!/^[\d.]+$/.test(raw)) return;
+    const target=parseInt(raw.replace(/\./g,''),10); if(!target) return;
+    const t0=performance.now(), dur=900;
+    (function tick(t){
+      const k=Math.min(1,((t||t0)-t0)/dur), e=1-Math.pow(1-k,3);
+      v.textContent=fmt(Math.round(target*e));
+      if(k<1) requestAnimationFrame(tick);
+    })(t0);
   });
 })();
 
