@@ -1,0 +1,51 @@
+{
+  "version": "V23",
+  "fecha_verificacion": "2026-07-14",
+  "estado": "correcto_con_una_aclaracion_editorial",
+  "atlas_territorial": {
+    "resultado": "sin_diferencias",
+    "matricula_2024_I": 300246,
+    "matricula_2024_II": 313583,
+    "semestre_publicado": "2024-II",
+    "pregrado_2024_II": 292968,
+    "poblacion_17_21_2024": 541548,
+    "municipios_con_oferta": 51,
+    "municipios_sin_oferta": 74,
+    "geometrias_municipales": 125,
+    "diferencias_municipales": 0,
+    "diferencias_subregionales": 0,
+    "diferencias_cobertura": 0
+  },
+  "verificaciones_documentales": [
+    {
+      "cifra": "SNIES 2025 aún no publicado; publicación programada entre el 27 y el 31 de julio de 2026",
+      "resultado": "confirmado",
+      "fuente": "https://snies.mineducacion.gov.co/1778/w3-article-391228.html?_noredirect=1"
+    },
+    {
+      "cifra": "ITM: 29.600 estudiantes matriculados en 2026-1 y crecimiento interanual de 4,9 %",
+      "resultado": "confirmado_en_fuente_institucional",
+      "fuente": "https://www.itm.edu.co/noticias-principales/casi-30-000-estudiantes-posicionan-al-itm-como-lider-en-educacion-superior-regional/"
+    },
+    {
+      "cifra": "TdeA: 23.863 estudiantes en 2026-1",
+      "resultado": "confirmado_en_fuente_institucional",
+      "fuente": "https://tdea.edu.co/tdeacerrosuplandedesarrollo2022-2026lohicimosparatrascender/"
+    },
+    {
+      "cifra": "EAFIT: acreditación institucional por 10 años, Resolución 016360 del 23 de junio de 2026",
+      "resultado": "confirmado_en_fuente_institucional",
+      "fuente": "https://www.eafit.edu.co/comunicados-institucionales/comunicados-2026/eafit-recibe-la-acreditacion-alta-calidad-por-10-anos-maximo-periodo-en-colombia"
+    }
+  ],
+  "aclaracion_editorial": {
+    "antes": "La portada resumía 16 IES acreditadas sin declarar el universo de conteo.",
+    "ahora": "El monitor declara 18 decisiones institucionales con presencia en Antioquia: 13 vigentes y 5 prorrogadas durante renovación.",
+    "limitacion": "Incluye instituciones domiciliadas, multicampus y una seccional; no se divide entre las 73 IES con oferta."
+  },
+  "redes_sociales": {
+    "resultado": "formula_recalculada_sin_diferencias",
+    "limitacion": "Seguidores y suscriptores son audiencia potencial bruta, no alcance único. Los cortes entre plataformas no son homogéneos."
+  },
+  "principio_v23": "Toda lectura asistida debe mostrar fuente, corte y limitación; MaterIA no presenta sus síntesis como respuestas generadas desde datos privados."
+}

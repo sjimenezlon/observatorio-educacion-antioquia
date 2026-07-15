@@ -459,6 +459,41 @@ th{background:#16202d}
 .ai-guide-note{margin-top:11px;padding:10px 11px;border-radius:10px;background:rgba(107,166,255,.08);border:1px solid rgba(107,166,255,.12)}
 .ai-guide-link{min-height:44px;display:inline-flex;align-items:center;margin-top:11px;color:#a9cbff;font-size:12px;font-weight:700}
 .ai-guide-link:hover{color:#fff}
+/* ---------- identidad y navegación basada en preguntas · V23 ---------- */
+nav .logo::before{display:none}
+nav .logo{display:flex;align-items:center;gap:10px;min-width:156px;padding-left:0}
+.brand-mark{position:relative;width:34px;height:34px;flex:none;display:grid;place-items:center;border-radius:11px;overflow:hidden;background:
+  radial-gradient(circle at 25% 26%,rgba(255,255,255,.95) 0 1.5px,transparent 2.5px),
+  radial-gradient(circle at 74% 31%,#78e3c3 0 2px,transparent 3px),
+  radial-gradient(circle at 71% 76%,#b5a8ff 0 2px,transparent 3px),
+  linear-gradient(145deg,#315fbd 0%,#685bd5 52%,#168e78 115%);border:1px solid rgba(186,210,255,.38);box-shadow:0 0 28px rgba(86,126,237,.28),inset 0 1px 0 rgba(255,255,255,.26)}
+.brand-mark::before{content:"";position:absolute;inset:7px;background:
+  linear-gradient(34deg,transparent 45%,rgba(232,242,255,.58) 47%,rgba(232,242,255,.58) 51%,transparent 53%),
+  linear-gradient(145deg,transparent 45%,rgba(232,242,255,.46) 47%,rgba(232,242,255,.46) 51%,transparent 53%);opacity:.9}
+.brand-mark::after{content:"M";position:relative;color:#fff;font:720 16px/1 'Fraunces',Georgia,serif;letter-spacing:-.08em;text-shadow:0 2px 10px rgba(0,0,0,.35)}
+.brand-copy{display:grid;line-height:1;gap:4px;color:var(--ink)!important}
+.brand-word{display:flex;align-items:baseline;color:var(--ink)!important;font-size:14px;font-weight:760;letter-spacing:-.02em}
+.brand-ia{color:#88b7ff!important}.brand-gris{color:var(--ink)!important;margin-left:3px}
+.brand-copy small{color:var(--muted);font-size:8px;font-weight:650;letter-spacing:.105em;text-transform:uppercase;white-space:nowrap}
+.hero-btn.ask{background:linear-gradient(135deg,rgba(62,214,170,.12),rgba(107,166,255,.12));border-color:rgba(62,214,170,.28);cursor:pointer;font-family:inherit}
+.hero-btn.ask .ask-spark{width:20px;height:20px;display:grid;place-items:center;border-radius:7px;background:rgba(62,214,170,.12);color:#78e3c3;font-size:10px}
+.evidence-rail{display:grid;grid-template-columns:1.05fr repeat(3,1fr) auto;align-items:stretch;margin:0 0 18px;border:1px solid rgba(151,180,222,.15);border-radius:16px;overflow:hidden;background:rgba(11,17,26,.72);box-shadow:inset 0 1px 0 rgba(255,255,255,.025)}
+.evidence-lead,.evidence-item,.evidence-action{min-height:92px;padding:15px 16px}
+.evidence-lead{display:flex;flex-direction:column;justify-content:center;background:linear-gradient(135deg,rgba(62,214,170,.10),rgba(107,166,255,.055))}
+.evidence-lead small,.evidence-item small{color:var(--muted);font-size:9px;text-transform:uppercase;letter-spacing:.11em}
+.evidence-lead b{display:flex;align-items:center;gap:8px;color:var(--ink);font:650 17px/1.2 'Fraunces',Georgia,serif;margin-top:6px}
+.evidence-lead b::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--s2);box-shadow:0 0 12px var(--s2)}
+.evidence-item{display:flex;flex-direction:column;justify-content:center;border-left:1px solid rgba(151,180,222,.12)}
+.evidence-item b{color:var(--ink);font-size:13px;line-height:1.25;margin:6px 0 3px}.evidence-item span{color:var(--muted);font-size:10.5px;line-height:1.35}
+.evidence-item a{color:#a9cbff}.evidence-item a:hover{color:#fff}
+.evidence-action{display:grid;place-items:center;border-left:1px solid rgba(151,180,222,.12);color:#a9cbff;font-size:11.5px;font-weight:750;white-space:nowrap}
+.evidence-action:hover{text-decoration:none;background:rgba(107,166,255,.07);color:#fff}
+.ai-guide-source{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-top:11px;padding-top:11px;border-top:1px solid rgba(151,180,222,.12);font-size:10px}
+.ai-guide-source span{color:#78e3c3;font-weight:700}.ai-guide-source a{color:#a9cbff}
+#pal .hint{display:flex;justify-content:space-between;gap:12px}.pal-trust{color:#78e3c3}
+#pal-list .pal-empty{display:block;padding:20px 18px;color:var(--muted);font-size:13px;line-height:1.5;cursor:default}
+@media(max-width:1050px){.evidence-rail{grid-template-columns:1fr 1fr}.evidence-action{grid-column:1/-1;min-height:48px}.evidence-item:nth-child(2n){border-left:1px solid rgba(151,180,222,.12)}}
+@media(max-width:640px){nav .logo{min-width:146px}.brand-copy small{display:none}.evidence-rail{grid-template-columns:1fr}.evidence-lead,.evidence-item{min-height:auto;padding:14px 15px}.evidence-item,.evidence-action{border-left:none;border-top:1px solid rgba(151,180,222,.12)}#pal .hint{display:block}.pal-trust{display:block;margin-top:4px}.hero-btn.ask{width:100%}}
 @media(max-width:960px){.hero-grid{grid-template-columns:1fr}.ai-core{min-height:360px}.core-orbit{width:215px;height:215px}.core-center{width:126px;height:126px}.journeys{grid-template-columns:1fr 1fr}}
 @media(max-width:640px){nav .wrap{height:58px}.hero-grid{gap:28px}.ai-core{min-height:340px;padding:17px;border-radius:21px}.core-orbit{width:200px;height:200px}.core-center{width:118px;height:118px}.core-center b{font-size:23px}.core-signals{gap:5px}.core-signal{padding:8px}.journeys{grid-template-columns:1fr;margin-top:32px}.journey{min-height:96px}.hero-actions{display:grid;grid-template-columns:1fr}.hero-btn{width:100%}.ai-guide{left:12px;bottom:12px;width:calc(100vw - 24px)}#arriba{bottom:72px;right:12px}.card{border-radius:15px}}
 @media(prefers-reduced-motion:reduce){.core-ring{animation:none}.hero-btn,.journey,.ai-guide-toggle .chev{transition:none}}
@@ -477,6 +512,8 @@ html.light .core-signal{background:rgba(255,255,255,.64)}
 html.light .core-center span{color:#4d5b70}
 html.light .journey,.light .card,.light .kpi{background:linear-gradient(145deg,rgba(255,255,255,.98),rgba(245,248,252,.94))}
 html.light .ai-guide-panel{background:rgba(250,252,255,.96)}
+html.light .evidence-rail{background:rgba(255,255,255,.82);box-shadow:0 12px 35px rgba(47,78,115,.07)}
+html.light .evidence-lead{background:linear-gradient(135deg,rgba(13,133,101,.09),rgba(55,111,189,.05))}
 html.light th{background:#eaf0f7}
 html.light .kpi .down{color:#b33636}
 html.light .tag.of{color:#1e56a8}
@@ -510,7 +547,10 @@ html.light #arriba{box-shadow:0 4px 18px rgba(0,0,0,.15)}
 <body>
 <div id="progreso" aria-hidden="true"></div>
 <nav><div class="wrap">
-  <a class="logo" href="#top">Mater<span>IA</span> Gris</a>
+  <a class="logo" href="#top" aria-label="MaterIA Gris · inicio">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-copy"><span class="brand-word">Mater<span class="brand-ia">IA</span><span class="brand-gris">Gris</span></span><small>inteligencia educativa</small></span>
+  </a>
   <a class="sec" href="#inicio">Inicio</a>
   <a class="sec" href="#panorama">Panorama</a>
   <a class="sec" href="#instituciones">Instituciones</a>
@@ -525,13 +565,13 @@ html.light #arriba{box-shadow:0 4px 18px rgba(0,0,0,.15)}
   <a class="sec" href="#redes">Redes sociales</a>
   <a class="sec" href="#finanzas">Finanzas</a>
   <a class="sec" href="#metodologia">Metodología</a>
-  <button id="pal-open" type="button" aria-haspopup="dialog" aria-controls="pal" aria-expanded="false" style="margin-left:auto;background:var(--surface-2);border:1px solid var(--border);color:var(--muted);border-radius:8px;padding:5px 10px;font-size:12px;cursor:pointer;font-family:inherit;white-space:nowrap">Buscar ⌘K</button>
+  <button id="pal-open" type="button" aria-haspopup="dialog" aria-controls="pal" aria-expanded="false" style="margin-left:auto;background:var(--surface-2);border:1px solid var(--border);color:var(--muted);border-radius:8px;padding:5px 10px;font-size:12px;cursor:pointer;font-family:inherit;white-space:nowrap">Explorar con IA ⌘K</button>
   <button id="tema" type="button" aria-label="Cambiar tema" style="background:var(--surface-2);border:1px solid var(--border);color:var(--muted);border-radius:8px;padding:5px 10px;font-size:12px;cursor:pointer;font-family:inherit;white-space:nowrap"></button>
 </div></nav>
 <div id="pal" role="dialog" aria-modal="true" aria-label="Búsqueda global"><div class="box">
-  <input id="pal-q" type="search" placeholder="Buscar sección, institución, municipio o programa…" autocomplete="off" aria-label="Buscar sección, institución, municipio o programa" role="combobox" aria-autocomplete="list" aria-controls="pal-list" aria-expanded="false">
+  <input id="pal-q" type="search" placeholder="Escriba una pregunta, institución, municipio o programa…" autocomplete="off" aria-label="Explorar preguntas, instituciones, municipios o programas" role="combobox" aria-autocomplete="list" aria-controls="pal-list" aria-expanded="false">
   <ul id="pal-list" role="listbox" aria-label="Resultados de búsqueda"></ul>
-  <div class="hint">↑↓ para navegar · ↵ para ir · esc para cerrar</div>
+  <div class="hint"><span>↑↓ navegar · ↵ abrir · esc cerrar</span><span class="pal-trust">Busca en evidencia publicada; no inventa respuestas.</span></div>
 </div></div>
 
 <div class="wrap" id="top">
@@ -544,6 +584,7 @@ html.light #arriba{box-shadow:0 4px 18px rgba(0,0,0,.15)}
       <div class="hero-actions" aria-label="Acciones principales">
         <a class="hero-btn primary" href="#panorama">Descubrir el panorama <span aria-hidden="true">→</span></a>
         <a class="hero-btn secondary" href="#territorio">Explorar el mapa de Antioquia</a>
+        <button class="hero-btn ask" id="hero-ask" type="button"><span class="ask-spark" aria-hidden="true">IA</span>Preguntar a los datos</button>
       </div>
       <p class="byline">Una iniciativa de <b>Santiago Jiménez Londoño</b> · SNIES, ICFES, OLE, MinCiencias y fuentes públicas verificadas · Julio de 2026</p>
     </div>
@@ -555,8 +596,8 @@ html.light #arriba{box-shadow:0 4px 18px rgba(0,0,0,.15)}
       </div>
       <div class="core-signals">
         <div class="core-signal"><b>51</b><span>municipios con oferta</span></div>
-        <div class="core-signal"><b>16</b><span>IES acreditadas</span></div>
-        <div class="core-signal"><b>V22</b><span>experiencia inteligente</span></div>
+        <div class="core-signal"><b>18</b><span>decisiones de acreditación monitorizadas</span></div>
+        <div class="core-signal"><b>V23</b><span>evidencia explicable</span></div>
       </div>
     </aside>
   </div>
@@ -565,6 +606,13 @@ html.light #arriba{box-shadow:0 4px 18px rgba(0,0,0,.15)}
     <a class="journey" href="#instituciones" style="--journey-color:rgba(62,214,170,.20)"><small>Quiero comparar</small><b>¿Qué institución se ajusta mejor?</b><span>Tamaño, calidad y resultados →</span></a>
     <a class="journey" href="#laboral" style="--journey-color:rgba(240,178,77,.20)"><small>Quiero decidir</small><b>¿Qué ocurre después de graduarse?</b><span>Empleo, salarios y áreas →</span></a>
     <a class="journey" href="#redes" style="--journey-color:rgba(158,140,255,.22)"><small>Quiero entender influencia</small><b>¿Quién conecta mejor con su comunidad?</b><span>Audiencia y gestión social →</span></a>
+  </div>
+  <div class="evidence-rail" aria-label="Estado de confianza y actualización de las cifras">
+    <div class="evidence-lead"><small>Confianza de los datos</small><b>Auditoría activa</b></div>
+    <div class="evidence-item"><small>Base oficial</small><b>313.583 matrículas · 2024-II</b><span>SNIES y DANE · cero diferencias en los controles territoriales</span></div>
+    <div class="evidence-item"><small>Señales 2026 recontrastadas</small><b>ITM · TdeA · EAFIT</b><span>Matrícula y acreditación verificadas en publicaciones institucionales</span></div>
+    <div class="evidence-item"><small>Próxima actualización</small><b>SNIES 2025 · 27–31 jul.</b><span><a href="https://snies.mineducacion.gov.co/1778/w3-article-391228.html?_noredirect=1" target="_blank" rel="noopener">Cronograma oficial ↗</a></span></div>
+    <a class="evidence-action" href="auditoria.html">Abrir auditoría →</a>
   </div>
   <div class="cinta" id="cinta2026" title="Ver la línea de tiempo 2026" role="link" tabindex="0" aria-label="Novedades 2026 — ir a la línea de tiempo">
     <span class="anio">2026</span>
@@ -620,7 +668,7 @@ html.light #arriba{box-shadow:0 4px 18px rgba(0,0,0,.15)}
     </div>
     <div class="card">
       <h3>2026 en vivo: lo que ya se sabe del año</h3>
-      <p class="note">El cierre estadístico oficial (SNIES 2025) aún no existe — estas son las cifras 2026 verificadas documento por documento, mes a mes.</p>
+      <p class="note">El cierre estadístico oficial de 2025 aún no está publicado en las bases consolidadas del SNIES — estas son señales 2026 verificadas documento por documento, con alcance y fuente propios.</p>
       <ul class="tline">
         <li><span class="mes">Enero</span><p>El <b>SENA Antioquia</b> abre el año con <b>9.552 cupos</b> en su primera convocatoria (luego vendrían 7.350 y 8.370 más).</p></li>
         <li><span class="mes">Febrero</span><p><b>ITM: 29.600 matriculados en 2026-1</b>, récord histórico (+4,9&nbsp;% interanual); la <b>IU de Envigado llega a 8.369</b> (+23,1&nbsp;%, la que más acelera). El MEN reporta <b>930.000 beneficiarios de gratuidad</b> y fija meta de más de 950.000 para 2026.</p></li>
@@ -749,7 +797,7 @@ html.light #arriba{box-shadow:0 4px 18px rgba(0,0,0,.15)}
         <summary>Ver tabla comparativa y método</summary>
         <div class="tscroll" style="margin-top:12px" id="atlas-table"></div>
       </details>
-      <p class="note atlas-source"><b>Fuentes verificadas:</b> <a href="https://snies.mineducacion.gov.co/portal/ESTADISTICAS/Bases-consolidadas/" target="_blank" rel="noopener">SNIES–MEN, bases consolidadas 2024 ↗</a>; <a href="https://www.dane.gov.co/index.php/estadisticas-por-tema/demografia-y-poblacion/proyecciones-de-poblacion" target="_blank" rel="noopener">DANE, proyecciones municipales por edad ↗</a>; <a href="https://geoportal.dane.gov.co/" target="_blank" rel="noopener">DANE, Marco Geoestadístico Nacional ↗</a>. Numerador de matrícula: 2024-II; población: 2024. Corte de verificación: 14 de julio de 2026. <a href="auditoria.html">Auditoría explicada: 0 diferencias →</a>. El SNIES programó la publicación oficial de 2025 para el 27–31 de julio de 2026; por eso se mantiene la última vigencia publicada: 2024.</p>
+      <p class="note atlas-source"><b>Fuentes verificadas:</b> <a href="https://snies.mineducacion.gov.co/portal/ESTADISTICAS/Bases-consolidadas/" target="_blank" rel="noopener">SNIES–MEN, bases consolidadas 2024 ↗</a>; <a href="https://www.dane.gov.co/index.php/estadisticas-por-tema/demografia-y-poblacion/proyecciones-de-poblacion" target="_blank" rel="noopener">DANE, proyecciones municipales por edad ↗</a>; <a href="https://geoportal.dane.gov.co/" target="_blank" rel="noopener">DANE, Marco Geoestadístico Nacional ↗</a>. Numerador de matrícula: 2024-II; población: 2024. Corte de verificación: 14 de julio de 2026. <a href="auditoria.html">Auditoría explicada: 0 diferencias →</a>. El <a href="https://snies.mineducacion.gov.co/1778/w3-article-391228.html?_noredirect=1" target="_blank" rel="noopener">cronograma oficial del SNIES</a> fija la publicación de las cifras 2025 entre el 27 y el 31 de julio de 2026; por eso se conserva la última vigencia disponible: 2024.</p>
     </div>
     <div class="card">
       <h3>Las nueve subregiones (2024-II)</h3>
@@ -1211,7 +1259,7 @@ html.light #arriba{box-shadow:0 4px 18px rgba(0,0,0,.15)}
 
     <div class="card">
       <h3>Antioquia acreditada: el estado institucional, sello por sello</h3>
-      <p class="note">Acreditación institucional de las IES con presencia en Antioquia, verificada resolución por resolución (julio de 2026). Antioquia concentra además <b>345 programas activos acreditados</b> (los que más: UdeA 99, UNAL 45, UPB 32, EAFIT 29, ITM 22) — la distribución por nivel de formación está en la sección <a href="#calidad">Calidad</a>.</p>
+      <p class="note">Monitor de 18 decisiones institucionales con presencia en Antioquia: 13 vigentes y 5 con reconocimiento prorrogado durante su renovación, verificadas resolución por resolución (julio de 2026). Incluye instituciones domiciliadas, multicampus y una seccional; por eso no debe dividirse entre las 73 IES con oferta. Antioquia concentra además <b>345 programas activos acreditados</b> (los que más: UdeA 99, UNAL 45, UPB 32, EAFIT 29, ITM 22) — la distribución por nivel está en <a href="#calidad">Calidad</a>.</p>
       <div class="tscroll" style="max-height:520px;overflow-y:auto" id="tb-acred-ies"></div>
     </div>
 
@@ -1430,6 +1478,7 @@ html.light #arriba{box-shadow:0 4px 18px rgba(0,0,0,.15)}
     <h3 id="ai-guide-question">¿Qué está cambiando?</h3>
     <p id="ai-guide-insight">MaterIA conecta las cifras para destacar la pregunta central de cada capítulo.</p>
     <p class="ai-guide-note" id="ai-guide-note">La guía resume evidencia ya publicada; no sustituye la fuente ni inventa respuestas.</p>
+    <div class="ai-guide-source"><span id="ai-guide-source">Evidencia publicada</span><a href="#metodologia">Cómo se verifica</a></div>
     <a class="ai-guide-link" id="ai-guide-link" href="#panorama">Ver la evidencia <span aria-hidden="true">&nbsp;→</span></a>
   </div>
   <button class="ai-guide-toggle" id="ai-guide-toggle" type="button" aria-label="MaterIA explica este capítulo" aria-expanded="false" aria-controls="ai-guide-panel">
@@ -2395,7 +2444,8 @@ const ACRED_IES=[
   host.appendChild(foot);
   csvDownload(host.parentElement.querySelector('h3'),['Institución','Acreditación','Vigencia (años)','Estado','Detalle'],
     ACRED_IES.map(r=>[r.ies,r.res,r.anios,r.estado==='vg'?'Vigente':'En renovación',r.txt]),'obs-antioquia-acreditacion-ies');
-  document.getElementById('hallazgo-acreditacion').innerHTML=`<b>Antioquia es potencia acreditadora:</b> 16 IES domiciliadas en el departamento tienen el sello institucional —cerca del 39&nbsp;% de sus IES, frente a ~33&nbsp;% nacional— y, de las 9 instituciones del país con la vigencia máxima de 10 años, <b>3 están aquí</b>: UdeA, UNAL y EAFIT, que en junio de 2026 se convirtió en la primera privada de Antioquia en lograrla. Lo que hay que vigilar este semestre: <b>cinco renovaciones en trámite</b> (Colegio Mayor, Politécnico JIC, CEIPA, UNAULA e IU de Envigado), todas colas del modelo anterior de 4 años.`;
+  const vigentes=ACRED_IES.filter(r=>r.estado==='vg').length, renovacion=ACRED_IES.filter(r=>r.estado==='rn').length;
+  document.getElementById('hallazgo-acreditacion').innerHTML=`<b>Antioquia tiene un ecosistema fuerte de alta calidad:</b> este monitor reúne <b>${ACRED_IES.length} decisiones institucionales</b> con presencia en el departamento: ${vigentes} vigentes y ${renovacion} prorrogadas mientras concluye la renovación. La unidad incluye IES domiciliadas, multicampus y una seccional; no es comparable con el total de 73 registros con oferta. De las 9 instituciones del país con vigencia máxima de 10 años, <b>3 tienen presencia aquí</b>: UdeA, UNAL y EAFIT, primera privada de Antioquia en lograrla (Res. 016360 de 2026).`;
 })();
 
 /* ---- 09 Innovación ---- */
@@ -3325,25 +3375,25 @@ const FIN_AL=[
 /* ---- MaterIA explica: síntesis contextual, basada en evidencia publicada ---- */
 (function(){
   const GUIAS={
-    inicio:{q:'¿Qué está cambiando en la educación superior?',i:'El sistema recupera matrícula, pero no de forma uniforme: crece la formación universitaria mientras la base técnica y tecnológica se estrecha.',n:'Empiece por el panorama para ver la serie completa y después contraste la distribución territorial.',to:'panorama',cta:'Leer el panorama'},
-    panorama:{q:'¿El sistema está creciendo o se está recomponiendo?',i:'Ambas cosas. La recuperación de 2024 está impulsada por lo universitario y lo oficial; la educación técnica y tecnológica sigue por debajo de su nivel de 2018.',n:'Compare siempre niveles y modalidades: el total, por sí solo, esconde cambios estructurales.',to:'instituciones',cta:'Comparar instituciones'},
-    instituciones:{q:'¿Quién está creciendo y con qué tipo de oferta?',i:'El tamaño no cuenta toda la historia. La comparación reúne matrícula, programas, presencia territorial, acreditación, Saber TyT y capacidad investigativa.',n:'Use el comparador de hasta tres IES para observar fortalezas distintas sin convertir una cifra en un ranking absoluto.',to:'territorio',cta:'Ver presencia territorial'},
-    territorio:{q:'¿Dónde llega realmente la educación superior?',i:'Solo 51 de los 125 municipios tienen oferta activa. El mapa permite separar capacidad instalada, posgrado, TyT, programas y desempeño.',n:'La razón de oferta no equivale a cobertura de residentes: algunos municipios reciben estudiantes de otros territorios.',to:'oferta',cta:'Explorar la oferta'},
-    oferta:{q:'¿La diversidad de programas responde al territorio?',i:'La oferta se concentra en Medellín y en áreas tradicionales. Filtrar por municipio, nivel y modalidad revela dónde existen opciones y dónde solo hay presencia nominal.',n:'Cruce programa, institución y municipio antes de interpretar un conteo agregado.',to:'economia',cta:'Contrastar oferta y demanda'},
-    economia:{q:'¿Lo que se estudia coincide con la economía regional?',i:'La comparación expone desajustes entre vocaciones productivas, demanda estudiantil y concentración de la oferta académica.',n:'No confunda peso económico de una actividad con demanda automática de un programa: la relación requiere lectura territorial.',to:'laboral',cta:'Seguir al mercado laboral'},
-    laboral:{q:'¿Qué sucede después del grado?',i:'La vinculación formal y el ingreso cambian por nivel y área. La educación superior mejora oportunidades, pero no distribuye el retorno de manera homogénea.',n:'OLE observa cotización formal; no captura todo el empleo independiente ni la informalidad.',to:'calidad',cta:'Revisar calidad'},
-    calidad:{q:'¿Cómo se observa la calidad sin reducirla a un sello?',i:'Acreditación y resultados Saber se complementan: una mide procesos institucionales y la otra ofrece señales de aprendizaje comparables.',n:'Ningún indicador aislado resume la experiencia educativa completa.',to:'acreditacion',cta:'Abrir la guía de acreditación'},
-    acreditacion:{q:'¿Qué hace falta para demostrar alta calidad?',i:'La acreditación exige evidencia sostenida: resultados, autorregulación, comunidad académica, recursos, investigación e impacto, no solo una visita de pares.',n:'La guía protegida organiza el camino; la decisión formal pertenece al CNA y al Ministerio de Educación.',to:'innovacion',cta:'Ver capacidad investigativa'},
-    innovacion:{q:'¿Dónde se concentra la capacidad de producir conocimiento?',i:'Antioquia reúne un ecosistema amplio de grupos, con una concentración fuerte en las grandes universidades y capacidades emergentes en instituciones TyT.',n:'La categoría del grupo es una señal de trayectoria, no una medición directa de impacto social.',to:'social',cta:'Conectar con impacto social'},
-    social:{q:'¿Para quién funciona como movilidad social?',i:'El lente TyT muestra estudiantes de menores ingresos, primera generación y personas que combinan estudio con jornadas laborales extensas.',n:'Las brechas de acceso, permanencia y género necesitan leerse junto con territorio y modalidad.',to:'redes',cta:'Ver conversación digital'},
-    redes:{q:'¿Quién tiene audiencia y quién la convierte en gestión?',i:'UdeA lidera la escala pública; EAFIT, UPB, CES y Remington muestran fortalezas diferentes en cadencia, equilibrio y eficiencia audiovisual.',n:'Seguidores no son alcance único. El desempeño real requiere impresiones, retención, crecimiento y conversiones de los paneles privados.',to:'finanzas',cta:'Entender la sostenibilidad'},
-    finanzas:{q:'¿Qué sostiene a las instituciones públicas?',i:'La gratuidad amplía acceso, pero también cambia el riesgo: varias instituciones dependen de giros estatales oportunos, mientras la UdeA enfrenta un problema estructural de base presupuestal.',n:'Presupuesto aprobado, ejecución, excedente y liquidez responden preguntas distintas.',to:'metodologia',cta:'Auditar la metodología'},
-    metodologia:{q:'¿Por qué confiar en estas lecturas?',i:'Cada capítulo separa fuente, corte, cálculo y limitación. Los datos territoriales cuentan con auditoría reproducible y las cifras públicas enlazan su evidencia.',n:'La inteligencia de MaterIA está en conectar datos sin ocultar sus límites.',to:'inicio',cta:'Volver al núcleo'},
+    inicio:{q:'¿Qué está cambiando en la educación superior?',i:'El sistema recupera matrícula, pero no de forma uniforme: crece la formación universitaria mientras la base técnica y tecnológica se estrecha.',n:'Empiece por el panorama para ver la serie completa y después contraste la distribución territorial.',f:'SNIES 2024-II · fuente oficial',to:'panorama',cta:'Leer el panorama'},
+    panorama:{q:'¿El sistema está creciendo o se está recomponiendo?',i:'Ambas cosas. La recuperación de 2024 está impulsada por lo universitario y lo oficial; la educación técnica y tecnológica sigue por debajo de su nivel de 2018.',n:'Compare siempre niveles y modalidades: el total, por sí solo, esconde cambios estructurales.',f:'SNIES 2018–2024 · fuente oficial',to:'instituciones',cta:'Comparar instituciones'},
+    instituciones:{q:'¿Quién está creciendo y con qué tipo de oferta?',i:'El tamaño no cuenta toda la historia. La comparación reúne matrícula, programas, presencia territorial, acreditación, Saber TyT y capacidad investigativa.',n:'Use el comparador de hasta tres IES para observar fortalezas distintas sin convertir una cifra en un ranking absoluto.',f:'SNIES + señales autorreportadas',to:'territorio',cta:'Ver presencia territorial'},
+    territorio:{q:'¿Dónde llega realmente la educación superior?',i:'Solo 51 de los 125 municipios tienen oferta activa. El mapa permite separar capacidad instalada, posgrado, TyT, programas y desempeño.',n:'La razón de oferta no equivale a cobertura de residentes: algunos municipios reciben estudiantes de otros territorios.',f:'SNIES + DANE · auditado',to:'oferta',cta:'Explorar la oferta'},
+    oferta:{q:'¿La diversidad de programas responde al territorio?',i:'La oferta se concentra en Medellín y en áreas tradicionales. Filtrar por municipio, nivel y modalidad revela dónde existen opciones y dónde solo hay presencia nominal.',n:'Cruce programa, institución y municipio antes de interpretar un conteo agregado.',f:'SNIES 2024-II · fuente oficial',to:'economia',cta:'Contrastar oferta y demanda'},
+    economia:{q:'¿Lo que se estudia coincide con la economía regional?',i:'La comparación expone desajustes entre vocaciones productivas, demanda estudiantil y concentración de la oferta académica.',n:'No confunda peso económico de una actividad con demanda automática de un programa: la relación requiere lectura territorial.',f:'SNIES + DANE + fuentes sectoriales',to:'laboral',cta:'Seguir al mercado laboral'},
+    laboral:{q:'¿Qué sucede después del grado?',i:'La vinculación formal y el ingreso cambian por nivel y área. La educación superior mejora oportunidades, pero no distribuye el retorno de manera homogénea.',n:'OLE observa cotización formal; no captura todo el empleo independiente ni la informalidad.',f:'OLE 2023 + GEIH · fuentes oficiales',to:'calidad',cta:'Revisar calidad'},
+    calidad:{q:'¿Cómo se observa la calidad sin reducirla a un sello?',i:'Acreditación y resultados Saber se complementan: una mide procesos institucionales y la otra ofrece señales de aprendizaje comparables.',n:'Ningún indicador aislado resume la experiencia educativa completa.',f:'ICFES + CNA/MEN · fuentes oficiales',to:'acreditacion',cta:'Abrir la guía de acreditación'},
+    acreditacion:{q:'¿Qué hace falta para demostrar alta calidad?',i:'La acreditación exige evidencia sostenida: resultados, autorregulación, comunidad académica, recursos, investigación e impacto, no solo una visita de pares.',n:'La guía protegida organiza el camino; la decisión formal pertenece al CNA y al Ministerio de Educación.',f:'CNA/MEN · resoluciones y lineamientos',to:'innovacion',cta:'Ver capacidad investigativa'},
+    innovacion:{q:'¿Dónde se concentra la capacidad de producir conocimiento?',i:'Antioquia reúne un ecosistema amplio de grupos, con una concentración fuerte en las grandes universidades y capacidades emergentes en instituciones TyT.',n:'La categoría del grupo es una señal de trayectoria, no una medición directa de impacto social.',f:'MinCiencias · Convocatoria 957',to:'social',cta:'Conectar con impacto social'},
+    social:{q:'¿Para quién funciona como movilidad social?',i:'El lente TyT muestra estudiantes de menores ingresos, primera generación y personas que combinan estudio con jornadas laborales extensas.',n:'Las brechas de acceso, permanencia y género necesitan leerse junto con territorio y modalidad.',f:'ICFES Saber TyT + SNIES',to:'redes',cta:'Ver conversación digital'},
+    redes:{q:'¿Quién tiene audiencia y quién la convierte en gestión?',i:'UdeA lidera la escala pública; EAFIT, UPB, CES y Remington muestran fortalezas diferentes en cadencia, equilibrio y eficiencia audiovisual.',n:'Seguidores no son alcance único. El desempeño real requiere impresiones, retención, crecimiento y conversiones de los paneles privados.',f:'Huella pública · cortes no homogéneos',to:'finanzas',cta:'Entender la sostenibilidad'},
+    finanzas:{q:'¿Qué sostiene a las instituciones públicas?',i:'La gratuidad amplía acceso, pero también cambia el riesgo: varias instituciones dependen de giros estatales oportunos, mientras la UdeA enfrenta un problema estructural de base presupuestal.',n:'Presupuesto aprobado, ejecución, excedente y liquidez responden preguntas distintas.',f:'EEFF y presupuestos institucionales',to:'metodologia',cta:'Auditar la metodología'},
+    metodologia:{q:'¿Por qué confiar en estas lecturas?',i:'Cada capítulo separa fuente, corte, cálculo y limitación. Los datos territoriales cuentan con auditoría reproducible y las cifras públicas enlazan su evidencia.',n:'La inteligencia de MaterIA está en conectar datos sin ocultar sus límites.',f:'Metodología pública y reproducible',to:'inicio',cta:'Volver al núcleo'},
   };
   const guide=document.getElementById('ai-guide'),panel=document.getElementById('ai-guide-panel'),toggle=document.getElementById('ai-guide-toggle');
-  const question=document.getElementById('ai-guide-question'),insight=document.getElementById('ai-guide-insight'),note=document.getElementById('ai-guide-note'),link=document.getElementById('ai-guide-link');
+  const question=document.getElementById('ai-guide-question'),insight=document.getElementById('ai-guide-insight'),note=document.getElementById('ai-guide-note'),source=document.getElementById('ai-guide-source'),link=document.getElementById('ai-guide-link');
   function setOpen(on){guide.classList.toggle('open',on);panel.hidden=!on;toggle.setAttribute('aria-expanded',String(on));}
-  window.actualizarGuia=function(id){const g=GUIAS[id]||GUIAS.inicio;guide.classList.toggle('is-home',id==='inicio');question.textContent=g.q;insight.textContent=g.i;note.textContent=g.n;link.href='#'+g.to;link.firstChild.textContent=g.cta;setOpen(false);};
+  window.actualizarGuia=function(id){const g=GUIAS[id]||GUIAS.inicio;guide.classList.toggle('is-home',id==='inicio');question.textContent=g.q;insight.textContent=g.i;note.textContent=g.n;source.textContent=g.f;link.href='#'+g.to;link.firstChild.textContent=g.cta;setOpen(false);};
   toggle.addEventListener('click',()=>setOpen(!guide.classList.contains('open')));
   addEventListener('keydown',ev=>{if(ev.key==='Escape'&&guide.classList.contains('open')){setOpen(false);toggle.focus();}});
 })();
@@ -3507,8 +3557,16 @@ function csvDownload(container, headers, rows, nombre){
   const N=t=>String(t).normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase();
   const items=[];
   const goTo=id=>{if(window.mostrarVista)mostrarVista(id);};
+  [
+    {t:'¿Dónde puedo estudiar cerca de mi municipio?',k:'Pregunta guiada · territorio',terms:'mapa oferta cercania subregion',go:()=>goTo('territorio')},
+    {t:'¿Qué institución se ajusta mejor a lo que busco?',k:'Pregunta guiada · comparar IES',terms:'universidad comparador calidad tamano',go:()=>goTo('instituciones')},
+    {t:'¿Qué programas conectan mejor con el empleo?',k:'Pregunta guiada · decisión',terms:'carrera salario trabajo demanda graduados',go:()=>goTo('laboral')},
+    {t:'¿Dónde están las mayores brechas de acceso?',k:'Pregunta guiada · equidad',terms:'cobertura municipios mujeres estrato',go:()=>goTo('social')},
+    {t:'¿Cómo obtener acreditación de alta calidad?',k:'Pregunta guiada · acreditación',terms:'cna calidad guia proceso',go:()=>goTo('acreditacion')},
+    {t:'¿Qué cifras son oficiales y cuáles son señales?',k:'Pregunta guiada · confianza',terms:'fuentes auditoria metodologia corte verificacion',go:()=>goTo('metodologia')},
+  ].forEach(x=>items.push(x));
   document.querySelectorAll('section[id]').forEach(s=>{
-    items.push({t:s.querySelector('h2').textContent,k:'Sección',go:()=>goTo(s.id)});
+    items.push({t:s.querySelector('h2').textContent,k:'Sección',terms:s.id,go:()=>goTo(s.id)});
   });
   D.ies.slice(0,40).forEach(i=>items.push({t:i.nombre,k:`IES · ${fmt(i.matricula24)} est. · ficha`,go:()=>abrirFicha(i.codigo)}));
   D.municipios.forEach(m=>items.push({t:m.municipio,k:`Municipio · ${fmt(m.matricula24)} est.`,go:()=>{
@@ -3524,8 +3582,9 @@ function csvDownload(container, headers, rows, nombre){
   let shown=[], cur=0;
   function render(){
     const nq=N(q.value.trim());
-    shown=(nq?items.filter(i=>N(i.t).includes(nq)):items.slice(0,9)).slice(0,40);
+    shown=(nq?items.filter(i=>N(`${i.t} ${i.k} ${i.terms||''}`).includes(nq)):items.slice(0,9)).slice(0,40);
     cur=0;list.innerHTML='';
+    if(!shown.length){const empty=document.createElement('li');empty.className='pal-empty';empty.textContent='No encontré una coincidencia. Pruebe con “municipio”, “empleo”, “calidad” o el nombre de una IES.';list.appendChild(empty);q.removeAttribute('aria-activedescendant');return;}
     shown.forEach((it,i)=>{
       const li=document.createElement('li');li.id=`pal-opt-${i}`;li.setAttribute('role','option');li.setAttribute('aria-selected',String(i===0));if(i===0)li.className='sel';
       const a=document.createElement('span');a.textContent=it.t;li.appendChild(a);
@@ -3540,6 +3599,7 @@ function csvDownload(container, headers, rows, nombre){
   function open(){focoAnterior=document.activeElement;pal.classList.add('on');trigger.setAttribute('aria-expanded','true');q.setAttribute('aria-expanded','true');q.value='';render();q.focus();}
   function close(){pal.classList.remove('on');trigger.setAttribute('aria-expanded','false');q.setAttribute('aria-expanded','false');q.removeAttribute('aria-activedescendant');const f=focoAnterior;focoAnterior=null;if(f&&document.contains(f))f.focus();}
   trigger.addEventListener('click',open);
+  document.getElementById('hero-ask')?.addEventListener('click',open);
   pal.addEventListener('click',e=>{if(e.target===pal)close();});
   q.addEventListener('input',render);
   addEventListener('keydown',e=>{

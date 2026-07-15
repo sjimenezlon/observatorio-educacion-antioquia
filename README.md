@@ -6,7 +6,7 @@ Tablero de la educación superior del departamento de Antioquia — **pregrado y
 
 **En línea:** https://materia-gris.vercel.app
 **Espejo:** https://observatorio-educacion-antioquia.vercel.app
-**Autor:** Santiago Jiménez Londoño · Última versión: V22 (julio de 2026)
+**Autor:** Santiago Jiménez Londoño · Última versión: V23 (julio de 2026)
 
 ---
 
@@ -20,8 +20,12 @@ Tablero de la educación superior del departamento de Antioquia — **pregrado y
 | **Oferta** | ¿Qué se puede estudiar? 2.107 programas con explorador filtrable |
 | **Mercado laboral** | ¿Cómo les va a los graduados? Demanda, embudo, vinculación formal y salario de enganche por nivel y área |
 | **Calidad** | Acreditación de alta calidad, Saber TyT vs. nacional (y por municipio), bilingüismo (MCER) |
+| **Acreditación** | ¿Cómo se obtiene la alta calidad? Guía protegida, ruta, evidencias y monitor institucional |
 | **Innovación** | 815 grupos de investigación reconocidos (Conv. 957 de 2024) |
 | **Impacto social** | ¿Quiénes estudian? Estrato, trabajo, educación de la madre, brecha de género y STEM |
+| **Redes sociales** | ¿Quién gestiona mejor su presencia digital? Audiencia pública, seis plataformas, índice y límites |
+| **Finanzas** | ¿Qué sostiene a las IES públicas? Presupuesto, dependencia estatal, resultados y alertas |
+| **Metodología** | ¿Qué cifras son oficiales, autorreportadas o cálculos editoriales y cómo se reproducen? |
 
 El panorama incorpora además un bloque de **acceso e infraestructura 2025–2027**: gratuidad, nuevos estudiantes de primer ingreso, Educación Superior en tu Colegio y cartera de proyectos de infraestructura, siempre separado de las estadísticas SNIES para evitar mezclar indicadores administrativos con matrícula consolidada.
 
@@ -104,12 +108,14 @@ Cuando el MEN publique la vigencia siguiente (histórico: hacia julio de cada a�
 8. Saber TyT usa la escala 0–200 vigente desde 2017-3; los rótulos MCER históricos (A-, -A1, Pre-A1, B+) se homologan a la escala actual. El puntaje por municipio solo se reporta con 50+ evaluados.
 9. **Seguidores no son alcance**: el capítulo de redes sociales suma audiencias públicas sin deduplicar y calcula un índice editorial sobre señales observables. El alcance único, las impresiones, la retención, el crecimiento y las conversiones requieren exportaciones privadas de cada plataforma. Datos y fórmula: `public/redes-sociales.json`.
 
-## Pendientes / ideas para la próxima versión
+## Ruta de potenciación
 
-- **Saber Pro** (nivel universitario): no está completo como microdato abierto en datos.gov.co; habría que traerlo desde DataIcfes.
-- **Deserción (SPADIES)**: no hay dataset abierto; requiere consulta directa al MEN.
-- **Demanda laboral por vacantes**: no existe dataset del Servicio Público de Empleo en datos abiertos; alternativa es GEIH.
-- Bases SNIES 2025 cuando el MEN las publique.
+- **Actualización SNIES 2025** entre el 27 y el 31 de julio de 2026, según el cronograma oficial del MEN.
+- **Modo decisión** que combine territorio, costo, modalidad, calidad y resultados laborales sin producir un ranking absoluto.
+- **Asistente explicable** sobre el corpus publicado: toda respuesta deberá mostrar fuente, corte, cálculo y limitación, sin perfilar estudiantes.
+- **Alertas de frescura** para detectar nuevas bases, resoluciones de acreditación y cambios en informes institucionales.
+- **Saber Pro y permanencia**: ampliar resultados universitarios desde DataIcfes e incorporar SPADIES cuando exista acceso reproducible.
+- **Demanda laboral por vacantes**: integrar el Servicio Público de Empleo si publica una base abierta; mientras tanto, mantener GEIH y OLE como fuentes comparables.
 
 ---
 

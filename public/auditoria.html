@@ -11,18 +11,18 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
 <style>
 :root{
-  --page:#0d0d0d;--surface:#1a1a19;--surface-2:#222220;--ink:#fff;--ink-2:#c3c2b7;
-  --muted:#898781;--grid:#2c2c2a;--border:rgba(255,255,255,.1);--blue:#3987e5;
-  --green:#199e70;--green-soft:rgba(25,158,112,.14);--code:#111210
+  --page:#070b12;--surface:#101722;--surface-2:#16202d;--ink:#f8fbff;--ink-2:#c9d3e3;
+  --muted:#8795aa;--grid:#202c3b;--border:rgba(151,180,222,.14);--blue:#6ba6ff;
+  --green:#3ed6aa;--green-soft:rgba(62,214,170,.12);--code:#090e16
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;overflow-x:hidden}
-body{background:var(--page);color:var(--ink-2);font:15px/1.58 system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{background:radial-gradient(circle at 8% 5%,rgba(107,166,255,.10),transparent 28rem),radial-gradient(circle at 88% 22%,rgba(62,214,170,.055),transparent 30rem),var(--page);color:var(--ink-2);font:15px/1.58 system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}
 .wrap{width:min(1080px,calc(100% - 40px));margin:0 auto}
-nav{position:sticky;top:0;z-index:10;background:rgba(13,13,13,.92);border-bottom:1px solid var(--border);backdrop-filter:blur(10px)}
-nav .wrap{height:54px;display:flex;align-items:center;gap:16px}
-.logo{color:var(--ink);font-weight:750;letter-spacing:.02em}.logo span{color:var(--blue)}
+nav{position:sticky;top:0;z-index:10;background:rgba(7,11,18,.86);border-bottom:1px solid var(--border);backdrop-filter:blur(16px) saturate(135%)}
+nav .wrap{height:62px;display:flex;align-items:center;gap:16px}
+.logo{display:flex;align-items:center;gap:10px;color:var(--ink);font-weight:750;letter-spacing:.02em}.brand-mark{position:relative;width:34px;height:34px;display:grid;place-items:center;border-radius:11px;overflow:hidden;background:radial-gradient(circle at 25% 26%,#fff 0 1.5px,transparent 2.5px),radial-gradient(circle at 74% 31%,#78e3c3 0 2px,transparent 3px),radial-gradient(circle at 71% 76%,#b5a8ff 0 2px,transparent 3px),linear-gradient(145deg,#315fbd,#685bd5 52%,#168e78 115%);border:1px solid rgba(186,210,255,.38);box-shadow:0 0 24px rgba(86,126,237,.25)}.brand-mark::before{content:"M";color:#fff;font:720 16px/1 "Fraunces",Georgia,serif;letter-spacing:-.08em}.brand-word{color:var(--ink)}.brand-ia{color:#88b7ff}
 .back{margin-left:auto;color:var(--ink-2);font-size:13px}.raw{color:var(--muted);font-size:13px}
 button{font:inherit}.theme{min-height:44px;border:1px solid var(--border);background:var(--surface-2);color:var(--ink-2);border-radius:8px;padding:6px 9px;cursor:pointer}
 main{padding:64px 0 74px;position:relative}
@@ -54,7 +54,7 @@ html.light nav{background:rgba(247,246,241,.92)}html.light main::before{opacity:
 </head>
 <body>
 <nav><div class="wrap">
-  <a class="logo" href="index.html">Mater<span>IA</span> Gris</a>
+  <a class="logo" href="index.html" aria-label="MaterIA Gris · inicio"><span class="brand-mark" aria-hidden="true"></span><span class="brand-word">Mater<span class="brand-ia">IA</span> Gris</span></a>
   <a class="back" href="index.html#territorio">← Volver al territorio</a>
   <a class="raw" href="auditoria-cifras.json">JSON</a>
   <button class="theme" id="theme" type="button" aria-label="Cambiar tema">Tema</button>
@@ -62,7 +62,7 @@ html.light nav{background:rgba(247,246,241,.92)}html.light main::before{opacity:
 
 <main class="wrap">
   <header>
-    <p class="eyebrow">Comprobante público · V20</p>
+    <p class="eyebrow">Comprobante público · V23</p>
     <h1>Las cifras del atlas, puestas a prueba</h1>
     <p class="lede">Recalculamos la matrícula, la población joven y la geografía municipal desde los archivos oficiales. Esta página traduce el resultado de esa auditoría sin reemplazar el comprobante reproducible.</p>
     <p class="meta">Auditoría ejecutada el <span id="audit-date">14 de julio de 2026</span> · Fuentes con huella digital SHA-256</p>
@@ -117,6 +117,7 @@ html.light nav{background:rgba(247,246,241,.92)}html.light main::before{opacity:
     <div class="actions">
       <a class="btn primary" href="index.html#territorio">Explorar los mapas</a>
       <a class="btn secondary" href="auditoria-cifras.json">Abrir comprobante JSON</a>
+      <a class="btn secondary" href="verificacion-v23.json">Revisión documental V23</a>
       <a class="btn secondary" href="https://github.com/sjimenezlon/observatorio-educacion-antioquia/blob/main/scripts/auditar_atlas.py" target="_blank" rel="noopener">Ver script de auditoría ↗</a>
     </div>
   </section>
