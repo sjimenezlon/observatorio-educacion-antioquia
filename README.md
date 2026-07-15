@@ -6,7 +6,7 @@ Tablero de la educación superior del departamento de Antioquia — **pregrado y
 
 **En línea:** https://materia-gris.vercel.app
 **Espejo:** https://observatorio-educacion-antioquia.vercel.app
-**Autor:** Santiago Jiménez Londoño · Última versión: V15 (julio de 2026)
+**Autor:** Santiago Jiménez Londoño · Última versión: V16 (julio de 2026)
 
 ---
 
@@ -41,11 +41,13 @@ scripts/
   descargar_datos.py     # baja TODOS los insumos a data/ (≈500 MB, no versionados)
   preparar_poblacion.py  # extrae población 17-21 por municipio/subregión (DANE)
   procesar.py            # motor: data/ → public/datos.json + public/datos.js
+  auditar_atlas.py       # contrasta el atlas publicado contra los XLSX oficiales
 public/
   index.html             # tablero completo (HTML+JS vanilla, SVG a mano, sin dependencias)
   datos.js               # datos agregados (generado — no editar a mano)
   datos.json             # mismo contenido, para reutilizar
   mapa.js                # geometría MGN de los 125 municipios (DANE, vía ArcGIS)
+  auditoria-cifras.json  # comprobante público de la última auditoría del atlas
 data/                    # insumos crudos — NO versionados (ver .gitignore)
 ```
 
@@ -56,6 +58,7 @@ pip install pandas openpyxl pdfplumber      # dependencias
 python3 scripts/descargar_datos.py          # ≈500 MB; el archivo del DANE (126 MB) es lento
 python3 scripts/preparar_poblacion.py       # población 17-21 por municipio y subregión
 python3 scripts/procesar.py                 # regenera public/datos.json y public/datos.js
+python3 scripts/auditar_atlas.py            # debe terminar con "estado": "correcto"
 vercel --prod                               # despliegue (prebuilt, sin build step)
 ```
 
@@ -89,7 +92,7 @@ Cuando el MEN publique la vigencia siguiente (histórico: hacia julio de cada a�
 
 ## Decisiones metodológicas (las trampas de los datos oficiales)
 
-1. **Matrícula anual = semestre pico**, no la suma de semestres (que duplicaría personas). Validado contra la cifra oficial del MEN: 2.561.707 nacional vs. 2.553.560 publicado (0,3 % de diferencia).
+1. **Matrícula anual = semestre pico**, no la suma de semestres (que duplicaría personas). En 2024 el semestre pico de Antioquia es **2024-II: 313.583 matriculados** (2024-I: 300.246). Las vistas de corte territorial, institucional, de oferta y calidad lo rotulan explícitamente como 2024-II. Validado además contra la cifra oficial del MEN: 2.561.707 nacional vs. 2.553.560 publicado (0,3 % de diferencia).
 2. **La serie 2015-2017 de la base histórica (`5wck-szir`) se descartó**: el reporte semestral es inconsistente (S2 colapsado). La serie arranca en 2018 desde los XLSX.
 3. **OLE se restringe a IES con domicilio en Antioquia** — se excluyen SENA y UNAD, de alcance nacional y no separables por departamento en esa base. La Especialización se omite de la tasa de vinculación por cobertura insuficiente (169 de 8.391).
 4. **El sector de cada IES se toma del SNIES**, no del ICFES, que tiene errores de registro (marcaba la IU Digital como privada).
