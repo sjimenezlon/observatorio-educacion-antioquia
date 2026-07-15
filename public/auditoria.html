@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Auditoría de cifras · MaterIA Gris</title>
-<meta name="description" content="Comprobante público de la auditoría territorial de MaterIA Gris: cifras contrastadas contra las fuentes oficiales SNIES y DANE.">
+<meta name="description" content="Comprobante público V26 de MaterIA Gris: territorio, decisiones y trayectorias contrastados con fuentes oficiales y cortes separados.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,550;9..144,650&display=swap" rel="stylesheet">
@@ -62,9 +62,9 @@ html.light nav{background:rgba(247,246,241,.92)}html.light main::before{opacity:
 
 <main class="wrap">
   <header>
-    <p class="eyebrow">Comprobante público · V25</p>
+    <p class="eyebrow">Comprobante público · V26</p>
     <h1>La evidencia estratégica, puesta a prueba</h1>
-    <p class="lede">Recalculamos matrícula, población joven, geografía municipal e indicadores de la Sala Ejecutiva desde los archivos documentados. Esta página traduce el resultado sin reemplazar el comprobante reproducible.</p>
+    <p class="lede">Recalculamos matrícula, población joven, geografía municipal e indicadores de la Sala Ejecutiva y Trayectorias desde los archivos documentados. También comprobamos que los referentes nacionales permanezcan separados de los resultados de Antioquia.</p>
     <p class="meta">Auditoría ejecutada el <span id="audit-date">15 de julio de 2026</span> · Fuentes con huella digital SHA-256</p>
   </header>
 
@@ -88,6 +88,8 @@ html.light nav{background:rgba(247,246,241,.92)}html.light main::before{opacity:
       <article class="check"><div class="check-top"><h3>Agregación subregional</h3><span class="badge">Verificado</span></div><b id="diff-subregiones">0</b><p>diferencias entre los nueve agregados y la fuente.</p></article>
       <article class="check"><div class="check-top"><h3>Razón de oferta</h3><span class="badge">Verificado</span></div><b id="diff-razon">0</b><p>diferencias en numeradores, denominadores y porcentajes.</p></article>
       <article class="check"><div class="check-top"><h3>Sala Ejecutiva</h3><span class="badge">Verificado</span></div><b>8</b><p>indicadores estratégicos recalculados sin diferencias y con cortes separados.</p></article>
+      <article class="check"><div class="check-top"><h3>Trayectorias</h3><span class="badge">Verificado</span></div><b>6</b><p>etapas con universo, jurisdicción, corte, denominador y limitación declarados.</p></article>
+      <article class="check"><div class="check-top"><h3>Cálculos V26</h3><span class="badge">Verificado</span></div><b>0</b><p>diferencias en acceso administrativo y cotización formal de pregrado.</p></article>
     </div>
   </section>
 
@@ -98,6 +100,9 @@ html.light nav{background:rgba(247,246,241,.92)}html.light main::before{opacity:
       <article class="source"><small>Matrícula y oferta</small><h3>SNIES · MEN</h3><p>Bases consolidadas de estudiantes matriculados 2024. Se usa el semestre con mayor matrícula de la vigencia: 2024-II.</p><code class="hash" id="hash-snies">6558fdb32d95eddb2c34d904b6adb9462f5a14e670937a87c3a4ecf5aef4d5d6</code><a href="https://snies.mineducacion.gov.co/portal/ESTADISTICAS/Bases-consolidadas/" target="_blank" rel="noopener">Abrir fuente oficial ↗</a></article>
       <article class="source"><small>Población joven</small><h3>Proyecciones · DANE</h3><p>Población municipal por área, sexo y edad. Se suman hombres y mujeres de 17, 18, 19, 20 y 21 años para 2024.</p><code class="hash" id="hash-dane">7e461635315664d44ba52cc7f951947085a0ea6f2dda72fe2efed11a76880516</code><a href="https://www.dane.gov.co/index.php/estadisticas-por-tema/demografia-y-poblacion/proyecciones-de-poblacion" target="_blank" rel="noopener">Abrir fuente oficial ↗</a></article>
       <article class="source"><small>Geografía</small><h3>MGN 2024 · DANE</h3><p>Geometría municipal del Marco Geoestadístico Nacional. La auditoría confirmó los 125 municipios de Antioquia.</p><code class="hash">125 geometrías · 0 faltantes · 0 sobrantes</code><a href="https://geoportal.dane.gov.co/" target="_blank" rel="noopener">Abrir geoportal oficial ↗</a></article>
+      <article class="source"><small>Permanencia y grado</small><h3>SPADIES + OTE · MEN</h3><p>Los indicadores de deserción, ausencia y graduación se usan únicamente como referencias nacionales; no se atribuyen a Antioquia.</p><code class="hash">2 jurisdicciones distinguidas · 0 conversiones de referencia a resultado local</code><a href="https://ote.mineducacion.gov.co/sistema-consulta/generar" target="_blank" rel="noopener">Abrir Observatorio de Trayectorias ↗</a></article>
+      <article class="source"><small>Aprendizaje</small><h3>Saber Pro 2025 · ICFES</h3><p>Promedio de Antioquia y nacional con cantidad de evaluados. No se interpreta como valor agregado institucional.</p><code class="hash">154 Antioquia · 148 Colombia · n = 30.810</code><a href="https://www.icfes.gov.co/evaluaciones-icfes/acerca-del-examen-saber-pro/resultados-del-examen-saber-pro/" target="_blank" rel="noopener">Abrir resultados oficiales ↗</a></article>
+      <article class="source"><small>Resultado laboral</small><h3>OLE 2023 · MEN</h3><p>Cotización formal de graduados 2022 en IES domiciliadas en Antioquia. No equivale a tasa de empleo.</p><code class="hash">23.374 / 32.756 = 71,4 % · pregrado</code><a href="https://ole.mineducacion.gov.co/portal/secciones/A-quienes-aportamos/Sector-productivo/" target="_blank" rel="noopener">Abrir Observatorio Laboral ↗</a></article>
     </div>
   </section>
 
@@ -118,7 +123,7 @@ html.light nav{background:rgba(247,246,241,.92)}html.light main::before{opacity:
     <div class="actions">
       <a class="btn primary" href="index.html#territorio">Explorar los mapas</a>
       <a class="btn secondary" href="auditoria-cifras.json">Abrir comprobante JSON</a>
-      <a class="btn secondary" href="verificacion-v25.json">Revisión documental V25</a>
+      <a class="btn secondary" href="verificacion-v26.json">Revisión documental V26</a>
       <a class="btn secondary" href="https://github.com/sjimenezlon/observatorio-educacion-antioquia/blob/main/scripts/auditar_atlas.py" target="_blank" rel="noopener">Ver script de auditoría ↗</a>
     </div>
   </section>

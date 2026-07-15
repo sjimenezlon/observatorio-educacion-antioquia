@@ -1,0 +1,135 @@
+{
+  "version": "V26",
+  "fecha_verificacion": "2026-07-15",
+  "estado": "correcto_con_cortes_separados",
+  "proposito": "Verificar el capítulo Trayectorias y retorno sin presentar registros administrativos como personas, referencias nacionales como resultados de Antioquia ni etapas distintas como una cohorte longitudinal.",
+  "regla_principal": "Las seis etapas tienen universos, periodos y jurisdicciones diferentes. Se conectan para orientar preguntas de decisión; no se multiplican ni permiten atribuir causalidad.",
+  "etapas": {
+    "aspirar": {
+      "valor": 343927,
+      "unidad": "registros de inscripción",
+      "jurisdiccion": "Antioquia",
+      "corte": "2024, suma de los dos semestres",
+      "fuente": "SNIES–MEN, bases consolidadas de inscritos",
+      "calculo": "valor publicado en datos.json / embudo.inscritos",
+      "limitacion": "Son registros administrativos, no aspirantes únicos; una persona puede presentar más de una inscripción."
+    },
+    "acceder": {
+      "primer_curso": 120979,
+      "inscripciones": 343927,
+      "razon_pct_exacta": 35.17577858091979,
+      "valor_publicado_pct": 35.2,
+      "jurisdiccion": "Antioquia",
+      "corte": "2024, suma de los dos semestres",
+      "fuente": "SNIES–MEN, bases consolidadas de inscritos y primer curso",
+      "formula": "120979 / 343927 × 100",
+      "limitacion": "Es una razón entre registros administrativos; no es la tasa oficial de tránsito inmediato ni sigue personas únicas."
+    },
+    "permanecer": {
+      "desercion_anual_pct": 8.97,
+      "ausencia_intersemestral_pct": 12.4,
+      "jurisdiccion": "Colombia",
+      "corte": "2023, cierre estadístico SPADIES 2024",
+      "fuente": "SPADIES–MEN",
+      "url": "https://www.mineducacion.gov.co/sistemasdeinformacion/1783/w3-propertyvalue-68157.html",
+      "limitacion": "Referencia nacional. No se publica como tasa de Antioquia; la extracción departamental reproducible está pendiente."
+    },
+    "aprender": {
+      "saber_pro_antioquia": 154,
+      "saber_pro_colombia": 148,
+      "diferencia_puntos": 6,
+      "evaluados_antioquia": 30810,
+      "jurisdiccion": "Antioquia frente a Colombia",
+      "corte": "Saber Pro 2025",
+      "fuente": "ICFES, resultados agregados del examen Saber Pro",
+      "url": "https://www.icfes.gov.co/evaluaciones-icfes/acerca-del-examen-saber-pro/resultados-del-examen-saber-pro/",
+      "limitacion": "Promedio observado entre evaluados de IES del departamento; no estima valor agregado ni efecto causal de una institución."
+    },
+    "graduarse": {
+      "universitaria_pct": 42.5,
+      "tyt_pct": 36.6,
+      "jurisdiccion": "Colombia",
+      "cohorte": 2021,
+      "fuente": "Observatorio de Trayectorias Educativas–MEN, Documento temático II",
+      "url": "https://ote.mineducacion.gov.co/sites/default/files/otepublic/2024-06/Doc-tematico-II-%28ES%29_2024.pdf",
+      "limitacion": "Referencia nacional de graduación acumulada. No se publica como tasa de Antioquia."
+    },
+    "vincularse": {
+      "niveles_incluidos": [
+        "Técnica profesional",
+        "Tecnológica",
+        "Universitaria"
+      ],
+      "cotizantes": 23374,
+      "graduados_observados": 32756,
+      "tasa_exacta_pct": 71.35791915984858,
+      "valor_publicado_pct": 71.4,
+      "jurisdiccion": "Graduados de pregrado de IES con domicilio en Antioquia",
+      "corte": "OLE 2023 para graduados 2022",
+      "fuente": "Observatorio Laboral para la Educación–MEN, Base IBC",
+      "formula": "(196 + 3988 + 19190) / (518 + 5482 + 26756) × 100",
+      "url": "https://ole.mineducacion.gov.co/portal/secciones/A-quienes-aportamos/Sector-productivo/",
+      "limitacion": "Cotización formal no equivale a tasa de empleo. Se excluyen SENA y UNAD; especialización se omite por cobertura insuficiente."
+    }
+  },
+  "variables_contextuales": {
+    "transito_inmediato_medellin_2024_pct": {
+      "valor": 49.36,
+      "bachilleres_que_ingresaron_directamente": 11539,
+      "fuente": "Alcaldía de Medellín",
+      "url": "https://www.medellin.gov.co/es/sala-de-prensa/noticias/medellin-se-consolida-como-referente-nacional-en-acceso-a-la-educacion-superior/",
+      "limitacion": "Resultado municipal; no representa a Antioquia ni debe compararse directamente con la razón administrativa primer curso / inscripciones."
+    },
+    "mujeres_stem_saber_tyt_pct": {
+      "valor": 33.6,
+      "corte": "2017–2022",
+      "fuente": "ICFES Saber TyT, perfil de evaluados",
+      "limitacion": "Composición de evaluados en áreas STEM, no participación en toda la matrícula de educación superior."
+    },
+    "municipios_sin_oferta_activa": {
+      "valor": 74,
+      "universo": 125,
+      "corte": "SNIES 2024-II",
+      "limitacion": "Lugar de oferta; no identifica la residencia de estudiantes."
+    },
+    "inversion_privada_educacion_2025_millones_cop": {
+      "valor": 399655,
+      "organizaciones": 55,
+      "iniciativas": 297,
+      "fuente": "Proantioquia, Inversión privada en educación: balance 2025",
+      "url": "https://proantioquia.org.co/download/inversion-privada-en-educacion-balance-2025/",
+      "limitacion": "Incluye todos los niveles educativos. Es inversión reportada, no evaluación de impacto ni gasto exclusivo en educación superior."
+    }
+  },
+  "matriz_editorial": {
+    "tipos": [
+      "expandir",
+      "retener",
+      "rediseñar",
+      "proteger"
+    ],
+    "clasificacion": "Guía de formulación de hipótesis; no es un ranking, algoritmo de recomendación ni modelo causal.",
+    "regla": "Toda decisión propuesta debe declarar señal, acción, métrica de seguimiento y dato faltante."
+  },
+  "datos_prioritarios_por_integrar": [
+    "Permanencia, ausencia intersemestral y graduación por cohorte, IES, nivel, modalidad y departamento",
+    "Costo neto para el estudiante y oportunidad de apoyos financieros",
+    "Resultados de permanencia y grado de beneficiarios de gratuidad, fondos y becas",
+    "Municipio de residencia, movilidad para estudiar y localización posterior al grado",
+    "Ocupación, informalidad, trabajo independiente y pertinencia entre estudio y empleo"
+  ],
+  "ecosistema_de_fuentes": [
+    {
+      "nombre": "Observatorio de Trayectorias Educativas–MEN",
+      "url": "https://ote.mineducacion.gov.co/sistema-consulta/generar"
+    },
+    {
+      "nombre": "Sapiencia ODES",
+      "url": "https://sapiencia.gov.co/observatorio-informes/"
+    },
+    {
+      "nombre": "Proantioquia",
+      "url": "https://proantioquia.org.co/publicaciones/"
+    }
+  ]
+}
