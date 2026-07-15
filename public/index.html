@@ -229,6 +229,25 @@ html.light .card{box-shadow:0 1px 2px rgba(20,20,15,.03),0 8px 22px rgba(20,20,1
 .mpanel .row{display:flex;justify-content:space-between;padding:7px 0;border-top:1px solid var(--grid);font-size:13.5px}
 .mpanel .row:first-of-type{border-top:none}
 .mpanel .row b{color:var(--ink);font-variant-numeric:tabular-nums}
+.atlas-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:16px}
+.atlas-map{margin:0;background:var(--surface-2);border:1px solid var(--border);border-radius:12px;padding:13px;min-width:0}
+.atlas-map figcaption{display:grid;gap:4px;min-height:94px}
+.atlas-map .ak{color:var(--s1);font-size:10.5px;font-weight:750;letter-spacing:.09em;text-transform:uppercase}
+.atlas-map figcaption b{color:var(--ink);font-size:15px;line-height:1.25}
+.atlas-map figcaption span:last-child{color:var(--muted);font-size:11.5px;line-height:1.4}
+.atlas-svg{margin-top:10px;border-radius:9px;background:var(--page);overflow:hidden}
+.atlas-svg svg{display:block;width:100%;height:auto;max-height:390px}
+.atlas-svg path{transition:opacity .15s,stroke-width .15s;cursor:crosshair}
+.atlas-svg path:hover{opacity:.82;stroke-width:1.4}
+.atlas-mini-legend{display:flex;flex-wrap:wrap;gap:7px 10px;margin-top:10px;color:var(--muted);font-size:10.5px;line-height:1.25}
+.atlas-mini-legend .it{display:flex;align-items:center;gap:5px}
+.atlas-mini-legend .sw{width:11px;height:11px;border-radius:3px;flex:none}
+.atlas-read{margin-top:12px;padding:12px 14px;border-left:3px solid var(--s1);background:var(--surface-2);color:var(--ink-2);font-size:13px;line-height:1.5;border-radius:0 9px 9px 0}
+.atlas-table{margin-top:14px;border-top:1px solid var(--grid);padding-top:12px}
+.atlas-table summary{cursor:pointer;color:var(--ink);font-size:13px;font-weight:650}
+.atlas-source{margin-top:12px!important;margin-bottom:0!important}
+@media(max-width:1020px){.atlas-grid{grid-template-columns:1fr 1fr}.atlas-map:last-child{grid-column:1/-1}.atlas-map figcaption{min-height:78px}}
+@media(max-width:640px){.atlas-grid{grid-template-columns:1fr}.atlas-map:last-child{grid-column:auto}.atlas-map figcaption{min-height:0}.atlas-svg svg{max-height:430px}}
 /* ---------- comparador ---------- */
 .cmp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:14px}
 .cmp-col{background:var(--surface-2);border:1px solid var(--border);border-radius:12px;padding:14px}
@@ -478,6 +497,33 @@ html.light #arriba{box-shadow:0 4px 18px rgba(0,0,0,.15)}
         <aside class="mpanel" id="map-panel" aria-live="polite"></aside>
       </div>
       <div class="map-legend" id="map-legend"></div>
+    </div>
+    <div class="card">
+      <h3>Atlas de brechas: tres mapas, una misma pregunta territorial</h3>
+      <p class="note">Lea los mapas en conjunto: la cobertura compara capacidad instalada con población joven; la presencia municipal muestra si existe oferta activa; y el peso TyT revela dónde la puerta de entrada depende de la formación técnica y tecnológica. Pase el cursor o toque un municipio para ver el dato exacto.</p>
+      <div class="atlas-grid" id="atlas-territorial">
+        <figure class="atlas-map">
+          <figcaption><span class="ak">Capacidad instalada</span><b>Cobertura bruta de oferta por subregión</b><span>Pregrado ofertado por cada 100 habitantes de 17–21 años. No mide asistencia de residentes.</span></figcaption>
+          <div class="atlas-svg" id="atlas-cobertura"></div>
+          <div class="atlas-mini-legend" id="atlas-lg-cobertura" aria-label="Leyenda de cobertura"></div>
+        </figure>
+        <figure class="atlas-map">
+          <figcaption><span class="ak">Vacíos de acceso</span><b>Municipios con y sin oferta activa</b><span>Lugar de oferta del programa en las bases consolidadas SNIES 2024.</span></figcaption>
+          <div class="atlas-svg" id="atlas-oferta"></div>
+          <div class="atlas-mini-legend" id="atlas-lg-oferta" aria-label="Leyenda de presencia de oferta"></div>
+        </figure>
+        <figure class="atlas-map">
+          <figcaption><span class="ak">Composición local</span><b>Peso de la formación TyT</b><span>Porcentaje de la matrícula municipal que es técnica profesional o tecnológica.</span></figcaption>
+          <div class="atlas-svg" id="atlas-tyt"></div>
+          <div class="atlas-mini-legend" id="atlas-lg-tyt" aria-label="Leyenda de participación TyT"></div>
+        </figure>
+      </div>
+      <div class="atlas-read" id="atlas-read" aria-live="polite"></div>
+      <details class="atlas-table">
+        <summary>Ver tabla comparativa y método</summary>
+        <div class="tscroll" style="margin-top:12px" id="atlas-table"></div>
+      </details>
+      <p class="note atlas-source"><b>Fuentes verificadas:</b> <a href="https://snies.mineducacion.gov.co/portal/ESTADISTICAS/Bases-consolidadas/" target="_blank" rel="noopener">SNIES–MEN, bases consolidadas 2024 ↗</a>; <a href="https://www.dane.gov.co/index.php/estadisticas-por-tema/demografia-y-poblacion/proyecciones-de-poblacion" target="_blank" rel="noopener">DANE, proyecciones municipales por edad ↗</a>; <a href="https://geoportal.dane.gov.co/" target="_blank" rel="noopener">DANE, Marco Geoestadístico Nacional ↗</a>. Corte de verificación: 14 de julio de 2026. El SNIES programó la publicación oficial de 2025 para el 27–31 de julio de 2026; por eso estos mapas mantienen el último cierre publicado y comparable: 2024.</p>
     </div>
     <div class="card">
       <h3>Las nueve subregiones (2024)</h3>
@@ -2210,6 +2256,89 @@ const ACRED_IES=[
   svg.addEventListener('dblclick',ev=>{ev.preventDefault();zoomAt(ev.clientX,ev.clientY,0.6);});
 
   paint();
+})();
+
+/* ---- 03c Atlas territorial: cobertura, vacíos de oferta y dependencia TyT ---- */
+(function(){
+  const GEO=window.GEO, host=document.getElementById('atlas-territorial');
+  if(!GEO||!host)return;
+  const light=document.documentElement.classList.contains('light');
+  const ink=light?'#585850':'#aaa9a2', empty=light?'#e8e6df':'#242422';
+  const blue=light?['#dce9f9','#a9c8ef','#72a5e5','#3d7fd3','#174a92']:['#15345d','#1c5cab','#2a78d6','#5598e7','#9ec5f4'];
+  const amber=light?['#f6e5cf','#efc893','#e9a85a','#d27b28','#8b4515']:['#4d2d16','#7a451e','#ad6429','#dd8a3d','#f0b777'];
+  const yes=light?'#2b66c2':'#5598e7', no=empty;
+  const norm=t=>String(t||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().trim();
+  const subMap={};
+  Object.entries(D.subregiones.mapa).forEach(([k,v])=>{subMap[norm(k)]=v;});
+  subMap['san pedro de los milagros']=subMap['san pedro']||'Norte';
+  const covBySub=Object.fromEntries(D.subregiones.cobertura.filter(x=>!x.subregion.includes('total')).map(x=>[x.subregion,x]));
+  const aggBySub=Object.fromEntries(D.subregiones.agg.map(x=>[x.subregion,x]));
+  const byCode={};
+  D.municipios.forEach(m=>{byCode[String(parseInt(m.codigo)).padStart(5,'0')]=m;});
+  const offerCodes=new Set(Object.keys(byCode));
+
+  let minLon=1e9,maxLon=-1e9,minLat=1e9,maxLat=-1e9;
+  const eachCoord=(g,cb)=>{
+    const polys=g.type==='Polygon'?[g.coordinates]:g.coordinates;
+    polys.forEach(p=>p.forEach(r=>r.forEach(cb)));
+  };
+  GEO.features.forEach(f=>eachCoord(f.geometry,([lo,la])=>{
+    minLon=Math.min(minLon,lo);maxLon=Math.max(maxLon,lo);minLat=Math.min(minLat,la);maxLat=Math.max(maxLat,la);
+  }));
+  const W=350,PAD=9,cosMid=Math.cos((minLat+maxLat)/2*Math.PI/180);
+  const scale=(W-2*PAD)/((maxLon-minLon)*cosMid),H=Math.round((maxLat-minLat)*scale+2*PAD);
+  const X=lo=>PAD+(lo-minLon)*cosMid*scale,Y=la=>PAD+(maxLat-la)*scale;
+  const pathOf=g=>{
+    const polys=g.type==='Polygon'?[g.coordinates]:g.coordinates;
+    return polys.map(p=>p.map(r=>'M'+r.map(([lo,la])=>X(lo).toFixed(1)+','+Y(la).toFixed(1)).join('L')+'Z').join('')).join('');
+  };
+  const bucket=(v,edges)=>{let i=0;while(i<edges.length&&v>edges[i])i++;return i;};
+  const read=document.getElementById('atlas-read');
+  const defaultRead=()=>{
+    const rows=Object.values(covBySub), hi=[...rows].sort((a,b)=>b.cobertura-a.cobertura)[0], lo=[...rows].sort((a,b)=>a.cobertura-b.cobertura)[0];
+    const eligible=D.municipios.filter(m=>m.matricula24>=100).map(m=>({...m,share:100*m.tyt24/m.matricula24})).sort((a,b)=>b.share-a.share);
+    read.innerHTML=`<b>Lectura conjunta:</b> la cobertura de oferta va de <b>${hi.cobertura.toLocaleString('es-CO')} % en ${hi.subregion}</b> a <b>${lo.cobertura.toLocaleString('es-CO')} % en ${lo.subregion}</b>; <b>${125-offerCodes.size} de 125 municipios</b> no registran oferta activa. Entre municipios con al menos 100 matriculados, <b>${eligible[0].municipio}</b> presenta la mayor participación TyT (${eligible[0].share.toLocaleString('es-CO',{maximumFractionDigits:1})} %).`;
+  };
+  const detail=(kind,f)=>{
+    const code=f.properties.c,name=f.properties.n,sub=subMap[norm(name)]||'Sin subregión',m=byCode[code],c=covBySub[sub];
+    if(kind==='coverage') read.innerHTML=`<b>${name} · ${sub}:</b> cobertura bruta de oferta de <b>${c?c.cobertura.toLocaleString('es-CO'):'—'} %</b> (${c?fmt(c.pregrado):'—'} matriculados de pregrado / ${c?fmt(c.pob_17_21):'—'} habitantes de 17–21 años en la subregión).`;
+    else if(kind==='offer') read.innerHTML=m?`<b>${name}:</b> registra oferta activa en 2024, con <b>${fmt(m.matricula24)} matriculados</b>, ${fmt(m.ies)} IES y ${fmt(m.programas)} programas.`:`<b>${name} · ${sub}:</b> no registra oferta activa por lugar de oferta del programa en el cierre SNIES 2024.`;
+    else read.innerHTML=m?`<b>${name}:</b> TyT representa <b>${(100*m.tyt24/m.matricula24).toLocaleString('es-CO',{maximumFractionDigits:1})} %</b> de su matrícula (${fmt(m.tyt24)} de ${fmt(m.matricula24)} estudiantes).`:`<b>${name} · ${sub}:</b> sin oferta activa; la participación TyT no aplica.`;
+  };
+  const configs=[
+    {id:'cobertura',kind:'coverage',aria:'Mapa de cobertura bruta de oferta por subregión de Antioquia',colors:blue,edges:[5,15,25,55],value:f=>covBySub[subMap[norm(f.properties.n)]]?.cobertura||0,labels:['0–5 %','5–15 %','15–25 %','25–55 %','Más de 55 %']},
+    {id:'oferta',kind:'offer',aria:'Mapa de municipios con y sin oferta activa de educación superior en Antioquia',colors:[no,yes],value:f=>offerCodes.has(f.properties.c)?1:0,labels:['Sin oferta activa','Con oferta activa']},
+    {id:'tyt',kind:'tyt',aria:'Mapa de participación técnica y tecnológica en la matrícula municipal de Antioquia',colors:amber,edges:[20,40,60,80],value:f=>{const m=byCode[f.properties.c];return m?100*m.tyt24/m.matricula24:null;},labels:['0–20 %','20–40 %','40–60 %','60–80 %','Más de 80 %']},
+  ];
+  configs.forEach(cfg=>{
+    const target=document.getElementById('atlas-'+cfg.id),svg=el('svg',{viewBox:`0 0 ${W} ${H}`,role:'img','aria-label':cfg.aria,tabindex:'0'},target);
+    GEO.features.forEach(f=>{
+      const v=cfg.value(f),idx=cfg.kind==='offer'?v:(v==null?-1:bucket(v,cfg.edges));
+      const p=el('path',{d:pathOf(f.geometry),fill:idx<0?empty:cfg.colors[idx],stroke:ink,'stroke-width':0.42,'vector-effect':'non-scaling-stroke','data-code':f.properties.c,'data-map':cfg.kind,'aria-hidden':'true'},svg);
+      const title=document.createElementNS('http://www.w3.org/2000/svg','title');title.textContent=f.properties.n;p.appendChild(title);
+      p.addEventListener('pointerenter',()=>detail(cfg.kind,f));
+      p.addEventListener('click',()=>detail(cfg.kind,f));
+    });
+    const lg=document.getElementById('atlas-lg-'+cfg.id);
+    cfg.labels.forEach((label,i)=>{
+      const item=document.createElement('span');item.className='it';
+      const sw=document.createElement('span');sw.className='sw';sw.style.background=cfg.colors[i];if(cfg.kind==='offer'&&i===0)sw.style.border='1px solid var(--border)';
+      const txt=document.createElement('span');txt.textContent=label;item.append(sw,txt);lg.appendChild(item);
+    });
+    if(cfg.kind==='tyt'){
+      const item=document.createElement('span');item.className='it';
+      const sw=document.createElement('span');sw.className='sw';sw.style.background=empty;sw.style.border='1px solid var(--border)';
+      const txt=document.createElement('span');txt.textContent='Sin oferta';item.append(sw,txt);lg.appendChild(item);
+    }
+  });
+  defaultRead();
+  const subTotals={};
+  GEO.features.forEach(f=>{const s=subMap[norm(f.properties.n)];if(s)subTotals[s]=(subTotals[s]||0)+1;});
+  const rows=Object.values(covBySub).sort((a,b)=>b.cobertura-a.cobertura).map(c=>{
+    const a=aggBySub[c.subregion],tyt=a&&a.matricula24?100*a.tyt24/a.matricula24:0;
+    return [c.subregion,c.cobertura.toLocaleString('es-CO'),c.pregrado,c.pob_17_21,`${a?.municipios_oferta||0} de ${subTotals[c.subregion]||0}`,tyt.toLocaleString('es-CO',{maximumFractionDigits:1})];
+  });
+  tableTwin(document.getElementById('atlas-table'),['Subregión','Cobertura %','Pregrado','Población 17–21','Municipios con oferta','TyT %'],rows);
 })();
 
 /* ---- 03c Subregiones (barras) ---- */

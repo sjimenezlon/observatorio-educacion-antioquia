@@ -6,7 +6,7 @@ Tablero de la educación superior del departamento de Antioquia — **pregrado y
 
 **En línea:** https://materia-gris.vercel.app
 **Espejo:** https://observatorio-educacion-antioquia.vercel.app
-**Autor:** Santiago Jiménez Londoño · Última versión: V14 (julio de 2026)
+**Autor:** Santiago Jiménez Londoño · Última versión: V15 (julio de 2026)
 
 ---
 
@@ -16,7 +16,7 @@ Tablero de la educación superior del departamento de Antioquia — **pregrado y
 |---|---|
 | **Panorama** | ¿Cómo evolucionó la matrícula 2018-2024 por nivel, sector y modalidad? |
 | **Instituciones** | ¿Quién forma a Antioquia? 73 IES, comparador de hasta 3, docentes y radar de cifras 2025-2026 autorreportadas |
-| **Territorio** | ¿Dónde llega la oferta? Mapa municipal interactivo, 9 subregiones, cobertura bruta 17-21 |
+| **Territorio** | ¿Dónde llega la oferta? Mapa municipal interactivo y atlas de brechas con cobertura subregional, municipios con/sin oferta y peso TyT |
 | **Oferta** | ¿Qué se puede estudiar? 2.107 programas con explorador filtrable |
 | **Mercado laboral** | ¿Cómo les va a los graduados? Demanda, embudo, vinculación formal y salario de enganche por nivel y área |
 | **Calidad** | Acreditación de alta calidad, Saber TyT vs. nacional (y por municipio), bilingüismo (MCER) |
