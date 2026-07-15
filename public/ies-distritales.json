@@ -1,0 +1,3141 @@
+{
+  "meta": {
+    "titulo": "Las tres IES del Distrito de Medellín",
+    "version": "V28",
+    "corte": "2026-07-15",
+    "unidad_financiera": "millones de pesos colombianos",
+    "metodo": "Scraping de catálogos oficiales + convocatoria distrital 2026-2 + SNIES consolidado 2024 + estados financieros oficiales"
+  },
+  "sistema": {
+    "matricula_2025_2": 43801,
+    "cupos_2026_2_publicados_minimo": 12216,
+    "programas_convocatoria_2026_2_aproximado": 142,
+    "registros_catalogos_web": 138,
+    "registros_snies_2024": 138,
+    "matricula_snies_2024": 40225,
+    "presupuesto_2026_millones": 540680,
+    "nota": "Los programas anunciados, las páginas del catálogo y los registros SNIES son universos con cortes y definiciones diferentes; no se igualan."
+  },
+  "instituciones": [
+    {
+      "id": "itm",
+      "codigo_snies": 3302,
+      "nombre_corto": "ITM",
+      "rol": "Escala tecnológica, digital, científica y de ingeniería",
+      "matricula_2025_2": 28107,
+      "programas_convocatoria_2026_2": 60,
+      "cupos_2026_2": 8600,
+      "cupos_calificador": "exacto",
+      "alcance_territorial_2026": "Medellín; cinco campus reportados",
+      "finanzas": {
+        "presupuesto_2026_millones": 276368,
+        "recaudo_2025_millones": 709115,
+        "recursos_estado_pct": 50.3,
+        "dependencia_real_nota": "Cerca de 75 % al incluir convenios públicos",
+        "activo_millones": 430725.232,
+        "pasivo_millones": 92307.116,
+        "patrimonio_millones": 338418.115,
+        "resultado_contable_millones": 15769.783,
+        "corte_resultado": "2025-12-31",
+        "deuda_financiera_millones": 0,
+        "fuente_presupuesto_2026": "https://www.itm.edu.co/wp-content/uploads/adquisiciones-licitaciones/2026/Cuantias%20Contractuales%202026-%201.pdf",
+        "fuente_ejecucion_2025": "https://www.itm.edu.co/download/12-estado-de-ejecucion-pptal-diciembre/?wpdmdl=101073",
+        "fuente_eeff": "https://www.itm.edu.co/wp-content/uploads/informes/ESTADOS-FINANCIEROS-A-DIC-2025_compressed.pdf"
+      },
+      "snies_2024": {
+        "registros": 68,
+        "pregrado": 45,
+        "posgrado": 23,
+        "niveles": {
+          "Doctorado": 1,
+          "Especialización": 9,
+          "Maestría": 13,
+          "Tecnológica": 23,
+          "Universitaria": 22
+        },
+        "modalidades": {
+          "Híbrida/combinada": 3,
+          "Presencial": 58,
+          "Virtual": 7
+        },
+        "areas": {
+          "Bellas artes": 5,
+          "Ciencias de la educación": 1,
+          "Ciencias sociales y humanas": 3,
+          "Economía, administración, contaduría y afines": 14,
+          "Ingeniería, arquitectura, urbanismo y afines": 35,
+          "Matemáticas y ciencias naturales": 4,
+          "Sin información": 6
+        },
+        "acreditados": 25,
+        "matricula": 26338,
+        "matricula_acreditada": 12700
+      },
+      "catalogo_web": {
+        "consultado": "2026-07-15",
+        "registros_visibles": 66,
+        "programas": [
+          {
+            "programa": "Biología",
+            "nivel": "Universitaria",
+            "fuente": "https://www.itm.edu.co/aspirante-pregrado/programas-profesionales/"
+          },
+          {
+            "programa": "Diseño para la Comunicación Interactiva",
+            "nivel": "Universitaria",
+            "fuente": "https://www.itm.edu.co/aspirante-pregrado/programas-profesionales/"
+          },
+          {
+            "programa": "Marketing",
+            "nivel": "Universitaria",
+            "fuente": "https://www.itm.edu.co/aspirante-pregrado/programas-profesionales/"
+          },
+          {
+            "programa": "Ciencia y Tecnología de los Alimentos",
+            "nivel": "Universitaria",
+            "fuente": "https://www.itm.edu.co/aspirante-pregrado/programas-profesionales/"
+          },
+          {
+            "programa": "Física",
+            "nivel": "Universitaria",
+            "fuente": "https://www.itm.edu.co/aspirante-pregrado/programas-profesionales/"
+          },
+          {
+            "programa": "Administración del Deporte",
+            "nivel": "Universitaria",
+            "fuente": "https://www.itm.edu.co/aspirante-pregrado/programas-profesionales/"
+          },
+          {
+            "programa": "Ingeniería en Ciencias de Datos",
+            "nivel": "Universitaria",
+            "fuente": "https://www.itm.edu.co/aspirante-pregrado/programas-profesionales/"
+          },
+          {
+            "programa": "Administración Tecnológica",
+            "nivel": "Universitaria",
+            "fuente": "https://www.itm.edu.co/aspirante-pregrado/programas-profesionales/"
+          },
+          {
+            "programa": "Artes de la Grabación y Producción Musical",
+            "nivel": "Universitaria",
+            "fuente": "https://www.itm.edu.co/aspirante-pregrado/programas-profesionales/"
+          },
+          {
+            "programa": "Artes Visuales",
+            "nivel": "Universitaria",
+            "fuente": "https://www.itm.edu.co/aspirante-pregrado/programas-profesionales/"
+          },
+          {
+            "programa": "Ciencias Ambientales",
+            "nivel": "Universitaria",
+            "fuente": "https://www.itm.edu.co/aspirante-pregrado/programas-profesionales/"
+          },
+          {
+            "programa": "Cine",
+            "nivel": "Universitaria",
+            "fuente": "https://www.itm.edu.co/aspirante-pregrado/programas-profesionales/"
+          },
+          {
+            "programa": "Contaduría Pública",
+            "nivel": "Universitaria",
+            "fuente": "https://www.itm.edu.co/aspirante-pregrado/programas-profesionales/"
+          },
+          {
+            "programa": "Ingeniería Biomédica",
+            "nivel": "Universitaria",
+            "fuente": "https://www.itm.edu.co/aspirante-pregrado/programas-profesionales/"
+          },
+          {
+            "programa": "Ingeniería de la Calidad",
+            "nivel": "Universitaria",
+            "fuente": "https://www.itm.edu.co/aspirante-pregrado/programas-profesionales/"
+          },
+          {
+            "programa": "Ingeniería Electromecánica",
+            "nivel": "Universitaria",
+            "fuente": "https://www.itm.edu.co/aspirante-pregrado/programas-profesionales/"
+          },
+          {
+            "programa": "Ingeniería de Producción",
+            "nivel": "Universitaria",
+            "fuente": "https://www.itm.edu.co/aspirante-pregrado/programas-profesionales/"
+          },
+          {
+            "programa": "Ingeniería de Sistemas",
+            "nivel": "Universitaria",
+            "fuente": "https://www.itm.edu.co/aspirante-pregrado/programas-profesionales/"
+          },
+          {
+            "programa": "Ingeniería de Telecomunicaciones",
+            "nivel": "Universitaria",
+            "fuente": "https://www.itm.edu.co/aspirante-pregrado/programas-profesionales/"
+          },
+          {
+            "programa": "Ingeniería Electrónica",
+            "nivel": "Universitaria",
+            "fuente": "https://www.itm.edu.co/aspirante-pregrado/programas-profesionales/"
+          },
+          {
+            "programa": "Ingeniería en Diseño Industrial",
+            "nivel": "Universitaria",
+            "fuente": "https://www.itm.edu.co/aspirante-pregrado/programas-profesionales/"
+          },
+          {
+            "programa": "Ingeniería Financiera",
+            "nivel": "Universitaria",
+            "fuente": "https://www.itm.edu.co/aspirante-pregrado/programas-profesionales/"
+          },
+          {
+            "programa": "Ingeniería Mecatrónica",
+            "nivel": "Universitaria",
+            "fuente": "https://www.itm.edu.co/aspirante-pregrado/programas-profesionales/"
+          },
+          {
+            "programa": "Química Industrial",
+            "nivel": "Universitaria",
+            "fuente": "https://www.itm.edu.co/aspirante-pregrado/programas-profesionales/"
+          },
+          {
+            "programa": "Interpretación y Traducción Lengua de Señas Colombiana - español",
+            "nivel": "Universitaria",
+            "fuente": "https://www.itm.edu.co/aspirante-pregrado/programas-profesionales/"
+          },
+          {
+            "programa": "Tecnología en Análisis de Costos y Presupuestos",
+            "nivel": "Tecnológica",
+            "fuente": "https://www.itm.edu.co/aspirante-pregrado/tecnologias/"
+          },
+          {
+            "programa": "Tecnología en Análisis de Costos y Presupuestos",
+            "nivel": "Tecnológica",
+            "fuente": "https://www.itm.edu.co/aspirante-pregrado/tecnologias/"
+          },
+          {
+            "programa": "Tecnología en Automatización Electrónica",
+            "nivel": "Tecnológica",
+            "fuente": "https://www.itm.edu.co/aspirante-pregrado/tecnologias/"
+          },
+          {
+            "programa": "Tecnología en Construcción de Acabados Arquitectónicos",
+            "nivel": "Tecnológica",
+            "fuente": "https://www.itm.edu.co/aspirante-pregrado/tecnologias/"
+          },
+          {
+            "programa": "Tecnología en Control de la Calidad",
+            "nivel": "Tecnológica",
+            "fuente": "https://www.itm.edu.co/aspirante-pregrado/tecnologias/"
+          },
+          {
+            "programa": "Tecnología en Desarrollo de Aplicaciones para Dispositivos Móviles",
+            "nivel": "Tecnológica",
+            "fuente": "https://www.itm.edu.co/aspirante-pregrado/tecnologias/"
+          },
+          {
+            "programa": "Tecnología en Desarrollo de Software",
+            "nivel": "Tecnológica",
+            "fuente": "https://www.itm.edu.co/aspirante-pregrado/tecnologias/"
+          },
+          {
+            "programa": "Tecnología en Diseño Industrial",
+            "nivel": "Tecnológica",
+            "fuente": "https://www.itm.edu.co/aspirante-pregrado/tecnologias/"
+          },
+          {
+            "programa": "Tecnología en Diseño y Programación de Soluciones de Software como Servicio – SaaS",
+            "nivel": "Tecnológica",
+            "fuente": "https://www.itm.edu.co/aspirante-pregrado/tecnologias/"
+          },
+          {
+            "programa": "Tecnología en Gestión Administrativa",
+            "nivel": "Tecnológica",
+            "fuente": "https://www.itm.edu.co/aspirante-pregrado/tecnologias/"
+          },
+          {
+            "programa": "Tecnología en Gestión Administrativa",
+            "nivel": "Tecnológica",
+            "fuente": "https://www.itm.edu.co/aspirante-pregrado/tecnologias/"
+          },
+          {
+            "programa": "Tecnología en Gestión de Redes de Telecomunicaciones",
+            "nivel": "Tecnológica",
+            "fuente": "https://www.itm.edu.co/aspirante-pregrado/tecnologias/"
+          },
+          {
+            "programa": "Tecnología en Informática Musical",
+            "nivel": "Tecnológica",
+            "fuente": "https://www.itm.edu.co/aspirante-pregrado/tecnologias/"
+          },
+          {
+            "programa": "Tecnología en Mantenimiento de Equipo Biomédico",
+            "nivel": "Tecnológica",
+            "fuente": "https://www.itm.edu.co/aspirante-pregrado/tecnologias/"
+          },
+          {
+            "programa": "Tecnología en Sistemas de Producción",
+            "nivel": "Tecnológica",
+            "fuente": "https://www.itm.edu.co/aspirante-pregrado/tecnologias/"
+          },
+          {
+            "programa": "Tecnología en Sistemas Electromecánicos",
+            "nivel": "Tecnológica",
+            "fuente": "https://www.itm.edu.co/aspirante-pregrado/tecnologias/"
+          },
+          {
+            "programa": "Tecnología en Gestión Comercial",
+            "nivel": "Tecnológica",
+            "fuente": "https://www.itm.edu.co/aspirante-pregrado/tecnologias/"
+          },
+          {
+            "programa": "Especialización en Bioinformática",
+            "nivel": "Especialización",
+            "fuente": "https://www.itm.edu.co/especializaciones/"
+          },
+          {
+            "programa": "Especialización en Infraestructura Hospitalaria",
+            "nivel": "Especialización",
+            "fuente": "https://www.itm.edu.co/especializaciones/"
+          },
+          {
+            "programa": "Especialización en Ciberseguridad",
+            "nivel": "Especialización",
+            "fuente": "https://www.itm.edu.co/especializaciones/"
+          },
+          {
+            "programa": "Especialización en Ingeniería de Software",
+            "nivel": "Especialización",
+            "fuente": "https://www.itm.edu.co/especializaciones/"
+          },
+          {
+            "programa": "Especialización en Gestión del Mantenimiento Industrial",
+            "nivel": "Especialización",
+            "fuente": "https://www.itm.edu.co/especializaciones/"
+          },
+          {
+            "programa": "Especialización en Formulación y Evaluación de Proyectos",
+            "nivel": "Especialización",
+            "fuente": "https://www.itm.edu.co/especializaciones/"
+          },
+          {
+            "programa": "Especialización en Finanzas",
+            "nivel": "Especialización",
+            "fuente": "https://www.itm.edu.co/especializaciones/"
+          },
+          {
+            "programa": "Especialización en Gestión de Sistemas Energéticos Industriales",
+            "nivel": "Especialización",
+            "fuente": "https://www.itm.edu.co/especializaciones/"
+          },
+          {
+            "programa": "Especialización en Metrología",
+            "nivel": "Especialización",
+            "fuente": "https://www.itm.edu.co/especializaciones/"
+          },
+          {
+            "programa": "Maestría en Diseño",
+            "nivel": "Maestría",
+            "fuente": "https://www.itm.edu.co/maestrias/"
+          },
+          {
+            "programa": "Maestría en Artes Digitales",
+            "nivel": "Maestría",
+            "fuente": "https://www.itm.edu.co/maestrias/"
+          },
+          {
+            "programa": "Maestría en Automatización y Control Industrial",
+            "nivel": "Maestría",
+            "fuente": "https://www.itm.edu.co/maestrias/"
+          },
+          {
+            "programa": "Maestría en Estudios de Ciencia, Tecnología, Sociedad e Innovación",
+            "nivel": "Maestría",
+            "fuente": "https://www.itm.edu.co/maestrias/"
+          },
+          {
+            "programa": "Maestría en Estudios de Ciencia, Tecnología, Sociedad e Innovación",
+            "nivel": "Maestría",
+            "fuente": "https://www.itm.edu.co/maestrias/"
+          },
+          {
+            "programa": "Maestría en Desarrollo Sostenible",
+            "nivel": "Maestría",
+            "fuente": "https://www.itm.edu.co/maestrias/"
+          },
+          {
+            "programa": "Maestría en Ciencias: Innovación en Educación",
+            "nivel": "Maestría",
+            "fuente": "https://www.itm.edu.co/maestrias/"
+          },
+          {
+            "programa": "Maestría en Gestión de la Innovación Tecnológica, Cooperación y Desarrollo Regional",
+            "nivel": "Maestría",
+            "fuente": "https://www.itm.edu.co/maestrias/"
+          },
+          {
+            "programa": "Maestría en Gestión de Organizaciones",
+            "nivel": "Maestría",
+            "fuente": "https://www.itm.edu.co/maestrias/"
+          },
+          {
+            "programa": "Maestría en Gestión Energética Industrial",
+            "nivel": "Maestría",
+            "fuente": "https://www.itm.edu.co/maestrias/"
+          },
+          {
+            "programa": "Maestría en Ingeniería Biomédica",
+            "nivel": "Maestría",
+            "fuente": "https://www.itm.edu.co/maestrias/"
+          },
+          {
+            "programa": "Maestría en Metrología",
+            "nivel": "Maestría",
+            "fuente": "https://www.itm.edu.co/maestrias/"
+          },
+          {
+            "programa": "Maestría en Seguridad Informática",
+            "nivel": "Maestría",
+            "fuente": "https://www.itm.edu.co/maestrias/"
+          },
+          {
+            "programa": "Doctorado en Ciencia y Tecnología",
+            "nivel": "Doctorado",
+            "fuente": "https://www.itm.edu.co/doctorado/"
+          },
+          {
+            "programa": "Doctorado en Ingeniería",
+            "nivel": "Doctorado",
+            "fuente": "https://www.itm.edu.co/doctorado/"
+          }
+        ],
+        "advertencia": "El catálogo web puede incluir modalidades o programas sin cupo abierto en la convocatoria vigente."
+      }
+    },
+    {
+      "id": "pascual",
+      "codigo_snies": 3107,
+      "nombre_corto": "Pascual Bravo",
+      "rol": "Industria, manufactura, software, logística y diseño",
+      "matricula_2025_2": 9931,
+      "programas_convocatoria_2026_2": 42,
+      "cupos_2026_2": 1600,
+      "cupos_calificador": "más de",
+      "alcance_territorial_2026": "Medellín y 47 municipios reportados por la institución",
+      "finanzas": {
+        "presupuesto_2026_millones": 152205,
+        "recaudo_2025_millones": 287987,
+        "recursos_estado_pct": 52.7,
+        "dependencia_real_nota": null,
+        "activo_millones": 323550.2,
+        "pasivo_millones": 15141.215,
+        "patrimonio_millones": 308408.985,
+        "resultado_contable_millones": 29684.795,
+        "corte_resultado": "2026-03-31",
+        "deuda_financiera_millones": 0,
+        "comparabilidad": "Corte trimestral: no comparar como cierre anual con ITM y Colmayor",
+        "fuente_presupuesto_2026": "https://pascualbravo.edu.co/gestion-financiera/",
+        "fuente_ejecucion_2025": "https://pascualbravo.edu.co/gestion-financiera/",
+        "fuente_eeff": "https://pascualbravo.edu.co/wp-content/uploads/2026/05/FIRMADO_ANEXOS_FINANCIEROS_MARZO.pdf"
+      },
+      "snies_2024": {
+        "registros": 38,
+        "pregrado": 29,
+        "posgrado": 9,
+        "niveles": {
+          "Especialización": 4,
+          "Maestría": 5,
+          "Tecnológica": 19,
+          "Universitaria": 10
+        },
+        "modalidades": {
+          "A distancia": 3,
+          "Presencial": 32,
+          "Virtual": 3
+        },
+        "areas": {
+          "Bellas artes": 6,
+          "Economía, administración, contaduría y afines": 5,
+          "Ingeniería, arquitectura, urbanismo y afines": 25,
+          "Sin información": 2
+        },
+        "acreditados": 8,
+        "matricula": 8563,
+        "matricula_acreditada": 2438
+      },
+      "catalogo_web": {
+        "consultado": "2026-07-15",
+        "registros_visibles": 37,
+        "programas": [
+          {
+            "programa": "Doctorado en Ciencia y Tecnología",
+            "nivel": "Doctorado",
+            "fuente": "https://pascualbravo.edu.co/programas/doctorado-en-ciencia-y-tecnologia/"
+          },
+          {
+            "programa": "Especialización en Big Data",
+            "nivel": "Especialización",
+            "fuente": "https://pascualbravo.edu.co/programas/especializacion-en-big-data/"
+          },
+          {
+            "programa": "Especialización en Diseño Avanzado por Computador",
+            "nivel": "Especialización",
+            "fuente": "https://pascualbravo.edu.co/programas/especializacion-en-diseno-avanzado-por-computador/"
+          },
+          {
+            "programa": "Especialización en Diseño de Experiencias Digitales",
+            "nivel": "Especialización",
+            "fuente": "https://pascualbravo.edu.co/programas/especializacion-en-diseno-de-experiencias-digitales/"
+          },
+          {
+            "programa": "Especialización en Gestión de Activos",
+            "nivel": "Especialización",
+            "fuente": "https://pascualbravo.edu.co/programas/especializacion-en-gestion-de-activos/"
+          },
+          {
+            "programa": "Especialización en Gestión de Proyectos",
+            "nivel": "Especialización",
+            "fuente": "https://pascualbravo.edu.co/programas/especializacion-en-gestion-de-proyectos-presencial-y-virtual/"
+          },
+          {
+            "programa": "Especialización en Internet de las Cosas – IoT",
+            "nivel": "Especialización",
+            "fuente": "https://pascualbravo.edu.co/programas/especializacion-en-internet-de-las-cosas-iot/"
+          },
+          {
+            "programa": "Maestría en Ciencias Computacionales",
+            "nivel": "Maestría",
+            "fuente": "https://pascualbravo.edu.co/programas/maestria-en-ciencias-computacionales/"
+          },
+          {
+            "programa": "Maestría en Ciencias Computacionales - Investigación y Profundización",
+            "nivel": "Maestría",
+            "fuente": "https://pascualbravo.edu.co/facultades/facultad-de-ingenieria/programas/"
+          },
+          {
+            "programa": "Maestría en Diseño y Evaluación de Proyectos Regionales",
+            "nivel": "Maestría",
+            "fuente": "https://pascualbravo.edu.co/programas/maestria-en-diseno-y-evaluacion-de-proyectos-regionales/"
+          },
+          {
+            "programa": "Maestría en Energía",
+            "nivel": "Maestría",
+            "fuente": "https://pascualbravo.edu.co/programas/maestria-en-energia/"
+          },
+          {
+            "programa": "Maestría en Gerencia de la Transformación Digital",
+            "nivel": "Maestría",
+            "fuente": "https://pascualbravo.edu.co/programas/maestria-en-gerencia-de-la-transformacion-digital/"
+          },
+          {
+            "programa": "Tecnología Eléctrica",
+            "nivel": "Tecnología",
+            "fuente": "https://pascualbravo.edu.co/facultades/facultad-de-ingenieria/programas/"
+          },
+          {
+            "programa": "Tecnología en Animación Digital",
+            "nivel": "Tecnología",
+            "fuente": "https://pascualbravo.edu.co/facultades/facultad-de-produccion-y-diseno/programas/"
+          },
+          {
+            "programa": "Tecnología en Desarrollo de Software",
+            "nivel": "Tecnología",
+            "fuente": "https://pascualbravo.edu.co/facultades/facultad-de-ingenieria/programas/"
+          },
+          {
+            "programa": "Tecnología en Diseño y Producción Gráfica",
+            "nivel": "Tecnología",
+            "fuente": "https://pascualbravo.edu.co/facultades/facultad-de-produccion-y-diseno/programas/"
+          },
+          {
+            "programa": "Tecnología en Diseño y Producción de Vestuario",
+            "nivel": "Tecnología",
+            "fuente": "https://pascualbravo.edu.co/facultades/facultad-de-produccion-y-diseno/programas/"
+          },
+          {
+            "programa": "Tecnología en Electrónica Industrial",
+            "nivel": "Tecnología",
+            "fuente": "https://pascualbravo.edu.co/facultades/facultad-de-ingenieria/programas/"
+          },
+          {
+            "programa": "Tecnología en Gestión Logística",
+            "nivel": "Tecnología",
+            "fuente": "https://pascualbravo.edu.co/facultades/facultad-de-produccion-y-diseno/programas/"
+          },
+          {
+            "programa": "Tecnología en Gestión del Mantenimiento Aeronáutico",
+            "nivel": "Tecnología",
+            "fuente": "https://pascualbravo.edu.co/facultades/facultad-de-ingenieria/programas/"
+          },
+          {
+            "programa": "Tecnología en Mecánica Automotriz",
+            "nivel": "Tecnología",
+            "fuente": "https://pascualbravo.edu.co/facultades/facultad-de-ingenieria/programas/"
+          },
+          {
+            "programa": "Tecnología en Mecánica Industrial",
+            "nivel": "Tecnología",
+            "fuente": "https://pascualbravo.edu.co/facultades/facultad-de-ingenieria/programas/"
+          },
+          {
+            "programa": "Tecnología en Producción Industrial",
+            "nivel": "Tecnología",
+            "fuente": "https://pascualbravo.edu.co/facultades/facultad-de-produccion-y-diseno/programas/"
+          },
+          {
+            "programa": "Tecnología en Sistemas Electromecánicos",
+            "nivel": "Tecnología",
+            "fuente": "https://pascualbravo.edu.co/facultades/facultad-de-ingenieria/programas/"
+          },
+          {
+            "programa": "Tecnología en Sistemas Mecatrónicos",
+            "nivel": "Tecnología",
+            "fuente": "https://pascualbravo.edu.co/facultades/facultad-de-ingenieria/programas/"
+          },
+          {
+            "programa": "Tecnología en Supervisión de Sistemas de Generación y Distribución de Energía Eléctrica",
+            "nivel": "Tecnología",
+            "fuente": "https://pascualbravo.edu.co/facultades/facultad-de-ingenieria/programas/"
+          },
+          {
+            "programa": "Técnica Profesional en Fabricación Digital e Impresión 3D",
+            "nivel": "Técnica profesional",
+            "fuente": "https://pascualbravo.edu.co/facultades/facultad-de-ingenieria/programas/"
+          },
+          {
+            "programa": "Ingeniería Administrativa",
+            "nivel": "Universitaria",
+            "fuente": "https://pascualbravo.edu.co/facultades/facultad-de-produccion-y-diseno/programas/"
+          },
+          {
+            "programa": "Ingeniería Eléctrica",
+            "nivel": "Universitaria",
+            "fuente": "https://pascualbravo.edu.co/facultades/facultad-de-ingenieria/programas/"
+          },
+          {
+            "programa": "Ingeniería Industrial",
+            "nivel": "Universitaria",
+            "fuente": "https://pascualbravo.edu.co/facultades/facultad-de-produccion-y-diseno/programas/"
+          },
+          {
+            "programa": "Ingeniería Mecánica",
+            "nivel": "Universitaria",
+            "fuente": "https://pascualbravo.edu.co/facultades/facultad-de-ingenieria/programas/"
+          },
+          {
+            "programa": "Ingeniería de Materiales",
+            "nivel": "Universitaria",
+            "fuente": "https://pascualbravo.edu.co/facultades/facultad-de-ingenieria/programas/"
+          },
+          {
+            "programa": "Ingeniería de Software",
+            "nivel": "Universitaria",
+            "fuente": "https://pascualbravo.edu.co/facultades/facultad-de-ingenieria/programas/"
+          },
+          {
+            "programa": "Ingeniería en Logística",
+            "nivel": "Universitaria",
+            "fuente": "https://pascualbravo.edu.co/facultades/facultad-de-produccion-y-diseno/programas/"
+          },
+          {
+            "programa": "Profesional en Diseño Gráfico",
+            "nivel": "Universitaria",
+            "fuente": "https://pascualbravo.edu.co/facultades/facultad-de-produccion-y-diseno/programas/"
+          },
+          {
+            "programa": "Profesional en Diseño de Vestuario",
+            "nivel": "Universitaria",
+            "fuente": "https://pascualbravo.edu.co/facultades/facultad-de-produccion-y-diseno/programas/"
+          },
+          {
+            "programa": "Profesional en Gestión del Diseño",
+            "nivel": "Universitaria",
+            "fuente": "https://pascualbravo.edu.co/facultades/facultad-de-produccion-y-diseno/programas/"
+          }
+        ],
+        "advertencia": "El catálogo web puede incluir modalidades o programas sin cupo abierto en la convocatoria vigente."
+      }
+    },
+    {
+      "id": "colmayor",
+      "codigo_snies": 2110,
+      "nombre_corto": "Colmayor",
+      "rol": "Salud, hábitat, territorio, turismo y gastronomía",
+      "matricula_2025_2": 5763,
+      "programas_convocatoria_2026_2": 40,
+      "cupos_2026_2": 2016,
+      "programas_calificador": "cerca de",
+      "cupos_calificador": "exacto",
+      "alcance_territorial_2026": "Sedes Robledo y C4ta",
+      "finanzas": {
+        "presupuesto_2026_millones": 112107,
+        "recaudo_2025_millones": 170623,
+        "recursos_estado_pct": 76.4,
+        "dependencia_real_nota": "Mayor dependencia formal del Estado entre las tres",
+        "activo_millones": 126830.006,
+        "pasivo_millones": 10907.15,
+        "patrimonio_millones": 115922.856,
+        "resultado_contable_millones": 9263.175,
+        "corte_resultado": "2025-12-31",
+        "deuda_financiera_millones": 0,
+        "fuente_presupuesto_2026": "https://www.colmayor.edu.co/institucional/vicerrectoria-administrativa-financiera/",
+        "fuente_ejecucion_2025": "https://www.colmayor.edu.co/institucional/vicerrectoria-administrativa-financiera/",
+        "fuente_eeff": "https://www.colmayor.edu.co/wp-content/uploads/2026/02/12.-ESTADO-DE-RESULTADO-DICIEMBRE-2025.pdf"
+      },
+      "snies_2024": {
+        "registros": 32,
+        "pregrado": 24,
+        "posgrado": 8,
+        "niveles": {
+          "Especialización": 6,
+          "Maestría": 2,
+          "Tecnológica": 13,
+          "Universitaria": 11
+        },
+        "modalidades": {
+          "Presencial": 26,
+          "Virtual": 6
+        },
+        "areas": {
+          "Bellas artes": 1,
+          "Ciencias de la educación": 1,
+          "Ciencias de la salud": 3,
+          "Ciencias sociales y humanas": 3,
+          "Economía, administración, contaduría y afines": 5,
+          "Ingeniería, arquitectura, urbanismo y afines": 11,
+          "Matemáticas y ciencias naturales": 1,
+          "Sin información": 7
+        },
+        "acreditados": 10,
+        "matricula": 5324,
+        "matricula_acreditada": 3485
+      },
+      "catalogo_web": {
+        "consultado": "2026-07-15",
+        "registros_visibles": 35,
+        "programas": [
+          {
+            "programa": "Administración de Empresas Turísticas",
+            "nivel": "Universitaria",
+            "fuente": "https://www.colmayor.edu.co/programas/facultad-de-administracion/admon-de-empresas-turisticas/"
+          },
+          {
+            "programa": "Gastronomía y Culinaria",
+            "nivel": "Universitaria",
+            "fuente": "https://www.colmayor.edu.co/programas/facultad-de-administracion/profesional-en-gastronomia-y-culinaria/"
+          },
+          {
+            "programa": "Ingeniería Comercial",
+            "nivel": "Universitaria",
+            "fuente": "https://www.colmayor.edu.co/programas/facultad-de-administracion/ingenieria-comercial-2/"
+          },
+          {
+            "programa": "Tecnología en Gestión de Servicios Gastronómicos",
+            "nivel": "Tecnológica",
+            "fuente": "https://www.colmayor.edu.co/programas/facultad-de-administracion/tecnologia-en-gestion-de-servicios-gastronomicos/"
+          },
+          {
+            "programa": "Tecnología en Gestión Turística (virtual y presencial)",
+            "nivel": "Tecnológica",
+            "fuente": "https://www.colmayor.edu.co/programas/facultad-de-administracion/tecnologia-en-gestion-turistica-virtual/"
+          },
+          {
+            "programa": "Tecnología en Gestión de Procesos de Repostería y Panificación",
+            "nivel": "Tecnológica",
+            "fuente": "https://www.colmayor.edu.co/programas/tecnologia-en-gestion-de-procesos-de-reposteria-y-panificacion/"
+          },
+          {
+            "programa": "Tecnología en Gestión Comercial",
+            "nivel": "Tecnológica",
+            "fuente": "https://www.colmayor.edu.co/programas/tecnologia-en-gestion-comercial/"
+          },
+          {
+            "programa": "Tecnología en Gestión de Guianza Turística (virtual y presencial)",
+            "nivel": "Tecnológica",
+            "fuente": "https://www.colmayor.edu.co/facultad-de-administracion/tecnologia-en-gestion-de-guianza-turistica/"
+          },
+          {
+            "programa": "Maestría en Alta Dirección de las Organizaciones",
+            "nivel": "Maestría",
+            "fuente": "https://www.colmayor.edu.co/facultad-de-administracion/maestria-en-alta-direccion-de-las-organizaciones/"
+          },
+          {
+            "programa": "Especialización en Gastronomía Colombiana",
+            "nivel": "Especialización",
+            "fuente": "https://www.colmayor.edu.co/facultad-de-administracion/especializacion-en-gastronomia-colombiana/"
+          },
+          {
+            "programa": "Tecnología en Delineante de Arquitectura e Ingeniería",
+            "nivel": "Tecnológica",
+            "fuente": "https://www.colmayor.edu.co/programas/facultad-arquitectura-e-ingenieria/tecnologia-en-delineante-de-arquitectura-e-ingenieria/"
+          },
+          {
+            "programa": "Tecnología en Gestión Catastral",
+            "nivel": "Tecnológica",
+            "fuente": "https://www.colmayor.edu.co/programas/facultad-arquitectura-e-ingenieria/tecnologia-en-gestion-catastral/"
+          },
+          {
+            "programa": "Tecnología en Gestión Ambiental (Virtual)",
+            "nivel": "Tecnológica",
+            "fuente": "https://www.colmayor.edu.co/programas/facultad-arquitectura-e-ingenieria/tecnologia-en-gestion-ambiental/"
+          },
+          {
+            "programa": "Arquitectura",
+            "nivel": "Universitaria",
+            "fuente": "https://www.colmayor.edu.co/programas/facultad-arquitectura-e-ingenieria/arquitectura-2/"
+          },
+          {
+            "programa": "Construcciones Civiles",
+            "nivel": "Universitaria",
+            "fuente": "https://www.colmayor.edu.co/programas/facultad-arquitectura-e-ingenieria/construcciones-civiles-2/"
+          },
+          {
+            "programa": "Ingeniería Ambiental",
+            "nivel": "Universitaria",
+            "fuente": "https://www.colmayor.edu.co/programas/facultad-arquitectura-e-ingenieria/ingenieria-ambiental-2/"
+          },
+          {
+            "programa": "Especialización en Planeación Urbana (Virtual)",
+            "nivel": "Especialización",
+            "fuente": "https://www.colmayor.edu.co/programas/facultad-arquitectura-e-ingenieria/especializacion-en-planeacion-urbana/"
+          },
+          {
+            "programa": "Especialización en Construcción Sostenible",
+            "nivel": "Especialización",
+            "fuente": "https://www.colmayor.edu.co/programas/facultad-arquitectura-e-ingenieria/especializacion-en-construccion-sostenible/"
+          },
+          {
+            "programa": "Especialización en Gestión del Riesgo de Desastres",
+            "nivel": "Especialización",
+            "fuente": "https://www.colmayor.edu.co/programas/facultad-arquitectura-e-ingenieria/especializacion-en-gestion-del-riesgo-de-desastres/"
+          },
+          {
+            "programa": "Especialización en Gerencia de la Construcción",
+            "nivel": "Especialización",
+            "fuente": "https://www.colmayor.edu.co/facultad-de-arquitectura-e-ingenieria-2/especializacion-en-gerencia-de-la-construccion/"
+          },
+          {
+            "programa": "Especialización en Sistemas de Información Geográfica",
+            "nivel": "Especialización",
+            "fuente": "https://www.colmayor.edu.co/facultad-de-arquitectura-e-ingenieria-2/especializacion-en-sistemas-de-informacion-geografic"
+          },
+          {
+            "programa": "Bacteriología y Laboratorio Clínico",
+            "nivel": "Universitaria",
+            "fuente": "https://www.colmayor.edu.co/programas/facultad-ciencias-salud/bacteriologia-y-laboratorio-clinico/"
+          },
+          {
+            "programa": "Biotecnología",
+            "nivel": "Universitaria",
+            "fuente": "https://www.colmayor.edu.co/programas/facultad-ciencias-salud/biotecnologia-2/"
+          },
+          {
+            "programa": "Tecnología en Seguridad y Salud en el Trabajo",
+            "nivel": "Tecnológica",
+            "fuente": "https://www.colmayor.edu.co/programas/facultad-ciencias-salud/tecnologia-en-seguridad-y-salud-en-el-trabajo//"
+          },
+          {
+            "programa": "Maestría en Biotecnología y Bioeconomía",
+            "nivel": "Maestría",
+            "fuente": "https://www.colmayor.edu.co/programas/facultad-ciencias-salud/maestria-en-biotecnologia-y-bioeconomia/"
+          },
+          {
+            "programa": "Maestría en Microbiología Clínica – Profundización",
+            "nivel": "Maestría",
+            "fuente": "https://www.colmayor.edu.co/programas/facultad-de-ciencias-de-la-salud/maestria-en-microbiologia-clinica/"
+          },
+          {
+            "programa": "Maestría en Microbiología Clínica – Investigación",
+            "nivel": "Maestría",
+            "fuente": "https://www.colmayor.edu.co/programas/facultad-de-ciencias-de-la-salud/maestria-en-microbiologia-clinica-investigacion/"
+          },
+          {
+            "programa": "Maestría en Hematología en el Laboratorio Clínico y Banco de Sangre",
+            "nivel": "Maestría",
+            "fuente": "https://www.colmayor.edu.co/programas/facultad-de-ciencias-de-la-salud/maestria-en-hematologia-en-el-laboratorio-clinico-y-banco-de-sangre/"
+          },
+          {
+            "programa": "Tecnología en Gestión Comunitaria",
+            "nivel": "Tecnológica",
+            "fuente": "https://www.colmayor.edu.co/programas/facultad-ciencias-sociales/tecnologia-en-gestion-comunitaria/"
+          },
+          {
+            "programa": "Tecnología en Gestión Comunitaria (Virtual)",
+            "nivel": "Tecnológica",
+            "fuente": "https://www.colmayor.edu.co/programas/facultad-ciencias-sociales/tecnologia-en-gestion-comunitaria-virtual/"
+          },
+          {
+            "programa": "Tecnología en Gestión de la Comunicación en Medios (virtual y presencial)",
+            "nivel": "Tecnológica",
+            "fuente": "https://www.colmayor.edu.co/programas/facultad-de-ciencias-sociales-y-educacion/69404-2/"
+          },
+          {
+            "programa": "Planeación y Desarrollo Social",
+            "nivel": "Universitaria",
+            "fuente": "https://www.colmayor.edu.co/programas/facultad-ciencias-sociales/planeacion-y-desarrollo-social-2/"
+          },
+          {
+            "programa": "Licenciatura en Ciencias Sociales",
+            "nivel": "Universitaria",
+            "fuente": "https://www.colmayor.edu.co/programas/facultad-ciencias-sociales/licenciatura-en-ciencias-sociales/"
+          },
+          {
+            "programa": "Comunicación Social",
+            "nivel": "Universitaria",
+            "fuente": "https://www.colmayor.edu.co/programas/facultad-de-ciencias-sociales-y-educacion/comunicacion-social/"
+          },
+          {
+            "programa": "Especialización en Prospectiva Territorial (Virtual)",
+            "nivel": "Especialización",
+            "fuente": "https://www.colmayor.edu.co/programas/facultad-ciencias-sociales/especializacion-en-prospectiva-territorial-virtual/"
+          }
+        ],
+        "advertencia": "El catálogo web puede incluir modalidades o programas sin cupo abierto en la convocatoria vigente."
+      }
+    }
+  ],
+  "programas_snies_2024": [
+    {
+      "snies": 107535,
+      "programa": "Tecnologia En Desarrollo De Software",
+      "ies": "Instituto Tecnologico Metropolitano",
+      "sector": "Oficial",
+      "nivel": "Tecnológica",
+      "area": "Ingeniería, arquitectura, urbanismo y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 3815,
+      "acreditado": true,
+      "ies_id": "itm",
+      "ies_corto": "ITM"
+    },
+    {
+      "snies": 15600,
+      "programa": "Tecnologia En Gestion Administrativa",
+      "ies": "Instituto Tecnologico Metropolitano",
+      "sector": "Oficial",
+      "nivel": "Tecnológica",
+      "area": "Economía, administración, contaduría y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 2134,
+      "acreditado": false,
+      "ies_id": "itm",
+      "ies_corto": "ITM"
+    },
+    {
+      "snies": 105852,
+      "programa": "Contaduría Pública",
+      "ies": "Instituto Tecnologico Metropolitano",
+      "sector": "Oficial",
+      "nivel": "Universitaria",
+      "area": "Economía, administración, contaduría y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 1721,
+      "acreditado": false,
+      "ies_id": "itm",
+      "ies_corto": "ITM"
+    },
+    {
+      "snies": 107696,
+      "programa": "Tecnología En Gestión Administrativa",
+      "ies": "Instituto Tecnologico Metropolitano",
+      "sector": "Oficial",
+      "nivel": "Tecnológica",
+      "area": "Economía, administración, contaduría y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Virtual",
+      "matricula24": 1616,
+      "acreditado": false,
+      "ies_id": "itm",
+      "ies_corto": "ITM"
+    },
+    {
+      "snies": 90442,
+      "programa": "Ingeniería Mecatrónica",
+      "ies": "Instituto Tecnologico Metropolitano",
+      "sector": "Oficial",
+      "nivel": "Universitaria",
+      "area": "Ingeniería, arquitectura, urbanismo y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 1543,
+      "acreditado": true,
+      "ies_id": "itm",
+      "ies_corto": "ITM"
+    },
+    {
+      "snies": 53803,
+      "programa": "Tecnologia En Analisis De Costos Y Presupuestos",
+      "ies": "Instituto Tecnologico Metropolitano",
+      "sector": "Oficial",
+      "nivel": "Tecnológica",
+      "area": "Economía, administración, contaduría y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 1493,
+      "acreditado": true,
+      "ies_id": "itm",
+      "ies_corto": "ITM"
+    },
+    {
+      "snies": 55072,
+      "programa": "Administración Tecnólogica",
+      "ies": "Instituto Tecnologico Metropolitano",
+      "sector": "Oficial",
+      "nivel": "Universitaria",
+      "area": "Economía, administración, contaduría y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 1397,
+      "acreditado": true,
+      "ies_id": "itm",
+      "ies_corto": "ITM"
+    },
+    {
+      "snies": 53340,
+      "programa": "Ingeniería Biomédica",
+      "ies": "Instituto Tecnologico Metropolitano",
+      "sector": "Oficial",
+      "nivel": "Universitaria",
+      "area": "Ingeniería, arquitectura, urbanismo y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 1293,
+      "acreditado": false,
+      "ies_id": "itm",
+      "ies_corto": "ITM"
+    },
+    {
+      "snies": 107276,
+      "programa": "Ingeniería De Software",
+      "ies": "Institución Universitaria Pascual Bravo",
+      "sector": "Oficial",
+      "nivel": "Universitaria",
+      "area": "Ingeniería, arquitectura, urbanismo y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 937,
+      "acreditado": false,
+      "ies_id": "pascual",
+      "ies_corto": "Pascual Bravo"
+    },
+    {
+      "snies": 102570,
+      "programa": "Tecnologia En Desarrollo De Software",
+      "ies": "Institución Universitaria Pascual Bravo",
+      "sector": "Oficial",
+      "nivel": "Tecnológica",
+      "area": "Ingeniería, arquitectura, urbanismo y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 921,
+      "acreditado": true,
+      "ies_id": "pascual",
+      "ies_corto": "Pascual Bravo"
+    },
+    {
+      "snies": 103928,
+      "programa": "Ingeniería En Diseño Industrial",
+      "ies": "Instituto Tecnologico Metropolitano",
+      "sector": "Oficial",
+      "nivel": "Universitaria",
+      "area": "Ingeniería, arquitectura, urbanismo y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 728,
+      "acreditado": false,
+      "ies_id": "itm",
+      "ies_corto": "ITM"
+    },
+    {
+      "snies": 106410,
+      "programa": "Ingenieria Mecánica",
+      "ies": "Institución Universitaria Pascual Bravo",
+      "sector": "Oficial",
+      "nivel": "Universitaria",
+      "area": "Ingeniería, arquitectura, urbanismo y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 631,
+      "acreditado": false,
+      "ies_id": "pascual",
+      "ies_corto": "Pascual Bravo"
+    },
+    {
+      "snies": 54862,
+      "programa": "Ingeniería Eléctrica",
+      "ies": "Institución Universitaria Pascual Bravo",
+      "sector": "Oficial",
+      "nivel": "Universitaria",
+      "area": "Ingeniería, arquitectura, urbanismo y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 631,
+      "acreditado": true,
+      "ies_id": "pascual",
+      "ies_corto": "Pascual Bravo"
+    },
+    {
+      "snies": 106810,
+      "programa": "Tecnologia En Sistemas Electromecanicos",
+      "ies": "Instituto Tecnologico Metropolitano",
+      "sector": "Oficial",
+      "nivel": "Tecnológica",
+      "area": "Ingeniería, arquitectura, urbanismo y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 570,
+      "acreditado": false,
+      "ies_id": "itm",
+      "ies_corto": "ITM"
+    },
+    {
+      "snies": 108394,
+      "programa": "Tecnología En Diseño Y Programación De Soluciones De Software Como Servicio",
+      "ies": "Instituto Tecnologico Metropolitano",
+      "sector": "Oficial",
+      "nivel": "Tecnológica",
+      "area": "Ingeniería, arquitectura, urbanismo y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Virtual",
+      "matricula24": 563,
+      "acreditado": false,
+      "ies_id": "itm",
+      "ies_corto": "ITM"
+    },
+    {
+      "snies": 107475,
+      "programa": "Ingeniería Administrativa",
+      "ies": "Institución Universitaria Pascual Bravo",
+      "sector": "Oficial",
+      "nivel": "Universitaria",
+      "area": "Ingeniería, arquitectura, urbanismo y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 557,
+      "acreditado": false,
+      "ies_id": "pascual",
+      "ies_corto": "Pascual Bravo"
+    },
+    {
+      "snies": 106922,
+      "programa": "Ingenieria Industrial",
+      "ies": "Institución Universitaria Pascual Bravo",
+      "sector": "Oficial",
+      "nivel": "Universitaria",
+      "area": "Ingeniería, arquitectura, urbanismo y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 535,
+      "acreditado": false,
+      "ies_id": "pascual",
+      "ies_corto": "Pascual Bravo"
+    },
+    {
+      "snies": 107390,
+      "programa": "Ingenieria Financiera",
+      "ies": "Instituto Tecnologico Metropolitano",
+      "sector": "Oficial",
+      "nivel": "Universitaria",
+      "area": "Economía, administración, contaduría y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 528,
+      "acreditado": true,
+      "ies_id": "itm",
+      "ies_corto": "ITM"
+    },
+    {
+      "snies": 107391,
+      "programa": "Ciencias Ambientales",
+      "ies": "Instituto Tecnologico Metropolitano",
+      "sector": "Oficial",
+      "nivel": "Universitaria",
+      "area": "Ingeniería, arquitectura, urbanismo y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 516,
+      "acreditado": false,
+      "ies_id": "itm",
+      "ies_corto": "ITM"
+    },
+    {
+      "snies": 107943,
+      "programa": "Tecnología En Análisis De Costos Y Presupuestos",
+      "ies": "Instituto Tecnologico Metropolitano",
+      "sector": "Oficial",
+      "nivel": "Tecnológica",
+      "area": "Economía, administración, contaduría y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Virtual",
+      "matricula24": 492,
+      "acreditado": false,
+      "ies_id": "itm",
+      "ies_corto": "ITM"
+    },
+    {
+      "snies": 101313,
+      "programa": "Arquitectura",
+      "ies": "Colegio Mayor de Antioquia",
+      "sector": "Oficial",
+      "nivel": "Universitaria",
+      "area": "Ingeniería, arquitectura, urbanismo y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 481,
+      "acreditado": true,
+      "ies_id": "colmayor",
+      "ies_corto": "Colmayor"
+    },
+    {
+      "snies": 107381,
+      "programa": "Tecnología En Gestión De Redes De  Telecomunicaciones",
+      "ies": "Instituto Tecnologico Metropolitano",
+      "sector": "Oficial",
+      "nivel": "Tecnológica",
+      "area": "Ingeniería, arquitectura, urbanismo y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 479,
+      "acreditado": true,
+      "ies_id": "itm",
+      "ies_corto": "ITM"
+    },
+    {
+      "snies": 6644,
+      "programa": "Construcciones Civiles",
+      "ies": "Colegio Mayor de Antioquia",
+      "sector": "Oficial",
+      "nivel": "Universitaria",
+      "area": "Sin información",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 473,
+      "acreditado": true,
+      "ies_id": "colmayor",
+      "ies_corto": "Colmayor"
+    },
+    {
+      "snies": 106188,
+      "programa": "Ingeniería De La Calidad",
+      "ies": "Instituto Tecnologico Metropolitano",
+      "sector": "Oficial",
+      "nivel": "Universitaria",
+      "area": "Ingeniería, arquitectura, urbanismo y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 462,
+      "acreditado": false,
+      "ies_id": "itm",
+      "ies_corto": "ITM"
+    },
+    {
+      "snies": 3707,
+      "programa": "Planeacion Y Desarrollo Social",
+      "ies": "Colegio Mayor de Antioquia",
+      "sector": "Oficial",
+      "nivel": "Universitaria",
+      "area": "Ciencias sociales y humanas",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 456,
+      "acreditado": true,
+      "ies_id": "colmayor",
+      "ies_corto": "Colmayor"
+    },
+    {
+      "snies": 104332,
+      "programa": "Química Industrial",
+      "ies": "Instituto Tecnologico Metropolitano",
+      "sector": "Oficial",
+      "nivel": "Universitaria",
+      "area": "Matemáticas y ciencias naturales",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 454,
+      "acreditado": false,
+      "ies_id": "itm",
+      "ies_corto": "ITM"
+    },
+    {
+      "snies": 9466,
+      "programa": "Tecnologia En Mantenimiento De Equipo Biomedico",
+      "ies": "Instituto Tecnologico Metropolitano",
+      "sector": "Oficial",
+      "nivel": "Tecnológica",
+      "area": "Ingeniería, arquitectura, urbanismo y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 450,
+      "acreditado": true,
+      "ies_id": "itm",
+      "ies_corto": "ITM"
+    },
+    {
+      "snies": 104682,
+      "programa": "Artes De La Grabacion Y Produccion Musical",
+      "ies": "Instituto Tecnologico Metropolitano",
+      "sector": "Oficial",
+      "nivel": "Universitaria",
+      "area": "Bellas artes",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 440,
+      "acreditado": false,
+      "ies_id": "itm",
+      "ies_corto": "ITM"
+    },
+    {
+      "snies": 107004,
+      "programa": "Tecnologia En Automatización Electronica",
+      "ies": "Instituto Tecnologico Metropolitano",
+      "sector": "Oficial",
+      "nivel": "Tecnológica",
+      "area": "Ingeniería, arquitectura, urbanismo y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 429,
+      "acreditado": false,
+      "ies_id": "itm",
+      "ies_corto": "ITM"
+    },
+    {
+      "snies": 106314,
+      "programa": "Cine",
+      "ies": "Instituto Tecnologico Metropolitano",
+      "sector": "Oficial",
+      "nivel": "Universitaria",
+      "area": "Bellas artes",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 414,
+      "acreditado": false,
+      "ies_id": "itm",
+      "ies_corto": "ITM"
+    },
+    {
+      "snies": 107279,
+      "programa": "Profesional En Diseño Gráfico",
+      "ies": "Institución Universitaria Pascual Bravo",
+      "sector": "Oficial",
+      "nivel": "Universitaria",
+      "area": "Bellas artes",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 411,
+      "acreditado": false,
+      "ies_id": "pascual",
+      "ies_corto": "Pascual Bravo"
+    },
+    {
+      "snies": 1725,
+      "programa": "Bacteriologia Y Laboratorio Clinico",
+      "ies": "Colegio Mayor de Antioquia",
+      "sector": "Oficial",
+      "nivel": "Universitaria",
+      "area": "Ciencias de la salud",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 397,
+      "acreditado": true,
+      "ies_id": "colmayor",
+      "ies_corto": "Colmayor"
+    },
+    {
+      "snies": 90355,
+      "programa": "Artes Visuales",
+      "ies": "Instituto Tecnologico Metropolitano",
+      "sector": "Oficial",
+      "nivel": "Universitaria",
+      "area": "Bellas artes",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 388,
+      "acreditado": false,
+      "ies_id": "itm",
+      "ies_corto": "ITM"
+    },
+    {
+      "snies": 53799,
+      "programa": "Tecnologia En Construccion De Acabados Arquitectonicos",
+      "ies": "Instituto Tecnologico Metropolitano",
+      "sector": "Oficial",
+      "nivel": "Tecnológica",
+      "area": "Ingeniería, arquitectura, urbanismo y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 387,
+      "acreditado": true,
+      "ies_id": "itm",
+      "ies_corto": "ITM"
+    },
+    {
+      "snies": 106771,
+      "programa": "Profesional En Gastronomía Y Culinaria",
+      "ies": "Colegio Mayor de Antioquia",
+      "sector": "Oficial",
+      "nivel": "Universitaria",
+      "area": "Economía, administración, contaduría y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 384,
+      "acreditado": false,
+      "ies_id": "colmayor",
+      "ies_corto": "Colmayor"
+    },
+    {
+      "snies": 54263,
+      "programa": "Ingeniería Ambiental",
+      "ies": "Colegio Mayor de Antioquia",
+      "sector": "Oficial",
+      "nivel": "Universitaria",
+      "area": "Ingeniería, arquitectura, urbanismo y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 380,
+      "acreditado": true,
+      "ies_id": "colmayor",
+      "ies_corto": "Colmayor"
+    },
+    {
+      "snies": 9508,
+      "programa": "Tecnologia En Mecanica Automotriz",
+      "ies": "Institución Universitaria Pascual Bravo",
+      "sector": "Oficial",
+      "nivel": "Tecnológica",
+      "area": "Ingeniería, arquitectura, urbanismo y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 373,
+      "acreditado": false,
+      "ies_id": "pascual",
+      "ies_corto": "Pascual Bravo"
+    },
+    {
+      "snies": 52205,
+      "programa": "Ingenieria De Sistemas",
+      "ies": "Instituto Tecnologico Metropolitano",
+      "sector": "Oficial",
+      "nivel": "Universitaria",
+      "area": "Ingeniería, arquitectura, urbanismo y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 358,
+      "acreditado": true,
+      "ies_id": "itm",
+      "ies_corto": "ITM"
+    },
+    {
+      "snies": 108789,
+      "programa": "Tecnologia En Control De La Calidad",
+      "ies": "Instituto Tecnologico Metropolitano",
+      "sector": "Oficial",
+      "nivel": "Tecnológica",
+      "area": "Economía, administración, contaduría y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 358,
+      "acreditado": true,
+      "ies_id": "itm",
+      "ies_corto": "ITM"
+    },
+    {
+      "snies": 107534,
+      "programa": "Tecnologia En Sistemas De Producción",
+      "ies": "Instituto Tecnologico Metropolitano",
+      "sector": "Oficial",
+      "nivel": "Tecnológica",
+      "area": "Ingeniería, arquitectura, urbanismo y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 356,
+      "acreditado": true,
+      "ies_id": "itm",
+      "ies_corto": "ITM"
+    },
+    {
+      "snies": 17720,
+      "programa": "Tecnologia En Informatica Musical",
+      "ies": "Instituto Tecnologico Metropolitano",
+      "sector": "Oficial",
+      "nivel": "Tecnológica",
+      "area": "Bellas artes",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 345,
+      "acreditado": true,
+      "ies_id": "itm",
+      "ies_corto": "ITM"
+    },
+    {
+      "snies": 2076,
+      "programa": "Tecnologia Electrica",
+      "ies": "Institución Universitaria Pascual Bravo",
+      "sector": "Oficial",
+      "nivel": "Tecnológica",
+      "area": "Ingeniería, arquitectura, urbanismo y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 340,
+      "acreditado": true,
+      "ies_id": "pascual",
+      "ies_corto": "Pascual Bravo"
+    },
+    {
+      "snies": 108641,
+      "programa": "Tecnología En Supervisión De Sistemas De Generación Y Distribución De Energía Eléctrica",
+      "ies": "Institución Universitaria Pascual Bravo",
+      "sector": "Oficial",
+      "nivel": "Tecnológica",
+      "area": "Ingeniería, arquitectura, urbanismo y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "A distancia",
+      "matricula24": 336,
+      "acreditado": false,
+      "ies_id": "pascual",
+      "ies_corto": "Pascual Bravo"
+    },
+    {
+      "snies": 3205,
+      "programa": "Administracion De Empresas Turisticas",
+      "ies": "Colegio Mayor de Antioquia",
+      "sector": "Oficial",
+      "nivel": "Universitaria",
+      "area": "Economía, administración, contaduría y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 323,
+      "acreditado": true,
+      "ies_id": "colmayor",
+      "ies_corto": "Colmayor"
+    },
+    {
+      "snies": 105662,
+      "programa": "Tecnologia En Gestion Del Diseño Gráfico",
+      "ies": "Institución Universitaria Pascual Bravo",
+      "sector": "Oficial",
+      "nivel": "Tecnológica",
+      "area": "Bellas artes",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 315,
+      "acreditado": false,
+      "ies_id": "pascual",
+      "ies_corto": "Pascual Bravo"
+    },
+    {
+      "snies": 53806,
+      "programa": "Tecnología En Diseño Industrial",
+      "ies": "Instituto Tecnologico Metropolitano",
+      "sector": "Oficial",
+      "nivel": "Tecnológica",
+      "area": "Sin información",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 313,
+      "acreditado": true,
+      "ies_id": "itm",
+      "ies_corto": "ITM"
+    },
+    {
+      "snies": 1724,
+      "programa": "Tecnologia En Delineante De Arquitectura E Ingenieria",
+      "ies": "Colegio Mayor de Antioquia",
+      "sector": "Oficial",
+      "nivel": "Tecnológica",
+      "area": "Ingeniería, arquitectura, urbanismo y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 311,
+      "acreditado": true,
+      "ies_id": "colmayor",
+      "ies_corto": "Colmayor"
+    },
+    {
+      "snies": 105436,
+      "programa": "Tecnologia En Gestión De Servicios Gastronómicos",
+      "ies": "Colegio Mayor de Antioquia",
+      "sector": "Oficial",
+      "nivel": "Tecnológica",
+      "area": "Bellas artes",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 309,
+      "acreditado": true,
+      "ies_id": "colmayor",
+      "ies_corto": "Colmayor"
+    },
+    {
+      "snies": 52131,
+      "programa": "Ingenieria De Producción",
+      "ies": "Instituto Tecnologico Metropolitano",
+      "sector": "Oficial",
+      "nivel": "Universitaria",
+      "area": "Ingeniería, arquitectura, urbanismo y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 292,
+      "acreditado": true,
+      "ies_id": "itm",
+      "ies_corto": "ITM"
+    },
+    {
+      "snies": 107278,
+      "programa": "Profesional En Diseño De Vestuario",
+      "ies": "Institución Universitaria Pascual Bravo",
+      "sector": "Oficial",
+      "nivel": "Universitaria",
+      "area": "Bellas artes",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 291,
+      "acreditado": false,
+      "ies_id": "pascual",
+      "ies_corto": "Pascual Bravo"
+    },
+    {
+      "snies": 103168,
+      "programa": "Tecnología En Desarrollo De Software - Modalidad Virtual",
+      "ies": "Institución Universitaria Pascual Bravo",
+      "sector": "Oficial",
+      "nivel": "Tecnológica",
+      "area": "Ingeniería, arquitectura, urbanismo y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Virtual",
+      "matricula24": 267,
+      "acreditado": false,
+      "ies_id": "pascual",
+      "ies_corto": "Pascual Bravo"
+    },
+    {
+      "snies": 17498,
+      "programa": "Biotecnología",
+      "ies": "Colegio Mayor de Antioquia",
+      "sector": "Oficial",
+      "nivel": "Universitaria",
+      "area": "Ciencias de la salud",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 264,
+      "acreditado": true,
+      "ies_id": "colmayor",
+      "ies_corto": "Colmayor"
+    },
+    {
+      "snies": 2713,
+      "programa": "Tecnologia En Produccion Industrial",
+      "ies": "Institución Universitaria Pascual Bravo",
+      "sector": "Oficial",
+      "nivel": "Tecnológica",
+      "area": "Ingeniería, arquitectura, urbanismo y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 232,
+      "acreditado": true,
+      "ies_id": "pascual",
+      "ies_corto": "Pascual Bravo"
+    },
+    {
+      "snies": 52130,
+      "programa": "Ingenieria Electromecánica",
+      "ies": "Instituto Tecnologico Metropolitano",
+      "sector": "Oficial",
+      "nivel": "Universitaria",
+      "area": "Ingeniería, arquitectura, urbanismo y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 210,
+      "acreditado": true,
+      "ies_id": "itm",
+      "ies_corto": "ITM"
+    },
+    {
+      "snies": 105738,
+      "programa": "Tecnologia En Gestión Del Diseño Textil Y De Modas",
+      "ies": "Institución Universitaria Pascual Bravo",
+      "sector": "Oficial",
+      "nivel": "Tecnológica",
+      "area": "Bellas artes",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 210,
+      "acreditado": false,
+      "ies_id": "pascual",
+      "ies_corto": "Pascual Bravo"
+    },
+    {
+      "snies": 108639,
+      "programa": "Tecnología En Desarrollo De Aplicaciones Para Dispositivos Móviles",
+      "ies": "Instituto Tecnologico Metropolitano",
+      "sector": "Oficial",
+      "nivel": "Tecnológica",
+      "area": "Ingeniería, arquitectura, urbanismo y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Virtual",
+      "matricula24": 210,
+      "acreditado": false,
+      "ies_id": "itm",
+      "ies_corto": "ITM"
+    },
+    {
+      "snies": 102470,
+      "programa": "Tecnologia En Mecanica Industrial",
+      "ies": "Institución Universitaria Pascual Bravo",
+      "sector": "Oficial",
+      "nivel": "Tecnológica",
+      "area": "Ingeniería, arquitectura, urbanismo y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 207,
+      "acreditado": false,
+      "ies_id": "pascual",
+      "ies_corto": "Pascual Bravo"
+    },
+    {
+      "snies": 107468,
+      "programa": "Tecnología En Seguridad Y Salud En El Trabajo",
+      "ies": "Colegio Mayor de Antioquia",
+      "sector": "Oficial",
+      "nivel": "Tecnológica",
+      "area": "Ciencias de la salud",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 207,
+      "acreditado": false,
+      "ies_id": "colmayor",
+      "ies_corto": "Colmayor"
+    },
+    {
+      "snies": 108434,
+      "programa": "Ingeniería En Logística",
+      "ies": "Institución Universitaria Pascual Bravo",
+      "sector": "Oficial",
+      "nivel": "Universitaria",
+      "area": "Ingeniería, arquitectura, urbanismo y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 203,
+      "acreditado": false,
+      "ies_id": "pascual",
+      "ies_corto": "Pascual Bravo"
+    },
+    {
+      "snies": 106264,
+      "programa": "Ingeniería Comercial",
+      "ies": "Colegio Mayor de Antioquia",
+      "sector": "Oficial",
+      "nivel": "Universitaria",
+      "area": "Ingeniería, arquitectura, urbanismo y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 201,
+      "acreditado": false,
+      "ies_id": "colmayor",
+      "ies_corto": "Colmayor"
+    },
+    {
+      "snies": 106102,
+      "programa": "Tecnología En Gestión Ambiental",
+      "ies": "Colegio Mayor de Antioquia",
+      "sector": "Oficial",
+      "nivel": "Tecnológica",
+      "area": "Ingeniería, arquitectura, urbanismo y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Virtual",
+      "matricula24": 184,
+      "acreditado": false,
+      "ies_id": "colmayor",
+      "ies_corto": "Colmayor"
+    },
+    {
+      "snies": 116314,
+      "programa": "Ingeniería En Ciencia De Datos",
+      "ies": "Instituto Tecnologico Metropolitano",
+      "sector": "Oficial",
+      "nivel": "Universitaria",
+      "area": "Sin información",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 177,
+      "acreditado": false,
+      "ies_id": "itm",
+      "ies_corto": "ITM"
+    },
+    {
+      "snies": 116061,
+      "programa": "Tecnología En Gestión Comunitaria",
+      "ies": "Colegio Mayor de Antioquia",
+      "sector": "Oficial",
+      "nivel": "Tecnológica",
+      "area": "Ciencias sociales y humanas",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Virtual",
+      "matricula24": 170,
+      "acreditado": false,
+      "ies_id": "colmayor",
+      "ies_corto": "Colmayor"
+    },
+    {
+      "snies": 109927,
+      "programa": "Interpretación Y Traducción Lengua De Señas Colombiana - Español",
+      "ies": "Instituto Tecnologico Metropolitano",
+      "sector": "Oficial",
+      "nivel": "Universitaria",
+      "area": "Ciencias sociales y humanas",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Virtual",
+      "matricula24": 165,
+      "acreditado": false,
+      "ies_id": "itm",
+      "ies_corto": "ITM"
+    },
+    {
+      "snies": 105918,
+      "programa": "Profesional En Gestion Del Diseño",
+      "ies": "Institución Universitaria Pascual Bravo",
+      "sector": "Oficial",
+      "nivel": "Universitaria",
+      "area": "Economía, administración, contaduría y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 149,
+      "acreditado": false,
+      "ies_id": "pascual",
+      "ies_corto": "Pascual Bravo"
+    },
+    {
+      "snies": 106176,
+      "programa": "Tecnología En Gestión Catastral",
+      "ies": "Colegio Mayor de Antioquia",
+      "sector": "Oficial",
+      "nivel": "Tecnológica",
+      "area": "Ingeniería, arquitectura, urbanismo y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 148,
+      "acreditado": false,
+      "ies_id": "colmayor",
+      "ies_corto": "Colmayor"
+    },
+    {
+      "snies": 103002,
+      "programa": "Tecnologia En Sistemas Mecatronicos",
+      "ies": "Institución Universitaria Pascual Bravo",
+      "sector": "Oficial",
+      "nivel": "Tecnológica",
+      "area": "Ingeniería, arquitectura, urbanismo y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "A distancia",
+      "matricula24": 145,
+      "acreditado": false,
+      "ies_id": "pascual",
+      "ies_corto": "Pascual Bravo"
+    },
+    {
+      "snies": 103524,
+      "programa": "Tecnología En Animación Digital",
+      "ies": "Institución Universitaria Pascual Bravo",
+      "sector": "Oficial",
+      "nivel": "Tecnológica",
+      "area": "Bellas artes",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 132,
+      "acreditado": false,
+      "ies_id": "pascual",
+      "ies_corto": "Pascual Bravo"
+    },
+    {
+      "snies": 52129,
+      "programa": "Ingenieria Electrónica",
+      "ies": "Instituto Tecnologico Metropolitano",
+      "sector": "Oficial",
+      "nivel": "Universitaria",
+      "area": "Ingeniería, arquitectura, urbanismo y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 130,
+      "acreditado": true,
+      "ies_id": "itm",
+      "ies_corto": "ITM"
+    },
+    {
+      "snies": 102691,
+      "programa": "Tecnología En Sistemas Mecatrónicos",
+      "ies": "Institución Universitaria Pascual Bravo",
+      "sector": "Oficial",
+      "nivel": "Tecnológica",
+      "area": "Ingeniería, arquitectura, urbanismo y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 128,
+      "acreditado": true,
+      "ies_id": "pascual",
+      "ies_corto": "Pascual Bravo"
+    },
+    {
+      "snies": 9509,
+      "programa": "Tecnologia En Mecanica Automotriz",
+      "ies": "Institución Universitaria Pascual Bravo",
+      "sector": "Oficial",
+      "nivel": "Tecnológica",
+      "area": "Ingeniería, arquitectura, urbanismo y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "A distancia",
+      "matricula24": 115,
+      "acreditado": false,
+      "ies_id": "pascual",
+      "ies_corto": "Pascual Bravo"
+    },
+    {
+      "snies": 116516,
+      "programa": "Tecnología En Gestión Turística",
+      "ies": "Colegio Mayor de Antioquia",
+      "sector": "Oficial",
+      "nivel": "Tecnológica",
+      "area": "Sin información",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Virtual",
+      "matricula24": 114,
+      "acreditado": false,
+      "ies_id": "colmayor",
+      "ies_corto": "Colmayor"
+    },
+    {
+      "snies": 52299,
+      "programa": "Ingeniería De Telecomunicaciones",
+      "ies": "Instituto Tecnologico Metropolitano",
+      "sector": "Oficial",
+      "nivel": "Universitaria",
+      "area": "Ingeniería, arquitectura, urbanismo y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 109,
+      "acreditado": true,
+      "ies_id": "itm",
+      "ies_corto": "ITM"
+    },
+    {
+      "snies": 110971,
+      "programa": "Tecnología En Gestión Logística",
+      "ies": "Institución Universitaria Pascual Bravo",
+      "sector": "Oficial",
+      "nivel": "Tecnológica",
+      "area": "Ingeniería, arquitectura, urbanismo y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 108,
+      "acreditado": false,
+      "ies_id": "pascual",
+      "ies_corto": "Pascual Bravo"
+    },
+    {
+      "snies": 102695,
+      "programa": "Tecnologia En Sistemas Electromecánicos",
+      "ies": "Institución Universitaria Pascual Bravo",
+      "sector": "Oficial",
+      "nivel": "Tecnológica",
+      "area": "Ingeniería, arquitectura, urbanismo y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 106,
+      "acreditado": true,
+      "ies_id": "pascual",
+      "ies_corto": "Pascual Bravo"
+    },
+    {
+      "snies": 55019,
+      "programa": "Especialización En Formulación Y Evaluación De Proyectos",
+      "ies": "Instituto Tecnologico Metropolitano",
+      "sector": "Oficial",
+      "nivel": "Especialización",
+      "area": "Economía, administración, contaduría y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 103,
+      "acreditado": false,
+      "ies_id": "itm",
+      "ies_corto": "ITM"
+    },
+    {
+      "snies": 110902,
+      "programa": "Especialización En Ingeniería De Software",
+      "ies": "Instituto Tecnologico Metropolitano",
+      "sector": "Oficial",
+      "nivel": "Especialización",
+      "area": "Ingeniería, arquitectura, urbanismo y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 94,
+      "acreditado": false,
+      "ies_id": "itm",
+      "ies_corto": "ITM"
+    },
+    {
+      "snies": 102329,
+      "programa": "Tecnología En Gestión Comunitaria",
+      "ies": "Colegio Mayor de Antioquia",
+      "sector": "Oficial",
+      "nivel": "Tecnológica",
+      "area": "Ciencias sociales y humanas",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 91,
+      "acreditado": true,
+      "ies_id": "colmayor",
+      "ies_corto": "Colmayor"
+    },
+    {
+      "snies": 116077,
+      "programa": "Tecnología En Gestión De Procesos De Repostería Y Panificación",
+      "ies": "Colegio Mayor de Antioquia",
+      "sector": "Oficial",
+      "nivel": "Tecnológica",
+      "area": "Ingeniería, arquitectura, urbanismo y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 90,
+      "acreditado": false,
+      "ies_id": "colmayor",
+      "ies_corto": "Colmayor"
+    },
+    {
+      "snies": 116042,
+      "programa": "Licenciatura En Ciencias Sociales",
+      "ies": "Colegio Mayor de Antioquia",
+      "sector": "Oficial",
+      "nivel": "Universitaria",
+      "area": "Ciencias de la educación",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 83,
+      "acreditado": false,
+      "ies_id": "colmayor",
+      "ies_corto": "Colmayor"
+    },
+    {
+      "snies": 55018,
+      "programa": "Especialización En Finanzas",
+      "ies": "Instituto Tecnologico Metropolitano",
+      "sector": "Oficial",
+      "nivel": "Especialización",
+      "area": "Economía, administración, contaduría y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 81,
+      "acreditado": false,
+      "ies_id": "itm",
+      "ies_corto": "ITM"
+    },
+    {
+      "snies": 116316,
+      "programa": "Administración Del Deporte",
+      "ies": "Instituto Tecnologico Metropolitano",
+      "sector": "Oficial",
+      "nivel": "Universitaria",
+      "area": "Sin información",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 80,
+      "acreditado": false,
+      "ies_id": "itm",
+      "ies_corto": "ITM"
+    },
+    {
+      "snies": 111337,
+      "programa": "Tecnología En Gestión Comercial",
+      "ies": "Instituto Tecnologico Metropolitano",
+      "sector": "Oficial",
+      "nivel": "Tecnológica",
+      "area": "Economía, administración, contaduría y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Híbrida/combinada",
+      "matricula24": 74,
+      "acreditado": false,
+      "ies_id": "itm",
+      "ies_corto": "ITM"
+    },
+    {
+      "snies": 104794,
+      "programa": "Tecnologia En Gestion Del Mantenimiento Aeronautico",
+      "ies": "Institución Universitaria Pascual Bravo",
+      "sector": "Oficial",
+      "nivel": "Tecnológica",
+      "area": "Ingeniería, arquitectura, urbanismo y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 71,
+      "acreditado": false,
+      "ies_id": "pascual",
+      "ies_corto": "Pascual Bravo"
+    },
+    {
+      "snies": 110940,
+      "programa": "Especialización En Gestión Del Mantenimiento Industrial",
+      "ies": "Instituto Tecnologico Metropolitano",
+      "sector": "Oficial",
+      "nivel": "Especialización",
+      "area": "Ingeniería, arquitectura, urbanismo y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Híbrida/combinada",
+      "matricula24": 63,
+      "acreditado": false,
+      "ies_id": "itm",
+      "ies_corto": "ITM"
+    },
+    {
+      "snies": 111032,
+      "programa": "Especialización En Ciberseguridad",
+      "ies": "Instituto Tecnologico Metropolitano",
+      "sector": "Oficial",
+      "nivel": "Especialización",
+      "area": "Ingeniería, arquitectura, urbanismo y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Virtual",
+      "matricula24": 57,
+      "acreditado": false,
+      "ies_id": "itm",
+      "ies_corto": "ITM"
+    },
+    {
+      "snies": 2078,
+      "programa": "Tecnologia Electronica",
+      "ies": "Institución Universitaria Pascual Bravo",
+      "sector": "Oficial",
+      "nivel": "Tecnológica",
+      "area": "Ingeniería, arquitectura, urbanismo y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 56,
+      "acreditado": true,
+      "ies_id": "pascual",
+      "ies_corto": "Pascual Bravo"
+    },
+    {
+      "snies": 53801,
+      "programa": "Tecnologia En Sistemas De Informacion",
+      "ies": "Instituto Tecnologico Metropolitano",
+      "sector": "Oficial",
+      "nivel": "Tecnológica",
+      "area": "Ingeniería, arquitectura, urbanismo y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 50,
+      "acreditado": false,
+      "ies_id": "itm",
+      "ies_corto": "ITM"
+    },
+    {
+      "snies": 116076,
+      "programa": "Tecnología En Gestión Comercial",
+      "ies": "Colegio Mayor de Antioquia",
+      "sector": "Oficial",
+      "nivel": "Tecnológica",
+      "area": "Economía, administración, contaduría y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 47,
+      "acreditado": false,
+      "ies_id": "colmayor",
+      "ies_corto": "Colmayor"
+    },
+    {
+      "snies": 103841,
+      "programa": "Maestria En Seguridad Informática",
+      "ies": "Instituto Tecnologico Metropolitano",
+      "sector": "Oficial",
+      "nivel": "Maestría",
+      "area": "Ingeniería, arquitectura, urbanismo y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 36,
+      "acreditado": false,
+      "ies_id": "itm",
+      "ies_corto": "ITM"
+    },
+    {
+      "snies": 110901,
+      "programa": "Especialización En Ciberseguridad",
+      "ies": "Instituto Tecnologico Metropolitano",
+      "sector": "Oficial",
+      "nivel": "Especialización",
+      "area": "Ingeniería, arquitectura, urbanismo y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 35,
+      "acreditado": false,
+      "ies_id": "itm",
+      "ies_corto": "ITM"
+    },
+    {
+      "snies": 106303,
+      "programa": "Tecnología En Gestión Turística",
+      "ies": "Colegio Mayor de Antioquia",
+      "sector": "Oficial",
+      "nivel": "Tecnológica",
+      "area": "Economía, administración, contaduría y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Virtual",
+      "matricula24": 35,
+      "acreditado": false,
+      "ies_id": "colmayor",
+      "ies_corto": "Colmayor"
+    },
+    {
+      "snies": 116180,
+      "programa": "Maestría En Alta Dirección De Las Organizaciones",
+      "ies": "Colegio Mayor de Antioquia",
+      "sector": "Oficial",
+      "nivel": "Maestría",
+      "area": "Economía, administración, contaduría y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 32,
+      "acreditado": false,
+      "ies_id": "colmayor",
+      "ies_corto": "Colmayor"
+    },
+    {
+      "snies": 116955,
+      "programa": "Comunicación Social",
+      "ies": "Colegio Mayor de Antioquia",
+      "sector": "Oficial",
+      "nivel": "Universitaria",
+      "area": "Sin información",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 31,
+      "acreditado": false,
+      "ies_id": "colmayor",
+      "ies_corto": "Colmayor"
+    },
+    {
+      "snies": 105850,
+      "programa": "Especialización En Gestión Del Riesgo De Desastres",
+      "ies": "Colegio Mayor de Antioquia",
+      "sector": "Oficial",
+      "nivel": "Especialización",
+      "area": "Ingeniería, arquitectura, urbanismo y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 29,
+      "acreditado": false,
+      "ies_id": "colmayor",
+      "ies_corto": "Colmayor"
+    },
+    {
+      "snies": 53892,
+      "programa": "Maestría En Automatización Y Control Industrial",
+      "ies": "Instituto Tecnologico Metropolitano",
+      "sector": "Oficial",
+      "nivel": "Maestría",
+      "area": "Ingeniería, arquitectura, urbanismo y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 27,
+      "acreditado": true,
+      "ies_id": "itm",
+      "ies_corto": "ITM"
+    },
+    {
+      "snies": 106923,
+      "programa": "Maestría En Diseño Y Evaluación De Proyectos Regionales",
+      "ies": "Institución Universitaria Pascual Bravo",
+      "sector": "Oficial",
+      "nivel": "Maestría",
+      "area": "Economía, administración, contaduría y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Virtual",
+      "matricula24": 27,
+      "acreditado": false,
+      "ies_id": "pascual",
+      "ies_corto": "Pascual Bravo"
+    },
+    {
+      "snies": 111628,
+      "programa": "Tecnologia En Electronica Industrial",
+      "ies": "Institución Universitaria Pascual Bravo",
+      "sector": "Oficial",
+      "nivel": "Tecnológica",
+      "area": "Sin información",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 24,
+      "acreditado": true,
+      "ies_id": "pascual",
+      "ies_corto": "Pascual Bravo"
+    },
+    {
+      "snies": 116181,
+      "programa": "Especialización En Gerencia De La Construcción",
+      "ies": "Colegio Mayor de Antioquia",
+      "sector": "Oficial",
+      "nivel": "Especialización",
+      "area": "Ingeniería, arquitectura, urbanismo y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 23,
+      "acreditado": false,
+      "ies_id": "colmayor",
+      "ies_corto": "Colmayor"
+    },
+    {
+      "snies": 53800,
+      "programa": "Tecnologia En Calidad",
+      "ies": "Instituto Tecnologico Metropolitano",
+      "sector": "Oficial",
+      "nivel": "Tecnológica",
+      "area": "Economía, administración, contaduría y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 23,
+      "acreditado": true,
+      "ies_id": "itm",
+      "ies_corto": "ITM"
+    },
+    {
+      "snies": 53802,
+      "programa": "Tecnologia En Producción",
+      "ies": "Instituto Tecnologico Metropolitano",
+      "sector": "Oficial",
+      "nivel": "Tecnológica",
+      "area": "Ingeniería, arquitectura, urbanismo y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 23,
+      "acreditado": true,
+      "ies_id": "itm",
+      "ies_corto": "ITM"
+    },
+    {
+      "snies": 6537,
+      "programa": "Tecnologia En Telecomunicaciones",
+      "ies": "Instituto Tecnologico Metropolitano",
+      "sector": "Oficial",
+      "nivel": "Tecnológica",
+      "area": "Ingeniería, arquitectura, urbanismo y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 23,
+      "acreditado": true,
+      "ies_id": "itm",
+      "ies_corto": "ITM"
+    },
+    {
+      "snies": 102977,
+      "programa": "Maestría En Desarrollo Sostenible",
+      "ies": "Instituto Tecnologico Metropolitano",
+      "sector": "Oficial",
+      "nivel": "Maestría",
+      "area": "Matemáticas y ciencias naturales",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 22,
+      "acreditado": false,
+      "ies_id": "itm",
+      "ies_corto": "ITM"
+    },
+    {
+      "snies": 111255,
+      "programa": "Maestría En Gerencia De La Transformación Digital",
+      "ies": "Institución Universitaria Pascual Bravo",
+      "sector": "Oficial",
+      "nivel": "Maestría",
+      "area": "Economía, administración, contaduría y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 22,
+      "acreditado": false,
+      "ies_id": "pascual",
+      "ies_corto": "Pascual Bravo"
+    },
+    {
+      "snies": 107923,
+      "programa": "Maestría En Energía",
+      "ies": "Institución Universitaria Pascual Bravo",
+      "sector": "Oficial",
+      "nivel": "Maestría",
+      "area": "Ingeniería, arquitectura, urbanismo y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 21,
+      "acreditado": false,
+      "ies_id": "pascual",
+      "ies_corto": "Pascual Bravo"
+    },
+    {
+      "snies": 101977,
+      "programa": "Maestría En Gestión De La Innovación Tecnológica, Cooperación Y Desarrollo Regional",
+      "ies": "Instituto Tecnologico Metropolitano",
+      "sector": "Oficial",
+      "nivel": "Maestría",
+      "area": "Economía, administración, contaduría y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 21,
+      "acreditado": false,
+      "ies_id": "itm",
+      "ies_corto": "ITM"
+    },
+    {
+      "snies": 91081,
+      "programa": "Especialización En Gestión De Proyectos",
+      "ies": "Institución Universitaria Pascual Bravo",
+      "sector": "Oficial",
+      "nivel": "Especialización",
+      "area": "Economía, administración, contaduría y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 20,
+      "acreditado": false,
+      "ies_id": "pascual",
+      "ies_corto": "Pascual Bravo"
+    },
+    {
+      "snies": 104318,
+      "programa": "Maestría En Ingeniería Biomédica",
+      "ies": "Instituto Tecnologico Metropolitano",
+      "sector": "Oficial",
+      "nivel": "Maestría",
+      "area": "Ingeniería, arquitectura, urbanismo y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 17,
+      "acreditado": false,
+      "ies_id": "itm",
+      "ies_corto": "ITM"
+    },
+    {
+      "snies": 110634,
+      "programa": "Especialización En Big Data",
+      "ies": "Institución Universitaria Pascual Bravo",
+      "sector": "Oficial",
+      "nivel": "Especialización",
+      "area": "Ingeniería, arquitectura, urbanismo y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 15,
+      "acreditado": false,
+      "ies_id": "pascual",
+      "ies_corto": "Pascual Bravo"
+    },
+    {
+      "snies": 104740,
+      "programa": "Maestría En Artes Digitales",
+      "ies": "Instituto Tecnologico Metropolitano",
+      "sector": "Oficial",
+      "nivel": "Maestría",
+      "area": "Bellas artes",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 15,
+      "acreditado": false,
+      "ies_id": "itm",
+      "ies_corto": "ITM"
+    },
+    {
+      "snies": 104905,
+      "programa": "Maestría En Ciencias: Innovacion En Educación",
+      "ies": "Instituto Tecnologico Metropolitano",
+      "sector": "Oficial",
+      "nivel": "Maestría",
+      "area": "Ciencias de la educación",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 15,
+      "acreditado": false,
+      "ies_id": "itm",
+      "ies_corto": "ITM"
+    },
+    {
+      "snies": 107423,
+      "programa": "Maestría En Estudios De Ciencia, Tecnología, Sociedad E Innovación",
+      "ies": "Instituto Tecnologico Metropolitano",
+      "sector": "Oficial",
+      "nivel": "Maestría",
+      "area": "Ciencias sociales y humanas",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Virtual",
+      "matricula24": 15,
+      "acreditado": false,
+      "ies_id": "itm",
+      "ies_corto": "ITM"
+    },
+    {
+      "snies": 106584,
+      "programa": "Maestría En Gestión De Organizaciones",
+      "ies": "Instituto Tecnologico Metropolitano",
+      "sector": "Oficial",
+      "nivel": "Maestría",
+      "area": "Economía, administración, contaduría y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 14,
+      "acreditado": false,
+      "ies_id": "itm",
+      "ies_corto": "ITM"
+    },
+    {
+      "snies": 107695,
+      "programa": "Especialización En Gestión De Sistemas Energéticos Industriales",
+      "ies": "Instituto Tecnologico Metropolitano",
+      "sector": "Oficial",
+      "nivel": "Especialización",
+      "area": "Ingeniería, arquitectura, urbanismo y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 13,
+      "acreditado": false,
+      "ies_id": "itm",
+      "ies_corto": "ITM"
+    },
+    {
+      "snies": 116576,
+      "programa": "Especialización En Infraestructura Hospitalaria",
+      "ies": "Instituto Tecnologico Metropolitano",
+      "sector": "Oficial",
+      "nivel": "Especialización",
+      "area": "Sin información",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Híbrida/combinada",
+      "matricula24": 13,
+      "acreditado": false,
+      "ies_id": "itm",
+      "ies_corto": "ITM"
+    },
+    {
+      "snies": 106973,
+      "programa": "Doctorado En Ingeniería",
+      "ies": "Instituto Tecnologico Metropolitano",
+      "sector": "Oficial",
+      "nivel": "Doctorado",
+      "area": "Ingeniería, arquitectura, urbanismo y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 12,
+      "acreditado": false,
+      "ies_id": "itm",
+      "ies_corto": "ITM"
+    },
+    {
+      "snies": 90728,
+      "programa": "Ingenieria Mecanica",
+      "ies": "Institución Universitaria Pascual Bravo",
+      "sector": "Oficial",
+      "nivel": "Universitaria",
+      "area": "Ingeniería, arquitectura, urbanismo y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 12,
+      "acreditado": false,
+      "ies_id": "pascual",
+      "ies_corto": "Pascual Bravo"
+    },
+    {
+      "snies": 53798,
+      "programa": "Maestría En Gestión Energética Industrial",
+      "ies": "Instituto Tecnologico Metropolitano",
+      "sector": "Oficial",
+      "nivel": "Maestría",
+      "area": "Ingeniería, arquitectura, urbanismo y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 12,
+      "acreditado": true,
+      "ies_id": "itm",
+      "ies_corto": "ITM"
+    },
+    {
+      "snies": 106174,
+      "programa": "Especialización En Planeación Urbana",
+      "ies": "Colegio Mayor de Antioquia",
+      "sector": "Oficial",
+      "nivel": "Especialización",
+      "area": "Ingeniería, arquitectura, urbanismo y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Virtual",
+      "matricula24": 11,
+      "acreditado": false,
+      "ies_id": "colmayor",
+      "ies_corto": "Colmayor"
+    },
+    {
+      "snies": 116283,
+      "programa": "Especialización En Sistemas De Información Geográfica",
+      "ies": "Colegio Mayor de Antioquia",
+      "sector": "Oficial",
+      "nivel": "Especialización",
+      "area": "Sin información",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 11,
+      "acreditado": false,
+      "ies_id": "colmayor",
+      "ies_corto": "Colmayor"
+    },
+    {
+      "snies": 116074,
+      "programa": "Maestría En Biotecnología Y Bioeconomía",
+      "ies": "Colegio Mayor de Antioquia",
+      "sector": "Oficial",
+      "nivel": "Maestría",
+      "area": "Matemáticas y ciencias naturales",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 11,
+      "acreditado": false,
+      "ies_id": "colmayor",
+      "ies_corto": "Colmayor"
+    },
+    {
+      "snies": 101804,
+      "programa": "Maestría En Estudios De Ciencia, Tecnología, Sociedad E Innovación",
+      "ies": "Instituto Tecnologico Metropolitano",
+      "sector": "Oficial",
+      "nivel": "Maestría",
+      "area": "Ciencias sociales y humanas",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 11,
+      "acreditado": false,
+      "ies_id": "itm",
+      "ies_corto": "ITM"
+    },
+    {
+      "snies": 106505,
+      "programa": "Maestría En Metrología",
+      "ies": "Instituto Tecnologico Metropolitano",
+      "sector": "Oficial",
+      "nivel": "Maestría",
+      "area": "Matemáticas y ciencias naturales",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 11,
+      "acreditado": false,
+      "ies_id": "itm",
+      "ies_corto": "ITM"
+    },
+    {
+      "snies": 116517,
+      "programa": "Tecnología En Gestión Turística",
+      "ies": "Colegio Mayor de Antioquia",
+      "sector": "Oficial",
+      "nivel": "Tecnológica",
+      "area": "Sin información",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 11,
+      "acreditado": false,
+      "ies_id": "colmayor",
+      "ies_corto": "Colmayor"
+    },
+    {
+      "snies": 52204,
+      "programa": "Ingenieria Financiera Y De Negocios",
+      "ies": "Instituto Tecnologico Metropolitano",
+      "sector": "Oficial",
+      "nivel": "Universitaria",
+      "area": "Ingeniería, arquitectura, urbanismo y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 10,
+      "acreditado": true,
+      "ies_id": "itm",
+      "ies_corto": "ITM"
+    },
+    {
+      "snies": 2114,
+      "programa": "Tecnologia En Electromecanica",
+      "ies": "Instituto Tecnologico Metropolitano",
+      "sector": "Oficial",
+      "nivel": "Tecnológica",
+      "area": "Ingeniería, arquitectura, urbanismo y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 10,
+      "acreditado": true,
+      "ies_id": "itm",
+      "ies_corto": "ITM"
+    },
+    {
+      "snies": 116575,
+      "programa": "Especialización En Infraestructura Hospitalaria",
+      "ies": "Instituto Tecnologico Metropolitano",
+      "sector": "Oficial",
+      "nivel": "Especialización",
+      "area": "Sin información",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 9,
+      "acreditado": false,
+      "ies_id": "itm",
+      "ies_corto": "ITM"
+    },
+    {
+      "snies": 11085,
+      "programa": "Tecnologia En Electronica",
+      "ies": "Instituto Tecnologico Metropolitano",
+      "sector": "Oficial",
+      "nivel": "Tecnológica",
+      "area": "Ingeniería, arquitectura, urbanismo y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 9,
+      "acreditado": true,
+      "ies_id": "itm",
+      "ies_corto": "ITM"
+    },
+    {
+      "snies": 53935,
+      "programa": "Especialización En Construcción Sostenible",
+      "ies": "Colegio Mayor de Antioquia",
+      "sector": "Oficial",
+      "nivel": "Especialización",
+      "area": "Ingeniería, arquitectura, urbanismo y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 8,
+      "acreditado": false,
+      "ies_id": "colmayor",
+      "ies_corto": "Colmayor"
+    },
+    {
+      "snies": 116282,
+      "programa": "Especialización En Gastronomía Colombiana",
+      "ies": "Colegio Mayor de Antioquia",
+      "sector": "Oficial",
+      "nivel": "Especialización",
+      "area": "Sin información",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 8,
+      "acreditado": false,
+      "ies_id": "colmayor",
+      "ies_corto": "Colmayor"
+    },
+    {
+      "snies": 111321,
+      "programa": "Maestria En Ciencias Computacionales- Investigacion",
+      "ies": "Institución Universitaria Pascual Bravo",
+      "sector": "Oficial",
+      "nivel": "Maestría",
+      "area": "Ingeniería, arquitectura, urbanismo y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 4,
+      "acreditado": false,
+      "ies_id": "pascual",
+      "ies_corto": "Pascual Bravo"
+    },
+    {
+      "snies": 111322,
+      "programa": "Maestria En Ciencias Computacionales- Profundizacion",
+      "ies": "Institución Universitaria Pascual Bravo",
+      "sector": "Oficial",
+      "nivel": "Maestría",
+      "area": "Ingeniería, arquitectura, urbanismo y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 4,
+      "acreditado": false,
+      "ies_id": "pascual",
+      "ies_corto": "Pascual Bravo"
+    },
+    {
+      "snies": 116574,
+      "programa": "Maestría En Diseño",
+      "ies": "Instituto Tecnologico Metropolitano",
+      "sector": "Oficial",
+      "nivel": "Maestría",
+      "area": "Sin información",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 4,
+      "acreditado": false,
+      "ies_id": "itm",
+      "ies_corto": "ITM"
+    },
+    {
+      "snies": 103001,
+      "programa": "Especialización En Gestión De Proyectos",
+      "ies": "Institución Universitaria Pascual Bravo",
+      "sector": "Oficial",
+      "nivel": "Especialización",
+      "area": "Economía, administración, contaduría y afines",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Virtual",
+      "matricula24": 3,
+      "acreditado": false,
+      "ies_id": "pascual",
+      "ies_corto": "Pascual Bravo"
+    },
+    {
+      "snies": 116619,
+      "programa": "Especialización En Gestión De Activos",
+      "ies": "Institución Universitaria Pascual Bravo",
+      "sector": "Oficial",
+      "nivel": "Especialización",
+      "area": "Sin información",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 2,
+      "acreditado": false,
+      "ies_id": "pascual",
+      "ies_corto": "Pascual Bravo"
+    },
+    {
+      "snies": 54317,
+      "programa": "Tecnología En Diseño Textil Y Produccion De Moda",
+      "ies": "Institución Universitaria Pascual Bravo",
+      "sector": "Oficial",
+      "nivel": "Tecnológica",
+      "area": "Bellas artes",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 2,
+      "acreditado": false,
+      "ies_id": "pascual",
+      "ies_corto": "Pascual Bravo"
+    },
+    {
+      "snies": 55105,
+      "programa": "Física",
+      "ies": "Instituto Tecnologico Metropolitano",
+      "sector": "Oficial",
+      "nivel": "Universitaria",
+      "area": "Matemáticas y ciencias naturales",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Presencial",
+      "matricula24": 1,
+      "acreditado": false,
+      "ies_id": "itm",
+      "ies_corto": "ITM"
+    },
+    {
+      "snies": 116770,
+      "programa": "Tecnología En Gestión De Guianza Turística",
+      "ies": "Colegio Mayor de Antioquia",
+      "sector": "Oficial",
+      "nivel": "Tecnológica",
+      "area": "Sin información",
+      "municipios": [
+        "Medellín"
+      ],
+      "modalidad": "Virtual",
+      "matricula24": 1,
+      "acreditado": false,
+      "ies_id": "colmayor",
+      "ies_corto": "Colmayor"
+    }
+  ],
+  "fuentes": [
+    {
+      "nombre": "Convocatoria distrital 2026-2",
+      "url": "https://www.medellin.gov.co/es/sala-de-prensa/noticias/hay-mas-de-12-200-cupos-disponibles-para-estudiar-desde-el-segundo-semestre-pregrado-y-posgrado-en-medellin/"
+    },
+    {
+      "nombre": "Matrícula distrital 2025-2",
+      "url": "https://www.medellin.gov.co/es/sala-de-prensa/noticias/medellin-fortalece-el-acceso-a-la-educacion-superior-publica-mas-de-43-000-estudiantes-matriculados/"
+    },
+    {
+      "nombre": "Catálogo ITM",
+      "url": "https://www.itm.edu.co/aspirante-pregrado/programas-profesionales/"
+    },
+    {
+      "nombre": "Catálogo Pascual Bravo",
+      "url": "https://pascualbravo.edu.co/aspirantes/"
+    },
+    {
+      "nombre": "Catálogo Colmayor",
+      "url": "https://www.colmayor.edu.co/programas/"
+    },
+    {
+      "nombre": "SNIES consolidado 2024",
+      "url": "https://snies.mineducacion.gov.co/portal/ESTADISTICAS/Bases-consolidadas/"
+    },
+    {
+      "nombre": "CUIPO — ingresos presupuestales",
+      "url": "https://www.datos.gov.co/Hacienda-y-Cr-dito-P-blico/Ingresos-Presupuestales/9axr-9gnb/about_data"
+    }
+  ],
+  "limites": [
+    "La convocatoria informa cupos y programas agregados, no cupos por programa para las tres IES bajo una sola estructura.",
+    "El catálogo institucional puede conservar páginas de programas sin admisión abierta y contar modalidades por separado.",
+    "La matrícula SNIES 2024 es comparable entre IES; las cifras institucionales 2025-2 son más recientes pero autorreportadas.",
+    "El resultado contable de Pascual Bravo corresponde a marzo de 2026 y no es comparable con los cierres anuales 2025 de ITM y Colmayor.",
+    "Presupuesto, recaudo y resultado contable son magnitudes distintas; no se restan entre sí."
+  ]
+}
