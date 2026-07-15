@@ -635,6 +635,20 @@ html.light .saved-panel,html.light .reference-card,html.light .adopt-card,html.l
 @media(max-width:1040px){.reference-grid{grid-template-columns:repeat(3,1fr)}.saved-list{grid-template-columns:1fr 1fr}}
 @media(max-width:760px){.product-intro{grid-template-columns:1fr}.reference-grid,.adopt-grid,.frontier{grid-template-columns:1fr 1fr}.product-source{align-items:flex-start;flex-direction:column}}
 @media(max-width:560px){.saved-head{align-items:flex-start}.saved-list,.reference-grid,.adopt-grid,.frontier{grid-template-columns:1fr}.cmp-actions,.saved-actions{align-items:stretch}.decision-tool{flex:1}.persist-note{width:100%}}
+/* ---------- Sistema público distrital · V28 ---------- */
+nav a.nav-district{color:#ffe3a3;border:1px solid rgba(240,178,77,.22);background:linear-gradient(135deg,rgba(240,178,77,.10),rgba(107,166,255,.07))}
+nav a.nav-district.active{color:#fff;border-color:rgba(255,211,125,.38);background:linear-gradient(135deg,rgba(170,112,25,.34),rgba(48,91,160,.27))}
+.district-section{padding-top:42px}.district-lead{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr);gap:15px;margin-bottom:15px}.district-thesis{position:relative;min-height:270px;padding:25px;border:1px solid rgba(240,178,77,.18);border-radius:20px;background:radial-gradient(circle at 85% 20%,rgba(240,178,77,.15),transparent 42%),linear-gradient(145deg,rgba(24,31,43,.98),rgba(12,20,31,.94));overflow:hidden}.district-thesis small{color:#ffd087;font-size:9px;font-weight:760;letter-spacing:.13em;text-transform:uppercase}.district-thesis h3{max-width:650px;color:var(--ink);font:650 clamp(27px,3.1vw,42px)/1.08 'Fraunces',Georgia,serif;letter-spacing:-.03em;margin:16px 0 13px;text-wrap:balance}.district-thesis p{max-width:680px;color:var(--ink-2);font-size:12px;line-height:1.6}.district-thesis .district-stamp{position:absolute;right:22px;bottom:17px;color:rgba(255,224,163,.30);font:650 52px/1 'Fraunces',Georgia,serif;letter-spacing:-.04em}
+.district-kpis{display:grid;grid-template-columns:1fr 1fr;gap:8px}.district-kpi{display:flex;flex-direction:column;justify-content:center;min-height:131px;padding:17px;border:1px solid rgba(151,180,222,.13);border-radius:16px;background:linear-gradient(150deg,rgba(17,27,41,.96),rgba(10,17,27,.91))}.district-kpi small{color:var(--muted);font-size:8px;text-transform:uppercase;letter-spacing:.1em}.district-kpi strong{display:block;color:var(--ink);font:650 29px/1 'Fraunces',Georgia,serif;margin:10px 0 6px}.district-kpi span{color:var(--muted);font-size:9px;line-height:1.35}
+.district-roles{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-bottom:14px}.district-role{--dist:var(--s1);position:relative;min-height:245px;padding:18px;border:1px solid rgba(151,180,222,.14);border-radius:17px;background:linear-gradient(150deg,rgba(18,27,41,.96),rgba(11,18,29,.91));overflow:hidden}.district-role::after{content:"";position:absolute;inset:auto 0 0;height:3px;background:var(--dist)}.district-role-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}.district-role small{color:var(--muted);font-size:8px;text-transform:uppercase;letter-spacing:.09em}.district-role h3{color:var(--ink);font:650 22px/1.1 'Fraunces',Georgia,serif;margin-top:5px}.district-share{display:grid;place-items:center;min-width:48px;height:48px;border-radius:14px;background:color-mix(in srgb,var(--dist) 13%,transparent);color:var(--dist);font:650 14px/1 'Fraunces',Georgia,serif}.district-role>p{min-height:42px;color:var(--ink-2);font-size:10px;line-height:1.45;margin:13px 0}.district-role-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:5px}.district-role-stats div{padding:9px 7px;border-radius:9px;background:rgba(151,180,222,.055)}.district-role-stats b{display:block;color:var(--ink);font-size:13px;margin-bottom:3px}.district-role-stats span{display:block;color:var(--muted);font-size:7.5px;line-height:1.25}.district-role .role-foot{display:block;color:var(--muted);font-size:8px;line-height:1.35;margin-top:12px}
+.district-tabs{display:flex;flex-wrap:wrap;gap:7px;margin:3px 0 12px}.district-tabs button{min-height:44px;padding:8px 14px;border:1px solid rgba(151,180,222,.15);border-radius:10px;background:var(--surface-2);color:var(--ink-2);font-family:inherit;font-size:10.5px;font-weight:730;line-height:1.2;cursor:pointer}.district-tabs button.on{color:#fff;border-color:rgba(240,178,77,.38);background:linear-gradient(135deg,rgba(166,108,23,.38),rgba(54,93,151,.28))}.district-panel[hidden]{display:none}.district-grains{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px}.district-grain{padding:14px;border:1px solid rgba(151,180,222,.12);border-radius:13px;background:rgba(13,21,32,.65)}.district-grain small{color:var(--muted);font-size:8px;text-transform:uppercase;letter-spacing:.09em}.district-grain b{display:block;color:var(--ink);font-size:12px;margin:7px 0 4px}.district-grain p{color:var(--muted);font-size:9px;line-height:1.4}.district-grain.current{border-color:rgba(240,178,77,.20);background:rgba(240,178,77,.045)}
+.district-explorer{padding:18px;border:1px solid rgba(151,180,222,.13);border-radius:17px;background:linear-gradient(150deg,rgba(16,25,38,.95),rgba(10,17,27,.90))}.district-filterbar{display:grid;grid-template-columns:1.4fr repeat(3,minmax(130px,.55fr));gap:7px;margin:13px 0}.district-filterbar input,.district-filterbar select{min-height:44px;border:1px solid rgba(151,180,222,.16);border-radius:10px;background:var(--surface-2);color:var(--ink);padding:8px 10px;font:inherit;font-size:10.5px}.district-result-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:9px}.district-result-head b{color:#ffd087;font-size:11px}.district-result-head span{color:var(--muted);font-size:9px}.district-table{max-height:560px;overflow:auto;border:1px solid rgba(151,180,222,.12);border-radius:12px}.district-table table{min-width:980px}.district-table td,.district-table th{font-size:9.5px}.district-table td:first-child{min-width:245px;color:var(--ink-2)}.district-program-name{color:var(--ink);font-weight:650}.district-accred{display:inline-flex;padding:3px 6px;border-radius:7px;color:#78e3c3;background:rgba(62,214,170,.09);font-size:8px}.district-none{padding:28px;text-align:center;color:var(--muted);font-size:11px}
+.district-fin-note{display:flex;align-items:flex-start;gap:10px;padding:13px 15px;margin-bottom:11px;border:1px solid rgba(240,178,77,.18);border-radius:13px;background:rgba(240,178,77,.045);color:var(--muted);font-size:9.5px;line-height:1.5}.district-fin-note b{color:#ffd087}.district-fin-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(280px,.65fr);gap:10px}.district-fin-table{overflow:auto;border:1px solid rgba(151,180,222,.12);border-radius:14px}.district-fin-table table{min-width:900px}.district-fin-table td,.district-fin-table th{font-size:9.5px}.district-balance{display:grid;gap:8px}.district-balance article{padding:15px;border:1px solid rgba(151,180,222,.12);border-radius:13px;background:rgba(13,21,32,.66)}.district-balance small{color:var(--muted);font-size:8px;text-transform:uppercase;letter-spacing:.09em}.district-balance b{display:block;color:var(--ink);font:650 18px/1.2 'Fraunces',Georgia,serif;margin:7px 0}.district-balance p{color:var(--muted);font-size:9px;line-height:1.45}
+.district-agenda{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.district-agenda article{min-height:205px;padding:17px;border:1px solid rgba(151,180,222,.13);border-radius:15px;background:linear-gradient(150deg,rgba(17,26,40,.95),rgba(10,17,27,.90))}.district-agenda small{color:#ffd087;font-size:8px;font-weight:760;text-transform:uppercase;letter-spacing:.1em}.district-agenda h3{color:var(--ink);font:650 17px/1.23 'Fraunces',Georgia,serif;margin:10px 0 7px}.district-agenda p{color:var(--muted);font-size:9.5px;line-height:1.5}.district-agenda span{display:block;color:#a9cbff;font-size:8.5px;margin-top:12px}.district-source{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:12px;padding:11px 13px;border:1px solid rgba(151,180,222,.12);border-radius:12px;background:rgba(10,16,25,.62);font-size:9px}.district-source div{display:flex;flex-wrap:wrap;gap:6px}.district-source a{padding:4px 7px;border-radius:7px;background:rgba(151,180,222,.07)}.district-source>span{color:var(--muted);text-align:right;max-width:370px}
+html.light .district-thesis,html.light .district-kpi,html.light .district-role,html.light .district-explorer,html.light .district-agenda article{background:linear-gradient(145deg,rgba(255,255,255,.98),rgba(244,248,252,.95))}html.light .district-grain,html.light .district-balance article{background:rgba(255,255,255,.72)}
+@media(max-width:980px){.district-lead,.district-fin-grid{grid-template-columns:1fr}.district-roles{grid-template-columns:1fr 1fr}.district-role:last-child{grid-column:1/-1}.district-filterbar{grid-template-columns:1fr 1fr}}
+@media(max-width:680px){.district-roles,.district-agenda,.district-grains{grid-template-columns:1fr}.district-role:last-child{grid-column:auto}.district-kpis{grid-template-columns:1fr 1fr}.district-thesis{min-height:320px}.district-filterbar{grid-template-columns:1fr}.district-result-head,.district-source{align-items:flex-start;flex-direction:column}.district-source>span{text-align:left}.district-tabs button{flex:1}}
+@media(max-width:430px){.district-kpis{grid-template-columns:1fr}.district-thesis .district-stamp{font-size:38px}}
 /* ---------- tema claro ---------- */
 html.light{--page:#f4f7fb;--surface:#ffffff;--surface-2:#eaf0f7;--ink:#151b25;--ink-2:#354052;--muted:#68758a;
   --grid:#dde5ef;--baseline:#b9c5d5;--border:rgba(31,63,102,.14);
@@ -694,6 +708,7 @@ html.light #arriba{box-shadow:0 4px 18px rgba(0,0,0,.15)}
   <a class="sec nav-path" href="#trayectorias">Trayectorias</a>
   <a class="sec" href="#panorama">Panorama</a>
   <a class="sec" href="#instituciones">Instituciones</a>
+  <a class="sec nav-district" href="#distrito">IES Distrito</a>
   <a class="sec" href="#territorio">Territorio</a>
   <a class="sec" href="#decidir">Decidir</a>
   <a class="sec" href="#oferta">Oferta</a>
@@ -739,7 +754,7 @@ html.light #arriba{box-shadow:0 4px 18px rgba(0,0,0,.15)}
       <div class="core-signals">
         <div class="core-signal"><b>51</b><span>municipios con oferta</span></div>
         <div class="core-signal"><b>18</b><span>decisiones de acreditación monitorizadas</span></div>
-        <div class="core-signal"><b>V27</b><span>decisiones que permanecen</span></div>
+        <div class="core-signal"><b>V28</b><span>sistema público distrital</span></div>
       </div>
     </aside>
   </div>
@@ -1025,6 +1040,81 @@ html.light #arriba{box-shadow:0 4px 18px rgba(0,0,0,.15)}
     </div>
   </div>
   <div class="callout" id="hallazgo-ies"></div>
+</section>
+
+<!-- ================= IES DEL DISTRITO ================= -->
+<section id="distrito" class="district-section">
+  <div class="sec-head"><span class="sec-num">V28</span><h2>Las tres IES del Distrito: leerlas como un sistema público</h2></div>
+  <p class="sec-desc">ITM, Pascual Bravo y Colegio Mayor de Antioquia son establecimientos públicos adscritos al Distrito de Medellín. Este capítulo cruza la convocatoria 2026-2, los catálogos institucionales, el SNIES comparable y los estados financieros para responder una pregunta de ciudad: <b style="color:var(--ink-2)">¿qué capacidad pública tenemos, cómo se diferencia y qué hace falta coordinar?</b></p>
+
+  <div class="district-lead">
+    <article class="district-thesis">
+      <small>Lectura estratégica · no ranking</small>
+      <h3>Tres instituciones, una oportunidad de portafolio público.</h3>
+      <p>La escala del ITM, la vocación industrial y creativa del Pascual y la especialización de Colmayor son más complementarias que redundantes. El reto no es elegir una ganadora: es conectar trayectorias, cupos, sedes, financiación y resultados bajo una visión compartida.</p>
+      <span class="district-stamp">3 → 1</span>
+    </article>
+    <div class="district-kpis" aria-label="Cifras principales del sistema distrital">
+      <article class="district-kpi"><small>Matrícula 2025-2</small><strong>43.801</strong><span>Reportada conjuntamente por el Distrito</span></article>
+      <article class="district-kpi"><small>Cupos 2026-2</small><strong>&gt;12.200</strong><span>Pregrado y posgrado en la convocatoria</span></article>
+      <article class="district-kpi"><small>Inventario comparable</small><strong>138</strong><span>Registros de programa SNIES 2024</span></article>
+      <article class="district-kpi"><small>Presupuesto 2026</small><strong>$540.680 M</strong><span>Suma de presupuestos aprobados</span></article>
+    </div>
+  </div>
+
+  <div class="district-roles" id="district-roles" aria-label="Roles de las tres instituciones"></div>
+
+  <div class="district-tabs" role="group" aria-label="Vistas del capítulo distrital">
+    <button type="button" class="on" data-district-tab="oferta" aria-pressed="true">Oferta y programas</button>
+    <button type="button" data-district-tab="finanzas" aria-pressed="false">Estados financieros</button>
+    <button type="button" data-district-tab="agenda" aria-pressed="false">Agenda de decisiones</button>
+  </div>
+  <p class="sr-only" id="district-status" aria-live="polite"></p>
+
+  <div class="district-panel" data-district-panel="oferta">
+    <div class="district-grains">
+      <article class="district-grain current"><small>Convocatoria 2026-2</small><b>≈142 programas · ≥12.216 cupos</b><p>La publicación distrital informa 60 en ITM, 42 en Pascual y cerca de 40 en Colmayor. Es la foto de admisiones, no un inventario regulatorio.</p></article>
+      <article class="district-grain"><small>Catálogo web · 15 jul. 2026</small><b>138 entradas visibles</b><p>El scraping reproduce páginas institucionales; puede incluir modalidades separadas o programas sin cupo abierto.</p></article>
+      <article class="district-grain"><small>SNIES consolidado 2024</small><b>138 registros comparables</b><p>Es el universo usado abajo para comparar nivel, modalidad, matrícula y acreditación con una misma definición.</p></article>
+    </div>
+    <div class="district-explorer">
+      <div><small style="color:#ffd087;font-size:8px;font-weight:760;letter-spacing:.11em;text-transform:uppercase">Explorador público</small><h3 style="font:650 21px/1.2 'Fraunces',Georgia,serif;margin-top:6px">¿Qué ofrece cada institución y dónde se concentra?</h3></div>
+      <div class="district-filterbar">
+        <input id="district-q" type="search" placeholder="Buscar programa o área…" aria-label="Buscar programa distrital">
+        <select id="district-ies" aria-label="Filtrar por institución"><option value="">Las tres IES</option></select>
+        <select id="district-level" aria-label="Filtrar por nivel"><option value="">Todos los niveles</option></select>
+        <select id="district-mode" aria-label="Filtrar por modalidad"><option value="">Todas las modalidades</option></select>
+      </div>
+      <div class="district-result-head"><b id="district-count">Cargando inventario…</b><span>Orden: matrícula 2024-II · máximo 60 filas visibles</span></div>
+      <div class="district-table" id="district-programs"></div>
+    </div>
+  </div>
+
+  <div class="district-panel" data-district-panel="finanzas" hidden>
+    <div class="district-fin-note"><span aria-hidden="true">◇</span><p><b>Tres cifras, tres preguntas distintas.</b> Presupuesto = autorización para 2026; recaudo = flujo presupuestal observado en 2025; resultado contable = ingresos menos costos y gastos bajo contabilidad pública. No se restan entre sí. Pascual tiene corte marzo de 2026; por eso su resultado no se compara como año completo.</p></div>
+    <div class="district-fin-grid">
+      <div class="district-fin-table" id="district-finance"></div>
+      <div class="district-balance">
+        <article><small>Escala operativa</small><b>ITM ejecuta mucho más que su presupuesto inicial</b><p>Los convenios —principalmente públicos— explican que el recaudo 2025 supere ampliamente el presupuesto aprobado. Eso es capacidad de gestión, pero también exposición a ingresos no permanentes.</p></article>
+        <article><small>Dependencia formal</small><b>Colmayor: 76,4 %</b><p>Es la mayor proporción de recursos estatales de las tres. Su especialización puede justificar más intensidad de recursos, pero exige vigilar sostenibilidad y demanda.</p></article>
+        <article><small>Comparabilidad pendiente</small><b>Cierre 2025 de Pascual no visible</b><p>El portal financiero muestra anexos a marzo de 2026, pero el bloque 2025 no despliega documentos. MaterIA publica el último corte disponible y conserva el vacío.</p></article>
+      </div>
+    </div>
+  </div>
+
+  <div class="district-panel" data-district-panel="agenda" hidden>
+    <div class="district-agenda">
+      <article><small>01 · Portafolio</small><h3>Coordinar trayectorias, no solo nombres</h3><p>Hay tres coincidencias exactas de nombre entre IES en el SNIES, pero muchas ofertas relacionadas. La ciudad necesita rutas técnico–tecnológico–profesional–posgrado con homologación y orientación compartida.</p><span>Indicador: tránsito y créditos homologados entre las tres IES</span></article>
+      <article><small>02 · Capacidad</small><h3>Publicar cupos por programa y jornada</h3><p>La convocatoria agrega más de 12.200 cupos, pero no ofrece una tabla conjunta por programa, campus, horario y modalidad. Sin ese grano no se puede detectar sobreoferta ni demanda insatisfecha.</p><span>Indicador: aspirantes, admitidos y matriculados por cupo</span></article>
+      <article><small>03 · Territorio</small><h3>Distinguir sede, cohorte y extensión</h3><p>Pascual reporta presencia en 47 municipios, mientras el consolidado SNIES 2024 ubica su matrícula comparable en Medellín. Ambas cifras pueden ser ciertas: describen unidades distintas.</p><span>Indicador: estudiantes activos por municipio y tipo de convenio</span></article>
+      <article><small>04 · Permanencia</small><h3>Seguir cohortes hasta graduación</h3><p>El tamaño de matrícula no demuestra movilidad social. Se requieren retención, rezago, graduación, tiempo al título y apoyos recibidos por programa y perfil socioeconómico.</p><span>Indicador: supervivencia de cohorte a 2, 4 y 6 semestres</span></article>
+      <article><small>05 · Retorno</small><h3>Vincular oferta con empleo e ingreso</h3><p>Software, industria, salud, hábitat y turismo responden a mercados distintos. La pertinencia debe contrastarse con ocupación, formalidad, salario y demanda empresarial sin reducirla a un único ranking.</p><span>Indicador: vinculación y brecha salarial por programa</span></article>
+      <article><small>06 · Finanzas</small><h3>Separar base, gratuidad y convenios</h3><p>Los tres flujos tienen estabilidad y riesgos diferentes. Un tablero distrital debería mostrar cuánto crecimiento depende de recursos permanentes y cuánto de proyectos o giros por estudiante.</p><span>Indicador: ingreso recurrente por estudiante y liquidez</span></article>
+    </div>
+  </div>
+
+  <div class="district-source"><div><a href="ies-distritales.json" target="_blank" rel="noopener">Datos y fuentes JSON ↗</a><a href="https://www.medellin.gov.co/es/sala-de-prensa/noticias/hay-mas-de-12-200-cupos-disponibles-para-estudiar-desde-el-segundo-semestre-pregrado-y-posgrado-en-medellin/" target="_blank" rel="noopener">Convocatoria 2026-2 ↗</a><a href="https://www.medellin.gov.co/es/sala-de-prensa/noticias/medellin-fortalece-el-acceso-a-la-educacion-superior-publica-mas-de-43-000-estudiantes-matriculados/" target="_blank" rel="noopener">Matrícula 2025-2 ↗</a></div><span>Scraping reproducible: <code>scripts/scrapear_ies_distritales.py</code>. Los cortes y límites viajan con cada cifra.</span></div>
+  <div class="callout" id="district-finding"><b>La oportunidad pública:</b> el Distrito ya tiene escala, diversidad y músculo financiero. Lo que todavía no publica como sistema es la relación entre <b>cupos → ingreso → permanencia → graduación → empleo</b>. Esa cadena —no otro ranking— es la siguiente decisión de datos.</div>
 </section>
 
 <!-- ================= TERRITORIO ================= -->
@@ -1861,6 +1951,7 @@ html.light #arriba{box-shadow:0 4px 18px rgba(0,0,0,.15)}
       <ul id="fuentes"></ul>
       <p style="margin-top:14px">Notas: (1) La matrícula anual corresponde al semestre con mayor total de cada vigencia — sumar semestres duplicaría estudiantes. Para 2024, el corte usado es 2024-II (313.583; 2024-I registró 300.246). (2) Los indicadores OLE se restringen a IES con domicilio en Antioquia; se excluyen SENA y UNAD por ser instituciones de alcance nacional cuyos graduados no son separables por departamento en esa base; la especialización se omite de la tasa de vinculación por cobertura insuficiente. (3) La serie 2015–2017 de la base histórica del MEN se descartó por inconsistencias de reporte semestral. (4) Saber TyT usa la escala 0–200 vigente desde 2017-3; el sector de cada IES se toma del SNIES por errores de registro en la base ICFES. (5) Los grupos de investigación corresponden a los resultados finales de la Convocatoria 957 de 2024 (Resolución 1531 de dic. 2025, listado oficial de Minciencias); como el listado no trae departamento, este se asigna por código GrupLAC contra la base histórica de convocatorias (90 % de cobertura) y, para grupos nuevos, por institución avaladora domiciliada en Antioquia. (6) Los resultados Saber Pro (nivel universitario) no están disponibles como microdato abierto completo en datos.gov.co; se incorporarán desde DataIcfes en la próxima versión. (7) Los niveles MCER de inglés se agregan desde el microdato Saber TyT vía API; los rótulos históricos (A-, -A1, Pre-A1, B+) se homologan a la escala vigente. (8) La división subregional corresponde a la usada por la Gobernación de Antioquia. (9) El radar «La foto 2025–2026» recoge cifras autorreportadas en rendiciones de cuentas, informes de gestión, boletines estadísticos y tableros oficiales de las IES (verificadas documento por documento en julio de 2026); sus cortes y definiciones varían entre instituciones y no son directamente comparables entre sí ni con el SNIES — la tendencia de cada fila sí es consistente porque proviene de la serie de la misma fuente. Las bases consolidadas SNIES 2025 no estaban publicadas al corte (patrón anual: se publican hacia julio–agosto del año siguiente). (10) La razón subregional de oferta divide la matrícula de pregrado 2024-II ofertada en la subregión por la población proyectada de 17 a 21 años (DANE, 2024): mide capacidad instalada, no es la tasa oficial de cobertura ni asistencia de residentes, por lo que las subregiones que atraen estudiantes pueden superar el 100 %. (11) El puntaje Saber TyT por municipio promedia los cinco módulos y solo se reporta con 50 o más evaluados. (12) El benchmark interdepartamental y la proyección de población 17-21 son cálculos propios sobre las bases consolidadas nacionales del SNIES y las proyecciones municipales del DANE (CNPV 2018), reproducibles con scripts/benchmark_deptos.py y scripts/proyeccion_demografica.py. (13) La sección de acreditación se construyó sobre las fuentes primarias del régimen (Ley 30 de 1992, Decreto 1330 de 2019, Acuerdos CESU 02 de 2020 y 01 de 2025 con su transición 2026-2027) y la verificación resolución por resolución del estado de cada IES en julio de 2026; los estados «en renovación» reflejan la información pública disponible y pueden resolverse en el segundo semestre de 2026. (14) La sección de finanzas lee los documentos primarios de cada IES (acuerdos de presupuesto 2026, ejecuciones y EEFF a dic-2025) y verifica las ejecuciones contra el CUIPO de la Contraloría vía datos.gov.co (ingresos 9axr-9gnb, gastos 4f7r-epif; códigos CHIP: UdeA 120205000, UNAL 27400000, ITM 260105001, Pascual Bravo 821505000, Colmayor 824505000, TdeA 121705000, Poli JIC 120305000, IU Digital 923272870, IUE 262505266); los porcentajes de dependencia «real» son estimaciones documentadas.</p>
       <p style="margin-top:10px"><b style="color:var(--ink-2)">Nota 15 — redes sociales:</b> el capítulo compara una huella pública disponible en cortes 2025–2026. Los seguidores son audiencia potencial bruta, no alcance único; el índice pondera audiencia, eficiencia audiovisual, cadencia y equilibrio multicanal dentro de una muestra de 12 IES. TikTok y LinkedIn se presentan aparte porque no existe una extracción pública homogénea para toda la muestra. Datos, cortes y fórmula: <a href="redes-sociales.json" target="_blank" rel="noopener">redes-sociales.json ↗</a>.</p>
+      <p style="margin-top:10px"><b style="color:var(--ink-2)">Nota 16 — IES del Distrito:</b> el capítulo mantiene cuatro universos separados: convocatoria distrital 2026-2, páginas visibles de los catálogos institucionales al 15 de julio de 2026, registros comparables SNIES 2024 y estados financieros con sus cortes propios. «Programa anunciado», «entrada web» y «registro SNIES» no son sinónimos. En finanzas, presupuesto, recaudo y resultado contable tampoco se restan entre sí. El resultado de Pascual Bravo corresponde al primer trimestre de 2026; los de ITM y Colmayor, al cierre de 2025. Datos y límites: <a href="ies-distritales.json" target="_blank" rel="noopener">ies-distritales.json ↗</a>.</p>
     </div>
     <div>
       <h4>Sobre MaterIA Gris</h4>
@@ -3893,6 +3984,62 @@ const FIN_AL=[
   document.getElementById('hallazgo-finanzas').innerHTML=`<b>La paradoja fiscal del sistema:</b> las IU públicas baten récords de matrícula CON superávits (ITM +$96.722 M, TdeA +$52.043 M, IU Digital +$45.245 M) porque la gratuidad les llega como ingreso — mientras la única universidad en crisis abierta es la <b>UdeA (−$377.537 M de desfinanciación)</b>, cuyo problema no es la gratuidad sino la base presupuestal de la Ley 30. Y el costo de crecer rápido lo paga hoy la IU de Envigado: +23 % de matrícula con $17.663 M de la Nación sin llegar. El Estado ya no financia la oferta: compra cupos — y a veces paga tarde.`;
 })();
 
+/* ---- IES del Distrito V28: oferta, portafolio y estados financieros ---- */
+(function(){
+  const root=document.getElementById('distrito');if(!root)return;
+  const tabs=[...root.querySelectorAll('[data-district-tab]')];
+  const panels=[...root.querySelectorAll('[data-district-panel]')];
+  const status=document.getElementById('district-status');
+  const activate=name=>{
+    tabs.forEach(b=>{const on=b.dataset.districtTab===name;b.classList.toggle('on',on);b.setAttribute('aria-pressed',String(on));});
+    panels.forEach(p=>p.hidden=p.dataset.districtPanel!==name);
+    if(status)status.textContent='Vista '+(tabs.find(b=>b.dataset.districtTab===name)?.textContent||name)+' activa';
+  };
+  tabs.forEach(b=>b.addEventListener('click',()=>activate(b.dataset.districtTab)));
+
+  const esc=value=>String(value??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+  const normalize=value=>String(value||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+  const money=value=>'$'+Number(value).toLocaleString('es-CO',{maximumFractionDigits:0})+' M';
+  const signed=value=>(Number(value)>=0?'+$':'−$')+Number(Math.abs(Number(value))).toLocaleString('es-CO',{maximumFractionDigits:0})+' M';
+  const colors={itm:'#78aef5',pascual:'#ffd087',colmayor:'#78e3c3'};
+
+  fetch('ies-distritales.json').then(r=>{if(!r.ok)throw new Error('HTTP '+r.status);return r.json();}).then(data=>{
+    const total=data.sistema.matricula_2025_2;
+    const roles=document.getElementById('district-roles');
+    roles.innerHTML=data.instituciones.map(i=>{
+      const share=100*i.matricula_2025_2/total;
+      const offerPrefix=i.programas_calificador==='cerca de'?'≈':'';
+      const cupPrefix=i.cupos_calificador==='más de'?'>':'';
+      const acreditada=i.snies_2024.matricula?100*i.snies_2024.matricula_acreditada/i.snies_2024.matricula:0;
+      return `<article class="district-role" style="--dist:${colors[i.id]}"><div class="district-role-top"><div><small>${esc(i.rol)}</small><h3>${esc(i.nombre_corto)}</h3></div><span class="district-share">${share.toLocaleString('es-CO',{maximumFractionDigits:1})}%</span></div><p>${esc(i.alcance_territorial_2026)}</p><div class="district-role-stats"><div><b>${fmt(i.matricula_2025_2)}</b><span>matrícula 2025-2</span></div><div><b>${offerPrefix}${fmt(i.programas_convocatoria_2026_2)}</b><span>programas anunciados</span></div><div><b>${cupPrefix}${fmt(i.cupos_2026_2)}</b><span>cupos 2026-2</span></div></div><span class="role-foot">SNIES 2024: ${i.snies_2024.registros} registros · ${acreditada.toLocaleString('es-CO',{maximumFractionDigits:1})} % de matrícula en programas acreditados · ${i.catalogo_web.registros_visibles} entradas visibles en catálogo web</span></article>`;
+    }).join('');
+
+    const programs=data.programas_snies_2024;
+    const ies=document.getElementById('district-ies'),level=document.getElementById('district-level'),mode=document.getElementById('district-mode'),query=document.getElementById('district-q');
+    data.instituciones.forEach(i=>ies.add(new Option(i.nombre_corto,i.id)));
+    [...new Set(programs.map(p=>p.nivel))].sort().forEach(v=>level.add(new Option(v,v)));
+    [...new Set(programs.map(p=>p.modalidad))].sort().forEach(v=>mode.add(new Option(v,v)));
+    const renderPrograms=()=>{
+      const q=normalize(query.value);
+      const rows=programs.filter(p=>(!ies.value||p.ies_id===ies.value)&&(!level.value||p.nivel===level.value)&&(!mode.value||p.modalidad===mode.value)&&(!q||normalize(p.programa+' '+p.area+' '+p.ies_corto).includes(q)));
+      const count=document.getElementById('district-count'),host=document.getElementById('district-programs');
+      const enrolled=rows.reduce((s,p)=>s+Number(p.matricula24||0),0);
+      count.textContent=`${fmt(rows.length)} registros · ${fmt(enrolled)} estudiantes`;
+      if(!rows.length){host.innerHTML='<div class="district-none">No hay programas que coincidan con estos filtros.</div>';return;}
+      host.innerHTML='<table><thead><tr><th>Programa</th><th>IES</th><th>Nivel</th><th>Modalidad</th><th class="num">Matrícula</th><th>Calidad</th><th>Área</th><th class="num">SNIES</th></tr></thead><tbody>'+rows.slice(0,60).map(p=>`<tr><td><span class="district-program-name">${esc(p.programa)}</span></td><td>${esc(p.ies_corto)}</td><td>${esc(p.nivel)}</td><td>${esc(p.modalidad)}</td><td class="num">${fmt(p.matricula24)}</td><td>${p.acreditado?'<span class="district-accred">Acreditado</span>':'—'}</td><td class="wrapcell">${esc(p.area)}</td><td class="num">${esc(p.snies)}</td></tr>`).join('')+'</tbody></table>'+(rows.length>60?`<p class="note" style="margin:10px 12px">Se muestran los 60 registros con mayor matrícula de ${fmt(rows.length)} resultados.</p>`:'');
+    };
+    [ies,level,mode].forEach(el=>el.addEventListener('change',renderPrograms));query.addEventListener('input',renderPrograms);renderPrograms();
+
+    const finance=document.getElementById('district-finance');
+    finance.innerHTML='<table><thead><tr><th>IES</th><th class="num">Ppto 2026</th><th class="num">Recaudo 2025</th><th class="num">% Estado</th><th class="num">Activo</th><th class="num">Pasivo</th><th class="num">Patrimonio</th><th class="num">Resultado contable</th><th>Corte</th><th>Fuentes</th></tr></thead><tbody>'+data.instituciones.map(i=>{const f=i.finanzas;const partial=f.corte_resultado!=='2025-12-31';return `<tr><td><b style="color:var(--ink)">${esc(i.nombre_corto)}</b></td><td class="num">${money(f.presupuesto_2026_millones)}</td><td class="num">${money(f.recaudo_2025_millones)}</td><td class="num">${f.recursos_estado_pct.toLocaleString('es-CO')} %</td><td class="num">${money(f.activo_millones)}</td><td class="num">${money(f.pasivo_millones)}</td><td class="num">${money(f.patrimonio_millones)}</td><td class="num" style="color:${f.resultado_contable_millones>=0?'#78e3c3':'#ff9b9b'}">${signed(f.resultado_contable_millones)}${partial?' *':''}</td><td>${partial?'mar. 2026*':'dic. 2025'}</td><td><a href="${esc(f.fuente_presupuesto_2026)}" target="_blank" rel="noopener">ppto ↗</a> · <a href="${esc(f.fuente_eeff)}" target="_blank" rel="noopener">EEFF ↗</a></td></tr>`;}).join('')+'</tbody></table><p class="note" style="margin:10px 12px">Millones de pesos. * Pascual Bravo: trimestre enero–marzo de 2026; no comparable como cierre anual. Recaudo y resultado contable provienen de sistemas de registro diferentes. La trazabilidad completa —incluida la fuente de ejecución— viaja en el JSON.</p>';
+  }).catch(error=>{
+    document.getElementById('district-roles').innerHTML='<div class="district-none" style="grid-column:1/-1">No fue posible cargar el corte distrital. Consulte el archivo JSON enlazado al final del capítulo.</div>';
+    document.getElementById('district-programs').innerHTML='<div class="district-none">Datos temporalmente no disponibles.</div>';
+    document.getElementById('district-finance').innerHTML='<div class="district-none">Datos temporalmente no disponibles.</div>';
+    if(status)status.textContent='Error de carga del capítulo distrital';console.error('IES Distrito V28',error);
+  });
+})();
+
 /* ---- Trayectorias V26: cálculo reproducible y matriz editorial ---- */
 (function(){
   const emb=D.embudo||{};
@@ -3967,6 +4114,7 @@ const FIN_AL=[
     producto:['Revisión de producto documentada','15 jul. 2026','¿Qué patrón externo mejora la decisión sin diluir la ventaja territorial?'],
     panorama:['SNIES','2018–2024','¿El sistema crece o cambia de composición?'],
     instituciones:['SNIES + IES','2024-II / señales 2026','¿Qué capacidad institucional sostiene el crecimiento?'],
+    distrito:['Distrito + catálogos + SNIES + EEFF','2024–2026 · cortes separados','¿Cómo coordinar oferta, cupos y sostenibilidad de las tres IES públicas?'],
     territorio:['SNIES + DANE','2024','¿Dónde una inversión cerraría una brecha verificable?'],
     decidir:['SNIES','2024-II','¿Qué opciones cumplen los criterios sin usar un ranking?'],
     oferta:['SNIES','2024-II','¿Dónde hay diversidad y dónde oferta nominal?'],
@@ -3996,7 +4144,8 @@ const FIN_AL=[
     ejecutivo:{q:'¿Qué exige decisión ahora?',i:'Cuatro tensiones se cruzan: recuperación incompleta, concentración territorial, contracción TyT y una población joven que empezará a disminuir con fuerza.',n:'La agenda es una priorización editorial basada en evidencia; no es una calificación automática ni sustituye la deliberación institucional.',f:'SNIES + DANE + MEN · cortes declarados',to:'trayectorias',cta:'Seguir la trayectoria completa'},
     trayectorias:{q:'¿En qué punto se pierde una oportunidad educativa?',i:'La respuesta cambia según la etapa: aspirar, acceder, permanecer, aprender, graduarse o vincularse. MaterIA separa los universos para que una brecha no se confunda con otra.',n:'Permanencia y graduación se muestran como referencias nacionales hasta contar con una extracción departamental reproducible.',f:'SNIES + SPADIES + ICFES + OTE + OLE',to:'territorio',cta:'Localizar la brecha'},
     panorama:{q:'¿El sistema está creciendo o se está recomponiendo?',i:'Ambas cosas. La recuperación de 2024 está impulsada por lo universitario y lo oficial; la educación técnica y tecnológica sigue por debajo de su nivel de 2018.',n:'Compare siempre niveles y modalidades: el total, por sí solo, esconde cambios estructurales.',f:'SNIES 2018–2024 · fuente oficial',to:'instituciones',cta:'Comparar instituciones'},
-    instituciones:{q:'¿Quién está creciendo y con qué tipo de oferta?',i:'El tamaño no cuenta toda la historia. La comparación reúne matrícula, programas, presencia territorial, acreditación, Saber TyT y capacidad investigativa.',n:'Use el comparador de hasta tres IES para observar fortalezas distintas sin convertir una cifra en un ranking absoluto.',f:'SNIES + señales autorreportadas',to:'territorio',cta:'Ver presencia territorial'},
+    instituciones:{q:'¿Quién está creciendo y con qué tipo de oferta?',i:'El tamaño no cuenta toda la historia. La comparación reúne matrícula, programas, presencia territorial, acreditación, Saber TyT y capacidad investigativa.',n:'Use el comparador de hasta tres IES para observar fortalezas distintas sin convertir una cifra en un ranking absoluto.',f:'SNIES + señales autorreportadas',to:'distrito',cta:'Abrir el sistema público distrital'},
+    distrito:{q:'¿Qué puede hacer Medellín si trata sus tres IES como una red?',i:'ITM aporta escala tecnológica y científica; Pascual conecta industria, software y diseño; Colmayor especializa la oferta en salud, hábitat, territorio, turismo y gastronomía.',n:'Convocatoria, catálogo web, SNIES y estados financieros tienen cortes distintos. MaterIA los mantiene separados para que una cifra reciente no se convierta en una comparación falsa.',f:'Distrito + ITM + Pascual + Colmayor + SNIES',to:'territorio',cta:'Conectar oferta con territorio'},
     territorio:{q:'¿Dónde llega realmente la educación superior?',i:'Solo 51 de los 125 municipios tienen oferta activa. El mapa permite separar capacidad instalada, posgrado, TyT, programas y desempeño.',n:'La razón de oferta no equivale a cobertura de residentes: algunos municipios reciben estudiantes de otros territorios.',f:'SNIES + DANE · auditado',to:'decidir',cta:'Reducir opciones'},
     decidir:{q:'¿Cómo reducir opciones sin aceptar un ranking opaco?',i:'El Modo Decisión cruza territorio, nivel, modalidad y área sobre los 2.107 programas activos. Devuelve coincidencias verificables, no una puntuación inventada.',n:'La matrícula de programas multisede está consolidada; úsela como señal de escala del programa, nunca como matrícula del municipio elegido.',f:'SNIES 2024-II · cálculo reproducible',to:'oferta',cta:'Abrir el universo completo'},
     oferta:{q:'¿La diversidad de programas responde al territorio?',i:'La oferta se concentra en Medellín y en áreas tradicionales. Filtrar por municipio, nivel y modalidad revela dónde existen opciones y dónde solo hay presencia nominal.',n:'Cruce programa, institución y municipio antes de interpretar un conteo agregado.',f:'SNIES 2024-II · fuente oficial',to:'economia',cta:'Contrastar oferta y demanda'},

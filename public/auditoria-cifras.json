@@ -1,7 +1,7 @@
 {
   "estado": "correcto",
   "fecha_auditoria": "2026-07-15",
-  "alcance": "Atlas territorial, Modo Decisión, Sala Ejecutiva, Trayectorias y comparativo de producto de MaterIA Gris V27",
+  "alcance": "Atlas territorial, Modo Decisión, Sala Ejecutiva, Trayectorias, comparativo de producto y sistema público distrital de MaterIA Gris V28",
   "fuentes": {
     "snies": {
       "descripcion": "Estudiantes Matriculados 2024, bases consolidadas SNIES–MEN",
@@ -91,6 +91,27 @@
     "intercambio": "enlaces con códigos SNIES o códigos de institución y briefs TXT descargables",
     "clasificacion": "Escala editorial documentada 0–3 sin suma total ni ranking de herramientas",
     "comprobante": "comparativo-producto.json"
+  },
+  "ies_distrito_v28": {
+    "instituciones": 3,
+    "matricula_distrito_2025_2": 43801,
+    "suma_matricula_instituciones": 43801,
+    "diferencia_suma_matricula": 0,
+    "cupos_convocatoria_2026_2_minimo": 12216,
+    "programas_anunciados_2026_2_aproximado": 142,
+    "registros_catalogos_web": 138,
+    "registros_snies_2024": 138,
+    "matricula_snies_2024": 40225,
+    "presupuesto_2026_millones": 540680,
+    "estados_financieros_documentados": 3,
+    "cortes_resultado": {
+      "ITM": "2025-12-31",
+      "Pascual Bravo": "2026-03-31",
+      "Colmayor": "2025-12-31"
+    },
+    "regla_comparabilidad": "Convocatoria, catálogo web, SNIES y estados financieros conservan sus cortes y definiciones; presupuesto, recaudo y resultado contable no se restan entre sí.",
+    "comprobante": "ies-distritales.json",
+    "reproduccion": "python3 scripts/scrapear_ies_distritales.py"
   },
   "reproduccion": "python3 scripts/auditar_atlas.py"
 }

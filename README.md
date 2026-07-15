@@ -6,7 +6,7 @@ Tablero de la educación superior del departamento de Antioquia — **pregrado y
 
 **En línea:** https://materia-gris.vercel.app
 **Espejo:** https://observatorio-educacion-antioquia.vercel.app
-**Autor:** Santiago Jiménez Londoño · Última versión: V27 (julio de 2026)
+**Autor:** Santiago Jiménez Londoño · Última versión: V28 (julio de 2026)
 
 ---
 
@@ -18,6 +18,7 @@ Tablero de la educación superior del departamento de Antioquia — **pregrado y
 | **Trayectorias y retorno** | ¿Dónde se rompe la oportunidad? Conecta aspiración, acceso, permanencia, aprendizaje, graduación y vínculo laboral sin fingir una cohorte única |
 | **Panorama** | ¿Cómo evolucionó la matrícula 2018-2024 por nivel, sector y modalidad? |
 | **Instituciones** | ¿Quién forma a Antioquia? 73 IES, comparador de hasta 3, docentes y radar de cifras 2025-2026 autorreportadas |
+| **IES del Distrito** | ¿Cómo se articulan ITM, Pascual Bravo y Colmayor? Oferta 2026-2, 138 registros SNIES, estados financieros y agenda de coordinación pública |
 | **Territorio** | ¿Dónde llega la oferta? Mapa municipal interactivo y comparador sincronizado de razón de oferta, presencia municipal y peso TyT |
 | **Modo Decisión** | ¿Cómo reducir opciones? Cruza territorio, nivel, modalidad y área sin fabricar un ranking de “mejores” programas |
 | **Producto comparado** | ¿Qué aprende MaterIA de OTE, College Scorecard, Discover Uni, Mi Futuro y Our World in Data? Matriz sin puntuación total y adopciones V27 |
@@ -50,6 +51,7 @@ scripts/
   preparar_poblacion.py  # extrae población 17-21 por municipio/subregión (DANE)
   procesar.py            # motor: data/ → public/datos.json + public/datos.js
   auditar_atlas.py       # contrasta el atlas publicado contra los XLSX oficiales
+  scrapear_ies_distritales.py # captura catálogos y construye el corte de las tres IES del Distrito
 public/
   index.html             # tablero completo (HTML+JS vanilla, SVG a mano, sin dependencias)
   datos.js               # datos agregados (generado — no editar a mano)
@@ -60,6 +62,7 @@ public/
   verificacion-v25.json  # controles reproducibles de la Sala Ejecutiva y sus cortes
   verificacion-v26.json  # seis etapas, fórmulas, jurisdicciones y límites de Trayectorias
   comparativo-producto.json # referentes, escala, capacidades, fuentes y adopciones V27
+  ies-distritales.json   # oferta, matrícula, finanzas, fuentes y límites del capítulo V28
 data/                    # insumos crudos — NO versionados (ver .gitignore)
 ```
 
@@ -71,6 +74,7 @@ python3 scripts/descargar_datos.py          # ≈500 MB; el archivo del DANE (12
 python3 scripts/preparar_poblacion.py       # población 17-21 por municipio y subregión
 python3 scripts/procesar.py                 # regenera public/datos.json y public/datos.js
 python3 scripts/auditar_atlas.py            # debe terminar con "estado": "correcto"
+python3 scripts/scrapear_ies_distritales.py # refresca catálogos y comprobante distrital
 vercel --prod                               # despliegue (prebuilt, sin build step)
 ```
 
@@ -118,6 +122,15 @@ Cuando el MEN publique la vigencia siguiente (histórico: hacia julio de cada a�
 9. **Seguidores no son alcance**: el capítulo de redes sociales suma audiencias públicas sin deduplicar y calcula un índice editorial sobre señales observables. El alcance único, las impresiones, la retención, el crecimiento y las conversiones requieren exportaciones privadas de cada plataforma. Datos y fórmula: `public/redes-sociales.json`.
 10. **Trayectorias no es un embudo longitudinal**: inscripciones y primer curso son registros SNIES 2024; Saber Pro corresponde a evaluados 2025; OLE observa cotización formal de graduados 2022; permanencia y graduación son referencias nacionales. Cada etapa conserva universo, jurisdicción y corte, y nunca se multiplican sus porcentajes.
 11. **El comparativo de producto no es un ranking**: observa capacidades públicas al 15 de julio de 2026 con una escala editorial de 0 a 3, pero no suma puntos. “No observada” significa que no apareció en las fuentes públicas revisadas, no que una funcionalidad privada sea imposible.
+12. **La oferta distrital tiene cuatro universos**: la convocatoria 2026-2 informa programas y cupos abiertos; los catálogos web muestran páginas visibles; el SNIES 2024 permite la comparación homogénea; los estados financieros tienen cortes propios. Programa anunciado, entrada web y registro SNIES no son sinónimos. Presupuesto, recaudo y resultado contable tampoco se restan entre sí. Pascual Bravo usa el último estado visible a marzo de 2026; ITM y Colmayor, cierre de 2025.
+
+### Sistema público distrital V28
+
+- **43.801 estudiantes en 2025-2**: ITM 28.107, Pascual Bravo 9.931 y Colmayor 5.763, según la publicación conjunta del Distrito.
+- **Al menos 12.216 cupos para 2026-2**: 8.600 en ITM, más de 1.600 en Pascual y 2.016 en Colmayor.
+- **138 registros comparables SNIES 2024**: 98 de pregrado y 40 de posgrado, con explorador por IES, nivel, modalidad, área y acreditación.
+- **$540.680 millones de presupuesto aprobado para 2026**, con presupuesto, recaudo y resultado contable presentados como magnitudes distintas.
+- **Agenda común**: portafolio articulado, cupos por programa y jornada, seguimiento de cohortes, resultados laborales y sostenibilidad por fuente de ingreso.
 
 ### Mejoras V27 tomadas de referentes
 
