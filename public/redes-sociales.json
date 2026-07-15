@@ -1,0 +1,77 @@
+{
+  "version": "V21",
+  "fecha_compilacion": "2026-07-14",
+  "alcance": "Huella pública de redes sociales de 12 instituciones de educación superior de Antioquia",
+  "advertencia": "Las cifras de seguidores son audiencia potencial bruta, no alcance único. La suma no deduplica personas entre plataformas y no incorpora pauta, impresiones, retención, crecimiento ni conversiones de los paneles privados.",
+  "cortes": {
+    "instagram": "2025-11",
+    "facebook": "2025-06",
+    "youtube": "2025-06",
+    "x": "2025-11",
+    "tiktok": "2026-07-14",
+    "linkedin": "2026-07-14"
+  },
+  "fuentes": {
+    "instagram": "https://www.unirank.org/instagram/co/",
+    "facebook": "https://www.unirank.org/facebook/co/",
+    "youtube": "https://www.unirank.org/youtube/co/",
+    "x": "https://www.unirank.org/x/co/",
+    "tiktok": "Perfiles institucionales oficiales consultados directamente",
+    "linkedin": "Perfiles institucionales oficiales visibles en LinkedIn"
+  },
+  "indice_gestion_observable": {
+    "escala": "0-100 dentro de la muestra",
+    "ponderaciones": {
+      "audiencia": 0.35,
+      "eficiencia_video": 0.25,
+      "cadencia": 0.2,
+      "equilibrio_multicanal": 0.2
+    },
+    "audiencia": "Normalización min-max del logaritmo natural de la suma de seguidores en Instagram, Facebook, YouTube y X.",
+    "eficiencia_video": "60 % normalización del logaritmo de vistas promedio por video de YouTube y 40 % normalización de vistas promedio/suscriptor, con tope de 0,5 para reducir atípicos.",
+    "cadencia": "Promedio mensual de publicaciones en X dividido por 100, con tope de 1.",
+    "equilibrio_multicanal": "Entropía de Shannon normalizada de la distribución de seguidores entre las cuatro plataformas.",
+    "limitacion": "Es un benchmark editorial de señales públicas, no una evaluación integral del equipo de comunicaciones ni una medición de impacto real."
+  },
+  "ranking_publicado": [
+    {"puesto":1,"ies":"UdeA","puntaje":73.7},
+    {"puesto":2,"ies":"EAFIT","puntaje":65.9},
+    {"puesto":3,"ies":"UPB","puntaje":64.9},
+    {"puesto":4,"ies":"CES","puntaje":59.3},
+    {"puesto":5,"ies":"Remington","puntaje":57.2},
+    {"puesto":6,"ies":"Universidad de Medellín","puntaje":50.4},
+    {"puesto":7,"ies":"ITM","puntaje":42.1},
+    {"puesto":8,"ies":"EIA","puntaje":39.3},
+    {"puesto":9,"ies":"TdeA","puntaje":35.4},
+    {"puesto":10,"ies":"Pascual Bravo","puntaje":30.8},
+    {"puesto":11,"ies":"Politécnico JIC","puntaje":28.5},
+    {"puesto":12,"ies":"Luis Amigó","puntaje":28.3}
+  ],
+  "instituciones": [
+    {"ies":"UdeA","instagram":199943,"facebook":307293,"youtube":62200,"x":353545,"youtube_vistas_promedio":1651,"x_posts_mes":58},
+    {"ies":"EAFIT","instagram":108304,"facebook":90343,"youtube":15600,"x":137663,"youtube_vistas_promedio":895,"x_posts_mes":173},
+    {"ies":"UPB","instagram":76707,"facebook":78893,"youtube":28700,"x":61560,"youtube_vistas_promedio":1282,"x_posts_mes":118},
+    {"ies":"CES","instagram":75564,"facebook":65618,"youtube":51800,"x":18932,"youtube_vistas_promedio":4071,"x_posts_mes":43},
+    {"ies":"Universidad de Medellín","instagram":59917,"facebook":72055,"youtube":16100,"x":33457,"youtube_vistas_promedio":1118,"x_posts_mes":54},
+    {"ies":"ITM","instagram":51096,"facebook":52155,"youtube":13400,"x":13523,"youtube_vistas_promedio":1000,"x_posts_mes":41},
+    {"ies":"TdeA","instagram":37434,"facebook":48314,"youtube":9160,"x":4968,"youtube_vistas_promedio":1660,"x_posts_mes":5},
+    {"ies":"Politécnico JIC","instagram":25577,"facebook":50613,"youtube":5920,"x":15449,"youtube_vistas_promedio":449,"x_posts_mes":21},
+    {"ies":"EIA","instagram":28855,"facebook":21013,"youtube":4710,"x":13054,"youtube_vistas_promedio":1722,"x_posts_mes":19},
+    {"ies":"Luis Amigó","instagram":31062,"facebook":51531,"youtube":5180,"x":5866,"youtube_vistas_promedio":659,"x_posts_mes":14},
+    {"ies":"Remington","instagram":30610,"facebook":82951,"youtube":2320,"x":3558,"youtube_vistas_promedio":3580,"x_posts_mes":66},
+    {"ies":"Pascual Bravo","instagram":23836,"facebook":24255,"youtube":4410,"x":9229,"youtube_vistas_promedio":404,"x_posts_mes":60}
+  ],
+  "tiktok_verificado": [
+    {"ies":"UdeA","usuario":"@universidaddeantioquia","seguidores":15100,"me_gusta_acumulados":113800,"url":"https://www.tiktok.com/@universidaddeantioquia"},
+    {"ies":"CES","usuario":"@universidadces","seguidores":12000,"me_gusta_acumulados":133400,"url":"https://www.tiktok.com/@universidadces"},
+    {"ies":"EAFIT","usuario":"@eafit","seguidores":9206,"me_gusta_acumulados":166600,"url":"https://www.tiktok.com/@eafit"},
+    {"ies":"Universidad de Medellín","usuario":"@udemedellin_","seguidores":2018,"me_gusta_acumulados":29600,"url":"https://www.tiktok.com/@udemedellin_"}
+  ],
+  "linkedin_verificado": [
+    {"ies":"EAFIT","seguidores":192991,"url":"https://www.linkedin.com/school/universidad-eafit/"},
+    {"ies":"UdeA","seguidores":156804,"url":"https://www.linkedin.com/school/udea-/"},
+    {"ies":"UPB","seguidores":139588,"url":"https://www.linkedin.com/school/universidad-pontificia-bolivariana/"},
+    {"ies":"Universidad de Medellín","seguidores":59540,"url":"https://www.linkedin.com/school/universidad-de-medell-n/"},
+    {"ies":"CES","seguidores":32582,"url":"https://www.linkedin.com/school/universidad-ces/"}
+  ]
+}

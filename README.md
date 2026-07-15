@@ -6,7 +6,7 @@ Tablero de la educación superior del departamento de Antioquia — **pregrado y
 
 **En línea:** https://materia-gris.vercel.app
 **Espejo:** https://observatorio-educacion-antioquia.vercel.app
-**Autor:** Santiago Jiménez Londoño · Última versión: V20 (julio de 2026)
+**Autor:** Santiago Jiménez Londoño · Última versión: V21 (julio de 2026)
 
 ---
 
@@ -90,6 +90,7 @@ Cuando el MEN publique la vigencia siguiente (histórico: hacia julio de cada a�
 | **Gobernación de Antioquia** (`t2ca-uae5`) | Correspondencia municipio ↔ subregión | — |
 | **Rendiciones de cuentas de las IES** | Radar institucional (cifras autorreportadas, con enlace) | **2025–2026** |
 | **MEN — balance territorial e infraestructura** | Gratuidad, primer ingreso, articulación con colegios y proyectos de infraestructura | **2025–2027** |
+| **uniRank + perfiles oficiales** | Audiencia pública y señales observables de gestión en Instagram, Facebook, YouTube, X, TikTok y LinkedIn | **2025–jul. 2026** |
 
 ## Decisiones metodológicas (las trampas de los datos oficiales)
 
@@ -101,6 +102,7 @@ Cuando el MEN publique la vigencia siguiente (histórico: hacia julio de cada a�
 6. **El listado de grupos de MinCiencias es un PDF sin departamento**: se asigna por código GrupLAC contra la base histórica (90 % de cobertura) y, para grupos nuevos, por institución avaladora antioqueña.
 7. **El radar institucional es autorreportado**: cortes y definiciones propias de cada IES, no comparables 1:1 con el SNIES. Cada cifra enlaza a su fuente.
 8. Saber TyT usa la escala 0–200 vigente desde 2017-3; los rótulos MCER históricos (A-, -A1, Pre-A1, B+) se homologan a la escala actual. El puntaje por municipio solo se reporta con 50+ evaluados.
+9. **Seguidores no son alcance**: el capítulo de redes sociales suma audiencias públicas sin deduplicar y calcula un índice editorial sobre señales observables. El alcance único, las impresiones, la retención, el crecimiento y las conversiones requieren exportaciones privadas de cada plataforma. Datos y fórmula: `public/redes-sociales.json`.
 
 ## Pendientes / ideas para la próxima versión
 

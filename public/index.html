@@ -9,11 +9,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,550;9..144,650&display=swap" rel="stylesheet">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
 <meta property="og:title" content="MaterIA Gris · El cerebro de datos de la educación superior de Antioquia">
-<meta property="og:description" content="Matrícula, oferta y demanda, territorio, calidad, acreditación, rankings e impacto social — datos oficiales SNIES, ICFES, OLE y MinCiencias, verificados y al día.">
+<meta property="og:description" content="Matrícula, territorio, calidad, acreditación, redes sociales, finanzas e impacto social de la educación superior de Antioquia — datos verificados y metodología pública.">
 <meta property="og:url" content="https://materia-gris.vercel.app/">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary">
-<meta name="description" content="MaterIA Gris — el cerebro de datos de la educación superior de Antioquia: pregrado y posgrado, pública y privada: oferta, demanda, mercado laboral, calidad, innovación e impacto social. Fuentes oficiales SNIES, ICFES, OLE y MinCiencias. Por Santiago Jiménez Londoño.">
+<meta name="description" content="MaterIA Gris — el cerebro de datos de la educación superior de Antioquia: oferta, demanda, territorio, calidad, acreditación, innovación, redes sociales, finanzas e impacto social. Por Santiago Jiménez Londoño.">
 <style>
 :root{
   --page:#0d0d0d; --surface:#1a1a19; --surface-2:#222220;
@@ -313,6 +313,28 @@ html.light .card{box-shadow:0 1px 2px rgba(20,20,15,.03),0 8px 22px rgba(20,20,1
 .chip button{background:none;border:none;color:var(--ink-2);cursor:pointer;font-size:13px;line-height:1;padding:0}
 .dl{min-height:44px;display:inline-flex;align-items:center;background:none;border:none;color:var(--muted);font-size:12.5px;cursor:pointer;font-family:inherit;padding:0 4px;margin-left:8px;text-decoration:underline}
 .dl:hover{color:var(--ink)}
+/* ---------- redes sociales ---------- */
+.rs-kpis .kpi{position:relative;overflow:hidden}
+.rs-kpis .kpi::after{content:"";position:absolute;right:-24px;bottom:-34px;width:92px;height:92px;border-radius:50%;background:rgba(57,135,229,.08)}
+.rs-rank{display:grid;gap:7px;margin-top:12px}
+.rs-rank-row{display:grid;grid-template-columns:30px minmax(130px,1.1fr) minmax(130px,2fr) 56px;gap:10px;align-items:center;min-height:34px;font-size:12.5px}
+.rs-pos{width:27px;height:27px;display:grid;place-items:center;border-radius:50%;background:var(--surface-2);border:1px solid var(--border);color:var(--ink);font-weight:750;font-variant-numeric:tabular-nums}
+.rs-rank-row:nth-child(-n+3) .rs-pos{background:rgba(57,135,229,.17);border-color:rgba(57,135,229,.48)}
+.rs-name{color:var(--ink-2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.rs-track{height:9px;background:var(--page);border-radius:9px;overflow:hidden}
+.rs-fill{display:block;height:100%;border-radius:9px;background:linear-gradient(90deg,var(--s1),var(--s2));transform-origin:left center}
+.rs-value{text-align:right;color:var(--ink);font-weight:700;font-variant-numeric:tabular-nums}
+.rs-method{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;margin-top:14px}
+.rs-method div{background:var(--surface-2);border:1px solid var(--border);border-radius:10px;padding:12px;color:var(--muted);font-size:11.5px}
+.rs-method b{display:block;color:var(--ink);font-size:18px;margin-bottom:3px}
+.rs-platforms{display:grid;gap:8px;list-style:none;font-size:13px}
+.rs-platforms li{display:grid;grid-template-columns:92px 1fr;gap:10px;padding-top:8px;border-top:1px solid var(--grid)}
+.rs-platforms li:first-child{border-top:0;padding-top:0}
+.rs-platforms b{color:var(--ink)}
+.rs-warning{border:1px solid rgba(201,133,0,.38);background:rgba(201,133,0,.07);border-radius:11px;padding:13px 15px;color:var(--ink-2);font-size:13px;margin:12px 0 18px}
+.rs-warning b{color:var(--ink)}
+@media(max-width:760px){.rs-method{grid-template-columns:1fr 1fr}.rs-rank-row{grid-template-columns:28px minmax(100px,1.2fr) minmax(90px,1.5fr) 50px;gap:7px}.rs-platforms li{grid-template-columns:76px 1fr}}
+@media(max-width:460px){.rs-method{grid-template-columns:1fr}.rs-rank-row{grid-template-columns:28px minmax(88px,1fr) minmax(70px,1fr) 46px}.rs-name{font-size:11.5px}}
 /* ---------- paleta ⌘K ---------- */
 #pal{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.6);display:none;align-items:flex-start;justify-content:center;padding-top:12vh}
 #pal.on{display:flex}
@@ -382,6 +404,7 @@ html.light #arriba{box-shadow:0 4px 18px rgba(0,0,0,.15)}
   <a class="sec" href="#acreditacion">Acreditación</a>
   <a class="sec" href="#innovacion">Innovación</a>
   <a class="sec" href="#social">Impacto social</a>
+  <a class="sec" href="#redes">Redes sociales</a>
   <a class="sec" href="#finanzas">Finanzas</a>
   <a class="sec" href="#metodologia">Metodología</a>
   <button id="pal-open" type="button" aria-haspopup="dialog" aria-controls="pal" aria-expanded="false" style="margin-left:auto;background:var(--surface-2);border:1px solid var(--border);color:var(--muted);border-radius:8px;padding:5px 10px;font-size:12px;cursor:pointer;font-family:inherit;white-space:nowrap">Buscar ⌘K</button>
@@ -1133,9 +1156,81 @@ html.light #arriba{box-shadow:0 4px 18px rgba(0,0,0,.15)}
   <div class="callout" id="hallazgo-social"></div>
 </section>
 
+<!-- ================= REDES SOCIALES ================= -->
+<section id="redes">
+  <div class="sec-head"><span class="sec-num">11</span><h2>Redes sociales: audiencia no es lo mismo que alcance</h2></div>
+  <p class="sec-desc">Radiografía pública de la conversación digital de doce IES antioqueñas. Compara audiencia acumulada en Instagram, Facebook, YouTube y X con señales observables de gestión; TikTok y LinkedIn se leen aparte con una verificación pública al 14 de julio de 2026.</p>
+  <div class="rs-warning"><b>La precisión importa:</b> sumar seguidores no produce «personas alcanzadas». Una misma persona puede seguir varias redes y el alcance, las impresiones, la retención y el crecimiento solo están completos dentro de los paneles privados de cada institución. Aquí se publica <b>audiencia bruta potencial</b> y un índice comparativo reproducible, no alcance único.</div>
+  <div class="kpis rs-kpis" id="kpis-redes"></div>
+  <div class="cards">
+    <div class="card half">
+      <h3>Ranking de gestión social observable</h3>
+      <p class="note">Índice 0–100: audiencia 35 %, eficiencia de video 25 %, cadencia pública 20 % y equilibrio multicanal 20 %. No incluye pauta ni analíticas privadas.</p>
+      <div class="rs-rank" id="rank-redes"></div>
+    </div>
+    <div class="card half">
+      <h3>Quién reúne la mayor audiencia bruta</h3>
+      <p class="note">Suma no deduplicada de seguidores/suscriptores en cuatro plataformas comparables. Instagram y X: nov. 2025; Facebook y YouTube: jun. 2025.</p>
+      <div id="ch-redes-audiencia" class="chart"></div>
+    </div>
+    <div class="card">
+      <h3>La matriz comparable, institución por institución</h3>
+      <p class="note">Cifras públicas; «vistas/video» y «posts/mes» son promedios observados por uniRank. Descargue la tabla para auditar o reutilizar los datos.</p>
+      <div class="tscroll" style="max-height:540px;overflow-y:auto" id="tb-redes"></div>
+    </div>
+    <div class="card half">
+      <h3>TikTok: comunidad joven y capacidad de conversación</h3>
+      <p class="note">Perfiles oficiales verificados directamente el 14 jul. 2026. Los «me gusta» son acumulados del perfil, no interacciones de un periodo comparable.</p>
+      <div class="tscroll" id="tb-tiktok"></div>
+    </div>
+    <div class="card half">
+      <h3>LinkedIn: reputación profesional y red de egresados</h3>
+      <p class="note">Seguidores visibles en los perfiles oficiales; corte de consulta: 14 jul. 2026.</p>
+      <div class="tscroll" id="tb-linkedin"></div>
+    </div>
+    <div class="card half">
+      <h3>Cada red tiene un trabajo distinto</h3>
+      <ul class="rs-platforms">
+        <li><b>TikTok</b><span>Descubrimiento, vida universitaria, explicadores breves y conversación con aspirantes.</span></li>
+        <li><b>Instagram</b><span>Marca cotidiana, comunidad estudiantil, historias, Reels y cobertura de campus.</span></li>
+        <li><b>LinkedIn</b><span>Egresados, empleabilidad, ciencia, alianzas, vocería experta y reputación institucional.</span></li>
+        <li><b>YouTube</b><span>Archivo audiovisual, clases, divulgación y contenidos con vida útil larga.</span></li>
+        <li><b>Facebook</b><span>Familias, comunidades territoriales, eventos y públicos intergeneracionales.</span></li>
+        <li><b>X</b><span>Agenda pública, prensa, alertas de servicio y conversación en tiempo real.</span></li>
+      </ul>
+    </div>
+    <div class="card half">
+      <h3>El tablero que sí debería gobernar la estrategia</h3>
+      <ul class="rs-platforms">
+        <li><b>Alcance</b><span>Personas únicas alcanzadas y porcentaje de no seguidores, por formato y campaña.</span></li>
+        <li><b>Atención</b><span>Retención a 3 s, tiempo medio visto, finalización y guardados.</span></li>
+        <li><b>Comunidad</b><span>Comentarios respondidos, conversación útil, compartidos y crecimiento neto.</span></li>
+        <li><b>Conversión</b><span>Clics con UTM, formularios iniciados, inscritos y costo por aspirante.</span></li>
+        <li><b>Servicio</b><span>Tiempo de primera respuesta, casos resueltos y temas que requieren información mejor.</span></li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Cómo se construyó el ranking — sin caja negra</h3>
+      <p class="note">Todos los componentes se normalizan dentro de las doce instituciones. La audiencia usa logaritmo para evitar que el tamaño histórico decida por sí solo; la eficiencia combina vistas promedio de YouTube y vistas/suscriptor; la cadencia usa publicaciones mensuales en X con tope de 100; el equilibrio usa la entropía de la distribución entre cuatro redes.</p>
+      <div class="rs-method">
+        <div><b>35 %</b>Audiencia pública acumulada</div>
+        <div><b>25 %</b>Eficiencia observable de video</div>
+        <div><b>20 %</b>Cadencia pública de contenidos</div>
+        <div><b>20 %</b>Equilibrio entre plataformas</div>
+      </div>
+      <details class="tw"><summary>Fuentes, cortes y límites</summary><div style="padding:12px 2px;color:var(--muted);font-size:12.5px;display:grid;gap:7px">
+        <p><a href="https://www.unirank.org/instagram/co/" target="_blank" rel="noopener">Instagram uniRank ↗</a> y <a href="https://www.unirank.org/x/co/" target="_blank" rel="noopener">X uniRank ↗</a>: extracción de nov. 2025. <a href="https://www.unirank.org/facebook/co/" target="_blank" rel="noopener">Facebook uniRank ↗</a> y <a href="https://www.unirank.org/youtube/co/" target="_blank" rel="noopener">YouTube uniRank ↗</a>: extracción de jun. 2025.</p>
+        <p>TikTok y LinkedIn se verificaron en los perfiles oficiales públicos el 14 jul. 2026. Se incluyen solo cifras visibles y perfiles cuya identidad institucional pudo confirmarse; una ausencia significa «sin dato comparable», no necesariamente «sin cuenta».</p>
+        <p>El archivo <a href="redes-sociales.json" target="_blank" rel="noopener">redes-sociales.json ↗</a> conserva los datos crudos, las fechas y la fórmula. Para medir desempeño real se requiere exportar de cada panel el mismo periodo y comparar alcance único, impresiones, retención, crecimiento, interacciones y conversiones.</p>
+      </div></details>
+    </div>
+  </div>
+  <div class="callout" id="hallazgo-redes"></div>
+</section>
+
 <!-- ================= FINANZAS PÚBLICAS ================= -->
 <section id="finanzas">
-  <div class="sec-head"><span class="sec-num">11</span><h2>Finanzas públicas: de qué viven las IES oficiales</h2></div>
+  <div class="sec-head"><span class="sec-num">12</span><h2>Finanzas públicas: de qué viven las IES oficiales</h2></div>
   <p class="sec-desc">Los presupuestos 2026, la ejecución real 2025 y los estados financieros de las nueve IES públicas con domicilio u operación en Antioquia — leídos de los documentos primarios de cada institución (acuerdos de presupuesto, EEFF auditados) y contrastados con la ejecución CUIPO que reportan a la Contraloría (verificada por API al centavo). Cifras verificadas al 14 de julio de 2026.</p>
   <div class="cards">
     <div class="card">
@@ -1172,10 +1267,11 @@ html.light #arriba{box-shadow:0 4px 18px rgba(0,0,0,.15)}
       <h4>Metodología y fuentes</h4>
       <ul id="fuentes"></ul>
       <p style="margin-top:14px">Notas: (1) La matrícula anual corresponde al semestre con mayor total de cada vigencia — sumar semestres duplicaría estudiantes. Para 2024, el corte usado es 2024-II (313.583; 2024-I registró 300.246). (2) Los indicadores OLE se restringen a IES con domicilio en Antioquia; se excluyen SENA y UNAD por ser instituciones de alcance nacional cuyos graduados no son separables por departamento en esa base; la especialización se omite de la tasa de vinculación por cobertura insuficiente. (3) La serie 2015–2017 de la base histórica del MEN se descartó por inconsistencias de reporte semestral. (4) Saber TyT usa la escala 0–200 vigente desde 2017-3; el sector de cada IES se toma del SNIES por errores de registro en la base ICFES. (5) Los grupos de investigación corresponden a los resultados finales de la Convocatoria 957 de 2024 (Resolución 1531 de dic. 2025, listado oficial de Minciencias); como el listado no trae departamento, este se asigna por código GrupLAC contra la base histórica de convocatorias (90 % de cobertura) y, para grupos nuevos, por institución avaladora domiciliada en Antioquia. (6) Los resultados Saber Pro (nivel universitario) no están disponibles como microdato abierto completo en datos.gov.co; se incorporarán desde DataIcfes en la próxima versión. (7) Los niveles MCER de inglés se agregan desde el microdato Saber TyT vía API; los rótulos históricos (A-, -A1, Pre-A1, B+) se homologan a la escala vigente. (8) La división subregional corresponde a la usada por la Gobernación de Antioquia. (9) El radar «La foto 2025–2026» recoge cifras autorreportadas en rendiciones de cuentas, informes de gestión, boletines estadísticos y tableros oficiales de las IES (verificadas documento por documento en julio de 2026); sus cortes y definiciones varían entre instituciones y no son directamente comparables entre sí ni con el SNIES — la tendencia de cada fila sí es consistente porque proviene de la serie de la misma fuente. Las bases consolidadas SNIES 2025 no estaban publicadas al corte (patrón anual: se publican hacia julio–agosto del año siguiente). (10) La razón subregional de oferta divide la matrícula de pregrado 2024-II ofertada en la subregión por la población proyectada de 17 a 21 años (DANE, 2024): mide capacidad instalada, no es la tasa oficial de cobertura ni asistencia de residentes, por lo que las subregiones que atraen estudiantes pueden superar el 100 %. (11) El puntaje Saber TyT por municipio promedia los cinco módulos y solo se reporta con 50 o más evaluados. (12) El benchmark interdepartamental y la proyección de población 17-21 son cálculos propios sobre las bases consolidadas nacionales del SNIES y las proyecciones municipales del DANE (CNPV 2018), reproducibles con scripts/benchmark_deptos.py y scripts/proyeccion_demografica.py. (13) La sección de acreditación se construyó sobre las fuentes primarias del régimen (Ley 30 de 1992, Decreto 1330 de 2019, Acuerdos CESU 02 de 2020 y 01 de 2025 con su transición 2026-2027) y la verificación resolución por resolución del estado de cada IES en julio de 2026; los estados «en renovación» reflejan la información pública disponible y pueden resolverse en el segundo semestre de 2026. (14) La sección de finanzas lee los documentos primarios de cada IES (acuerdos de presupuesto 2026, ejecuciones y EEFF a dic-2025) y verifica las ejecuciones contra el CUIPO de la Contraloría vía datos.gov.co (ingresos 9axr-9gnb, gastos 4f7r-epif; códigos CHIP: UdeA 120205000, UNAL 27400000, ITM 260105001, Pascual Bravo 821505000, Colmayor 824505000, TdeA 121705000, Poli JIC 120305000, IU Digital 923272870, IUE 262505266); los porcentajes de dependencia «real» son estimaciones documentadas.</p>
+      <p style="margin-top:10px"><b style="color:var(--ink-2)">Nota 15 — redes sociales:</b> el capítulo compara una huella pública disponible en cortes 2025–2026. Los seguidores son audiencia potencial bruta, no alcance único; el índice pondera audiencia, eficiencia audiovisual, cadencia y equilibrio multicanal dentro de una muestra de 12 IES. TikTok y LinkedIn se presentan aparte porque no existe una extracción pública homogénea para toda la muestra. Datos, cortes y fórmula: <a href="redes-sociales.json" target="_blank" rel="noopener">redes-sociales.json ↗</a>.</p>
     </div>
     <div>
       <h4>Sobre MaterIA Gris</h4>
-      <p>Construido por <b style="color:var(--ink)">Santiago Jiménez Londoño</b> con datos abiertos oficiales descargados y procesados de forma automatizada desde los portales del Ministerio de Educación Nacional (SNIES y OLE), el ICFES y MinCiencias vía datos.gov.co.</p>
+      <p>Construido por <b style="color:var(--ink)">Santiago Jiménez Londoño</b> con datos abiertos oficiales descargados y procesados desde los portales del Ministerio de Educación Nacional (SNIES y OLE), el ICFES y MinCiencias vía datos.gov.co, complementados con fuentes públicas documentadas cuando el indicador no existe como dato oficial.</p>
       <p style="margin-top:12px"><b style="color:var(--ink)">Auditoría territorial:</b> el 14 de julio de 2026 se recalcularon los 51 municipios, las 9 subregiones, las 125 geometrías y todos los denominadores de 17–21 años desde los XLSX oficiales. Resultado: <b style="color:var(--ink)">0 diferencias</b>. <a href="auditoria.html">Ver auditoría explicada →</a> · <a href="auditoria-cifras.json" target="_blank" rel="noopener">JSON ↗</a>.</p>
       <p style="margin-top:12px">Los microdatos y el código de procesamiento son reproducibles. Actualización con cada nueva vigencia publicada por el MEN.</p>
       <p style="margin-top:12px;color:var(--ink-2)">© 2026 · Santiago Jiménez Londoño</p>
@@ -2207,6 +2303,78 @@ const ACRED_IES=[
   tableTwin(document.getElementById('ch-madre'),['Nivel educativo de la madre','Evaluados'],M);
 
   document.getElementById('hallazgo-social').innerHTML=`<b>La escalera social del departamento:</b> ${pct(e12,estT)} de quienes presentan Saber TyT en Antioquia viven en estratos 1 y 2, ${pct(madreBasica,sum(madre))} tienen madres que no pasaron de la secundaria y ${pct(trabaja,traT)} trabaja mientras estudia. La formación técnica y tecnológica no es la hermana menor de la universidad: es el principal vehículo de movilidad social del sistema — y por eso su caída de matrícula, mientras la universitaria crece, es un problema de equidad, no solo de educación.`;
+})();
+
+/* ---- 11 Redes sociales (huella pública 2025 + verificación jul-2026) ---- */
+const REDES=[
+  {ies:'UdeA',instagram:199943,facebook:307293,youtube:62200,x:353545,vistas:1651,posts:58},
+  {ies:'EAFIT',instagram:108304,facebook:90343,youtube:15600,x:137663,vistas:895,posts:173},
+  {ies:'UPB',instagram:76707,facebook:78893,youtube:28700,x:61560,vistas:1282,posts:118},
+  {ies:'CES',instagram:75564,facebook:65618,youtube:51800,x:18932,vistas:4071,posts:43},
+  {ies:'U. de Medellín',instagram:59917,facebook:72055,youtube:16100,x:33457,vistas:1118,posts:54},
+  {ies:'ITM',instagram:51096,facebook:52155,youtube:13400,x:13523,vistas:1000,posts:41},
+  {ies:'TdeA',instagram:37434,facebook:48314,youtube:9160,x:4968,vistas:1660,posts:5},
+  {ies:'Politécnico JIC',instagram:25577,facebook:50613,youtube:5920,x:15449,vistas:449,posts:21},
+  {ies:'EIA',instagram:28855,facebook:21013,youtube:4710,x:13054,vistas:1722,posts:19},
+  {ies:'Luis Amigó',instagram:31062,facebook:51531,youtube:5180,x:5866,vistas:659,posts:14},
+  {ies:'Remington',instagram:30610,facebook:82951,youtube:2320,x:3558,vistas:3580,posts:66},
+  {ies:'Pascual Bravo',instagram:23836,facebook:24255,youtube:4410,x:9229,vistas:404,posts:60},
+];
+const REDES_TIKTOK=[
+  {ies:'UdeA',usuario:'@universidaddeantioquia',seguidores:15100,likes:113800,url:'https://www.tiktok.com/@universidaddeantioquia'},
+  {ies:'CES',usuario:'@universidadces',seguidores:12000,likes:133400,url:'https://www.tiktok.com/@universidadces'},
+  {ies:'EAFIT',usuario:'@eafit',seguidores:9206,likes:166600,url:'https://www.tiktok.com/@eafit'},
+  {ies:'U. de Medellín',usuario:'@udemedellin_',seguidores:2018,likes:29600,url:'https://www.tiktok.com/@udemedellin_'},
+];
+const REDES_LINKEDIN=[
+  {ies:'EAFIT',seguidores:192991,url:'https://www.linkedin.com/school/universidad-eafit/'},
+  {ies:'UdeA',seguidores:156804,url:'https://www.linkedin.com/school/udea-/'},
+  {ies:'UPB',seguidores:139588,url:'https://www.linkedin.com/school/universidad-pontificia-bolivariana/'},
+  {ies:'U. de Medellín',seguidores:59540,url:'https://www.linkedin.com/school/universidad-de-medell-n/'},
+  {ies:'CES',seguidores:32582,url:'https://www.linkedin.com/school/universidad-ces/'},
+];
+(function(){
+  const minmax=(arr,v)=>{const lo=Math.min(...arr),hi=Math.max(...arr);return hi===lo?1:(v-lo)/(hi-lo);};
+  REDES.forEach(r=>r.audiencia=r.instagram+r.facebook+r.youtube+r.x);
+  const logs=REDES.map(r=>Math.log(r.audiencia));
+  const logViews=REDES.map(r=>Math.log(r.vistas));
+  const rates=REDES.map(r=>Math.min(r.vistas/r.youtube,.5));
+  REDES.forEach((r,i)=>{
+    const p=[r.instagram,r.facebook,r.youtube,r.x].map(v=>v/r.audiencia);
+    r.audienciaScore=100*minmax(logs,logs[i]);
+    r.eficiencia=100*(.6*minmax(logViews,logViews[i])+.4*minmax(rates,rates[i]));
+    r.cadencia=100*Math.min(r.posts/100,1);
+    r.equilibrio=100*(-p.reduce((a,x)=>a+x*Math.log(x),0)/Math.log(4));
+    r.score=.35*r.audienciaScore+.25*r.eficiencia+.20*r.cadencia+.20*r.equilibrio;
+  });
+  const ranking=[...REDES].sort((a,b)=>b.score-a.score);
+  const audiencia=[...REDES].sort((a,b)=>b.audiencia-a.audiencia);
+  const total=REDES.reduce((a,r)=>a+r.audiencia,0);
+  document.getElementById('kpis-redes').innerHTML=[
+    {lbl:'Audiencia bruta acumulada',val:fmtK(total),sub:'12 IES · 4 redes comparables'},
+    {lbl:'Líder de audiencia',val:'UdeA',sub:fmtK(audiencia[0].audiencia)+' seguidores/suscriptores'},
+    {lbl:'Mejor índice observable',val:ranking[0].ies,sub:ranking[0].score.toLocaleString('es-CO',{maximumFractionDigits:1})+' de 100'},
+    {lbl:'Redes revisadas',val:'6',sub:'Instagram · TikTok · LinkedIn · YouTube · Facebook · X'},
+  ].map(k=>`<div class="kpi"><div class="lbl">${k.lbl}</div><div class="val small">${k.val}</div><div class="sub">${k.sub}</div></div>`).join('');
+
+  const rankHost=document.getElementById('rank-redes');
+  rankHost.innerHTML=ranking.map((r,i)=>`<div class="rs-rank-row"><span class="rs-pos">${i+1}</span><span class="rs-name" title="${r.ies}">${r.ies}</span><span class="rs-track"><span class="rs-fill" style="width:${r.score.toFixed(1)}%"></span></span><span class="rs-value">${r.score.toLocaleString('es-CO',{maximumFractionDigits:1})}</span></div>`).join('');
+
+  hbars('ch-redes-audiencia',audiencia.slice(0,10).map(r=>({label:r.ies,value:r.audiencia,tipName:'audiencia bruta'})),{color:S1,labelW:150,valueFmt:fmtK});
+
+  const headers=['#','Institución','Índice','Audiencia bruta','Instagram','Facebook','YouTube','X','Vistas/video','Posts/mes'];
+  const rows=ranking.map((r,i)=>[i+1,r.ies,r.score.toLocaleString('es-CO',{maximumFractionDigits:1}),r.audiencia,r.instagram,r.facebook,r.youtube,r.x,r.vistas,r.posts]);
+  const host=document.getElementById('tb-redes');
+  const table=document.createElement('table');table.style.minWidth='960px';
+  table.innerHTML='<thead><tr>'+headers.map((h,i)=>`<th class="${i>1?'num':''}">${h}</th>`).join('')+'</tr></thead><tbody>'+rows.map(row=>'<tr>'+row.map((v,i)=>`<td class="${i>1?'num':''}${i===1?' wrapcell':''}">${typeof v==='number'?fmt(v):v}</td>`).join('')+'</tr>').join('')+'</tbody>';
+  host.appendChild(table);csvDownload(host,headers,rows,'materia-gris-ranking-redes-sociales');
+
+  const tt=document.getElementById('tb-tiktok');
+  tt.innerHTML='<table><thead><tr><th>Institución</th><th>Cuenta</th><th class="num">Seguidores</th><th class="num">Me gusta</th><th class="num">Likes/seg.</th></tr></thead><tbody>'+REDES_TIKTOK.map(r=>`<tr><td><b style="color:var(--ink)">${r.ies}</b></td><td><a href="${r.url}" target="_blank" rel="noopener">${r.usuario} ↗</a></td><td class="num">${fmt(r.seguidores)}</td><td class="num">${fmt(r.likes)}</td><td class="num">${(r.likes/r.seguidores).toLocaleString('es-CO',{maximumFractionDigits:1})}</td></tr>`).join('')+'</tbody></table>';
+  const li=document.getElementById('tb-linkedin');
+  li.innerHTML='<table><thead><tr><th>#</th><th>Institución</th><th class="num">Seguidores</th></tr></thead><tbody>'+REDES_LINKEDIN.map((r,i)=>`<tr><td>${i+1}</td><td><a href="${r.url}" target="_blank" rel="noopener">${r.ies} ↗</a></td><td class="num">${fmt(r.seguidores)}</td></tr>`).join('')+'</tbody></table>';
+
+  document.getElementById('hallazgo-redes').innerHTML=`<b>La lectura:</b> la <b>UdeA</b> domina la escala pública (${fmtK(audiencia[0].audiencia)} acumulados en cuatro redes), pero el manejo no se explica solo por tamaño. <b>EAFIT</b> acorta distancia con la mayor cadencia observada en X y la comunidad profesional más grande en LinkedIn; <b>UPB</b> presenta el portafolio más equilibrado; <b>CES</b> convierte mejor su canal de YouTube en vistas; y <b>Remington</b> obtiene una eficiencia audiovisual alta pese a una base menor. La oportunidad común es dejar de reportar seguidores y publicar cada mes alcance único, retención, respuesta y conversión a inscritos.`;
 })();
 
 
