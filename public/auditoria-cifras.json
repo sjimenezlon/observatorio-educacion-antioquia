@@ -1,0 +1,42 @@
+{
+  "estado": "correcto",
+  "fecha_auditoria": "2026-07-14",
+  "alcance": "Atlas territorial de MaterIA Gris V16",
+  "fuentes": {
+    "snies": {
+      "descripcion": "Estudiantes Matriculados 2024, bases consolidadas SNIES–MEN",
+      "url": "https://snies.mineducacion.gov.co/portal/ESTADISTICAS/Bases-consolidadas/",
+      "sha256": "6558fdb32d95eddb2c34d904b6adb9462f5a14e670937a87c3a4ecf5aef4d5d6"
+    },
+    "dane": {
+      "descripcion": "Serie municipal de población por área, sexo y edad 2018–2042, DANE",
+      "url": "https://www.dane.gov.co/files/censo2018/proyecciones-de-poblacion/Municipal/PPED-AreaSexoEdadMun-2018-2042_VP.xlsx",
+      "sha256": "7e461635315664d44ba52cc7f951947085a0ea6f2dda72fe2efed11a76880516"
+    },
+    "geometria": {
+      "descripcion": "Marco Geoestadístico Nacional, municipios de Antioquia",
+      "url": "https://geoportal.dane.gov.co/mparcgis/rest/services/MGN2024/Serv_CapasMGN_2024/FeatureServer/317"
+    }
+  },
+  "metodo": {
+    "matricula": "Semestre con mayor total de la vigencia; en 2024 corresponde al segundo semestre",
+    "matricula_2024_I": 300246,
+    "matricula_2024_II": 313583,
+    "poblacion": "Suma de hombres y mujeres de 17, 18, 19, 20 y 21 años; área total; año 2024",
+    "razon_oferta": "Matrícula de pregrado 2024-II ofertada en la subregión / población de 17–21 años 2024 × 100",
+    "limitacion": "La razón de oferta mide capacidad instalada por lugar de oferta; no es la tasa oficial de cobertura ni asistencia de residentes"
+  },
+  "resultados": {
+    "matricula_total_2024_II": 313583,
+    "matricula_pregrado_2024_II": 292968,
+    "poblacion_17_21_2024": 541548,
+    "razon_oferta_antioquia_pct": 54.1,
+    "municipios_con_oferta": 51,
+    "municipios_sin_oferta": 74,
+    "geometrias_municipales": 125,
+    "diferencias_municipales": 0,
+    "diferencias_subregionales": 0,
+    "diferencias_cobertura": 0
+  },
+  "reproduccion": "python3 scripts/auditar_atlas.py"
+}
