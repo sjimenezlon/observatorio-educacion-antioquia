@@ -595,6 +595,28 @@ html.light .exec-lens,html.light .exec-sourcebar,html.light .section-context{bac
 @media(max-width:960px){.hero-grid{grid-template-columns:1fr}.ai-core{min-height:360px}.core-orbit{width:215px;height:215px}.core-center{width:126px;height:126px}.journeys{grid-template-columns:1fr 1fr}}
 @media(max-width:640px){nav .wrap{height:58px}.hero-grid{gap:28px}.ai-core{min-height:340px;padding:17px;border-radius:21px}.core-orbit{width:200px;height:200px}.core-center{width:118px;height:118px}.core-center b{font-size:23px}.core-signals{gap:5px}.core-signal{padding:8px}.journeys{grid-template-columns:1fr;margin-top:32px}.journey{min-height:96px}.hero-actions{display:grid;grid-template-columns:1fr}.hero-btn{width:100%}.ai-guide{left:12px;bottom:12px;width:calc(100vw - 24px)}#arriba{bottom:72px;right:12px}.card{border-radius:15px}}
 @media(prefers-reduced-motion:reduce){.core-ring{animation:none}.hero-btn,.journey,.ai-guide-toggle .chev{transition:none}}
+/* ---------- Trayectorias y retorno · V26 ---------- */
+nav a.nav-path{color:#d9d1ff;border:1px solid rgba(158,140,255,.20);background:linear-gradient(135deg,rgba(158,140,255,.10),rgba(107,166,255,.07))}
+nav a.nav-path.active{color:#fff;border-color:rgba(187,175,255,.38);background:linear-gradient(135deg,rgba(103,79,190,.34),rgba(47,92,159,.28))}
+.trajectory-section{padding-top:42px}
+.tray-intro{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:22px;align-items:end;margin-bottom:20px}.tray-intro .sec-desc{margin:0;max-width:800px}
+.tray-rule{max-width:300px;padding:11px 13px;border:1px solid rgba(158,140,255,.20);border-radius:12px;background:rgba(158,140,255,.055);color:var(--muted);font-size:9.5px;line-height:1.45}.tray-rule b{display:block;color:#d9d1ff;font-size:10px;margin-bottom:3px}
+.tray-chain{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px;counter-reset:stage}
+.tray-stage{counter-increment:stage;position:relative;display:flex;flex-direction:column;min-height:252px;padding:16px 14px;border:1px solid rgba(151,180,222,.14);border-radius:17px;background:linear-gradient(155deg,rgba(19,28,43,.98),rgba(11,18,29,.94));overflow:hidden}
+.tray-stage::before{content:"0" counter(stage);position:absolute;right:12px;top:10px;color:rgba(201,211,231,.18);font:650 25px/1 'Fraunces',Georgia,serif}.tray-stage::after{content:"";position:absolute;inset:auto 0 0;height:3px;background:var(--stage,var(--s1))}
+.tray-stage>.tray-jurisdiction{align-self:flex-start;padding:4px 7px;border-radius:10px;background:rgba(151,180,222,.08);color:var(--muted);font-size:7.5px;font-weight:760;letter-spacing:.07em;text-transform:uppercase}
+.tray-stage h3{color:var(--ink);font:650 18px/1.15 'Fraunces',Georgia,serif;margin:20px 0 7px}.tray-stage strong{display:block;color:var(--ink);font:650 29px/1 'Fraunces',Georgia,serif;letter-spacing:-.025em;margin:8px 0}.tray-stage>span{color:var(--ink-2);font-size:9.5px;line-height:1.35}.tray-stage p{color:var(--muted);font-size:9.5px;line-height:1.45;margin-top:auto;padding-top:13px;border-top:1px solid rgba(151,180,222,.10)}.tray-stage p b{color:var(--ink-2)}
+.tray-bridge{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(320px,.9fr);gap:12px;margin-top:14px}
+.tray-box{padding:19px;border:1px solid rgba(151,180,222,.14);border-radius:18px;background:linear-gradient(150deg,rgba(16,25,38,.96),rgba(10,17,27,.91))}.tray-box-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:13px}.tray-box-head small{display:block;color:#78e3c3;font-size:8.5px;font-weight:760;letter-spacing:.11em;text-transform:uppercase}.tray-box-head h3{color:var(--ink);font:650 21px/1.2 'Fraunces',Georgia,serif;margin-top:5px}.tray-editorial{flex:none;padding:4px 7px;border-radius:7px;background:rgba(151,180,222,.07);color:var(--muted);font-size:8px}
+.tray-tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:12px}.tray-tabs button{min-height:44px;padding:8px;border:1px solid rgba(151,180,222,.15);border-radius:10px;background:var(--surface-2);color:var(--ink-2);font-family:inherit;font-size:10px;font-weight:730;cursor:pointer}.tray-tabs button.on{color:#fff;border-color:rgba(158,140,255,.42);background:linear-gradient(135deg,rgba(108,82,193,.42),rgba(45,126,108,.22))}
+.tray-decision{display:grid;grid-template-columns:1fr 1fr;gap:8px}.tray-decision article{min-height:128px;padding:14px;border:1px solid rgba(151,180,222,.11);border-radius:12px;background:rgba(9,15,24,.38)}.tray-decision small{display:block;color:var(--muted);font-size:8px;text-transform:uppercase;letter-spacing:.09em}.tray-decision b{display:block;color:var(--ink);font-size:12px;line-height:1.35;margin:7px 0}.tray-decision p{color:var(--muted);font-size:9.5px;line-height:1.45}.tray-decision .tray-action{border-color:rgba(62,214,170,.18);background:rgba(62,214,170,.045)}.tray-decision .tray-action small{color:#78e3c3}
+.tray-readiness{display:grid;gap:8px}.tray-ready{display:grid;grid-template-columns:86px 1fr;gap:11px;align-items:start;padding:11px 0;border-bottom:1px solid rgba(151,180,222,.10)}.tray-ready:last-child{border-bottom:none}.tray-ready span{display:inline-flex;justify-content:center;padding:4px 6px;border-radius:8px;font-size:8px;font-weight:760;text-transform:uppercase;letter-spacing:.06em}.tray-ready.ok span{color:#78e3c3;background:rgba(62,214,170,.09)}.tray-ready.context span{color:#ffd087;background:rgba(240,178,77,.09)}.tray-ready.missing span{color:#c9bdff;background:rgba(158,140,255,.10)}.tray-ready b{display:block;color:var(--ink);font-size:11px;margin-bottom:3px}.tray-ready p{color:var(--muted);font-size:9.5px;line-height:1.45}
+.tray-lenses{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:14px}.tray-lens{min-height:158px;padding:15px;border:1px solid rgba(151,180,222,.13);border-radius:14px;background:rgba(12,19,29,.68)}.tray-lens small{color:var(--muted);font-size:8px;text-transform:uppercase;letter-spacing:.09em}.tray-lens strong{display:block;color:var(--ink);font:650 24px/1 'Fraunces',Georgia,serif;margin:12px 0 7px}.tray-lens b{display:block;color:var(--ink-2);font-size:11px;line-height:1.35}.tray-lens p{color:var(--muted);font-size:9px;line-height:1.4;margin-top:7px}
+.tray-sourcebar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:14px;padding:12px 14px;border:1px solid rgba(158,140,255,.16);border-radius:13px;background:rgba(10,16,25,.65);font-size:9.5px}.tray-sourcebar div{display:flex;flex-wrap:wrap;gap:6px}.tray-sourcebar a{padding:4px 7px;border-radius:8px;background:rgba(151,180,222,.07)}.tray-sourcebar>span{color:var(--muted);max-width:250px;text-align:right}
+html.light .tray-stage,html.light .tray-box{background:linear-gradient(145deg,rgba(255,255,255,.98),rgba(244,248,252,.95))}html.light .tray-decision article,html.light .tray-lens{background:rgba(255,255,255,.72)}
+@media(max-width:1100px){.tray-chain{grid-template-columns:repeat(3,1fr)}.tray-stage{min-height:220px}.tray-lenses{grid-template-columns:1fr 1fr}}
+@media(max-width:760px){.tray-intro{grid-template-columns:1fr;align-items:start}.tray-rule{max-width:none}.tray-bridge{grid-template-columns:1fr}.tray-sourcebar{align-items:flex-start;flex-direction:column}.tray-sourcebar>span{text-align:left;max-width:none}}
+@media(max-width:560px){.tray-chain,.tray-lenses{grid-template-columns:1fr}.tray-stage{min-height:194px}.tray-tabs{grid-template-columns:1fr 1fr}.tray-decision{grid-template-columns:1fr}.tray-ready{grid-template-columns:74px 1fr}}
 /* ---------- tema claro ---------- */
 html.light{--page:#f4f7fb;--surface:#ffffff;--surface-2:#eaf0f7;--ink:#151b25;--ink-2:#354052;--muted:#68758a;
   --grid:#dde5ef;--baseline:#b9c5d5;--border:rgba(31,63,102,.14);
@@ -651,6 +673,7 @@ html.light #arriba{box-shadow:0 4px 18px rgba(0,0,0,.15)}
   </a>
   <a class="sec" href="#inicio">Inicio</a>
   <a class="sec nav-exec" href="#ejecutivo">Sala ejecutiva</a>
+  <a class="sec nav-path" href="#trayectorias">Trayectorias</a>
   <a class="sec" href="#panorama">Panorama</a>
   <a class="sec" href="#instituciones">Instituciones</a>
   <a class="sec" href="#territorio">Territorio</a>
@@ -697,14 +720,14 @@ html.light #arriba{box-shadow:0 4px 18px rgba(0,0,0,.15)}
       <div class="core-signals">
         <div class="core-signal"><b>51</b><span>municipios con oferta</span></div>
         <div class="core-signal"><b>18</b><span>decisiones de acreditación monitorizadas</span></div>
-        <div class="core-signal"><b>V25</b><span>inteligencia ejecutiva</span></div>
+        <div class="core-signal"><b>V26</b><span>trayectorias y retorno</span></div>
       </div>
     </aside>
   </div>
   <div class="journeys" aria-label="Recorridos recomendados">
     <a class="journey" href="#territorio" style="--journey-color:rgba(107,166,255,.24)"><small>Quiero ubicarme</small><b>¿Dónde llega la educación superior?</b><span>Mapa, subregiones y brechas →</span></a>
     <a class="journey" href="#instituciones" style="--journey-color:rgba(62,214,170,.20)"><small>Quiero comparar</small><b>¿Qué institución se ajusta mejor?</b><span>Tamaño, calidad y resultados →</span></a>
-    <a class="journey" href="#laboral" style="--journey-color:rgba(240,178,77,.20)"><small>Quiero decidir</small><b>¿Qué ocurre después de graduarse?</b><span>Empleo, salarios y áreas →</span></a>
+    <a class="journey" href="#trayectorias" style="--journey-color:rgba(240,178,77,.20)"><small>Quiero decidir</small><b>¿Dónde se rompe la trayectoria?</b><span>Acceso, permanencia y retorno →</span></a>
     <a class="journey" href="#redes" style="--journey-color:rgba(158,140,255,.22)"><small>Quiero entender influencia</small><b>¿Quién conecta mejor con su comunidad?</b><span>Audiencia y gestión social →</span></a>
   </div>
   <div class="evidence-rail" aria-label="Estado de confianza y actualización de las cifras">
@@ -793,6 +816,68 @@ html.light #arriba{box-shadow:0 4px 18px rgba(0,0,0,.15)}
   <div class="exec-sourcebar">
     <div><a class="source-chip" href="https://snies.mineducacion.gov.co/portal/ESTADISTICAS/Bases-consolidadas/" target="_blank" rel="noopener"><b>Consolidado:</b> SNIES y DANE 2024 ↗</a><a class="source-chip" href="https://www.mineducacion.gov.co/portal/salaprensa/Comunicados/426943:Gobierno-del-Cambio-ha-invertido-mas-de-8-3-billones-para-fortalecer-todos-los-niveles-educativos-en-Antioquia" target="_blank" rel="noopener"><b>Administrativo:</b> MEN 2025-1 ↗</a><a class="source-chip" href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=272156" target="_blank" rel="noopener"><b>Normativo:</b> Ley 2568 de 2026 ↗</a><span class="source-chip"><b>Editorial:</b> prioridades MaterIA</span></div>
     <a href="auditoria.html">Revisar trazabilidad →</a>
+  </div>
+</section>
+
+<!-- ================= TRAYECTORIAS Y RETORNO ================= -->
+<section id="trayectorias" class="trajectory-section">
+  <div class="sec-head"><span class="sec-num">TR</span><h2>Trayectorias y retorno: del acceso al resultado</h2></div>
+  <div class="tray-intro">
+    <p class="sec-desc">Una cadena de evidencia para localizar dónde intervenir: aspiración, acceso, permanencia, aprendizaje, graduación y vinculación. Cada etapa declara su propio universo y territorio; no representa una misma cohorte ni debe multiplicarse como un embudo.</p>
+    <div class="tray-rule"><b>Regla de lectura</b>Compare etapas para formular preguntas. No atribuya causalidad ni convierta referencias nacionales en resultados de Antioquia.</div>
+  </div>
+
+  <div class="tray-chain" aria-label="Seis etapas de la trayectoria educativa">
+    <article class="tray-stage" style="--stage:#6ba6ff"><span class="tray-jurisdiction">Antioquia · registros</span><h3>Aspirar</h3><strong id="tray-aspirar">343.927</strong><span>inscripciones a educación superior · 2024</span><p><b>SNIES, S1 + S2.</b> Son registros de solicitud, no personas únicas: una persona puede inscribirse varias veces.</p></article>
+    <article class="tray-stage" style="--stage:#50c8bb"><span class="tray-jurisdiction">Antioquia · cálculo</span><h3>Acceder</h3><strong id="tray-acceder">35,2 %</strong><span><b id="tray-primer-curso">120.979</b> registros de primer curso / inscripciones</span><p><b>SNIES 2024.</b> Es una razón administrativa, no la tasa oficial de tránsito inmediato ni una probabilidad individual.</p></article>
+    <article class="tray-stage" style="--stage:#f0b24d"><span class="tray-jurisdiction">Colombia · referencia</span><h3>Permanecer</h3><strong>8,97 %</strong><span>deserción anual · sistema nacional · 2023</span><p><b>SPADIES, cierre estadístico 2024.</b> Ausencia intersemestral: 12,40 %. La extracción comparable de Antioquia está pendiente.</p></article>
+    <article class="tray-stage" style="--stage:#9e8cff"><span class="tray-jurisdiction">Antioquia vs. Colombia</span><h3>Aprender</h3><strong>+6 pts</strong><span>Saber Pro: 154 Antioquia vs. 148 nacional</span><p><b>ICFES 2025, n = 30.810.</b> Promedio de evaluados en IES del departamento; no es valor agregado institucional.</p></article>
+    <article class="tray-stage" style="--stage:#d690c5"><span class="tray-jurisdiction">Colombia · referencia</span><h3>Graduarse</h3><strong>42,5 %</strong><span>graduación acumulada universitaria · cohorte 2021</span><p><b>OTE–MEN.</b> En TyT fue 36,6 %. Son referentes nacionales, no tasas de graduación de Antioquia.</p></article>
+    <article class="tray-stage" style="--stage:#3ed6aa"><span class="tray-jurisdiction">IES domiciliadas en Antioquia</span><h3>Vincularse</h3><strong id="tray-vincularse">71,4 %</strong><span><b id="tray-cotizantes">23.374</b> cotizantes / 32.756 graduados de pregrado</span><p><b>OLE 2023, graduados 2022.</b> Cotizar formalmente no equivale a estar empleado; se excluyen SENA y UNAD.</p></article>
+  </div>
+
+  <div class="tray-bridge">
+    <div class="tray-box">
+      <div class="tray-box-head"><div><small>Matriz de acción</small><h3>¿Qué decisión está sobre la mesa?</h3></div><span class="tray-editorial">Hipótesis, no ranking</span></div>
+      <div class="tray-tabs" role="group" aria-label="Elegir tipo de decisión">
+        <button type="button" class="on" data-tray="expandir" aria-pressed="true">Expandir</button>
+        <button type="button" data-tray="retener" aria-pressed="false">Retener</button>
+        <button type="button" data-tray="redisenar" aria-pressed="false">Rediseñar</button>
+        <button type="button" data-tray="proteger" aria-pressed="false">Proteger</button>
+      </div>
+      <p class="sr-only" id="tray-status" aria-live="polite"></p>
+      <div class="tray-decision" id="tray-decision"></div>
+    </div>
+
+    <aside class="tray-box">
+      <div class="tray-box-head"><div><small>Preparación del dato</small><h3>Qué puede decidirse hoy</h3></div><span class="tray-editorial">Semáforo</span></div>
+      <div class="tray-readiness">
+        <div class="tray-ready ok"><span>Disponible</span><div><b>Acceso, aprendizaje, oferta y vínculo formal</b><p>SNIES 2024, Saber Pro/TyT 2025, atlas territorial y OLE 2023 tienen fuente y corte trazables.</p></div></div>
+        <div class="tray-ready context"><span>Referencia</span><div><b>Permanencia y graduación</b><p>SPADIES y OTE permiten dimensionar el reto nacional; todavía no se publican aquí como resultado departamental.</p></div></div>
+        <div class="tray-ready missing"><span>Por integrar</span><div><b>Cohortes, costo neto y resultado de beneficiarios</b><p>Se necesita extracción departamental reproducible y convenios de datos para seguir permanencia, grado, residencia y ocupación.</p></div></div>
+      </div>
+    </aside>
+  </div>
+
+  <div class="tray-lenses" aria-label="Variables adicionales para la decisión">
+    <article class="tray-lens"><small>Transición local</small><strong>49,36 %</strong><b>Medellín · tránsito inmediato 2024</b><p>11.539 bachilleres ingresaron directamente. No representa el resto del departamento.</p></article>
+    <article class="tray-lens"><small>Equidad STEM</small><strong>33,6 %</strong><b>mujeres en áreas STEM</b><p>Saber TyT 2017–2022. Señal de composición entre evaluados, no toda la matrícula.</p></article>
+    <article class="tray-lens"><small>Acceso territorial</small><strong>74</strong><b>municipios sin oferta activa</b><p>SNIES 2024-II. Ausencia de oferta local no significa ausencia de estudiantes residentes.</p></article>
+    <article class="tray-lens"><small>Ecosistema privado</small><strong>$399.655 M</strong><b>inversión educativa reportada en 2025</b><p>Proantioquia: 55 organizaciones y 297 iniciativas en todos los niveles. Es inversión reportada, no impacto probado.</p></article>
+  </div>
+
+  <div class="tray-sourcebar">
+    <div>
+      <a href="https://snies.mineducacion.gov.co/portal/ESTADISTICAS/Bases-consolidadas/" target="_blank" rel="noopener">SNIES ↗</a>
+      <a href="https://www.mineducacion.gov.co/sistemasdeinformacion/1783/w3-propertyvalue-68157.html" target="_blank" rel="noopener">SPADIES ↗</a>
+      <a href="https://ote.mineducacion.gov.co/sites/default/files/otepublic/2024-06/Doc-tematico-II-%28ES%29_2024.pdf" target="_blank" rel="noopener">OTE–MEN ↗</a>
+      <a href="https://www.icfes.gov.co/evaluaciones-icfes/acerca-del-examen-saber-pro/resultados-del-examen-saber-pro/" target="_blank" rel="noopener">ICFES ↗</a>
+      <a href="https://ole.mineducacion.gov.co/portal/secciones/A-quienes-aportamos/Sector-productivo/" target="_blank" rel="noopener">OLE ↗</a>
+      <a href="https://www.medellin.gov.co/es/sala-de-prensa/noticias/medellin-se-consolida-como-referente-nacional-en-acceso-a-la-educacion-superior/" target="_blank" rel="noopener">Medellín ↗</a>
+      <a href="https://proantioquia.org.co/download/inversion-privada-en-educacion-balance-2025/" target="_blank" rel="noopener">Proantioquia ↗</a>
+      <a href="https://sapiencia.gov.co/observatorio-informes/" target="_blank" rel="noopener">Sapiencia ODES ↗</a>
+    </div>
+    <span>Las cifras de distinto corte se muestran juntas para orientar decisiones, no para simular una cohorte longitudinal.</span>
   </div>
 </section>
 
@@ -3673,6 +3758,41 @@ const FIN_AL=[
   document.getElementById('hallazgo-finanzas').innerHTML=`<b>La paradoja fiscal del sistema:</b> las IU públicas baten récords de matrícula CON superávits (ITM +$96.722 M, TdeA +$52.043 M, IU Digital +$45.245 M) porque la gratuidad les llega como ingreso — mientras la única universidad en crisis abierta es la <b>UdeA (−$377.537 M de desfinanciación)</b>, cuyo problema no es la gratuidad sino la base presupuestal de la Ley 30. Y el costo de crecer rápido lo paga hoy la IU de Envigado: +23 % de matrícula con $17.663 M de la Nación sin llegar. El Estado ya no financia la oferta: compra cupos — y a veces paga tarde.`;
 })();
 
+/* ---- Trayectorias V26: cálculo reproducible y matriz editorial ---- */
+(function(){
+  const emb=D.embudo||{};
+  const niveles=D.ole?.vinculacion_por_nivel||{};
+  const pregrado=['Técnica profesional','Tecnológica','Universitaria'].map(k=>niveles[k]||{vinculados:0,graduados:0});
+  const vinculados=pregrado.reduce((s,x)=>s+Number(x.vinculados||0),0);
+  const graduados=pregrado.reduce((s,x)=>s+Number(x.graduados||0),0);
+  const acceso=emb.inscritos?100*emb.primer_curso/emb.inscritos:0;
+  const vinculo=graduados?100*vinculados/graduados:0;
+  const put=(id,value)=>{const el=document.getElementById(id);if(el)el.textContent=value;};
+  put('tray-aspirar',fmt(emb.inscritos));put('tray-primer-curso',fmt(emb.primer_curso));
+  put('tray-acceder',acceso.toLocaleString('es-CO',{minimumFractionDigits:1,maximumFractionDigits:1})+' %');
+  put('tray-cotizantes',fmt(vinculados));put('tray-vincularse',vinculo.toLocaleString('es-CO',{minimumFractionDigits:1,maximumFractionDigits:1})+' %');
+
+  const DECISIONS={
+    expandir:{signal:'¿Hay jóvenes y demanda sin una ruta sostenible de acceso?',detail:'Cruce municipios sin oferta, tránsito inmediato, distancia, modalidad y continuidad hacia primer curso. No use solo el número de programas.',action:'Pilotear acceso territorial con soporte de permanencia',measure:'Mida transición, ingreso efectivo y continuidad al segundo periodo por municipio de residencia; no solo cupos o matrícula.'},
+    retener:{signal:'¿En qué periodo, programa y grupo aparece la desvinculación?',detail:'La referencia nacional orienta la magnitud, pero la intervención exige cohortes de Antioquia por nivel, modalidad, territorio y primer año.',action:'Construir alerta temprana con gobernanza humana',measure:'Siga ausencia intersemestral, créditos aprobados, retorno y graduación. Audite falsos positivos y no automatice sanciones.'},
+    redisenar:{signal:'¿La baja demanda convive con débil aprendizaje o retorno?',detail:'Compare registros, ingreso, resultados Saber, graduación y vínculo formal sin suponer que una asociación demuestra la causa.',action:'Reformular el portafolio y sus apoyos',measure:'Defina una meta distinta por etapa: conversión administrativa, persistencia, aprendizaje, tiempo al grado y resultado laboral.'},
+    proteger:{signal:'¿Qué resultado valioso puede perderse por fragilidad fiscal?',detail:'Una trayectoria fuerte puede coexistir con caja débil, giros tardíos o costos crecientes. Calidad, escala y solvencia no son equivalentes.',action:'Proteger capacidad antes de expandir',measure:'Conecte continuidad estudiantil y aprendizaje con liquidez, costo neto por estudiante y oportunidad de los recursos.'},
+  };
+  const host=document.getElementById('tray-decision'),buttons=[...document.querySelectorAll('.tray-tabs button')];
+  function render(key){
+    const d=DECISIONS[key];if(!host||!d)return;host.innerHTML='';
+    [{k:'Señal que debe comprobarse',t:d.signal,p:d.detail,c:''},{k:'Acción sugerida',t:d.action,p:d.measure,c:'tray-action'}].forEach(x=>{
+      const card=document.createElement('article');if(x.c)card.className=x.c;
+      const small=document.createElement('small');small.textContent=x.k;
+      const title=document.createElement('b');title.textContent=x.t;
+      const p=document.createElement('p');p.textContent=x.p;card.append(small,title,p);host.appendChild(card);
+    });
+    put('tray-status',`Ruta ${key}: evidencia, acción y medida de seguimiento disponibles.`);
+  }
+  buttons.forEach(b=>b.addEventListener('click',()=>{buttons.forEach(x=>{const on=x===b;x.classList.toggle('on',on);x.setAttribute('aria-pressed',String(on));});render(b.dataset.tray);}));
+  render('expandir');
+})();
+
 /* ---- Sala Ejecutiva V25: rutas por rol y contexto transversal ---- */
 (function(){
   const ACTIONS={
@@ -3708,6 +3828,7 @@ const FIN_AL=[
   render('gobierno');
 
   const META={
+    trayectorias:['SNIES + SPADIES + ICFES + OTE + OLE','2023–2025 · cortes separados','¿En qué etapa se rompe la trayectoria y qué evidencia falta?'],
     panorama:['SNIES','2018–2024','¿El sistema crece o cambia de composición?'],
     instituciones:['SNIES + IES','2024-II / señales 2026','¿Qué capacidad institucional sostiene el crecimiento?'],
     territorio:['SNIES + DANE','2024','¿Dónde una inversión cerraría una brecha verificable?'],
@@ -3734,7 +3855,8 @@ const FIN_AL=[
 (function(){
   const GUIAS={
     inicio:{q:'¿Qué está cambiando en la educación superior?',i:'El sistema recupera matrícula, pero no de forma uniforme: crece la formación universitaria mientras la base técnica y tecnológica se estrecha.',n:'Empiece por la Sala Ejecutiva para identificar tensiones y después abra el capítulo que sostiene cada decisión.',f:'SNIES 2024-II · fuente oficial',to:'ejecutivo',cta:'Abrir la Sala Ejecutiva'},
-    ejecutivo:{q:'¿Qué exige decisión ahora?',i:'Cuatro tensiones se cruzan: recuperación incompleta, concentración territorial, contracción TyT y una población joven que empezará a disminuir con fuerza.',n:'La agenda es una priorización editorial basada en evidencia; no es una calificación automática ni sustituye la deliberación institucional.',f:'SNIES + DANE + MEN · cortes declarados',to:'territorio',cta:'Empezar por la brecha territorial'},
+    ejecutivo:{q:'¿Qué exige decisión ahora?',i:'Cuatro tensiones se cruzan: recuperación incompleta, concentración territorial, contracción TyT y una población joven que empezará a disminuir con fuerza.',n:'La agenda es una priorización editorial basada en evidencia; no es una calificación automática ni sustituye la deliberación institucional.',f:'SNIES + DANE + MEN · cortes declarados',to:'trayectorias',cta:'Seguir la trayectoria completa'},
+    trayectorias:{q:'¿En qué punto se pierde una oportunidad educativa?',i:'La respuesta cambia según la etapa: aspirar, acceder, permanecer, aprender, graduarse o vincularse. MaterIA separa los universos para que una brecha no se confunda con otra.',n:'Permanencia y graduación se muestran como referencias nacionales hasta contar con una extracción departamental reproducible.',f:'SNIES + SPADIES + ICFES + OTE + OLE',to:'territorio',cta:'Localizar la brecha'},
     panorama:{q:'¿El sistema está creciendo o se está recomponiendo?',i:'Ambas cosas. La recuperación de 2024 está impulsada por lo universitario y lo oficial; la educación técnica y tecnológica sigue por debajo de su nivel de 2018.',n:'Compare siempre niveles y modalidades: el total, por sí solo, esconde cambios estructurales.',f:'SNIES 2018–2024 · fuente oficial',to:'instituciones',cta:'Comparar instituciones'},
     instituciones:{q:'¿Quién está creciendo y con qué tipo de oferta?',i:'El tamaño no cuenta toda la historia. La comparación reúne matrícula, programas, presencia territorial, acreditación, Saber TyT y capacidad investigativa.',n:'Use el comparador de hasta tres IES para observar fortalezas distintas sin convertir una cifra en un ranking absoluto.',f:'SNIES + señales autorreportadas',to:'territorio',cta:'Ver presencia territorial'},
     territorio:{q:'¿Dónde llega realmente la educación superior?',i:'Solo 51 de los 125 municipios tienen oferta activa. El mapa permite separar capacidad instalada, posgrado, TyT, programas y desempeño.',n:'La razón de oferta no equivale a cobertura de residentes: algunos municipios reciben estudiantes de otros territorios.',f:'SNIES + DANE · auditado',to:'decidir',cta:'Reducir opciones'},
@@ -3919,6 +4041,7 @@ function csvDownload(container, headers, rows, nombre){
   const goTo=id=>{if(window.mostrarVista)mostrarVista(id);};
   [
     {t:'¿Qué debería priorizar un tomador de decisiones?',k:'Pregunta guiada · Sala Ejecutiva',terms:'rector gobierno consejo planeacion prioridad riesgo accion',go:()=>goTo('ejecutivo')},
+    {t:'¿En qué etapa se rompe la trayectoria educativa?',k:'Pregunta guiada · trayectorias',terms:'acceso permanencia desercion aprendizaje graduacion empleo retorno',go:()=>goTo('trayectorias')},
     {t:'¿Dónde puedo estudiar cerca de mi municipio?',k:'Pregunta guiada · territorio',terms:'mapa oferta cercania subregion',go:()=>goTo('territorio')},
     {t:'Quiero reducir mis opciones de estudio',k:'Pregunta guiada · Modo Decisión',terms:'elegir programa municipio nivel modalidad area decidir',go:()=>goTo('decidir')},
     {t:'¿Qué institución se ajusta mejor a lo que busco?',k:'Pregunta guiada · comparar IES',terms:'universidad comparador calidad tamano',go:()=>goTo('instituciones')},

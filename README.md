@@ -6,7 +6,7 @@ Tablero de la educación superior del departamento de Antioquia — **pregrado y
 
 **En línea:** https://materia-gris.vercel.app
 **Espejo:** https://observatorio-educacion-antioquia.vercel.app
-**Autor:** Santiago Jiménez Londoño · Última versión: V25 (julio de 2026)
+**Autor:** Santiago Jiménez Londoño · Última versión: V26 (julio de 2026)
 
 ---
 
@@ -15,6 +15,7 @@ Tablero de la educación superior del departamento de Antioquia — **pregrado y
 | Sección | Pregunta que contesta |
 |---|---|
 | **Sala Ejecutiva** | ¿Qué exige decisión ahora? Tensiones, prioridades y rutas diferenciadas para gobierno, rectoría y planeación |
+| **Trayectorias y retorno** | ¿Dónde se rompe la oportunidad? Conecta aspiración, acceso, permanencia, aprendizaje, graduación y vínculo laboral sin fingir una cohorte única |
 | **Panorama** | ¿Cómo evolucionó la matrícula 2018-2024 por nivel, sector y modalidad? |
 | **Instituciones** | ¿Quién forma a Antioquia? 73 IES, comparador de hasta 3, docentes y radar de cifras 2025-2026 autorreportadas |
 | **Territorio** | ¿Dónde llega la oferta? Mapa municipal interactivo y comparador sincronizado de razón de oferta, presencia municipal y peso TyT |
@@ -56,6 +57,7 @@ public/
   auditoria.html         # lectura pública de resultados, método y fuentes
   auditoria-cifras.json  # comprobante público de la última auditoría del atlas
   verificacion-v25.json  # controles reproducibles de la Sala Ejecutiva y sus cortes
+  verificacion-v26.json  # seis etapas, fórmulas, jurisdicciones y límites de Trayectorias
 data/                    # insumos crudos — NO versionados (ver .gitignore)
 ```
 
@@ -90,7 +92,9 @@ Cuando el MEN publique la vigencia siguiente (histórico: hacia julio de cada a�
 |---|---|---|
 | **SNIES — MEN** (bases consolidadas) | Matriculados, graduados, inscritos, admitidos, primer curso, docentes | 2018–**2024** (última publicada) |
 | **OLE — MEN** (Base IBC) | Vinculación laboral formal y salario de cotización de graduados | **2023** (última publicada) |
-| **ICFES** (`iwgf-bkfk`, datos.gov.co) | Saber TyT: puntajes, niveles MCER de inglés, perfil socioeconómico | 2017–**2022** (hasta donde llega el microdato abierto) |
+| **ICFES** (`iwgf-bkfk`, datos.gov.co + resultados agregados) | Saber TyT: puntajes, inglés y perfil; Saber Pro/TyT agregado para comparación reciente | microdato 2017–**2022**; agregados **2023–2025** |
+| **SPADIES — MEN** | Deserción anual y ausencia intersemestral como referencia nacional | **2023**, cierre estadístico 2024 |
+| **Observatorio de Trayectorias — MEN** | Graduación acumulada y marco de indicadores de acceso, permanencia y retorno | cohortes hasta **2021** en el documento temático usado |
 | **MinCiencias** (PDF Res. 1531/2025 + `hrhc-c4wu`) | Grupos de investigación reconocidos | **Conv. 957 de 2024** (resultados dic-2025) |
 | **DANE** (proyecciones CNPV 2018) | Población 17-21 por municipio, para la cobertura | **2024** |
 | **DANE — GEIH** | Desempleo Medellín A.M. (8,6 %) | trimestre mar–may **2026** |
@@ -110,6 +114,7 @@ Cuando el MEN publique la vigencia siguiente (histórico: hacia julio de cada a�
 7. **El radar institucional es autorreportado**: cortes y definiciones propias de cada IES, no comparables 1:1 con el SNIES. Cada cifra enlaza a su fuente.
 8. Saber TyT usa la escala 0–200 vigente desde 2017-3; los rótulos MCER históricos (A-, -A1, Pre-A1, B+) se homologan a la escala actual. El puntaje por municipio solo se reporta con 50+ evaluados.
 9. **Seguidores no son alcance**: el capítulo de redes sociales suma audiencias públicas sin deduplicar y calcula un índice editorial sobre señales observables. El alcance único, las impresiones, la retención, el crecimiento y las conversiones requieren exportaciones privadas de cada plataforma. Datos y fórmula: `public/redes-sociales.json`.
+10. **Trayectorias no es un embudo longitudinal**: inscripciones y primer curso son registros SNIES 2024; Saber Pro corresponde a evaluados 2025; OLE observa cotización formal de graduados 2022; permanencia y graduación son referencias nacionales. Cada etapa conserva universo, jurisdicción y corte, y nunca se multiplican sus porcentajes.
 
 ## Ruta de potenciación
 
@@ -117,7 +122,8 @@ Cuando el MEN publique la vigencia siguiente (histórico: hacia julio de cada a�
 - **Modo decisión** que combine territorio, costo, modalidad, calidad y resultados laborales sin producir un ranking absoluto.
 - **Asistente explicable** sobre el corpus publicado: toda respuesta deberá mostrar fuente, corte, cálculo y limitación, sin perfilar estudiantes.
 - **Alertas de frescura** para detectar nuevas bases, resoluciones de acreditación y cambios en informes institucionales.
-- **Saber Pro y permanencia**: ampliar resultados universitarios desde DataIcfes e incorporar SPADIES cuando exista acceso reproducible.
+- **Permanencia departamental**: incorporar cohortes SPADIES/OTE de Antioquia por IES, nivel y modalidad cuando exista una extracción pública reproducible; hasta entonces, mantener los valores nacionales únicamente como referencia.
+- **Costo neto y resultado de apoyos**: vincular gratuidad, becas y fondos con continuidad y graduación mediante datos gobernados, sin perfilar ni automatizar decisiones sobre estudiantes.
 - **Demanda laboral por vacantes**: integrar el Servicio Público de Empleo si publica una base abierta; mientras tanto, mantener GEIH y OLE como fuentes comparables.
 
 ---

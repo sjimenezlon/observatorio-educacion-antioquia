@@ -1,7 +1,7 @@
 {
   "estado": "correcto",
   "fecha_auditoria": "2026-07-15",
-  "alcance": "Atlas territorial, Modo Decisión y Sala Ejecutiva de MaterIA Gris V25",
+  "alcance": "Atlas territorial, Modo Decisión, Sala Ejecutiva y Trayectorias y retorno de MaterIA Gris V26",
   "fuentes": {
     "snies": {
       "descripcion": "Estudiantes Matriculados 2024, bases consolidadas SNIES–MEN",
@@ -59,6 +59,26 @@
     "matricula_programas_acreditados_pct": 36.6,
     "matricula_virtual_pct": 13.9,
     "clasificacion": "Las cuatro prioridades son una lectura editorial; las cifras conservan fuente y corte independientes"
+  },
+  "trayectorias_retorno": {
+    "version": "V26",
+    "etapas": 6,
+    "inscripciones_2024_registros": 343927,
+    "primer_curso_2024_registros": 120979,
+    "razon_primer_curso_inscripciones_pct": 35.2,
+    "saber_pro_antioquia_2025": 154,
+    "saber_pro_nacional_2025": 148,
+    "evaluados_saber_pro_antioquia_2025": 30810,
+    "cotizantes_pregrado_ole": 23374,
+    "graduados_pregrado_observados_ole": 32756,
+    "cotizacion_formal_pregrado_pct": 71.4,
+    "referencias_nacionales_separadas": [
+      "SPADIES: deserción anual 8,97 % y ausencia intersemestral 12,40 % en 2023",
+      "OTE–MEN: graduación acumulada de la cohorte 2021, 42,5 % universitaria y 36,6 % TyT"
+    ],
+    "diferencias_en_calculos_locales": 0,
+    "advertencia": "Las etapas no corresponden a la misma cohorte. Los indicadores nacionales están rotulados como referencias y no como resultados de Antioquia.",
+    "comprobante": "verificacion-v26.json"
   },
   "reproduccion": "python3 scripts/auditar_atlas.py"
 }
