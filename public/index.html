@@ -25,13 +25,14 @@
   --o1:#86b6ef; --o2:#3987e5; --o3:#184f95;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:70px}
-body{background:var(--page);color:var(--ink-2);font:15px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth;scroll-padding-top:70px;overflow-x:hidden}
+body{background:var(--page);color:var(--ink-2);font:15px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:var(--s1);text-decoration:none}
 a:hover{text-decoration:underline}
 .wrap{max-width:1180px;margin:0 auto;padding:0 20px}
 nav{position:sticky;top:0;z-index:50;background:rgba(13,13,13,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
 nav .wrap{display:flex;align-items:center;gap:18px;height:52px;overflow-x:auto;white-space:nowrap}
+nav a,nav button{min-height:44px;display:inline-flex;align-items:center}
 nav .logo{font-weight:700;color:var(--ink);font-size:14px;letter-spacing:.02em}
 nav .logo span{color:var(--s1)}
 nav a.sec{color:var(--muted);font-size:13px}
@@ -81,7 +82,8 @@ details.tw summary{cursor:pointer;color:var(--muted);font-size:12.5px;user-selec
 details.tw summary:hover{color:var(--ink)}
 .tscroll{overflow-x:auto;margin-top:10px;border:1px solid var(--border);border-radius:10px}
 table{border-collapse:collapse;width:100%;font-size:13px;min-width:520px}
-th{position:sticky;top:0;background:var(--surface-2);color:var(--muted);font-weight:600;text-align:left;padding:9px 12px;font-size:12px;white-space:nowrap;cursor:pointer;user-select:none}
+th{position:sticky;top:0;background:var(--surface-2);color:var(--muted);font-weight:600;text-align:left;padding:9px 12px;font-size:12px;white-space:nowrap;cursor:default;user-select:none}
+#tb-ies th{cursor:pointer}
 th.num,td.num{text-align:right;font-variant-numeric:tabular-nums}
 td{padding:8px 12px;border-top:1px solid var(--grid);color:var(--ink-2);white-space:nowrap}
 td.wrapcell{white-space:normal;min-width:220px}
@@ -96,7 +98,7 @@ tr:hover td{background:var(--surface-2)}
 .tag.vg{color:#5fd08a;background:rgba(12,163,12,.14)}
 .tag.rn{color:#ffb84d;background:rgba(201,133,0,.14)}
 .filters{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 16px;align-items:center}
-.filters input,.filters select{background:var(--surface-2);border:1px solid var(--border);color:var(--ink);border-radius:9px;padding:8px 12px;font-size:13.5px;font-family:inherit;max-width:230px}
+.filters input,.filters select{min-height:44px;background:var(--surface-2);border:1px solid var(--border);color:var(--ink);border-radius:9px;padding:8px 12px;font-size:13.5px;font-family:inherit;max-width:230px}
 .filters input{min-width:210px}
 .filters .count{color:var(--muted);font-size:12.5px;margin-left:auto}
 /* ---------- pulido visual ---------- */
@@ -140,7 +142,7 @@ html.light .card{box-shadow:0 1px 2px rgba(20,20,15,.03),0 8px 22px rgba(20,20,1
 .tscroll::-webkit-scrollbar-track,#pal ul::-webkit-scrollbar-track,#ficha .fbox::-webkit-scrollbar-track{background:transparent}
 :focus-visible{outline:2px solid var(--s1);outline-offset:2px;border-radius:4px}
 #progreso{position:fixed;top:0;left:0;height:2px;width:0;background:linear-gradient(90deg,var(--s1),var(--s2));z-index:60;transition:width .1s linear}
-#arriba{position:fixed;right:18px;bottom:18px;z-index:55;width:40px;height:40px;border-radius:12px;background:var(--surface-2);border:1px solid var(--border);color:var(--ink);font-size:17px;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .3s ease;box-shadow:0 4px 18px rgba(0,0,0,.4)}
+#arriba{position:fixed;right:18px;bottom:18px;z-index:55;width:44px;height:44px;border-radius:12px;background:var(--surface-2);border:1px solid var(--border);color:var(--ink);font-size:17px;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .3s ease;box-shadow:0 4px 18px rgba(0,0,0,.4)}
 #arriba.on{opacity:1;pointer-events:auto}
 #arriba:hover{background:var(--baseline)}
 /* ---------- acreditación ---------- */
@@ -196,12 +198,13 @@ html.light .card{box-shadow:0 1px 2px rgba(20,20,15,.03),0 8px 22px rgba(20,20,1
 #ficha .fr{display:flex;justify-content:space-between;gap:14px;padding:9px 0;border-top:1px solid var(--grid);font-size:13.5px;align-items:baseline}
 #ficha .fr span:first-child{color:var(--muted);flex:none}
 #ficha .fr b{color:var(--ink);text-align:right;font-weight:600}
-#ficha .fbtn{background:var(--surface-2);border:1px solid var(--border);color:var(--ink);border-radius:8px;padding:5px 11px;cursor:pointer;font-size:12.5px;font-family:inherit}
+#ficha .fbtn{min-height:44px;background:var(--surface-2);border:1px solid var(--border);color:var(--ink);border-radius:8px;padding:5px 11px;cursor:pointer;font-size:12.5px;font-family:inherit}
 #ficha .fbtn:hover{background:var(--baseline)}
 #tb-ies tbody tr{cursor:pointer}
+#tb-ies tbody tr:focus{outline:2px solid var(--s1);outline-offset:-2px;background:var(--surface-2)}
 .cinta{display:flex;align-items:center;gap:12px;margin:2px 0 18px;border:1px solid var(--border);background:var(--surface);border-radius:12px;padding:8px 14px;overflow:hidden;cursor:pointer}
 .cinta .anio{flex:none;background:rgba(57,135,229,.16);border:1px solid var(--s1);color:var(--ink);font-weight:700;font-size:12px;border-radius:8px;padding:3px 10px;letter-spacing:.08em}
-.cinta .pista{overflow:hidden;flex:1;-webkit-mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent);mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent)}
+.cinta .pista{overflow:hidden;flex:1;min-width:0;contain:paint;-webkit-mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent);mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent)}
 .cinta .rollo{display:inline-flex;gap:34px;white-space:nowrap;font-size:13px;color:var(--ink-2);animation:cinta 55s linear infinite;padding-right:34px}
 .cinta:hover .rollo{animation-play-state:paused}
 .cinta b{color:var(--ink)}
@@ -214,10 +217,10 @@ html.light .card{box-shadow:0 1px 2px rgba(20,20,15,.03),0 8px 22px rgba(20,20,1
 .map-box svg{display:block;width:100%;height:auto;touch-action:none;cursor:grab}
 .map-box svg.panning{cursor:grabbing}
 .map-zoom{position:absolute;top:10px;right:10px;display:flex;flex-direction:column;gap:6px}
-.map-zoom button{width:32px;height:32px;border-radius:8px;background:var(--surface-2);border:1px solid var(--border);color:var(--ink);font-size:16px;cursor:pointer;line-height:1}
+.map-zoom button{width:44px;height:44px;border-radius:8px;background:var(--surface-2);border:1px solid var(--border);color:var(--ink);font-size:16px;cursor:pointer;line-height:1}
 .map-zoom button:hover{background:var(--baseline)}
 .seg{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 14px}
-.seg button{padding:7px 14px;border-radius:20px;background:var(--surface-2);border:1px solid var(--border);color:var(--ink-2);font-size:13px;cursor:pointer;font-family:inherit;transition:all .2s}
+.seg button{min-height:44px;padding:7px 14px;border-radius:22px;background:var(--surface-2);border:1px solid var(--border);color:var(--ink-2);font-size:13px;cursor:pointer;font-family:inherit;transition:all .2s}
 .seg button:hover{color:var(--ink)}
 .seg button.on{background:rgba(57,135,229,.18);border-color:var(--s1);color:var(--ink);font-weight:600}
 .map-legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:12px;font-size:12px;color:var(--muted);align-items:center}
@@ -236,8 +239,8 @@ html.light .card{box-shadow:0 1px 2px rgba(20,20,15,.03),0 8px 22px rgba(20,20,1
 .atlas-tools{display:flex;align-items:end;gap:9px;flex-wrap:wrap;margin-top:12px;padding:11px 12px;background:var(--surface-2);border:1px solid var(--border);border-radius:10px}
 .atlas-tools .field{display:grid;gap:5px;min-width:min(100%,310px);flex:1}
 .atlas-tools label{color:var(--ink);font-size:12px;font-weight:650}
-.atlas-tools select{width:100%;min-height:40px}
-.atlas-clear{min-height:40px;padding:0 14px;border:1px solid var(--border);border-radius:8px;background:var(--surface);color:var(--ink-2);font:inherit;font-size:12px;cursor:pointer}
+.atlas-tools select{width:100%;min-height:44px}
+.atlas-clear{min-height:44px;padding:0 14px;border:1px solid var(--border);border-radius:8px;background:var(--surface);color:var(--ink-2);font:inherit;font-size:12px;cursor:pointer}
 .atlas-clear:hover{border-color:var(--s1);color:var(--ink)}
 .atlas-map{margin:0;background:var(--surface-2);border:1px solid var(--border);border-radius:12px;padding:13px;min-width:0}
 .atlas-map figcaption{display:grid;gap:4px;min-height:94px}
@@ -257,7 +260,7 @@ html.light .card{box-shadow:0 1px 2px rgba(20,20,15,.03),0 8px 22px rgba(20,20,1
 .atlas-table summary{cursor:pointer;color:var(--ink);font-size:13px;font-weight:650}
 .atlas-source{margin-top:12px!important;margin-bottom:0!important}
 @media(max-width:1020px){.atlas-grid{grid-template-columns:1fr 1fr}.atlas-map:last-child{grid-column:1/-1}.atlas-map figcaption{min-height:78px}}
-@media(max-width:640px){.atlas-kpis,.atlas-grid{grid-template-columns:1fr}.atlas-map:last-child{grid-column:auto}.atlas-map figcaption{min-height:0}.atlas-svg svg{max-height:430px}.atlas-tools{align-items:stretch}.atlas-clear{width:100%}}
+@media(max-width:640px){.atlas-kpis,.atlas-grid{grid-template-columns:1fr}.atlas-map:last-child{grid-column:auto}.atlas-map figcaption{min-height:0}.atlas-svg svg{max-height:430px}.atlas-tools{align-items:stretch}.atlas-clear{width:100%}.filters input,.filters select{width:100%;max-width:none}.filters .count{width:100%;margin-left:0}}
 /* ---------- comparador ---------- */
 .cmp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:14px}
 .cmp-col{background:var(--surface-2);border:1px solid var(--border);border-radius:12px;padding:14px}
@@ -270,7 +273,7 @@ html.light .card{box-shadow:0 1px 2px rgba(20,20,15,.03),0 8px 22px rgba(20,20,1
 .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
 .chip{padding:5px 10px;border-radius:16px;background:rgba(57,135,229,.16);border:1px solid var(--s1);color:var(--ink);font-size:12px;display:flex;gap:6px;align-items:center}
 .chip button{background:none;border:none;color:var(--ink-2);cursor:pointer;font-size:13px;line-height:1;padding:0}
-.dl{background:none;border:none;color:var(--muted);font-size:12.5px;cursor:pointer;font-family:inherit;padding:0;margin-left:12px;text-decoration:underline}
+.dl{min-height:44px;display:inline-flex;align-items:center;background:none;border:none;color:var(--muted);font-size:12.5px;cursor:pointer;font-family:inherit;padding:0 4px;margin-left:8px;text-decoration:underline}
 .dl:hover{color:var(--ink)}
 /* ---------- paleta ⌘K ---------- */
 #pal{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.6);display:none;align-items:flex-start;justify-content:center;padding-top:12vh}
@@ -343,12 +346,12 @@ html.light #arriba{box-shadow:0 4px 18px rgba(0,0,0,.15)}
   <a class="sec" href="#social">Impacto social</a>
   <a class="sec" href="#finanzas">Finanzas</a>
   <a class="sec" href="#metodologia">Metodología</a>
-  <button id="pal-open" style="margin-left:auto;background:var(--surface-2);border:1px solid var(--border);color:var(--muted);border-radius:8px;padding:5px 10px;font-size:12px;cursor:pointer;font-family:inherit;white-space:nowrap">Buscar ⌘K</button>
+  <button id="pal-open" type="button" aria-haspopup="dialog" aria-controls="pal" aria-expanded="false" style="margin-left:auto;background:var(--surface-2);border:1px solid var(--border);color:var(--muted);border-radius:8px;padding:5px 10px;font-size:12px;cursor:pointer;font-family:inherit;white-space:nowrap">Buscar ⌘K</button>
   <button id="tema" type="button" aria-label="Cambiar tema" style="background:var(--surface-2);border:1px solid var(--border);color:var(--muted);border-radius:8px;padding:5px 10px;font-size:12px;cursor:pointer;font-family:inherit;white-space:nowrap"></button>
 </div></nav>
 <div id="pal" role="dialog" aria-modal="true" aria-label="Búsqueda global"><div class="box">
-  <input id="pal-q" type="search" placeholder="Buscar sección, institución, municipio o programa…" autocomplete="off">
-  <ul id="pal-list"></ul>
+  <input id="pal-q" type="search" placeholder="Buscar sección, institución, municipio o programa…" autocomplete="off" aria-label="Buscar sección, institución, municipio o programa" role="combobox" aria-autocomplete="list" aria-controls="pal-list" aria-expanded="false">
+  <ul id="pal-list" role="listbox" aria-label="Resultados de búsqueda"></ul>
   <div class="hint">↑↓ para navegar · ↵ para ir · esc para cerrar</div>
 </div></div>
 
@@ -358,7 +361,7 @@ html.light #arriba{box-shadow:0 4px 18px rgba(0,0,0,.15)}
   <h1>La educación superior de Antioquia, medida con datos oficiales</h1>
   <p class="lede">Pregrado y posgrado, pública y privada: oferta académica, demanda estudiantil, resultados en el mercado laboral, calidad, capacidad de innovación e impacto social del sistema de educación superior del departamento — con lente de detalle sobre la formación técnica y tecnológica.</p>
   <p class="byline">Por <b>Santiago Jiménez Londoño</b> · Fuentes: SNIES-MEN, ICFES (Saber TyT), OLE y MinCiencias · Corte de datos: julio de 2026</p>
-  <div class="cinta" id="cinta2026" title="Ver la línea de tiempo 2026" role="link" aria-label="Novedades 2026 — ir a la línea de tiempo">
+  <div class="cinta" id="cinta2026" title="Ver la línea de tiempo 2026" role="link" tabindex="0" aria-label="Novedades 2026 — ir a la línea de tiempo">
     <span class="anio">2026</span>
     <div class="pista"><div class="rollo" id="rollo2026"></div></div>
   </div>
@@ -463,11 +466,11 @@ html.light #arriba{box-shadow:0 4px 18px rgba(0,0,0,.15)}
     <div class="card">
       <h3>La foto 2025–2026: lo que las propias IES ya publicaron</h3>
       <p class="note">El SNIES consolidado llega hasta 2024 (el cierre 2025 se publica hacia julio–agosto de 2026). Esta tabla adelanta la foto con la <b>cifra más reciente que cada institución reportó en su rendición de cuentas, informe de gestión o boletín estadístico oficial</b>. Los cortes y definiciones varían entre instituciones — compare la tendencia de cada fila, no las filas entre sí (nota 9 de metodología). <b style="color:var(--ink-2)">Última verificación de fuentes: 13 de julio de 2026.</b></p>
-      <div class="seg" id="radar-filtro" role="tablist" aria-label="Filtro del radar">
-        <button class="on" data-f="todas">Todas</button>
-        <button data-f="Oficial">Oficiales</button>
-        <button data-f="Privada">Privadas</button>
-        <button data-f="2026">Con dato 2026-1</button>
+      <div class="seg" id="radar-filtro" role="group" aria-label="Filtro del radar">
+        <button type="button" class="on" data-f="todas" aria-pressed="true">Todas</button>
+        <button type="button" data-f="Oficial" aria-pressed="false">Oficiales</button>
+        <button type="button" data-f="Privada" aria-pressed="false">Privadas</button>
+        <button type="button" data-f="2026" aria-pressed="false">Con dato 2026-1</button>
       </div>
       <div class="tscroll" style="max-height:600px;overflow-y:auto" id="tb-radar"></div>
       <p class="note" style="margin-top:12px;margin-bottom:0">Contexto de política: la gratuidad en Antioquia pasó de 86.150 beneficiarios (2023-1) a <b>118.117 (2025-1)</b> según el <a href="https://www.mineducacion.gov.co/portal/salaprensa/Comunicados/426943:Gobierno-del-Cambio-ha-invertido-mas-de-8-3-billones-para-fortalecer-todos-los-niveles-educativos-en-Antioquia" target="_blank" rel="noopener">MEN (dic. 2025)</a>, y Sapiencia ofertó <b>46.667 beneficios de Matrícula Cero para 2026-1</b> en las IES públicas de Medellín (<a href="https://sapiencia.gov.co/matricula-cero-46667-oportunidades-educacion-superior-primer-semestre-2026/" target="_blank" rel="noopener">Sapiencia, nov. 2025</a>). En contravía, los créditos nuevos del ICETEX cayeron <b>−83 % en 2025</b> (47.137 → 9.342), el mínimo en una década (<a href="https://www.portafolio.co/economia/en-cifras-asi-fue-el-desplome-del-credito-del-icetex-en-un-ano-mientras-84-empresas-invierten-millones-en-becas-497865" target="_blank" rel="noopener">Portafolio, jul. 2026</a>).</p>
@@ -495,7 +498,7 @@ html.light #arriba{box-shadow:0 4px 18px rgba(0,0,0,.15)}
     <div class="card">
       <h3>Mapa de la matrícula municipal (2024-II)</h3>
       <p class="note">Cada municipio coloreado por la métrica elegida; más claro = más estudiantes. Gris = sin oferta activa. Pase el cursor para el detalle, haga clic para fijarlo, arrastre para mover, acerque con doble clic, ⌘/Ctrl + rueda o los botones +/−, y navegue con el buscador, por subregión o <b>filtrando por área de conocimiento</b> — el mapa se convierte en el mapa de la oferta de esa área.</p>
-      <div class="seg" id="map-metrics" role="tablist" aria-label="Métrica del mapa"></div>
+      <div class="seg" id="map-metrics" role="group" aria-label="Métrica del mapa"></div>
       <div class="filters" style="margin-bottom:12px">
         <input id="map-buscar" type="search" list="map-munis" placeholder="Buscar municipio…" aria-label="Buscar municipio en el mapa">
         <datalist id="map-munis"></datalist>
@@ -661,7 +664,7 @@ html.light #arriba{box-shadow:0 4px 18px rgba(0,0,0,.15)}
     <div class="card half">
       <h3>Explorador: elija un área y véala completa</h3>
       <p class="note">Todos los indicadores del área en un solo lugar.</p>
-      <div class="seg" id="exp-areas" role="tablist" aria-label="Elegir área"></div>
+      <div class="seg" id="exp-areas" role="group" aria-label="Elegir área"></div>
       <div class="kpis" id="exp-kpis" style="grid-template-columns:repeat(auto-fit,minmax(140px,1fr))"></div>
     </div>
     <div class="card" id="card-economia-contexto">
@@ -1054,6 +1057,10 @@ function el(tag,attrs,parent){
   const e=document.createElementNS(NS,tag);
   for(const k in attrs) e.setAttribute(k,attrs[k]);
   if(parent) parent.appendChild(e);
+  if(tag==='svg'&&attrs.role==='img'&&!e.hasAttribute('aria-label')){
+    const title=parent?.closest?.('.card')?.querySelector('h3')?.textContent?.trim();
+    if(title)e.setAttribute('aria-label',title);
+  }
   return e;
 }
 function txt(parent,x,y,str,{size=11.5,fill=MUT,anchor='start',weight=400,tabular=false}={}){
@@ -1333,24 +1340,26 @@ hbars('ch-docentes', Object.entries(D.docentes.formacion).sort((a,b)=>b[1]-a[1])
   const data=D.ies.map(i=>({...i,delta:i.matricula23?Math.round(1000*(i.matricula24-i.matricula23)/i.matricula23)/10:null}));
   let sortK='matricula24', asc=false;
   const host=document.getElementById('tb-ies');
-  function render(){
+  function render(focusK){
     host.innerHTML='';
     const t=document.createElement('table');
     const thead=document.createElement('thead'),trh=document.createElement('tr');
     cols.forEach(c=>{const th=document.createElement('th'); th.textContent=c.h+(sortK===c.k?(asc?' ↑':' ↓'):''); if(c.num)th.className='num';
-      th.addEventListener('click',()=>{if(sortK===c.k)asc=!asc;else{sortK=c.k;asc=false;}render();}); trh.appendChild(th);});
+      th.tabIndex=0;th.dataset.sort=c.k;th.setAttribute('aria-sort',sortK===c.k?(asc?'ascending':'descending'):'none');th.title=`Ordenar por ${c.h}`;
+      const ordenar=()=>{if(sortK===c.k)asc=!asc;else{sortK=c.k;asc=false;}render(c.k);};
+      th.addEventListener('click',ordenar);th.addEventListener('keydown',ev=>{if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();ordenar();}});trh.appendChild(th);});
     thead.appendChild(trh);t.appendChild(thead);
     const tb=document.createElement('tbody');
     [...data].sort((a,b)=>{const va=a[sortK],vb=b[sortK];
       if(typeof va==='string')return asc?va.localeCompare(vb):vb.localeCompare(va);
       return asc?(va??-1)-(vb??-1):(vb??-1)-(va??-1);}).forEach(i=>{
-      const tr=document.createElement('tr');
+      const tr=document.createElement('tr');tr.tabIndex=0;tr.dataset.code=i.codigo;tr.setAttribute('role','link');tr.setAttribute('aria-label',`Abrir ficha de ${i.nombre}`);
       const tdN=document.createElement('td');tdN.className='wrapcell';tdN.textContent=i.nombre+(i.acreditada?' ★':'');tdN.title=i.caracter;tr.appendChild(tdN);
       const tdS=document.createElement('td');const tg=document.createElement('span');tg.className='tag '+(i.sector==='Oficial'?'of':'pr');tg.textContent=i.sector;tdS.appendChild(tg);tr.appendChild(tdS);
       [i.matricula24,(i.delta==null?'—':(i.delta>0?'+':'')+i.delta.toLocaleString('es-CO')+' %'),i.pregrado24,i.posgrado24,i.tyt24,i.graduados24,i.programas,i.municipios].forEach(v=>{
         const td=document.createElement('td');td.className='num';td.textContent=typeof v==='number'?fmt(v):v;tr.appendChild(td);});
       tb.appendChild(tr);});
-    t.appendChild(tb);host.appendChild(t);
+    t.appendChild(tb);host.appendChild(t);if(focusK)host.querySelector(`th[data-sort="${focusK}"]`)?.focus();
   }
   render();
   const sena=D.ies.find(i=>i.nombre==='SENA');
@@ -1413,7 +1422,7 @@ const RADAR26=[
     host.appendChild(foot);
   }
   document.querySelectorAll('#radar-filtro button').forEach(b=>b.addEventListener('click',()=>{
-    document.querySelectorAll('#radar-filtro button').forEach(x=>x.classList.toggle('on',x===b));
+    document.querySelectorAll('#radar-filtro button').forEach(x=>{const on=x===b;x.classList.toggle('on',on);x.setAttribute('aria-pressed',String(on));});
     filtro=b.dataset.f;render();
   }));
   render();
@@ -1579,9 +1588,9 @@ hbars('ch-nbc', D.nbc.slice(0,12).map(n=>({label:n.nbc,value:n.matricula24,n})),
       tb.appendChild(tr);});
     t.appendChild(tb);host.appendChild(t);
     if(rows.length>shown){
-      const more=document.createElement('button');
+      const more=document.createElement('button');more.type='button';
       more.textContent=`Mostrar 400 más (${fmt(rows.length-shown)} restantes)`;
-      more.style.cssText='margin:10px;padding:8px 14px;background:var(--surface-2);color:var(--ink);border:1px solid var(--border);border-radius:8px;cursor:pointer;font-family:inherit';
+      more.style.cssText='min-height:44px;margin:10px;padding:8px 14px;background:var(--surface-2);color:var(--ink);border:1px solid var(--border);border-radius:8px;cursor:pointer;font-family:inherit';
       more.addEventListener('click',()=>{shown+=400;render();});
       host.appendChild(more);
     }
@@ -1663,8 +1672,8 @@ hbars('ch-fila',[...OD].sort((a,b)=>b.fila-a.fila).map(o=>({label:o.a,value:o.fi
   }
   OD.forEach((o,i)=>{
     const b=document.createElement('button');b.type='button';b.textContent=o.a.split(',')[0].split(' y ')[0];
-    if(i===0)b.classList.add('on');
-    b.addEventListener('click',()=>{seg.querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b));render(o);});
+    b.setAttribute('aria-pressed',String(i===0));if(i===0)b.classList.add('on');
+    b.addEventListener('click',()=>{seg.querySelectorAll('button').forEach(x=>{const on=x===b;x.classList.toggle('on',on);x.setAttribute('aria-pressed',String(on));});render(o);});
     seg.appendChild(b);
   });
   render(OD[0]);
@@ -2152,9 +2161,9 @@ const ACRED_IES=[
   // controles de métrica
   const segEl=document.getElementById('map-metrics');
   MET.forEach((m,i)=>{
-    const b=document.createElement('button');b.textContent=m.lbl;if(i===0)b.className='on';
+    const b=document.createElement('button');b.type='button';b.textContent=m.lbl;b.setAttribute('aria-pressed',String(i===0));if(i===0)b.className='on';
     b.addEventListener('click',()=>{
-      metric=m;segEl.querySelectorAll('button').forEach(x=>x.className='');b.className='on';
+      metric=m;segEl.querySelectorAll('button').forEach(x=>{x.className='';x.setAttribute('aria-pressed','false');});b.className='on';b.setAttribute('aria-pressed','true');
       if(m.k!=='matricula24'){areaFiltro='';const sa=document.getElementById('map-area');if(sa)sa.value='';}
       paint();if(!selected)panelDefault();
     });
@@ -2170,7 +2179,7 @@ const ACRED_IES=[
     sa.addEventListener('change',()=>{
       areaFiltro=sa.value;
       metric=MET[0];
-      segEl.querySelectorAll('button').forEach((x,i)=>x.className=i===0?'on':'');
+      segEl.querySelectorAll('button').forEach((x,i)=>{const on=i===0;x.className=on?'on':'';x.setAttribute('aria-pressed',String(on));});
       paint();
       if(selected)panelMuni(selected.code,selected.nombre);else panelDefault();
     });
@@ -2179,7 +2188,7 @@ const ACRED_IES=[
   // zoom y pan
   const zdiv=document.createElement('div');zdiv.className='map-zoom';
   [['+',0.8],['−',1.25],['⌂',0]].forEach(([t,fct])=>{
-    const b=document.createElement('button');b.textContent=t;b.setAttribute('aria-label',t==='+'?'Acercar':t==='−'?'Alejar':'Restablecer');
+    const b=document.createElement('button');b.type='button';b.textContent=t;b.setAttribute('aria-label',t==='+'?'Acercar':t==='−'?'Alejar':'Restablecer');
     b.addEventListener('click',()=>{
       if(!fct){vb={x:0,y:0,w:W,h:H};}
       else{
@@ -2359,7 +2368,7 @@ const ACRED_IES=[
     {id:'tyt',kind:'tyt',aria:'Mapa de participación técnica y tecnológica en la matrícula municipal de Antioquia',colors:amber,edges:[20,40,60,80],value:f=>{const m=byCode[f.properties.c];return m?100*m.tyt24/m.matricula24:null;},labels:['0–20 %','20–40 %','40–60 %','60–80 %','Más de 80 %']},
   ];
   configs.forEach(cfg=>{
-    const target=document.getElementById('atlas-'+cfg.id),svg=el('svg',{viewBox:`0 0 ${W} ${H}`,role:'img','aria-label':cfg.aria,tabindex:'0'},target);
+    const target=document.getElementById('atlas-'+cfg.id),svg=el('svg',{viewBox:`0 0 ${W} ${H}`,role:'img','aria-label':cfg.aria},target);
     GEO.features.forEach(f=>{
       const v=cfg.value(f),idx=cfg.kind==='offer'?v:(v==null?-1:bucket(v,cfg.edges));
       const p=el('path',{d:pathOf(f.geometry),fill:idx<0?empty:cfg.colors[idx],stroke:ink,'stroke-width':0.42,'vector-effect':'non-scaling-stroke','data-code':f.properties.c,'data-map':cfg.kind,'aria-hidden':'true'},svg);
@@ -2548,6 +2557,7 @@ lineChart('ch-demanda', D.serie_demanda.map(x=>String(x.anio)), [
   const light=document.documentElement.classList.contains('light');
   b.textContent=light?'🌙 Oscuro':'☀️ Claro';
   b.title=light?'Cambiar a tema oscuro':'Cambiar a tema claro';
+  b.setAttribute('aria-label',b.title);b.setAttribute('aria-pressed',String(light));
   b.addEventListener('click',()=>{
     try{localStorage.setItem('obs-theme',light?'dark':'light')}catch(e){}
     location.reload();
@@ -2572,9 +2582,12 @@ lineChart('ch-demanda', D.serie_demanda.map(x=>String(x.anio)), [
   ];
   const html=items.map(t=>'<span>'+t+'</span>').join('<span style="color:var(--muted)">•</span>');
   rollo.innerHTML=html+'<span style="color:var(--muted)">•</span>'+html+'<span style="color:var(--muted)">•</span>';
-  document.getElementById('cinta2026').addEventListener('click',()=>{
+  const cinta=document.getElementById('cinta2026');
+  const abrirLinea=()=>{
     const t=document.querySelector('.tline'); if(t)t.closest('.card').scrollIntoView({behavior:'smooth',block:'start'});
-  });
+  };
+  cinta.addEventListener('click',abrirLinea);
+  cinta.addEventListener('keydown',ev=>{if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();abrirLinea();}});
 })();
 
 /* ---- contadores animados del hero ---- */
@@ -2596,6 +2609,7 @@ lineChart('ch-demanda', D.serie_demanda.map(x=>String(x.anio)), [
 /* ---- Ficha por institución (deep link #ies=codigo) ---- */
 (function(){
   const wrap=document.getElementById('ficha'), box=document.getElementById('ficha-box');
+  let focoAnterior=null;
   const NF=t=>String(t).normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase().replace(/[^a-z0-9 ]/g,' ').replace(/\s+/g,' ').trim();
   const ALIAS={'unal sede medellin':'universidad nacional','u nacional multicampus':'universidad nacional','upb campus medellin':'universidad pontificia bolivariana','upb':'universidad pontificia bolivariana','upb multicampus':'universidad pontificia bolivariana','usb medellin':'san buenaventura','u catolica de oriente':'universidad catolica de oriente','u catolica luis amigo':'catolica luis amigo','iu de envigado':'de envigado','politecnico colombiano jic':'jaime isaza cadavid','iu pascual bravo':'pascual bravo','iu digital de antioquia':'iu digital','sena regional antioquia':'servicio nacional','uniremington':'remington','unilasallista':'lasallista','universidad eafit':'eafit','itm':'metropolitano','universidad eia':'eia','universidad ces':'ces','universidad de medellin':'universidad de medellin','tecnologico de antioquia':'tecnologico de antioquia','colegio mayor de antioquia':'colegio mayor','universidad de antioquia':'universidad de antioquia','u de antioquia':'universidad de antioquia'};
   const canon=n=>{const x=NF(n);return ALIAS[x]||x;};
@@ -2603,10 +2617,20 @@ lineChart('ch-demanda', D.serie_demanda.map(x=>String(x.anio)), [
     const t=NF(nombre);
     return (list||[]).find(x=>{const c=canon(x[key]);return t.includes(c)||c.includes(t);});
   }
-  function cerrar(){wrap.classList.remove('on');history.replaceState(null,'',location.pathname+location.search);}
+  function cerrar(){wrap.classList.remove('on');history.replaceState(null,'',location.pathname+location.search);const f=focoAnterior;focoAnterior=null;if(f&&document.contains(f))f.focus();}
   wrap.addEventListener('click',ev=>{if(ev.target===wrap)cerrar();});
-  addEventListener('keydown',ev=>{if(ev.key==='Escape'&&wrap.classList.contains('on'))cerrar();});
+  addEventListener('keydown',ev=>{
+    if(!wrap.classList.contains('on'))return;
+    if(ev.key==='Escape'){ev.preventDefault();cerrar();}
+    else if(ev.key==='Tab'){
+      const focusables=[...box.querySelectorAll('a[href],button:not([disabled]),[tabindex]:not([tabindex="-1"])')];if(!focusables.length)return;
+      const first=focusables[0],last=focusables[focusables.length-1];
+      if(ev.shiftKey&&document.activeElement===first){ev.preventDefault();last.focus();}
+      else if(!ev.shiftKey&&document.activeElement===last){ev.preventDefault();first.focus();}
+    }
+  });
   window.abrirFicha=function(codigo){
+    focoAnterior=document.activeElement;
     const m=D.ies.find(i=>String(i.codigo)===String(codigo)); if(!m)return;
     const delta=m.matricula23?Math.round(1000*(m.matricula24-m.matricula23)/m.matricula23)/10:null;
     const rad=enc(RADAR26,'ies',m.nombre), acr=enc(ACRED_IES,'ies',m.nombre), rk=enc(RANKINGS,'u',m.nombre);
@@ -2615,7 +2639,7 @@ lineChart('ch-demanda', D.serie_demanda.map(x=>String(x.anio)), [
     let h='<div style="display:flex;justify-content:space-between;gap:12px;align-items:flex-start">'
       +`<div><h4>${m.nombre}${m.acreditada?' <span title="Acreditación institucional de alta calidad">★</span>':''}</h4>`
       +`<div class="fsub">${m.caracter} · <span class="tag ${m.sector==='Oficial'?'of':'pr'}">${m.sector}</span></div></div>`
-      +'<div style="display:flex;gap:8px;flex:none"><button class="fbtn" id="f-copiar">Copiar enlace</button><button class="fbtn" id="f-cerrar">✕</button></div></div>';
+      +'<div style="display:flex;gap:8px;flex:none"><button class="fbtn" id="f-copiar" type="button">Copiar enlace</button><button class="fbtn" id="f-cerrar" type="button" aria-label="Cerrar ficha">✕</button></div></div>';
     h+='<div class="fk">'
       +`<div><div class="l">Matrícula 2024-II</div><div class="v">${fmt(m.matricula24)}</div><div class="s">${delta==null?'':(delta>=0?'▲ +':'▼ ')+delta.toLocaleString('es-CO')+' % vs. semestre pico 2023'}</div></div>`
       +`<div><div class="l">Pregrado · Posgrado</div><div class="v">${fmtK(m.pregrado24)} · ${fmtK(m.posgrado24)}</div></div>`
@@ -2639,14 +2663,15 @@ lineChart('ch-demanda', D.serie_demanda.map(x=>String(x.anio)), [
       ev.target.textContent='¡Copiado!';setTimeout(()=>ev.target.textContent='Copiar enlace',1400);
     });
     history.replaceState(null,'','#ies='+m.codigo);
-    wrap.classList.add('on');box.scrollTop=0;
+    wrap.classList.add('on');box.scrollTop=0;box.querySelector('#f-cerrar').focus();
   };
   const tbi=document.getElementById('tb-ies');
-  if(tbi)tbi.addEventListener('click',ev=>{
+  const activarFila=ev=>{
     const tr=ev.target.closest('tbody tr'); if(!tr)return;
-    const nombre=(tr.querySelector('td')||{}).textContent.replace(' ★','').trim();
-    const m=D.ies.find(i=>i.nombre===nombre); if(m)abrirFicha(m.codigo);
-  });
+    if(ev.type==='keydown'&&ev.key!=='Enter'&&ev.key!==' ')return;
+    if(ev.type==='keydown')ev.preventDefault();abrirFicha(tr.dataset.code);
+  };
+  if(tbi){tbi.addEventListener('click',activarFila);tbi.addEventListener('keydown',activarFila);}
   const mh=location.hash.match(/ies=(\d+)/); if(mh)setTimeout(()=>abrirFicha(mh[1]),150);
 })();
 
@@ -2880,6 +2905,7 @@ function csvDownload(container, headers, rows, nombre){
 /* ---- Paleta de comandos ⌘K ---- */
 (function(){
   const pal=document.getElementById('pal'), q=document.getElementById('pal-q'), list=document.getElementById('pal-list');
+  const trigger=document.getElementById('pal-open');let focoAnterior=null;
   const N=t=>String(t).normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase();
   const items=[];
   const goTo=id=>{if(window.mostrarVista)mostrarVista(id);};
@@ -2903,38 +2929,39 @@ function csvDownload(container, headers, rows, nombre){
     shown=(nq?items.filter(i=>N(i.t).includes(nq)):items.slice(0,9)).slice(0,40);
     cur=0;list.innerHTML='';
     shown.forEach((it,i)=>{
-      const li=document.createElement('li');if(i===0)li.className='sel';
+      const li=document.createElement('li');li.id=`pal-opt-${i}`;li.setAttribute('role','option');li.setAttribute('aria-selected',String(i===0));if(i===0)li.className='sel';
       const a=document.createElement('span');a.textContent=it.t;li.appendChild(a);
       const b=document.createElement('span');b.className='k';b.textContent=it.k;li.appendChild(b);
-      li.addEventListener('click',()=>{it.go();close();});
-      li.addEventListener('pointerenter',()=>{[...list.children].forEach(x=>x.className='');li.className='sel';cur=i;});
+      li.addEventListener('click',()=>{close();it.go();});
+      li.addEventListener('pointerenter',()=>{seleccionar(i);});
       list.appendChild(li);
     });
+    q.setAttribute('aria-activedescendant',shown.length?'pal-opt-0':'');
   }
-  function open(){pal.classList.add('on');q.value='';render();q.focus();}
-  function close(){pal.classList.remove('on');}
-  document.getElementById('pal-open').addEventListener('click',open);
+  function seleccionar(i){cur=i;[...list.children].forEach((x,n)=>{const on=n===cur;x.className=on?'sel':'';x.setAttribute('aria-selected',String(on));});q.setAttribute('aria-activedescendant',`pal-opt-${cur}`);list.children[cur]?.scrollIntoView({block:'nearest'});}
+  function open(){focoAnterior=document.activeElement;pal.classList.add('on');trigger.setAttribute('aria-expanded','true');q.setAttribute('aria-expanded','true');q.value='';render();q.focus();}
+  function close(){pal.classList.remove('on');trigger.setAttribute('aria-expanded','false');q.setAttribute('aria-expanded','false');q.removeAttribute('aria-activedescendant');const f=focoAnterior;focoAnterior=null;if(f&&document.contains(f))f.focus();}
+  trigger.addEventListener('click',open);
   pal.addEventListener('click',e=>{if(e.target===pal)close();});
   q.addEventListener('input',render);
   addEventListener('keydown',e=>{
     if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='k'){e.preventDefault();pal.classList.contains('on')?close():open();return;}
     if(!pal.classList.contains('on'))return;
-    if(e.key==='Escape'){close();}
+    if(e.key==='Escape'){e.preventDefault();close();}
+    else if(e.key==='Tab'){e.preventDefault();q.focus();}
     else if(e.key==='ArrowDown'||e.key==='ArrowUp'){
       e.preventDefault();
       if(!shown.length)return;
       cur=(cur+(e.key==='ArrowDown'?1:-1)+shown.length)%shown.length;
-      [...list.children].forEach((x,i)=>x.className=i===cur?'sel':'');
-      list.children[cur]?.scrollIntoView({block:'nearest'});
-    } else if(e.key==='Enter'&&shown[cur]){shown[cur].go();close();}
+      seleccionar(cur);
+    } else if(e.key==='Enter'&&shown[cur]){const it=shown[cur];close();it.go();}
   });
 })();
 
 /* ---- fuentes ---- */
 document.getElementById('fuentes').innerHTML=D.meta.fuentes.map(f=>`<li>${f}</li>`).join('');
 
-let rz,lastW=innerWidth;
-addEventListener('resize',()=>{clearTimeout(rz);rz=setTimeout(()=>{if(Math.abs(innerWidth-lastW)>80)location.reload();},500);});
+addEventListener('resize',hideTip);
 </script>
 </body>
 </html>
