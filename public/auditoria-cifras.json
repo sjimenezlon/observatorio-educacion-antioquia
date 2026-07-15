@@ -1,7 +1,7 @@
 {
   "estado": "correcto",
-  "fecha_auditoria": "2026-07-14",
-  "alcance": "Atlas territorial y Modo Decisión de MaterIA Gris V24",
+  "fecha_auditoria": "2026-07-15",
+  "alcance": "Atlas territorial, Modo Decisión y Sala Ejecutiva de MaterIA Gris V25",
   "fuentes": {
     "snies": {
       "descripcion": "Estudiantes Matriculados 2024, bases consolidadas SNIES–MEN",
@@ -46,6 +46,19 @@
     "programas_acreditados": 439,
     "nulos_en_campos_criticos": 0,
     "regla_matricula_multisede": "La matrícula se muestra como escala total del programa y no se atribuye al municipio filtrado"
+  },
+  "sala_ejecutiva": {
+    "crecimiento_matricula_2023_2024_pct": 5.7,
+    "brecha_matricula_2018_2024_pct": -5.6,
+    "municipios_sin_oferta": 74,
+    "municipios_sin_oferta_pct": 59.2,
+    "variacion_tyt_2018_2024_pct": -28.5,
+    "variacion_poblacion_17_21_2024_2035_pct": -13.2,
+    "matricula_oficial_pct": 63.3,
+    "matricula_valle_aburra_pct": 88.0,
+    "matricula_programas_acreditados_pct": 36.6,
+    "matricula_virtual_pct": 13.9,
+    "clasificacion": "Las cuatro prioridades son una lectura editorial; las cifras conservan fuente y corte independientes"
   },
   "reproduccion": "python3 scripts/auditar_atlas.py"
 }

@@ -62,10 +62,10 @@ html.light nav{background:rgba(247,246,241,.92)}html.light main::before{opacity:
 
 <main class="wrap">
   <header>
-    <p class="eyebrow">Comprobante público · V24</p>
-    <h1>Las cifras del atlas, puestas a prueba</h1>
-    <p class="lede">Recalculamos la matrícula, la población joven y la geografía municipal desde los archivos oficiales. Esta página traduce el resultado de esa auditoría sin reemplazar el comprobante reproducible.</p>
-    <p class="meta">Auditoría ejecutada el <span id="audit-date">14 de julio de 2026</span> · Fuentes con huella digital SHA-256</p>
+    <p class="eyebrow">Comprobante público · V25</p>
+    <h1>La evidencia estratégica, puesta a prueba</h1>
+    <p class="lede">Recalculamos matrícula, población joven, geografía municipal e indicadores de la Sala Ejecutiva desde los archivos documentados. Esta página traduce el resultado sin reemplazar el comprobante reproducible.</p>
+    <p class="meta">Auditoría ejecutada el <span id="audit-date">15 de julio de 2026</span> · Fuentes con huella digital SHA-256</p>
   </header>
 
   <div class="status" role="status" aria-live="polite">
@@ -82,11 +82,12 @@ html.light nav{background:rgba(247,246,241,.92)}html.light main::before{opacity:
 
   <section aria-labelledby="controles-title">
     <div class="section-head"><span class="num">01</span><h2 id="controles-title">Qué se contrastó</h2></div>
-    <p class="section-lede">Cada control compara el valor recalculado desde los XLSX oficiales con lo que ve la persona usuaria en MaterIA Gris.</p>
+    <p class="section-lede">Cada control compara el valor recalculado desde las fuentes documentadas con lo que ve la persona usuaria en MaterIA Gris.</p>
     <div class="checks">
       <article class="check"><div class="check-top"><h3>Detalle municipal</h3><span class="badge">Verificado</span></div><b id="diff-municipios">0</b><p>diferencias en matrícula, TyT, posgrado, IES y programas.</p></article>
       <article class="check"><div class="check-top"><h3>Agregación subregional</h3><span class="badge">Verificado</span></div><b id="diff-subregiones">0</b><p>diferencias entre los nueve agregados y la fuente.</p></article>
       <article class="check"><div class="check-top"><h3>Razón de oferta</h3><span class="badge">Verificado</span></div><b id="diff-razon">0</b><p>diferencias en numeradores, denominadores y porcentajes.</p></article>
+      <article class="check"><div class="check-top"><h3>Sala Ejecutiva</h3><span class="badge">Verificado</span></div><b>8</b><p>indicadores estratégicos recalculados sin diferencias y con cortes separados.</p></article>
     </div>
   </section>
 
@@ -117,7 +118,7 @@ html.light nav{background:rgba(247,246,241,.92)}html.light main::before{opacity:
     <div class="actions">
       <a class="btn primary" href="index.html#territorio">Explorar los mapas</a>
       <a class="btn secondary" href="auditoria-cifras.json">Abrir comprobante JSON</a>
-      <a class="btn secondary" href="verificacion-v24.json">Revisión documental V24</a>
+      <a class="btn secondary" href="verificacion-v25.json">Revisión documental V25</a>
       <a class="btn secondary" href="https://github.com/sjimenezlon/observatorio-educacion-antioquia/blob/main/scripts/auditar_atlas.py" target="_blank" rel="noopener">Ver script de auditoría ↗</a>
     </div>
   </section>

@@ -6,7 +6,7 @@ Tablero de la educación superior del departamento de Antioquia — **pregrado y
 
 **En línea:** https://materia-gris.vercel.app
 **Espejo:** https://observatorio-educacion-antioquia.vercel.app
-**Autor:** Santiago Jiménez Londoño · Última versión: V24 (julio de 2026)
+**Autor:** Santiago Jiménez Londoño · Última versión: V25 (julio de 2026)
 
 ---
 
@@ -14,6 +14,7 @@ Tablero de la educación superior del departamento de Antioquia — **pregrado y
 
 | Sección | Pregunta que contesta |
 |---|---|
+| **Sala Ejecutiva** | ¿Qué exige decisión ahora? Tensiones, prioridades y rutas diferenciadas para gobierno, rectoría y planeación |
 | **Panorama** | ¿Cómo evolucionó la matrícula 2018-2024 por nivel, sector y modalidad? |
 | **Instituciones** | ¿Quién forma a Antioquia? 73 IES, comparador de hasta 3, docentes y radar de cifras 2025-2026 autorreportadas |
 | **Territorio** | ¿Dónde llega la oferta? Mapa municipal interactivo y comparador sincronizado de razón de oferta, presencia municipal y peso TyT |
@@ -54,7 +55,7 @@ public/
   mapa.js                # geometría MGN de los 125 municipios (DANE, vía ArcGIS)
   auditoria.html         # lectura pública de resultados, método y fuentes
   auditoria-cifras.json  # comprobante público de la última auditoría del atlas
-  verificacion-v24.json  # controles reproducibles del Modo Decisión y sus límites
+  verificacion-v25.json  # controles reproducibles de la Sala Ejecutiva y sus cortes
 data/                    # insumos crudos — NO versionados (ver .gitignore)
 ```
 
