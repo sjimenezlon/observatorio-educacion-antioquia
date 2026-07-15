@@ -617,6 +617,24 @@ html.light .tray-stage,html.light .tray-box{background:linear-gradient(145deg,rg
 @media(max-width:1100px){.tray-chain{grid-template-columns:repeat(3,1fr)}.tray-stage{min-height:220px}.tray-lenses{grid-template-columns:1fr 1fr}}
 @media(max-width:760px){.tray-intro{grid-template-columns:1fr;align-items:start}.tray-rule{max-width:none}.tray-bridge{grid-template-columns:1fr}.tray-sourcebar{align-items:flex-start;flex-direction:column}.tray-sourcebar>span{text-align:left;max-width:none}}
 @media(max-width:560px){.tray-chain,.tray-lenses{grid-template-columns:1fr}.tray-stage{min-height:194px}.tray-tabs{grid-template-columns:1fr 1fr}.tray-decision{grid-template-columns:1fr}.tray-ready{grid-template-columns:74px 1fr}}
+/* ---------- Producto comparado y memoria de decisión · V27 ---------- */
+nav a.nav-product{color:#bfeee1;border:1px solid rgba(62,214,170,.19);background:linear-gradient(135deg,rgba(62,214,170,.08),rgba(158,140,255,.07))}
+nav a.nav-product.active{color:#fff;border-color:rgba(98,225,189,.34);background:linear-gradient(135deg,rgba(34,132,107,.32),rgba(96,74,174,.25))}
+.cmp-actions,.saved-actions{display:flex;flex-wrap:wrap;align-items:center;gap:7px;margin-top:12px}.decision-tool{min-height:44px;padding:8px 12px;border:1px solid rgba(107,166,255,.23);border-radius:10px;background:rgba(107,166,255,.075);color:#b8d4ff;font-family:inherit;font-size:10.5px;font-weight:700;line-height:1.2;cursor:pointer}.decision-tool:hover{color:#fff;border-color:rgba(107,166,255,.42)}.decision-tool.secondary{color:var(--ink-2);background:var(--surface-2);border-color:var(--border)}.decision-tool.danger{color:#ffb0b0;border-color:rgba(255,130,130,.20);background:rgba(255,130,130,.05)}
+.persist-note{color:var(--muted);font-size:9.5px;line-height:1.4}.persist-note b{color:#78e3c3}
+.saved-panel{padding:18px;border:1px solid rgba(62,214,170,.16);border-radius:17px;background:linear-gradient(140deg,rgba(62,214,170,.045),rgba(158,140,255,.04),rgba(12,19,29,.78))}.saved-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px}.saved-head small{display:block;color:#78e3c3;font-size:8.5px;font-weight:760;letter-spacing:.11em;text-transform:uppercase}.saved-head h3{color:var(--ink);font:650 20px/1.2 'Fraunces',Georgia,serif;margin-top:5px}.saved-count{flex:none;display:grid;place-items:center;min-width:44px;height:44px;border-radius:13px;background:rgba(62,214,170,.10);color:#78e3c3;font:650 17px/1 'Fraunces',Georgia,serif}
+.saved-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px}.saved-card{position:relative;display:flex;flex-direction:column;min-height:190px;padding:14px;border:1px solid rgba(151,180,222,.13);border-radius:13px;background:rgba(10,17,27,.65)}.saved-card h4{color:var(--ink);font:650 15px/1.25 'Fraunces',Georgia,serif;padding-right:25px}.saved-card .saved-ies{color:#a9cbff;font-size:10px;line-height:1.35;margin:7px 0}.saved-card .saved-meta{display:flex;flex-wrap:wrap;gap:4px}.saved-card .saved-meta span{padding:3px 6px;border-radius:6px;background:rgba(151,180,222,.07);color:var(--muted);font-size:8.5px}.saved-card .saved-foot{color:var(--muted);font-size:9px;line-height:1.4;margin-top:auto;padding-top:10px}.saved-remove{position:absolute;right:9px;top:9px;width:28px;height:28px;border:1px solid rgba(151,180,222,.14);border-radius:8px;background:rgba(151,180,222,.06);color:var(--muted);cursor:pointer}.saved-empty{grid-column:1/-1;padding:20px;border:1px dashed rgba(151,180,222,.18);border-radius:12px;color:var(--muted);font-size:11px;line-height:1.55;text-align:center}.decision-save{min-height:40px;margin-top:11px;border:1px solid rgba(62,214,170,.20);border-radius:9px;background:rgba(62,214,170,.07);color:#78e3c3;font-family:inherit;font-size:9.5px;font-weight:730;cursor:pointer}.decision-save:disabled{cursor:default;color:var(--muted);border-color:rgba(151,180,222,.10);background:rgba(151,180,222,.035)}
+.product-section{padding-top:42px}.product-intro{display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,.42fr);gap:20px;align-items:end;margin-bottom:18px}.product-intro .sec-desc{margin:0}.product-position{padding:14px;border:1px solid rgba(62,214,170,.17);border-radius:14px;background:linear-gradient(135deg,rgba(62,214,170,.07),rgba(158,140,255,.045));color:var(--muted);font-size:10px;line-height:1.5}.product-position b{display:block;color:#78e3c3;font:650 16px/1.2 'Fraunces',Georgia,serif;margin-bottom:5px}
+.product-tabs{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:13px}.product-tabs button{min-height:44px;padding:8px 13px;border:1px solid rgba(151,180,222,.15);border-radius:10px;background:var(--surface-2);color:var(--ink-2);font-family:inherit;font-size:10.5px;font-weight:730;cursor:pointer}.product-tabs button.on{color:#fff;border-color:rgba(62,214,170,.34);background:linear-gradient(135deg,rgba(35,133,108,.34),rgba(92,72,170,.27))}.product-panel[hidden]{display:none}
+.reference-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}.reference-card{display:flex;flex-direction:column;min-height:210px;padding:15px;border:1px solid rgba(151,180,222,.13);border-radius:15px;background:linear-gradient(150deg,rgba(17,26,40,.95),rgba(10,17,27,.90))}.reference-card small{color:var(--muted);font-size:8px;text-transform:uppercase;letter-spacing:.09em}.reference-card h3{color:var(--ink);font:650 17px/1.2 'Fraunces',Georgia,serif;margin:8px 0}.reference-card p{color:var(--muted);font-size:9.5px;line-height:1.45}.reference-card b{display:block;color:var(--ink-2);font-size:9.5px;margin:12px 0 4px}.reference-card a{margin-top:auto;padding-top:12px;font-size:9.5px;font-weight:720}
+.product-matrix{margin-top:12px;border:1px solid rgba(151,180,222,.13);border-radius:15px;overflow:auto}.product-matrix table{min-width:940px}.product-matrix td,.product-matrix th{font-size:10px}.product-matrix th:first-child,.product-matrix td:first-child{position:sticky;left:0;z-index:1;background:var(--surface)}.product-matrix td:first-child{color:var(--ink-2);font-weight:650;min-width:210px}.cap{display:inline-flex;align-items:center;justify-content:center;min-width:62px;padding:4px 6px;border-radius:8px;font-size:8.5px;font-weight:750}.cap.s3{color:#78e3c3;background:rgba(62,214,170,.10)}.cap.s2{color:#a9cbff;background:rgba(107,166,255,.10)}.cap.s1{color:#ffd087;background:rgba(240,178,77,.10)}.cap.s0{color:var(--muted);background:rgba(151,180,222,.055)}
+.adopt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.adopt-card{min-height:195px;padding:17px;border:1px solid rgba(151,180,222,.13);border-radius:15px;background:linear-gradient(150deg,rgba(17,26,40,.95),rgba(10,17,27,.90))}.adopt-card small{color:#78e3c3;font-size:8px;font-weight:760;text-transform:uppercase;letter-spacing:.10em}.adopt-card h3{color:var(--ink);font:650 17px/1.25 'Fraunces',Georgia,serif;margin:10px 0 7px}.adopt-card p{color:var(--muted);font-size:10px;line-height:1.5}.adopt-card .adopt-from{display:block;color:#a9cbff;font-size:9px;margin-top:12px}
+.frontier{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.frontier article{padding:18px;border:1px solid rgba(151,180,222,.13);border-radius:15px;background:rgba(12,19,29,.70)}.frontier small{color:var(--muted);font-size:8px;text-transform:uppercase;letter-spacing:.10em}.frontier h3{color:var(--ink);font:650 17px/1.2 'Fraunces',Georgia,serif;margin:9px 0}.frontier p{color:var(--muted);font-size:10px;line-height:1.5}.frontier .priority{display:inline-block;margin-top:12px;padding:4px 7px;border-radius:8px;background:rgba(158,140,255,.10);color:#c9bdff;font-size:8px;font-weight:760;text-transform:uppercase}
+.product-source{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:13px;padding:11px 13px;border:1px solid rgba(151,180,222,.12);border-radius:12px;background:rgba(10,16,25,.62);color:var(--muted);font-size:9.5px}.product-source div{display:flex;flex-wrap:wrap;gap:6px}.product-source a{padding:4px 7px;border-radius:7px;background:rgba(151,180,222,.07)}
+html.light .saved-panel,html.light .reference-card,html.light .adopt-card,html.light .frontier article{background:linear-gradient(145deg,rgba(255,255,255,.98),rgba(244,248,252,.95))}html.light .saved-card{background:rgba(255,255,255,.72)}html.light .product-matrix th:first-child,html.light .product-matrix td:first-child{background:#fff}
+@media(max-width:1040px){.reference-grid{grid-template-columns:repeat(3,1fr)}.saved-list{grid-template-columns:1fr 1fr}}
+@media(max-width:760px){.product-intro{grid-template-columns:1fr}.reference-grid,.adopt-grid,.frontier{grid-template-columns:1fr 1fr}.product-source{align-items:flex-start;flex-direction:column}}
+@media(max-width:560px){.saved-head{align-items:flex-start}.saved-list,.reference-grid,.adopt-grid,.frontier{grid-template-columns:1fr}.cmp-actions,.saved-actions{align-items:stretch}.decision-tool{flex:1}.persist-note{width:100%}}
 /* ---------- tema claro ---------- */
 html.light{--page:#f4f7fb;--surface:#ffffff;--surface-2:#eaf0f7;--ink:#151b25;--ink-2:#354052;--muted:#68758a;
   --grid:#dde5ef;--baseline:#b9c5d5;--border:rgba(31,63,102,.14);
@@ -687,6 +705,7 @@ html.light #arriba{box-shadow:0 4px 18px rgba(0,0,0,.15)}
   <a class="sec" href="#social">Impacto social</a>
   <a class="sec" href="#redes">Redes sociales</a>
   <a class="sec" href="#finanzas">Finanzas</a>
+  <a class="sec nav-product" href="#producto">Producto</a>
   <a class="sec" href="#metodologia">Metodología</a>
   <button id="pal-open" type="button" aria-haspopup="dialog" aria-controls="pal" aria-expanded="false" style="margin-left:auto;background:var(--surface-2);border:1px solid var(--border);color:var(--muted);border-radius:8px;padding:5px 10px;font-size:12px;cursor:pointer;font-family:inherit;white-space:nowrap">Explorar con IA ⌘K</button>
   <button id="tema" type="button" aria-label="Cambiar tema" style="background:var(--surface-2);border:1px solid var(--border);color:var(--muted);border-radius:8px;padding:5px 10px;font-size:12px;cursor:pointer;font-family:inherit;white-space:nowrap"></button>
@@ -720,7 +739,7 @@ html.light #arriba{box-shadow:0 4px 18px rgba(0,0,0,.15)}
       <div class="core-signals">
         <div class="core-signal"><b>51</b><span>municipios con oferta</span></div>
         <div class="core-signal"><b>18</b><span>decisiones de acreditación monitorizadas</span></div>
-        <div class="core-signal"><b>V26</b><span>trayectorias y retorno</span></div>
+        <div class="core-signal"><b>V27</b><span>decisiones que permanecen</span></div>
       </div>
     </aside>
   </div>
@@ -973,6 +992,12 @@ html.light #arriba{box-shadow:0 4px 18px rgba(0,0,0,.15)}
         <span class="count" id="cmp-hint">Máximo 3 instituciones</span>
       </div>
       <div class="chips" id="cmp-chips"></div>
+      <div class="cmp-actions">
+        <button class="decision-tool" id="cmp-copy" type="button">Copiar comparación</button>
+        <button class="decision-tool secondary" id="cmp-download" type="button">Descargar brief</button>
+        <span class="persist-note"><b>Memoria local.</b> La selección se conserva en este dispositivo.</span>
+      </div>
+      <p class="sr-only" id="cmp-status" aria-live="polite"></p>
       <div class="cmp-grid" id="cmp-grid"></div>
     </div>
     <div class="card">
@@ -1143,6 +1168,17 @@ html.light #arriba{box-shadow:0 4px 18px rgba(0,0,0,.15)}
       <div class="decision-actions">
         <p class="note" id="d-order-note">Orden: matrícula total reportada por el programa en todas sus sedes; indica escala, no calidad.</p>
         <button class="decision-to-offer" id="d-to-offer" type="button">Abrir el explorador completo con estos filtros →</button>
+      </div>
+      <div class="saved-panel">
+        <div class="saved-head"><div><small>Mi selección · V27</small><h3>Programas guardados para deliberar</h3></div><span class="saved-count" id="d-saved-count">0</span></div>
+        <p class="note" style="margin-top:8px">Guarde hasta seis opciones. MaterIA conserva la selección en este dispositivo y genera un enlace o brief; no califica cuál es “mejor”.</p>
+        <div class="saved-list" id="d-saved-list"></div>
+        <div class="saved-actions">
+          <button class="decision-tool" id="d-saved-copy" type="button">Copiar enlace</button>
+          <button class="decision-tool secondary" id="d-saved-download" type="button">Descargar brief</button>
+          <button class="decision-tool danger" id="d-saved-clear" type="button">Vaciar selección</button>
+          <span class="persist-note"><b>Falta crítica:</b> costo, horarios y cupos deben confirmarse con cada IES.</span>
+        </div>
       </div>
     </div>
   </div>
@@ -1753,6 +1789,68 @@ html.light #arriba{box-shadow:0 4px 18px rgba(0,0,0,.15)}
     </div>
   </div>
   <div class="callout" id="hallazgo-finanzas"></div>
+</section>
+
+<!-- ================= PRODUCTO Y REFERENTES ================= -->
+<section id="producto" class="product-section">
+  <div class="sec-head"><span class="sec-num">V27</span><h2>Producto comparado: aprender sin copiar</h2></div>
+  <div class="product-intro">
+    <p class="sec-desc">Comparamos MaterIA Gris con cinco referentes públicos de Colombia, Estados Unidos, Reino Unido, Chile y alcance global. La matriz observa capacidades visibles al 15 de julio de 2026; no suma una puntuación total porque cada herramienta sirve a una decisión y jurisdicción diferente.</p>
+    <aside class="product-position"><b>Nuestra posición propia</b>Profundidad territorial y lectura de sistema, combinadas con comparación guardable, evidencia reutilizable y límites visibles.</aside>
+  </div>
+
+  <div class="product-tabs" role="group" aria-label="Vistas del comparativo de producto">
+    <button type="button" class="on" data-product-tab="radar" aria-pressed="true">Radar comparativo</button>
+    <button type="button" data-product-tab="adoptado" aria-pressed="false">Lo adoptado en V27</button>
+    <button type="button" data-product-tab="frontera" aria-pressed="false">Siguiente frontera</button>
+  </div>
+  <p class="sr-only" id="product-status" aria-live="polite"></p>
+
+  <div class="product-panel" data-product-panel="radar">
+    <div class="reference-grid">
+      <article class="reference-card"><small>Colombia · directo</small><h3>OTE–MEN</h3><p>Organiza la política por tránsitos, deserción, progreso, logro, población y riesgo.</p><b>Lo mejor</b><p>La trayectoria completa como arquitectura de información.</p><a href="https://ote.mineducacion.gov.co/tablero-control" target="_blank" rel="noopener">Abrir referente ↗</a></article>
+      <article class="reference-card"><small>Estados Unidos · directo</small><h3>College Scorecard</h3><p>Busca y compara instituciones o campos de estudio con costo, deuda, graduación e ingresos.</p><b>Lo mejor</b><p>Resultados, costo y comparación en el mismo flujo.</p><a href="https://collegescorecard.ed.gov/" target="_blank" rel="noopener">Abrir referente ↗</a></article>
+      <article class="reference-card"><small>Reino Unido · directo</small><h3>Discover Uni</h3><p>Permite guardar cursos y comparar hasta siete, con resultados y umbrales de publicación.</p><b>Lo mejor</b><p>Memoria de selección y guía para interpretar el dato.</p><a href="https://discoveruni.gov.uk/about-our-data/guidance-comparing-courses/" target="_blank" rel="noopener">Abrir referente ↗</a></article>
+      <article class="reference-card"><small>Chile · directo</small><h3>Mi Futuro</h3><p>Conecta carrera, institución, empleabilidad, ingreso, duración, aranceles y financiación.</p><b>Lo mejor</b><p>Tratar costo y retorno como una sola conversación.</p><a href="https://www.mifuturo.cl/" target="_blank" rel="noopener">Abrir referente ↗</a></article>
+      <article class="reference-card"><small>Global · adyacente</small><h3>Our World in Data</h3><p>Une relato, gráfico, metadatos, descarga, API, cita y reutilización.</p><b>Lo mejor</b><p>Cada visualización funciona también como dato documentado.</p><a href="https://ourworldindata.org/global-education" target="_blank" rel="noopener">Abrir referente ↗</a></article>
+    </div>
+    <div class="product-matrix" aria-label="Matriz comparativa de capacidades">
+      <table>
+        <thead><tr><th>Capacidad observable</th><th>MaterIA V27</th><th>OTE</th><th>Scorecard</th><th>Discover Uni</th><th>Mi Futuro</th><th>OWID</th></tr></thead>
+        <tbody>
+          <tr><td>Profundidad territorial</td><td><span class="cap s3">Fuerte</span></td><td><span class="cap s2">Adecuada</span></td><td><span class="cap s2">Adecuada</span></td><td><span class="cap s1">Limitada</span></td><td><span class="cap s2">Adecuada</span></td><td><span class="cap s0">No observada</span></td></tr>
+          <tr><td>Comparar IES o programas</td><td><span class="cap s3">Fuerte</span></td><td><span class="cap s1">Limitada</span></td><td><span class="cap s3">Fuerte</span></td><td><span class="cap s3">Fuerte</span></td><td><span class="cap s2">Adecuada</span></td><td><span class="cap s0">No observada</span></td></tr>
+          <tr><td>Guardar, compartir y exportar</td><td><span class="cap s3">Fuerte</span></td><td><span class="cap s0">No observada</span></td><td><span class="cap s2">Adecuada</span></td><td><span class="cap s3">Fuerte</span></td><td><span class="cap s1">Limitada</span></td><td><span class="cap s3">Fuerte</span></td></tr>
+          <tr><td>Costo y financiación</td><td><span class="cap s1">Limitada</span></td><td><span class="cap s0">No observada</span></td><td><span class="cap s3">Fuerte</span></td><td><span class="cap s2">Adecuada</span></td><td><span class="cap s3">Fuerte</span></td><td><span class="cap s0">No observada</span></td></tr>
+          <tr><td>Resultados de graduados</td><td><span class="cap s2">Adecuada</span></td><td><span class="cap s2">Adecuada</span></td><td><span class="cap s3">Fuerte</span></td><td><span class="cap s3">Fuerte</span></td><td><span class="cap s3">Fuerte</span></td><td><span class="cap s0">No observada</span></td></tr>
+          <tr><td>Trayectorias y política</td><td><span class="cap s3">Fuerte</span></td><td><span class="cap s3">Fuerte</span></td><td><span class="cap s1">Limitada</span></td><td><span class="cap s1">Limitada</span></td><td><span class="cap s1">Limitada</span></td><td><span class="cap s2">Adecuada</span></td></tr>
+          <tr><td>Dato reutilizable y trazable</td><td><span class="cap s3">Fuerte</span></td><td><span class="cap s1">Limitada</span></td><td><span class="cap s3">Fuerte</span></td><td><span class="cap s2">Adecuada</span></td><td><span class="cap s2">Adecuada</span></td><td><span class="cap s3">Fuerte</span></td></tr>
+          <tr><td>Método y límites visibles</td><td><span class="cap s3">Fuerte</span></td><td><span class="cap s3">Fuerte</span></td><td><span class="cap s3">Fuerte</span></td><td><span class="cap s3">Fuerte</span></td><td><span class="cap s2">Adecuada</span></td><td><span class="cap s3">Fuerte</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="product-panel" data-product-panel="adoptado" hidden>
+    <div class="adopt-grid">
+      <article class="adopt-card"><small>Ya funciona</small><h3>Selección que permanece</h3><p>Los programas y las instituciones elegidas se conservan en el dispositivo. Volver a MaterIA ya no significa empezar de cero.</p><span class="adopt-from">Inspiración: Discover Uni</span></article>
+      <article class="adopt-card"><small>Ya funciona</small><h3>Comparación compartible</h3><p>Un enlace reconstruye la selección y un brief descargable conserva cifras, fuente, fecha y vacíos por verificar.</p><span class="adopt-from">Inspiración: Scorecard + Discover Uni</span></article>
+      <article class="adopt-card"><small>Ya funcionaba · reforzado</small><h3>Pregunta antes que ranking</h3><p>Territorio, trayectoria y responsabilidad de quien decide organizan la lectura; no existe una suma opaca que declare un ganador.</p><span class="adopt-from">Inspiración: OTE + OECD Education GPS</span></article>
+      <article class="adopt-card"><small>Ya funcionaba · reforzado</small><h3>Dato que se puede reutilizar</h3><p>CSV, JSON, enlaces a fuente y comprobantes permiten que una visualización se convierta en análisis propio.</p><span class="adopt-from">Inspiración: Our World in Data</span></article>
+      <article class="adopt-card"><small>Decisión metodológica</small><h3>El vacío también se publica</h3><p>Costo neto, horarios, cupos y retorno por programa aparecen como datos faltantes; MaterIA no los estima con promedios engañosos.</p><span class="adopt-from">Aprendizaje: Mi Futuro + Scorecard</span></article>
+      <article class="adopt-card"><small>Ventaja propia</small><h3>Antioquia como sistema</h3><p>La elección individual se conecta con concentración, demografía, finanzas, calidad y vocación subregional.</p><span class="adopt-from">Diferenciador MaterIA Gris</span></article>
+    </div>
+  </div>
+
+  <div class="product-panel" data-product-panel="frontera" hidden>
+    <div class="frontier">
+      <article><small>Prioridad de datos</small><h3>Costo neto comparable</h3><p>Arancel, apoyos, transporte, conectividad y sostenimiento por programa e institución, con la misma definición y periodo.</p><span class="priority">No estimar sin fuente</span></article>
+      <article><small>Prioridad analítica</small><h3>Resultados por programa</h3><p>Permanencia, graduación, ocupación e ingreso formal siguiendo cohortes y separando trabajo independiente e informalidad.</p><span class="priority">Requiere convenio de datos</span></article>
+      <article><small>Prioridad de producto</small><h3>Brief ejecutivo vivo</h3><p>Combinar selecciones, territorio y alertas en una página compartible con responsable, fecha de revisión y decisión tomada.</p><span class="priority">Siguiente iteración</span></article>
+    </div>
+  </div>
+
+  <div class="product-source"><div><a href="comparativo-producto.json" target="_blank" rel="noopener">Matriz y fuentes JSON ↗</a><a href="https://gpseducation.oecd.org/Home" target="_blank" rel="noopener">OECD Education GPS ↗</a></div><span>Escala editorial 0–3; sin suma total. “No observada” no significa que una función privada no exista.</span></div>
 </section>
 
 <!-- ================= METODOLOGÍA ================= -->
@@ -2469,6 +2567,31 @@ hbars('ch-nbc', D.nbc.slice(0,12).map(n=>({label:n.nbc,value:n.matricula24,n})),
   const selects=[muni,nivel,modalidad,area,orden];
   const shortArea=v=>v.replace(' y afines','').replace('Economía, administración, contaduría','Economía y administración');
   const title=v=>v.toLocaleLowerCase('es-CO').replace(/(^|[\s/(-])([a-záéíóúñ])/g,(m,a,b)=>a+b.toLocaleUpperCase('es-CO'));
+  const STORE='materia-programas-v27',savedHost=document.getElementById('d-saved-list'),savedCount=document.getElementById('d-saved-count');
+  const initialSaved=()=>{
+    const fromUrl=new URLSearchParams(location.search).get('programas');if(fromUrl)return fromUrl.split(',').map(Number).filter(Number.isFinite).slice(0,6);
+    try{const x=JSON.parse(localStorage.getItem(STORE)||'[]');return Array.isArray(x)?x.map(Number).filter(Number.isFinite).slice(0,6):[];}catch(e){return [];}
+  };
+  let saved=initialSaved().map(id=>P.find(p=>Number(p.snies)===id)).filter(Boolean);
+  const persistSaved=()=>{try{localStorage.setItem(STORE,JSON.stringify(saved.map(p=>p.snies)))}catch(e){}};
+  function renderSaved(){
+    savedHost.innerHTML='';savedCount.textContent=saved.length;
+    if(!saved.length){const empty=document.createElement('div');empty.className='saved-empty';empty.textContent='Aún no hay programas guardados. Use “Guardar para comparar” en cualquiera de los resultados.';savedHost.appendChild(empty);return;}
+    saved.forEach(p=>{
+      const card=document.createElement('article');card.className='saved-card';
+      const h=document.createElement('h4');h.textContent=title(p.programa);card.appendChild(h);
+      const remove=document.createElement('button');remove.type='button';remove.className='saved-remove';remove.textContent='×';remove.setAttribute('aria-label','Quitar '+p.programa);remove.addEventListener('click',()=>{saved=saved.filter(x=>x.snies!==p.snies);persistSaved();renderSaved();render();});card.appendChild(remove);
+      const ies=document.createElement('p');ies.className='saved-ies';ies.textContent=p.ies;card.appendChild(ies);
+      const meta=document.createElement('div');meta.className='saved-meta';[p.nivel,p.modalidad,p.acreditado?'Alta calidad':'Registro activo'].forEach(v=>addMeta(meta,v));card.appendChild(meta);
+      const foot=document.createElement('p');foot.className='saved-foot';foot.textContent=`SNIES ${p.snies} · ${fmt(p.matricula24)} matrículas consolidadas · ${p.municipios.length===1?p.municipios[0]:p.municipios.length+' municipios'}`;card.appendChild(foot);
+      savedHost.appendChild(card);
+    });
+  }
+  function addSaved(p){
+    if(saved.some(x=>x.snies===p.snies))return;
+    if(saved.length>=6){setText('d-status','La selección admite máximo seis programas. Quite uno antes de agregar otro.');return;}
+    saved.push(p);persistSaved();renderSaved();render();setText('d-status',`${title(p.programa)} guardado. La selección tiene ${saved.length} programas.`);
+  }
   function filtered(){
     return P.filter(p=>(!muni.value||p.municipios.includes(muni.value))&&(!nivel.value||p.nivel===nivel.value)&&
       (!modalidad.value||p.modalidad===modalidad.value)&&(!area.value||p.area===area.value));
@@ -2517,6 +2640,7 @@ hbars('ch-nbc', D.nbc.slice(0,12).map(n=>({label:n.nbc,value:n.matricula24,n})),
       if(muni.value)addMeta(meta,muni.value);else addMeta(meta,p.municipios.length===1?p.municipios[0]:`${p.municipios.length} municipios`);
       card.appendChild(meta);
       const scale=document.createElement('p');scale.className='decision-scale';scale.textContent=`${fmt(p.matricula24)} matrículas reportadas por el programa${p.municipios.length>1?' en el conjunto de sus sedes':''}.`;card.appendChild(scale);
+      const save=document.createElement('button');save.type='button';save.className='decision-save';const isSaved=saved.some(x=>x.snies===p.snies);save.disabled=isSaved;save.textContent=isSaved?'Guardado en mi selección':'Guardar para comparar';save.addEventListener('click',()=>addSaved(p));card.appendChild(save);
       results.appendChild(card);
     });
     if(!sorted.length){const e=document.createElement('div');e.className='decision-empty';e.textContent='No hay programas que cumplan todos los criterios. Pruebe una modalidad o un nivel diferente.';results.appendChild(e);}
@@ -2531,7 +2655,18 @@ hbars('ch-nbc', D.nbc.slice(0,12).map(n=>({label:n.nbc,value:n.matricula24,n})),
     transfer.forEach(([id,value])=>{const e=document.getElementById(id);if(e){e.value=value;e.dispatchEvent(new Event('change'));}});
     const q=document.getElementById('f-q');if(q){q.value='';q.dispatchEvent(new Event('input'));}
   });
-  render();
+  document.getElementById('d-saved-clear').addEventListener('click',()=>{saved=[];persistSaved();renderSaved();render();setText('d-status','Selección de programas vaciada.');});
+  document.getElementById('d-saved-copy').addEventListener('click',async()=>{
+    const url=new URL(location.href);if(saved.length)url.searchParams.set('programas',saved.map(p=>p.snies).join(','));else url.searchParams.delete('programas');url.hash='decidir';
+    const ok=await copyText(url.toString());setText('d-status',ok?'Enlace de la selección copiado.':'No fue posible copiar; descargue el brief.');
+  });
+  document.getElementById('d-saved-download').addEventListener('click',()=>{
+    const lines=['MaterIA Gris · Brief de programas guardados','Generado: '+new Date().toLocaleDateString('es-CO'),'Fuente: SNIES 2024-II · programas con matrícula activa',''];
+    saved.forEach((p,n)=>lines.push(`${n+1}. ${title(p.programa)}`,`IES: ${p.ies}`,`Código SNIES: ${p.snies}`,`Nivel y modalidad: ${p.nivel} · ${p.modalidad}`,`Área: ${p.area}`,`Municipios reportados: ${p.municipios.join(', ')}`,`Matrícula consolidada: ${fmt(p.matricula24)}`,`Acreditación de programa: ${p.acreditado?'Sí':'No registrada en este corte'}`,''));
+    lines.push('ANTES DE DECIDIR: confirmar directamente con cada IES costo neto, apoyos, horarios, cupos, sede efectiva, plan de estudios y vigencia del registro calificado. MaterIA no construye un ranking ni una recomendación personalizada.');
+    downloadText(lines.join('\n'),'materia-gris-programas-guardados.txt');setText('d-status','Brief de programas descargado.');
+  });
+  renderSaved();render();
 })();
 
 /* ---- 05 Oferta y demanda (scripts/oferta_demanda.py, SNIES+OLE locales) ---- */
@@ -3829,6 +3964,7 @@ const FIN_AL=[
 
   const META={
     trayectorias:['SNIES + SPADIES + ICFES + OTE + OLE','2023–2025 · cortes separados','¿En qué etapa se rompe la trayectoria y qué evidencia falta?'],
+    producto:['Revisión de producto documentada','15 jul. 2026','¿Qué patrón externo mejora la decisión sin diluir la ventaja territorial?'],
     panorama:['SNIES','2018–2024','¿El sistema crece o cambia de composición?'],
     instituciones:['SNIES + IES','2024-II / señales 2026','¿Qué capacidad institucional sostiene el crecimiento?'],
     territorio:['SNIES + DANE','2024','¿Dónde una inversión cerraría una brecha verificable?'],
@@ -3847,7 +3983,9 @@ const FIN_AL=[
     const section=document.getElementById(id),head=section?.querySelector('.sec-head');if(!section||!head)return;
     const box=document.createElement('div');box.className='section-context';
     [['Fuente',source],['Corte',cut],['Decisión',question]].forEach(([label,value])=>{const s=document.createElement('span'),b=document.createElement('b');b.textContent=label+':';s.append(b,document.createTextNode(' '+value));box.appendChild(s);});
-    const desc=section.querySelector('.sec-desc');(desc||head).insertAdjacentElement('afterend',box);
+    const desc=section.querySelector('.sec-desc');
+    const intro=desc?.parentElement?.matches('.tray-intro,.product-intro')?desc.parentElement:null;
+    (intro||desc||head).insertAdjacentElement('afterend',box);
   });
 })();
 
@@ -3870,6 +4008,7 @@ const FIN_AL=[
     social:{q:'¿Para quién funciona como movilidad social?',i:'El lente TyT muestra estudiantes de menores ingresos, primera generación y personas que combinan estudio con jornadas laborales extensas.',n:'Las brechas de acceso, permanencia y género necesitan leerse junto con territorio y modalidad.',f:'ICFES Saber TyT + SNIES',to:'redes',cta:'Ver conversación digital'},
     redes:{q:'¿Quién tiene audiencia y quién la convierte en gestión?',i:'UdeA lidera la escala pública; EAFIT, UPB, CES y Remington muestran fortalezas diferentes en cadencia, equilibrio y eficiencia audiovisual.',n:'Seguidores no son alcance único. El desempeño real requiere impresiones, retención, crecimiento y conversiones de los paneles privados.',f:'Huella pública · cortes no homogéneos',to:'finanzas',cta:'Entender la sostenibilidad'},
     finanzas:{q:'¿Qué sostiene a las instituciones públicas?',i:'La gratuidad amplía acceso, pero también cambia el riesgo: varias instituciones dependen de giros estatales oportunos, mientras la UdeA enfrenta un problema estructural de base presupuestal.',n:'Presupuesto aprobado, ejecución, excedente y liquidez responden preguntas distintas.',f:'EEFF y presupuestos institucionales',to:'metodologia',cta:'Auditar la metodología'},
+    producto:{q:'¿Qué hace distinta y mejorable a MaterIA Gris?',i:'MaterIA ya sobresale en profundidad territorial y lectura de sistema. V27 incorpora selección persistente, enlaces compartibles y briefs exportables inspirados en referentes públicos internacionales.',n:'La matriz compara capacidades observables y no suma un ranking: cada herramienta responde a usuarios, jurisdicciones y decisiones diferentes.',f:'OTE + Scorecard + Discover Uni + Mi Futuro + OWID',to:'decidir',cta:'Probar mi selección'},
     metodologia:{q:'¿Por qué confiar en estas lecturas?',i:'Cada capítulo separa fuente, corte, cálculo y limitación. Los datos territoriales cuentan con auditoría reproducible y las cifras públicas enlazan su evidencia.',n:'La inteligencia de MaterIA está en conectar datos sin ocultar sus límites.',f:'Metodología pública y reproducible',to:'inicio',cta:'Volver al núcleo'},
   };
   const guide=document.getElementById('ai-guide'),panel=document.getElementById('ai-guide-panel'),toggle=document.getElementById('ai-guide-toggle');
@@ -3878,6 +4017,18 @@ const FIN_AL=[
   window.actualizarGuia=function(id){const g=GUIAS[id]||GUIAS.inicio;guide.classList.toggle('is-home',id==='inicio');question.textContent=g.q;insight.textContent=g.i;note.textContent=g.n;source.textContent=g.f;link.href='#'+g.to;link.firstChild.textContent=g.cta;setOpen(false);};
   toggle.addEventListener('click',()=>setOpen(!guide.classList.contains('open')));
   addEventListener('keydown',ev=>{if(ev.key==='Escape'&&guide.classList.contains('open')){setOpen(false);toggle.focus();}});
+})();
+
+/* ---- Producto comparado V27: vistas sin puntuación total ---- */
+(function(){
+  const tabs=[...document.querySelectorAll('[data-product-tab]')],panels=[...document.querySelectorAll('[data-product-panel]')],status=document.getElementById('product-status');
+  if(!tabs.length)return;
+  tabs.forEach(tab=>tab.addEventListener('click',()=>{
+    const key=tab.dataset.productTab;
+    tabs.forEach(x=>{const on=x===tab;x.classList.toggle('on',on);x.setAttribute('aria-pressed',String(on));});
+    panels.forEach(p=>p.hidden=p.dataset.productPanel!==key);
+    status.textContent=`Vista ${tab.textContent.trim()} activa.`;
+  }));
 })();
 
 /* ---- modo dashboard: una vista por sección ---- */
@@ -3930,6 +4081,16 @@ function csvDownload(container, headers, rows, nombre){
   });
   container.appendChild(btn);
 }
+async function copyText(value){
+  try{await navigator.clipboard.writeText(value);return true;}catch(e){
+    const area=document.createElement('textarea');area.value=value;area.setAttribute('readonly','');area.style.cssText='position:fixed;left:-9999px';document.body.appendChild(area);area.select();
+    let ok=false;try{ok=document.execCommand('copy');}catch(err){}area.remove();return ok;
+  }
+}
+function downloadText(value,nombre){
+  const url=URL.createObjectURL(new Blob([value],{type:'text/plain;charset=utf-8'}));
+  const a=document.createElement('a');a.href=url;a.download=nombre;a.click();URL.revokeObjectURL(url);
+}
 // engancha un botón CSV a cada tabla ya construida por tableTwin
 (function(){
   document.querySelectorAll('details.tw').forEach((det,i)=>{
@@ -3953,13 +4114,32 @@ function csvDownload(container, headers, rows, nombre){
   function normJS2(t){return String(t).normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase().trim();}
   const dl=document.getElementById('cmp-list'), q=document.getElementById('cmp-q'),
         chips=document.getElementById('cmp-chips'), grid=document.getElementById('cmp-grid'),
-        hint=document.getElementById('cmp-hint');
+        hint=document.getElementById('cmp-hint'),status=document.getElementById('cmp-status');
   D.ies.forEach(i=>{const o=document.createElement('option');o.value=i.nombre;dl.appendChild(o);});
-  let sel=[D.ies[0],D.ies[1]].filter(Boolean);
+  const STORE='materia-ies-v27';
+  const readIds=()=>{
+    const fromUrl=new URLSearchParams(location.search).get('ies');if(fromUrl)return fromUrl.split(',').map(Number).filter(Number.isFinite).slice(0,3);
+    try{const x=JSON.parse(localStorage.getItem(STORE)||'[]');return Array.isArray(x)?x.map(Number).filter(Number.isFinite).slice(0,3):[];}catch(e){return [];}
+  };
+  const initial=readIds();
+  let sel=(initial.length?initial.map(id=>D.ies.find(i=>Number(i.codigo)===id)):[D.ies[0],D.ies[1]]).filter(Boolean);
+  const persist=()=>{try{localStorage.setItem(STORE,JSON.stringify(sel.map(i=>i.codigo)))}catch(e){}};
   function matchLoose(nombre,mapa){
     const n=normJS2(nombre);
     for(const k in mapa){ if(k===n||k.startsWith(n)||n.startsWith(k)) return mapa[k]; }
     return null;
+  }
+  function metricsFor(i){
+    const sb=matchLoose(i.nombre,saberByIes),gr=matchLoose(i.nombre,gruposByIes);
+    const d=i.matricula23?Math.round(1000*(i.matricula24-i.matricula23)/i.matricula23)/10:null;
+    return [
+      ['Matrícula 2024-II',fmt(i.matricula24)],['Variación 23-24',d==null?'—':(d>0?'+':'')+d.toLocaleString('es-CO')+' %'],
+      ['Pregrado',fmt(i.pregrado24)],['Posgrado',fmt(i.posgrado24)],['Técnica y tecnológica',fmt(i.tyt24)],['Graduados 2024',fmt(i.graduados24)],
+      ['Programas',fmt(i.programas)],['Municipios',fmt(i.municipios)],['Matrícula acreditada',i.matricula24?pct(i.mat_acreditada,i.matricula24):'—'],
+      ['Saber TyT global',sb?sb.global.toLocaleString('es-CO'):'—'],
+      ['Inglés B1+',(()=>{const ing=D.ingles.ies.find(x=>normJS2(x.ies).startsWith(normJS2(i.nombre).slice(0,14)));return ing?ing.b1mas.toLocaleString('es-CO')+' %':'—';})()],
+      ['Grupos de investigación',gr?fmt(gr):'—']
+    ];
   }
   function render(){
     chips.innerHTML='';grid.innerHTML='';
@@ -3967,7 +4147,7 @@ function csvDownload(container, headers, rows, nombre){
       const c=document.createElement('span');c.className='chip';
       const t=document.createElement('span');t.textContent=i.nombre;c.appendChild(t);
       const b=document.createElement('button');b.type='button';b.textContent='×';b.setAttribute('aria-label','Quitar '+i.nombre);
-      b.addEventListener('click',()=>{sel=sel.filter(x=>x.codigo!==i.codigo);render();});
+      b.addEventListener('click',()=>{sel=sel.filter(x=>x.codigo!==i.codigo);persist();render();});
       c.appendChild(b);chips.appendChild(c);
     });
     hint.textContent=sel.length>=3?'Máximo alcanzado (3)':`${3-sel.length} espacio(s) disponible(s)`;
@@ -3976,22 +4156,7 @@ function csvDownload(container, headers, rows, nombre){
       const col=document.createElement('div');col.className='cmp-col';
       const h=document.createElement('h5');h.textContent=i.nombre+(i.acreditada?' ★':'');col.appendChild(h);
       const cs=document.createElement('div');cs.className='cs';cs.textContent=`${i.sector} · ${i.caracter}`;col.appendChild(cs);
-      const sb=matchLoose(i.nombre,saberByIes), gr=matchLoose(i.nombre,gruposByIes);
-      const d=i.matricula23?Math.round(1000*(i.matricula24-i.matricula23)/i.matricula23)/10:null;
-      const rows=[
-        ['Matrícula 2024-II',fmt(i.matricula24)],
-        ['Variación 23-24',d==null?'—':(d>0?'+':'')+d.toLocaleString('es-CO')+' %'],
-        ['Pregrado',fmt(i.pregrado24)],
-        ['Posgrado',fmt(i.posgrado24)],
-        ['Técnica y tecnológica',fmt(i.tyt24)],
-        ['Graduados 2024',fmt(i.graduados24)],
-        ['Programas',fmt(i.programas)],
-        ['Municipios',fmt(i.municipios)],
-        ['Matrícula acreditada',i.matricula24?pct(i.mat_acreditada,i.matricula24):'—'],
-        ['Saber TyT global',sb?sb.global.toLocaleString('es-CO'):'—'],
-        ['Inglés B1+',(()=>{const ing=D.ingles.ies.find(x=>normJS2(x.ies).startsWith(normJS2(i.nombre).slice(0,14)));return ing?ing.b1mas.toLocaleString('es-CO')+' %':'—';})()],
-        ['Grupos de investigación',gr?fmt(gr):'—'],
-      ];
+      const rows=metricsFor(i);
       rows.forEach(([k,v])=>{
         const r=document.createElement('div');r.className='r';
         const n=document.createElement('span');n.textContent=k;r.appendChild(n);
@@ -4006,11 +4171,22 @@ function csvDownload(container, headers, rows, nombre){
     if(!sel.length){
       const p=document.createElement('p');p.className='note';p.textContent='Agregue instituciones para comparar.';grid.appendChild(p);
     }
+    persist();
   }
   q.addEventListener('change',()=>{
     const i=D.ies.find(x=>normJS2(x.nombre)===normJS2(q.value));
-    if(i&&sel.length<3&&!sel.some(x=>x.codigo===i.codigo)) sel.push(i);
+    if(i&&sel.length<3&&!sel.some(x=>x.codigo===i.codigo)){sel.push(i);persist();status.textContent=`${i.nombre} agregada. La comparación tiene ${sel.length} instituciones.`;}
     q.value='';render();
+  });
+  document.getElementById('cmp-copy').addEventListener('click',async()=>{
+    const url=new URL(location.href);if(sel.length)url.searchParams.set('ies',sel.map(i=>i.codigo).join(','));else url.searchParams.delete('ies');url.hash='instituciones';
+    const ok=await copyText(url.toString());status.textContent=ok?'Enlace de comparación copiado.':'No fue posible copiar; use el brief descargable.';
+  });
+  document.getElementById('cmp-download').addEventListener('click',()=>{
+    const lines=['MaterIA Gris · Brief comparativo de instituciones','Generado: '+new Date().toLocaleDateString('es-CO'),'Fuente principal: SNIES 2024-II',''];
+    sel.forEach((i,n)=>{lines.push(`${n+1}. ${i.nombre}${i.acreditada?' · acreditación institucional':''}`,`${i.sector} · ${i.caracter}`,...metricsFor(i).map(([k,v])=>`- ${k}: ${v}`),'');});
+    lines.push('Lectura responsable: tamaño, acreditación, aprendizaje e investigación son señales distintas. Costos, horarios, cupos y plan de estudios deben verificarse con cada institución.');
+    downloadText(lines.join('\n'),'materia-gris-comparacion-ies.txt');status.textContent='Brief comparativo descargado.';
   });
   render();
 })();
@@ -4042,6 +4218,7 @@ function csvDownload(container, headers, rows, nombre){
   [
     {t:'¿Qué debería priorizar un tomador de decisiones?',k:'Pregunta guiada · Sala Ejecutiva',terms:'rector gobierno consejo planeacion prioridad riesgo accion',go:()=>goTo('ejecutivo')},
     {t:'¿En qué etapa se rompe la trayectoria educativa?',k:'Pregunta guiada · trayectorias',terms:'acceso permanencia desercion aprendizaje graduacion empleo retorno',go:()=>goTo('trayectorias')},
+    {t:'¿Cómo se compara MaterIA con otras herramientas?',k:'Pregunta guiada · producto',terms:'benchmark referentes scorecard discover uni mi futuro owid ote capacidades',go:()=>goTo('producto')},
     {t:'¿Dónde puedo estudiar cerca de mi municipio?',k:'Pregunta guiada · territorio',terms:'mapa oferta cercania subregion',go:()=>goTo('territorio')},
     {t:'Quiero reducir mis opciones de estudio',k:'Pregunta guiada · Modo Decisión',terms:'elegir programa municipio nivel modalidad area decidir',go:()=>goTo('decidir')},
     {t:'¿Qué institución se ajusta mejor a lo que busco?',k:'Pregunta guiada · comparar IES',terms:'universidad comparador calidad tamano',go:()=>goTo('instituciones')},
