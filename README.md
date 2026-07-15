@@ -6,7 +6,7 @@ Tablero de la educación superior del departamento de Antioquia — **pregrado y
 
 **En línea:** https://materia-gris.vercel.app
 **Espejo:** https://observatorio-educacion-antioquia.vercel.app
-**Autor:** Santiago Jiménez Londoño · Última versión: V16 (julio de 2026)
+**Autor:** Santiago Jiménez Londoño · Última versión: V17 (julio de 2026)
 
 ---
 
@@ -16,7 +16,7 @@ Tablero de la educación superior del departamento de Antioquia — **pregrado y
 |---|---|
 | **Panorama** | ¿Cómo evolucionó la matrícula 2018-2024 por nivel, sector y modalidad? |
 | **Instituciones** | ¿Quién forma a Antioquia? 73 IES, comparador de hasta 3, docentes y radar de cifras 2025-2026 autorreportadas |
-| **Territorio** | ¿Dónde llega la oferta? Mapa municipal interactivo y atlas de brechas con cobertura subregional, municipios con/sin oferta y peso TyT |
+| **Territorio** | ¿Dónde llega la oferta? Mapa municipal interactivo y comparador sincronizado de razón de oferta, presencia municipal y peso TyT |
 | **Oferta** | ¿Qué se puede estudiar? 2.107 programas con explorador filtrable |
 | **Mercado laboral** | ¿Cómo les va a los graduados? Demanda, embudo, vinculación formal y salario de enganche por nivel y área |
 | **Calidad** | Acreditación de alta calidad, Saber TyT vs. nacional (y por municipio), bilingüismo (MCER) |
@@ -28,7 +28,7 @@ El panorama incorpora además un bloque de **acceso e infraestructura 2025–202
 ### Hallazgos que sostiene el dato
 
 - **El sistema crece hacia arriba y se angosta en la base.** Desde 2018 la matrícula universitaria creció 6,8 % y la técnica y tecnológica cayó 28,5 % (112.129 → 80.135), justo la puerta de entrada de los hogares de menores ingresos: 69,8 % de los evaluados Saber TyT vive en estratos 1 y 2.
-- **La brecha territorial es la noticia.** Solo 51 de 125 municipios tienen oferta activa. La cobertura bruta de oferta 17-21 va de **87,7 % en el Valle de Aburrá a 1,9 % en el Suroeste** (Antioquia: 54,1 %; referencia nacional: 57,5 %).
+- **La brecha territorial es la noticia.** Solo 51 de 125 municipios tienen oferta activa. La razón propia de oferta 17-21 va de **87,7 % en el Valle de Aburrá a 1,9 % en el Suroeste** (Antioquia: 54,1 %); mide capacidad instalada, no la cobertura oficial ni la asistencia de residentes.
 - **Empleo sí, salarios apretados.** Los tecnólogos se vinculan al empleo formal casi como los universitarios (72,7 % vs. 71,7 %), pero el 42 % gana menos de 1,5 SMMLV.
 - **El repunte de 2024 continuó.** Las rendiciones de cuentas 2025-2026 (ITM, TdeA, Pascual Bravo, IU Digital…) reportan matrículas récord, empujadas por la gratuidad.
 
@@ -96,7 +96,7 @@ Cuando el MEN publique la vigencia siguiente (histórico: hacia julio de cada a�
 2. **La serie 2015-2017 de la base histórica (`5wck-szir`) se descartó**: el reporte semestral es inconsistente (S2 colapsado). La serie arranca en 2018 desde los XLSX.
 3. **OLE se restringe a IES con domicilio en Antioquia** — se excluyen SENA y UNAD, de alcance nacional y no separables por departamento en esa base. La Especialización se omite de la tasa de vinculación por cobertura insuficiente (169 de 8.391).
 4. **El sector de cada IES se toma del SNIES**, no del ICFES, que tiene errores de registro (marcaba la IU Digital como privada).
-5. **La cobertura es de *oferta*, no de asistencia**: matrícula de pregrado ofertada en la subregión / población 17-21 residente. Por eso las subregiones que atraen estudiantes de fuera pueden superar el 100 %. No existe dataset oficial abierto de cobertura por departamento.
+5. **La razón de oferta no es cobertura ni asistencia**: matrícula de pregrado ofertada en la subregión / población 17-21 residente. Por eso las subregiones que atraen estudiantes de fuera pueden superar el 100 %. La interfaz la identifica como cálculo propio y no como tasa oficial.
 6. **El listado de grupos de MinCiencias es un PDF sin departamento**: se asigna por código GrupLAC contra la base histórica (90 % de cobertura) y, para grupos nuevos, por institución avaladora antioqueña.
 7. **El radar institucional es autorreportado**: cortes y definiciones propias de cada IES, no comparables 1:1 con el SNIES. Cada cifra enlaza a su fuente.
 8. Saber TyT usa la escala 0–200 vigente desde 2017-3; los rótulos MCER históricos (A-, -A1, Pre-A1, B+) se homologan a la escala actual. El puntaje por municipio solo se reporta con 50+ evaluados.
