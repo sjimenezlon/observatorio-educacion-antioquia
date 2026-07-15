@@ -6,7 +6,7 @@ Tablero de la educación superior del departamento de Antioquia — **pregrado y
 
 **En línea:** https://materia-gris.vercel.app
 **Espejo:** https://observatorio-educacion-antioquia.vercel.app
-**Autor:** Santiago Jiménez Londoño · Última versión: V19 (julio de 2026)
+**Autor:** Santiago Jiménez Londoño · Última versión: V20 (julio de 2026)
 
 ---
 

@@ -146,6 +146,44 @@ html.light .card{box-shadow:0 1px 2px rgba(20,20,15,.03),0 8px 22px rgba(20,20,1
 #arriba.on{opacity:1;pointer-events:auto}
 #arriba:hover{background:var(--baseline)}
 /* ---------- acreditación ---------- */
+.acred-gate{min-height:430px;display:grid;place-items:center;padding:26px 0 12px}
+.acred-gate[hidden],#acreditacion-contenido[hidden]{display:none!important}
+.acred-lock{width:min(560px,100%);background:linear-gradient(145deg,rgba(57,135,229,.12),rgba(25,158,112,.06) 45%,var(--surface));border:1px solid rgba(57,135,229,.34);border-radius:18px;padding:clamp(24px,5vw,42px);box-shadow:0 20px 55px rgba(0,0,0,.24)}
+.acred-lock .lock-mark{width:50px;height:50px;display:grid;place-items:center;border-radius:14px;background:rgba(57,135,229,.16);border:1px solid rgba(57,135,229,.42);font-size:22px;margin-bottom:18px}
+.acred-lock h3{color:var(--ink);font-family:'Fraunces',Georgia,serif;font-size:clamp(22px,4vw,30px);line-height:1.18;margin-bottom:8px}
+.acred-lock>p{color:var(--ink-2);margin-bottom:20px}
+.acred-form label{display:block;color:var(--ink);font-size:13px;font-weight:650;margin-bottom:7px}
+.acred-input-row{display:flex;gap:8px}
+.acred-input-row input{flex:1;min-width:0;min-height:48px;background:var(--page);border:1px solid var(--border);border-radius:9px;color:var(--ink);font:inherit;padding:10px 12px}
+.acred-input-row input[aria-invalid="true"]{border-color:#e66767}
+.acred-button{min-height:44px;border:1px solid var(--border);border-radius:9px;padding:9px 14px;font:600 13px/1.2 inherit;cursor:pointer;color:var(--ink);background:var(--surface-2)}
+.acred-button:hover{border-color:rgba(57,135,229,.65)}
+.acred-button.primary{min-height:48px;background:var(--s1);border-color:var(--s1);color:#fff}
+.acred-button.primary:hover{filter:brightness(1.08)}
+.acred-status{min-height:22px;margin-top:9px;color:#e88a8a;font-size:12.5px}
+.acred-private{display:flex;gap:8px;align-items:flex-start;color:var(--muted);font-size:11.5px;line-height:1.45;margin-top:14px}
+.acred-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:-6px 0 18px;padding:10px 12px;background:var(--surface);border:1px solid var(--border);border-radius:11px}
+.acred-toolbar p{color:var(--muted);font-size:12px}
+.guide-banner{background:linear-gradient(135deg,rgba(57,135,229,.14),rgba(25,158,112,.09));border-color:rgba(57,135,229,.28)}
+.guide-banner .guide-kicker{color:var(--s1);font-size:11.5px;font-weight:750;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px}
+.guide-banner h3{font-family:'Fraunces',Georgia,serif;font-size:clamp(20px,3vw,27px);line-height:1.2;margin-bottom:8px}
+.guide-banner .guide-lede{max-width:900px;color:var(--ink-2);font-size:14px}
+.guide-meta{display:flex;flex-wrap:wrap;gap:7px;margin-top:15px}
+.guide-meta span{border:1px solid var(--border);background:rgba(13,13,13,.28);border-radius:999px;padding:4px 9px;color:var(--ink-2);font-size:11.5px}
+.guide-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:12px}
+.guide-box{background:var(--surface-2);border:1px solid var(--border);border-radius:11px;padding:14px}
+.guide-box h4{color:var(--ink);font-size:13.5px;margin-bottom:7px}
+.guide-box ul,.guide-checks{list-style:none;display:grid;gap:6px;font-size:13px}
+.guide-box li,.guide-checks li{position:relative;padding-left:17px}
+.guide-box li::before{content:"→";position:absolute;left:0;color:var(--s1);font-weight:700}
+.guide-checks li::before{content:"✓";position:absolute;left:0;color:var(--s2);font-weight:800}
+.guide-role{display:grid;grid-template-columns:minmax(150px,.8fr) 1.7fr;gap:0;border-top:1px solid var(--grid);font-size:13px;padding:9px 0}
+.guide-role:first-of-type{margin-top:10px}
+.guide-role b{color:var(--ink);padding-right:12px}
+.guide-risk{border-left:3px solid var(--s3);padding-left:13px;margin-top:10px;color:var(--ink-2);font-size:13px}
+.guide-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.guide-links a{display:inline-flex;align-items:center;min-height:44px;border:1px solid var(--border);background:var(--surface-2);border-radius:9px;padding:8px 11px;font-size:12.5px;font-weight:650}
+@media(max-width:700px){.guide-grid{grid-template-columns:1fr}.guide-role{grid-template-columns:1fr}.acred-input-row{flex-wrap:wrap}.acred-input-row input{flex-basis:100%}.acred-input-row .acred-button{flex:1}.acred-toolbar{align-items:flex-start}.acred-toolbar p{max-width:190px}}
 .steps{list-style:none;counter-reset:paso;display:grid;gap:0;margin-top:6px}
 .steps li{counter-increment:paso;position:relative;padding:0 0 22px 54px}
 .steps li::before{content:counter(paso);position:absolute;left:0;top:0;width:34px;height:34px;border-radius:50%;background:rgba(57,135,229,.16);border:1px solid var(--s1);color:var(--ink);font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center}
@@ -782,8 +820,145 @@ html.light #arriba{box-shadow:0 4px 18px rgba(0,0,0,.15)}
 <!-- ================= ACREDITACIÓN ================= -->
 <section id="acreditacion">
   <div class="sec-head"><span class="sec-num">08</span><h2>Acreditación de alta calidad: el sello y el camino</h2></div>
+  <div class="acred-gate" id="acreditacion-acceso">
+    <div class="acred-lock">
+      <div class="lock-mark" aria-hidden="true">🔐</div>
+      <h3>Guía de acreditación protegida</h3>
+      <p>Ingrese la clave de acceso para consultar la ruta operativa, las evidencias y las herramientas de preparación para la acreditación de alta calidad.</p>
+      <form class="acred-form" id="acreditacion-form" novalidate>
+        <label for="acreditacion-clave">Clave de acceso</label>
+        <div class="acred-input-row">
+          <input id="acreditacion-clave" name="clave" type="password" autocomplete="current-password" required aria-describedby="acreditacion-estado acreditacion-nota">
+          <button class="acred-button" id="acreditacion-ver" type="button" aria-pressed="false">Mostrar</button>
+          <button class="acred-button primary" type="submit">Ingresar</button>
+        </div>
+        <p class="acred-status" id="acreditacion-estado" role="status" aria-live="polite"></p>
+      </form>
+      <p class="acred-private" id="acreditacion-nota"><span aria-hidden="true">●</span><span>El acceso se recuerda solo mientras esta pestaña permanezca abierta. No se guarda la clave en el navegador.</span></p>
+    </div>
+  </div>
+  <div id="acreditacion-contenido" hidden inert>
   <p class="sec-desc">La acreditación es el reconocimiento público de excelencia que el Ministerio de Educación otorga —con concepto del Consejo Nacional de Acreditación (CNA)— a las instituciones y programas que demuestran los más altos niveles de calidad (Ley 30 de 1992, art. 53). Es <b>voluntaria y temporal</b>, y desde 2025 se rige por un modelo nuevo. Esta guía explica qué es, qué le significa a un estudiante, el paso a paso del proceso y cómo está Antioquia. Cifras verificadas al 13 de julio de 2026.</p>
+  <div class="acred-toolbar">
+    <p><b style="color:var(--ink)">Sesión habilitada.</b> La guía se bloqueará al cerrar la pestaña.</p>
+    <button class="acred-button" id="acreditacion-cerrar" type="button">Bloquear guía</button>
+  </div>
   <div class="cards">
+    <div class="card guide-banner">
+      <p class="guide-kicker">Guía operativa · Modelo CNA 2025</p>
+      <h3>De la intención institucional a una decisión sustentada</h3>
+      <p class="guide-lede">La meta no es producir un informe voluminoso: es demostrar, con evidencia trazable, que el programa, la unidad académica o la institución conoce sus resultados, escucha a su comunidad y mejora de manera continua. Use esta ruta como tablero de trabajo y contraste siempre la versión vigente de las guías del CNA antes de radicar.</p>
+      <div class="guide-meta"><span>Ruta recomendada: 12–18 meses</span><span>6 fases de trabajo</span><span>Responsables definidos</span><span>Evidencia + juicio + mejora</span></div>
+    </div>
+
+    <div class="card">
+      <h3>1. Diagnóstico de alistamiento: decida si es el momento</h3>
+      <p class="note">Semáforo previo a comprometer una fecha. Los tiempos son una recomendación de gestión interna, no un plazo oficial del CNA.</p>
+      <div class="guide-grid">
+        <div class="guide-box">
+          <h4>Elegibilidad y alcance</h4>
+          <ul>
+            <li>Defina si el trámite será de programa, unidad académica, institución, campus o multicampus.</li>
+            <li>Verifique registro calificado vigente y, para programas, cuatro cohortes de graduados, ocho años de funcionamiento y matrícula reportada al SNIES.</li>
+            <li>Para institución: más de cinco años en su carácter o tipología y al menos 30 % de programas acreditables acreditados.</li>
+            <li>Para unidad académica: identidad de gestión por más de cinco años y al menos 50 % de sus programas acreditables acreditados.</li>
+          </ul>
+        </div>
+        <div class="guide-box">
+          <h4>Capacidad institucional</h4>
+          <ul>
+            <li>SIAC funcionando, con decisiones y mejoras demostrables; no solo documentos de política.</li>
+            <li>Series confiables de estudiantes, profesores, egresados, permanencia, graduación, resultados e impacto.</li>
+            <li>Repositorio con responsables, control de versiones y reglas de tratamiento de datos personales.</li>
+            <li>Presupuesto, tiempo de los equipos y respaldo explícito del gobierno institucional.</li>
+          </ul>
+        </div>
+      </div>
+      <p class="guide-risk"><b style="color:var(--ink)">Regla de decisión:</b> no radique si todavía hay cifras incompatibles, procesos sin responsable o planes sin presupuesto. Primero cierre las brechas críticas y deje evidencia de la mejora.</p>
+    </div>
+
+    <div class="card half">
+      <h3>2. Gobierno del proceso: quién responde por qué</h3>
+      <p class="note">La acreditación no puede quedar aislada en una oficina de calidad.</p>
+      <div class="guide-role"><b>Patrocinador</b><span>Rectoría o vicerrectoría remueve bloqueos, asigna recursos y exige decisiones.</span></div>
+      <div class="guide-role"><b>Líder de acreditación</b><span>Administra alcance, cronograma, riesgos, comunicaciones y relación con CNA.</span></div>
+      <div class="guide-role"><b>Dueños de factor</b><span>Interpretan resultados, validan evidencias y formulan mejoras en su ámbito.</span></div>
+      <div class="guide-role"><b>Gobierno de datos</b><span>Certifica fuentes, cortes, fórmulas, calidad, privacidad y trazabilidad.</span></div>
+      <div class="guide-role"><b>Comunidad</b><span>Estudiantes, profesores, egresados, empleadores y aliados contrastan los juicios.</span></div>
+      <div class="guide-role"><b>Revisión independiente</b><span>Auditor interno o “amigo crítico” prueba coherencia, evidencia y preparación.</span></div>
+    </div>
+
+    <div class="card half">
+      <h3>3. Ruta recomendada de 12–18 meses</h3>
+      <p class="note">Ajústela al punto de partida y al calendario oficial del trámite.</p>
+      <ol class="tline">
+        <li><span class="mes">Mes 0–1</span><p><b>Mandato y alcance:</b> elegibilidad, comité, carta de proyecto y mapa de riesgos.</p></li>
+        <li><span class="mes">Mes 1–3</span><p><b>Brechas:</b> lectura del modelo, inventario de fuentes y plan de evidencias.</p></li>
+        <li><span class="mes">Mes 3–8</span><p><b>Autoevaluación:</b> medición, participación, análisis y juicios por factor.</p></li>
+        <li><span class="mes">Mes 8–11</span><p><b>Mejora:</b> priorización, metas, responsables, recursos y aprobación.</p></li>
+        <li><span class="mes">Mes 11–14</span><p><b>Informe:</b> narrativa integrada, anexos, cuadros maestros y control de calidad.</p></li>
+        <li><span class="mes">Mes 14–18</span><p><b>Visita y respuesta:</b> simulación, logística, pares, observaciones y seguimiento.</p></li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h3>4. Matriz maestra de evidencia</h3>
+      <p class="note">Cada afirmación importante debe poder recorrerse en ambos sentidos: del juicio a la fuente y de la fuente a la decisión.</p>
+      <div class="tscroll">
+        <table aria-label="Estructura recomendada de la matriz maestra de evidencia">
+          <thead><tr><th>Campo</th><th>Pregunta de control</th><th>Ejemplo de salida</th></tr></thead>
+          <tbody>
+            <tr><td>Factor y aspecto</td><td>¿Qué exige valorar el modelo?</td><td>Factor 6 · permanencia y graduación</td></tr>
+            <tr><td>Indicador y fórmula</td><td>¿Cómo se mide y con qué corte?</td><td>Deserción por cohorte · 2021–2025</td></tr>
+            <tr><td>Fuente primaria</td><td>¿Quién certifica el dato o documento?</td><td>SNIES / sistema académico / acta</td></tr>
+            <tr><td>Juicio y contraste</td><td>¿Qué muestra, frente a meta y contexto?</td><td>Mejora sostenida, brecha nocturna</td></tr>
+            <tr><td>Acción de mejora</td><td>¿Qué decisión produjo la evidencia?</td><td>Tutoría temprana en primer semestre</td></tr>
+            <tr><td>Responsable y prueba</td><td>¿Quién responde y cómo se verifica?</td><td>Decanatura · tablero trimestral</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card half">
+      <h3>5. Paquete mínimo antes de radicar</h3>
+      <p class="note">Lista de control para el comité directivo.</p>
+      <ul class="guide-checks">
+        <li>Informe de autoevaluación crítico, claro y consistente con el proyecto educativo.</li>
+        <li>Cuadros maestros y series históricas conciliadas con SNIES y sistemas internos.</li>
+        <li>Índice de anexos con enlace, propietario, versión, fecha y nivel de acceso.</li>
+        <li>Plan de mejoramiento con línea base, meta, acción, responsable, presupuesto, fecha e indicador.</li>
+        <li>Actas y resultados de participación de todos los grupos de interés.</li>
+        <li>Registro de decisiones y mejoras ya ejecutadas, con evidencia de sus efectos.</li>
+        <li>Revisión jurídica, de privacidad, accesibilidad y coherencia editorial.</li>
+      </ul>
+    </div>
+
+    <div class="card half">
+      <h3>6. Preparación de la visita de pares</h3>
+      <p class="note">La visita contrasta el informe con la realidad. Prepare acceso y coherencia, no respuestas memorizadas.</p>
+      <ul class="guide-checks">
+        <li>Haga una simulación con preguntas abiertas y muestreo aleatorio de evidencias.</li>
+        <li>Publique una única fuente de verdad y asigne un custodio para cada solicitud.</li>
+        <li>Incluya voces diversas, sin seleccionar únicamente participantes favorables.</li>
+        <li>Pruebe enlaces, salas, conectividad, accesibilidad y contingencias.</li>
+        <li>Registre cada solicitud de los pares, responsable, entrega y versión enviada.</li>
+        <li>Revise el informe de pares con evidencia; responda precisiones, no desacuerdos retóricos.</li>
+      </ul>
+      <p class="guide-risk"><b style="color:var(--ink)">Evite:</b> repositorios sin índice, testimonios ensayados, metas sin línea base, indicadores con cortes distintos y anexos que no sostienen el juicio.</p>
+    </div>
+
+    <div class="card">
+      <h3>Fuentes rectoras y control de vigencia</h3>
+      <p class="note">Revisión editorial: 14 de julio de 2026. El CNA puede actualizar formatos, cuadros maestros y guías; confirme la versión vigente al iniciar y justo antes de radicar.</p>
+      <div class="guide-links">
+        <a href="https://www.cna.gov.co/1779/w3-article-427881.html?_noredirect=1" target="_blank" rel="noopener">Acuerdo CESU 01 de 2025 ↗</a>
+        <a href="https://www.cna.gov.co/portal/Secciones/426872%3A" target="_blank" rel="noopener">Guía del trámite 2025 ↗</a>
+        <a href="https://www.cna.gov.co/1779/w3-article-426700.html?_noredirect=1" target="_blank" rel="noopener">Cultura de calidad y autoevaluación ↗</a>
+        <a href="https://www.cna.gov.co/portal/Sistema-Nacional-de-Acreditacion/Marco-normativo/" target="_blank" rel="noopener">Marco normativo vigente ↗</a>
+        <a href="https://www.cna.gov.co/1779/w3-propertyvalue-67686.html?_noredirect=1" target="_blank" rel="noopener">Etapas oficiales del proceso ↗</a>
+      </div>
+    </div>
+
     <div class="card">
       <h3>Lo primero: no confunda la licencia con el sello</h3>
       <p class="note">Todo programa necesita <b>registro calificado</b> para poder operar; la acreditación distingue a los que van más allá. Un programa acreditado tiene, por definición, su registro asegurado.</p>
@@ -802,7 +977,7 @@ html.light #arriba{box-shadow:0 4px 18px rgba(0,0,0,.15)}
           <ul>
             <li><b>Voluntaria y temporal</b>: reconocimiento público de excelencia, no un permiso.</li>
             <li>Vigencia de <b>6, 8 o 10 años</b>. La evalúa el CNA y la resuelve el MEN.</li>
-            <li>Base legal: Ley 30 de 1992 (arts. 53-56) y <a href="https://www.mineducacion.gov.co/1780/articles-424592_recurso_07.pdf" target="_blank" rel="noopener">Acuerdo CESU 01 de 2025</a>.</li>
+            <li>Base legal: Ley 30 de 1992 (arts. 53-56) y <a href="https://www.cna.gov.co/1779/w3-article-427881.html?_noredirect=1" target="_blank" rel="noopener">Acuerdo CESU 01 de 2025</a>.</li>
             <li><b>El trámite ante el CNA es gratuito</b> (incluidas las visitas de pares); lo que cuesta es la preparación interna.</li>
           </ul>
         </div>
@@ -896,6 +1071,7 @@ html.light #arriba{box-shadow:0 4px 18px rgba(0,0,0,.15)}
     </div>
   </div>
   <div class="callout" id="hallazgo-acreditacion"></div>
+  </div>
 </section>
 
 <!-- ================= INNOVACIÓN ================= -->
@@ -1025,6 +1201,76 @@ const ORD3=[C('--o1'),C('--o2'),C('--o3')];
 const fmt = n => n.toLocaleString('es-CO');
 const fmtK = n => n>=1e6 ? (n/1e6).toLocaleString('es-CO',{maximumFractionDigits:1})+' M' : n>=10000 ? Math.round(n/1000).toLocaleString('es-CO')+' mil' : fmt(n);
 const pct = (a,b) => (100*a/b).toLocaleString('es-CO',{maximumFractionDigits:1})+' %';
+
+/* ============ acceso a la guía de acreditación ============ */
+(function(){
+  const gate=document.getElementById('acreditacion-acceso');
+  const content=document.getElementById('acreditacion-contenido');
+  const form=document.getElementById('acreditacion-form');
+  const input=document.getElementById('acreditacion-clave');
+  const status=document.getElementById('acreditacion-estado');
+  const toggle=document.getElementById('acreditacion-ver');
+  const close=document.getElementById('acreditacion-cerrar');
+  const sessionKey='mg-acreditacion-v20';
+  const expected='ae205b694639a22bd1ec14d00dba03388c419701ee5e7d6a0506c7002f00f4cd';
+
+  function setUnlocked(on,{focus=false}={}){
+    gate.hidden=on;
+    content.hidden=!on;
+    content.inert=!on;
+    if(on) content.removeAttribute('inert'); else content.setAttribute('inert','');
+    if(focus){
+      const target=on?content.querySelector('.guide-banner h3'):input;
+      target.setAttribute('tabindex','-1');
+      requestAnimationFrame(()=>target.focus());
+    }
+  }
+  async function digest(value){
+    const bytes=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(value));
+    return [...new Uint8Array(bytes)].map(x=>x.toString(16).padStart(2,'0')).join('');
+  }
+  try{if(sessionStorage.getItem(sessionKey)==='1')setUnlocked(true);}catch(e){}
+
+  toggle.addEventListener('click',()=>{
+    const show=input.type==='password';
+    input.type=show?'text':'password';
+    toggle.textContent=show?'Ocultar':'Mostrar';
+    toggle.setAttribute('aria-pressed',String(show));
+    input.focus();
+  });
+  form.addEventListener('submit',async ev=>{
+    ev.preventDefault();
+    const value=input.value;
+    if(!value){
+      input.setAttribute('aria-invalid','true');
+      status.textContent='Ingrese la clave para continuar.';
+      input.focus();
+      return;
+    }
+    try{
+      const valid=await digest(value)===expected;
+      input.value='';
+      if(!valid){
+        input.setAttribute('aria-invalid','true');
+        status.textContent='Clave incorrecta. Verifique e inténtelo de nuevo.';
+        input.focus();
+        return;
+      }
+      input.removeAttribute('aria-invalid');
+      status.textContent='';
+      try{sessionStorage.setItem(sessionKey,'1');}catch(e){}
+      setUnlocked(true,{focus:true});
+    }catch(e){
+      status.textContent='No fue posible validar el acceso en este navegador.';
+    }
+  });
+  close.addEventListener('click',()=>{
+    try{sessionStorage.removeItem(sessionKey);}catch(e){}
+    input.type='password';toggle.textContent='Mostrar';toggle.setAttribute('aria-pressed','false');
+    status.textContent='';input.removeAttribute('aria-invalid');
+    setUnlocked(false,{focus:true});
+  });
+})();
 
 /* ============ tooltip ============ */
 const tip = document.getElementById('tip');
