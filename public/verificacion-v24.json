@@ -1,0 +1,48 @@
+{
+  "version": "V24",
+  "fecha_verificacion": "2026-07-15",
+  "estado": "correcto_sin_diferencias",
+  "universo_snies_2024_II": {
+    "programas_activos": 2107,
+    "codigos_snies_unicos": 2107,
+    "instituciones_distintas": 64,
+    "municipios_con_oferta": 51,
+    "programas_acreditados": 439,
+    "matricula_total_reproducida": 313583,
+    "nulos_en_campos_criticos": 0
+  },
+  "pruebas_de_filtros": [
+    {
+      "criterio": "Municipio = Medellín",
+      "programas": 1745,
+      "instituciones": 48,
+      "programas_acreditados": 407,
+      "resultado": "reproducido_sin_diferencias"
+    },
+    {
+      "criterio": "Municipio = Rionegro; nivel = Universitaria; modalidad = Presencial",
+      "programas": 26,
+      "instituciones": 2,
+      "programas_acreditados": 11,
+      "resultado": "reproducido_sin_diferencias"
+    }
+  ],
+  "reglas_de_interpretacion": {
+    "sin_ranking": "El modo organiza coincidencias y no calcula una puntuación de mejor programa.",
+    "acreditacion": "La proporción usa como denominador los programas que cumplen todos los filtros activos.",
+    "matricula_multisede": "La matrícula reportada pertenece al programa en el conjunto de sus sedes; no se atribuye al municipio seleccionado.",
+    "orden_matricula": "Se usa como señal de escala del programa, no como indicador de calidad.",
+    "alcance": "La herramienta no sustituye la verificación de registro calificado, costos, horarios, admisiones ni plan de estudios."
+  },
+  "atlas_territorial": {
+    "resultado": "sin_diferencias",
+    "matricula_2024_II": 313583,
+    "pregrado_2024_II": 292968,
+    "poblacion_17_21_2024": 541548,
+    "geometrias_municipales": 125,
+    "diferencias_municipales": 0,
+    "diferencias_subregionales": 0,
+    "diferencias_cobertura": 0
+  },
+  "principio_v24": "MaterIA ayuda a reducir la complejidad mostrando fuente, corte, denominador y límites; la decisión final permanece en la persona usuaria."
+}

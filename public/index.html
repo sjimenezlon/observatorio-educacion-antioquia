@@ -28,6 +28,7 @@
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;scroll-padding-top:70px;overflow-x:hidden}
 body{background:var(--page);color:var(--ink-2);font:15px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
 a{color:var(--s1);text-decoration:none}
 a:hover{text-decoration:underline}
 .wrap{max-width:1180px;margin:0 auto;padding:0 20px}
@@ -494,6 +495,56 @@ nav .logo{display:flex;align-items:center;gap:10px;min-width:156px;padding-left:
 #pal-list .pal-empty{display:block;padding:20px 18px;color:var(--muted);font-size:13px;line-height:1.5;cursor:default}
 @media(max-width:1050px){.evidence-rail{grid-template-columns:1fr 1fr}.evidence-action{grid-column:1/-1;min-height:48px}.evidence-item:nth-child(2n){border-left:1px solid rgba(151,180,222,.12)}}
 @media(max-width:640px){nav .logo{min-width:146px}.brand-copy small{display:none}.evidence-rail{grid-template-columns:1fr}.evidence-lead,.evidence-item{min-height:auto;padding:14px 15px}.evidence-item,.evidence-action{border-left:none;border-top:1px solid rgba(151,180,222,.12)}#pal .hint{display:block}.pal-trust{display:block;margin-top:4px}.hero-btn.ask{width:100%}}
+/* ---------- Modo Decisión · V24 ---------- */
+.decision-shell{position:relative;display:grid;grid-template-columns:minmax(250px,.72fr) minmax(0,1.55fr);gap:16px;align-items:start}
+.decision-panel{position:sticky;top:78px;padding:20px;border:1px solid rgba(151,180,222,.16);border-radius:18px;background:linear-gradient(155deg,rgba(18,28,42,.97),rgba(13,20,31,.94));box-shadow:0 18px 45px rgba(0,0,0,.16)}
+.decision-panel::before{content:"";position:absolute;inset:0 auto 0 0;width:3px;border-radius:18px 0 0 18px;background:linear-gradient(var(--s2),var(--s1),var(--s4))}
+.decision-eyebrow{display:flex;align-items:center;gap:7px;color:#78e3c3;font-size:9.5px;font-weight:760;text-transform:uppercase;letter-spacing:.13em;margin-bottom:7px}
+.decision-eyebrow::before{content:"IA";display:grid;place-items:center;width:23px;height:23px;border-radius:8px;background:rgba(62,214,170,.11);font-size:9px}
+.decision-panel h3{font:650 21px/1.18 'Fraunces',Georgia,serif;margin-bottom:8px}
+.decision-panel .note{margin-bottom:18px}
+.decision-fields{display:grid;gap:12px}
+.decision-field{display:grid;gap:6px}
+.decision-field label{color:var(--ink-2);font-size:10.5px;font-weight:700;letter-spacing:.035em}
+.decision-field select{width:100%;min-height:44px;border:1px solid rgba(151,180,222,.17);border-radius:10px;background:var(--surface-2);color:var(--ink);padding:8px 10px;font:inherit;font-size:12px}
+.decision-reset{min-height:44px;border:1px solid rgba(107,166,255,.22);border-radius:10px;background:rgba(107,166,255,.08);color:#b8d4ff;font-family:inherit;font-size:12px;font-weight:700;cursor:pointer}
+.decision-reset:hover{background:rgba(107,166,255,.14);color:#fff}
+.decision-evidence{margin-top:15px;padding-top:14px;border-top:1px solid rgba(151,180,222,.12);color:var(--muted);font-size:10.5px;line-height:1.5}
+.decision-evidence b{color:#78e3c3}
+.decision-output{display:grid;grid-template-columns:minmax(0,1fr);gap:15px;min-width:0}
+.decision-output>.card{grid-column:auto}
+.decision-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.decision-stat{min-height:114px;padding:16px;border:1px solid rgba(151,180,222,.14);border-radius:15px;background:linear-gradient(145deg,rgba(17,25,38,.94),rgba(13,20,30,.88))}
+.decision-stat small{display:block;color:var(--muted);font-size:9.5px;text-transform:uppercase;letter-spacing:.1em}
+.decision-stat b{display:block;color:var(--ink);font:650 28px/1.05 'Fraunces',Georgia,serif;margin:10px 0 4px}
+.decision-stat span{color:var(--muted);font-size:10.5px;line-height:1.35}
+.decision-reading{padding:16px 18px;border:1px solid rgba(62,214,170,.16);border-radius:15px;background:linear-gradient(130deg,rgba(62,214,170,.075),rgba(107,166,255,.055))}
+.decision-reading small{color:#78e3c3;font-size:9.5px;text-transform:uppercase;letter-spacing:.11em;font-weight:760}
+.decision-reading p{color:var(--ink-2);font-size:13px;line-height:1.55;margin-top:7px}
+.decision-areas{display:grid;gap:8px}
+.decision-area{display:grid;grid-template-columns:minmax(120px,1fr) 2fr auto;align-items:center;gap:10px;color:var(--ink-2);font-size:11px}
+.decision-area span:first-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.decision-area .track{height:6px;border-radius:9px;background:rgba(151,180,222,.11);overflow:hidden}
+.decision-area .fill{height:100%;border-radius:9px;background:linear-gradient(90deg,var(--s1),var(--s2))}
+.decision-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.decision-card{display:flex;flex-direction:column;min-height:190px;padding:16px;border:1px solid rgba(151,180,222,.14);border-radius:15px;background:linear-gradient(150deg,rgba(18,27,40,.95),rgba(12,19,29,.90));transition:transform .2s,border-color .2s}
+.decision-card:hover{transform:translateY(-2px);border-color:rgba(107,166,255,.3)}
+.decision-card-top{display:flex;justify-content:space-between;gap:8px;align-items:flex-start}
+.decision-card h4{color:var(--ink);font:650 16px/1.28 'Fraunces',Georgia,serif;text-wrap:balance}
+.decision-badge{flex:none;padding:4px 7px;border-radius:12px;background:rgba(62,214,170,.11);color:#78e3c3;font-size:8.5px;font-weight:760;text-transform:uppercase;letter-spacing:.06em}
+.decision-card .ies{color:#a9cbff;font-size:11px;line-height:1.4;margin:9px 0}
+.decision-meta{display:flex;flex-wrap:wrap;gap:5px;margin-top:auto}
+.decision-meta span{padding:4px 7px;border-radius:7px;background:rgba(151,180,222,.07);color:var(--muted);font-size:9.5px}
+.decision-scale{margin-top:10px;color:var(--muted);font-size:9.5px;line-height:1.4}
+.decision-actions{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;padding-top:2px}
+.decision-actions .note{margin:0;max-width:610px}
+.decision-to-offer{min-height:44px;display:inline-flex;align-items:center;padding:8px 13px;border-radius:10px;background:linear-gradient(135deg,rgba(107,166,255,.16),rgba(62,214,170,.10));border:1px solid rgba(107,166,255,.24);color:#b8d4ff;font-size:11.5px;font-weight:750;cursor:pointer;font-family:inherit}
+.decision-to-offer:hover{color:#fff}
+.decision-empty{grid-column:1/-1;padding:28px;border:1px dashed rgba(151,180,222,.21);border-radius:15px;text-align:center;color:var(--muted);font-size:13px;line-height:1.6}
+html.light .decision-panel,html.light .decision-card,html.light .decision-stat{background:linear-gradient(145deg,rgba(255,255,255,.98),rgba(244,248,252,.95))}
+html.light .decision-reading{background:linear-gradient(130deg,rgba(13,133,101,.07),rgba(55,111,189,.05))}
+@media(max-width:900px){.decision-shell{grid-template-columns:1fr}.decision-panel{position:static}.decision-fields{grid-template-columns:1fr 1fr}.decision-field:last-of-type{grid-column:1/-1}}
+@media(max-width:640px){.decision-fields,.decision-summary,.decision-list{grid-template-columns:1fr}.decision-area{grid-template-columns:minmax(95px,1fr) 1fr auto}.decision-stat{min-height:96px}.decision-actions{align-items:stretch}.decision-to-offer{justify-content:center;width:100%}}
 @media(max-width:960px){.hero-grid{grid-template-columns:1fr}.ai-core{min-height:360px}.core-orbit{width:215px;height:215px}.core-center{width:126px;height:126px}.journeys{grid-template-columns:1fr 1fr}}
 @media(max-width:640px){nav .wrap{height:58px}.hero-grid{gap:28px}.ai-core{min-height:340px;padding:17px;border-radius:21px}.core-orbit{width:200px;height:200px}.core-center{width:118px;height:118px}.core-center b{font-size:23px}.core-signals{gap:5px}.core-signal{padding:8px}.journeys{grid-template-columns:1fr;margin-top:32px}.journey{min-height:96px}.hero-actions{display:grid;grid-template-columns:1fr}.hero-btn{width:100%}.ai-guide{left:12px;bottom:12px;width:calc(100vw - 24px)}#arriba{bottom:72px;right:12px}.card{border-radius:15px}}
 @media(prefers-reduced-motion:reduce){.core-ring{animation:none}.hero-btn,.journey,.ai-guide-toggle .chev{transition:none}}
@@ -555,6 +606,7 @@ html.light #arriba{box-shadow:0 4px 18px rgba(0,0,0,.15)}
   <a class="sec" href="#panorama">Panorama</a>
   <a class="sec" href="#instituciones">Instituciones</a>
   <a class="sec" href="#territorio">Territorio</a>
+  <a class="sec" href="#decidir">Decidir</a>
   <a class="sec" href="#oferta">Oferta</a>
   <a class="sec" href="#economia">Oferta y demanda</a>
   <a class="sec" href="#laboral">Mercado laboral</a>
@@ -583,7 +635,7 @@ html.light #arriba{box-shadow:0 4px 18px rgba(0,0,0,.15)}
       <p class="lede">MaterIA Gris conecta territorio, instituciones, calidad, empleo, investigación, finanzas y conversación digital para revelar cómo está cambiando la educación superior del departamento — con evidencia verificable y una lectura humana.</p>
       <div class="hero-actions" aria-label="Acciones principales">
         <a class="hero-btn primary" href="#panorama">Descubrir el panorama <span aria-hidden="true">→</span></a>
-        <a class="hero-btn secondary" href="#territorio">Explorar el mapa de Antioquia</a>
+        <a class="hero-btn secondary" href="#decidir">Activar Modo Decisión</a>
         <button class="hero-btn ask" id="hero-ask" type="button"><span class="ask-spark" aria-hidden="true">IA</span>Preguntar a los datos</button>
       </div>
       <p class="byline">Una iniciativa de <b>Santiago Jiménez Londoño</b> · SNIES, ICFES, OLE, MinCiencias y fuentes públicas verificadas · Julio de 2026</p>
@@ -597,7 +649,7 @@ html.light #arriba{box-shadow:0 4px 18px rgba(0,0,0,.15)}
       <div class="core-signals">
         <div class="core-signal"><b>51</b><span>municipios con oferta</span></div>
         <div class="core-signal"><b>18</b><span>decisiones de acreditación monitorizadas</span></div>
-        <div class="core-signal"><b>V23</b><span>evidencia explicable</span></div>
+        <div class="core-signal"><b>V24</b><span>decisiones explicables</span></div>
       </div>
     </aside>
   </div>
@@ -843,6 +895,50 @@ html.light #arriba{box-shadow:0 4px 18px rgba(0,0,0,.15)}
     </div>
   </div>
   <div class="callout" id="hallazgo-territorio"></div>
+</section>
+
+<!-- ================= MODO DECISIÓN ================= -->
+<section id="decidir">
+  <div class="sec-head"><span class="sec-num">IA</span><h2>Modo Decisión: reducir opciones sin ocultar la evidencia</h2></div>
+  <p class="sec-desc">Convierta 2.107 programas activos en un conjunto legible según el lugar y el tipo de formación que busca. MaterIA organiza la evidencia; no asigna una puntuación de “mejor programa” ni reemplaza la revisión del registro calificado, costos, horarios y plan de estudios.</p>
+  <div class="decision-shell">
+    <aside class="decision-panel" aria-label="Criterios para reducir opciones">
+      <div class="decision-eyebrow">Decisión asistida por datos</div>
+      <h3>¿Qué necesita encontrar?</h3>
+      <p class="note">Elija uno o varios criterios. Cada resultado se recalcula sobre la base SNIES 2024-II.</p>
+      <div class="decision-fields">
+        <div class="decision-field"><label for="d-muni">1 · Territorio</label><select id="d-muni"><option value="">Todo Antioquia</option></select></div>
+        <div class="decision-field"><label for="d-nivel">2 · Nivel de formación</label><select id="d-nivel"><option value="">Todos los niveles</option></select></div>
+        <div class="decision-field"><label for="d-modalidad">3 · Modalidad</label><select id="d-modalidad"><option value="">Todas las modalidades</option></select></div>
+        <div class="decision-field"><label for="d-area">4 · Área de conocimiento</label><select id="d-area"><option value="">Todas las áreas</option></select></div>
+        <div class="decision-field"><label for="d-orden">5 · Orden de lectura</label><select id="d-orden"><option value="matricula">Mayor matrícula del programa</option><option value="acreditacion">Acreditación primero</option><option value="alfabetico">Nombre alfabético</option></select></div>
+        <button class="decision-reset" id="d-reset" type="button">Limpiar criterios</button>
+      </div>
+      <p class="decision-evidence"><b>Fuente y límite.</b> SNIES, programas con matrícula en 2024-II. Cuando un programa opera en varios municipios, su matrícula está consolidada para todas sus sedes; no se presenta como matrícula local.</p>
+    </aside>
+    <div class="decision-output">
+      <p class="sr-only" id="d-status" aria-live="polite"></p>
+      <div class="decision-summary">
+        <div class="decision-stat"><small>Opciones que coinciden</small><b id="d-programas">—</b><span>programas con matrícula activa</span></div>
+        <div class="decision-stat"><small>Instituciones presentes</small><b id="d-ies">—</b><span>IES distintas en el resultado</span></div>
+        <div class="decision-stat"><small>Alta calidad</small><b id="d-acreditados">—</b><span id="d-acreditados-note">programas acreditados</span></div>
+      </div>
+      <div class="decision-reading"><small>Lectura MaterIA</small><p id="d-reading">Seleccione sus criterios para construir una lectura.</p></div>
+      <div class="card" style="margin:0">
+        <h3>Composición por área</h3>
+        <p class="note">Las áreas con más opciones dentro del conjunto seleccionado; es volumen de oferta, no una medida de calidad.</p>
+        <div class="decision-areas" id="d-areas"></div>
+      </div>
+      <div>
+        <h3 style="margin:2px 0 10px">Programas para revisar</h3>
+        <div class="decision-list" id="d-results"></div>
+      </div>
+      <div class="decision-actions">
+        <p class="note" id="d-order-note">Orden: matrícula total reportada por el programa en todas sus sedes; indica escala, no calidad.</p>
+        <button class="decision-to-offer" id="d-to-offer" type="button">Abrir el explorador completo con estos filtros →</button>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- ================= OFERTA ================= -->
@@ -2118,7 +2214,9 @@ hbars('ch-nbc', D.nbc.slice(0,12).map(n=>({label:n.nbc,value:n.matricula24,n})),
       (!selS.value||p.sector===selS.value)&&(!selM.value||p.modalidad===selM.value)&&
       (!selMu.value||p.municipios.includes(selMu.value))&&
       (!nq||p.programa.toLowerCase().includes(nq)||p.ies.toLowerCase().includes(nq)));
-    count.textContent=`${fmt(rows.length)} programas · ${fmt(rows.reduce((a,p)=>a+p.matricula24,0))} estudiantes`;
+    count.textContent=selMu.value
+      ?`${fmt(rows.length)} programas · ${fmt(new Set(rows.map(p=>p.ies)).size)} instituciones · matrícula no atribuible al municipio`
+      :`${fmt(rows.length)} programas · ${fmt(rows.reduce((a,p)=>a+p.matricula24,0))} matrículas`;
     host.innerHTML='';
     const t=document.createElement('table');
     const thead=document.createElement('thead'),trh=document.createElement('tr');
@@ -2145,6 +2243,87 @@ hbars('ch-nbc', D.nbc.slice(0,12).map(n=>({label:n.nbc,value:n.matricula24,n})),
   }
   [selN,selA,selS,selM,selMu].forEach(s=>s.addEventListener('change',()=>{shown=400;render();}));
   q.addEventListener('input',()=>{shown=400;render();});
+  render();
+})();
+
+/* ---- Modo Decisión · V24: filtro explicable, sin puntaje compuesto ---- */
+(function(){
+  const P=D.programas;
+  const NIVEL_ORDEN=['Técnica profesional','Tecnológica','Universitaria','Especialización','Maestría','Doctorado'];
+  const muni=document.getElementById('d-muni'),nivel=document.getElementById('d-nivel'),modalidad=document.getElementById('d-modalidad'),
+        area=document.getElementById('d-area'),orden=document.getElementById('d-orden'),results=document.getElementById('d-results'),
+        areas=document.getElementById('d-areas'),reading=document.getElementById('d-reading'),orderNote=document.getElementById('d-order-note');
+  if(!muni)return;
+  const option=(select,value,label=value)=>{const o=document.createElement('option');o.value=value;o.textContent=label;select.appendChild(o);};
+  [...new Set(P.flatMap(p=>p.municipios))].sort((a,b)=>a.localeCompare(b,'es')).forEach(v=>option(muni,v));
+  NIVEL_ORDEN.filter(v=>P.some(p=>p.nivel===v)).forEach(v=>option(nivel,v));
+  [...new Set(P.map(p=>p.modalidad))].sort((a,b)=>a.localeCompare(b,'es')).forEach(v=>option(modalidad,v));
+  [...new Set(P.map(p=>p.area))].sort((a,b)=>a.localeCompare(b,'es')).forEach(v=>option(area,v));
+  const selects=[muni,nivel,modalidad,area,orden];
+  const shortArea=v=>v.replace(' y afines','').replace('Economía, administración, contaduría','Economía y administración');
+  const title=v=>v.toLocaleLowerCase('es-CO').replace(/(^|[\s/(-])([a-záéíóúñ])/g,(m,a,b)=>a+b.toLocaleUpperCase('es-CO'));
+  function filtered(){
+    return P.filter(p=>(!muni.value||p.municipios.includes(muni.value))&&(!nivel.value||p.nivel===nivel.value)&&
+      (!modalidad.value||p.modalidad===modalidad.value)&&(!area.value||p.area===area.value));
+  }
+  function setText(id,value){document.getElementById(id).textContent=value;}
+  function addMeta(host,value){const s=document.createElement('span');s.textContent=value;host.appendChild(s);}
+  function render(){
+    const rows=filtered(),ies=new Set(rows.map(p=>p.ies)),acred=rows.filter(p=>p.acreditado).length;
+    setText('d-status',`${fmt(rows.length)} programas, ${fmt(ies.size)} instituciones y ${fmt(acred)} programas acreditados coinciden con los criterios.`);
+    setText('d-programas',fmt(rows.length));setText('d-ies',fmt(ies.size));setText('d-acreditados',fmt(acred));
+    setText('d-acreditados-note',rows.length?`${(100*acred/rows.length).toLocaleString('es-CO',{maximumFractionDigits:1})} % de las opciones`:'sin opciones para calcular');
+    const criteria=[muni.value,nivel.value,modalidad.value,area.value].filter(Boolean);
+    if(!rows.length){
+      reading.textContent='La combinación elegida no registra programas con matrícula activa en 2024-II. Quite un criterio para ampliar el universo; ausencia en este corte no demuestra que nunca haya existido oferta.';
+    }else if(!criteria.length){
+      reading.textContent=`El universo completo reúne ${fmt(rows.length)} programas de ${fmt(ies.size)} instituciones. Empiece por territorio si necesita estudiar cerca, y después reduzca por nivel, modalidad y área.`;
+    }else{
+      const where=muni.value?`con presencia en ${muni.value}`:'en Antioquia';
+      const quality=acred?`${fmt(acred)} tienen acreditación de alta calidad`:'ninguno figura con acreditación de alta calidad en la base';
+      reading.textContent=`La selección deja ${fmt(rows.length)} programas de ${fmt(ies.size)} instituciones ${where}; ${quality}. El conteo describe opciones registradas, no cupos disponibles ni una recomendación personalizada.`;
+    }
+    const byArea=new Map();rows.forEach(p=>byArea.set(p.area,(byArea.get(p.area)||0)+1));
+    const ranked=[...byArea].sort((a,b)=>b[1]-a[1]).slice(0,5),max=ranked[0]?.[1]||1;
+    areas.innerHTML='';
+    ranked.forEach(([name,count])=>{
+      const row=document.createElement('div');row.className='decision-area';
+      const label=document.createElement('span');label.textContent=shortArea(name);label.title=name;row.appendChild(label);
+      const track=document.createElement('span');track.className='track';const fill=document.createElement('span');fill.className='fill';fill.style.width=(100*count/max)+'%';track.appendChild(fill);row.appendChild(track);
+      const value=document.createElement('b');value.textContent=fmt(count);row.appendChild(value);areas.appendChild(row);
+    });
+    if(!ranked.length){const e=document.createElement('p');e.className='note';e.textContent='No hay áreas para mostrar con esta combinación.';areas.appendChild(e);}
+    const sorted=[...rows].sort((a,b)=>{
+      if(orden.value==='alfabetico')return a.programa.localeCompare(b.programa,'es');
+      if(orden.value==='acreditacion'&&a.acreditado!==b.acreditado)return Number(b.acreditado)-Number(a.acreditado);
+      return b.matricula24-a.matricula24||a.programa.localeCompare(b.programa,'es');
+    });
+    results.innerHTML='';
+    sorted.slice(0,8).forEach(p=>{
+      const card=document.createElement('article');card.className='decision-card';
+      const top=document.createElement('div');top.className='decision-card-top';
+      const h=document.createElement('h4');h.textContent=title(p.programa);top.appendChild(h);
+      if(p.acreditado){const badge=document.createElement('span');badge.className='decision-badge';badge.textContent='Alta calidad';top.appendChild(badge);}
+      card.appendChild(top);
+      const institution=document.createElement('p');institution.className='ies';institution.textContent=p.ies;card.appendChild(institution);
+      const meta=document.createElement('div');meta.className='decision-meta';addMeta(meta,p.nivel);addMeta(meta,p.modalidad);addMeta(meta,shortArea(p.area));
+      if(muni.value)addMeta(meta,muni.value);else addMeta(meta,p.municipios.length===1?p.municipios[0]:`${p.municipios.length} municipios`);
+      card.appendChild(meta);
+      const scale=document.createElement('p');scale.className='decision-scale';scale.textContent=`${fmt(p.matricula24)} matrículas reportadas por el programa${p.municipios.length>1?' en el conjunto de sus sedes':''}.`;card.appendChild(scale);
+      results.appendChild(card);
+    });
+    if(!sorted.length){const e=document.createElement('div');e.className='decision-empty';e.textContent='No hay programas que cumplan todos los criterios. Pruebe una modalidad o un nivel diferente.';results.appendChild(e);}
+    const notes={matricula:'Orden: matrícula total reportada por el programa en todas sus sedes; indica escala, no calidad.',acreditacion:'Orden: primero los programas acreditados y luego su matrícula total; el sello no resume toda la experiencia educativa.',alfabetico:'Orden alfabético: neutral frente al tamaño, la acreditación y la institución.'};
+    orderNote.textContent=notes[orden.value];
+  }
+  selects.forEach(s=>s.addEventListener('change',render));
+  document.getElementById('d-reset').addEventListener('click',()=>{selects.forEach(s=>s.selectedIndex=0);render();muni.focus();});
+  document.getElementById('d-to-offer').addEventListener('click',()=>{
+    if(window.mostrarVista)mostrarVista('oferta');
+    const transfer=[['f-muni',muni.value],['f-nivel',nivel.value],['f-modalidad',modalidad.value],['f-area',area.value],['f-sector','']];
+    transfer.forEach(([id,value])=>{const e=document.getElementById(id);if(e){e.value=value;e.dispatchEvent(new Event('change'));}});
+    const q=document.getElementById('f-q');if(q){q.value='';q.dispatchEvent(new Event('input'));}
+  });
   render();
 })();
 
@@ -3378,7 +3557,8 @@ const FIN_AL=[
     inicio:{q:'¿Qué está cambiando en la educación superior?',i:'El sistema recupera matrícula, pero no de forma uniforme: crece la formación universitaria mientras la base técnica y tecnológica se estrecha.',n:'Empiece por el panorama para ver la serie completa y después contraste la distribución territorial.',f:'SNIES 2024-II · fuente oficial',to:'panorama',cta:'Leer el panorama'},
     panorama:{q:'¿El sistema está creciendo o se está recomponiendo?',i:'Ambas cosas. La recuperación de 2024 está impulsada por lo universitario y lo oficial; la educación técnica y tecnológica sigue por debajo de su nivel de 2018.',n:'Compare siempre niveles y modalidades: el total, por sí solo, esconde cambios estructurales.',f:'SNIES 2018–2024 · fuente oficial',to:'instituciones',cta:'Comparar instituciones'},
     instituciones:{q:'¿Quién está creciendo y con qué tipo de oferta?',i:'El tamaño no cuenta toda la historia. La comparación reúne matrícula, programas, presencia territorial, acreditación, Saber TyT y capacidad investigativa.',n:'Use el comparador de hasta tres IES para observar fortalezas distintas sin convertir una cifra en un ranking absoluto.',f:'SNIES + señales autorreportadas',to:'territorio',cta:'Ver presencia territorial'},
-    territorio:{q:'¿Dónde llega realmente la educación superior?',i:'Solo 51 de los 125 municipios tienen oferta activa. El mapa permite separar capacidad instalada, posgrado, TyT, programas y desempeño.',n:'La razón de oferta no equivale a cobertura de residentes: algunos municipios reciben estudiantes de otros territorios.',f:'SNIES + DANE · auditado',to:'oferta',cta:'Explorar la oferta'},
+    territorio:{q:'¿Dónde llega realmente la educación superior?',i:'Solo 51 de los 125 municipios tienen oferta activa. El mapa permite separar capacidad instalada, posgrado, TyT, programas y desempeño.',n:'La razón de oferta no equivale a cobertura de residentes: algunos municipios reciben estudiantes de otros territorios.',f:'SNIES + DANE · auditado',to:'decidir',cta:'Reducir opciones'},
+    decidir:{q:'¿Cómo reducir opciones sin aceptar un ranking opaco?',i:'El Modo Decisión cruza territorio, nivel, modalidad y área sobre los 2.107 programas activos. Devuelve coincidencias verificables, no una puntuación inventada.',n:'La matrícula de programas multisede está consolidada; úsela como señal de escala del programa, nunca como matrícula del municipio elegido.',f:'SNIES 2024-II · cálculo reproducible',to:'oferta',cta:'Abrir el universo completo'},
     oferta:{q:'¿La diversidad de programas responde al territorio?',i:'La oferta se concentra en Medellín y en áreas tradicionales. Filtrar por municipio, nivel y modalidad revela dónde existen opciones y dónde solo hay presencia nominal.',n:'Cruce programa, institución y municipio antes de interpretar un conteo agregado.',f:'SNIES 2024-II · fuente oficial',to:'economia',cta:'Contrastar oferta y demanda'},
     economia:{q:'¿Lo que se estudia coincide con la economía regional?',i:'La comparación expone desajustes entre vocaciones productivas, demanda estudiantil y concentración de la oferta académica.',n:'No confunda peso económico de una actividad con demanda automática de un programa: la relación requiere lectura territorial.',f:'SNIES + DANE + fuentes sectoriales',to:'laboral',cta:'Seguir al mercado laboral'},
     laboral:{q:'¿Qué sucede después del grado?',i:'La vinculación formal y el ingreso cambian por nivel y área. La educación superior mejora oportunidades, pero no distribuye el retorno de manera homogénea.',n:'OLE observa cotización formal; no captura todo el empleo independiente ni la informalidad.',f:'OLE 2023 + GEIH · fuentes oficiales',to:'calidad',cta:'Revisar calidad'},
@@ -3559,6 +3739,7 @@ function csvDownload(container, headers, rows, nombre){
   const goTo=id=>{if(window.mostrarVista)mostrarVista(id);};
   [
     {t:'¿Dónde puedo estudiar cerca de mi municipio?',k:'Pregunta guiada · territorio',terms:'mapa oferta cercania subregion',go:()=>goTo('territorio')},
+    {t:'Quiero reducir mis opciones de estudio',k:'Pregunta guiada · Modo Decisión',terms:'elegir programa municipio nivel modalidad area decidir',go:()=>goTo('decidir')},
     {t:'¿Qué institución se ajusta mejor a lo que busco?',k:'Pregunta guiada · comparar IES',terms:'universidad comparador calidad tamano',go:()=>goTo('instituciones')},
     {t:'¿Qué programas conectan mejor con el empleo?',k:'Pregunta guiada · decisión',terms:'carrera salario trabajo demanda graduados',go:()=>goTo('laboral')},
     {t:'¿Dónde están las mayores brechas de acceso?',k:'Pregunta guiada · equidad',terms:'cobertura municipios mujeres estrato',go:()=>goTo('social')},
