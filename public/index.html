@@ -13,16 +13,17 @@
 <meta property="og:url" content="https://materia-gris.vercel.app/">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#070b12">
 <meta name="description" content="MaterIA Gris — el cerebro de datos de la educación superior de Antioquia: oferta, demanda, territorio, calidad, acreditación, innovación, redes sociales, finanzas e impacto social. Por Santiago Jiménez Londoño.">
 <style>
 :root{
-  --page:#0d0d0d; --surface:#1a1a19; --surface-2:#222220;
-  --ink:#ffffff; --ink-2:#c3c2b7; --muted:#898781;
-  --grid:#2c2c2a; --baseline:#383835; --border:rgba(255,255,255,.10);
-  --s1:#3987e5; --s2:#199e70; --s3:#c98500; --s4:#9a7ce8;
-  --ok:#0ca30c;
-  --ramp1:#b7d3f6; --ramp2:#6da7ec; --ramp3:#3987e5; --ramp4:#256abf; --ramp5:#184f95;
-  --o1:#86b6ef; --o2:#3987e5; --o3:#184f95;
+  --page:#070b12; --surface:#101722; --surface-2:#16202d;
+  --ink:#f8fbff; --ink-2:#c9d3e3; --muted:#8795aa;
+  --grid:#202c3b; --baseline:#344257; --border:rgba(151,180,222,.14);
+  --s1:#6ba6ff; --s2:#3ed6aa; --s3:#f0b24d; --s4:#9e8cff;
+  --ok:#43d17d;
+  --ramp1:#bcd7ff; --ramp2:#8bbcff; --ramp3:#6ba6ff; --ramp4:#3e82df; --ramp5:#225ca9;
+  --o1:#9cc8ff; --o2:#6ba6ff; --o3:#2a66b4;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;scroll-padding-top:70px;overflow-x:hidden}
@@ -352,14 +353,131 @@ footer li{margin:7px 0;padding-left:16px;position:relative}
 footer li::before{content:"—";position:absolute;left:0;color:var(--s1)}
 .fgrid{display:grid;grid-template-columns:1.4fr 1fr;gap:36px}
 @media(max-width:800px){.fgrid{grid-template-columns:1fr}}
+/* ---------- experiencia de inteligencia territorial · V22 ---------- */
+body{min-height:100vh;background:
+  radial-gradient(circle at 8% 5%,rgba(107,166,255,.10),transparent 27rem),
+  radial-gradient(circle at 88% 22%,rgba(62,214,170,.06),transparent 31rem),var(--page)}
+body::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;opacity:.26;background-image:
+  linear-gradient(rgba(151,180,222,.045) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(151,180,222,.045) 1px,transparent 1px);background-size:42px 42px;mask-image:linear-gradient(to bottom,black,transparent 78%)}
+.wrap{max-width:1240px;padding-inline:clamp(16px,3vw,28px)}
+nav{background:rgba(7,11,18,.84);border-color:rgba(151,180,222,.12);backdrop-filter:blur(18px) saturate(135%)}
+nav .wrap{height:62px;gap:7px}
+nav .logo{font-size:14px;letter-spacing:.01em;padding:0 12px 0 4px;margin-right:5px}
+nav .logo::before{content:"";width:29px;height:29px;margin-right:9px;border-radius:9px;background:
+  radial-gradient(circle at 34% 33%,#fff 0 2px,transparent 3px),
+  radial-gradient(circle at 67% 61%,var(--s2) 0 2px,transparent 3px),
+  linear-gradient(135deg,rgba(107,166,255,.95),rgba(158,140,255,.72));box-shadow:0 0 24px rgba(107,166,255,.28);flex:none}
+nav a.sec{min-height:38px;padding:0 10px;border-radius:9px;font-size:12.5px;transition:background .2s,color .2s}
+nav a.sec:hover{background:rgba(107,166,255,.08)}
+nav a.sec.active{background:rgba(107,166,255,.13);box-shadow:inset 0 0 0 1px rgba(107,166,255,.18)}
+#pal-open,#tema{border-color:var(--border)!important;background:rgba(22,32,45,.72)!important;border-radius:10px!important}
+header{padding:clamp(48px,7vw,88px) 0 10px}
+header::before{inset:-160px -24% auto;height:760px;background:
+  radial-gradient(ellipse 46% 42% at 28% 30%,rgba(107,166,255,.18),transparent 68%),
+  radial-gradient(ellipse 30% 36% at 75% 26%,rgba(62,214,170,.10),transparent 68%),
+  radial-gradient(ellipse 22% 28% at 60% 6%,rgba(158,140,255,.10),transparent 70%)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.18fr) minmax(330px,.82fr);gap:clamp(28px,6vw,72px);align-items:center}
+.hero-copy{min-width:0}
+.kicker{display:inline-flex;align-items:center;gap:9px;margin-bottom:18px;color:#9bc3ff;font-size:11px;letter-spacing:.15em}
+.kicker::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--s2);box-shadow:0 0 0 5px rgba(62,214,170,.10),0 0 18px rgba(62,214,170,.45)}
+h1{font-size:clamp(38px,5.3vw,66px);line-height:1.01;letter-spacing:-.035em;max-width:780px;text-wrap:balance}
+.hero-accent{background:linear-gradient(105deg,#fff 0%,#a7caff 45%,#70e2c1 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lede{font-size:clamp(16px,1.8vw,19px);line-height:1.6;max-width:735px;color:var(--ink-2);margin-top:22px}
+.byline{margin:18px 0 0;font-size:12.5px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:25px}
+.hero-btn{min-height:46px;display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:11px;padding:0 15px;border:1px solid var(--border);color:var(--ink);font-size:13px;font-weight:700;transition:transform .2s,border-color .2s,background .2s}
+.hero-btn:hover{text-decoration:none;transform:translateY(-2px);border-color:rgba(107,166,255,.48)}
+.hero-btn.primary{background:linear-gradient(135deg,#397bd7,#665bd4);border-color:rgba(150,185,255,.42);box-shadow:0 12px 30px rgba(42,91,180,.22)}
+.hero-btn.secondary{background:rgba(16,23,34,.66)}
+.ai-core{position:relative;min-height:420px;border:1px solid rgba(151,180,222,.17);border-radius:28px;padding:22px;overflow:hidden;background:
+  linear-gradient(155deg,rgba(24,36,54,.88),rgba(9,14,23,.92)),
+  radial-gradient(circle at 50% 45%,rgba(107,166,255,.12),transparent 50%);box-shadow:0 30px 80px rgba(0,0,0,.32),inset 0 1px 0 rgba(255,255,255,.04)}
+.ai-core::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(151,180,222,.18) 1px,transparent 1px);background-size:18px 18px;mask-image:radial-gradient(circle at 50% 44%,black,transparent 64%);opacity:.42}
+.core-top{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:10px;color:var(--muted);font-size:10.5px;text-transform:uppercase;letter-spacing:.12em}
+.core-status{display:flex;align-items:center;gap:7px;color:#78e3c3}
+.core-status::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--s2);box-shadow:0 0 12px var(--s2)}
+.core-orbit{position:relative;width:245px;height:245px;margin:15px auto 4px;display:grid;place-items:center}
+.core-ring{position:absolute;border:1px solid rgba(130,178,246,.20);border-radius:50%;animation:core-spin 22s linear infinite}
+.core-ring.r1{inset:10px;border-style:dashed}
+.core-ring.r2{inset:34px;animation-direction:reverse;animation-duration:15s;border-color:rgba(62,214,170,.21)}
+.core-ring::before,.core-ring::after{content:"";position:absolute;width:7px;height:7px;border-radius:50%;background:var(--s1);box-shadow:0 0 14px var(--s1)}
+.core-ring::before{top:12%;left:12%}.core-ring::after{right:7%;bottom:26%;background:var(--s2);box-shadow:0 0 14px var(--s2)}
+.core-center{position:relative;z-index:2;width:142px;height:142px;border-radius:50%;display:grid;place-items:center;text-align:center;background:
+  radial-gradient(circle at 38% 30%,rgba(255,255,255,.16),transparent 24%),
+  linear-gradient(145deg,rgba(107,166,255,.28),rgba(158,140,255,.12) 48%,rgba(62,214,170,.19));border:1px solid rgba(158,195,249,.34);box-shadow:0 0 70px rgba(83,138,227,.20),inset 0 0 30px rgba(255,255,255,.04)}
+.core-center b{display:block;color:var(--ink);font-size:27px;line-height:1;font-variant-numeric:tabular-nums}
+.core-center span{display:block;color:#aebed4;font-size:10.5px;line-height:1.35;margin-top:6px;max-width:92px;text-transform:uppercase;letter-spacing:.07em}
+.core-signals{position:relative;z-index:2;display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
+.core-signal{min-width:0;background:rgba(8,13,22,.58);border:1px solid rgba(151,180,222,.13);border-radius:11px;padding:9px 10px}
+.core-signal b{display:block;color:var(--ink);font-size:14px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.core-signal span{display:block;color:var(--muted);font-size:9.5px;line-height:1.25;margin-top:2px}
+@keyframes core-spin{to{transform:rotate(360deg)}}
+.journeys{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:clamp(36px,5vw,58px) 0 20px}
+.journey{position:relative;min-height:114px;display:flex;flex-direction:column;justify-content:space-between;gap:12px;padding:15px 16px;border-radius:15px;border:1px solid var(--border);background:linear-gradient(145deg,rgba(17,24,35,.92),rgba(12,18,28,.72));color:var(--ink-2);overflow:hidden;transition:transform .25s,border-color .25s,box-shadow .25s}
+.journey::after{content:"";position:absolute;width:80px;height:80px;border-radius:50%;right:-34px;bottom:-42px;background:var(--journey-color,rgba(107,166,255,.18));filter:blur(4px)}
+.journey:hover{text-decoration:none;transform:translateY(-3px);border-color:rgba(107,166,255,.36);box-shadow:0 16px 34px rgba(0,0,0,.18)}
+.journey small{color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.1em}
+.journey b{color:var(--ink);font:650 16px/1.25 'Fraunces',Georgia,serif;max-width:185px}
+.journey span{font-size:11.5px;color:#9eacc0}
+.cinta{border-radius:13px!important;border-color:rgba(151,180,222,.15)!important;background:rgba(16,23,34,.72)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.025)}
+.kpis{gap:10px}
+.kpi{background:linear-gradient(145deg,rgba(18,27,40,.95),rgba(13,20,30,.86));border-color:rgba(151,180,222,.13);border-radius:15px;padding:18px;box-shadow:inset 0 1px 0 rgba(255,255,255,.025)}
+.kpi:hover{transform:translateY(-3px);border-color:rgba(107,166,255,.38);box-shadow:0 15px 32px rgba(0,0,0,.16)}
+.kpi .val{font-size:28px;letter-spacing:-.025em}
+section{padding-top:clamp(34px,6vw,66px)}
+.sec-head{gap:12px;padding-bottom:14px}
+.sec-num{display:grid;place-items:center;min-width:34px;height:25px;border:1px solid rgba(107,166,255,.24);border-radius:20px;background:rgba(107,166,255,.09);font-size:10px}
+.sec-head::after{width:82px;height:2px;box-shadow:0 0 18px rgba(107,166,255,.35)}
+h2{font-size:clamp(27px,3vw,36px);line-height:1.12;letter-spacing:-.025em;text-wrap:balance}
+.sec-desc{max-width:920px;font-size:15px;line-height:1.65;margin-bottom:25px}
+.cards{gap:15px}
+.card{position:relative;background:linear-gradient(150deg,rgba(17,24,35,.96),rgba(12,18,28,.91));border-color:rgba(151,180,222,.13);border-radius:18px;padding:clamp(18px,2.3vw,25px);box-shadow:0 12px 35px rgba(0,0,0,.12),inset 0 1px 0 rgba(255,255,255,.025);overflow:hidden}
+.card::before{content:"";position:absolute;inset:0 0 auto;height:1px;background:linear-gradient(90deg,transparent,rgba(133,181,250,.22),transparent);opacity:0;transition:opacity .25s}
+.card:hover{transform:translateY(-2px);border-color:rgba(107,166,255,.26);box-shadow:0 20px 45px rgba(0,0,0,.18)}
+.card:hover::before{opacity:1}
+.card h3{font-size:16px;letter-spacing:-.005em}
+.callout{position:relative;border:none!important;border-radius:15px;background:linear-gradient(135deg,rgba(107,166,255,.11),rgba(62,214,170,.055),rgba(16,23,34,.96));padding:17px 20px 17px 24px;box-shadow:inset 3px 0 0 var(--s1),inset 0 0 0 1px var(--border)}
+.tscroll{border-radius:12px;border-color:rgba(151,180,222,.13)}
+th{background:#16202d}
+#tip{background:rgba(18,27,40,.94);border-color:rgba(151,180,222,.22);border-radius:12px;box-shadow:0 18px 50px rgba(0,0,0,.45)}
+.ai-guide{position:fixed;left:18px;bottom:18px;z-index:70;width:min(390px,calc(100vw - 36px));filter:drop-shadow(0 18px 40px rgba(0,0,0,.32));pointer-events:none}
+.ai-guide.is-home{display:none}
+.ai-guide-toggle{width:52px;min-height:52px;display:flex;align-items:center;justify-content:center;gap:10px;border:1px solid rgba(126,174,241,.32);border-radius:15px;padding:0;background:linear-gradient(135deg,rgba(35,76,135,.96),rgba(70,61,151,.96));color:#fff;font:700 13px/1 system-ui;cursor:pointer;box-shadow:inset 0 1px 0 rgba(255,255,255,.14);overflow:hidden;white-space:nowrap;pointer-events:auto;transition:width .22s ease,filter .2s ease}
+.ai-guide.open .ai-guide-toggle{width:100%;justify-content:flex-start;padding:0 14px}
+.ai-guide:not(.open) .ai-guide-toggle>span:not(.ai-guide-mark){display:none}
+.ai-guide-toggle:hover{filter:brightness(1.08)}
+.ai-guide-mark{width:25px;height:25px;display:grid;place-items:center;border-radius:8px;background:rgba(255,255,255,.13);font-size:12px;letter-spacing:-.04em}
+.ai-guide-toggle .chev{margin-left:auto;transition:transform .2s}
+.ai-guide.open .ai-guide-toggle .chev{transform:rotate(180deg)}
+.ai-guide-panel{margin-bottom:8px;border:1px solid rgba(151,180,222,.20);border-radius:18px;background:rgba(12,18,28,.96);backdrop-filter:blur(20px) saturate(130%);padding:17px;box-shadow:inset 0 1px 0 rgba(255,255,255,.04);pointer-events:auto}
+.ai-guide-panel[hidden]{display:none}
+.ai-guide-eyebrow{display:flex;align-items:center;gap:7px;color:#78e3c3;font-size:9.5px;text-transform:uppercase;letter-spacing:.13em;font-weight:750}
+.ai-guide-eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--s2);box-shadow:0 0 9px var(--s2)}
+.ai-guide-panel h3{color:var(--ink);font:650 20px/1.18 'Fraunces',Georgia,serif;margin:10px 0 8px}
+.ai-guide-panel p{color:var(--ink-2);font-size:12.5px;line-height:1.55}
+.ai-guide-note{margin-top:11px;padding:10px 11px;border-radius:10px;background:rgba(107,166,255,.08);border:1px solid rgba(107,166,255,.12)}
+.ai-guide-link{min-height:44px;display:inline-flex;align-items:center;margin-top:11px;color:#a9cbff;font-size:12px;font-weight:700}
+.ai-guide-link:hover{color:#fff}
+@media(max-width:960px){.hero-grid{grid-template-columns:1fr}.ai-core{min-height:360px}.core-orbit{width:215px;height:215px}.core-center{width:126px;height:126px}.journeys{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){nav .wrap{height:58px}.hero-grid{gap:28px}.ai-core{min-height:340px;padding:17px;border-radius:21px}.core-orbit{width:200px;height:200px}.core-center{width:118px;height:118px}.core-center b{font-size:23px}.core-signals{gap:5px}.core-signal{padding:8px}.journeys{grid-template-columns:1fr;margin-top:32px}.journey{min-height:96px}.hero-actions{display:grid;grid-template-columns:1fr}.hero-btn{width:100%}.ai-guide{left:12px;bottom:12px;width:calc(100vw - 24px)}#arriba{bottom:72px;right:12px}.card{border-radius:15px}}
+@media(prefers-reduced-motion:reduce){.core-ring{animation:none}.hero-btn,.journey,.ai-guide-toggle .chev{transition:none}}
 /* ---------- tema claro ---------- */
-html.light{--page:#f7f6f1;--surface:#ffffff;--surface-2:#efeee8;--ink:#191918;--ink-2:#3c3b36;--muted:#6f6d64;
-  --grid:#e5e3da;--baseline:#c9c7bd;--border:rgba(20,20,15,.14);
-  --s1:#2b66c2;--s2:#0d7a53;--s3:#8f6400;--s4:#6d4fc4;--ok:#0b7a2f;
+html.light{--page:#f4f7fb;--surface:#ffffff;--surface-2:#eaf0f7;--ink:#151b25;--ink-2:#354052;--muted:#68758a;
+  --grid:#dde5ef;--baseline:#b9c5d5;--border:rgba(31,63,102,.14);
+  --s1:#376fbd;--s2:#0d8565;--s3:#936200;--s4:#6956b9;--ok:#0b7a2f;
   --ramp1:#cfe0f7;--ramp2:#8db6ee;--ramp3:#4a86d8;--ramp4:#2b66c2;--ramp5:#174a92;
   --o1:#8db6ee;--o2:#2b66c2;--o3:#174a92}
-html.light nav{background:rgba(247,246,241,.92)}
+html.light body{background:radial-gradient(circle at 8% 5%,rgba(55,111,189,.09),transparent 27rem),radial-gradient(circle at 88% 22%,rgba(13,133,101,.05),transparent 31rem),var(--page)}
+html.light body::before{opacity:.18}
+html.light nav{background:rgba(244,247,251,.88)}
 html.light header::before{opacity:.45}
+html.light .ai-core{background:linear-gradient(155deg,rgba(250,252,255,.96),rgba(232,240,249,.94));box-shadow:0 25px 65px rgba(47,78,115,.13)}
+html.light .core-signal{background:rgba(255,255,255,.64)}
+html.light .core-center span{color:#4d5b70}
+html.light .journey,.light .card,.light .kpi{background:linear-gradient(145deg,rgba(255,255,255,.98),rgba(245,248,252,.94))}
+html.light .ai-guide-panel{background:rgba(250,252,255,.96)}
+html.light th{background:#eaf0f7}
 html.light .kpi .down{color:#b33636}
 html.light .tag.of{color:#1e56a8}
 html.light .tag.pr{color:#0c6b47}
@@ -378,7 +496,7 @@ html.light #arriba{box-shadow:0 4px 18px rgba(0,0,0,.15)}
   :root,html.light{--page:#ffffff;--surface:#ffffff;--surface-2:#f2f1ec;--ink:#111;--ink-2:#333;--muted:#666;
     --grid:#ddd;--baseline:#bbb;--border:rgba(0,0,0,.2);
     --s1:#2b66c2;--s2:#0d7a53;--s3:#8f6400;--s4:#6d4fc4}
-  nav,#arriba,#progreso,#pal,.dl,.map-zoom,#radar-filtro,#tema{display:none!important}
+  nav,#arriba,#progreso,#pal,.dl,.map-zoom,#radar-filtro,#tema,.ai-guide{display:none!important}
   .reveal{opacity:1!important;transform:none!important}
   body{background:#fff}
   header::before{display:none}
@@ -418,10 +536,36 @@ html.light #arriba{box-shadow:0 4px 18px rgba(0,0,0,.15)}
 
 <div class="wrap" id="top">
 <header id="inicio">
-  <div class="kicker">MaterIA Gris · El cerebro de datos de la educación superior de Antioquia</div>
-  <h1>La educación superior de Antioquia, medida con datos oficiales</h1>
-  <p class="lede">Pregrado y posgrado, pública y privada: oferta académica, demanda estudiantil, resultados en el mercado laboral, calidad, capacidad de innovación e impacto social del sistema de educación superior del departamento — con lente de detalle sobre la formación técnica y tecnológica.</p>
-  <p class="byline">Por <b>Santiago Jiménez Londoño</b> · Fuentes: SNIES-MEN, ICFES (Saber TyT), OLE y MinCiencias · Corte de datos: julio de 2026</p>
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <div class="kicker">Inteligencia educativa para Antioquia</div>
+      <h1>Los datos de la educación superior, <span class="hero-accent">convertidos en comprensión.</span></h1>
+      <p class="lede">MaterIA Gris conecta territorio, instituciones, calidad, empleo, investigación, finanzas y conversación digital para revelar cómo está cambiando la educación superior del departamento — con evidencia verificable y una lectura humana.</p>
+      <div class="hero-actions" aria-label="Acciones principales">
+        <a class="hero-btn primary" href="#panorama">Descubrir el panorama <span aria-hidden="true">→</span></a>
+        <a class="hero-btn secondary" href="#territorio">Explorar el mapa de Antioquia</a>
+      </div>
+      <p class="byline">Una iniciativa de <b>Santiago Jiménez Londoño</b> · SNIES, ICFES, OLE, MinCiencias y fuentes públicas verificadas · Julio de 2026</p>
+    </div>
+    <aside class="ai-core" aria-label="Núcleo de inteligencia educativa de MaterIA Gris">
+      <div class="core-top"><span>Núcleo de datos</span><span class="core-status">Evidencia conectada</span></div>
+      <div class="core-orbit" aria-hidden="true">
+        <span class="core-ring r1"></span><span class="core-ring r2"></span>
+        <div class="core-center"><div><b>313.583</b><span>estudiantes · 2024-II</span></div></div>
+      </div>
+      <div class="core-signals">
+        <div class="core-signal"><b>51</b><span>municipios con oferta</span></div>
+        <div class="core-signal"><b>16</b><span>IES acreditadas</span></div>
+        <div class="core-signal"><b>V22</b><span>experiencia inteligente</span></div>
+      </div>
+    </aside>
+  </div>
+  <div class="journeys" aria-label="Recorridos recomendados">
+    <a class="journey" href="#territorio" style="--journey-color:rgba(107,166,255,.24)"><small>Quiero ubicarme</small><b>¿Dónde llega la educación superior?</b><span>Mapa, subregiones y brechas →</span></a>
+    <a class="journey" href="#instituciones" style="--journey-color:rgba(62,214,170,.20)"><small>Quiero comparar</small><b>¿Qué institución se ajusta mejor?</b><span>Tamaño, calidad y resultados →</span></a>
+    <a class="journey" href="#laboral" style="--journey-color:rgba(240,178,77,.20)"><small>Quiero decidir</small><b>¿Qué ocurre después de graduarse?</b><span>Empleo, salarios y áreas →</span></a>
+    <a class="journey" href="#redes" style="--journey-color:rgba(158,140,255,.22)"><small>Quiero entender influencia</small><b>¿Quién conecta mejor con su comunidad?</b><span>Audiencia y gestión social →</span></a>
+  </div>
   <div class="cinta" id="cinta2026" title="Ver la línea de tiempo 2026" role="link" tabindex="0" aria-label="Novedades 2026 — ir a la línea de tiempo">
     <span class="anio">2026</span>
     <div class="pista"><div class="rollo" id="rollo2026"></div></div>
@@ -1279,6 +1423,19 @@ html.light #arriba{box-shadow:0 4px 18px rgba(0,0,0,.15)}
   </div>
 </footer>
 </div>
+
+<aside class="ai-guide" id="ai-guide" aria-label="Lectura guiada de MaterIA">
+  <div class="ai-guide-panel" id="ai-guide-panel" hidden>
+    <div class="ai-guide-eyebrow">Lectura contextual</div>
+    <h3 id="ai-guide-question">¿Qué está cambiando?</h3>
+    <p id="ai-guide-insight">MaterIA conecta las cifras para destacar la pregunta central de cada capítulo.</p>
+    <p class="ai-guide-note" id="ai-guide-note">La guía resume evidencia ya publicada; no sustituye la fuente ni inventa respuestas.</p>
+    <a class="ai-guide-link" id="ai-guide-link" href="#panorama">Ver la evidencia <span aria-hidden="true">&nbsp;→</span></a>
+  </div>
+  <button class="ai-guide-toggle" id="ai-guide-toggle" type="button" aria-label="MaterIA explica este capítulo" aria-expanded="false" aria-controls="ai-guide-panel">
+    <span class="ai-guide-mark" aria-hidden="true">IA</span><span>MaterIA explica este capítulo</span><span class="chev" aria-hidden="true">⌃</span>
+  </button>
+</aside>
 
 <div id="ficha" role="dialog" aria-modal="true" aria-label="Ficha de la institución"><div class="fbox" id="ficha-box"></div></div>
 <button id="arriba" type="button" aria-label="Volver arriba" title="Volver arriba">↑</button>
@@ -3165,6 +3322,32 @@ const FIN_AL=[
   document.getElementById('hallazgo-finanzas').innerHTML=`<b>La paradoja fiscal del sistema:</b> las IU públicas baten récords de matrícula CON superávits (ITM +$96.722 M, TdeA +$52.043 M, IU Digital +$45.245 M) porque la gratuidad les llega como ingreso — mientras la única universidad en crisis abierta es la <b>UdeA (−$377.537 M de desfinanciación)</b>, cuyo problema no es la gratuidad sino la base presupuestal de la Ley 30. Y el costo de crecer rápido lo paga hoy la IU de Envigado: +23 % de matrícula con $17.663 M de la Nación sin llegar. El Estado ya no financia la oferta: compra cupos — y a veces paga tarde.`;
 })();
 
+/* ---- MaterIA explica: síntesis contextual, basada en evidencia publicada ---- */
+(function(){
+  const GUIAS={
+    inicio:{q:'¿Qué está cambiando en la educación superior?',i:'El sistema recupera matrícula, pero no de forma uniforme: crece la formación universitaria mientras la base técnica y tecnológica se estrecha.',n:'Empiece por el panorama para ver la serie completa y después contraste la distribución territorial.',to:'panorama',cta:'Leer el panorama'},
+    panorama:{q:'¿El sistema está creciendo o se está recomponiendo?',i:'Ambas cosas. La recuperación de 2024 está impulsada por lo universitario y lo oficial; la educación técnica y tecnológica sigue por debajo de su nivel de 2018.',n:'Compare siempre niveles y modalidades: el total, por sí solo, esconde cambios estructurales.',to:'instituciones',cta:'Comparar instituciones'},
+    instituciones:{q:'¿Quién está creciendo y con qué tipo de oferta?',i:'El tamaño no cuenta toda la historia. La comparación reúne matrícula, programas, presencia territorial, acreditación, Saber TyT y capacidad investigativa.',n:'Use el comparador de hasta tres IES para observar fortalezas distintas sin convertir una cifra en un ranking absoluto.',to:'territorio',cta:'Ver presencia territorial'},
+    territorio:{q:'¿Dónde llega realmente la educación superior?',i:'Solo 51 de los 125 municipios tienen oferta activa. El mapa permite separar capacidad instalada, posgrado, TyT, programas y desempeño.',n:'La razón de oferta no equivale a cobertura de residentes: algunos municipios reciben estudiantes de otros territorios.',to:'oferta',cta:'Explorar la oferta'},
+    oferta:{q:'¿La diversidad de programas responde al territorio?',i:'La oferta se concentra en Medellín y en áreas tradicionales. Filtrar por municipio, nivel y modalidad revela dónde existen opciones y dónde solo hay presencia nominal.',n:'Cruce programa, institución y municipio antes de interpretar un conteo agregado.',to:'economia',cta:'Contrastar oferta y demanda'},
+    economia:{q:'¿Lo que se estudia coincide con la economía regional?',i:'La comparación expone desajustes entre vocaciones productivas, demanda estudiantil y concentración de la oferta académica.',n:'No confunda peso económico de una actividad con demanda automática de un programa: la relación requiere lectura territorial.',to:'laboral',cta:'Seguir al mercado laboral'},
+    laboral:{q:'¿Qué sucede después del grado?',i:'La vinculación formal y el ingreso cambian por nivel y área. La educación superior mejora oportunidades, pero no distribuye el retorno de manera homogénea.',n:'OLE observa cotización formal; no captura todo el empleo independiente ni la informalidad.',to:'calidad',cta:'Revisar calidad'},
+    calidad:{q:'¿Cómo se observa la calidad sin reducirla a un sello?',i:'Acreditación y resultados Saber se complementan: una mide procesos institucionales y la otra ofrece señales de aprendizaje comparables.',n:'Ningún indicador aislado resume la experiencia educativa completa.',to:'acreditacion',cta:'Abrir la guía de acreditación'},
+    acreditacion:{q:'¿Qué hace falta para demostrar alta calidad?',i:'La acreditación exige evidencia sostenida: resultados, autorregulación, comunidad académica, recursos, investigación e impacto, no solo una visita de pares.',n:'La guía protegida organiza el camino; la decisión formal pertenece al CNA y al Ministerio de Educación.',to:'innovacion',cta:'Ver capacidad investigativa'},
+    innovacion:{q:'¿Dónde se concentra la capacidad de producir conocimiento?',i:'Antioquia reúne un ecosistema amplio de grupos, con una concentración fuerte en las grandes universidades y capacidades emergentes en instituciones TyT.',n:'La categoría del grupo es una señal de trayectoria, no una medición directa de impacto social.',to:'social',cta:'Conectar con impacto social'},
+    social:{q:'¿Para quién funciona como movilidad social?',i:'El lente TyT muestra estudiantes de menores ingresos, primera generación y personas que combinan estudio con jornadas laborales extensas.',n:'Las brechas de acceso, permanencia y género necesitan leerse junto con territorio y modalidad.',to:'redes',cta:'Ver conversación digital'},
+    redes:{q:'¿Quién tiene audiencia y quién la convierte en gestión?',i:'UdeA lidera la escala pública; EAFIT, UPB, CES y Remington muestran fortalezas diferentes en cadencia, equilibrio y eficiencia audiovisual.',n:'Seguidores no son alcance único. El desempeño real requiere impresiones, retención, crecimiento y conversiones de los paneles privados.',to:'finanzas',cta:'Entender la sostenibilidad'},
+    finanzas:{q:'¿Qué sostiene a las instituciones públicas?',i:'La gratuidad amplía acceso, pero también cambia el riesgo: varias instituciones dependen de giros estatales oportunos, mientras la UdeA enfrenta un problema estructural de base presupuestal.',n:'Presupuesto aprobado, ejecución, excedente y liquidez responden preguntas distintas.',to:'metodologia',cta:'Auditar la metodología'},
+    metodologia:{q:'¿Por qué confiar en estas lecturas?',i:'Cada capítulo separa fuente, corte, cálculo y limitación. Los datos territoriales cuentan con auditoría reproducible y las cifras públicas enlazan su evidencia.',n:'La inteligencia de MaterIA está en conectar datos sin ocultar sus límites.',to:'inicio',cta:'Volver al núcleo'},
+  };
+  const guide=document.getElementById('ai-guide'),panel=document.getElementById('ai-guide-panel'),toggle=document.getElementById('ai-guide-toggle');
+  const question=document.getElementById('ai-guide-question'),insight=document.getElementById('ai-guide-insight'),note=document.getElementById('ai-guide-note'),link=document.getElementById('ai-guide-link');
+  function setOpen(on){guide.classList.toggle('open',on);panel.hidden=!on;toggle.setAttribute('aria-expanded',String(on));}
+  window.actualizarGuia=function(id){const g=GUIAS[id]||GUIAS.inicio;guide.classList.toggle('is-home',id==='inicio');question.textContent=g.q;insight.textContent=g.i;note.textContent=g.n;link.href='#'+g.to;link.firstChild.textContent=g.cta;setOpen(false);};
+  toggle.addEventListener('click',()=>setOpen(!guide.classList.contains('open')));
+  addEventListener('keydown',ev=>{if(ev.key==='Escape'&&guide.classList.contains('open')){setOpen(false);toggle.focus();}});
+})();
+
 /* ---- modo dashboard: una vista por sección ---- */
 (function(){
   const vistas=['inicio',...[...document.querySelectorAll('section[id]')].map(x=>x.id),'metodologia'];
@@ -3175,6 +3358,7 @@ const FIN_AL=[
     document.querySelectorAll('nav a.sec').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+id));
     de(id).querySelectorAll('.reveal:not(.in)').forEach(x=>x.classList.add('in'));
     if(de(id).classList&&de(id).classList.contains('reveal'))de(id).classList.add('in');
+    if(window.actualizarGuia)actualizarGuia(id);
     scrollTo({top:0,behavior:'instant'});
     history.replaceState(null,'','#'+id);
   };
