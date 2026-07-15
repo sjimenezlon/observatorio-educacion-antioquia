@@ -1,7 +1,7 @@
 {
   "estado": "correcto",
   "fecha_auditoria": "2026-07-15",
-  "alcance": "Atlas territorial, Modo Decisión, Sala Ejecutiva, Trayectorias, comparativo de producto y sistema público distrital de MaterIA Gris V28",
+  "alcance": "Atlas territorial, Modo Decisión, Sala Ejecutiva, Trayectorias, comparativo de producto y perfiles del sistema público distrital de MaterIA Gris V29",
   "fuentes": {
     "snies": {
       "descripcion": "Estudiantes Matriculados 2024, bases consolidadas SNIES–MEN",
@@ -112,6 +112,16 @@
     "regla_comparabilidad": "Convocatoria, catálogo web, SNIES y estados financieros conservan sus cortes y definiciones; presupuesto, recaudo y resultado contable no se restan entre sí.",
     "comprobante": "ies-distritales.json",
     "reproduccion": "python3 scripts/scrapear_ies_distritales.py"
+  },
+  "perfiles_ies_v29": {
+    "perfiles_publicados": 3,
+    "fuente_unica": "ies-distritales.json",
+    "rutas": [
+      "ies/itm.html",
+      "ies/pascual-bravo.html",
+      "ies/colmayor.html"
+    ],
+    "regla": "Cada perfil filtra los registros por ies_id y recalcula sus porcentajes sobre el subtotal institucional; no copia cifras a un segundo archivo."
   },
   "reproduccion": "python3 scripts/auditar_atlas.py"
 }
