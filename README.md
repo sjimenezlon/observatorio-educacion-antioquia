@@ -6,7 +6,7 @@ Tablero de la educación superior del departamento de Antioquia — **pregrado y
 
 **En línea:** https://materia-gris.vercel.app
 **Espejo:** https://observatorio-educacion-antioquia.vercel.app
-**Autor:** Santiago Jiménez Londoño · Última versión: V17 (julio de 2026)
+**Autor:** Santiago Jiménez Londoño · Última versión: V18 (julio de 2026)
 
 ---
 
@@ -47,6 +47,7 @@ public/
   datos.js               # datos agregados (generado — no editar a mano)
   datos.json             # mismo contenido, para reutilizar
   mapa.js                # geometría MGN de los 125 municipios (DANE, vía ArcGIS)
+  auditoria.html         # lectura pública de resultados, método y fuentes
   auditoria-cifras.json  # comprobante público de la última auditoría del atlas
 data/                    # insumos crudos — NO versionados (ver .gitignore)
 ```
