@@ -6,7 +6,7 @@ Tablero de la educación superior del departamento de Antioquia — **pregrado y
 
 **En línea:** https://materia-gris.vercel.app
 **Espejo:** https://observatorio-educacion-antioquia.vercel.app
-**Autor:** Santiago Jiménez Londoño · Última versión: V30 (julio de 2026)
+**Autor:** Santiago Jiménez Londoño · Última versión: V31 (julio de 2026)
 
 ---
 
@@ -16,6 +16,7 @@ Tablero de la educación superior del departamento de Antioquia — **pregrado y
 |---|---|
 | **Sala Ejecutiva** | ¿Qué exige decisión ahora? Tensiones, prioridades y rutas diferenciadas para gobierno, rectoría y planeación |
 | **Trayectorias y retorno** | ¿Dónde se rompe la oportunidad? Conecta aspiración, acceso, permanencia, aprendizaje, graduación y vínculo laboral sin fingir una cohorte única |
+| **Fuentes vivas** | ¿Qué sabemos hoy y con qué alcance? 13 fuentes y 23 indicadores con corte, universo, uso decisional y cautela |
 | **Panorama** | ¿Cómo evolucionó la matrícula 2018-2024 por nivel, sector y modalidad? |
 | **Instituciones** | ¿Quién forma a Antioquia? 73 IES, comparador de hasta 3, docentes y radar de cifras 2025-2026 autorreportadas |
 | **IES del Distrito** | ¿Cómo se articulan ITM, Pascual Bravo y Colmayor? Matrícula e indicadores oficiales 2026-1, oferta 2026-2, SNIES, finanzas y perfiles institucionales |
@@ -64,6 +65,7 @@ public/
   verificacion-v26.json  # seis etapas, fórmulas, jurisdicciones y límites de Trayectorias
   comparativo-producto.json # referentes, escala, capacidades, fuentes y adopciones V27
   ies-distritales.json   # corte 2026-1, oferta, matrícula, finanzas, fuentes y límites del capítulo V30
+  fuentes-antioquia.json # 13 fuentes y 23 indicadores trazables del registro V31
 data/                    # insumos crudos — NO versionados (ver .gitignore)
 ```
 
@@ -76,6 +78,7 @@ python3 scripts/preparar_poblacion.py       # población 17-21 por municipio y s
 python3 scripts/procesar.py                 # regenera public/datos.json y public/datos.js
 python3 scripts/auditar_atlas.py            # debe terminar con "estado": "correcto"
 python3 scripts/scrapear_ies_distritales.py # refresca catálogos y comprobante distrital
+python3 scripts/actualizar_fuentes_antioquia.py # valida y regenera el registro de fuentes vivas
 vercel --prod                               # despliegue (prebuilt, sin build step)
 ```
 
@@ -109,6 +112,10 @@ Cuando el MEN publique la vigencia siguiente (histórico: hacia julio de cada a�
 | **Rendiciones de cuentas de las IES** | Radar institucional (cifras autorreportadas, con enlace) | **2025–2026** |
 | **MEN — balance territorial e infraestructura** | Gratuidad, primer ingreso, articulación con colegios y proyectos de infraestructura | **2025–2027** |
 | **uniRank + perfiles oficiales** | Audiencia pública y señales observables de gestión en Instagram, Facebook, YouTube, X, TikTok y LinkedIn | **2025–jul. 2026** |
+| **Gobernación de Antioquia** | Sistema oficial no certificado, conectividad educativa y Semestre Cero | **abr.–jul. 2026** |
+| **Proantioquia** | Alfabetización inicial, inversión privada y perfiles subregionales | datos **2025**, publicados en **2026** |
+| **Distrito de Medellín · Sapiencia** | Matrícula, calidad, investigación y beneficios proyectados del sistema público distrital | **2026-1** |
+| **Antioquia Cómo Vamos** | Contraste analítico del sistema con bases MEN, DANE, ICFES, SNIES y LEA | informe **2024**, publicado en 2025 |
 
 ## Decisiones metodológicas (las trampas de los datos oficiales)
 
@@ -124,6 +131,16 @@ Cuando el MEN publique la vigencia siguiente (histórico: hacia julio de cada a�
 10. **Trayectorias no es un embudo longitudinal**: inscripciones y primer curso son registros SNIES 2024; Saber Pro corresponde a evaluados 2025; OLE observa cotización formal de graduados 2022; permanencia y graduación son referencias nacionales. Cada etapa conserva universo, jurisdicción y corte, y nunca se multiplican sus porcentajes.
 11. **El comparativo de producto no es un ranking**: observa capacidades públicas al 15 de julio de 2026 con una escala editorial de 0 a 3, pero no suma puntos. “No observada” significa que no apareció en las fuentes públicas revisadas, no que una funcionalidad privada sea imposible.
 12. **El sistema distrital tiene cinco universos**: el Plan Indicativo consolida matrícula e indicadores al 28 de febrero de 2026; la convocatoria 2026-2 informa programas y cupos abiertos; los catálogos web muestran páginas visibles; el SNIES 2024 permite la comparación homogénea; los estados financieros tienen cortes propios. Programa acreditado vigente, entrada web y registro SNIES no son sinónimos. La variación frente a 2025-2 es semestral, no anual. Presupuesto, recaudo y resultado contable tampoco se restan entre sí.
+13. **Actualidad no significa comparabilidad**: V31 conserva SNIES 2024-II como último corte comparable disponible al 15 de julio de 2026 y presenta los datos 2025–2026 como señales administrativas, de programa o de contexto. Beneficios, participantes, matrícula, sedes, inversión y resultados no se suman ni se usan como sinónimos.
+
+### Fuentes vivas V31
+
+- **13 fuentes revisadas**: nueve oficiales y cuatro observatorios o centros de análisis reconocidos.
+- **23 indicadores sistematizados**: 14 publicaciones directas, cuatro cálculos reproducibles y cinco cifras reportadas.
+- **Metadatos obligatorios**: cada cifra declara periodo, nivel, tema, territorio, universo, fuente, uso para decisiones y limitación.
+- **Validación automática**: cero identificadores duplicados, referencias rotas dentro del registro, universos faltantes o cautelas vacías.
+- **Próximo hito**: SNIES prevé publicar la vigencia 2025 entre el 27 y el 31 de julio de 2026; el registro no anticipa esos resultados.
+- **Reproducción**: `python3 scripts/actualizar_fuentes_antioquia.py` genera `public/fuentes-antioquia.json`.
 
 ### Sistema público distrital V30
 
