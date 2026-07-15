@@ -1,7 +1,7 @@
 {
   "estado": "correcto",
   "fecha_auditoria": "2026-07-15",
-  "alcance": "Atlas territorial, Modo Decisión, Sala Ejecutiva y Trayectorias y retorno de MaterIA Gris V26",
+  "alcance": "Atlas territorial, Modo Decisión, Sala Ejecutiva, Trayectorias y comparativo de producto de MaterIA Gris V27",
   "fuentes": {
     "snies": {
       "descripcion": "Estudiantes Matriculados 2024, bases consolidadas SNIES–MEN",
@@ -79,6 +79,18 @@
     "diferencias_en_calculos_locales": 0,
     "advertencia": "Las etapas no corresponden a la misma cohorte. Los indicadores nacionales están rotulados como referencias y no como resultados de Antioquia.",
     "comprobante": "verificacion-v26.json"
+  },
+  "producto_v27": {
+    "referentes_documentados": 5,
+    "herramientas_en_matriz_incluida_materia": 6,
+    "capacidades_comparadas": 8,
+    "adopciones_implementadas": 5,
+    "seleccion_programas_maximo": 6,
+    "seleccion_ies_maximo": 3,
+    "persistencia": "localStorage del dispositivo; no se envían selecciones a un servidor",
+    "intercambio": "enlaces con códigos SNIES o códigos de institución y briefs TXT descargables",
+    "clasificacion": "Escala editorial documentada 0–3 sin suma total ni ranking de herramientas",
+    "comprobante": "comparativo-producto.json"
   },
   "reproduccion": "python3 scripts/auditar_atlas.py"
 }

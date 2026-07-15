@@ -1,0 +1,204 @@
+{
+  "version": "V27",
+  "fecha_observacion": "2026-07-15",
+  "estado": "comparacion_editorial_documentada",
+  "proposito": "Comparar capacidades públicas observables de herramientas de información educativa para decidir qué patrones adoptar en MaterIA Gris.",
+  "alcance": "Revisión de producto y documentación pública. No es una prueba exhaustiva de usabilidad, una certificación técnica ni una evaluación de funcionalidades privadas.",
+  "escala": {
+    "3": "Fuerte: capacidad profunda, visible y central en la propuesta",
+    "2": "Adecuada: capacidad funcional o bien documentada, con alcance parcial",
+    "1": "Limitada: señal o componente relacionado, sin resolver el flujo completo",
+    "0": "No observada en las fuentes públicas revisadas"
+  },
+  "referentes": [
+    {
+      "id": "materia",
+      "nombre": "MaterIA Gris V27",
+      "tipo": "Inteligencia educativa territorial",
+      "jurisdiccion": "Antioquia, Colombia",
+      "fortaleza": "Conecta territorio, instituciones, trayectorias, calidad, finanzas y decisiones con auditoría pública.",
+      "limite": "Aún no dispone de costo neto por programa ni resultados laborales longitudinales por programa.",
+      "url": "https://materia-gris.vercel.app/"
+    },
+    {
+      "id": "ote",
+      "nombre": "Observatorio de Trayectorias Educativas",
+      "tipo": "Observatorio público de trayectorias",
+      "jurisdiccion": "Colombia",
+      "fortaleza": "Organiza tableros por tránsitos, deserción, progreso, logro, población y modelos de riesgo.",
+      "limite": "La experiencia pública revisada prioriza tableros Power BI y consulta de indicadores, no una selección persistente de programas.",
+      "url": "https://ote.mineducacion.gov.co/tablero-control"
+    },
+    {
+      "id": "scorecard",
+      "nombre": "College Scorecard",
+      "tipo": "Comparador oficial de instituciones y programas",
+      "jurisdiccion": "Estados Unidos",
+      "fortaleza": "Compara hasta diez instituciones y conecta costo, deuda, graduación, diversidad e ingresos; ofrece descarga y API.",
+      "limite": "Su profundidad territorial y de política pública no está diseñada para decisiones subregionales como las de Antioquia.",
+      "url": "https://collegescorecard.ed.gov/"
+    },
+    {
+      "id": "discover",
+      "nombre": "Discover Uni",
+      "tipo": "Orientador oficial de cursos",
+      "jurisdiccion": "Reino Unido",
+      "fortaleza": "Permite guardar cursos y comparar hasta siete, con satisfacción y resultados de graduados y umbrales de publicación explícitos.",
+      "limite": "Está orientado principalmente a la elección individual de pregrado y no a la planeación de un sistema territorial.",
+      "url": "https://discoveruni.gov.uk/about-our-data/guidance-comparing-courses/"
+    },
+    {
+      "id": "mifuturo",
+      "nombre": "Mi Futuro",
+      "tipo": "Buscador oficial de carreras y retorno",
+      "jurisdiccion": "Chile",
+      "fortaleza": "Conecta carreras e instituciones con ingresos, empleabilidad, duración real, aranceles y financiación.",
+      "limite": "La lectura pública se concentra en la elección y el retorno; ofrece menos contexto causal o territorial integrado.",
+      "url": "https://www.mifuturo.cl/"
+    },
+    {
+      "id": "owid",
+      "nombre": "Our World in Data",
+      "tipo": "Narrativa y reutilización de datos",
+      "jurisdiccion": "Global",
+      "fortaleza": "Integra explicación, visualización, metadatos, descarga, API, cita y posibilidad de embeber gráficos.",
+      "limite": "No es un comparador de instituciones o programas ni un orientador de decisiones individuales.",
+      "url": "https://ourworldindata.org/global-education"
+    }
+  ],
+  "capacidades": [
+    {
+      "capacidad": "Profundidad territorial",
+      "por_que_importa": "Permite focalizar expansión, permanencia y recursos donde la brecha ocurre.",
+      "materia": 3,
+      "ote": 2,
+      "scorecard": 2,
+      "discover": 1,
+      "mifuturo": 2,
+      "owid": 0
+    },
+    {
+      "capacidad": "Comparación de instituciones o programas",
+      "por_que_importa": "Reduce alternativas sin depender de un ranking único.",
+      "materia": 3,
+      "ote": 1,
+      "scorecard": 3,
+      "discover": 3,
+      "mifuturo": 2,
+      "owid": 0
+    },
+    {
+      "capacidad": "Guardar, compartir y exportar una decisión",
+      "por_que_importa": "Convierte una exploración en memoria institucional o conversación familiar.",
+      "materia": 3,
+      "ote": 0,
+      "scorecard": 2,
+      "discover": 3,
+      "mifuturo": 1,
+      "owid": 3
+    },
+    {
+      "capacidad": "Costo y financiación",
+      "por_que_importa": "La elección depende del costo neto y no solo de la oferta disponible.",
+      "materia": 1,
+      "ote": 0,
+      "scorecard": 3,
+      "discover": 2,
+      "mifuturo": 3,
+      "owid": 0
+    },
+    {
+      "capacidad": "Resultados laborales o de graduados",
+      "por_que_importa": "Permite observar retorno, con límites y denominadores claros.",
+      "materia": 2,
+      "ote": 2,
+      "scorecard": 3,
+      "discover": 3,
+      "mifuturo": 3,
+      "owid": 0
+    },
+    {
+      "capacidad": "Trayectorias y contexto de política",
+      "por_que_importa": "Ayuda a intervenir causas y etapas, no solo a describir resultados.",
+      "materia": 3,
+      "ote": 3,
+      "scorecard": 1,
+      "discover": 1,
+      "mifuturo": 1,
+      "owid": 2
+    },
+    {
+      "capacidad": "Datos reutilizables y trazabilidad",
+      "por_que_importa": "Permite reproducir análisis, crear nuevas visualizaciones y auditar cambios.",
+      "materia": 3,
+      "ote": 1,
+      "scorecard": 3,
+      "discover": 2,
+      "mifuturo": 2,
+      "owid": 3
+    },
+    {
+      "capacidad": "Metodología y límites visibles",
+      "por_que_importa": "Evita interpretar encuestas, registros y resultados como si fueran equivalentes.",
+      "materia": 3,
+      "ote": 3,
+      "scorecard": 3,
+      "discover": 3,
+      "mifuturo": 2,
+      "owid": 3
+    }
+  ],
+  "adopciones_v27": [
+    {
+      "patron": "Selección persistente",
+      "referente": "Discover Uni",
+      "implementacion": "Guardar hasta seis programas en el dispositivo y recuperarlos al volver."
+    },
+    {
+      "patron": "Comparación compartible",
+      "referente": "College Scorecard y Discover Uni",
+      "implementacion": "Codificar programas o IES seleccionadas en un enlace y exportar un brief de texto."
+    },
+    {
+      "patron": "Ruta por etapas",
+      "referente": "OTE–MEN",
+      "implementacion": "Conservar aspiración, acceso, permanencia, aprendizaje, grado y vínculo como universos separados."
+    },
+    {
+      "patron": "Dato reutilizable con contexto",
+      "referente": "Our World in Data",
+      "implementacion": "Publicar la comparación y sus fuentes como JSON, además de los CSV y comprobantes existentes."
+    },
+    {
+      "patron": "Retorno y costo como pareja",
+      "referente": "Mi Futuro y College Scorecard",
+      "implementacion": "Mostrar el vacío de costo neto por programa como dato prioritario; no estimarlo sin fuente comparable."
+    }
+  ],
+  "fuentes": [
+    {
+      "nombre": "OTE–MEN, tablero de control",
+      "url": "https://ote.mineducacion.gov.co/tablero-control"
+    },
+    {
+      "nombre": "College Scorecard, capacidades públicas",
+      "url": "https://collegescorecard.ed.gov/"
+    },
+    {
+      "nombre": "Discover Uni, guía de comparación",
+      "url": "https://discoveruni.gov.uk/about-our-data/guidance-comparing-courses/"
+    },
+    {
+      "nombre": "ChileAtiende, ficha oficial Mi Futuro",
+      "url": "https://www.chileatiende.gob.cl/fichas/16563/1/pdf"
+    },
+    {
+      "nombre": "Our World in Data, educación global y reutilización",
+      "url": "https://ourworldindata.org/global-education"
+    },
+    {
+      "nombre": "OECD Education GPS, referente adyacente de perfiles y comparación internacional",
+      "url": "https://gpseducation.oecd.org/Home"
+    }
+  ]
+}

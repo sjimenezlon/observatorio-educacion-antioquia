@@ -6,7 +6,7 @@ Tablero de la educación superior del departamento de Antioquia — **pregrado y
 
 **En línea:** https://materia-gris.vercel.app
 **Espejo:** https://observatorio-educacion-antioquia.vercel.app
-**Autor:** Santiago Jiménez Londoño · Última versión: V26 (julio de 2026)
+**Autor:** Santiago Jiménez Londoño · Última versión: V27 (julio de 2026)
 
 ---
 
@@ -20,6 +20,7 @@ Tablero de la educación superior del departamento de Antioquia — **pregrado y
 | **Instituciones** | ¿Quién forma a Antioquia? 73 IES, comparador de hasta 3, docentes y radar de cifras 2025-2026 autorreportadas |
 | **Territorio** | ¿Dónde llega la oferta? Mapa municipal interactivo y comparador sincronizado de razón de oferta, presencia municipal y peso TyT |
 | **Modo Decisión** | ¿Cómo reducir opciones? Cruza territorio, nivel, modalidad y área sin fabricar un ranking de “mejores” programas |
+| **Producto comparado** | ¿Qué aprende MaterIA de OTE, College Scorecard, Discover Uni, Mi Futuro y Our World in Data? Matriz sin puntuación total y adopciones V27 |
 | **Oferta** | ¿Qué se puede estudiar? 2.107 programas con explorador filtrable |
 | **Mercado laboral** | ¿Cómo les va a los graduados? Demanda, embudo, vinculación formal y salario de enganche por nivel y área |
 | **Calidad** | Acreditación de alta calidad, Saber TyT vs. nacional (y por municipio), bilingüismo (MCER) |
@@ -58,6 +59,7 @@ public/
   auditoria-cifras.json  # comprobante público de la última auditoría del atlas
   verificacion-v25.json  # controles reproducibles de la Sala Ejecutiva y sus cortes
   verificacion-v26.json  # seis etapas, fórmulas, jurisdicciones y límites de Trayectorias
+  comparativo-producto.json # referentes, escala, capacidades, fuentes y adopciones V27
 data/                    # insumos crudos — NO versionados (ver .gitignore)
 ```
 
@@ -115,6 +117,15 @@ Cuando el MEN publique la vigencia siguiente (histórico: hacia julio de cada a�
 8. Saber TyT usa la escala 0–200 vigente desde 2017-3; los rótulos MCER históricos (A-, -A1, Pre-A1, B+) se homologan a la escala actual. El puntaje por municipio solo se reporta con 50+ evaluados.
 9. **Seguidores no son alcance**: el capítulo de redes sociales suma audiencias públicas sin deduplicar y calcula un índice editorial sobre señales observables. El alcance único, las impresiones, la retención, el crecimiento y las conversiones requieren exportaciones privadas de cada plataforma. Datos y fórmula: `public/redes-sociales.json`.
 10. **Trayectorias no es un embudo longitudinal**: inscripciones y primer curso son registros SNIES 2024; Saber Pro corresponde a evaluados 2025; OLE observa cotización formal de graduados 2022; permanencia y graduación son referencias nacionales. Cada etapa conserva universo, jurisdicción y corte, y nunca se multiplican sus porcentajes.
+11. **El comparativo de producto no es un ranking**: observa capacidades públicas al 15 de julio de 2026 con una escala editorial de 0 a 3, pero no suma puntos. “No observada” significa que no apareció en las fuentes públicas revisadas, no que una funcionalidad privada sea imposible.
+
+### Mejoras V27 tomadas de referentes
+
+- **Discover Uni:** selección persistente de hasta seis programas y memoria de la comparación institucional.
+- **College Scorecard:** enlaces compartibles y briefs que reúnen resultados, fuente y límites.
+- **OTE–MEN:** trayectorias organizadas por etapas sin simular una cohorte única.
+- **Our World in Data:** datos reutilizables, metadatos y fuente pública junto a la visualización.
+- **Mi Futuro:** costo y retorno se tratan como una pareja; MaterIA publica el vacío de costo neto en vez de estimarlo sin una base comparable.
 
 ## Ruta de potenciación
 
