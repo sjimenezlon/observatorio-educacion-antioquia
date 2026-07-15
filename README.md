@@ -6,7 +6,7 @@ Tablero de la educación superior del departamento de Antioquia — **pregrado y
 
 **En línea:** https://materia-gris.vercel.app
 **Espejo:** https://observatorio-educacion-antioquia.vercel.app
-**Autor:** Santiago Jiménez Londoño · Última versión: V28 (julio de 2026)
+**Autor:** Santiago Jiménez Londoño · Última versión: V29 (julio de 2026)
 
 ---
 
@@ -18,7 +18,7 @@ Tablero de la educación superior del departamento de Antioquia — **pregrado y
 | **Trayectorias y retorno** | ¿Dónde se rompe la oportunidad? Conecta aspiración, acceso, permanencia, aprendizaje, graduación y vínculo laboral sin fingir una cohorte única |
 | **Panorama** | ¿Cómo evolucionó la matrícula 2018-2024 por nivel, sector y modalidad? |
 | **Instituciones** | ¿Quién forma a Antioquia? 73 IES, comparador de hasta 3, docentes y radar de cifras 2025-2026 autorreportadas |
-| **IES del Distrito** | ¿Cómo se articulan ITM, Pascual Bravo y Colmayor? Oferta 2026-2, 138 registros SNIES, estados financieros y agenda de coordinación pública |
+| **IES del Distrito** | ¿Cómo se articulan ITM, Pascual Bravo y Colmayor? Oferta 2026-2, 138 registros SNIES, estados financieros, agenda común y perfiles institucionales V29 |
 | **Territorio** | ¿Dónde llega la oferta? Mapa municipal interactivo y comparador sincronizado de razón de oferta, presencia municipal y peso TyT |
 | **Modo Decisión** | ¿Cómo reducir opciones? Cruza territorio, nivel, modalidad y área sin fabricar un ranking de “mejores” programas |
 | **Producto comparado** | ¿Qué aprende MaterIA de OTE, College Scorecard, Discover Uni, Mi Futuro y Our World in Data? Matriz sin puntuación total y adopciones V27 |
@@ -54,6 +54,7 @@ scripts/
   scrapear_ies_distritales.py # captura catálogos y construye el corte de las tres IES del Distrito
 public/
   index.html             # tablero completo (HTML+JS vanilla, SVG a mano, sin dependencias)
+  ies/                   # perfiles V29 de ITM, Pascual Bravo y Colmayor
   datos.js               # datos agregados (generado — no editar a mano)
   datos.json             # mismo contenido, para reutilizar
   mapa.js                # geometría MGN de los 125 municipios (DANE, vía ArcGIS)
@@ -131,6 +132,12 @@ Cuando el MEN publique la vigencia siguiente (histórico: hacia julio de cada a�
 - **138 registros comparables SNIES 2024**: 98 de pregrado y 40 de posgrado, con explorador por IES, nivel, modalidad, área y acreditación.
 - **$540.680 millones de presupuesto aprobado para 2026**, con presupuesto, recaudo y resultado contable presentados como magnitudes distintas.
 - **Agenda común**: portafolio articulado, cupos por programa y jornada, seguimiento de cohortes, resultados laborales y sostenibilidad por fuente de ingreso.
+
+### Perfiles institucionales V29
+
+- **Tres páginas conectadas** desde el capítulo distrital: ITM, Pascual Bravo y Colmayor.
+- **Una arquitectura comparable**: lectura ejecutiva, composición de oferta, explorador SNIES, catálogo web, finanzas y agenda de decisiones.
+- **Una sola fuente de verdad**: los perfiles cargan `public/ies-distritales.json`; no duplican cifras manualmente.
 
 ### Mejoras V27 tomadas de referentes
 
