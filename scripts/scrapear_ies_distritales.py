@@ -27,6 +27,8 @@ ROOT = Path(__file__).resolve().parents[1]
 DATOS = ROOT / "public" / "datos.json"
 SALIDA = ROOT / "public" / "ies-distritales.json"
 CORTE = date(2026, 7, 15)
+FUENTE_PLAN_2026 = "https://www.medellin.gov.co/es/wp-content/uploads/2026/04/Sgto_PI_28Feb2026.pdf"
+FUENTE_MATRICULA_CERO_2026 = "https://www.medellin.gov.co/es/sala-de-prensa/noticias/matricula-cero-trae-46-667-oportunidades-en-educacion-superior-para-el-primer-semestre-de-2026/"
 
 
 class Collector(HTMLParser):
@@ -188,8 +190,17 @@ def main() -> None:
             "id": "itm", "codigo_snies": 3302, "nombre_corto": "ITM",
             "nombre_snies": "Instituto Tecnologico Metropolitano",
             "rol": "Escala tecnológica, digital, científica y de ingeniería",
-            "matricula_2025_2": 28107, "programas_convocatoria_2026_2": 60, "cupos_2026_2": 8600,
+            "matricula_2025_2": 28107, "matricula_2026_1": 29822,
+            "programas_convocatoria_2026_2": 60, "cupos_2026_2": 8600,
             "cupos_calificador": "exacto", "alcance_territorial_2026": "Medellín; cinco campus reportados",
+            "distrito_2026_02_28": {
+                "programas_acreditados_vigentes": 23,
+                "programas_acreditados_desglose": {"tecnologias": 12, "profesionales": 9, "maestrias": 2},
+                "grupos_investigacion_a1_a_b": 11, "programas_media_tecnica": 28,
+                "programas_ftdh": 7, "programas_comunas_corregimientos": 9,
+                "semilleros_activos": 125, "estudiantes_semilleros": 2391,
+                "publicaciones_indexadas": 44,
+            },
             "catalogo": itm_catalogo(),
             "finanzas": {
                 "presupuesto_2026_millones": 276368, "recaudo_2025_millones": 709115,
@@ -206,8 +217,17 @@ def main() -> None:
             "id": "pascual", "codigo_snies": 3107, "nombre_corto": "Pascual Bravo",
             "nombre_snies": "Institución Universitaria Pascual Bravo",
             "rol": "Industria, manufactura, software, logística y diseño",
-            "matricula_2025_2": 9931, "programas_convocatoria_2026_2": 42, "cupos_2026_2": 1600,
+            "matricula_2025_2": 9931, "matricula_2026_1": 10068,
+            "programas_convocatoria_2026_2": 42, "cupos_2026_2": 1600,
             "cupos_calificador": "más de", "alcance_territorial_2026": "Medellín y 47 municipios reportados por la institución",
+            "distrito_2026_02_28": {
+                "programas_acreditados_vigentes": 7,
+                "programas_acreditados_desglose": {"tecnologias": 6, "profesionales": 1},
+                "grupos_investigacion_a1_a_b": 5, "programas_media_tecnica": 11,
+                "programas_ftdh": 6, "programas_comunas_corregimientos": 4,
+                "semilleros_activos": 26, "estudiantes_semilleros": 1968,
+                "publicaciones_indexadas": 3,
+            },
             "catalogo": pascual_catalogo(),
             "finanzas": {
                 "presupuesto_2026_millones": 152205, "recaudo_2025_millones": 287987,
@@ -225,9 +245,18 @@ def main() -> None:
             "id": "colmayor", "codigo_snies": 2110, "nombre_corto": "Colmayor",
             "nombre_snies": "Colegio Mayor de Antioquia",
             "rol": "Salud, hábitat, territorio, turismo y gastronomía",
-            "matricula_2025_2": 5763, "programas_convocatoria_2026_2": 40, "cupos_2026_2": 2016,
+            "matricula_2025_2": 5763, "matricula_2026_1": 6599,
+            "programas_convocatoria_2026_2": 40, "cupos_2026_2": 2016,
             "programas_calificador": "cerca de", "cupos_calificador": "exacto",
             "alcance_territorial_2026": "Sedes Robledo y C4ta",
+            "distrito_2026_02_28": {
+                "programas_acreditados_vigentes": 10,
+                "programas_acreditados_desglose": {"tecnologias": 3, "profesionales": 7},
+                "grupos_investigacion_a1_a_b": 5, "programas_media_tecnica": 5,
+                "programas_ftdh": 17, "programas_comunas_corregimientos": 8,
+                "semilleros_activos": 12, "estudiantes_semilleros": 610,
+                "publicaciones_indexadas": 4,
+            },
             "catalogo": colmayor_catalogo(),
             "finanzas": {
                 "presupuesto_2026_millones": 112107, "recaudo_2025_millones": 170623,
@@ -260,12 +289,31 @@ def main() -> None:
     output = {
         "meta": {
             "titulo": "Las tres IES del Distrito de Medellín",
-            "version": "V28", "corte": CORTE.isoformat(),
+            "version": "V30", "corte": CORTE.isoformat(),
             "unidad_financiera": "millones de pesos colombianos",
-            "metodo": "Scraping de catálogos oficiales + convocatoria distrital 2026-2 + SNIES consolidado 2024 + estados financieros oficiales",
+            "metodo": "Seguimiento Plan Indicativo 2026-1 + scraping de catálogos oficiales + convocatoria distrital 2026-2 + SNIES consolidado 2024 + estados financieros oficiales",
         },
         "sistema": {
             "matricula_2025_2": sum(x["matricula_2025_2"] for x in configs),
+            "matricula_2026_1": sum(x["matricula_2026_1"] for x in configs),
+            "variacion_matricula_vs_2025_2_absoluta": sum(x["matricula_2026_1"] - x["matricula_2025_2"] for x in configs),
+            "variacion_matricula_vs_2025_2_pct": round(100 * (sum(x["matricula_2026_1"] for x in configs) / sum(x["matricula_2025_2"] for x in configs) - 1), 2),
+            "corte_indicadores_distrito": "2026-02-28",
+            "programas_acreditados_vigentes_2026": sum(x["distrito_2026_02_28"]["programas_acreditados_vigentes"] for x in configs),
+            "grupos_investigacion_a1_a_b_2026": sum(x["distrito_2026_02_28"]["grupos_investigacion_a1_a_b"] for x in configs),
+            "programas_media_tecnica_2026": sum(x["distrito_2026_02_28"]["programas_media_tecnica"] for x in configs),
+            "programas_ftdh_2026": sum(x["distrito_2026_02_28"]["programas_ftdh"] for x in configs),
+            "programas_comunas_corregimientos_2026": sum(x["distrito_2026_02_28"]["programas_comunas_corregimientos"] for x in configs),
+            "semilleros_activos_2026": sum(x["distrito_2026_02_28"]["semilleros_activos"] for x in configs),
+            "estudiantes_semilleros_2026": sum(x["distrito_2026_02_28"]["estudiantes_semilleros"] for x in configs),
+            "publicaciones_indexadas_2026": sum(x["distrito_2026_02_28"]["publicaciones_indexadas"] for x in configs),
+            "matricula_cero_2026_1": {
+                "beneficios_proyectados": 46667,
+                "inversion_minima_millones": 37000,
+                "ies_publicas_elegibles": 8,
+                "universo": "Beneficios proyectados para estudiantes de ocho IES públicas con sede en Medellín; no equivale a matrícula ni se limita a las tres IES adscritas al Distrito.",
+                "fuente": FUENTE_MATRICULA_CERO_2026,
+            },
             "cupos_2026_2_publicados_minimo": sum(x["cupos_2026_2"] for x in configs),
             "programas_convocatoria_2026_2_aproximado": sum(x["programas_convocatoria_2026_2"] for x in configs),
             "registros_catalogos_web": sum(x["catalogo_web"]["registros_visibles"] for x in configs),
@@ -279,6 +327,8 @@ def main() -> None:
         "fuentes": [
             {"nombre": "Convocatoria distrital 2026-2", "url": "https://www.medellin.gov.co/es/sala-de-prensa/noticias/hay-mas-de-12-200-cupos-disponibles-para-estudiar-desde-el-segundo-semestre-pregrado-y-posgrado-en-medellin/"},
             {"nombre": "Matrícula distrital 2025-2", "url": "https://www.medellin.gov.co/es/sala-de-prensa/noticias/medellin-fortalece-el-acceso-a-la-educacion-superior-publica-mas-de-43-000-estudiantes-matriculados/"},
+            {"nombre": "Seguimiento Plan Indicativo — corte 28 feb. 2026", "url": FUENTE_PLAN_2026},
+            {"nombre": "Matrícula Cero 2026-1 — beneficios proyectados", "url": FUENTE_MATRICULA_CERO_2026},
             {"nombre": "Catálogo ITM", "url": "https://www.itm.edu.co/aspirante-pregrado/programas-profesionales/"},
             {"nombre": "Catálogo Pascual Bravo", "url": "https://pascualbravo.edu.co/aspirantes/"},
             {"nombre": "Catálogo Colmayor", "url": "https://www.colmayor.edu.co/programas/"},
@@ -288,7 +338,10 @@ def main() -> None:
         "limites": [
             "La convocatoria informa cupos y programas agregados, no cupos por programa para las tres IES bajo una sola estructura.",
             "El catálogo institucional puede conservar páginas de programas sin admisión abierta y contar modalidades por separado.",
-            "La matrícula SNIES 2024 es comparable entre IES; las cifras institucionales 2025-2 son más recientes pero autorreportadas.",
+            "La matrícula distrital 2026-1 es el corte consolidado al 28 de febrero; la matrícula SNIES 2024 conserva el grano comparable por programa.",
+            "La variación frente a 2025-2 compara semestres consecutivos y puede contener estacionalidad; no se interpreta como crecimiento anual.",
+            "Los 40 programas acreditados del corte distrital 2026 usan vigencia administrativa; los registros acreditados SNIES 2024 tienen otro corte y grano.",
+            "Los 46.667 beneficios de Matrícula Cero son una proyección para ocho IES públicas: no representan estudiantes adicionales, beneficiarios únicos ejecutados ni la matrícula de las tres IES distritales.",
             "El resultado contable de Pascual Bravo corresponde a marzo de 2026 y no es comparable con los cierres anuales 2025 de ITM y Colmayor.",
             "Presupuesto, recaudo y resultado contable son magnitudes distintas; no se restan entre sí.",
         ],
