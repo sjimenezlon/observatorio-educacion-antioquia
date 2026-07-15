@@ -1,7 +1,7 @@
 {
   "estado": "correcto",
   "fecha_auditoria": "2026-07-14",
-  "alcance": "Atlas territorial de MaterIA Gris V23",
+  "alcance": "Atlas territorial y Modo Decisión de MaterIA Gris V24",
   "fuentes": {
     "snies": {
       "descripcion": "Estudiantes Matriculados 2024, bases consolidadas SNIES–MEN",
@@ -37,6 +37,15 @@
     "diferencias_municipales": 0,
     "diferencias_subregionales": 0,
     "diferencias_cobertura": 0
+  },
+  "modo_decision": {
+    "programas_activos": 2107,
+    "codigos_snies_unicos": 2107,
+    "instituciones_en_programas": 64,
+    "municipios_con_programas": 51,
+    "programas_acreditados": 439,
+    "nulos_en_campos_criticos": 0,
+    "regla_matricula_multisede": "La matrícula se muestra como escala total del programa y no se atribuye al municipio filtrado"
   },
   "reproduccion": "python3 scripts/auditar_atlas.py"
 }
