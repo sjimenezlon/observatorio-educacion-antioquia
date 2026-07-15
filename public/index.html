@@ -230,6 +230,15 @@ html.light .card{box-shadow:0 1px 2px rgba(20,20,15,.03),0 8px 22px rgba(20,20,1
 .mpanel .row:first-of-type{border-top:none}
 .mpanel .row b{color:var(--ink);font-variant-numeric:tabular-nums}
 .atlas-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:16px}
+.atlas-kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:14px}
+.atlas-kpi{background:var(--surface-2);border:1px solid var(--border);border-radius:10px;padding:10px 12px;color:var(--muted);font-size:11px;line-height:1.35}
+.atlas-kpi b{display:block;color:var(--ink);font-size:18px;font-variant-numeric:tabular-nums;line-height:1.15;margin-bottom:2px}
+.atlas-tools{display:flex;align-items:end;gap:9px;flex-wrap:wrap;margin-top:12px;padding:11px 12px;background:var(--surface-2);border:1px solid var(--border);border-radius:10px}
+.atlas-tools .field{display:grid;gap:5px;min-width:min(100%,310px);flex:1}
+.atlas-tools label{color:var(--ink);font-size:12px;font-weight:650}
+.atlas-tools select{width:100%;min-height:40px}
+.atlas-clear{min-height:40px;padding:0 14px;border:1px solid var(--border);border-radius:8px;background:var(--surface);color:var(--ink-2);font:inherit;font-size:12px;cursor:pointer}
+.atlas-clear:hover{border-color:var(--s1);color:var(--ink)}
 .atlas-map{margin:0;background:var(--surface-2);border:1px solid var(--border);border-radius:12px;padding:13px;min-width:0}
 .atlas-map figcaption{display:grid;gap:4px;min-height:94px}
 .atlas-map .ak{color:var(--s1);font-size:10.5px;font-weight:750;letter-spacing:.09em;text-transform:uppercase}
@@ -239,6 +248,7 @@ html.light .card{box-shadow:0 1px 2px rgba(20,20,15,.03),0 8px 22px rgba(20,20,1
 .atlas-svg svg{display:block;width:100%;height:auto;max-height:390px}
 .atlas-svg path{transition:opacity .15s,stroke-width .15s;cursor:crosshair}
 .atlas-svg path:hover{opacity:.82;stroke-width:1.4}
+.atlas-svg path.is-selected{opacity:1;stroke:var(--ink);stroke-width:2.6;filter:drop-shadow(0 0 2px var(--s1))}
 .atlas-mini-legend{display:flex;flex-wrap:wrap;gap:7px 10px;margin-top:10px;color:var(--muted);font-size:10.5px;line-height:1.25}
 .atlas-mini-legend .it{display:flex;align-items:center;gap:5px}
 .atlas-mini-legend .sw{width:11px;height:11px;border-radius:3px;flex:none}
@@ -247,7 +257,7 @@ html.light .card{box-shadow:0 1px 2px rgba(20,20,15,.03),0 8px 22px rgba(20,20,1
 .atlas-table summary{cursor:pointer;color:var(--ink);font-size:13px;font-weight:650}
 .atlas-source{margin-top:12px!important;margin-bottom:0!important}
 @media(max-width:1020px){.atlas-grid{grid-template-columns:1fr 1fr}.atlas-map:last-child{grid-column:1/-1}.atlas-map figcaption{min-height:78px}}
-@media(max-width:640px){.atlas-grid{grid-template-columns:1fr}.atlas-map:last-child{grid-column:auto}.atlas-map figcaption{min-height:0}.atlas-svg svg{max-height:430px}}
+@media(max-width:640px){.atlas-kpis,.atlas-grid{grid-template-columns:1fr}.atlas-map:last-child{grid-column:auto}.atlas-map figcaption{min-height:0}.atlas-svg svg{max-height:430px}.atlas-tools{align-items:stretch}.atlas-clear{width:100%}}
 /* ---------- comparador ---------- */
 .cmp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:14px}
 .cmp-col{background:var(--surface-2);border:1px solid var(--border);border-radius:12px;padding:14px}
@@ -500,12 +510,20 @@ html.light #arriba{box-shadow:0 4px 18px rgba(0,0,0,.15)}
     </div>
     <div class="card">
       <h3>Atlas de brechas: tres mapas, una misma pregunta territorial</h3>
-      <p class="note">Lea los mapas en conjunto: la cobertura compara capacidad instalada con población joven; la presencia municipal muestra si existe oferta activa; y el peso TyT revela dónde la puerta de entrada depende de la formación técnica y tecnológica. Pase el cursor o toque un municipio para ver el dato exacto.</p>
+      <p class="note">Lea los mapas en conjunto: la razón de oferta compara capacidad instalada con población joven; la presencia municipal muestra si existe oferta activa; y el peso TyT revela dónde la puerta de entrada depende de la formación técnica y tecnológica.</p>
+      <div class="atlas-kpis" id="atlas-kpis" role="list" aria-label="Indicadores clave del atlas territorial"></div>
+      <div class="atlas-tools">
+        <div class="field">
+          <label for="atlas-municipio">Comparar un municipio en los tres mapas</label>
+          <select id="atlas-municipio" aria-describedby="atlas-read"></select>
+        </div>
+        <button class="atlas-clear" id="atlas-clear" type="button">Restablecer lectura</button>
+      </div>
       <div class="atlas-grid" id="atlas-territorial">
         <figure class="atlas-map">
-          <figcaption><span class="ak">Capacidad instalada</span><b>Cobertura bruta de oferta por subregión</b><span>Pregrado 2024-II ofertado por cada 100 habitantes de 17–21 años en 2024. No mide asistencia de residentes.</span></figcaption>
+          <figcaption><span class="ak">Capacidad instalada</span><b>Razón de oferta por subregión</b><span>Pregrado 2024-II ofertado por cada 100 habitantes de 17–21 años en 2024. No mide asistencia de residentes.</span></figcaption>
           <div class="atlas-svg" id="atlas-cobertura"></div>
-          <div class="atlas-mini-legend" id="atlas-lg-cobertura" aria-label="Leyenda de cobertura"></div>
+          <div class="atlas-mini-legend" id="atlas-lg-cobertura" aria-label="Leyenda de razón de oferta"></div>
         </figure>
         <figure class="atlas-map">
           <figcaption><span class="ak">Vacíos de acceso</span><b>Municipios con y sin oferta activa</b><span>Lugar de oferta del programa en las bases consolidadas SNIES, corte 2024-II.</span></figcaption>
@@ -2272,11 +2290,19 @@ const ACRED_IES=[
   const subMap={};
   Object.entries(D.subregiones.mapa).forEach(([k,v])=>{subMap[norm(k)]=v;});
   subMap['san pedro de los milagros']=subMap['san pedro']||'Norte';
+  subMap['donmatias']=subMap['don matias']||'Norte';
+  subMap['penol']=subMap['el penol']||'Oriente';
+  subMap['retiro']=subMap['el retiro']||'Oriente';
+  subMap['san andres de cuerquia']=subMap['san andres de c.']||'Norte';
+  subMap['san vicente ferrer']=subMap['san vicente']||'Oriente';
   const covBySub=Object.fromEntries(D.subregiones.cobertura.filter(x=>!x.subregion.includes('total')).map(x=>[x.subregion,x]));
   const aggBySub=Object.fromEntries(D.subregiones.agg.map(x=>[x.subregion,x]));
   const byCode={};
   D.municipios.forEach(m=>{byCode[String(parseInt(m.codigo)).padStart(5,'0')]=m;});
   const offerCodes=new Set(Object.keys(byCode));
+  const featureByCode=Object.fromEntries(GEO.features.map(f=>[f.properties.c,f]));
+  const select=document.getElementById('atlas-municipio'),clear=document.getElementById('atlas-clear');
+  let selectedCode='';
 
   let minLon=1e9,maxLon=-1e9,minLat=1e9,maxLat=-1e9;
   const eachCoord=(g,cb)=>{
@@ -2295,10 +2321,16 @@ const ACRED_IES=[
   };
   const bucket=(v,edges)=>{let i=0;while(i<edges.length&&v>edges[i])i++;return i;};
   const read=document.getElementById('atlas-read');
+  const eligible=D.municipios.filter(m=>m.matricula24>=100).map(m=>({...m,share:100*m.tyt24/m.matricula24})).sort((a,b)=>b.share-a.share);
+  const totalCoverage=D.subregiones.cobertura.find(x=>x.subregion.toLowerCase().includes('total'));
+  document.getElementById('atlas-kpis').innerHTML=[
+    [totalCoverage?totalCoverage.cobertura.toLocaleString('es-CO')+' %':'—','Razón de oferta departamental'],
+    [`${offerCodes.size} de 125`,'Municipios con oferta activa'],
+    [eligible[0].share.toLocaleString('es-CO',{maximumFractionDigits:1})+' %',`Mayor peso TyT · ${eligible[0].municipio}`],
+  ].map(([value,label])=>`<div class="atlas-kpi" role="listitem"><b>${value}</b>${label}</div>`).join('');
   const defaultRead=()=>{
     const rows=Object.values(covBySub), hi=[...rows].sort((a,b)=>b.cobertura-a.cobertura)[0], lo=[...rows].sort((a,b)=>a.cobertura-b.cobertura)[0];
-    const eligible=D.municipios.filter(m=>m.matricula24>=100).map(m=>({...m,share:100*m.tyt24/m.matricula24})).sort((a,b)=>b.share-a.share);
-    read.innerHTML=`<b>Lectura conjunta:</b> la cobertura de oferta va de <b>${hi.cobertura.toLocaleString('es-CO')} % en ${hi.subregion}</b> a <b>${lo.cobertura.toLocaleString('es-CO')} % en ${lo.subregion}</b>; <b>${125-offerCodes.size} de 125 municipios</b> no registran oferta activa. Entre municipios con al menos 100 matriculados, <b>${eligible[0].municipio}</b> presenta la mayor participación TyT (${eligible[0].share.toLocaleString('es-CO',{maximumFractionDigits:1})} %).`;
+    read.innerHTML=`<b>Lectura conjunta:</b> la razón de oferta va de <b>${hi.cobertura.toLocaleString('es-CO')} % en ${hi.subregion}</b> a <b>${lo.cobertura.toLocaleString('es-CO')} % en ${lo.subregion}</b>; <b>${125-offerCodes.size} de 125 municipios</b> no registran oferta activa. Entre municipios con al menos 100 matriculados, <b>${eligible[0].municipio}</b> presenta la mayor participación TyT (${eligible[0].share.toLocaleString('es-CO',{maximumFractionDigits:1})} %). Seleccione un municipio para compararlo en los tres mapas.`;
   };
   const detail=(kind,f)=>{
     const code=f.properties.c,name=f.properties.n,sub=subMap[norm(name)]||'Sin subregión',m=byCode[code],c=covBySub[sub];
@@ -2306,8 +2338,23 @@ const ACRED_IES=[
     else if(kind==='offer') read.innerHTML=m?`<b>${name}:</b> registra oferta activa en 2024-II, con <b>${fmt(m.matricula24)} matriculados</b>, ${fmt(m.ies)} IES y ${fmt(m.programas)} programas.`:`<b>${name} · ${sub}:</b> no registra oferta activa por lugar de oferta del programa en el corte SNIES 2024-II.`;
     else read.innerHTML=m?`<b>${name}:</b> TyT representa <b>${(100*m.tyt24/m.matricula24).toLocaleString('es-CO',{maximumFractionDigits:1})} %</b> de su matrícula (${fmt(m.tyt24)} de ${fmt(m.matricula24)} estudiantes).`:`<b>${name} · ${sub}:</b> sin oferta activa; la participación TyT no aplica.`;
   };
+  const combined=f=>{
+    const code=f.properties.c,name=f.properties.n,sub=subMap[norm(name)]||'Sin subregión',m=byCode[code],c=covBySub[sub];
+    const ratio=c?c.cobertura.toLocaleString('es-CO')+' %':'—';
+    const offer=m?`<b>${fmt(m.matricula24)} matriculados</b>, ${fmt(m.ies)} IES y ${fmt(m.programas)} programas`:'<b>sin oferta activa</b> en el corte';
+    const tyt=m?`<b>${(100*m.tyt24/m.matricula24).toLocaleString('es-CO',{maximumFractionDigits:1})} %</b> (${fmt(m.tyt24)} estudiantes)`:'no aplica';
+    read.innerHTML=`<b>${name} · ${sub}:</b> razón de oferta subregional <b>${ratio}</b>; presencia municipal: ${offer}; participación TyT: ${tyt}.`;
+  };
+  const selectFeature=code=>{
+    selectedCode=code||'';
+    document.querySelectorAll('#atlas-territorial path.is-selected').forEach(p=>p.classList.remove('is-selected'));
+    if(!selectedCode){select.value='';defaultRead();return;}
+    document.querySelectorAll(`#atlas-territorial path[data-code="${selectedCode}"]`).forEach(p=>p.classList.add('is-selected'));
+    select.value=selectedCode;
+    combined(featureByCode[selectedCode]);
+  };
   const configs=[
-    {id:'cobertura',kind:'coverage',aria:'Mapa de cobertura bruta de oferta por subregión de Antioquia',colors:blue,edges:[5,15,25,55],value:f=>covBySub[subMap[norm(f.properties.n)]]?.cobertura||0,labels:['0–5 %','5–15 %','15–25 %','25–55 %','Más de 55 %']},
+    {id:'cobertura',kind:'coverage',aria:'Mapa de razón de oferta por subregión de Antioquia',colors:blue,edges:[5,15,25,55],value:f=>covBySub[subMap[norm(f.properties.n)]]?.cobertura||0,labels:['0–5 %','5–15 %','15–25 %','25–55 %','Más de 55 %']},
     {id:'oferta',kind:'offer',aria:'Mapa de municipios con y sin oferta activa de educación superior en Antioquia',colors:[no,yes],value:f=>offerCodes.has(f.properties.c)?1:0,labels:['Sin oferta activa','Con oferta activa']},
     {id:'tyt',kind:'tyt',aria:'Mapa de participación técnica y tecnológica en la matrícula municipal de Antioquia',colors:amber,edges:[20,40,60,80],value:f=>{const m=byCode[f.properties.c];return m?100*m.tyt24/m.matricula24:null;},labels:['0–20 %','20–40 %','40–60 %','60–80 %','Más de 80 %']},
   ];
@@ -2318,7 +2365,8 @@ const ACRED_IES=[
       const p=el('path',{d:pathOf(f.geometry),fill:idx<0?empty:cfg.colors[idx],stroke:ink,'stroke-width':0.42,'vector-effect':'non-scaling-stroke','data-code':f.properties.c,'data-map':cfg.kind,'aria-hidden':'true'},svg);
       const title=document.createElementNS('http://www.w3.org/2000/svg','title');title.textContent=f.properties.n;p.appendChild(title);
       p.addEventListener('pointerenter',()=>detail(cfg.kind,f));
-      p.addEventListener('click',()=>detail(cfg.kind,f));
+      p.addEventListener('pointerleave',()=>selectedCode?combined(featureByCode[selectedCode]):defaultRead());
+      p.addEventListener('click',()=>selectFeature(f.properties.c));
     });
     const lg=document.getElementById('atlas-lg-'+cfg.id);
     cfg.labels.forEach((label,i)=>{
@@ -2332,6 +2380,12 @@ const ACRED_IES=[
       const txt=document.createElement('span');txt.textContent='Sin oferta';item.append(sw,txt);lg.appendChild(item);
     }
   });
+  select.innerHTML='<option value="">Seleccione un municipio…</option>';
+  [...GEO.features].sort((a,b)=>a.properties.n.localeCompare(b.properties.n,'es')).forEach(f=>{
+    const option=document.createElement('option');option.value=f.properties.c;option.textContent=`${f.properties.n} · ${subMap[norm(f.properties.n)]||'Sin subregión'}`;select.appendChild(option);
+  });
+  select.addEventListener('change',()=>selectFeature(select.value));
+  clear.addEventListener('click',()=>{selectFeature('');select.focus();});
   defaultRead();
   const subTotals={};
   GEO.features.forEach(f=>{const s=subMap[norm(f.properties.n)];if(s)subTotals[s]=(subTotals[s]||0)+1;});
@@ -2339,7 +2393,7 @@ const ACRED_IES=[
     const a=aggBySub[c.subregion],tyt=a&&a.matricula24?100*a.tyt24/a.matricula24:0;
     return [c.subregion,c.cobertura.toLocaleString('es-CO'),c.pregrado,c.pob_17_21,`${a?.municipios_oferta||0} de ${subTotals[c.subregion]||0}`,tyt.toLocaleString('es-CO',{maximumFractionDigits:1})];
   });
-  tableTwin(document.getElementById('atlas-table'),['Subregión','Cobertura %','Pregrado','Población 17–21','Municipios con oferta','TyT %'],rows);
+  tableTwin(document.getElementById('atlas-table'),['Subregión','Razón de oferta %','Pregrado','Población 17–21','Municipios con oferta','TyT %'],rows);
 })();
 
 /* ---- 03c Subregiones (barras) ---- */
