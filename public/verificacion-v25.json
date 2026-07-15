@@ -1,0 +1,61 @@
+{
+  "version": "V25",
+  "fecha_verificacion": "2026-07-15",
+  "estado": "correcto_sin_diferencias",
+  "proposito": "Validar la Sala Ejecutiva sin mezclar cortes ni presentar prioridades editoriales como resultados de un modelo.",
+  "universo_consolidado": {
+    "fuente": "SNIES, programas ofertados en Antioquia",
+    "corte": "2024-II, semestre pico de la vigencia",
+    "matricula_2018": 332060,
+    "matricula_2023": 296737,
+    "matricula_2024": 313583,
+    "crecimiento_2023_2024_pct": 5.7,
+    "brecha_2018_2024_pct": -5.6,
+    "matricula_tyt_2018": 112129,
+    "matricula_tyt_2024": 80135,
+    "variacion_tyt_pct": -28.5
+  },
+  "territorio_y_demografia": {
+    "municipios_antioquia": 125,
+    "municipios_con_oferta": 51,
+    "municipios_sin_oferta": 74,
+    "municipios_sin_oferta_pct": 59.2,
+    "matricula_valle_aburra": 276072,
+    "matricula_valle_aburra_pct": 88.0,
+    "poblacion_17_21_2024": 541548,
+    "poblacion_17_21_2035": 469972,
+    "variacion_poblacion_17_21_pct": -13.2,
+    "limitacion": "La oferta se ubica por lugar del programa y no identifica el municipio de residencia del estudiante."
+  },
+  "lentes_complementarios": {
+    "matricula_oficial": 198396,
+    "matricula_oficial_pct": 63.3,
+    "matricula_en_programas_acreditados": 114661,
+    "matricula_en_programas_acreditados_pct": 36.6,
+    "matricula_virtual": 43707,
+    "matricula_virtual_pct": 13.9,
+    "beneficiarios_gratuidad_2025_1": 118117,
+    "estudiantes_pic_2025": 13264,
+    "municipios_en_conjunto_de_estrategias_2025": 66,
+    "nota": "La gratuidad es una señal administrativa 2025-1 y se presenta separada del consolidado SNIES 2024-II."
+  },
+  "fuentes_externas": [
+    {
+      "tema": "Publicación de estadísticas SNIES 2025 programada entre el 27 y el 31 de julio de 2026",
+      "url": "https://snies.mineducacion.gov.co/1778/w3-article-391228.html?_noredirect=1"
+    },
+    {
+      "tema": "Gratuidad y ampliación de cobertura en Antioquia",
+      "url": "https://www.mineducacion.gov.co/portal/salaprensa/Comunicados/426943:Gobierno-del-Cambio-ha-invertido-mas-de-8-3-billones-para-fortalecer-todos-los-niveles-educativos-en-Antioquia"
+    },
+    {
+      "tema": "Reforma del financiamiento público de la educación superior",
+      "url": "https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=272156"
+    }
+  ],
+  "reglas_de_interpretacion": {
+    "prioridades": "Las etiquetas crítico, riesgo alto y estructural son una priorización editorial basada en evidencia, no un puntaje automático.",
+    "cortes": "Cada cifra declara su fuente y periodo; no se suman cifras consolidadas con señales administrativas.",
+    "accion": "Las rutas por rol orientan la exploración y no sustituyen estudios de factibilidad, decisiones presupuestales ni deliberación colegiada."
+  }
+}
