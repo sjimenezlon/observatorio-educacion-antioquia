@@ -6,7 +6,7 @@ Tablero de la educación superior del departamento de Antioquia — **pregrado y
 
 **En línea:** https://materia-gris.vercel.app
 **Espejo:** https://observatorio-educacion-antioquia.vercel.app
-**Autor:** Santiago Jiménez Londoño · Última versión: V31 (julio de 2026)
+**Autor:** Santiago Jiménez Londoño · Última versión: V32 (julio de 2026)
 
 ---
 
@@ -15,6 +15,7 @@ Tablero de la educación superior del departamento de Antioquia — **pregrado y
 | Sección | Pregunta que contesta |
 |---|---|
 | **Sala Ejecutiva** | ¿Qué exige decisión ahora? Tensiones, prioridades y rutas diferenciadas para gobierno, rectoría y planeación |
+| **Centro de Decisiones** | ¿Qué evidencia necesito para actuar? Configura perspectiva, propósito y territorio; genera una lectura, explicita el dato faltante y produce un brief |
 | **Trayectorias y retorno** | ¿Dónde se rompe la oportunidad? Conecta aspiración, acceso, permanencia, aprendizaje, graduación y vínculo laboral sin fingir una cohorte única |
 | **Fuentes vivas** | ¿Qué sabemos hoy y con qué alcance? 13 fuentes y 23 indicadores con corte, universo, uso decisional y cautela |
 | **Panorama** | ¿Cómo evolucionó la matrícula 2018-2024 por nivel, sector y modalidad? |
@@ -55,6 +56,7 @@ scripts/
   scrapear_ies_distritales.py # captura catálogos y construye el corte de las tres IES del Distrito
 public/
   index.html             # tablero completo (HTML+JS vanilla, SVG a mano, sin dependencias)
+  og.png                 # tarjeta social de MaterIA Gris V32
   ies/                   # perfiles V29 de ITM, Pascual Bravo y Colmayor
   datos.js               # datos agregados (generado — no editar a mano)
   datos.json             # mismo contenido, para reutilizar
@@ -63,6 +65,7 @@ public/
   auditoria-cifras.json  # comprobante público de la última auditoría del atlas
   verificacion-v25.json  # controles reproducibles de la Sala Ejecutiva y sus cortes
   verificacion-v26.json  # seis etapas, fórmulas, jurisdicciones y límites de Trayectorias
+  verificacion-v32.json  # contratos, sumas y controles del Centro de Decisiones
   comparativo-producto.json # referentes, escala, capacidades, fuentes y adopciones V27
   ies-distritales.json   # corte 2026-1, oferta, matrícula, finanzas, fuentes y límites del capítulo V30
   fuentes-antioquia.json # 13 fuentes y 23 indicadores trazables del registro V31
@@ -79,6 +82,7 @@ python3 scripts/procesar.py                 # regenera public/datos.json y publi
 python3 scripts/auditar_atlas.py            # debe terminar con "estado": "correcto"
 python3 scripts/scrapear_ies_distritales.py # refresca catálogos y comprobante distrital
 python3 scripts/actualizar_fuentes_antioquia.py # valida y regenera el registro de fuentes vivas
+python3 scripts/validar_centro_decisiones.py # comprueba contratos territoriales y cifras V32
 vercel --prod                               # despliegue (prebuilt, sin build step)
 ```
 
@@ -132,6 +136,16 @@ Cuando el MEN publique la vigencia siguiente (histórico: hacia julio de cada a�
 11. **El comparativo de producto no es un ranking**: observa capacidades públicas al 15 de julio de 2026 con una escala editorial de 0 a 3, pero no suma puntos. “No observada” significa que no apareció en las fuentes públicas revisadas, no que una funcionalidad privada sea imposible.
 12. **El sistema distrital tiene cinco universos**: el Plan Indicativo consolida matrícula e indicadores al 28 de febrero de 2026; la convocatoria 2026-2 informa programas y cupos abiertos; los catálogos web muestran páginas visibles; el SNIES 2024 permite la comparación homogénea; los estados financieros tienen cortes propios. Programa acreditado vigente, entrada web y registro SNIES no son sinónimos. La variación frente a 2025-2 es semestral, no anual. Presupuesto, recaudo y resultado contable tampoco se restan entre sí.
 13. **Actualidad no significa comparabilidad**: V31 conserva SNIES 2024-II como último corte comparable disponible al 15 de julio de 2026 y presenta los datos 2025–2026 como señales administrativas, de programa o de contexto. Beneficios, participantes, matrícula, sedes, inversión y resultados no se suman ni se usan como sinónimos.
+14. **El Centro de Decisiones no automatiza la política**: V32 aplica reglas transparentes para orientar una pregunta hacia uno de cinco propósitos. Las cifras provienen de capítulos ya publicados; la recomendación está rotulada como lectura editorial y cada salida declara el dato que falta.
+
+### Centro de Decisiones V32
+
+- **Cuatro perspectivas**: gobierno territorial, rectoría y consejo, planeación académica, comunidad e investigación.
+- **Cinco propósitos generales**: acceso territorial, portafolio, permanencia, calidad y sostenibilidad.
+- **61 universos seleccionables**: Antioquia, nueve subregiones y 51 municipios con oferta activa en SNIES 2024-II.
+- **Mesa de trabajo local**: conserva hasta seis decisiones en el dispositivo, sin transmitir preguntas o selecciones.
+- **Productos reutilizables**: enlace compartible, brief TXT individual y exportación de toda la mesa.
+- **Navegación simplificada**: cinco accesos principales y un panel de capítulos que mantiene toda la profundidad del producto.
 
 ### Fuentes vivas V31
 
