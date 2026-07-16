@@ -1,0 +1,107 @@
+{
+  "estado": "correcto",
+  "fecha_validacion": "2026-07-16",
+  "version": "V34",
+  "resumen": {
+    "perspectivas": 4,
+    "propositos": 6,
+    "subregiones": 9,
+    "municipios_con_oferta": 51,
+    "universos_territoriales": 61,
+    "matricula_reconciliada": 313583,
+    "controles": 21,
+    "errores": 0
+  },
+  "controles": [
+    {
+      "control": "La sección #centro existe",
+      "estado": "correcto"
+    },
+    {
+      "control": "Hay cuatro perspectivas únicas",
+      "estado": "correcto"
+    },
+    {
+      "control": "Hay seis propósitos únicos",
+      "estado": "correcto"
+    },
+    {
+      "control": "Las nueve subregiones son únicas",
+      "estado": "correcto"
+    },
+    {
+      "control": "Hay 51 municipios con oferta activa",
+      "estado": "correcto"
+    },
+    {
+      "control": "Los códigos municipales no están duplicados",
+      "estado": "correcto"
+    },
+    {
+      "control": "Cada subregión tiene razón de oferta",
+      "estado": "correcto"
+    },
+    {
+      "control": "Todos los municipios pertenecen a una subregión válida",
+      "estado": "correcto"
+    },
+    {
+      "control": "Los municipios tienen los campos requeridos",
+      "estado": "correcto"
+    },
+    {
+      "control": "Las magnitudes municipales son no negativas",
+      "estado": "correcto"
+    },
+    {
+      "control": "Los subtotales municipales no exceden la matrícula",
+      "estado": "correcto"
+    },
+    {
+      "control": "La matrícula total coincide por dos rutas",
+      "estado": "correcto"
+    },
+    {
+      "control": "Las subregiones suman el total departamental",
+      "estado": "correcto"
+    },
+    {
+      "control": "Los sectores suman el total departamental",
+      "estado": "correcto"
+    },
+    {
+      "control": "La razón administrativa tiene denominador válido",
+      "estado": "correcto"
+    },
+    {
+      "control": "La matrícula acreditada está dentro del universo",
+      "estado": "correcto"
+    },
+    {
+      "control": "La cotización formal de pregrado usa denominadores válidos",
+      "estado": "correcto"
+    },
+    {
+      "control": "No hay identificadores HTML duplicados",
+      "estado": "correcto"
+    },
+    {
+      "control": "Todos los enlaces del panel apuntan a capítulos existentes",
+      "estado": "correcto"
+    },
+    {
+      "control": "El comprobante declara 61 universos territoriales",
+      "estado": "correcto"
+    },
+    {
+      "control": "El comprobante coincide con los controles visibles",
+      "estado": "correcto"
+    }
+  ],
+  "limitaciones": [
+    "Los municipios seleccionables son los 51 con oferta activa en SNIES 2024-II; los otros 74 aparecen en el atlas como ausencia de oferta, no como registros vacíos del selector.",
+    "La razón territorial mide matrícula ofertada frente a población 17–21 y no cobertura de residentes.",
+    "Las lecturas para actuar son editoriales; las reglas de interpretación solo seleccionan un propósito y no generan cifras.",
+    "La mesa de trabajo usa almacenamiento local y no es un repositorio institucional compartido."
+  ]
+}

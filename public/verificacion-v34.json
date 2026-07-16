@@ -1,0 +1,125 @@
+{
+  "meta": {
+    "title": "Verificación V34 · ecosistema general de oportunidades",
+    "validated_on": "2026-07-16",
+    "method": "Controles de esquema, unicidad, estados, fuentes, agregaciones, contrato de interfaz y neutralidad narrativa."
+  },
+  "summary": {
+    "status": "correcto",
+    "checks": 16,
+    "errors": 0
+  },
+  "checks": [
+    {
+      "check": "route_count",
+      "status": "correcto",
+      "detail": "14 rutas públicas curadas"
+    },
+    {
+      "check": "unique_ids",
+      "status": "correcto",
+      "detail": "cero identificadores duplicados"
+    },
+    {
+      "check": "required_fields",
+      "status": "correcto",
+      "detail": "cada ruta conserva decisión, fuente y cautela"
+    },
+    {
+      "check": "four_needs",
+      "status": "correcto",
+      "detail": "cuatro necesidades generales presentes"
+    },
+    {
+      "check": "status_contract",
+      "status": "correcto",
+      "detail": "seis estados comparables presentes"
+    },
+    {
+      "check": "current_routes",
+      "status": "correcto",
+      "detail": "12 rutas vigentes o consultables"
+    },
+    {
+      "check": "priority_routes",
+      "status": "correcto",
+      "detail": "tres rutas abiertas o próximas a cerrar"
+    },
+    {
+      "check": "source_security",
+      "status": "correcto",
+      "detail": "7 dominios servidos por HTTPS"
+    },
+    {
+      "check": "caveats",
+      "status": "correcto",
+      "detail": "cero cautelas o usos decisionales vacíos"
+    },
+    {
+      "check": "source_registry",
+      "status": "correcto",
+      "detail": "26 fuentes y 45 indicadores validados"
+    },
+    {
+      "check": "atlas_contract",
+      "status": "correcto",
+      "detail": "escala SNIES enlazada sin duplicarla"
+    },
+    {
+      "check": "audit_contract",
+      "status": "correcto",
+      "detail": "comprobante público sincronizado"
+    },
+    {
+      "check": "ui_contract",
+      "status": "correcto",
+      "detail": "buscador general y fuente conectados"
+    },
+    {
+      "check": "no_special_chapter",
+      "status": "correcto",
+      "detail": "la Corporación no se presenta como capítulo especial"
+    },
+    {
+      "check": "general_narrative",
+      "status": "correcto",
+      "detail": "narrativa general visible en capítulo y Centro de Decisiones"
+    },
+    {
+      "check": "cgem_as_route",
+      "status": "correcto",
+      "detail": "la Corporación aparece en tres rutas dentro del ecosistema"
+    }
+  ],
+  "distribution": {
+    "by_type": {
+      "Estudiar": 2,
+      "Financiarse": 8,
+      "Prepararse": 3,
+      "Postularse": 1
+    },
+    "by_status": {
+      "permanente": 3,
+      "cerrada": 2,
+      "abierta": 2,
+      "legalizacion": 4,
+      "cierra_pronto": 1,
+      "en_curso": 2
+    },
+    "official_domains": [
+      "corporaciongilbertoecheverri.gov.co",
+      "sapiencia.gov.co",
+      "snies.mineducacion.gov.co",
+      "web.icetex.gov.co",
+      "www.antioquia.gov.co",
+      "www.medellin.gov.co",
+      "www.mineducacion.gov.co"
+    ]
+  },
+  "caveats": [
+    "El directorio es curado y no exhaustivo; cada fuente oficial puede cambiar después del corte.",
+    "Beca, gratuidad, estímulo, crédito condonable y crédito reembolsable no son equivalentes.",
+    "Convocatoria, postulación, preselección, legalización, matrícula y graduación son etapas distintas.",
+    "Las cifras de una ruta no se suman con la matrícula SNIES ni con los beneficiarios de otra."
+  ]
+}

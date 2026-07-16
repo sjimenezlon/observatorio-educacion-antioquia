@@ -1,7 +1,7 @@
 {
   "estado": "correcto",
   "fecha_auditoria": "2026-07-16",
-  "alcance": "Atlas territorial, oportunidades públicas, Modo Decisión, Sala Ejecutiva, Trayectorias, comparativo de producto, sistema público distrital, fuentes vivas y Centro de Decisiones general de MaterIA Gris V33",
+  "alcance": "Atlas territorial, ecosistema general de oportunidades, Modo Decisión, Sala Ejecutiva, Trayectorias, comparativo de producto, sistema público distrital, fuentes vivas y Centro de Decisiones general de MaterIA Gris V34",
   "fuentes": {
     "snies": {
       "descripcion": "Estudiantes Matriculados 2024, bases consolidadas SNIES–MEN",
@@ -152,14 +152,14 @@
     "fuente": "https://www.medellin.gov.co/es/wp-content/uploads/2026/04/Sgto_PI_28Feb2026.pdf",
     "regla_comparabilidad": "La variación frente a 2025-2 compara semestres consecutivos; no se interpreta como crecimiento anual. Los indicadores administrativos 2026 no sustituyen el grano por programa de SNIES 2024."
   },
-  "fuentes_v33": {
+  "fuentes_v34": {
     "corte_investigacion": "2026-07-16",
-    "fuentes_revisadas": 20,
-    "fuentes_oficiales": 16,
+    "fuentes_revisadas": 26,
+    "fuentes_oficiales": 22,
     "fuentes_observatorios": 4,
-    "indicadores_sistematizados": 43,
+    "indicadores_sistematizados": 45,
     "tipos_evidencia": {
-      "directa": 28,
+      "directa": 30,
       "derivada": 7,
       "reportada": 8
     },
@@ -180,7 +180,7 @@
     "comprobante": "fuentes-antioquia.json",
     "reproduccion": "python3 scripts/actualizar_fuentes_antioquia.py"
   },
-  "centro_decisiones_v33": {
+  "centro_decisiones_v34": {
     "perspectivas": 4,
     "propositos": 6,
     "universos_territoriales": 61,
@@ -193,8 +193,26 @@
     "persistencia": "localStorage del dispositivo; las preguntas y selecciones no se envían a un servidor",
     "intercambio": "enlace con perspectiva, propósito y territorio; brief TXT individual o de toda la mesa",
     "interpretacion": "Reglas transparentes de palabras clave que seleccionan una ruta temática; no generan cifras ni recomendaciones automáticas",
-    "fuentes": "datos.json, fuentes-antioquia.json, oferta-gilberto-echeverri.json y capítulos auditados de MaterIA Gris",
+    "fuentes": "datos.json, fuentes-antioquia.json, oportunidades-antioquia.json y capítulos auditados de MaterIA Gris",
     "regla": "Cada salida presenta señales, fuente, límite, lectura editorial y dato faltante. No puntúa personas, territorios, IES ni programas."
+  },
+  "oportunidades_v34": {
+    "corte": "2026-07-16",
+    "rutas_verificadas": 14,
+    "rutas_vigentes_o_consultables": 12,
+    "abiertas_o_por_cerrar": 3,
+    "tipos": 4,
+    "tipos_de_ruta": [
+      "Estudiar",
+      "Financiarse",
+      "Postularse",
+      "Prepararse"
+    ],
+    "fuentes_vivas": 26,
+    "indicadores_sistematizados": 45,
+    "comprobante": "oportunidades-antioquia.json",
+    "reproduccion": "python3 scripts/actualizar_oportunidades_antioquia.py",
+    "regla": "El directorio es curado y no exhaustivo. Distingue oferta, beca, gratuidad, estímulo, crédito, legalización y preparación; la Corporación Gilberto Echeverri aparece como una fuente y operadora dentro del ecosistema."
   },
   "reproduccion": "python3 scripts/auditar_atlas.py"
 }
