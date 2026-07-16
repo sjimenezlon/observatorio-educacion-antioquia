@@ -53,7 +53,7 @@
     {
       "check": "source_registry",
       "status": "correcto",
-      "detail": "20 fuentes y 43 indicadores validados"
+      "detail": "26 fuentes y 45 indicadores validados en V34"
     },
     {
       "check": "source_offer_indicators",
@@ -63,7 +63,7 @@
     {
       "check": "ui_contract",
       "status": "correcto",
-      "detail": "buscador y fuente publica conectados"
+      "detail": "el detalle histórico permanece conectado como capa relacionada"
     },
     {
       "check": "snies_freshness",

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Valida contratos de datos y controles del Centro de Decisiones V33."""
+"""Valida contratos de datos y controles del Centro de Decisiones V34."""
 
 from __future__ import annotations
 
@@ -71,14 +71,14 @@ def main() -> None:
     require(chapter_targets <= section_ids, "Todos los enlaces del panel apuntan a capítulos existentes", checks)
 
     expected_scopes = 1 + len(subregion_names) + len(municipalities)
-    v33 = audit["centro_decisiones_v33"]
-    require(expected_scopes == 61 == v33["universos_territoriales"], "El comprobante declara 61 universos territoriales", checks)
-    require(v33["perspectivas"] == len(roles) and v33["propositos"] == len(goals), "El comprobante coincide con los controles visibles", checks)
+    v34 = audit["centro_decisiones_v34"]
+    require(expected_scopes == 61 == v34["universos_territoriales"], "El comprobante declara 61 universos territoriales", checks)
+    require(v34["perspectivas"] == len(roles) and v34["propositos"] == len(goals), "El comprobante coincide con los controles visibles", checks)
 
     output = {
         "estado": "correcto",
         "fecha_validacion": date(2026, 7, 16).isoformat(),
-        "version": "V33",
+        "version": "V34",
         "resumen": {
             "perspectivas": len(roles),
             "propositos": len(goals),
@@ -97,7 +97,7 @@ def main() -> None:
             "La mesa de trabajo usa almacenamiento local y no es un repositorio institucional compartido.",
         ],
     }
-    target = PUBLIC / "verificacion-centro-v33.json"
+    target = PUBLIC / "verificacion-centro-v34.json"
     target.write_text(json.dumps(output, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(output["resumen"], ensure_ascii=False, indent=2))
 

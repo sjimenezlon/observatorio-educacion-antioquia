@@ -1,20 +1,20 @@
 {
   "meta": {
     "title": "Fuentes vivas de educación en Antioquia",
-    "version": "V33",
+    "version": "V34",
     "research_cut": "2026-07-16",
     "method": "Curaduría de fuentes primarias y observatorios reconocidos; cada cifra conserva periodo, territorio, universo, tipo de evidencia, uso y cautela.",
     "latest_comparable_higher_ed_cut": "2024-II",
     "next_expected_release": "SNIES 2025 · agregado nacional publicado; base departamental consolidada pendiente"
   },
   "summary": {
-    "sources": 20,
-    "official_sources": 16,
+    "sources": 26,
+    "official_sources": 22,
     "observatory_sources": 4,
-    "indicators": 43,
+    "indicators": 45,
     "evidence": {
       "derivada": 7,
-      "directa": 28,
+      "directa": 30,
       "reportada": 8
     }
   },
@@ -278,6 +278,84 @@
       "url": "https://www.antioquiacomovamos.org/wp-content/uploads/2025/09/20250911_ICV-2024.pdf",
       "role": "Contraste analítico de MEN, DANE, ICFES, SNIES y LEA; no reemplaza las bases primarias.",
       "refresh": "Anual"
+    },
+    {
+      "id": "sapiencia-matricula-cero-2026-2",
+      "institution": "Sapiencia · Distrito de Medellín",
+      "title": "Matrícula Cero 2026-2",
+      "source_type": "oficial",
+      "publication_date": "2026-07",
+      "data_cut": "Convocatoria 2026-2",
+      "territory": "Medellín",
+      "level": "Pregrado",
+      "url": "https://sapiencia.gov.co/matricula-cero/",
+      "role": "Documenta calendario, financiación, requisitos, impedimentos e IES elegibles.",
+      "refresh": "Semestral"
+    },
+    {
+      "id": "sapiencia-pregrados-2026-2",
+      "institution": "Sapiencia · Distrito de Medellín",
+      "title": "Fondos Sapiencia para pregrado",
+      "source_type": "oficial",
+      "publication_date": "2026",
+      "data_cut": "Preselección y legalización 2026-2",
+      "territory": "Medellín y Valle de Aburrá según reglamento",
+      "level": "Pregrado",
+      "url": "https://sapiencia.gov.co/fondos-sapiencia/pregrados/",
+      "role": "Distingue créditos condonables y publica la fase vigente de la convocatoria.",
+      "refresh": "Semestral"
+    },
+    {
+      "id": "sapiencia-posgrados-2026-2",
+      "institution": "Sapiencia · Distrito de Medellín",
+      "title": "Fondo Sapiencia Posgrados Nacionales",
+      "source_type": "oficial",
+      "publication_date": "2026",
+      "data_cut": "Preselección y legalización 2026-2",
+      "territory": "Medellín",
+      "level": "Posgrado",
+      "url": "https://sapiencia.gov.co/fondos-sapiencia/posgrados_nacionales/",
+      "role": "Documenta cofinanciación, preselección y legalización de posgrados nacionales.",
+      "refresh": "Semestral"
+    },
+    {
+      "id": "icetex-pregrado-2026-2",
+      "institution": "ICETEX",
+      "title": "Calendario de crédito de pregrado 2026-2",
+      "source_type": "oficial",
+      "publication_date": "2026-06-30",
+      "data_cut": "Convocatoria 2026-2",
+      "territory": "Colombia",
+      "level": "Pregrado",
+      "url": "https://web.icetex.gov.co/calendario-de-pregrado",
+      "role": "Permite separar líneas de crédito, fechas, documentos y resultados.",
+      "refresh": "Semestral"
+    },
+    {
+      "id": "men-gratuidad-2026",
+      "institution": "Ministerio de Educación Nacional",
+      "title": "Política de Gratuidad Puedo Estudiar",
+      "source_type": "oficial",
+      "publication_date": "2026-06-20",
+      "data_cut": "Información vigente 2026",
+      "territory": "Colombia",
+      "level": "Pregrado público",
+      "url": "https://www.mineducacion.gov.co/portal//419532:Informacion-de-Interes-Politica-de-Gratuidad",
+      "role": "Aclara elegibilidad y la ruta de acceso a gratuidad mediante matrícula en IES públicas.",
+      "refresh": "Según cambios normativos"
+    },
+    {
+      "id": "gob-oportunidades-juventud-2026",
+      "institution": "Gobernación de Antioquia",
+      "title": "Directorio Oportunidades Juventud",
+      "source_type": "oficial",
+      "publication_date": "2026-06",
+      "data_cut": "Directorio de junio de 2026",
+      "territory": "Antioquia y oportunidades externas",
+      "level": "Formación, becas, convocatorias y empleo",
+      "url": "https://www.antioquia.gov.co/index.php/oportunidades-juventud/oportunidades-juventud-junio-2026",
+      "role": "Amplía el radar de convocatorias y conserva la responsabilidad de cada promotor.",
+      "refresh": "Mensual o periódico"
     }
   ],
   "indicators": [
@@ -968,6 +1046,38 @@
       "evidence": "directa",
       "decision_use": "Contrastar recursos, cobertura y transición efectiva posterior.",
       "caveat": "Apropiación inicial, no ejecución ni evaluación de impacto."
+    },
+    {
+      "id": "matricula-cero-financing-2026-2",
+      "title": "Cobertura máxima de Matrícula Cero",
+      "value": 100,
+      "display": "Hasta 100 %",
+      "unit": "porcentaje de la liquidación de matrícula",
+      "period": "Convocatoria 2026-2",
+      "level": "Pregrado",
+      "topic": "Financiación",
+      "territory": "Medellín",
+      "universe": "Personas elegibles admitidas o matriculadas en IES públicas con convenio y sede en Medellín",
+      "source_id": "sapiencia-matricula-cero-2026-2",
+      "evidence": "directa",
+      "decision_use": "Identificar una ruta local abierta de financiación y conectarla con admisión y permanencia.",
+      "caveat": "La postulación no garantiza el beneficio; aplican requisitos, impedimentos, validación y disponibilidad de recursos."
+    },
+    {
+      "id": "matricula-cero-minimum-credits-2026-2",
+      "title": "Créditos mínimos de Matrícula Cero",
+      "value": 8,
+      "display": "8",
+      "unit": "créditos",
+      "period": "Convocatoria 2026-2",
+      "level": "Pregrado",
+      "topic": "Permanencia",
+      "territory": "Medellín",
+      "universe": "Postulación y renovación del beneficio, con excepciones reglamentarias",
+      "source_id": "sapiencia-matricula-cero-2026-2",
+      "evidence": "directa",
+      "decision_use": "Orientar la carga académica mínima y prevenir pérdida del beneficio.",
+      "caveat": "La fuente contempla excepciones para ciclos complementarios y los dos últimos semestres; consulte el reglamento completo."
     }
   ],
   "comparability_rules": [
