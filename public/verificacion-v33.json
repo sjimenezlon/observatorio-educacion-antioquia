@@ -1,0 +1,80 @@
+{
+  "meta": {
+    "title": "Verificacion V33 · oportunidades publicas y frescura SNIES",
+    "validated_on": "2026-07-16",
+    "method": "Controles de grano, unicidad, agregacion presupuestal, contratos de interfaz y rotulos de frescura."
+  },
+  "summary": {
+    "status": "correcto",
+    "checks": 12,
+    "errors": 0
+  },
+  "checks": [
+    {
+      "check": "offer_rows",
+      "status": "correcto",
+      "detail": "165 combinaciones sede-institucion-programa"
+    },
+    {
+      "check": "offer_unique_ids",
+      "status": "correcto",
+      "detail": "cero identificadores duplicados"
+    },
+    {
+      "check": "offer_municipalities",
+      "status": "correcto",
+      "detail": "78 municipios homologados desde 82 localidades"
+    },
+    {
+      "check": "offer_institutions",
+      "status": "correcto",
+      "detail": "16 instituciones homologadas"
+    },
+    {
+      "check": "offer_areas",
+      "status": "correcto",
+      "detail": "siete areas suman el total"
+    },
+    {
+      "check": "offer_subregions",
+      "status": "correcto",
+      "detail": "nueve subregiones suman el total"
+    },
+    {
+      "check": "budget_total",
+      "status": "correcto",
+      "detail": "funcionamiento + inversion = presupuesto total"
+    },
+    {
+      "check": "budget_investment",
+      "status": "correcto",
+      "detail": "rubros de inversion suman la apropiacion de inversion"
+    },
+    {
+      "check": "source_registry",
+      "status": "correcto",
+      "detail": "20 fuentes y 43 indicadores validados"
+    },
+    {
+      "check": "source_offer_indicators",
+      "status": "correcto",
+      "detail": "oferta y presupuesto presentes en Fuentes Vivas"
+    },
+    {
+      "check": "ui_contract",
+      "status": "correcto",
+      "detail": "buscador y fuente publica conectados"
+    },
+    {
+      "check": "snies_freshness",
+      "status": "correcto",
+      "detail": "agregado nacional publicado; base departamental pendiente"
+    }
+  ],
+  "caveats": [
+    "Una combinacion de oferta no es un cupo, una matricula, un beneficiario ni un programa unico.",
+    "El presupuesto es apropiacion inicial y no equivale a ejecucion ni impacto.",
+    "La apertura de grupos depende del minimo de estudiantes y de condiciones logisticas, operativas y academicas.",
+    "SNIES 2025 tiene agregado nacional publicado, pero la base departamental consolidada sigue pendiente al corte."
+  ]
+}

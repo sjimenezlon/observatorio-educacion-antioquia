@@ -6,7 +6,7 @@ Tablero de la educación superior del departamento de Antioquia — **pregrado y
 
 **En línea:** https://materia-gris.vercel.app
 **Espejo:** https://observatorio-educacion-antioquia.vercel.app
-**Autor:** Santiago Jiménez Londoño · Última versión: V32 (julio de 2026)
+**Autor:** Santiago Jiménez Londoño · Última versión: V33 (julio de 2026)
 
 ---
 
@@ -15,13 +15,14 @@ Tablero de la educación superior del departamento de Antioquia — **pregrado y
 | Sección | Pregunta que contesta |
 |---|---|
 | **Sala Ejecutiva** | ¿Qué exige decisión ahora? Tensiones, prioridades y rutas diferenciadas para gobierno, rectoría y planeación |
-| **Centro de Decisiones** | ¿Qué evidencia necesito para actuar? Configura perspectiva, propósito y territorio; genera una lectura, explicita el dato faltante y produce un brief |
+| **Centro de Decisiones** | ¿Qué evidencia necesito para actuar? Configura perspectiva, propósito y territorio; incluye una ruta de becas y oferta pública, explicita el dato faltante y produce un brief |
 | **Trayectorias y retorno** | ¿Dónde se rompe la oportunidad? Conecta aspiración, acceso, permanencia, aprendizaje, graduación y vínculo laboral sin fingir una cohorte única |
-| **Fuentes vivas** | ¿Qué sabemos hoy y con qué alcance? 13 fuentes y 23 indicadores con corte, universo, uso decisional y cautela |
+| **Fuentes vivas** | ¿Qué sabemos hoy y con qué alcance? 20 fuentes y 43 indicadores con corte, universo, uso decisional y cautela |
 | **Panorama** | ¿Cómo evolucionó la matrícula 2018-2024 por nivel, sector y modalidad? |
 | **Instituciones** | ¿Quién forma a Antioquia? 73 IES, comparador de hasta 3, docentes y radar de cifras 2025-2026 autorreportadas |
 | **IES del Distrito** | ¿Cómo se articulan ITM, Pascual Bravo y Colmayor? Matrícula e indicadores oficiales 2026-1, oferta 2026-2, SNIES, finanzas y perfiles institucionales |
 | **Territorio** | ¿Dónde llega la oferta? Mapa municipal interactivo y comparador sincronizado de razón de oferta, presencia municipal y peso TyT |
+| **Oportunidades públicas** | ¿Qué becas y programas públicos hay cerca? 165 combinaciones de oferta de la Corporación Gilberto Echeverri en 78 municipios, con filtros y fuentes |
 | **Modo Decisión** | ¿Cómo reducir opciones? Cruza territorio, nivel, modalidad y área sin fabricar un ranking de “mejores” programas |
 | **Producto comparado** | ¿Qué aprende MaterIA de OTE, College Scorecard, Discover Uni, Mi Futuro y Our World in Data? Matriz sin puntuación total y adopciones V27 |
 | **Oferta** | ¿Qué se puede estudiar? 2.107 programas con explorador filtrable |
@@ -56,7 +57,7 @@ scripts/
   scrapear_ies_distritales.py # captura catálogos y construye el corte de las tres IES del Distrito
 public/
   index.html             # tablero completo (HTML+JS vanilla, SVG a mano, sin dependencias)
-  og.png                 # tarjeta social de MaterIA Gris V32
+  og.png                 # tarjeta social de MaterIA Gris
   ies/                   # perfiles V29 de ITM, Pascual Bravo y Colmayor
   datos.js               # datos agregados (generado — no editar a mano)
   datos.json             # mismo contenido, para reutilizar
@@ -65,10 +66,12 @@ public/
   auditoria-cifras.json  # comprobante público de la última auditoría del atlas
   verificacion-v25.json  # controles reproducibles de la Sala Ejecutiva y sus cortes
   verificacion-v26.json  # seis etapas, fórmulas, jurisdicciones y límites de Trayectorias
-  verificacion-v32.json  # contratos, sumas y controles del Centro de Decisiones
+  verificacion-v33.json  # controles de oportunidades públicas, presupuesto y frescura SNIES
+  verificacion-centro-v33.json # contratos, sumas y controles del Centro de Decisiones
   comparativo-producto.json # referentes, escala, capacidades, fuentes y adopciones V27
   ies-distritales.json   # corte 2026-1, oferta, matrícula, finanzas, fuentes y límites del capítulo V30
-  fuentes-antioquia.json # 13 fuentes y 23 indicadores trazables del registro V31
+  fuentes-antioquia.json # 20 fuentes y 43 indicadores trazables del registro V33
+  oferta-gilberto-echeverri.json # 165 combinaciones públicas de oferta, presupuesto y fuentes CGEM
 data/                    # insumos crudos — NO versionados (ver .gitignore)
 ```
 
@@ -82,7 +85,9 @@ python3 scripts/procesar.py                 # regenera public/datos.json y publi
 python3 scripts/auditar_atlas.py            # debe terminar con "estado": "correcto"
 python3 scripts/scrapear_ies_distritales.py # refresca catálogos y comprobante distrital
 python3 scripts/actualizar_fuentes_antioquia.py # valida y regenera el registro de fuentes vivas
-python3 scripts/validar_centro_decisiones.py # comprueba contratos territoriales y cifras V32
+python3 scripts/actualizar_oferta_gilberto_echeverri.py # descarga, estructura y valida la oferta pública CGEM
+python3 scripts/validar_oportunidades.py # controla grano, presupuesto, interfaz y frescura SNIES
+python3 scripts/validar_centro_decisiones.py # comprueba contratos territoriales y cifras V33
 vercel --prod                               # despliegue (prebuilt, sin build step)
 ```
 
@@ -135,25 +140,26 @@ Cuando el MEN publique la vigencia siguiente (histórico: hacia julio de cada a�
 10. **Trayectorias no es un embudo longitudinal**: inscripciones y primer curso son registros SNIES 2024; Saber Pro corresponde a evaluados 2025; OLE observa cotización formal de graduados 2022; permanencia y graduación son referencias nacionales. Cada etapa conserva universo, jurisdicción y corte, y nunca se multiplican sus porcentajes.
 11. **El comparativo de producto no es un ranking**: observa capacidades públicas al 15 de julio de 2026 con una escala editorial de 0 a 3, pero no suma puntos. “No observada” significa que no apareció en las fuentes públicas revisadas, no que una funcionalidad privada sea imposible.
 12. **El sistema distrital tiene cinco universos**: el Plan Indicativo consolida matrícula e indicadores al 28 de febrero de 2026; la convocatoria 2026-2 informa programas y cupos abiertos; los catálogos web muestran páginas visibles; el SNIES 2024 permite la comparación homogénea; los estados financieros tienen cortes propios. Programa acreditado vigente, entrada web y registro SNIES no son sinónimos. La variación frente a 2025-2 es semestral, no anual. Presupuesto, recaudo y resultado contable tampoco se restan entre sí.
-13. **Actualidad no significa comparabilidad**: V31 conserva SNIES 2024-II como último corte comparable disponible al 15 de julio de 2026 y presenta los datos 2025–2026 como señales administrativas, de programa o de contexto. Beneficios, participantes, matrícula, sedes, inversión y resultados no se suman ni se usan como sinónimos.
-14. **El Centro de Decisiones no automatiza la política**: V32 aplica reglas transparentes para orientar una pregunta hacia uno de cinco propósitos. Las cifras provienen de capítulos ya publicados; la recomendación está rotulada como lectura editorial y cada salida declara el dato que falta.
+13. **Actualidad no significa comparabilidad**: V33 conserva SNIES 2024-II como último corte departamental comparable disponible al 16 de julio de 2026. El agregado nacional 2025 ya fue publicado, pero no reemplaza la base por departamento. Beneficios, participantes, matrícula, sedes, inversión y resultados no se suman ni se usan como sinónimos.
+14. **El Centro de Decisiones no automatiza la política**: V33 aplica reglas transparentes para orientar una pregunta hacia uno de seis propósitos, incluida la conexión con becas y oferta pública. Las cifras provienen de capítulos publicados; la recomendación está rotulada como lectura editorial y cada salida declara el dato que falta.
+15. **Oferta pública no es matrícula**: las 165 filas de la Corporación Gilberto Echeverri son combinaciones de sede, institución y programa en 78 municipios. No representan cupos, beneficiarios, programas únicos ni grupos efectivamente abiertos.
 
-### Centro de Decisiones V32
+### Centro de Decisiones V33
 
 - **Cuatro perspectivas**: gobierno territorial, rectoría y consejo, planeación académica, comunidad e investigación.
-- **Cinco propósitos generales**: acceso territorial, portafolio, permanencia, calidad y sostenibilidad.
+- **Seis propósitos generales**: acceso territorial, oportunidades públicas, portafolio, permanencia, calidad y sostenibilidad.
 - **61 universos seleccionables**: Antioquia, nueve subregiones y 51 municipios con oferta activa en SNIES 2024-II.
 - **Mesa de trabajo local**: conserva hasta seis decisiones en el dispositivo, sin transmitir preguntas o selecciones.
 - **Productos reutilizables**: enlace compartible, brief TXT individual y exportación de toda la mesa.
 - **Navegación simplificada**: cinco accesos principales y un panel de capítulos que mantiene toda la profundidad del producto.
 
-### Fuentes vivas V31
+### Fuentes vivas V33
 
-- **13 fuentes revisadas**: nueve oficiales y cuatro observatorios o centros de análisis reconocidos.
-- **23 indicadores sistematizados**: 14 publicaciones directas, cuatro cálculos reproducibles y cinco cifras reportadas.
+- **20 fuentes revisadas**: 16 oficiales y cuatro observatorios o centros de análisis reconocidos.
+- **43 indicadores sistematizados**: 28 publicaciones directas, siete cálculos reproducibles y ocho cifras reportadas.
 - **Metadatos obligatorios**: cada cifra declara periodo, nivel, tema, territorio, universo, fuente, uso para decisiones y limitación.
 - **Validación automática**: cero identificadores duplicados, referencias rotas dentro del registro, universos faltantes o cautelas vacías.
-- **Próximo hito**: SNIES prevé publicar la vigencia 2025 entre el 27 y el 31 de julio de 2026; el registro no anticipa esos resultados.
+- **Próximo hito**: el agregado nacional SNIES 2025 fue publicado el 15 de julio de 2026; falta la base consolidada por departamento para recalcular Antioquia.
 - **Reproducción**: `python3 scripts/actualizar_fuentes_antioquia.py` genera `public/fuentes-antioquia.json`.
 
 ### Sistema público distrital V30
@@ -184,7 +190,7 @@ Cuando el MEN publique la vigencia siguiente (histórico: hacia julio de cada a�
 
 ## Ruta de potenciación
 
-- **Actualización SNIES 2025** entre el 27 y el 31 de julio de 2026, según el cronograma oficial del MEN.
+- **Base departamental SNIES 2025** cuando el MEN publique el consolidado descargable; el resultado nacional agregado ya está disponible.
 - **Modo decisión** que combine territorio, costo, modalidad, calidad y resultados laborales sin producir un ranking absoluto.
 - **Asistente explicable** sobre el corpus publicado: toda respuesta deberá mostrar fuente, corte, cálculo y limitación, sin perfilar estudiantes.
 - **Alertas de frescura** para detectar nuevas bases, resoluciones de acreditación y cambios en informes institucionales.
