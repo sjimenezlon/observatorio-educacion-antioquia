@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Valida contratos de datos y controles del Centro de Decisiones V32."""
+"""Valida contratos de datos y controles del Centro de Decisiones V33."""
 
 from __future__ import annotations
 
@@ -33,7 +33,7 @@ def main() -> None:
     roles = set(re.findall(r'data-role="([^"]+)"', center))
     goals = set(re.findall(r'data-goal="([^"]+)"', center))
     require(roles == {"gobierno", "rectoria", "planeacion", "comunidad"}, "Hay cuatro perspectivas únicas", checks)
-    require(goals == {"ampliar", "portafolio", "permanencia", "calidad", "sostenibilidad"}, "Hay cinco propósitos únicos", checks)
+    require(goals == {"ampliar", "oportunidades", "portafolio", "permanencia", "calidad", "sostenibilidad"}, "Hay seis propósitos únicos", checks)
 
     subregions = data["subregiones"]["agg"]
     municipalities = data["municipios"]
@@ -71,14 +71,14 @@ def main() -> None:
     require(chapter_targets <= section_ids, "Todos los enlaces del panel apuntan a capítulos existentes", checks)
 
     expected_scopes = 1 + len(subregion_names) + len(municipalities)
-    v32 = audit["centro_decisiones_v32"]
-    require(expected_scopes == 61 == v32["universos_territoriales"], "El comprobante declara 61 universos territoriales", checks)
-    require(v32["perspectivas"] == len(roles) and v32["propositos"] == len(goals), "El comprobante coincide con los controles visibles", checks)
+    v33 = audit["centro_decisiones_v33"]
+    require(expected_scopes == 61 == v33["universos_territoriales"], "El comprobante declara 61 universos territoriales", checks)
+    require(v33["perspectivas"] == len(roles) and v33["propositos"] == len(goals), "El comprobante coincide con los controles visibles", checks)
 
     output = {
         "estado": "correcto",
-        "fecha_validacion": date(2026, 7, 15).isoformat(),
-        "version": "V32",
+        "fecha_validacion": date(2026, 7, 16).isoformat(),
+        "version": "V33",
         "resumen": {
             "perspectivas": len(roles),
             "propositos": len(goals),
@@ -97,7 +97,7 @@ def main() -> None:
             "La mesa de trabajo usa almacenamiento local y no es un repositorio institucional compartido.",
         ],
     }
-    target = PUBLIC / "verificacion-v32.json"
+    target = PUBLIC / "verificacion-centro-v33.json"
     target.write_text(json.dumps(output, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(output["resumen"], ensure_ascii=False, indent=2))
 
