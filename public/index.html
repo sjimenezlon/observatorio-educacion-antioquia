@@ -258,9 +258,15 @@ html.light .card{box-shadow:0 1px 2px rgba(20,20,15,.03),0 8px 22px rgba(20,20,1
 /* ---------- mapa ---------- */
 .map-flex{display:grid;grid-template-columns:1.6fr 1fr;gap:20px;align-items:start}
 @media(max-width:900px){.map-flex{grid-template-columns:1fr}}
-.map-box{position:relative;background:var(--page);border:1px solid var(--border);border-radius:12px;overflow:hidden}
+.map-box{position:relative;background:
+  radial-gradient(circle at 48% 48%,rgba(107,166,255,.10),transparent 42%),
+  linear-gradient(155deg,rgba(9,16,28,.98),rgba(5,10,18,.98));border:1px solid var(--border);border-radius:12px;overflow:hidden}
 .map-box svg{display:block;width:100%;height:auto;touch-action:none;cursor:grab}
 .map-box svg.panning{cursor:grabbing}
+.antioquia-silhouette{fill:rgba(107,166,255,.10);stroke:rgba(126,183,255,.62);stroke-width:2.2;vector-effect:non-scaling-stroke;filter:drop-shadow(0 0 9px rgba(79,145,255,.72));pointer-events:none}
+.map-outline-label{position:absolute;z-index:3;left:12px;top:12px;display:grid;gap:2px;padding:8px 10px;border:1px solid rgba(126,183,255,.24);border-radius:10px;background:rgba(5,11,20,.78);backdrop-filter:blur(12px);pointer-events:none}
+.map-outline-label b{color:#eaf3ff;font:650 12px/1 'Fraunces',Georgia,serif;letter-spacing:.08em;text-transform:uppercase}
+.map-outline-label span{color:#8fa7c6;font-size:8px;letter-spacing:.07em;text-transform:uppercase}
 .map-zoom{position:absolute;top:10px;right:10px;display:flex;flex-direction:column;gap:6px}
 .map-zoom button{width:44px;height:44px;border-radius:8px;background:var(--surface-2);border:1px solid var(--border);color:var(--ink);font-size:16px;cursor:pointer;line-height:1}
 .map-zoom button:hover{background:var(--baseline)}
@@ -277,6 +283,9 @@ html.light .card{box-shadow:0 1px 2px rgba(20,20,15,.03),0 8px 22px rgba(20,20,1
 .mpanel .row{display:flex;justify-content:space-between;padding:7px 0;border-top:1px solid var(--grid);font-size:13.5px}
 .mpanel .row:first-of-type{border-top:none}
 .mpanel .row b{color:var(--ink);font-variant-numeric:tabular-nums}
+html.light .map-box{background:radial-gradient(circle at 48% 48%,rgba(43,102,194,.09),transparent 42%),linear-gradient(155deg,#f7f9fc,#edf3f9)}
+html.light .map-outline-label{background:rgba(255,255,255,.88);border-color:rgba(43,102,194,.20)}
+html.light .map-outline-label b{color:#17365f}html.light .map-outline-label span{color:#58708e}
 .atlas-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:16px}
 .atlas-kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:14px}
 .atlas-kpi{background:var(--surface-2);border:1px solid var(--border);border-radius:10px;padding:10px 12px;color:var(--muted);font-size:11px;line-height:1.35}
@@ -419,6 +428,16 @@ h1{font-size:clamp(38px,5.3vw,66px);line-height:1.01;letter-spacing:-.035em;max-
 .core-signal b{display:block;color:var(--ink);font-size:14px;font-variant-numeric:tabular-nums;white-space:nowrap}
 .core-signal span{display:block;color:var(--muted);font-size:9.5px;line-height:1.25;margin-top:2px}
 @keyframes core-spin{to{transform:rotate(360deg)}}
+.brand-story{position:relative;margin:clamp(34px,5vw,58px) 0 0;border:1px solid rgba(151,180,222,.18);border-radius:24px;overflow:hidden;background:#050a13;box-shadow:0 30px 80px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.04)}
+.brand-story::after{content:"";position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 0 1px rgba(255,255,255,.025),inset 0 -90px 100px rgba(2,6,12,.20)}
+.brand-story-link{position:relative;display:block;color:inherit}
+.brand-story-link:hover{text-decoration:none}
+.brand-story picture{display:block}
+.brand-story img{display:block;width:100%;height:auto;aspect-ratio:1672/941;object-fit:contain;background:#050a13}
+.brand-story-caption{position:absolute;z-index:2;left:clamp(14px,2.6vw,28px);right:clamp(14px,2.6vw,28px);bottom:clamp(14px,2.6vw,25px);display:flex;align-items:end;justify-content:space-between;gap:18px}
+.brand-story-caption span{max-width:490px;padding:8px 11px;border:1px solid rgba(151,180,222,.18);border-radius:10px;background:rgba(5,10,19,.76);backdrop-filter:blur(12px);color:#b8c6da;font-size:10.5px;line-height:1.45}
+.brand-story-cta{min-height:44px;display:inline-flex;align-items:center;padding:0 14px;border:1px solid rgba(107,166,255,.34);border-radius:11px;background:rgba(29,71,132,.76);backdrop-filter:blur(12px);color:#fff;font-size:11px;font-weight:700;white-space:nowrap}
+.brand-story-cta:hover{text-decoration:none;background:rgba(43,91,160,.88)}
 .journeys{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:clamp(36px,5vw,58px) 0 20px}
 .journey{position:relative;min-height:114px;display:flex;flex-direction:column;justify-content:space-between;gap:12px;padding:15px 16px;border-radius:15px;border:1px solid var(--border);background:linear-gradient(145deg,rgba(17,24,35,.92),rgba(12,18,28,.72));color:var(--ink-2);overflow:hidden;transition:transform .25s,border-color .25s,box-shadow .25s}
 .journey::after{content:"";position:absolute;width:80px;height:80px;border-radius:50%;right:-34px;bottom:-42px;background:var(--journey-color,rgba(107,166,255,.18));filter:blur(4px)}
@@ -598,7 +617,7 @@ html.light .exec-lens,html.light .exec-sourcebar,html.light .section-context{bac
 @media(max-width:980px){.executive-grid{grid-template-columns:1fr}.exec-lens{grid-template-columns:repeat(3,1fr)}.exec-lens-item:nth-child(4){border-left:none;border-top:1px solid rgba(151,180,222,.11)}.exec-lens-item:nth-child(5){border-top:1px solid rgba(151,180,222,.11)}}
 @media(max-width:720px){.executive-intro,.exec-role-head{align-items:flex-start;flex-direction:column}.exec-asof{text-align:left}.exec-metrics,.exec-actions{grid-template-columns:1fr}.exec-metric{min-height:194px}.exec-lens{grid-template-columns:1fr 1fr}.exec-lens-item{border-top:1px solid rgba(151,180,222,.11)}.exec-lens-item:nth-child(odd){border-left:none}.exec-sourcebar{align-items:flex-start;flex-direction:column}.section-context{margin-top:-6px}}
 @media(max-width:960px){.hero-grid{grid-template-columns:1fr}.ai-core{min-height:360px}.core-orbit{width:215px;height:215px}.core-center{width:126px;height:126px}.journeys{grid-template-columns:1fr 1fr}}
-@media(max-width:640px){nav .wrap{height:58px}.hero-grid{gap:28px}.ai-core{min-height:340px;padding:17px;border-radius:21px}.core-orbit{width:200px;height:200px}.core-center{width:118px;height:118px}.core-center b{font-size:23px}.core-signals{gap:5px}.core-signal{padding:8px}.journeys{grid-template-columns:1fr;margin-top:32px}.journey{min-height:96px}.hero-actions{display:grid;grid-template-columns:1fr}.hero-btn{width:100%}.ai-guide{left:12px;bottom:12px;width:calc(100vw - 24px)}#arriba{bottom:72px;right:12px}.card{border-radius:15px}}
+@media(max-width:640px){nav .wrap{height:58px}.hero-grid{gap:28px}.ai-core{min-height:340px;padding:17px;border-radius:21px}.core-orbit{width:200px;height:200px}.core-center{width:118px;height:118px}.core-center b{font-size:23px}.core-signals{gap:5px}.core-signal{padding:8px}.brand-story{border-radius:17px}.brand-story-caption{position:static;align-items:stretch;padding:12px;background:#09111d}.brand-story-caption span{display:none}.brand-story-cta{justify-content:center;width:100%}.journeys{grid-template-columns:1fr;margin-top:32px}.journey{min-height:96px}.hero-actions{display:grid;grid-template-columns:1fr}.hero-btn{width:100%}.ai-guide{left:12px;bottom:12px;width:calc(100vw - 24px)}#arriba{bottom:72px;right:12px}.card{border-radius:15px}}
 @media(prefers-reduced-motion:reduce){.core-ring{animation:none}.hero-btn,.journey,.ai-guide-toggle .chev{transition:none}}
 /* ---------- Trayectorias y retorno · V26 ---------- */
 nav a.nav-path{color:#d9d1ff;border:1px solid rgba(158,140,255,.20);background:linear-gradient(135deg,rgba(158,140,255,.10),rgba(107,166,255,.07))}
@@ -788,6 +807,15 @@ html.light .nav-chapters{background:rgba(247,249,252,.98)}html.light .dc-builder
       </div>
     </aside>
   </div>
+  <figure class="brand-story" aria-labelledby="brand-story-title">
+    <a class="brand-story-link" href="#territorio" aria-label="Explorar el mapa territorial de Antioquia">
+      <picture><source srcset="og-card.webp" type="image/webp"><img src="og.png" width="1672" height="941" loading="eager" fetchpriority="high" decoding="async" alt="MaterIA Gris: red de decisiones educativas sobre el croquis de Antioquia"></picture>
+    </a>
+    <figcaption class="brand-story-caption" id="brand-story-title">
+      <span>Antioquia entendida como una red: territorio, instituciones, conocimiento y decisiones conectadas por evidencia.</span>
+      <a class="brand-story-cta" href="#territorio">Explorar el mapa territorial →</a>
+    </figcaption>
+  </figure>
   <div class="journeys" aria-label="Recorridos recomendados">
     <a class="journey" href="#centro" style="--journey-color:rgba(107,166,255,.24)"><small>Quiero decidir</small><b>¿Qué evidencia necesito para actuar?</b><span>Rol, propósito, territorio y brief →</span></a>
     <a class="journey" href="#instituciones" style="--journey-color:rgba(62,214,170,.20)"><small>Quiero comparar</small><b>¿Qué institución se ajusta mejor?</b><span>Tamaño, calidad y resultados →</span></a>
@@ -1270,7 +1298,7 @@ html.light .nav-chapters{background:rgba(247,249,252,.98)}html.light .dc-builder
         <select id="map-area" aria-label="Área de conocimiento"></select>
       </div>
       <div class="map-flex">
-        <div class="map-box" id="mapa"></div>
+        <div class="map-box" id="mapa"><div class="map-outline-label" aria-hidden="true"><b>Antioquia</b><span>Croquis departamental · 125 municipios</span></div></div>
         <aside class="mpanel" id="map-panel" aria-live="polite"></aside>
       </div>
       <div class="map-legend" id="map-legend"></div>
@@ -3381,6 +3409,8 @@ const REDES_LINKEDIN=[
 
   const box=document.getElementById('mapa');
   const svg=el('svg',{viewBox:`0 0 ${W} ${H}`,role:'img','aria-label':'Mapa de municipios de Antioquia'},box);
+  const gOutline=el('g',{'aria-hidden':'true'},svg);
+  el('path',{d:GEO.features.map(f=>pathOf(f.geometry)).join(''),class:'antioquia-silhouette'},gOutline);
   const gMap=el('g',{},svg);
   let vb={x:0,y:0,w:W,h:H};
   const applyVB=()=>svg.setAttribute('viewBox',`${vb.x} ${vb.y} ${vb.w} ${vb.h}`);
