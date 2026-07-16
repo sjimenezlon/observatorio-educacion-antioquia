@@ -1,7 +1,7 @@
 {
   "estado": "correcto",
   "fecha_auditoria": "2026-07-15",
-  "alcance": "Atlas territorial, Modo Decisión, Sala Ejecutiva, Trayectorias, comparativo de producto, corte oficial 2026-1 del sistema público distrital y registro de fuentes vivas de MaterIA Gris V31",
+  "alcance": "Atlas territorial, Modo Decisión, Sala Ejecutiva, Trayectorias, comparativo de producto, sistema público distrital, fuentes vivas y Centro de Decisiones general de MaterIA Gris V32",
   "fuentes": {
     "snies": {
       "descripcion": "Estudiantes Matriculados 2024, bases consolidadas SNIES–MEN",
@@ -177,6 +177,22 @@
     ],
     "comprobante": "fuentes-antioquia.json",
     "reproduccion": "python3 scripts/actualizar_fuentes_antioquia.py"
+  },
+  "centro_decisiones_v32": {
+    "perspectivas": 4,
+    "propositos": 5,
+    "universos_territoriales": 61,
+    "composicion_territorial": {
+      "departamento": 1,
+      "subregiones": 9,
+      "municipios_con_oferta_activa": 51
+    },
+    "decisiones_guardadas_maximo": 6,
+    "persistencia": "localStorage del dispositivo; las preguntas y selecciones no se envían a un servidor",
+    "intercambio": "enlace con perspectiva, propósito y territorio; brief TXT individual o de toda la mesa",
+    "interpretacion": "Reglas transparentes de palabras clave que seleccionan una ruta temática; no generan cifras ni recomendaciones automáticas",
+    "fuentes": "datos.json, fuentes-antioquia.json y capítulos auditados de MaterIA Gris",
+    "regla": "Cada salida presenta señales, fuente, límite, lectura editorial y dato faltante. No puntúa personas, territorios, IES ni programas."
   },
   "reproduccion": "python3 scripts/auditar_atlas.py"
 }
