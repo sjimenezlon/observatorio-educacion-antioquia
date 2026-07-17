@@ -53,7 +53,7 @@
     {
       "check": "source_registry",
       "status": "correcto",
-      "detail": "41 fuentes y 114 indicadores validados en V36"
+      "detail": "44 fuentes y 147 indicadores validados en V37"
     },
     {
       "check": "source_offer_indicators",

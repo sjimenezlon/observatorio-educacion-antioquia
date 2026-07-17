@@ -13,7 +13,7 @@
     {
       "check": "catalog_scale",
       "status": "correcto",
-      "detail": "64 publicaciones, ocho estudios, 47 indicadores y 312 páginas"
+      "detail": "la línea base V36 permanece dentro del catálogo acumulado"
     },
     {
       "check": "catalog_distribution",
@@ -38,12 +38,12 @@
     {
       "check": "registry_scale",
       "status": "correcto",
-      "detail": "registro V36 de 41 fuentes y 114 indicadores"
+      "detail": "la línea base V36 permanece dentro del registro acumulado"
     },
     {
       "check": "registry_distribution",
       "status": "correcto",
-      "detail": "encuestas separadas de registros y cálculos"
+      "detail": "las 47 encuestas V36 permanecen clasificadas"
     },
     {
       "check": "registry_sources",
@@ -73,7 +73,7 @@
     {
       "check": "audit_contract",
       "status": "correcto",
-      "detail": "auditoría pública sincronizada"
+      "detail": "línea base histórica V36 conservada en la auditoría"
     }
   ],
   "caveats": [

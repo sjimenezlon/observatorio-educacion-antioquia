@@ -6,7 +6,7 @@ Tablero de la educación superior del departamento de Antioquia — **pregrado y
 
 **En línea:** https://materia-gris.vercel.app
 **Espejo:** https://observatorio-educacion-antioquia.vercel.app
-**Autor:** Santiago Jiménez Londoño · Última versión: V36 (julio de 2026)
+**Autor:** Santiago Jiménez Londoño · Última versión: V37 (julio de 2026)
 
 ---
 
@@ -18,8 +18,8 @@ Tablero de la educación superior del departamento de Antioquia — **pregrado y
 | **Sala Ejecutiva** | ¿Qué exige decisión ahora? Tensiones, prioridades y rutas diferenciadas para gobierno, rectoría y planeación |
 | **Centro de Decisiones** | ¿Qué evidencia necesito para actuar? Configura perspectiva, propósito y territorio; conecta personas con oportunidades generales, explicita el dato faltante y produce un brief |
 | **Trayectorias y retorno** | ¿Dónde se rompe la oportunidad? Conecta aspiración, acceso, permanencia, aprendizaje, graduación y vínculo laboral sin fingir una cohorte única |
-| **Sapiencia ODES** | ¿Qué revelan expectativas y experiencias? 64 publicaciones catalogadas, ocho PDF auditados y 47 indicadores de encuesta |
-| **Fuentes vivas** | ¿Qué sabemos hoy y con qué alcance? 41 fuentes y 114 indicadores con corte, universo, uso decisional y cautela |
+| **Sapiencia ODES** | ¿Qué revelan expectativas y experiencias? 113 recursos catalogados, 11 PDF auditados y 80 indicadores de encuesta |
+| **Fuentes vivas** | ¿Qué sabemos hoy y con qué alcance? 44 fuentes y 147 indicadores con corte, universo, uso decisional y cautela |
 | **Panorama** | ¿Cómo evolucionó la matrícula 2018-2024 por nivel, sector y modalidad? |
 | **Instituciones** | ¿Quién forma a Antioquia? 73 IES, comparador de hasta 3, docentes y radar de cifras 2025-2026 autorreportadas |
 | **IES del Distrito** | ¿Cómo se articulan ITM, Pascual Bravo y Colmayor? Matrícula e indicadores oficiales 2026-1, oferta 2026-2, SNIES, finanzas y perfiles institucionales |
@@ -57,7 +57,7 @@ scripts/
   procesar.py            # motor: data/ → public/datos.json + public/datos.js
   auditar_atlas.py       # contrasta el atlas publicado contra los XLSX oficiales
   scrapear_ies_distritales.py # captura catálogos y construye el corte de las tres IES del Distrito
-  scrapear_sapiencia_odes.py # cataloga informes/boletines ODES y verifica ocho PDF
+  scrapear_sapiencia_odes.py # cataloga PDF/tableros ODES y verifica 11 estudios
 public/
   index.html             # tablero completo (HTML+JS vanilla, SVG a mano, sin dependencias)
   og.png                 # tarjeta social de MaterIA Gris
@@ -74,11 +74,12 @@ public/
   verificacion-v34.json  # 16 controles del ecosistema general de oportunidades
   verificacion-v35.json  # fuentes, comparabilidad, nuevas cifras e imagen explicativa
   verificacion-v36.json  # catálogo, PDF, indicadores e interfaz Sapiencia ODES
+  verificacion-v37.json  # expansión a tableros, CLEI, ETDH y resultados de fondos
   verificacion-centro-v34.json # contratos, sumas y controles del Centro de Decisiones
   comparativo-producto.json # referentes, escala, capacidades, fuentes y adopciones V27
   ies-distritales.json   # corte 2026-1, oferta, matrícula, finanzas, fuentes y límites del capítulo V30
-  fuentes-antioquia.json # 41 fuentes y 114 indicadores trazables del registro V36
-  sapiencia-observatorio.json # 64 publicaciones y 47 indicadores de encuesta ODES
+  fuentes-antioquia.json # 44 fuentes y 147 indicadores trazables del registro V37
+  sapiencia-observatorio.json # 113 recursos y 80 indicadores de encuesta ODES
   oportunidades-antioquia.json # 14 rutas oficiales con estado, fecha, fuente y cautela
   oferta-gilberto-echeverri.json # detalle de 165 combinaciones dentro de una de las rutas
 data/                    # insumos crudos — NO versionados (ver .gitignore)
@@ -101,6 +102,7 @@ python3 scripts/validar_oportunidades_generales.py # controla esquema, fuentes, 
 python3 scripts/validar_centro_decisiones.py # comprueba contratos territoriales y cifras V34
 python3 scripts/validar_diagnostico_v35.py # comprueba fuentes, nuevas cifras, comparabilidad e imagen V35
 python3 scripts/validar_sapiencia_v36.py # comprueba catálogo, PDF, indicadores e interfaz V36
+python3 scripts/validar_sapiencia_v37.py # comprueba tableros, nuevos estudios e interfaz V37
 vercel --prod                               # despliegue (prebuilt, sin build step)
 ```
 
@@ -155,7 +157,7 @@ Cuando el MEN publique la vigencia siguiente (histórico: hacia julio de cada a�
 10. **Trayectorias no es un embudo longitudinal**: inscripciones y primer curso son registros SNIES 2024; Saber Pro corresponde a evaluados 2025; OLE observa cotización formal de graduados 2022; permanencia y graduación son referencias nacionales. Cada etapa conserva universo, jurisdicción y corte, y nunca se multiplican sus porcentajes.
 11. **El comparativo de producto no es un ranking**: observa capacidades públicas al 15 de julio de 2026 con una escala editorial de 0 a 3, pero no suma puntos. “No observada” significa que no apareció en las fuentes públicas revisadas, no que una funcionalidad privada sea imposible.
 12. **El sistema distrital tiene cinco universos**: el Plan Indicativo consolida matrícula e indicadores al 28 de febrero de 2026; la convocatoria 2026-2 informa programas y cupos abiertos; los catálogos web muestran páginas visibles; el SNIES 2024 permite la comparación homogénea; los estados financieros tienen cortes propios. Programa acreditado vigente, entrada web y registro SNIES no son sinónimos. La variación frente a 2025-2 es semestral, no anual. Presupuesto, recaudo y resultado contable tampoco se restan entre sí.
-13. **Actualidad no significa comparabilidad**: V36 conserva SNIES 2024-II como último corte departamental comparable disponible al 17 de julio de 2026. El agregado nacional 2025 ya fue publicado, pero no reemplaza la base por departamento. Beneficios, participantes, matrícula, sedes, inversión y resultados no se suman ni se usan como sinónimos.
+13. **Actualidad no significa comparabilidad**: V37 conserva SNIES 2024-II como último corte departamental comparable disponible al 17 de julio de 2026. El agregado nacional 2025 ya fue publicado, pero no reemplaza la base por departamento. Beneficios, participantes, matrícula, sedes, inversión y resultados no se suman ni se usan como sinónimos.
 14. **El Centro de Decisiones no automatiza la política**: V34 aplica reglas transparentes para orientar una pregunta hacia uno de seis propósitos, incluida la conexión con oportunidades generales. Las cifras provienen de capítulos publicados; la recomendación está rotulada como lectura editorial y cada salida declara el dato que falta.
 15. **Oportunidad no es resultado**: oferta, convocatoria, postulación, preselección, legalización, matrícula, renovación y graduación son etapas distintas. El directorio es curado y no exhaustivo; la fuente oficial manda sobre el corte de MaterIA.
 16. **Apoyo no es una cohorte**: orientación, PAE, transporte, permanencia institucional, Matrícula Cero y renovación de créditos pueden observar a las mismas personas en momentos distintos. MaterIA los presenta como capas del sistema y nunca los suma para fabricar un total.
@@ -180,12 +182,13 @@ Cuando el MEN publique la vigencia siguiente (histórico: hacia julio de cada a�
 - **Salida reutilizable**: búsqueda compartible y CSV filtrado con fuente y cautela por fila.
 - **Reproducción**: `python3 scripts/actualizar_oportunidades_antioquia.py` genera `public/oportunidades-antioquia.json`.
 
-### Sapiencia ODES y Fuentes vivas V36
+### Sapiencia ODES y Fuentes vivas V37
 
-- **41 fuentes revisadas**: 29 oficiales y 12 observatorios o estudios auditados.
-- **114 indicadores sistematizados**: 50 publicaciones directas, siete cálculos reproducibles, diez cifras reportadas y 47 resultados de encuesta.
-- **64 publicaciones ODES catalogadas**: 32 informes y 32 boletines enlazados a sus PDF públicos.
-- **Ocho estudios auditados**: 312 páginas extraídas y contrastadas con huella SHA-256 y tokens de verificación.
+- **44 fuentes revisadas**: 29 oficiales y 15 observatorios o estudios auditados.
+- **147 indicadores sistematizados**: 50 publicaciones directas, siete cálculos reproducibles, diez cifras reportadas y 80 resultados de encuesta.
+- **113 recursos ODES catalogados**: 32 informes, 32 boletines, 18 tableros de estudios y 31 tableros de cifras.
+- **11 estudios auditados**: 411 páginas extraídas y contrastadas con huella SHA-256 y tokens de verificación.
+- **Tres nuevas lentes**: estudiantes CLEI, financiación ETDH y resultados laborales de beneficiarios de fondos de pregrado.
 - **Explorador metodológico**: cada estudio declara muestra, método, corte y cautela antes de mostrar resultados.
 - **22 indicadores nuevos**: tránsito inmediato, orientación, transformación de la media, permanencia, financiación ejecutada, PAE, transporte, inclusión, infraestructura y referencias SPADIES.
 - **Imagen explicativa integrada**: presenta a MaterIA como conexión entre datos verificados, contexto territorial y decisiones con evidencia sobre el croquis de Antioquia.

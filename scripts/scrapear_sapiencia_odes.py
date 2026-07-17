@@ -30,6 +30,10 @@ COLLECTIONS = {
     "informe": "https://sapiencia.gov.co/observatorio-informes/",
     "boletín": "https://sapiencia.gov.co/observatorio-boletines/",
 }
+DASHBOARD_COLLECTIONS = {
+    "tablero_estudio": "https://sapiencia.gov.co/observatorio-estudios-tableros/",
+    "tablero_cifras": "https://sapiencia.gov.co/observatorio-educacion-superior-en-cifras/",
+}
 
 
 def metric(
@@ -241,6 +245,90 @@ STUDIES = [
             metric("odes-digital-violence-men-2023", "Hombres que reportan haber sufrido violencia digital", 11.8, "11,8 %", "porcentaje", "Bienestar digital", "Hombres participantes del sondeo", "Comparar experiencias declaradas y orientar prevención.", "Autorreporte en sondeo no representativo; no es prevalencia poblacional."),
         ],
     },
+    {
+        "id": "odes-expectativas-clei-2023",
+        "title": "Expectativas de estudiantes CLEI 5 y 6 para continuar a la educación postsecundaria",
+        "url": "https://sapiencia.gov.co/wp-content/uploads/2023/12/expectativasclei_2023.pdf",
+        "publication_date": "2023-12",
+        "data_cut": "Septiembre de 2023",
+        "period": "2023",
+        "level": "Transición media–superior · CLEI",
+        "territory": "Medellín",
+        "universe": "363 estudiantes de CLEI 5 y 6 de instituciones oficiales, privadas y de cobertura",
+        "method": "Encuesta autodiligenciable en aplicativo web",
+        "sample": 363,
+        "verification_tokens": ["363 personas", "78,79%", "67,77%", "15,70%", "41,36%", "35,24%", "57,30%", "72,18 %"],
+        "caveat": "Muestra de estudiantes CLEI participantes; expectativas, preferencias y barreras declaradas no equivalen a solicitudes, matrícula o tránsito observado.",
+        "indicators": [
+            metric("odes-clei-internet-home-2023", "Estudiantes CLEI con acceso a internet en casa", 67.77, "67,77 %", "porcentaje", "Brecha digital", "363 estudiantes CLEI encuestados", "Dimensionar necesidades de conectividad para acompañamiento flexible.", "Autorreporte de acceso; no mide velocidad, estabilidad o dispositivo disponible."),
+            metric("odes-clei-no-device-2023", "Estudiantes CLEI sin los dispositivos consultados", 15.70, "15,70 %", "porcentaje", "Brecha digital", "363 estudiantes CLEI encuestados", "Evitar que la orientación y postulación dependan solo de canales digitales.", "Autorreporte; la lista de dispositivos no agota todas las formas de acceso."),
+            metric("odes-clei-apply-2023", "Estudiantes CLEI que piensan presentar solicitudes de admisión", 78.79, "78,79 %", "porcentaje", "Expectativas", "363 estudiantes CLEI encuestados", "Diseñar rutas de orientación y postulación para educación de adultos.", "Intención declarada, no solicitud efectiva ni ingreso."),
+            metric("odes-clei-university-2023", "Preferencia CLEI por carrera universitaria", 42.66, "42,66 %", "porcentaje", "Preferencias", "Estudiantes CLEI con preferencia de nivel", "Contrastar aspiraciones con opciones técnicas, tecnológicas y universitarias.", "Preferencia declarada; no predice matrícula."),
+            metric("odes-clei-technical-2023", "Preferencia CLEI por formación técnica profesional", 23.78, "23,78 %", "porcentaje", "Preferencias", "Estudiantes CLEI con preferencia de nivel", "Visibilizar la demanda potencial de trayectorias técnicas.", "Preferencia declarada; no equivale a demanda efectiva."),
+            metric("odes-clei-work-tuition-2023", "Estudiantes CLEI que prevén pagar matrícula con empleo", 36.52, "36,52 %", "porcentaje", "Financiación", "Estudiantes CLEI que proyectan formas de pago", "Diseñar horarios y apoyos compatibles con el trabajo.", "Fuente prevista de pago; no es gasto observado ni empleo verificado."),
+            metric("odes-clei-work-sustenance-2023", "Estudiantes CLEI que prevén financiar sostenimiento con empleo", 56.86, "56,86 %", "porcentaje", "Sostenimiento", "Estudiantes CLEI que proyectan formas de sostenimiento", "Incorporar tiempo, transporte y alimentación a la política de acceso.", "Expectativa de financiación, no ingreso laboral medido."),
+            metric("odes-clei-work-barrier-2023", "Necesidad de trabajar como razón para no solicitar admisión", 41.36, "41,36 %", "porcentaje", "Barreras", "Subconjunto CLEI que no presentaría solicitudes", "Priorizar modalidades y calendarios compatibles con responsabilidades laborales.", "Porcentaje del subconjunto que no solicitaría admisión, no de toda la muestra."),
+            metric("odes-clei-money-barrier-2023", "Falta de dinero como razón para no solicitar admisión", 35.24, "35,24 %", "porcentaje", "Barreras", "Subconjunto CLEI que no presentaría solicitudes", "Conectar orientación con información de becas, gratuidad y costos.", "Porcentaje del subconjunto que no solicitaría admisión, no de toda la muestra."),
+            metric("odes-clei-study-next-year-2023", "Estudiantes CLEI que proyectan estudiar al año siguiente", 57.30, "57,30 %", "porcentaje", "Trayectorias", "363 estudiantes CLEI encuestados", "Dimensionar aspiración inmediata después del bachillerato flexible.", "Proyección declarada; no es tránsito observado."),
+            metric("odes-clei-does-not-know-sapiencia-2023", "Estudiantes CLEI que manifiestan no conocer Sapiencia", 72.18, "72,18 %", "porcentaje", "Información", "363 estudiantes CLEI encuestados", "Focalizar difusión de oportunidades en jornadas y sedes CLEI.", "Reconocimiento institucional no mide conocimiento específico de cada beneficio."),
+        ],
+    },
+    {
+        "id": "odes-financiacion-etdh-2022",
+        "title": "Financiación de estudiantes de Educación para el Trabajo y el Desarrollo Humano",
+        "url": "https://sapiencia.gov.co/wp-content/uploads/2023/05/financiacion.etdh-disenado_03-05.pdf",
+        "publication_date": "2023-05",
+        "data_cut": "Noviembre de 2022",
+        "period": "2022",
+        "level": "Educación para el Trabajo y el Desarrollo Humano",
+        "territory": "Medellín",
+        "universe": "298 estudiantes matriculados en instituciones ETDH que respondieron el sondeo",
+        "method": "Sondeo autodiligenciable enviado por correo electrónico",
+        "sample": 298,
+        "verification_tokens": ["298 estudiantes", "68,3 %", "14,3 %", "11,8 %", "17,3 %", "83,2 %", "98,2 %"],
+        "caveat": "Primer sondeo ETDH de ODES, sin diseño probabilístico documentado. Las fuentes de financiación pueden tener bases y posibilidades de respuesta distintas.",
+        "indicators": [
+            metric("odes-etdh-own-resources-2022", "Estudiantes ETDH que financian estudios con recursos propios", 68.3, "68,3 %", "porcentaje", "Financiación", "298 estudiantes ETDH participantes", "Dimensionar el peso directo que asumen estudiantes y hogares.", "Sondeo no representativo; la fuente puede coexistir con otros apoyos."),
+            metric("odes-etdh-scholarships-2022", "Estudiantes ETDH que reportan becas o subsidios", 14.3, "14,3 %", "porcentaje", "Financiación", "298 estudiantes ETDH participantes", "Observar el alcance declarado de apoyos no reembolsables.", "Sondeo no representativo; no identifica monto ni duración."),
+            metric("odes-etdh-credit-2022", "Estudiantes ETDH que reportan crédito educativo", 11.8, "11,8 %", "porcentaje", "Financiación", "298 estudiantes ETDH participantes", "Reconocer exposición a deuda dentro de la financiación ETDH.", "Sondeo no representativo; no informa saldo, tasa o entidad para toda la muestra."),
+            metric("odes-etdh-public-funds-2022", "Estudiantes ETDH financiados con recursos distritales o de Sapiencia", 17.3, "17,3 %", "porcentaje", "Financiación pública", "298 estudiantes ETDH participantes", "Dimensionar el papel declarado de recursos públicos locales.", "Cifra del sondeo; no equivale a cobertura administrativa ni ejecución presupuestal."),
+            metric("odes-etdh-family-work-sustenance-2022", "Apoyo familiar y trabajo dentro de las fuentes de sostenimiento ETDH", 83.2, "83,2 %", "porcentaje", "Sostenimiento", "298 estudiantes ETDH participantes", "Vincular permanencia con ingresos y redes de apoyo.", "Suma de categorías reportadas en el sondeo; no representa personas únicas si hubo respuesta múltiple."),
+            metric("odes-etdh-household-income-2022", "Hogares ETDH con ingresos de hasta tres salarios mínimos", 98.2, "98,2 %", "porcentaje", "Equidad", "Hogares de estudiantes ETDH participantes con respuesta", "Contextualizar capacidad de pago y necesidad de sostenimiento.", "Ingreso declarado dentro de un sondeo y no verificado administrativamente."),
+        ],
+    },
+    {
+        "id": "odes-fondos-pregrado-laboral-2022",
+        "title": "Vinculación laboral de personas beneficiarias de fondos de pregrado",
+        "url": "https://sapiencia.gov.co/wp-content/uploads/2023/05/informevinculacionlaboralfondos_.pdf",
+        "publication_date": "2023-05",
+        "data_cut": "Octubre de 2022",
+        "period": "2022",
+        "level": "Educación superior · graduados",
+        "territory": "Medellín y residencia posterior declarada",
+        "universe": "301 personas graduadas desde 2018 con beneficios de fondos de pregrado de Sapiencia",
+        "method": "Encuesta telefónica",
+        "sample": 301,
+        "verification_tokens": ["301", "80,73 %", "83,75 %", "86,8 %", "82,7 %", "22,92 %", "19,60 %", "17,94 %", "61,13 %"],
+        "caveat": "Encuesta a personas beneficiarias graduadas que respondieron; no tiene grupo de comparación y no identifica el efecto causal del fondo sobre empleo o salario.",
+        "indicators": [
+            metric("odes-funds-working-2022", "Personas graduadas beneficiarias que reportan estar trabajando", 80.73, "80,73 %", "porcentaje", "Trabajo", "301 personas beneficiarias graduadas encuestadas", "Seguir inserción declarada después de la graduación.", "Autorreporte; no equivale a cotización formal ni efecto del beneficio."),
+            metric("odes-funds-business-2022", "Personas graduadas beneficiarias dedicadas a negocio propio", 2.66, "2,66 %", "porcentaje", "Emprendimiento", "301 personas beneficiarias graduadas encuestadas", "Observar emprendimiento como trayectoria laboral alternativa.", "Autorreporte; no informa sostenibilidad, ventas o formalidad."),
+            metric("odes-funds-first-job-six-months-2022", "Personas beneficiarias cuyo primer empleo llegó en seis meses o menos", 83.75, "83,75 %", "porcentaje", "Inserción laboral", "Personas beneficiarias encuestadas con trayectoria laboral", "Observar velocidad declarada de inserción laboral.", "Autorreporte retrospectivo; no tiene comparación con graduados no beneficiarios."),
+            metric("odes-funds-job-study-relation-2022", "Empleo con relación alta o media con los estudios", 86.8, "86,8 %", "porcentaje", "Pertinencia", "Personas beneficiarias que trabajan", "Contrastar inserción con correspondencia entre formación y ocupación.", "Valoración subjetiva entre quienes trabajan; no es medición ocupacional independiente."),
+            metric("odes-funds-knowledge-contribution-2022", "Conocimientos del programa que aportaron al empleo actual", 82.7, "82,7 %", "porcentaje", "Pertinencia", "Personas beneficiarias que trabajan", "Identificar pertinencia percibida de la formación.", "Percepción entre quienes trabajan; no mide productividad ni valor agregado."),
+            metric("odes-funds-no-health-contribution-2022", "Personas beneficiarias que no aportan a salud", 21.59, "21,59 %", "porcentaje", "Protección social", "Personas beneficiarias graduadas encuestadas", "Separar ocupación declarada de protección social efectiva.", "Autorreporte; no se contrasta con PILA ni otra fuente administrativa."),
+            metric("odes-funds-no-pension-contribution-2022", "Personas beneficiarias que no aportan a pensión", 22.26, "22,26 %", "porcentaje", "Protección social", "Personas beneficiarias graduadas encuestadas", "Visibilizar vulnerabilidad laboral más allá de tener trabajo.", "Autorreporte; no se contrasta con PILA."),
+            metric("odes-funds-language-gap-2022", "Idiomas entre competencias necesarias no adquiridas", 22.92, "22,92 %", "porcentaje", "Brechas de competencias", "Personas beneficiarias graduadas encuestadas", "Orientar refuerzo curricular y formación complementaria.", "Necesidad percibida; no es prueba estandarizada de competencia."),
+            metric("odes-funds-programming-gap-2022", "Programación entre competencias necesarias no adquiridas", 19.60, "19,60 %", "porcentaje", "Brechas de competencias", "Personas beneficiarias graduadas encuestadas", "Identificar demanda transversal de habilidades digitales.", "Necesidad percibida; no evalúa nivel de programación."),
+            metric("odes-funds-data-gap-2022", "Análisis de datos entre competencias necesarias no adquiridas", 17.94, "17,94 %", "porcentaje", "Brechas de competencias", "Personas beneficiarias graduadas encuestadas", "Informar módulos de alfabetización y análisis de datos.", "Necesidad percibida; no es una prueba de desempeño."),
+            metric("odes-funds-salary-below-expected-2022", "Personas beneficiarias con salario inferior al esperado", 44.03, "44,03 %", "porcentaje", "Ingresos", "Personas beneficiarias que trabajan y respondieron", "Contrastar inserción con suficiencia y expectativas salariales.", "Comparación subjetiva con expectativa individual; no mide retorno financiero."),
+            metric("odes-funds-no-ies-job-support-2022", "Personas beneficiarias sin apoyo de su IES para buscar empleo", 61.13, "61,13 %", "porcentaje", "Intermediación laboral", "Personas beneficiarias que trabajan", "Fortalecer servicios de carrera y acompañamiento a graduados.", "Autorreporte; no evalúa cobertura o calidad objetiva de los servicios."),
+            metric("odes-funds-women-one-two-wages-2022", "Mujeres ocupadas que ganan entre uno y dos salarios mínimos", 53.62, "53,62 %", "porcentaje", "Brecha de género", "Mujeres beneficiarias ocupadas de la encuesta", "Examinar concentración femenina en rangos salariales bajos.", "Distribución descriptiva sin controlar programa, experiencia, jornada o cargo."),
+            metric("odes-funds-men-one-two-wages-2022", "Hombres ocupados que ganan entre uno y dos salarios mínimos", 39.18, "39,18 %", "porcentaje", "Brecha de género", "Hombres beneficiarios ocupados de la encuesta", "Comparar composición salarial por sexo con cautela.", "Distribución descriptiva sin controles; no identifica una brecha salarial ajustada."),
+            metric("odes-funds-women-over-four-wages-2022", "Mujeres ocupadas que ganan más de cuatro salarios mínimos", 3.62, "3,62 %", "porcentaje", "Brecha de género", "Mujeres beneficiarias ocupadas de la encuesta", "Observar representación femenina en el rango superior.", "Muestra y distribución descriptiva; no controla diferencias ocupacionales."),
+            metric("odes-funds-men-over-four-wages-2022", "Hombres ocupados que ganan más de cuatro salarios mínimos", 13.40, "13,40 %", "porcentaje", "Brecha de género", "Hombres beneficiarios ocupados de la encuesta", "Observar representación masculina en el rango superior.", "Muestra y distribución descriptiva; no prueba discriminación salarial."),
+        ],
+    },
 ]
 
 
@@ -280,6 +368,29 @@ def scrape_collection(kind: str, url: str, session: requests.Session) -> list[di
     return rows
 
 
+def scrape_dashboards(kind: str, url: str, session: requests.Session) -> list[dict]:
+    response = session.get(url, timeout=45)
+    response.raise_for_status()
+    soup = BeautifulSoup(response.text, "html.parser")
+    rows = []
+    seen = set()
+    for anchor in soup.select('h4 a[href*="app.powerbi.com/view"]'):
+        href = anchor.get("href", "").strip()
+        title = re.sub(r"\s+", " ", " ".join(anchor.stripped_strings)).strip()
+        key = (title, href)
+        if not title or not href or key in seen:
+            continue
+        seen.add(key)
+        rows.append({
+            "id": hashlib.sha1(f"{kind}|{title}|{href}".encode()).hexdigest()[:12],
+            "collection": kind,
+            "title": title,
+            "url": href,
+            "source_page": url,
+        })
+    return rows
+
+
 def validate_study(study: dict, session: requests.Session) -> dict:
     response = session.get(study["url"], timeout=90)
     response.raise_for_status()
@@ -303,9 +414,15 @@ def main() -> None:
     publications = []
     for kind, url in COLLECTIONS.items():
         publications.extend(scrape_collection(kind, url, session))
+    dashboards = []
+    for kind, url in DASHBOARD_COLLECTIONS.items():
+        dashboards.extend(scrape_dashboards(kind, url, session))
     assert len(publications) == len({item["url"] for item in publications}), "Publicaciones duplicadas"
     assert len([item for item in publications if item["collection"] == "informe"]) >= 30
     assert len([item for item in publications if item["collection"] == "boletín"]) >= 30
+    assert len([item for item in dashboards if item["collection"] == "tablero_estudio"]) >= 18
+    assert len([item for item in dashboards if item["collection"] == "tablero_cifras"]) >= 30
+    assert len(dashboards) == len({item["id"] for item in dashboards}), "Tableros duplicados"
 
     publication_urls = {item["url"] for item in publications}
     assert all(study["url"] in publication_urls for study in STUDIES), "Estudio curado fuera del catálogo"
@@ -325,15 +442,19 @@ def main() -> None:
     payload = {
         "meta": {
             "title": "Biblioteca e indicadores del Observatorio de Educación Postsecundaria de Sapiencia",
-            "version": "V36",
+            "version": "V37",
             "scraped_on": CUT.isoformat(),
             "method": "Inventario raspado desde las páginas públicas de ODES; indicadores curados desde PDF con verificación de tokens, huella SHA-256 y cautela metodológica.",
-            "collection_urls": COLLECTIONS,
+            "collection_urls": {**COLLECTIONS, **DASHBOARD_COLLECTIONS},
         },
         "summary": {
             "publications": len(publications),
             "reports": report_count,
             "bulletins": bulletin_count,
+            "dashboards": len(dashboards),
+            "study_dashboards": sum(item["collection"] == "tablero_estudio" for item in dashboards),
+            "data_dashboards": sum(item["collection"] == "tablero_cifras" for item in dashboards),
+            "catalog_resources": len(publications) + len(dashboards),
             "curated_studies": len(studies),
             "survey_indicators": len(indicators),
             "downloaded_pages": sum(study["pages"] for study in studies),
@@ -341,9 +462,11 @@ def main() -> None:
         "studies": studies,
         "indicators": indicators,
         "publications": sorted(publications, key=lambda item: (item["published_folder"], item["title"]), reverse=True),
+        "dashboards": sorted(dashboards, key=lambda item: (item["collection"], item["title"])),
         "validation": {
             "status": "correcto",
             "duplicate_publication_urls": 0,
+            "duplicate_dashboard_ids": 0,
             "duplicate_indicator_ids": 0,
             "missing_verification_tokens": 0,
             "missing_curated_studies_in_catalog": 0,

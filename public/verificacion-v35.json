@@ -13,7 +13,7 @@
     {
       "check": "registry_scale",
       "status": "correcto",
-      "detail": "registro acumulado V36: 41 fuentes y 114 indicadores"
+      "detail": "registro acumulado V37: 44 fuentes y 147 indicadores"
     },
     {
       "check": "registry_version",
@@ -78,11 +78,11 @@
     {
       "check": "audit_contract",
       "status": "correcto",
-      "detail": "auditoría histórica V35 y registro acumulado V36 sincronizados"
+      "detail": "auditoría histórica V35 y registro acumulado V37 sincronizados"
     }
   ],
   "caveats": [
-    "Las 114 cifras no forman una única cohorte y no se suman entre sí.",
+    "Las 147 cifras no forman una única cohorte y no se suman entre sí.",
     "Metas anunciadas, beneficios entregados, estudiantes apoyados y matrícula son universos diferentes.",
     "Los datos SPADIES son referencias nacionales hasta contar con una extracción departamental reproducible.",
     "La imagen explica el propósito de MaterIA Gris; no representa una medición ni una recomendación automática."

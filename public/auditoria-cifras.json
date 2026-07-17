@@ -1,7 +1,7 @@
 {
   "estado": "correcto",
   "fecha_auditoria": "2026-07-17",
-  "alcance": "Atlas territorial, ecosistema general de oportunidades, Modo Decisión, Sala Ejecutiva, Trayectorias ampliadas, comparativo de producto, sistema público distrital, fuentes vivas, biblioteca Sapiencia ODES, imagen explicativa y Centro de Decisiones de MaterIA Gris V36",
+  "alcance": "Atlas territorial, ecosistema general de oportunidades, Modo Decisión, Sala Ejecutiva, Trayectorias ampliadas, comparativo de producto, sistema público distrital, fuentes vivas, biblioteca y tableros Sapiencia ODES, imagen explicativa y Centro de Decisiones de MaterIA Gris V37",
   "fuentes": {
     "snies": {
       "descripcion": "Estudiantes Matriculados 2024, bases consolidadas SNIES–MEN",
@@ -203,6 +203,53 @@
     "reproduccion": "python3 scripts/scrapear_sapiencia_odes.py",
     "verificacion": "verificacion-v36.json"
   },
+  "fuentes_v37": {
+    "corte_investigacion": "2026-07-17",
+    "fuentes_revisadas": 44,
+    "fuentes_oficiales": 29,
+    "fuentes_observatorios": 15,
+    "indicadores_sistematizados": 147,
+    "tipos_evidencia": {
+      "directa": 50,
+      "derivada": 7,
+      "reportada": 10,
+      "encuesta": 80
+    },
+    "errores_referencia_fuente": 0,
+    "ids_duplicados": 0,
+    "universos_faltantes": 0,
+    "limitaciones_faltantes": 0,
+    "ultimo_corte_comparable_superior": "SNIES 2024-II",
+    "reglas": [
+      "Encuesta, sondeo, registro administrativo, matrícula y tablero no son sinónimos.",
+      "Las cifras de subconjuntos no se presentan como porcentajes de la muestra completa.",
+      "Los resultados laborales de beneficiarios no identifican el efecto causal de los fondos.",
+      "Las comparaciones salariales por sexo son descriptivas y no controlan programa, experiencia, jornada o cargo."
+    ],
+    "comprobante": "fuentes-antioquia.json",
+    "reproduccion": "python3 scripts/actualizar_fuentes_antioquia.py",
+    "verificacion": "verificacion-v37.json"
+  },
+  "sapiencia_odes_v37": {
+    "corte_scraping": "2026-07-17",
+    "recursos_catalogados": 113,
+    "publicaciones_pdf": 64,
+    "tableros_power_bi": 49,
+    "tableros_estudios": 18,
+    "tableros_cifras": 31,
+    "estudios_pdf_auditados": 11,
+    "paginas_pdf_verificadas": 411,
+    "indicadores_de_encuesta": 80,
+    "nuevos_estudios": [
+      "Expectativas de estudiantes CLEI 5 y 6",
+      "Financiación de estudiantes ETDH",
+      "Vinculación laboral de beneficiarios de fondos de pregrado"
+    ],
+    "regla": "Se excluyó de la curaduría un PDF cuyo contenido interno no coincidía de forma consistente con el título del catálogo.",
+    "comprobante": "sapiencia-observatorio.json",
+    "reproduccion": "python3 scripts/scrapear_sapiencia_odes.py",
+    "verificacion": "verificacion-v37.json"
+  },
   "diagnostico_v35": {
     "nuevas_fuentes": 7,
     "nuevos_indicadores": 22,
@@ -250,8 +297,8 @@
       "Postularse",
       "Prepararse"
     ],
-    "fuentes_vivas": 41,
-    "indicadores_sistematizados": 114,
+    "fuentes_vivas": 44,
+    "indicadores_sistematizados": 147,
     "comprobante": "oportunidades-antioquia.json",
     "reproduccion": "python3 scripts/actualizar_oportunidades_antioquia.py",
     "regla": "El directorio es curado y no exhaustivo. Distingue oferta, beca, gratuidad, estímulo, crédito, legalización y preparación; la Corporación Gilberto Echeverri aparece como una fuente y operadora dentro del ecosistema."

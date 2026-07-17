@@ -662,12 +662,12 @@ def main() -> None:
     payload = {
         "meta": {
             "title": "Fuentes vivas de educación en Antioquia",
-            "version": "V36",
+            "version": "V37",
             "research_cut": CUT.isoformat(),
             "method": "Curaduría de fuentes primarias y observatorios reconocidos; cada cifra conserva periodo, territorio, universo, tipo de evidencia, uso y cautela.",
             "latest_comparable_higher_ed_cut": "2024-II",
             "next_expected_release": "SNIES 2025 · agregado nacional publicado; base departamental consolidada pendiente",
-            "sapiencia_catalog": "sapiencia-observatorio.json · 64 publicaciones ODES y 47 indicadores de encuesta",
+            "sapiencia_catalog": "sapiencia-observatorio.json · 113 recursos ODES y 80 indicadores de encuesta",
         },
         "summary": {
             "sources": len(SOURCES),
