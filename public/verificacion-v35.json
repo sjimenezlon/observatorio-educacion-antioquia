@@ -1,0 +1,90 @@
+{
+  "meta": {
+    "title": "Verificación V35 · diagnóstico ampliado e imagen explicativa",
+    "validated_on": "2026-07-17",
+    "method": "Controles de fuentes, indicadores, sumas publicadas, territorios, metadatos, activos visuales y contrato de interfaz."
+  },
+  "summary": {
+    "status": "correcto",
+    "checks": 14,
+    "errors": 0
+  },
+  "checks": [
+    {
+      "check": "registry_scale",
+      "status": "correcto",
+      "detail": "33 fuentes y 67 indicadores"
+    },
+    {
+      "check": "registry_version",
+      "status": "correcto",
+      "detail": "versión y corte sincronizados"
+    },
+    {
+      "check": "evidence_distribution",
+      "status": "correcto",
+      "detail": "tipos de evidencia conservan su clasificación"
+    },
+    {
+      "check": "new_sources",
+      "status": "correcto",
+      "detail": "siete nuevas fuentes oficiales presentes"
+    },
+    {
+      "check": "new_indicators",
+      "status": "correcto",
+      "detail": "indicadores críticos de trayectoria presentes"
+    },
+    {
+      "check": "transition_comparison",
+      "status": "correcto",
+      "detail": "comparación de tránsito 2024 conserva los tres universos"
+    },
+    {
+      "check": "district_permanence_sum",
+      "status": "correcto",
+      "detail": "ITM + Colmayor + Pascual = 36.251 apoyados"
+    },
+    {
+      "check": "zero_tuition_sum",
+      "status": "correcto",
+      "detail": "desglose institucional = 28.443 beneficios entregados"
+    },
+    {
+      "check": "national_reference",
+      "status": "correcto",
+      "detail": "SPADIES permanece rotulado como referencia nacional"
+    },
+    {
+      "check": "metadata_complete",
+      "status": "correcto",
+      "detail": "cero universos, cautelas o usos decisionales vacíos"
+    },
+    {
+      "check": "about_section",
+      "status": "correcto",
+      "detail": "imagen y explicación integradas a la interfaz"
+    },
+    {
+      "check": "trajectory_layer",
+      "status": "correcto",
+      "detail": "nuevas señales visibles en Trayectorias"
+    },
+    {
+      "check": "image_assets",
+      "status": "correcto",
+      "detail": "imagen WebP optimizada y respaldo PNG disponibles"
+    },
+    {
+      "check": "audit_contract",
+      "status": "correcto",
+      "detail": "auditoría pública sincronizada"
+    }
+  ],
+  "caveats": [
+    "Las 67 cifras no forman una única cohorte y no se suman entre sí.",
+    "Metas anunciadas, beneficios entregados, estudiantes apoyados y matrícula son universos diferentes.",
+    "Los datos SPADIES son referencias nacionales hasta contar con una extracción departamental reproducible.",
+    "La imagen explica el propósito de MaterIA Gris; no representa una medición ni una recomendación automática."
+  ]
+}

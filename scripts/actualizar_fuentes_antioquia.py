@@ -16,7 +16,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "public" / "fuentes-antioquia.json"
-CUT = date(2026, 7, 16)
+CUT = date(2026, 7, 17)
 
 
 SOURCES = [
@@ -358,6 +358,97 @@ SOURCES = [
         "role": "Amplía el radar de convocatorias y conserva la responsabilidad de cada promotor.",
         "refresh": "Mensual o periódico",
     },
+    {
+        "id": "medellin-transito-2024",
+        "institution": "Distrito de Medellín · Secretaría de Educación",
+        "title": "Tránsito inmediato a educación superior en Medellín",
+        "source_type": "oficial",
+        "publication_date": "2026-02-11",
+        "data_cut": "2024",
+        "territory": "Medellín",
+        "level": "Transición media–superior",
+        "url": "https://www.medellin.gov.co/es/sala-de-prensa/noticias/medellin-se-consolida-como-referente-nacional-en-acceso-a-la-educacion-superior/",
+        "role": "Compara el tránsito inmediato de Medellín con Antioquia y Colombia y cuantifica los bachilleres que ingresaron sin interrupción.",
+        "refresh": "Anual, con rezago",
+    },
+    {
+        "id": "medellin-plan-indicativo-2025",
+        "institution": "Distrito de Medellín · Sapiencia",
+        "title": "Seguimiento al Plan Indicativo 2025",
+        "source_type": "oficial",
+        "publication_date": "2026-02",
+        "data_cut": "Cierre 2025",
+        "territory": "Medellín",
+        "level": "Educación postsecundaria",
+        "url": "https://www.medellin.gov.co/es/wp-content/uploads/2026/02/Cap.-11-Sgto-PI.pdf",
+        "role": "Aporta ejecución de permanencia, Matrícula Cero y renovación de créditos con desglose institucional.",
+        "refresh": "Anual",
+    },
+    {
+        "id": "medellin-siguiente-nivel-2026",
+        "institution": "Distrito de Medellín · Secretaría de Educación",
+        "title": "Ferias Siguiente Nivel 2026",
+        "source_type": "oficial",
+        "publication_date": "2026-05-25",
+        "data_cut": "Programación 2026",
+        "territory": "16 comunas y cinco corregimientos de Medellín",
+        "level": "Transición media–superior",
+        "url": "https://www.medellin.gov.co/es/sala-de-prensa/noticias/mas-de-17-000-estudiantes-de-medellin-recibiran-orientacion-para-definir-su-siguiente-paso-luego-de-culminar-el-colegio/",
+        "role": "Documenta la meta y el despliegue territorial de orientación postsecundaria.",
+        "refresh": "Anual",
+    },
+    {
+        "id": "gob-transformacion-media-2025",
+        "institution": "Gobernación de Antioquia · Secretaría de Educación",
+        "title": "Transformación de la educación media",
+        "source_type": "oficial",
+        "publication_date": "2026-01-02",
+        "data_cut": "Balance 2025",
+        "territory": "Antioquia",
+        "level": "Educación media",
+        "url": "https://www.antioquia.gov.co/index.php/antioquiacuenta/antioquia-impulsa-la-transformacion-de-la-educacion-media-con-enfoque-en-proyectos-de-vida",
+        "role": "Dimensiona la preparación institucional y docente de la media antes de la intervención pedagógica de 2026.",
+        "refresh": "Por fase",
+    },
+    {
+        "id": "gob-resultados-educacion-2025",
+        "institution": "Gobernación de Antioquia · Secretaría de Educación",
+        "title": "Principales avances y resultados de gestión educativa 2025",
+        "source_type": "oficial",
+        "publication_date": "2025-11-30",
+        "data_cut": "Balance 2025",
+        "territory": "116 municipios no certificados",
+        "level": "Preescolar, básica y media",
+        "url": "https://www.antioquia.gov.co/index.php/secretaria-educacion/secretaria-de-educacion-de-antioquia-presento-los-principales-avances-y-resultados-de-su-gestion-en-2025",
+        "role": "Aporta condiciones habilitantes de acceso, permanencia, inclusión e infraestructura escolar.",
+        "refresh": "Anual",
+    },
+    {
+        "id": "gob-matricula-escolar-marzo-2026",
+        "institution": "Gobernación de Antioquia · Secretaría de Educación",
+        "title": "Cumplimiento de la meta de matrícula escolar 2026",
+        "source_type": "oficial",
+        "publication_date": "2026-03-18",
+        "data_cut": "18 de marzo de 2026",
+        "territory": "116 municipios no certificados",
+        "level": "Preescolar, básica y media",
+        "url": "https://www.antioquia.gov.co/index.php/antioquiacuenta/cumplimos-antioquia-supero-la-meta-de-estudiantes-matriculados-para-este-2026",
+        "role": "Fija un corte puntual y exacto de matrícula escolar para complementar las aproximaciones semestrales.",
+        "refresh": "Durante la campaña de matrícula",
+    },
+    {
+        "id": "spadies-cierre-2024",
+        "institution": "Ministerio de Educación Nacional · SPADIES",
+        "title": "Indicadores nacionales de permanencia y deserción",
+        "source_type": "oficial",
+        "publication_date": "2025-08-19",
+        "data_cut": "Indicadores 2023 · cierre estadístico 2024",
+        "territory": "Colombia",
+        "level": "Educación superior",
+        "url": "https://www.mineducacion.gov.co/sistemasdeinformacion/1783/w3-propertyvalue-68157.html",
+        "role": "Aporta referencias nacionales de deserción anual, ausencia intersemestral y deserción por cohorte.",
+        "refresh": "Anual",
+    },
 ]
 
 
@@ -431,6 +522,28 @@ INDICATORS = [
     indicator("cgem-budget-semester-zero-2026", "Apropiación inicial para Semestre Cero", 4927.057799, "$4.927 millones", "millones de pesos", "2026", "Transición media–superior", "Inversión", "Antioquia", "Rubro Semestre Cero del presupuesto inicial", "cgem-budget-2026", "directa", "Contrastar recursos, cobertura y transición efectiva posterior.", "Apropiación inicial, no ejecución ni evaluación de impacto."),
     indicator("matricula-cero-financing-2026-2", "Cobertura máxima de Matrícula Cero", 100, "Hasta 100 %", "porcentaje de la liquidación de matrícula", "Convocatoria 2026-2", "Pregrado", "Financiación", "Medellín", "Personas elegibles admitidas o matriculadas en IES públicas con convenio y sede en Medellín", "sapiencia-matricula-cero-2026-2", "directa", "Identificar una ruta local abierta de financiación y conectarla con admisión y permanencia.", "La postulación no garantiza el beneficio; aplican requisitos, impedimentos, validación y disponibilidad de recursos."),
     indicator("matricula-cero-minimum-credits-2026-2", "Créditos mínimos de Matrícula Cero", 8, "8", "créditos", "Convocatoria 2026-2", "Pregrado", "Permanencia", "Medellín", "Postulación y renovación del beneficio, con excepciones reglamentarias", "sapiencia-matricula-cero-2026-2", "directa", "Orientar la carga académica mínima y prevenir pérdida del beneficio.", "La fuente contempla excepciones para ciclos complementarios y los dos últimos semestres; consulte el reglamento completo."),
+    indicator("medellin-immediate-transition-2024", "Tránsito inmediato a educación superior en Medellín", 49.36, "49,36 %", "porcentaje", "2024", "Transición media–superior", "Acceso", "Medellín", "Bachilleres de Medellín que ingresaron a educación superior en el año siguiente a su graduación", "medellin-transito-2024", "directa", "Contrastar el puente colegio–educación superior y focalizar orientación y financiación.", "La publicación de 2026 reporta información de 2024 por el rezago del indicador; no representa a todo Antioquia."),
+    indicator("colombia-immediate-transition-2024", "Tránsito inmediato a educación superior en Colombia", 45.94, "45,94 %", "porcentaje", "2024", "Transición media–superior", "Acceso", "Colombia", "Referencia nacional publicada junto con el resultado de Medellín", "medellin-transito-2024", "directa", "Dar contexto al resultado de Medellín sin convertirlo en una meta automática.", "Referencia nacional del mismo indicador y corte; no describe diferencias internas ni causalidad."),
+    indicator("antioquia-immediate-transition-2024", "Tránsito inmediato a educación superior en Antioquia", 44.23, "44,23 %", "porcentaje", "2024", "Transición media–superior", "Acceso", "Antioquia", "Referencia departamental publicada junto con el resultado de Medellín", "medellin-transito-2024", "directa", "Contrastar el resultado metropolitano con el agregado departamental.", "El agregado departamental incluye territorios muy heterogéneos y no reemplaza la tasa de los 116 municipios no certificados."),
+    indicator("medellin-immediate-entrants-2024", "Bachilleres que ingresaron inmediatamente a educación superior", 11539, "11.539", "personas", "2024", "Transición media–superior", "Acceso", "Medellín", "Bachilleres de Medellín con tránsito inmediato", "medellin-transito-2024", "directa", "Dimensionar el volumen del puente inmediato entre colegio y educación superior.", "Es un flujo de ingreso, no la matrícula total de Medellín ni una cohorte departamental."),
+    indicator("district-permanence-supported-2025", "Estudiantes apoyados por estrategias de permanencia en las IES distritales", 36251, "36.251", "estudiantes", "2025", "Educación superior", "Permanencia", "Medellín · ITM, Pascual Bravo y Colegio Mayor", "Estudiantes atendidos mediante apoyos académicos, psicosociales, alimentarios, de transporte, deportivos o culturales", "medellin-plan-indicativo-2025", "directa", "Seguir la capacidad institucional de acompañamiento y pedir resultados de continuidad y graduación.", "No equivale a estudiantes únicos adicionales ni demuestra impacto; las modalidades de apoyo pueden superponerse."),
+    indicator("matricula-cero-delivered-2025", "Beneficios de Matrícula Cero entregados", 28443, "28.443", "beneficios", "2025", "Educación superior", "Financiación", "Medellín · ocho IES públicas", "Beneficios conciliados y entregados durante la vigencia", "medellin-plan-indicativo-2025", "directa", "Separar ejecución observada de las proyecciones de convocatorias futuras.", "Son beneficios, no necesariamente personas únicas; parte del logro se articula con la política nacional de gratuidad."),
+    indicator("sapiencia-credit-renewals-2025", "Renovaciones de crédito de estudiantes previamente desfinanciados", 3283, "3.283", "renovaciones", "2025", "Educación postsecundaria", "Permanencia", "Medellín", "Renovaciones de créditos de formación avanzada, pregrado condonable y Extendiendo Fronteras", "medellin-plan-indicativo-2025", "directa", "Observar continuidad financiera de población con riesgo de interrupción.", "Renovación no equivale a graduación ni debe sumarse con Matrícula Cero o apoyos de permanencia."),
+    indicator("siguiente-nivel-target-2026", "Estudiantes esperados en las ferias Siguiente Nivel", 17000, "Más de 17.000", "estudiantes esperados", "Programación 2026", "Transición media–superior", "Orientación", "16 comunas y cinco corregimientos de Medellín", "Meta anunciada de estudiantes de grados 10 y 11", "medellin-siguiente-nivel-2026", "reportada", "Dimensionar el alcance previsto de orientación y exigir cierre con asistencia y decisiones posteriores.", "Es una meta esperada publicada en mayo, no el número final de participantes ni de matriculados."),
+    indicator("siguiente-nivel-fairs-2026", "Ferias Siguiente Nivel programadas", 20, "20", "ferias", "Programación 2026", "Transición media–superior", "Orientación", "Medellín", "Jornadas de orientación previstas en comunas y corregimientos", "medellin-siguiente-nivel-2026", "reportada", "Revisar cobertura territorial y ejecución del despliegue de orientación.", "Programación anunciada: no confirma que todas las jornadas hayan ocurrido ni mide su efecto."),
+    indicator("media-transformation-institutions-2025", "Instituciones vinculadas a la transformación de la educación media", 448, "448", "instituciones educativas", "2025", "Educación media", "Capacidad", "Antioquia", "Instituciones participantes en la fase inicial de transformación de la media", "gob-transformacion-media-2025", "directa", "Conectar proyectos de vida, orientación y articulación con oferta postsecundaria.", "Participación institucional no equivale a intervención pedagógica completa ni a impacto en tránsito."),
+    indicator("media-transformation-educators-2025", "Docentes y directivos formados para transformar la educación media", 2942, "2.942", "docentes y directivos", "Primeros seis meses de 2025", "Educación media", "Capacidad", "Antioquia", "Docentes y directivos formados durante la primera fase", "gob-transformacion-media-2025", "directa", "Dimensionar capacidad instalada antes de la intervención pedagógica directa.", "Formación recibida no prueba cambio de práctica ni resultado estudiantil."),
+    indicator("school-enrolment-march-2026", "Matrícula escolar oficial en corte puntual", 432795, "432.795", "estudiantes", "18 de marzo de 2026", "Preescolar, básica y media", "Escala", "116 municipios no certificados", "Estudiantes matriculados en instituciones oficiales administradas por el departamento", "gob-matricula-escolar-marzo-2026", "directa", "Conservar una línea de base exacta para el seguimiento de acceso escolar durante 2026.", "Es una fotografía de marzo; no debe interpretarse como crecimiento frente a la cifra aproximada del segundo semestre sin microdatos comparables."),
+    indicator("school-meals-2025", "Estudiantes atendidos por el Programa de Alimentación Escolar", 315000, "315.000", "estudiantes", "2025", "Preescolar, básica y media", "Permanencia", "116 municipios no certificados", "Estudiantes atendidos por el PAE departamental", "gob-resultados-educacion-2025", "directa", "Relacionar condiciones de bienestar con asistencia, permanencia y aprendizaje.", "Cobertura reportada de alimentación; no mide frecuencia efectiva, calidad del servicio ni impacto causal."),
+    indicator("school-transport-2025", "Estudiantes beneficiados con transporte escolar", 37823, "37.823", "estudiantes", "2025", "Preescolar, básica y media", "Permanencia", "116 municipios no certificados", "Estudiantes beneficiados mediante transporte escolar", "gob-resultados-educacion-2025", "directa", "Identificar barreras físicas de acceso y priorizar continuidad en zonas rurales.", "Beneficiarios reportados; no informa días de servicio, distancia, costo individual ni efecto en asistencia."),
+    indicator("integrated-media-students-2025", "Estudiantes vinculados a la estrategia de media integral", 52000, "52.000", "estudiantes", "2025", "Educación media", "Transición", "116 municipios no certificados", "Estudiantes atendidos por la estrategia de media integral", "gob-resultados-educacion-2025", "directa", "Conectar la educación media con proyectos de vida, formación postsecundaria y empleo.", "Participación no equivale a tránsito inmediato ni certifica la calidad de la articulación."),
+    indicator("inclusive-education-students-2025", "Estudiantes atendidos por estrategias de educación inclusiva", 6476, "6.476", "estudiantes", "2025", "Preescolar, básica y media", "Inclusión", "116 municipios no certificados", "Estudiantes con discapacidad, talentos excepcionales o trastornos específicos del aprendizaje atendidos", "gob-resultados-educacion-2025", "directa", "Visibilizar diversidad y exigir continuidad de apoyos y resultados desagregados.", "Número de estudiantes atendidos; no mide suficiencia, intensidad ni calidad del apoyo."),
+    indicator("renewed-learning-sites-2025", "Sedes con ambientes de aprendizaje renovados", 730, "730", "sedes", "2025", "Preescolar, básica y media", "Infraestructura", "116 municipios no certificados", "Sedes educativas intervenidas para renovar ambientes de aprendizaje", "gob-resultados-educacion-2025", "directa", "Priorizar mantenimiento y vincular inversión física con uso pedagógico.", "Sede intervenida no equivale a institución completa ni demuestra mejora de aprendizaje."),
+    indicator("spadies-annual-dropout-2023", "Tasa de deserción anual en educación superior", 8.97, "8,97 %", "porcentaje", "2023 · cierre estadístico 2024", "Educación superior", "Permanencia", "Colombia", "Sistema nacional de educación superior", "spadies-cierre-2024", "directa", "Usar como referencia nacional mientras se construye una extracción reproducible para Antioquia.", "Es una referencia nacional, no la tasa de Antioquia ni de una institución; no identifica causalidad."),
+    indicator("spadies-intersemester-absence-2023", "Tasa de ausencia intersemestral", 12.40, "12,40 %", "porcentaje", "2023 · cierre estadístico 2024", "Educación superior", "Permanencia", "Colombia", "Estudiantes del sistema nacional observados entre periodos consecutivos", "spadies-cierre-2024", "directa", "Dimensionar interrupciones tempranas y orientar preguntas de reingreso.", "Ausencia intersemestral no es sinónimo de abandono definitivo ni es un resultado específico de Antioquia."),
+    indicator("spadies-cohort-dropout-university", "Deserción acumulada por cohorte en nivel universitario", 23.15, "23,15 %", "porcentaje", "Cierre estadístico 2024", "Educación superior universitaria", "Permanencia", "Colombia", "Cohortes nacionales universitarias observadas por SPADIES", "spadies-cierre-2024", "directa", "Contrastar la persistencia por nivel y priorizar seguimiento longitudinal.", "Referencia nacional acumulada; no debe compararse directamente con la tasa anual ni atribuirse a Antioquia."),
+    indicator("spadies-cohort-dropout-technological", "Deserción acumulada por cohorte en nivel tecnológico", 32.01, "32,01 %", "porcentaje", "Cierre estadístico 2024", "Educación superior tecnológica", "Permanencia", "Colombia", "Cohortes nacionales tecnológicas observadas por SPADIES", "spadies-cierre-2024", "directa", "Visibilizar el mayor riesgo relativo en trayectorias tecnológicas.", "Referencia nacional acumulada; diferencias de composición y duración impiden leerla como efecto del nivel."),
+    indicator("spadies-cohort-dropout-technical", "Deserción acumulada por cohorte en nivel técnico profesional", 33.52, "33,52 %", "porcentaje", "Cierre estadístico 2024", "Educación superior técnica profesional", "Permanencia", "Colombia", "Cohortes nacionales técnico-profesionales observadas por SPADIES", "spadies-cierre-2024", "directa", "Visibilizar el riesgo de interrupción en trayectorias técnico-profesionales.", "Referencia nacional acumulada; no sustituye una medición departamental o institucional comparable."),
 ]
 
 
@@ -441,7 +554,7 @@ COMPARABILITY_RULES = [
     },
     {
         "title": "Beneficios ≠ estudiantes adicionales",
-        "text": "Gratuidad, Matrícula Cero, Semestre Cero y Educación Superior en tu Colegio reportan beneficiarios, beneficios o participantes; no se suman a la matrícula.",
+        "text": "Gratuidad, Matrícula Cero, Semestre Cero, permanencia y orientación reportan beneficiarios, beneficios o participantes que pueden superponerse; no se suman entre sí ni a la matrícula.",
     },
     {
         "title": "Territorios no aditivos",
@@ -510,7 +623,7 @@ def main() -> None:
     payload = {
         "meta": {
             "title": "Fuentes vivas de educación en Antioquia",
-            "version": "V34",
+            "version": "V35",
             "research_cut": CUT.isoformat(),
             "method": "Curaduría de fuentes primarias y observatorios reconocidos; cada cifra conserva periodo, territorio, universo, tipo de evidencia, uso y cautela.",
             "latest_comparable_higher_ed_cut": "2024-II",

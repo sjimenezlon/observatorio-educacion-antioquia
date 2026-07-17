@@ -723,6 +723,25 @@ html.light .opp-route,html.light .opp-kpi,html.light .opp-card{background:linear
 @media(max-width:900px){.opp-routes,.opp-kpis{grid-template-columns:repeat(2,1fr)}.opp-shell{grid-template-columns:1fr}.opp-filters{position:static}.opp-fields{grid-template-columns:1fr 1fr}.opp-bottom{grid-template-columns:1fr}}
 @media(max-width:620px){.opp-intro{grid-template-columns:1fr}.opp-routes,.opp-kpis,.opp-grid,.opp-fields,.opp-trust-list{grid-template-columns:1fr}.opp-sourcebar{display:block}.opp-sourcebar>span{display:block;margin-top:8px}.opp-card{min-height:0}}
 
+/* ---------- Qué es MaterIA Gris · V35 ---------- */
+.materia-about{padding-top:42px}.materia-about-shell{display:grid;grid-template-columns:minmax(310px,.72fr) minmax(0,1.28fr);gap:14px;align-items:stretch}
+.materia-about-copy,.materia-about-visual{border:1px solid rgba(151,180,222,.15);border-radius:22px;overflow:hidden}
+.materia-about-copy{display:flex;flex-direction:column;padding:25px;background:radial-gradient(circle at 10% 0%,rgba(107,166,255,.12),transparent 34%),linear-gradient(150deg,rgba(17,26,40,.98),rgba(9,16,26,.94))}
+.materia-about-copy>small{color:#78e3c3;font-size:8.5px;font-weight:780;letter-spacing:.12em;text-transform:uppercase}.materia-about-copy h2{max-width:470px;color:var(--ink);font:650 clamp(29px,4vw,48px)/1.02 'Fraunces',Georgia,serif;letter-spacing:-.03em;margin:13px 0}.materia-about-copy>p{max-width:560px;color:var(--ink-2);font-size:12px;line-height:1.65}
+.materia-principles{display:grid;gap:7px;margin:22px 0}.materia-principle{display:grid;grid-template-columns:29px 1fr;gap:10px;align-items:start;padding:11px;border:1px solid rgba(151,180,222,.11);border-radius:12px;background:rgba(255,255,255,.02)}.materia-principle span{display:grid;place-items:center;width:29px;height:29px;border-radius:9px;background:rgba(107,166,255,.10);color:#9fc5ff;font-size:9px;font-weight:800}.materia-principle b{display:block;color:var(--ink);font-size:10.5px;margin:1px 0 3px}.materia-principle p{color:var(--muted);font-size:9.5px;line-height:1.45}
+.materia-about-actions{display:flex;flex-wrap:wrap;gap:7px;margin-top:auto}.materia-about-actions a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:8px 12px;border:1px solid rgba(107,166,255,.22);border-radius:10px;background:rgba(107,166,255,.07);color:#b8d4ff;font-size:9.5px;font-weight:760}.materia-about-actions a:first-child{border-color:rgba(62,214,170,.24);background:rgba(62,214,170,.08);color:#8fe7cb}.materia-about-actions a:hover{text-decoration:none;border-color:rgba(151,180,222,.42)}
+.materia-about-visual{display:flex;flex-direction:column;background:#050a13}.materia-about-visual picture{display:block;aspect-ratio:1672/941;background:#050a13}.materia-about-visual img{display:block;width:100%;height:100%;object-fit:cover}.materia-about-visual figcaption{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:11px 14px;border-top:1px solid rgba(151,180,222,.12);color:var(--muted);font-size:9px;line-height:1.45}.materia-about-visual figcaption b{color:#9fc5ff;white-space:nowrap}
+html.light .materia-about-copy{background:radial-gradient(circle at 10% 0%,rgba(43,102,194,.10),transparent 34%),linear-gradient(150deg,#fff,#f2f6fa)}html.light .materia-about-visual{background:#07101d}
+@media(max-width:920px){.materia-about-shell{grid-template-columns:1fr}.materia-about-visual{order:-1}.materia-about-copy h2{font-size:36px}}
+@media(max-width:600px){.materia-about-copy{padding:18px}.materia-about-copy h2{font-size:31px}.materia-about-visual figcaption{align-items:flex-start;flex-direction:column}.materia-about-actions{display:grid}.materia-about-actions a{width:100%}}
+
+/* ---------- Nuevas señales de trayectoria · V35 ---------- */
+.tray-system-view{margin-top:14px;padding:18px;border:1px solid rgba(107,166,255,.17);border-radius:18px;background:radial-gradient(circle at 10% 0%,rgba(107,166,255,.09),transparent 35%),rgba(10,17,27,.72)}
+.tray-system-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:12px}.tray-system-head small{display:block;color:#9fc5ff;font-size:8px;font-weight:780;letter-spacing:.11em;text-transform:uppercase}.tray-system-head h3{color:var(--ink);font:650 21px/1.2 'Fraunces',Georgia,serif;margin-top:5px}.tray-system-head p{max-width:430px;color:var(--muted);font-size:9.5px;line-height:1.45;text-align:right}
+.tray-system-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.tray-system-card{min-height:178px;padding:14px;border:1px solid rgba(151,180,222,.12);border-radius:13px;background:rgba(255,255,255,.018)}.tray-system-card small{display:block;color:var(--muted);font-size:8px;text-transform:uppercase;letter-spacing:.08em}.tray-system-card strong{display:block;color:var(--ink);font:650 24px/1 'Fraunces',Georgia,serif;margin:12px 0 7px}.tray-system-card h4{color:var(--ink-2);font-size:10.5px;line-height:1.35}.tray-system-card p{color:var(--muted);font-size:9px;line-height:1.45;margin-top:7px}.tray-system-card a{display:inline-block;color:#9fc5ff;font-size:8.5px;margin-top:9px}
+html.light .tray-system-view{background:radial-gradient(circle at 10% 0%,rgba(43,102,194,.08),transparent 35%),rgba(255,255,255,.8)}html.light .tray-system-card{background:rgba(255,255,255,.78)}
+@media(max-width:980px){.tray-system-grid{grid-template-columns:1fr 1fr}}@media(max-width:620px){.tray-system-head{align-items:flex-start;flex-direction:column}.tray-system-head p{text-align:left}.tray-system-grid{grid-template-columns:1fr}.tray-system-card{min-height:0}}
+
 /* ---------- impresión ---------- */
 @media print{
   :root,html.light{--page:#ffffff;--surface:#ffffff;--surface-2:#f2f1ec;--ink:#111;--ink-2:#333;--muted:#666;
@@ -775,8 +794,8 @@ html.light .opp-route,html.light .opp-kpi,html.light .opp-card{background:linear
 <div class="nav-chapters" id="nav-chapters" hidden><div class="nav-chapter-inner">
   <div class="nav-chapter-head"><b>Explorar MaterIA Gris</b><span>Cinco recorridos principales y todos los capítulos especializados</span></div>
   <div class="nav-chapter-grid">
-    <a class="nav-chapter-link" href="#ejecutivo"><small>Decidir</small><b>Sala Ejecutiva</b></a><a class="nav-chapter-link" href="#trayectorias"><small>Entender</small><b>Trayectorias y retorno</b></a><a class="nav-chapter-link" href="#panorama"><small>Sistema</small><b>Panorama</b></a><a class="nav-chapter-link" href="#distrito"><small>Medellín</small><b>IES del Distrito</b></a><a class="nav-chapter-link" href="#oportunidades"><small>Acceder</small><b>Oportunidades educativas</b></a>
-    <a class="nav-chapter-link" href="#oferta"><small>Estudiar</small><b>Oferta académica</b></a><a class="nav-chapter-link" href="#economia"><small>Pertinencia</small><b>Oferta y demanda</b></a><a class="nav-chapter-link" href="#laboral"><small>Resultados</small><b>Mercado laboral</b></a><a class="nav-chapter-link" href="#calidad"><small>Resultados</small><b>Calidad</b></a><a class="nav-chapter-link" href="#acreditacion"><small>Gestión</small><b>Acreditación</b></a>
+    <a class="nav-chapter-link" href="#que-es-materia"><small>Producto</small><b>Qué es MaterIA Gris</b></a><a class="nav-chapter-link" href="#ejecutivo"><small>Decidir</small><b>Sala Ejecutiva</b></a><a class="nav-chapter-link" href="#trayectorias"><small>Entender</small><b>Trayectorias y retorno</b></a><a class="nav-chapter-link" href="#panorama"><small>Sistema</small><b>Panorama</b></a><a class="nav-chapter-link" href="#distrito"><small>Medellín</small><b>IES del Distrito</b></a>
+    <a class="nav-chapter-link" href="#oportunidades"><small>Acceder</small><b>Oportunidades educativas</b></a><a class="nav-chapter-link" href="#oferta"><small>Estudiar</small><b>Oferta académica</b></a><a class="nav-chapter-link" href="#economia"><small>Pertinencia</small><b>Oferta y demanda</b></a><a class="nav-chapter-link" href="#laboral"><small>Resultados</small><b>Mercado laboral</b></a><a class="nav-chapter-link" href="#calidad"><small>Resultados</small><b>Calidad</b></a><a class="nav-chapter-link" href="#acreditacion"><small>Gestión</small><b>Acreditación</b></a>
     <a class="nav-chapter-link" href="#innovacion"><small>Conocimiento</small><b>Innovación</b></a><a class="nav-chapter-link" href="#social"><small>Equidad</small><b>Impacto social</b></a><a class="nav-chapter-link" href="#redes"><small>Comunidad</small><b>Redes sociales</b></a><a class="nav-chapter-link" href="#finanzas"><small>Sostenibilidad</small><b>Finanzas</b></a><a class="nav-chapter-link" href="#producto"><small>Producto</small><b>Comparativo y hoja de ruta</b></a>
   </div>
 </div></div>
@@ -808,9 +827,9 @@ html.light .opp-route,html.light .opp-kpi,html.light .opp-card{background:linear
         <div class="core-center"><div><b>313.583</b><span>estudiantes · 2024-II</span></div></div>
       </div>
       <div class="core-signals">
-        <div class="core-signal"><b>51</b><span>municipios con oferta</span></div>
-        <div class="core-signal"><b>14</b><span>rutas públicas verificadas al 16 jul. 2026</span></div>
-        <div class="core-signal"><b>V34</b><span>ecosistema de oportunidades</span></div>
+        <div class="core-signal"><b>33</b><span>fuentes revisadas</span></div>
+        <div class="core-signal"><b>67</b><span>indicadores trazables</span></div>
+        <div class="core-signal"><b>V35</b><span>diagnóstico ampliado</span></div>
       </div>
     </aside>
   </div>
@@ -843,6 +862,27 @@ html.light .opp-route,html.light .opp-kpi,html.light .opp-card{background:linear
   <div class="kpis" id="kpis"></div>
   <div class="callout" id="hallazgo-hero"></div>
 </header>
+
+<!-- ================= QUÉ ES MATERIA GRIS ================= -->
+<section id="que-es-materia" class="materia-about">
+  <div class="materia-about-shell">
+    <article class="materia-about-copy">
+      <small>V35 · inteligencia educativa explicable</small>
+      <h2>MaterIA Gris convierte datos dispersos en preguntas que se pueden decidir.</h2>
+      <p>No es un ranking ni una respuesta automática. Es una capa pública de inteligencia que conecta evidencia, territorio e instituciones para entender mejor la educación de Antioquia y hacer explícito qué sabemos, qué no sabemos y qué conviene medir.</p>
+      <div class="materia-principles" aria-label="Tres funciones de MaterIA Gris">
+        <div class="materia-principle"><span>01</span><div><b>Verifica antes de afirmar</b><p>Cada cifra conserva fuente, fecha, universo, territorio y una cautela de interpretación.</p></div></div>
+        <div class="materia-principle"><span>02</span><div><b>Conecta el sistema completo</b><p>Relaciona trayectorias, oferta, calidad, financiación, empleo, investigación y condiciones territoriales.</p></div></div>
+        <div class="materia-principle"><span>03</span><div><b>Ayuda a decidir sin reemplazar el juicio</b><p>Produce comparaciones, briefs y brechas de información; la deliberación sigue siendo humana.</p></div></div>
+      </div>
+      <div class="materia-about-actions"><a href="#centro">Construir una decisión →</a><a href="#evidencia">Explorar las 67 cifras</a></div>
+    </article>
+    <figure class="materia-about-visual">
+      <picture><source srcset="materia-gris-explicada.webp" type="image/webp"><img src="materia-gris-explicada.png" width="1672" height="941" loading="lazy" decoding="async" alt="Infografía de MaterIA Gris: datos verificados, contexto territorial y decisiones con evidencia sobre el croquis de Antioquia"></picture>
+      <figcaption><span>La inteligencia está en la conexión: una cifra aislada informa; una cifra con contexto, límites y propósito ayuda a decidir.</span><b>Entender · Comparar · Decidir</b></figcaption>
+    </figure>
+  </div>
+</section>
 
 <!-- ================= CENTRO DE DECISIONES ================= -->
 <section id="centro" class="decision-center-section">
@@ -1018,6 +1058,16 @@ html.light .opp-route,html.light .opp-kpi,html.light .opp-card{background:linear
     <article class="tray-lens"><small>Ecosistema privado</small><strong>$399.655 M</strong><b>inversión educativa reportada en 2025</b><p>Proantioquia: 55 organizaciones y 297 iniciativas en todos los niveles. Es inversión reportada, no impacto probado.</p></article>
   </div>
 
+  <div class="tray-system-view" aria-label="Nuevas señales para seguir la trayectoria educativa">
+    <div class="tray-system-head"><div><small>Capa ampliada · corte 17 jul. 2026</small><h3>La trayectoria empieza antes de la matrícula y continúa después del beneficio</h3></div><p>Estas cifras abren preguntas distintas. No forman una cohorte única y sus beneficiarios pueden superponerse.</p></div>
+    <div class="tray-system-grid">
+      <article class="tray-system-card"><small>Puente colegio–superior</small><strong>49,36 %</strong><h4>tránsito inmediato en Medellín</h4><p>Frente a 44,23 % en Antioquia y 45,94 % en Colombia, con corte 2024. La comparación orienta; no explica por sí sola la diferencia.</p><a href="https://www.medellin.gov.co/es/sala-de-prensa/noticias/medellin-se-consolida-como-referente-nacional-en-acceso-a-la-educacion-superior/" target="_blank" rel="noopener">Fuente oficial ↗</a></article>
+      <article class="tray-system-card"><small>Preparación y orientación</small><strong>17.000+</strong><h4>estudiantes esperados en Siguiente Nivel</h4><p>La meta de 20 ferias se complementa con 448 instituciones y 2.942 educadores vinculados a la transformación de la media en Antioquia.</p><a href="https://www.medellin.gov.co/es/sala-de-prensa/noticias/mas-de-17-000-estudiantes-de-medellin-recibiran-orientacion-para-definir-su-siguiente-paso-luego-de-culminar-el-colegio/" target="_blank" rel="noopener">Fuente oficial ↗</a></article>
+      <article class="tray-system-card"><small>Permanencia en Medellín</small><strong>36.251</strong><h4>estudiantes apoyados en las tres IES distritales</h4><p>En 2025 también se entregaron 28.443 beneficios de Matrícula Cero. Son universos distintos y no se suman.</p><a href="https://www.medellin.gov.co/es/wp-content/uploads/2026/02/Cap.-11-Sgto-PI.pdf" target="_blank" rel="noopener">Plan Indicativo ↗</a></article>
+      <article class="tray-system-card"><small>Referencia nacional de riesgo</small><strong>8,97 %</strong><h4>deserción anual en educación superior</h4><p>SPADIES reporta 12,40 % de ausencia intersemestral. La extracción departamental sigue siendo un dato faltante prioritario.</p><a href="https://www.mineducacion.gov.co/sistemasdeinformacion/1783/w3-propertyvalue-68157.html" target="_blank" rel="noopener">SPADIES ↗</a></article>
+    </div>
+  </div>
+
   <div class="tray-sourcebar">
     <div>
       <a href="https://snies.mineducacion.gov.co/portal/ESTADISTICAS/Bases-consolidadas/" target="_blank" rel="noopener">SNIES ↗</a>
@@ -1035,7 +1085,7 @@ html.light .opp-route,html.light .opp-kpi,html.light .opp-card{background:linear
 
 <!-- ================= FUENTES VIVAS ================= -->
 <section id="evidencia" class="evidence-hub-section">
-  <div class="sec-head"><span class="sec-num">V34</span><h2>Fuentes vivas: el sistema educativo con contexto</h2></div>
+  <div class="sec-head"><span class="sec-num">V35</span><h2>Fuentes vivas: el sistema educativo con contexto</h2></div>
   <p class="sec-desc">Una capa curada y reutilizable de evidencia sobre Antioquia: educación superior, transición desde la media, infraestructura, calidad, investigación e inversión. Cada cifra declara su corte, territorio, universo, fuente y limitación antes de entrar a una decisión.</p>
 
   <div class="evh-lead">
@@ -1043,10 +1093,10 @@ html.light .opp-route,html.light .opp-kpi,html.light .opp-card{background:linear
       <small>Nueva arquitectura de evidencia</small>
       <h3>Lo reciente orienta. Lo comparable permite afirmar.</h3>
       <p>MaterIA no obliga a que todas las fuentes parezcan del mismo año. El corte SNIES 2024-II sigue siendo la base comparable; las publicaciones 2025–2026 se muestran como señales administrativas, programas o contexto, sin sumarlas a la matrícula.</p>
-      <span class="evh-stamp" aria-hidden="true">26 fuentes</span>
+      <span class="evh-stamp" aria-hidden="true">33 fuentes</span>
     </article>
     <aside class="evh-asof" aria-label="Estado de actualización de la evidencia">
-      <div class="evh-asof-head"><div><small>Corte de investigación</small><b>16 de julio de 2026</b></div><span class="evh-live">Validación correcta</span></div>
+      <div class="evh-asof-head"><div><small>Corte de investigación</small><b>17 de julio de 2026</b></div><span class="evh-live">Validación correcta</span></div>
       <div class="evh-asof-line"><span>Comparable</span><b>SNIES 2024-II · matrícula, IES y territorio</b></div>
       <div class="evh-asof-line"><span>Reciente</span><b>Gobernación, MEN, Distrito y Proantioquia · 2025–2026</b></div>
       <div class="evh-asof-line"><span>Próximo hito</span><b>SNIES 2025 · resultado nacional publicado; base departamental consolidada pendiente</b></div>
@@ -4692,7 +4742,7 @@ function downloadText(value,nombre){
     G.map(a=>[a.area,a.mujeres,a.total,a.pct.toLocaleString('es-CO')]));
 })();
 
-/* ---- Fuentes vivas V34 ---- */
+/* ---- Fuentes vivas V35 ---- */
 (function(){
   const grid=document.getElementById('evh-grid');if(!grid)return;
   const stats=document.getElementById('evh-stats'),status=document.getElementById('evh-status');
@@ -4726,7 +4776,7 @@ function downloadText(value,nombre){
       </article>`}).join('');
     }
     [q,level,topic,evidence].forEach(el=>el.addEventListener(el===q?'input':'change',render));render();
-  }).catch(error=>{stats.innerHTML='';status.textContent='No fue posible cargar el registro';grid.innerHTML='<div class="evh-empty">El archivo de evidencia no está disponible. Consulte la auditoría pública.</div>';console.error('Fuentes vivas V34',error)});
+  }).catch(error=>{stats.innerHTML='';status.textContent='No fue posible cargar el registro';grid.innerHTML='<div class="evh-empty">El archivo de evidencia no está disponible. Consulte la auditoría pública.</div>';console.error('Fuentes vivas V35',error)});
 })();
 
 /* ---- Paleta de comandos ⌘K ---- */

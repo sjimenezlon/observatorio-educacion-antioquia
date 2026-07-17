@@ -50,7 +50,7 @@ def main() -> None:
         check("priority_routes", open_or_closing == 3 == summary["open_or_closing"], "tres rutas abiertas o próximas a cerrar"),
         check("source_security", all(item["source_url"].startswith("https://") for item in routes), f"{len(official_domains)} dominios servidos por HTTPS"),
         check("caveats", all(item["caveat"] and item["decision_use"] for item in routes), "cero cautelas o usos decisionales vacíos"),
-        check("source_registry", sources["summary"]["sources"] == 26 and sources["summary"]["indicators"] == 45, "26 fuentes y 45 indicadores validados"),
+        check("source_registry", sources["summary"]["sources"] == 33 and sources["summary"]["indicators"] == 67, "33 fuentes y 67 indicadores validados en V35"),
         check("atlas_contract", summary["programs_in_atlas"] == 2107 and summary["institutions_in_atlas"] == 73 and summary["municipalities_with_active_offer"] == 51, "escala SNIES enlazada sin duplicarla"),
         check("audit_contract", audit_summary["rutas_verificadas"] == 14 and audit_summary["tipos"] == 4, "comprobante público sincronizado"),
         check("ui_contract", all(token in html for token in ('id="oportunidades"', 'id="opp-type"', 'id="opp-state"', 'id="opp-grid"', 'oportunidades-antioquia.json')), "buscador general y fuente conectados"),

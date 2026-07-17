@@ -1,7 +1,7 @@
 {
   "estado": "correcto",
-  "fecha_auditoria": "2026-07-16",
-  "alcance": "Atlas territorial, ecosistema general de oportunidades, Modo Decisión, Sala Ejecutiva, Trayectorias, comparativo de producto, sistema público distrital, fuentes vivas y Centro de Decisiones general de MaterIA Gris V34",
+  "fecha_auditoria": "2026-07-17",
+  "alcance": "Atlas territorial, ecosistema general de oportunidades, Modo Decisión, Sala Ejecutiva, Trayectorias ampliadas, comparativo de producto, sistema público distrital, fuentes vivas, imagen explicativa y Centro de Decisiones de MaterIA Gris V35",
   "fuentes": {
     "snies": {
       "descripcion": "Estudiantes Matriculados 2024, bases consolidadas SNIES–MEN",
@@ -152,16 +152,16 @@
     "fuente": "https://www.medellin.gov.co/es/wp-content/uploads/2026/04/Sgto_PI_28Feb2026.pdf",
     "regla_comparabilidad": "La variación frente a 2025-2 compara semestres consecutivos; no se interpreta como crecimiento anual. Los indicadores administrativos 2026 no sustituyen el grano por programa de SNIES 2024."
   },
-  "fuentes_v34": {
-    "corte_investigacion": "2026-07-16",
-    "fuentes_revisadas": 26,
-    "fuentes_oficiales": 22,
+  "fuentes_v35": {
+    "corte_investigacion": "2026-07-17",
+    "fuentes_revisadas": 33,
+    "fuentes_oficiales": 29,
     "fuentes_observatorios": 4,
-    "indicadores_sistematizados": 45,
+    "indicadores_sistematizados": 67,
     "tipos_evidencia": {
-      "directa": 30,
+      "directa": 50,
       "derivada": 7,
-      "reportada": 8
+      "reportada": 10
     },
     "errores_referencia_fuente": 0,
     "ids_duplicados": 0,
@@ -175,10 +175,32 @@
       "La inversión privada es autorreportada; no equivale a gasto público, ejecución auditada ni impacto probado.",
       "Las cifras escolares de los 116 municipios no certificados y del Valle de Aburrá no son aditivas.",
       "Las combinaciones de oferta de la Corporación Gilberto Echeverri no son cupos ni matrículas.",
-      "El presupuesto inicial aprobado no equivale a ejecución ni impacto."
+      "El presupuesto inicial aprobado no equivale a ejecución ni impacto.",
+      "Las metas de orientación, los apoyos de permanencia y los beneficios financieros pueden superponerse y no forman una sola cohorte.",
+      "Los indicadores SPADIES publicados son referencias nacionales y no se atribuyen a Antioquia."
     ],
     "comprobante": "fuentes-antioquia.json",
-    "reproduccion": "python3 scripts/actualizar_fuentes_antioquia.py"
+    "reproduccion": "python3 scripts/actualizar_fuentes_antioquia.py",
+    "verificacion": "verificacion-v35.json"
+  },
+  "diagnostico_v35": {
+    "nuevas_fuentes": 7,
+    "nuevos_indicadores": 22,
+    "capas_ampliadas": [
+      "Tránsito inmediato y orientación postsecundaria",
+      "Permanencia y financiación ejecutada",
+      "Transformación de la educación media",
+      "Condiciones escolares de acceso, bienestar e inclusión",
+      "Referencias nacionales de deserción y ausencia intersemestral"
+    ],
+    "imagen_explicativa": {
+      "archivo_principal": "materia-gris-explicada.webp",
+      "respaldo": "materia-gris-explicada.png",
+      "dimensiones": "1672 × 941",
+      "seccion": "#que-es-materia"
+    },
+    "regla": "Las cifras amplían preguntas de política y gestión; no se suman como una cohorte ni convierten una referencia nacional en un resultado local.",
+    "comprobante": "verificacion-v35.json"
   },
   "centro_decisiones_v34": {
     "perspectivas": 4,
@@ -208,8 +230,8 @@
       "Postularse",
       "Prepararse"
     ],
-    "fuentes_vivas": 26,
-    "indicadores_sistematizados": 45,
+    "fuentes_vivas": 33,
+    "indicadores_sistematizados": 67,
     "comprobante": "oportunidades-antioquia.json",
     "reproduccion": "python3 scripts/actualizar_oportunidades_antioquia.py",
     "regla": "El directorio es curado y no exhaustivo. Distingue oferta, beca, gratuidad, estímulo, crédito, legalización y preparación; la Corporación Gilberto Echeverri aparece como una fuente y operadora dentro del ecosistema."
