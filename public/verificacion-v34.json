@@ -58,7 +58,7 @@
     {
       "check": "source_registry",
       "status": "correcto",
-      "detail": "26 fuentes y 45 indicadores validados"
+      "detail": "44 fuentes y 147 indicadores validados en V37"
     },
     {
       "check": "atlas_contract",

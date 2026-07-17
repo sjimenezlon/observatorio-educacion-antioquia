@@ -1,0 +1,98 @@
+{
+  "meta": {
+    "title": "Verificación V37 · expansión Sapiencia ODES",
+    "validated_on": "2026-07-17",
+    "method": "Controles de catálogo PDF/Power BI, huellas, páginas, esquema, cifras destacadas, registro, interfaz y auditoría."
+  },
+  "summary": {
+    "status": "correcto",
+    "checks": 15,
+    "errors": 0
+  },
+  "checks": [
+    {
+      "check": "catalog_scale",
+      "status": "correcto",
+      "detail": "113 recursos: 64 PDF y 49 tableros"
+    },
+    {
+      "check": "dashboard_distribution",
+      "status": "correcto",
+      "detail": "18 tableros de estudios y 31 de cifras"
+    },
+    {
+      "check": "dashboard_security",
+      "status": "correcto",
+      "detail": "49 tableros enlazados por HTTPS a Power BI"
+    },
+    {
+      "check": "study_scale",
+      "status": "correcto",
+      "detail": "11 estudios y 411 páginas verificadas"
+    },
+    {
+      "check": "indicator_scale",
+      "status": "correcto",
+      "detail": "80 indicadores de encuesta o sondeo"
+    },
+    {
+      "check": "new_studies",
+      "status": "correcto",
+      "detail": "CLEI, ETDH y fondos de pregrado incorporados"
+    },
+    {
+      "check": "pdf_integrity",
+      "status": "correcto",
+      "detail": "11 PDF con páginas y huella SHA-256"
+    },
+    {
+      "check": "method_contract",
+      "status": "correcto",
+      "detail": "80 indicadores con universo, uso, cautela y clasificación"
+    },
+    {
+      "check": "key_values",
+      "status": "correcto",
+      "detail": "cuatro señales ejecutivas coinciden con los PDF"
+    },
+    {
+      "check": "registry_scale",
+      "status": "correcto",
+      "detail": "44 fuentes y 147 indicadores en Fuentes vivas"
+    },
+    {
+      "check": "registry_distribution",
+      "status": "correcto",
+      "detail": "80 encuestas separadas de registros y cálculos"
+    },
+    {
+      "check": "registry_links",
+      "status": "correcto",
+      "detail": "nuevas fuentes e indicadores conectados al registro"
+    },
+    {
+      "check": "scrape_validation",
+      "status": "correcto",
+      "detail": "scraping sin duplicados ni verificaciones faltantes"
+    },
+    {
+      "check": "ui_contract",
+      "status": "correcto",
+      "detail": "interfaz V37 expone recursos, filtros y escala"
+    },
+    {
+      "check": "audit_contract",
+      "status": "correcto",
+      "detail": "auditoría V37 sincronizada"
+    }
+  ],
+  "caveats": [
+    "Encuesta, sondeo, registro administrativo y matrícula no son sinónimos.",
+    "Las expectativas de grado 11 y el seguimiento a bachilleres corresponden a muestras distintas; no forman un embudo.",
+    "El estudio de desertores describe razones entre quienes respondieron; no calcula una tasa de deserción del programa.",
+    "Las percepciones de beneficiarios de Matrícula Cero no identifican el efecto causal del beneficio.",
+    "El sondeo de brecha digital se declara no representativo y se usa para formular hipótesis, no para estimar prevalencias.",
+    "Las diferencias salariales por sexo son descriptivas y no equivalen a una brecha ajustada.",
+    "Los resultados laborales de beneficiarios no identifican el efecto causal de los fondos."
+  ]
+}

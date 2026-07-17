@@ -1,0 +1,86 @@
+{
+  "meta": {
+    "title": "Verificación V36 · Sapiencia ODES y Fuentes vivas",
+    "validated_on": "2026-07-17",
+    "method": "Controles de catálogo, PDF, huellas, esquema, cifras destacadas, registro acumulado, interfaz y auditoría."
+  },
+  "summary": {
+    "status": "correcto",
+    "checks": 13,
+    "errors": 0
+  },
+  "checks": [
+    {
+      "check": "catalog_scale",
+      "status": "correcto",
+      "detail": "la línea base V36 permanece dentro del catálogo acumulado"
+    },
+    {
+      "check": "catalog_distribution",
+      "status": "correcto",
+      "detail": "32 informes y 32 boletines"
+    },
+    {
+      "check": "unique_publications",
+      "status": "correcto",
+      "detail": "cero URL duplicadas"
+    },
+    {
+      "check": "pdf_fingerprints",
+      "status": "correcto",
+      "detail": "ocho PDF con páginas y SHA-256"
+    },
+    {
+      "check": "survey_contract",
+      "status": "correcto",
+      "detail": "47 encuestas con universo, uso y cautela"
+    },
+    {
+      "check": "registry_scale",
+      "status": "correcto",
+      "detail": "la línea base V36 permanece dentro del registro acumulado"
+    },
+    {
+      "check": "registry_distribution",
+      "status": "correcto",
+      "detail": "las 47 encuestas V36 permanecen clasificadas"
+    },
+    {
+      "check": "registry_sources",
+      "status": "correcto",
+      "detail": "ocho estudios ODES incorporados como fuentes"
+    },
+    {
+      "check": "registry_indicators",
+      "status": "correcto",
+      "detail": "47 indicadores ODES incorporados al registro"
+    },
+    {
+      "check": "key_values",
+      "status": "correcto",
+      "detail": "cuatro cifras destacadas coinciden con la curaduría"
+    },
+    {
+      "check": "scrape_validation",
+      "status": "correcto",
+      "detail": "scraping sin duplicados ni verificaciones faltantes"
+    },
+    {
+      "check": "ui_contract",
+      "status": "correcto",
+      "detail": "explorador, biblioteca y rótulo metodológico visibles"
+    },
+    {
+      "check": "audit_contract",
+      "status": "correcto",
+      "detail": "línea base histórica V36 conservada en la auditoría"
+    }
+  ],
+  "caveats": [
+    "Encuesta, sondeo, registro administrativo y matrícula no son sinónimos.",
+    "Las expectativas de grado 11 y el seguimiento a bachilleres corresponden a muestras distintas; no forman un embudo.",
+    "El estudio de desertores describe razones entre quienes respondieron; no calcula una tasa de deserción del programa.",
+    "Las percepciones de beneficiarios de Matrícula Cero no identifican el efecto causal del beneficio.",
+    "El sondeo de brecha digital se declara no representativo y se usa para formular hipótesis, no para estimar prevalencias."
+  ]
+}
