@@ -1,7 +1,7 @@
 {
   "estado": "correcto",
   "fecha_auditoria": "2026-07-17",
-  "alcance": "Atlas territorial, ecosistema general de oportunidades, Modo Decisión, Sala Ejecutiva, Trayectorias ampliadas, comparativo de producto, sistema público distrital, fuentes vivas, imagen explicativa y Centro de Decisiones de MaterIA Gris V35",
+  "alcance": "Atlas territorial, ecosistema general de oportunidades, Modo Decisión, Sala Ejecutiva, Trayectorias ampliadas, comparativo de producto, sistema público distrital, fuentes vivas, biblioteca Sapiencia ODES, imagen explicativa y Centro de Decisiones de MaterIA Gris V36",
   "fuentes": {
     "snies": {
       "descripcion": "Estudiantes Matriculados 2024, bases consolidadas SNIES–MEN",
@@ -152,16 +152,17 @@
     "fuente": "https://www.medellin.gov.co/es/wp-content/uploads/2026/04/Sgto_PI_28Feb2026.pdf",
     "regla_comparabilidad": "La variación frente a 2025-2 compara semestres consecutivos; no se interpreta como crecimiento anual. Los indicadores administrativos 2026 no sustituyen el grano por programa de SNIES 2024."
   },
-  "fuentes_v35": {
+  "fuentes_v36": {
     "corte_investigacion": "2026-07-17",
-    "fuentes_revisadas": 33,
+    "fuentes_revisadas": 41,
     "fuentes_oficiales": 29,
-    "fuentes_observatorios": 4,
-    "indicadores_sistematizados": 67,
+    "fuentes_observatorios": 12,
+    "indicadores_sistematizados": 114,
     "tipos_evidencia": {
       "directa": 50,
       "derivada": 7,
-      "reportada": 10
+      "reportada": 10,
+      "encuesta": 47
     },
     "errores_referencia_fuente": 0,
     "ids_duplicados": 0,
@@ -177,11 +178,30 @@
       "Las combinaciones de oferta de la Corporación Gilberto Echeverri no son cupos ni matrículas.",
       "El presupuesto inicial aprobado no equivale a ejecución ni impacto.",
       "Las metas de orientación, los apoyos de permanencia y los beneficios financieros pueden superponerse y no forman una sola cohorte.",
-      "Los indicadores SPADIES publicados son referencias nacionales y no se atribuyen a Antioquia."
+      "Los indicadores SPADIES publicados son referencias nacionales y no se atribuyen a Antioquia.",
+      "Encuesta, sondeo, registro administrativo y matrícula no son sinónimos."
     ],
     "comprobante": "fuentes-antioquia.json",
     "reproduccion": "python3 scripts/actualizar_fuentes_antioquia.py",
-    "verificacion": "verificacion-v35.json"
+    "verificacion": "verificacion-v36.json"
+  },
+  "sapiencia_odes_v36": {
+    "corte_scraping": "2026-07-17",
+    "publicaciones_catalogadas": 64,
+    "informes": 32,
+    "boletines": 32,
+    "estudios_pdf_auditados": 8,
+    "paginas_pdf_verificadas": 312,
+    "indicadores_de_encuesta": 47,
+    "reglas": [
+      "Las expectativas de grado 11 y el seguimiento a bachilleres corresponden a muestras distintas; no forman un embudo.",
+      "El estudio de desertores describe razones entre quienes respondieron; no calcula una tasa de deserción del programa.",
+      "Las percepciones de beneficiarios de Matrícula Cero no identifican el efecto causal del beneficio.",
+      "El sondeo de brecha digital se declara no representativo y se usa para formular hipótesis."
+    ],
+    "comprobante": "sapiencia-observatorio.json",
+    "reproduccion": "python3 scripts/scrapear_sapiencia_odes.py",
+    "verificacion": "verificacion-v36.json"
   },
   "diagnostico_v35": {
     "nuevas_fuentes": 7,
@@ -230,8 +250,8 @@
       "Postularse",
       "Prepararse"
     ],
-    "fuentes_vivas": 33,
-    "indicadores_sistematizados": 67,
+    "fuentes_vivas": 41,
+    "indicadores_sistematizados": 114,
     "comprobante": "oportunidades-antioquia.json",
     "reproduccion": "python3 scripts/actualizar_oportunidades_antioquia.py",
     "regla": "El directorio es curado y no exhaustivo. Distingue oferta, beca, gratuidad, estímulo, crédito, legalización y preparación; la Corporación Gilberto Echeverri aparece como una fuente y operadora dentro del ecosistema."

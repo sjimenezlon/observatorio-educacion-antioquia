@@ -6,7 +6,7 @@ Tablero de la educación superior del departamento de Antioquia — **pregrado y
 
 **En línea:** https://materia-gris.vercel.app
 **Espejo:** https://observatorio-educacion-antioquia.vercel.app
-**Autor:** Santiago Jiménez Londoño · Última versión: V35 (julio de 2026)
+**Autor:** Santiago Jiménez Londoño · Última versión: V36 (julio de 2026)
 
 ---
 
@@ -18,7 +18,8 @@ Tablero de la educación superior del departamento de Antioquia — **pregrado y
 | **Sala Ejecutiva** | ¿Qué exige decisión ahora? Tensiones, prioridades y rutas diferenciadas para gobierno, rectoría y planeación |
 | **Centro de Decisiones** | ¿Qué evidencia necesito para actuar? Configura perspectiva, propósito y territorio; conecta personas con oportunidades generales, explicita el dato faltante y produce un brief |
 | **Trayectorias y retorno** | ¿Dónde se rompe la oportunidad? Conecta aspiración, acceso, permanencia, aprendizaje, graduación y vínculo laboral sin fingir una cohorte única |
-| **Fuentes vivas** | ¿Qué sabemos hoy y con qué alcance? 33 fuentes y 67 indicadores con corte, universo, uso decisional y cautela |
+| **Sapiencia ODES** | ¿Qué revelan expectativas y experiencias? 64 publicaciones catalogadas, ocho PDF auditados y 47 indicadores de encuesta |
+| **Fuentes vivas** | ¿Qué sabemos hoy y con qué alcance? 41 fuentes y 114 indicadores con corte, universo, uso decisional y cautela |
 | **Panorama** | ¿Cómo evolucionó la matrícula 2018-2024 por nivel, sector y modalidad? |
 | **Instituciones** | ¿Quién forma a Antioquia? 73 IES, comparador de hasta 3, docentes y radar de cifras 2025-2026 autorreportadas |
 | **IES del Distrito** | ¿Cómo se articulan ITM, Pascual Bravo y Colmayor? Matrícula e indicadores oficiales 2026-1, oferta 2026-2, SNIES, finanzas y perfiles institucionales |
@@ -56,6 +57,7 @@ scripts/
   procesar.py            # motor: data/ → public/datos.json + public/datos.js
   auditar_atlas.py       # contrasta el atlas publicado contra los XLSX oficiales
   scrapear_ies_distritales.py # captura catálogos y construye el corte de las tres IES del Distrito
+  scrapear_sapiencia_odes.py # cataloga informes/boletines ODES y verifica ocho PDF
 public/
   index.html             # tablero completo (HTML+JS vanilla, SVG a mano, sin dependencias)
   og.png                 # tarjeta social de MaterIA Gris
@@ -71,10 +73,12 @@ public/
   verificacion-v26.json  # seis etapas, fórmulas, jurisdicciones y límites de Trayectorias
   verificacion-v34.json  # 16 controles del ecosistema general de oportunidades
   verificacion-v35.json  # fuentes, comparabilidad, nuevas cifras e imagen explicativa
+  verificacion-v36.json  # catálogo, PDF, indicadores e interfaz Sapiencia ODES
   verificacion-centro-v34.json # contratos, sumas y controles del Centro de Decisiones
   comparativo-producto.json # referentes, escala, capacidades, fuentes y adopciones V27
   ies-distritales.json   # corte 2026-1, oferta, matrícula, finanzas, fuentes y límites del capítulo V30
-  fuentes-antioquia.json # 33 fuentes y 67 indicadores trazables del registro V35
+  fuentes-antioquia.json # 41 fuentes y 114 indicadores trazables del registro V36
+  sapiencia-observatorio.json # 64 publicaciones y 47 indicadores de encuesta ODES
   oportunidades-antioquia.json # 14 rutas oficiales con estado, fecha, fuente y cautela
   oferta-gilberto-echeverri.json # detalle de 165 combinaciones dentro de una de las rutas
 data/                    # insumos crudos — NO versionados (ver .gitignore)
@@ -83,18 +87,20 @@ data/                    # insumos crudos — NO versionados (ver .gitignore)
 ## Reproducir desde cero
 
 ```bash
-pip install pandas openpyxl pdfplumber      # dependencias
+pip install pandas openpyxl pdfplumber requests beautifulsoup4 # dependencias
 python3 scripts/descargar_datos.py          # ≈500 MB; el archivo del DANE (126 MB) es lento
 python3 scripts/preparar_poblacion.py       # población 17-21 por municipio y subregión
 python3 scripts/procesar.py                 # regenera public/datos.json y public/datos.js
 python3 scripts/auditar_atlas.py            # debe terminar con "estado": "correcto"
 python3 scripts/scrapear_ies_distritales.py # refresca catálogos y comprobante distrital
+python3 scripts/scrapear_sapiencia_odes.py # refresca catálogo ODES, PDF e indicadores curados
 python3 scripts/actualizar_fuentes_antioquia.py # valida y regenera el registro de fuentes vivas
 python3 scripts/actualizar_oferta_gilberto_echeverri.py # descarga, estructura y valida la oferta pública CGEM
 python3 scripts/actualizar_oportunidades_antioquia.py # genera el directorio general con estados y cautelas
 python3 scripts/validar_oportunidades_generales.py # controla esquema, fuentes, estados e interfaz V34
 python3 scripts/validar_centro_decisiones.py # comprueba contratos territoriales y cifras V34
 python3 scripts/validar_diagnostico_v35.py # comprueba fuentes, nuevas cifras, comparabilidad e imagen V35
+python3 scripts/validar_sapiencia_v36.py # comprueba catálogo, PDF, indicadores e interfaz V36
 vercel --prod                               # despliegue (prebuilt, sin build step)
 ```
 
@@ -132,6 +138,7 @@ Cuando el MEN publique la vigencia siguiente (histórico: hacia julio de cada a�
 | **Secretaría de Educación de Antioquia** | Matrícula escolar, PAE, transporte, inclusión, ambientes de aprendizaje y transformación de la media | balance **2025** y cortes **2026** |
 | **Proantioquia** | Alfabetización inicial, inversión privada y perfiles subregionales | datos **2025**, publicados en **2026** |
 | **Distrito de Medellín · Sapiencia** | Tránsito inmediato, orientación, permanencia, Matrícula Cero, matrícula, calidad e investigación | datos **2024–2025** y corte **2026-1** |
+| **Sapiencia · ODES** | Expectativas de grado 11, seguimiento a bachilleres, asistencia, deserción de beneficiarios, Matrícula Cero, destino universitario, talento y brecha digital | estudios **2022–2024**, catálogo raspado **jul. 2026** |
 | **Antioquia Cómo Vamos** | Contraste analítico del sistema con bases MEN, DANE, ICFES, SNIES y LEA | informe **2024**, publicado en 2025 |
 
 ## Decisiones metodológicas (las trampas de los datos oficiales)
@@ -148,11 +155,12 @@ Cuando el MEN publique la vigencia siguiente (histórico: hacia julio de cada a�
 10. **Trayectorias no es un embudo longitudinal**: inscripciones y primer curso son registros SNIES 2024; Saber Pro corresponde a evaluados 2025; OLE observa cotización formal de graduados 2022; permanencia y graduación son referencias nacionales. Cada etapa conserva universo, jurisdicción y corte, y nunca se multiplican sus porcentajes.
 11. **El comparativo de producto no es un ranking**: observa capacidades públicas al 15 de julio de 2026 con una escala editorial de 0 a 3, pero no suma puntos. “No observada” significa que no apareció en las fuentes públicas revisadas, no que una funcionalidad privada sea imposible.
 12. **El sistema distrital tiene cinco universos**: el Plan Indicativo consolida matrícula e indicadores al 28 de febrero de 2026; la convocatoria 2026-2 informa programas y cupos abiertos; los catálogos web muestran páginas visibles; el SNIES 2024 permite la comparación homogénea; los estados financieros tienen cortes propios. Programa acreditado vigente, entrada web y registro SNIES no son sinónimos. La variación frente a 2025-2 es semestral, no anual. Presupuesto, recaudo y resultado contable tampoco se restan entre sí.
-13. **Actualidad no significa comparabilidad**: V35 conserva SNIES 2024-II como último corte departamental comparable disponible al 17 de julio de 2026. El agregado nacional 2025 ya fue publicado, pero no reemplaza la base por departamento. Beneficios, participantes, matrícula, sedes, inversión y resultados no se suman ni se usan como sinónimos.
+13. **Actualidad no significa comparabilidad**: V36 conserva SNIES 2024-II como último corte departamental comparable disponible al 17 de julio de 2026. El agregado nacional 2025 ya fue publicado, pero no reemplaza la base por departamento. Beneficios, participantes, matrícula, sedes, inversión y resultados no se suman ni se usan como sinónimos.
 14. **El Centro de Decisiones no automatiza la política**: V34 aplica reglas transparentes para orientar una pregunta hacia uno de seis propósitos, incluida la conexión con oportunidades generales. Las cifras provienen de capítulos publicados; la recomendación está rotulada como lectura editorial y cada salida declara el dato que falta.
 15. **Oportunidad no es resultado**: oferta, convocatoria, postulación, preselección, legalización, matrícula, renovación y graduación son etapas distintas. El directorio es curado y no exhaustivo; la fuente oficial manda sobre el corte de MaterIA.
 16. **Apoyo no es una cohorte**: orientación, PAE, transporte, permanencia institucional, Matrícula Cero y renovación de créditos pueden observar a las mismas personas en momentos distintos. MaterIA los presenta como capas del sistema y nunca los suma para fabricar un total.
 17. **SPADIES nacional no es Antioquia**: las tasas de deserción y ausencia intersemestral se usan como referencia del sistema colombiano mientras se prepara una extracción departamental reproducible.
+18. **Encuesta no es registro administrativo**: las muestras de ODES conservan método, universo y cautela. Expectativas y seguimiento a bachilleres no forman un embudo; percepciones de Matrícula Cero no prueban causalidad; el sondeo de brecha digital no es representativo.
 
 ### Centro de Decisiones V34
 
@@ -172,16 +180,19 @@ Cuando el MEN publique la vigencia siguiente (histórico: hacia julio de cada a�
 - **Salida reutilizable**: búsqueda compartible y CSV filtrado con fuente y cautela por fila.
 - **Reproducción**: `python3 scripts/actualizar_oportunidades_antioquia.py` genera `public/oportunidades-antioquia.json`.
 
-### Diagnóstico y Fuentes vivas V35
+### Sapiencia ODES y Fuentes vivas V36
 
-- **33 fuentes revisadas**: 29 oficiales y cuatro observatorios o centros de análisis reconocidos.
-- **67 indicadores sistematizados**: 50 publicaciones directas, siete cálculos reproducibles y diez cifras reportadas.
+- **41 fuentes revisadas**: 29 oficiales y 12 observatorios o estudios auditados.
+- **114 indicadores sistematizados**: 50 publicaciones directas, siete cálculos reproducibles, diez cifras reportadas y 47 resultados de encuesta.
+- **64 publicaciones ODES catalogadas**: 32 informes y 32 boletines enlazados a sus PDF públicos.
+- **Ocho estudios auditados**: 312 páginas extraídas y contrastadas con huella SHA-256 y tokens de verificación.
+- **Explorador metodológico**: cada estudio declara muestra, método, corte y cautela antes de mostrar resultados.
 - **22 indicadores nuevos**: tránsito inmediato, orientación, transformación de la media, permanencia, financiación ejecutada, PAE, transporte, inclusión, infraestructura y referencias SPADIES.
 - **Imagen explicativa integrada**: presenta a MaterIA como conexión entre datos verificados, contexto territorial y decisiones con evidencia sobre el croquis de Antioquia.
 - **Metadatos obligatorios**: cada cifra declara periodo, nivel, tema, territorio, universo, fuente, uso para decisiones y limitación.
 - **Validación automática**: cero identificadores duplicados, referencias rotas dentro del registro, universos faltantes o cautelas vacías.
 - **Próximo hito**: el agregado nacional SNIES 2025 fue publicado el 15 de julio de 2026; falta la base consolidada por departamento para recalcular Antioquia.
-- **Reproducción**: `python3 scripts/actualizar_fuentes_antioquia.py` genera `public/fuentes-antioquia.json`.
+- **Reproducción**: `python3 scripts/scrapear_sapiencia_odes.py` genera `public/sapiencia-observatorio.json`; luego `python3 scripts/actualizar_fuentes_antioquia.py` integra el registro completo.
 
 ### Sistema público distrital V30
 

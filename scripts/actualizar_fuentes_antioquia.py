@@ -16,6 +16,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "public" / "fuentes-antioquia.json"
+SAPIENCIA_OUTPUT = ROOT / "public" / "sapiencia-observatorio.json"
 CUT = date(2026, 7, 17)
 
 
@@ -451,6 +452,26 @@ SOURCES = [
     },
 ]
 
+assert SAPIENCIA_OUTPUT.exists(), "Ejecute primero scripts/scrapear_sapiencia_odes.py"
+SAPIENCIA = json.loads(SAPIENCIA_OUTPUT.read_text(encoding="utf-8"))
+for study in SAPIENCIA["studies"]:
+    SOURCES.append({
+        "id": study["id"],
+        "institution": "Sapiencia · Observatorio de Educación Postsecundaria (ODES)",
+        "title": study["title"],
+        "source_type": "observatorio",
+        "publication_date": study["publication_date"],
+        "data_cut": study["data_cut"],
+        "territory": study["territory"],
+        "level": study["level"],
+        "url": study["url"],
+        "role": f"Encuesta o sondeo con muestra documentada de {study['sample']:,} participantes.".replace(",", "."),
+        "refresh": "Según nueva publicación de ODES",
+        "sha256": study["sha256"],
+        "pages": study["pages"],
+        "method": study["method"],
+    })
+
 
 def indicator(
     id_: str,
@@ -546,6 +567,14 @@ INDICATORS = [
     indicator("spadies-cohort-dropout-technical", "Deserción acumulada por cohorte en nivel técnico profesional", 33.52, "33,52 %", "porcentaje", "Cierre estadístico 2024", "Educación superior técnica profesional", "Permanencia", "Colombia", "Cohortes nacionales técnico-profesionales observadas por SPADIES", "spadies-cierre-2024", "directa", "Visibilizar el riesgo de interrupción en trayectorias técnico-profesionales.", "Referencia nacional acumulada; no sustituye una medición departamental o institucional comparable."),
 ]
 
+for item in SAPIENCIA["indicators"]:
+    INDICATORS.append(indicator(
+        item["id"], item["title"], item["value"], item["display"], item["unit"],
+        item["period"], item["level"], item["topic"], item["territory"],
+        item["universe"], item["source_id"], item["evidence"],
+        item["decision_use"], item["caveat"],
+    ))
+
 
 COMPARABILITY_RULES = [
     {
@@ -555,6 +584,10 @@ COMPARABILITY_RULES = [
     {
         "title": "Beneficios ≠ estudiantes adicionales",
         "text": "Gratuidad, Matrícula Cero, Semestre Cero, permanencia y orientación reportan beneficiarios, beneficios o participantes que pueden superponerse; no se suman entre sí ni a la matrícula.",
+    },
+    {
+        "title": "Encuesta ≠ registro administrativo",
+        "text": "Los estudios ODES aportan expectativas, percepciones y seguimientos de muestras específicas. No sustituyen SNIES, SPADIES ni las tasas oficiales del MEN.",
     },
     {
         "title": "Territorios no aditivos",
@@ -594,6 +627,12 @@ UPDATE_QUEUE = [
         "action": "Añadir inglés con un estándar común para los 125 municipios cuando Proantioquia publique resultados y metadatos.",
         "source_id": "proantioquia-capacidades-2026",
     },
+    {
+        "date": "Revisión mensual",
+        "title": "Nuevos estudios y boletines ODES",
+        "action": "Volver a scrapear el catálogo público de Sapiencia, verificar la huella de cada PDF y curar únicamente indicadores con universo y método identificables.",
+        "source_id": "odes-expectativas-2024",
+    },
 ]
 
 
@@ -623,11 +662,12 @@ def main() -> None:
     payload = {
         "meta": {
             "title": "Fuentes vivas de educación en Antioquia",
-            "version": "V35",
+            "version": "V36",
             "research_cut": CUT.isoformat(),
             "method": "Curaduría de fuentes primarias y observatorios reconocidos; cada cifra conserva periodo, territorio, universo, tipo de evidencia, uso y cautela.",
             "latest_comparable_higher_ed_cut": "2024-II",
             "next_expected_release": "SNIES 2025 · agregado nacional publicado; base departamental consolidada pendiente",
+            "sapiencia_catalog": "sapiencia-observatorio.json · 64 publicaciones ODES y 47 indicadores de encuesta",
         },
         "summary": {
             "sources": len(SOURCES),
