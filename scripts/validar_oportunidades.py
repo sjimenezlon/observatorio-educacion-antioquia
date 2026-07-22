@@ -48,7 +48,7 @@ def main() -> None:
         check("offer_subregions", len(region_counts) == 9 and sum(region_counts.values()) == 165, "nueve subregiones suman el total"),
         check("budget_total", budget["operations_cop"] + budget["investment_cop"] == budget["total_cop"], "funcionamiento + inversion = presupuesto total"),
         check("budget_investment", budget_investment_parts == budget["investment_cop"], "rubros de inversion suman la apropiacion de inversion"),
-        check("source_registry", sources["summary"]["sources"] == 26 and sources["summary"]["indicators"] == 45, "26 fuentes y 45 indicadores validados en V34"),
+        check("source_registry", sources["summary"]["sources"] == 33 and sources["summary"]["indicators"] == 55, "33 fuentes y 55 indicadores validados en V35"),
         check("source_offer_indicators", {"cgem-offer-combinations-2026", "cgem-offer-municipalities-2026", "cgem-budget-total-2026"}.issubset(indicator_ids), "oferta y presupuesto presentes en Fuentes Vivas"),
         check("ui_contract", all(token in html for token in ('id="oportunidades"', 'id="opp-type"', 'id="opp-grid"', 'oferta-gilberto-echeverri.json')), "el detalle histórico permanece conectado como capa relacionada"),
         check("snies_freshness", "resultado agregado publicado" in html and "SNIES 2025 aún no se publica" not in html, "agregado nacional publicado; base departamental pendiente"),

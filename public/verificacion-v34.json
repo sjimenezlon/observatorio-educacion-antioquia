@@ -48,7 +48,7 @@
     {
       "check": "source_security",
       "status": "correcto",
-      "detail": "7 dominios servidos por HTTPS"
+      "detail": "8 dominios servidos por HTTPS"
     },
     {
       "check": "caveats",
@@ -58,7 +58,7 @@
     {
       "check": "source_registry",
       "status": "correcto",
-      "detail": "26 fuentes y 45 indicadores validados"
+      "detail": "33 fuentes y 55 indicadores validados"
     },
     {
       "check": "atlas_contract",
@@ -108,6 +108,7 @@
     },
     "official_domains": [
       "corporaciongilbertoecheverri.gov.co",
+      "inglesparatrabajoantioquia2026.colombomedellin.edu.co",
       "sapiencia.gov.co",
       "snies.mineducacion.gov.co",
       "web.icetex.gov.co",

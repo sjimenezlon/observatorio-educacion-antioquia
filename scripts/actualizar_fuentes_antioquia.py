@@ -16,7 +16,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "public" / "fuentes-antioquia.json"
-CUT = date(2026, 7, 16)
+CUT = date(2026, 7, 22)
 
 
 SOURCES = [
@@ -358,6 +358,97 @@ SOURCES = [
         "role": "Amplía el radar de convocatorias y conserva la responsabilidad de cada promotor.",
         "refresh": "Mensual o periódico",
     },
+    {
+        "id": "men-matricula-basica-2024",
+        "institution": "Ministerio de Educación Nacional · datos.gov.co",
+        "title": "Matrícula de preescolar, básica y media por sede y municipio (ngw5-c5nw)",
+        "source_type": "oficial",
+        "publication_date": "2025-07-29",
+        "data_cut": "2010-2024 (sin 2018)",
+        "territory": "Antioquia",
+        "level": "Preescolar, básica y media",
+        "url": "https://www.datos.gov.co/resource/ngw5-c5nw",
+        "role": "Microagregados por sede que permiten la serie municipal de matrícula, sectores oficial y no oficial.",
+        "refresh": "Anual",
+    },
+    {
+        "id": "men-tasas-ebm-2024",
+        "institution": "Ministerio de Educación Nacional · datos.gov.co",
+        "title": "Tasas de cobertura y deserción en preescolar, básica y media (ji8i-4anb)",
+        "source_type": "oficial",
+        "publication_date": "2025-11-13",
+        "data_cut": "2011-2024",
+        "territory": "Antioquia",
+        "level": "Preescolar, básica y media",
+        "url": "https://www.datos.gov.co/resource/ji8i-4anb",
+        "role": "Fila departamental oficial de cobertura neta/bruta por nivel y deserción intraanual.",
+        "refresh": "Anual",
+    },
+    {
+        "id": "men-bachilleres-2024",
+        "institution": "Ministerio de Educación Nacional · datos.gov.co",
+        "title": "Bachilleres por entidad territorial certificada (5c2k-ahfc)",
+        "source_type": "oficial",
+        "publication_date": "2025-11-13",
+        "data_cut": "2019-2024",
+        "territory": "Antioquia · 10 ETC",
+        "level": "Transición media–superior",
+        "url": "https://www.datos.gov.co/resource/5c2k-ahfc",
+        "role": "Cuenta la cosecha anual de bachilleres (grado 11 + CLEI) que alimenta la demanda de educación superior.",
+        "refresh": "Anual",
+    },
+    {
+        "id": "icetex-datos-abiertos-2026",
+        "institution": "ICETEX · datos.gov.co",
+        "title": "Créditos otorgados, renovados y cartera del ICETEX (26bn-e42j, nvcf-b8a3, dugh-vkir)",
+        "source_type": "oficial",
+        "publication_date": "2026-07-15",
+        "data_cut": "Vigencias 2015-2025 · cartera al 2026-06-30",
+        "territory": "Antioquia y Colombia",
+        "level": "Financiación educativa",
+        "url": "https://www.datos.gov.co/resource/26bn-e42j",
+        "role": "Series de beneficiarios de crédito educativo y estado de la cartera por época.",
+        "refresh": "Semestral (colocación) y trimestral (cartera)",
+    },
+    {
+        "id": "gob-becas-2013-2024",
+        "institution": "Gobernación de Antioquia · datos.gov.co",
+        "title": "Becas de educación superior de la Gobernación (ya7f-466y)",
+        "source_type": "oficial",
+        "publication_date": "2024-05-20",
+        "data_cut": "Convocatorias 2013-2024 (2024 parcial)",
+        "territory": "Antioquia · 9 subregiones",
+        "level": "Financiación educativa",
+        "url": "https://www.datos.gov.co/resource/ya7f-466y",
+        "role": "Historial de beneficiarios con subregión, estrato y estado de graduación.",
+        "refresh": "Congelada desde mayo de 2024",
+    },
+    {
+        "id": "sena-fpi-2024",
+        "institution": "SENA · datos.gov.co",
+        "title": "Formación profesional integral — aprendices, deserción y certificación (vv8g-8u9u, u4ze-bi7k, 28vu-5tx7)",
+        "source_type": "oficial",
+        "publication_date": "2024-03-14",
+        "data_cut": "Fichas vigentes a febrero de 2024",
+        "territory": "Regional Antioquia",
+        "level": "Sistema educativo",
+        "url": "https://www.datos.gov.co/resource/vv8g-8u9u",
+        "role": "Registro administrativo propio del SENA: titulada y cursos largos con deserción por nivel.",
+        "refresh": "Sin corte posterior publicado",
+    },
+    {
+        "id": "ole-base-ibc-2023",
+        "institution": "Ministerio de Educación Nacional · Observatorio Laboral para la Educación",
+        "title": "Base IBC 2023 por programa e institución",
+        "source_type": "oficial",
+        "publication_date": "2024",
+        "data_cut": "Cotizantes 2023 · graduados 2018-2022",
+        "territory": "IES con domicilio en Antioquia",
+        "level": "Educación superior",
+        "url": "https://ole.mineducacion.gov.co/portal/",
+        "role": "Permite el retorno salarial a nivel de programa, no solo por área.",
+        "refresh": "Anual con rezago; sin corte 2024",
+    },
 ]
 
 
@@ -431,6 +522,16 @@ INDICATORS = [
     indicator("cgem-budget-semester-zero-2026", "Apropiación inicial para Semestre Cero", 4927.057799, "$4.927 millones", "millones de pesos", "2026", "Transición media–superior", "Inversión", "Antioquia", "Rubro Semestre Cero del presupuesto inicial", "cgem-budget-2026", "directa", "Contrastar recursos, cobertura y transición efectiva posterior.", "Apropiación inicial, no ejecución ni evaluación de impacto."),
     indicator("matricula-cero-financing-2026-2", "Cobertura máxima de Matrícula Cero", 100, "Hasta 100 %", "porcentaje de la liquidación de matrícula", "Convocatoria 2026-2", "Pregrado", "Financiación", "Medellín", "Personas elegibles admitidas o matriculadas en IES públicas con convenio y sede en Medellín", "sapiencia-matricula-cero-2026-2", "directa", "Identificar una ruta local abierta de financiación y conectarla con admisión y permanencia.", "La postulación no garantiza el beneficio; aplican requisitos, impedimentos, validación y disponibilidad de recursos."),
     indicator("matricula-cero-minimum-credits-2026-2", "Créditos mínimos de Matrícula Cero", 8, "8", "créditos", "Convocatoria 2026-2", "Pregrado", "Permanencia", "Medellín", "Postulación y renovación del beneficio, con excepciones reglamentarias", "sapiencia-matricula-cero-2026-2", "directa", "Orientar la carga académica mínima y prevenir pérdida del beneficio.", "La fuente contempla excepciones para ciclos complementarios y los dos últimos semestres; consulte el reglamento completo."),
+    indicator("basic-enrolment", "Matrícula de preescolar, básica y media", 1148645, "1.148.645", "matrículas", "2024", "Preescolar, básica y media", "Escala", "Antioquia", "Matrícula oficial y no oficial de preescolar a media, con ciclos de adultos en su nivel equivalente", "men-matricula-basica-2024", "derivada", "Dimensionar la base escolar que alimentará la demanda futura de educación superior.", "La serie no incluye 2018 (no existe en el dataset); cayó 17,9 % desde 2011 por demografía, no por cobertura."),
+    indicator("basic-net-coverage-media", "Cobertura neta de educación media", 52.81, "52,8 %", "por ciento", "2024", "Preescolar, básica y media", "Acceso", "Antioquia", "Población en edad de media matriculada en media (fila departamental oficial)", "men-tasas-ebm-2024", "directa", "Ubicar el cuello de botella escolar previo a la educación superior.", "El salto 2017→2018 de la serie es un artefacto de la reestimación censal del denominador, no una mejora real."),
+    indicator("basic-dropout-secondary", "Deserción intraanual en secundaria", 5.1, "5,1 %", "por ciento", "2024", "Preescolar, básica y media", "Permanencia", "Antioquia", "Estudiantes del sector oficial que abandonan durante el año escolar", "men-tasas-ebm-2024", "directa", "Focalizar retención donde la fuga duplica a los demás niveles.", "Tasa intraanual calculada por el MEN solo sobre la matrícula oficial."),
+    indicator("bachelors-yearly", "Bachilleres graduados al año", 86837, "86.837", "bachilleres", "2024", "Transición media–superior", "Demanda", "Antioquia · 10 ETC", "Aprobados de grado 11 más ciclo 26 de adultos, sectores oficial y no oficial", "men-bachilleres-2024", "derivada", "Dimensionar la cosecha anual que puede transitar a educación superior.", "El año 2022 venía duplicado en el origen y se depuró fila a fila; incluye bachilleres adultos por CLEI."),
+    indicator("icetex-new-credits", "Créditos ICETEX nuevos en Antioquia", 484, "484", "créditos", "2025", "Financiación educativa", "Financiación", "Antioquia", "Beneficiarios nuevos por departamento de origen", "icetex-datos-abiertos-2026", "directa", "Medir el repliegue del crédito educativo como vía de acceso.", "Cayó 84,7 % frente a 2024; el dataset no publica montos (solo deciles) y las renovaciones apenas variaron."),
+    indicator("icetex-arrears-share", "Créditos ICETEX en mora (época de amortización)", 28.9, "28,9 %", "por ciento", "2026-06-30", "Financiación educativa", "Financiación", "Antioquia", "Créditos activos de residentes en Antioquia que ya amortizan", "icetex-datos-abiertos-2026", "derivada", "Dimensionar la carga que dejó el modelo de crédito educativo.", "Cálculo propio sobre conteos; el indicador oficial de cartera vencida (saldo con mora >30 días) es 14,9 %."),
+    indicator("gob-scholarships-total", "Becas históricas de la Gobernación", 14566, "14.566", "beneficiarios", "2013-2024", "Financiación educativa", "Equidad", "Antioquia · 9 subregiones", "Beneficiarios acumulados del programa departamental de becas; 81,6 % de estratos 1 y 2", "gob-becas-2013-2024", "directa", "Leer a quién llegó la beca pública y su colapso reciente (43 nuevas en 2024).", "Base congelada desde mayo de 2024; 2024 es parcial."),
+    indicator("gob-scholarships-graduation", "Graduación de becarios de la Gobernación", 59.4, "59,4 %", "por ciento", "Cohortes 2013-2018", "Financiación educativa", "Permanencia", "Antioquia", "Becarios de cohortes con al menos seis años al corte de la base", "gob-becas-2013-2024", "derivada", "Aproximar la efectividad de la beca como vía de graduación.", "La foto de graduación es a mayo de 2024 sin fecha de grado; las cohortes recientes aún no alcanzan a graduarse."),
+    indicator("sena-apprentices", "Aprendices SENA en fichas vigentes", 168420, "168.420", "aprendices", "feb-2024", "Sistema educativo", "Escala", "Regional Antioquia", "Fichas vigentes de titulada (90.156) y cursos especiales y eventos (78.264)", "sena-fpi-2024", "directa", "Dimensionar el otro sistema de formación con su registro propio.", "Foto al corte que acumula cohortes de varios años; no comparable con matrícula SNIES de semestre pico; la complementaria corta regular no está."),
+    indicator("ole-programs-published", "Programas con retorno salarial publicado", 1044, "1.044", "programas × IES", "IBC 2023", "Educación superior", "Oferta", "IES con domicilio en Antioquia", "Cruces programa-institución con 20 o más cotizantes en la Base IBC 2023", "ole-base-ibc-2023", "derivada", "Comparar el salario de enganche programa a programa, no solo por área.", "El IBC se estima desde siete rangos salariales (el superior está censurado) y cada cotizante cuenta en su máximo nivel de formación."),
 ]
 
 
@@ -476,6 +577,24 @@ UPDATE_QUEUE = [
         "source_id": "snies-bases-2024",
     },
     {
+        "date": "Cuando el SENA publique un corte posterior a feb-2024",
+        "title": "Serie SENA actualizada",
+        "action": "Reemplazar la foto de fichas vigentes por el corte nuevo y revisar si aparece la complementaria corta regular.",
+        "source_id": "sena-fpi-2024",
+    },
+    {
+        "date": "Cuando el OLE publique el corte 2024",
+        "title": "Retorno por programa con IBC 2024",
+        "action": "Regenerar ole_programas.js con la vigencia nueva y recalcular la calibración por área antes de publicar.",
+        "source_id": "ole-base-ibc-2023",
+    },
+    {
+        "date": "Si el MEN lo publica",
+        "title": "Tránsito inmediato por municipio y ETC",
+        "action": "No existe dataset vivo (verificado jul-2026); integrarlo apenas exista para volver territorial la cifra de 44,23 %.",
+        "source_id": "men-bachilleres-2024",
+    },
+    {
         "date": "Próxima publicación",
         "title": "Línea base Antioquia First",
         "action": "Añadir inglés con un estándar común para los 125 municipios cuando Proantioquia publique resultados y metadatos.",
@@ -510,7 +629,7 @@ def main() -> None:
     payload = {
         "meta": {
             "title": "Fuentes vivas de educación en Antioquia",
-            "version": "V34",
+            "version": "V35",
             "research_cut": CUT.isoformat(),
             "method": "Curaduría de fuentes primarias y observatorios reconocidos; cada cifra conserva periodo, territorio, universo, tipo de evidencia, uso y cautela.",
             "latest_comparable_higher_ed_cut": "2024-II",

@@ -17,7 +17,7 @@ Tablero de la educación superior del departamento de Antioquia — **pregrado y
 | **Sala Ejecutiva** | ¿Qué exige decisión ahora? Tensiones, prioridades y rutas diferenciadas para gobierno, rectoría y planeación |
 | **Centro de Decisiones** | ¿Qué evidencia necesito para actuar? Configura perspectiva, propósito y territorio; conecta personas con oportunidades generales, explicita el dato faltante y produce un brief |
 | **Trayectorias y retorno** | ¿Dónde se rompe la oportunidad? Conecta aspiración, acceso, permanencia, aprendizaje, graduación y vínculo laboral sin fingir una cohorte única |
-| **Fuentes vivas** | ¿Qué sabemos hoy y con qué alcance? 26 fuentes y 45 indicadores con corte, universo, uso decisional y cautela |
+| **Fuentes vivas** | ¿Qué sabemos hoy y con qué alcance? 33 fuentes y 55 indicadores con corte, universo, uso decisional y cautela |
 | **Panorama** | ¿Cómo evolucionó la matrícula 2018-2024 por nivel, sector y modalidad? |
 | **Antesala** | El sistema antes del sistema: matrícula de preescolar, básica y media (MEN municipal), cobertura y deserción por nivel, bachilleres por ETC y la formación SENA con su propio registro |
 | **Instituciones** | ¿Quién forma a Antioquia? 73 IES, comparador de hasta 3, docentes y radar de cifras 2025-2026 autorreportadas |
@@ -60,6 +60,7 @@ scripts/
   sena_fpi.py            # antesala: SENA Regional Antioquia — aprendices, deserción, certificación
   financiacion.py        # ICETEX (otorgados/renovados/cartera) + becas Gobernación (datos.gov.co)
   ole_programas.py       # retorno salarial por programa desde la Base IBC 2023 → public/ole_programas.js
+  validar_v35.py         # verificación V35: sumas internas, umbrales, vigencias y registro → public/verificacion-v35.json
   auditar_atlas.py       # contrasta el atlas publicado contra los XLSX oficiales
   scrapear_ies_distritales.py # captura catálogos y construye el corte de las tres IES del Distrito
 public/
@@ -78,7 +79,7 @@ public/
   verificacion-centro-v34.json # contratos, sumas y controles del Centro de Decisiones
   comparativo-producto.json # referentes, escala, capacidades, fuentes y adopciones V27
   ies-distritales.json   # corte 2026-1, oferta, matrícula, finanzas, fuentes y límites del capítulo V30
-  fuentes-antioquia.json # 26 fuentes y 45 indicadores trazables del registro V34
+  fuentes-antioquia.json # 33 fuentes y 55 indicadores trazables del registro (V35)
   oportunidades-antioquia.json # 14 rutas oficiales con estado, fecha, fuente y cautela
   oferta-gilberto-echeverri.json # detalle de 165 combinaciones dentro de una de las rutas
 data/                    # insumos crudos — NO versionados (ver .gitignore)
@@ -174,8 +175,8 @@ Cuando el MEN publique la vigencia siguiente (histórico: hacia julio de cada a�
 
 ### Fuentes vivas V34
 
-- **26 fuentes revisadas**: 22 oficiales y cuatro observatorios o centros de análisis reconocidos.
-- **45 indicadores sistematizados**: 30 publicaciones directas, siete cálculos reproducibles y ocho cifras reportadas.
+- **33 fuentes revisadas**: 29 oficiales y cuatro observatorios o centros de análisis reconocidos.
+- **55 indicadores sistematizados**: 35 publicaciones directas, 12 cálculos reproducibles y 8 cifras reportadas.
 - **Metadatos obligatorios**: cada cifra declara periodo, nivel, tema, territorio, universo, fuente, uso para decisiones y limitación.
 - **Validación automática**: cero identificadores duplicados, referencias rotas dentro del registro, universos faltantes o cautelas vacías.
 - **Próximo hito**: el agregado nacional SNIES 2025 fue publicado el 15 de julio de 2026; falta la base consolidada por departamento para recalcular Antioquia.

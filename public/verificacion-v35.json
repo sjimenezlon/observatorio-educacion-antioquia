@@ -1,0 +1,153 @@
+{
+  "meta": {
+    "title": "Verificación V35 · antesala, financiación y retorno por programa",
+    "validated_on": "2026-07-22",
+    "method": "Sumas internas, umbrales, orden, referencias del registro, regla temporal de vigencias y presencia en la interfaz."
+  },
+  "summary": {
+    "status": "correcto",
+    "checks": 27,
+    "errors": 0
+  },
+  "checks": [
+    {
+      "check": "bm_total_2024",
+      "status": "ok",
+      "detail": "niveles suman el total 2024 (1,148,645)"
+    },
+    {
+      "check": "bm_subregiones",
+      "status": "ok",
+      "detail": "9 subregiones suman exactamente el total departamental"
+    },
+    {
+      "check": "bm_sin_2018",
+      "status": "ok",
+      "detail": "la serie declara el hueco 2018 del dataset origen"
+    },
+    {
+      "check": "bm_cobertura_media",
+      "status": "ok",
+      "detail": "cobertura neta de media 2024 = 52,81 %"
+    },
+    {
+      "check": "bm_bachilleres",
+      "status": "ok",
+      "detail": "bachilleres 2024 = 86.837"
+    },
+    {
+      "check": "icetex_desplome",
+      "status": "ok",
+      "detail": "créditos nuevos 2025 = 484 (-84.7 %)"
+    },
+    {
+      "check": "icetex_mora",
+      "status": "ok",
+      "detail": "cartera en amortización cuadra y la mora es 28,9 % de los créditos"
+    },
+    {
+      "check": "becas_subregion",
+      "status": "ok",
+      "detail": "las 9 subregiones suman los 14.566 beneficiarios"
+    },
+    {
+      "check": "becas_graduacion",
+      "status": "ok",
+      "detail": "graduación 59,4 % en cohortes 2013-2018"
+    },
+    {
+      "check": "sena_universo",
+      "status": "ok",
+      "detail": "titulada + complementaria = 168.420 aprendices"
+    },
+    {
+      "check": "sena_niveles",
+      "status": "ok",
+      "detail": "los 6 niveles suman el total de aprendices"
+    },
+    {
+      "check": "ole_umbral",
+      "status": "ok",
+      "detail": "los 1044 programas cumplen n≥20"
+    },
+    {
+      "check": "ole_conteo",
+      "status": "ok",
+      "detail": "1.044 programas×IES publicados"
+    },
+    {
+      "check": "ole_orden",
+      "status": "ok",
+      "detail": "ordenados por IBC descendente"
+    },
+    {
+      "check": "ole_vinc_rango",
+      "status": "ok",
+      "detail": "ninguna vinculación publicada supera el 100 %"
+    },
+    {
+      "check": "registro_fuentes_v35",
+      "status": "ok",
+      "detail": "las 7 fuentes V35 están en Fuentes Vivas"
+    },
+    {
+      "check": "registro_referencias",
+      "status": "ok",
+      "detail": "los 55 indicadores referencian fuentes existentes"
+    },
+    {
+      "check": "registro_conteos",
+      "status": "ok",
+      "detail": "los conteos del summary coinciden con las listas"
+    },
+    {
+      "check": "rutas_regla_temporal",
+      "status": "ok",
+      "detail": "ninguna ruta abierta o por cerrar tiene fecha ya vencida"
+    },
+    {
+      "check": "rutas_as_of",
+      "status": "ok",
+      "detail": "directorio verificado al 2026-07-22"
+    },
+    {
+      "check": "html_id_antesala",
+      "status": "ok",
+      "detail": "«id=\"antesala\"» presente en index.html"
+    },
+    {
+      "check": "html_id_financiacion",
+      "status": "ok",
+      "detail": "«id=\"financiacion\"» presente en index.html"
+    },
+    {
+      "check": "html_id_vacios",
+      "status": "ok",
+      "detail": "«id=\"vacios\"» presente en index.html"
+    },
+    {
+      "check": "html_ole_programas_js",
+      "status": "ok",
+      "detail": "«ole_programas.js» presente en index.html"
+    },
+    {
+      "check": "html_1_148_645",
+      "status": "ok",
+      "detail": "«1.148.645» presente en index.html"
+    },
+    {
+      "check": "html_86_837",
+      "status": "ok",
+      "detail": "«86.837» presente en index.html"
+    },
+    {
+      "check": "html_52_8",
+      "status": "ok",
+      "detail": "«52,8» presente en index.html"
+    }
+  ],
+  "caveats": [
+    "La regla temporal usa la fecha de verificación (2026-07-22); las vigencias de rutas deben reverificarse en cada corte.",
+    "Los insumos de data/ no están versionados: este validador exige tenerlos descargados (scripts basica_media.py, financiacion.py, sena_fpi.py)."
+  ]
+}
