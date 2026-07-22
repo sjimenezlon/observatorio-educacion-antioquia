@@ -6,7 +6,7 @@ Tablero de la educación superior del departamento de Antioquia — **pregrado y
 
 **En línea:** https://materia-gris.vercel.app
 **Espejo:** https://observatorio-educacion-antioquia.vercel.app
-**Autor:** Santiago Jiménez Londoño · Última versión: V34 (julio de 2026)
+**Autor:** Santiago Jiménez Londoño · Última versión: V35 (julio de 2026)
 
 ---
 
@@ -19,6 +19,7 @@ Tablero de la educación superior del departamento de Antioquia — **pregrado y
 | **Trayectorias y retorno** | ¿Dónde se rompe la oportunidad? Conecta aspiración, acceso, permanencia, aprendizaje, graduación y vínculo laboral sin fingir una cohorte única |
 | **Fuentes vivas** | ¿Qué sabemos hoy y con qué alcance? 26 fuentes y 45 indicadores con corte, universo, uso decisional y cautela |
 | **Panorama** | ¿Cómo evolucionó la matrícula 2018-2024 por nivel, sector y modalidad? |
+| **Antesala** | El sistema antes del sistema: matrícula de preescolar, básica y media (MEN municipal), cobertura y deserción por nivel, bachilleres por ETC y la formación SENA con su propio registro |
 | **Instituciones** | ¿Quién forma a Antioquia? 73 IES, comparador de hasta 3, docentes y radar de cifras 2025-2026 autorreportadas |
 | **IES del Distrito** | ¿Cómo se articulan ITM, Pascual Bravo y Colmayor? Matrícula e indicadores oficiales 2026-1, oferta 2026-2, SNIES, finanzas y perfiles institucionales |
 | **Territorio** | ¿Dónde llega la oferta? Mapa municipal interactivo y comparador sincronizado de razón de oferta, presencia municipal y peso TyT |
@@ -26,13 +27,15 @@ Tablero de la educación superior del departamento de Antioquia — **pregrado y
 | **Modo Decisión** | ¿Cómo reducir opciones? Cruza territorio, nivel, modalidad y área sin fabricar un ranking de “mejores” programas |
 | **Producto comparado** | ¿Qué aprende MaterIA de OTE, College Scorecard, Discover Uni, Mi Futuro y Our World in Data? Matriz sin puntuación total y adopciones V27 |
 | **Oferta** | ¿Qué se puede estudiar? 2.107 programas con explorador filtrable |
-| **Mercado laboral** | ¿Cómo les va a los graduados? Demanda, embudo, vinculación formal y salario de enganche por nivel y área |
+| **Mercado laboral** | ¿Cómo les va a los graduados? Demanda, embudo, vinculación formal y salario de enganche por nivel, área y **programa** (1.044 programas×IES, OLE 2023) |
 | **Calidad** | Acreditación de alta calidad, Saber TyT vs. nacional (y por municipio), bilingüismo (MCER) |
 | **Acreditación** | ¿Cómo se obtiene la alta calidad? Guía protegida, ruta, evidencias y monitor institucional |
 | **Innovación** | 815 grupos de investigación reconocidos (Conv. 957 de 2024) |
 | **Impacto social** | ¿Quiénes estudian? Estrato, trabajo, educación de la madre, brecha de género y STEM |
 | **Redes sociales** | ¿Quién gestiona mejor su presencia digital? Audiencia pública, seis plataformas, índice y límites |
 | **Finanzas** | ¿Qué sostiene a las IES públicas? Presupuesto, dependencia estatal, resultados y alertas |
+| **Financiación** | ¿Quién paga por estudiar? Créditos ICETEX 2015-2025 (y su cartera en mora), becas de la Gobernación 2013-2024 y gratuidad |
+| **Vacíos** | Lo que Antioquia no mide: 10 datos que faltan con responsable institucional y decisión bloqueada, más el glosario «cómo leer una cifra» |
 | **Metodología** | ¿Qué cifras son oficiales, autorreportadas o cálculos editoriales y cómo se reproducen? |
 
 El panorama incorpora además un bloque de **acceso e infraestructura 2025–2027**: gratuidad, nuevos estudiantes de primer ingreso, Educación Superior en tu Colegio y cartera de proyectos de infraestructura, siempre separado de las estadísticas SNIES para evitar mezclar indicadores administrativos con matrícula consolidada.
@@ -53,6 +56,10 @@ scripts/
   descargar_datos.py     # baja TODOS los insumos a data/ (≈500 MB, no versionados)
   preparar_poblacion.py  # extrae población 17-21 por municipio/subregión (DANE)
   procesar.py            # motor: data/ → public/datos.json + public/datos.js
+  basica_media.py        # antesala: matrícula preescolar-media municipal + bachilleres por ETC (datos.gov.co)
+  sena_fpi.py            # antesala: SENA Regional Antioquia — aprendices, deserción, certificación
+  financiacion.py        # ICETEX (otorgados/renovados/cartera) + becas Gobernación (datos.gov.co)
+  ole_programas.py       # retorno salarial por programa desde la Base IBC 2023 → public/ole_programas.js
   auditar_atlas.py       # contrasta el atlas publicado contra los XLSX oficiales
   scrapear_ies_distritales.py # captura catálogos y construye el corte de las tres IES del Distrito
 public/
@@ -62,6 +69,7 @@ public/
   datos.js               # datos agregados (generado — no editar a mano)
   datos.json             # mismo contenido, para reutilizar
   mapa.js                # geometría MGN de los 125 municipios (DANE, vía ArcGIS)
+  ole_programas.js       # nivel programa del OLE (generado por ole_programas.py)
   auditoria.html         # lectura pública de resultados, método y fuentes
   auditoria-cifras.json  # comprobante público de la última auditoría del atlas
   verificacion-v25.json  # controles reproducibles de la Sala Ejecutiva y sus cortes
