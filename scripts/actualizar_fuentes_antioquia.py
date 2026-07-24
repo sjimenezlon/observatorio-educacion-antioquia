@@ -16,7 +16,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "public" / "fuentes-antioquia.json"
-CUT = date(2026, 7, 22)
+CUT = date(2026, 7, 24)
 
 
 SOURCES = [

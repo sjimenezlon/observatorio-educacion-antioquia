@@ -14,7 +14,7 @@ from datetime import date
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-HOY = date(2026, 7, 22)
+HOY = date(2026, 7, 24)
 
 
 def check(name: str, ok: bool, detail: str) -> dict:
@@ -104,7 +104,7 @@ def main() -> None:
         "summary": {"status": "correcto", "checks": len(checks), "errors": 0},
         "checks": checks,
         "caveats": [
-            "La regla temporal usa la fecha de verificación (2026-07-22); las vigencias de rutas deben reverificarse en cada corte.",
+            "La regla temporal usa la fecha de verificación (2026-07-24); las vigencias de rutas deben reverificarse en cada corte.",
             "Los insumos de data/ no están versionados: este validador exige tenerlos descargados (scripts basica_media.py, financiacion.py, sena_fpi.py).",
         ],
     }

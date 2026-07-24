@@ -20,6 +20,83 @@
 <meta name="twitter:image" content="https://materia-gris.vercel.app/og.png">
 <meta name="theme-color" content="#070b12">
 <meta name="description" content="MaterIA Gris — inteligencia educativa para Antioquia: oportunidades, territorio, instituciones, calidad, empleo, finanzas y decisiones con evidencia. Por Santiago Jiménez Londoño.">
+<link rel="canonical" href="https://materia-gris.vercel.app/">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:site_name" content="MaterIA Gris">
+<meta property="og:locale" content="es_CO">
+<meta name="twitter:title" content="MaterIA Gris · El cerebro de datos de la educación de Antioquia">
+<meta name="twitter:description" content="Del preescolar al posgrado: matrícula, territorio, oportunidades, calidad, empleo, financiación y finanzas de la educación de Antioquia — datos verificados y decisiones explicables.">
+<meta name="twitter:image:alt" content="MaterIA Gris · Decisiones educativas con evidencia · Antioquia">
+<meta name="author" content="Santiago Jiménez Londoño">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://materia-gris.vercel.app/#website",
+      "url": "https://materia-gris.vercel.app/",
+      "name": "MaterIA Gris",
+      "alternateName": "MaterIA Gris · El cerebro de datos de la educación de Antioquia",
+      "description": "Inteligencia educativa para Antioquia: del preescolar al posgrado, con datos oficiales verificados y decisiones explicables.",
+      "inLanguage": "es-CO",
+      "author": { "@id": "https://materia-gris.vercel.app/#autor" },
+      "publisher": { "@id": "https://materia-gris.vercel.app/#autor" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://materia-gris.vercel.app/#autor",
+      "name": "Santiago Jiménez Londoño",
+      "jobTitle": "Profesor asistente",
+      "affiliation": {
+        "@type": "CollegeOrUniversity",
+        "name": "Universidad EAFIT"
+      },
+      "knowsAbout": ["Educación superior", "Analítica de datos", "Política pública", "Antioquia"]
+    },
+    {
+      "@type": "Dataset",
+      "@id": "https://materia-gris.vercel.app/#dataset",
+      "name": "MaterIA Gris · Educación de Antioquia, del preescolar al posgrado",
+      "description": "Tablero y base derivada sobre la educación de Antioquia: matrícula de preescolar, básica y media (2011-2024); matrícula, programas, graduados e instituciones de educación superior (2018-2024); cobertura y deserción; resultados Saber TyT; empleabilidad y salario de enganche del Observatorio Laboral (OLE, corte 2023); grupos de investigación de Minciencias (Convocatoria 957 de 2024); acreditación institucional; crédito educativo y becas (ICETEX, Gobernación de Antioquia, Sapiencia); y finanzas públicas de nueve IES oficiales. Cifras verificadas al 24 de julio de 2026.",
+      "url": "https://materia-gris.vercel.app/",
+      "inLanguage": "es-CO",
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "isAccessibleForFree": true,
+      "keywords": ["educación superior", "Antioquia", "Medellín", "matrícula", "SNIES", "deserción", "empleabilidad", "acreditación", "datos abiertos", "Colombia"],
+      "temporalCoverage": "2011/2026",
+      "dateModified": "2026-07-24",
+      "creator": { "@id": "https://materia-gris.vercel.app/#autor" },
+      "spatialCoverage": {
+        "@type": "Place",
+        "name": "Antioquia, Colombia",
+        "geo": { "@type": "GeoCoordinates", "latitude": 6.55, "longitude": -75.82 }
+      },
+      "distribution": [
+        {
+          "@type": "DataDownload",
+          "name": "Base derivada del tablero (matrícula, IES, programas, municipios)",
+          "encodingFormat": "application/json",
+          "contentUrl": "https://materia-gris.vercel.app/datos.json"
+        },
+        {
+          "@type": "DataDownload",
+          "name": "Registro de fuentes vivas e indicadores",
+          "encodingFormat": "application/json",
+          "contentUrl": "https://materia-gris.vercel.app/fuentes-antioquia.json"
+        },
+        {
+          "@type": "DataDownload",
+          "name": "Directorio de oportunidades educativas verificadas",
+          "encodingFormat": "application/json",
+          "contentUrl": "https://materia-gris.vercel.app/oportunidades-antioquia.json"
+        }
+      ],
+      "citation": "Jiménez Londoño, S. (2026). MaterIA Gris: el cerebro de datos de la educación de Antioquia. https://materia-gris.vercel.app/"
+    }
+  ]
+}
+</script>
 <style>
 :root{
   --page:#070b12; --surface:#101722; --surface-2:#16202d;
@@ -34,6 +111,8 @@
 html{scroll-behavior:smooth;scroll-padding-top:70px;overflow-x:hidden}
 body{background:var(--page);color:var(--ink-2);font:15px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 .sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+.skip-link{position:absolute;left:12px;top:-60px;z-index:200;background:var(--s1);color:#04121f;font-weight:700;font-size:13.5px;padding:11px 18px;border-radius:0 0 10px 10px;transition:top .16s ease}
+.skip-link:focus{top:0;text-decoration:none;outline:2px solid var(--ink);outline-offset:2px}
 a{color:var(--s1);text-decoration:none}
 a:hover{text-decoration:underline}
 .wrap{max-width:1180px;margin:0 auto;padding:0 20px}
@@ -740,6 +819,7 @@ html.light .opp-route,html.light .opp-kpi,html.light .opp-card{background:linear
 <script>try{if(localStorage.getItem('obs-theme')==='light')document.documentElement.classList.add('light')}catch(e){}</script>
 </head>
 <body>
+<a href="#inicio" class="skip-link">Saltar al contenido</a>
 <div id="progreso" aria-hidden="true"></div>
 <nav><div class="wrap">
   <a class="logo" href="#top" aria-label="MaterIA Gris · inicio">
@@ -812,7 +892,7 @@ html.light .opp-route,html.light .opp-kpi,html.light .opp-card{background:linear
       </div>
       <div class="core-signals">
         <div class="core-signal"><b>51</b><span>municipios con oferta</span></div>
-        <div class="core-signal"><b>14</b><span>rutas públicas verificadas al 22 jul. 2026</span></div>
+        <div class="core-signal"><b>14</b><span>rutas públicas verificadas al 24 jul. 2026</span></div>
         <div class="core-signal"><b>V34</b><span>ecosistema de oportunidades</span></div>
       </div>
     </aside>
@@ -1049,7 +1129,7 @@ html.light .opp-route,html.light .opp-kpi,html.light .opp-card{background:linear
       <span class="evh-stamp" aria-hidden="true">33 fuentes</span>
     </article>
     <aside class="evh-asof" aria-label="Estado de actualización de la evidencia">
-      <div class="evh-asof-head"><div><small>Corte de investigación</small><b>22 de julio de 2026</b></div><span class="evh-live">Validación correcta</span></div>
+      <div class="evh-asof-head"><div><small>Corte de investigación</small><b>24 de julio de 2026</b></div><span class="evh-live">Validación correcta</span></div>
       <div class="evh-asof-line"><span>Comparable</span><b>SNIES 2024-II · matrícula, IES y territorio</b></div>
       <div class="evh-asof-line"><span>Reciente</span><b>Gobernación, MEN, Distrito y Proantioquia · 2025–2026</b></div>
       <div class="evh-asof-line"><span>Próximo hito</span><b>SNIES 2025 · resultado nacional publicado; base departamental consolidada pendiente</b></div>
@@ -1439,7 +1519,7 @@ html.light .opp-route,html.light .opp-kpi,html.light .opp-card{background:linear
   <div class="sec-head"><span class="sec-num">V34</span><h2>Oportunidades: estudiar, financiarse y avanzar</h2></div>
   <div class="opp-intro">
     <p class="sec-desc">Encuentre rutas oficiales para comparar programas, cubrir la matrícula, postularse o prepararse. El diagnóstico integra Gobernación, Distrito, Sapiencia, Ministerio, ICETEX, IES y fondos territoriales; ninguna entidad ocupa un capítulo exclusivo y cada oportunidad conserva su alcance, estado y límite.</p>
-    <aside class="opp-status"><b>Corte verificado · 22 de julio de 2026</b>El directorio ordena oportunidades abiertas, próximas a cerrar, en legalización, en ejecución, permanentes y cerradas. No recibe postulaciones ni garantiza selección.</aside>
+    <aside class="opp-status"><b>Corte verificado · 24 de julio de 2026</b>El directorio ordena oportunidades abiertas, próximas a cerrar, en legalización, en ejecución, permanentes y cerradas. No recibe postulaciones ni garantiza selección.</aside>
   </div>
 
   <div class="opp-routes" id="opp-routes" aria-label="Cuatro rutas para encontrar oportunidades"><div class="opp-loading">Organizando rutas de acceso…</div></div>
@@ -1873,7 +1953,7 @@ html.light .opp-route,html.light .opp-kpi,html.light .opp-card{background:linear
       <p class="note">Revisión editorial: 14 de julio de 2026. El CNA puede actualizar formatos, cuadros maestros y guías; confirme la versión vigente al iniciar y justo antes de radicar.</p>
       <div class="guide-links">
         <a href="https://www.cna.gov.co/1779/w3-article-427881.html?_noredirect=1" target="_blank" rel="noopener">Acuerdo CESU 01 de 2025 ↗</a>
-        <a href="https://www.cna.gov.co/portal/Secciones/426872%3A" target="_blank" rel="noopener">Guía del trámite 2025 ↗</a>
+        <a href="https://www.cna.gov.co/portal/Secciones/426872:" target="_blank" rel="noopener">Guía del trámite 2025 ↗</a>
         <a href="https://www.cna.gov.co/1779/w3-article-426700.html?_noredirect=1" target="_blank" rel="noopener">Cultura de calidad y autoevaluación ↗</a>
         <a href="https://www.cna.gov.co/portal/Sistema-Nacional-de-Acreditacion/Marco-normativo/" target="_blank" rel="noopener">Marco normativo vigente ↗</a>
         <a href="https://www.cna.gov.co/1779/w3-propertyvalue-67686.html?_noredirect=1" target="_blank" rel="noopener">Etapas oficiales del proceso ↗</a>
@@ -2195,7 +2275,7 @@ html.light .opp-route,html.light .opp-kpi,html.light .opp-card{background:linear
 <section id="producto" class="product-section">
   <div class="sec-head"><span class="sec-num">V27</span><h2>Producto comparado: aprender sin copiar</h2></div>
   <div class="product-intro">
-    <p class="sec-desc">Comparamos MaterIA Gris con cinco referentes públicos de Colombia, Estados Unidos, Reino Unido, Chile y alcance global. La matriz observa capacidades visibles al 22 de julio de 2026 — «Costo y financiación» pasó de Limitada a Adecuada con las series propias de ICETEX, becas y retorno por programa (V35); el costo de matrícula por programa sigue pendiente y así se declara en Vacíos. No suma una puntuación total porque cada herramienta sirve a una decisión y jurisdicción diferente.</p>
+    <p class="sec-desc">Comparamos MaterIA Gris con cinco referentes públicos de Colombia, Estados Unidos, Reino Unido, Chile y alcance global. La matriz observa capacidades visibles al 24 de julio de 2026 — «Costo y financiación» pasó de Limitada a Adecuada con las series propias de ICETEX, becas y retorno por programa (V35); el costo de matrícula por programa sigue pendiente y así se declara en Vacíos. No suma una puntuación total porque cada herramienta sirve a una decisión y jurisdicción diferente.</p>
     <aside class="product-position"><b>Nuestra posición propia</b>Profundidad territorial y lectura de sistema, combinadas con comparación guardable, evidencia reutilizable y límites visibles.</aside>
   </div>
 
@@ -2278,7 +2358,7 @@ html.light .opp-route,html.light .opp-kpi,html.light .opp-card{background:linear
     <div>
       <h4>Metodología y fuentes</h4>
       <ul id="fuentes"></ul>
-      <p style="margin-top:14px">Notas: (1) La matrícula anual corresponde al semestre con mayor total de cada vigencia — sumar semestres duplicaría estudiantes. Para 2024, el corte usado es 2024-II (313.583; 2024-I registró 300.246). (2) Los indicadores OLE se restringen a IES con domicilio en Antioquia; se excluyen SENA y UNAD por ser instituciones de alcance nacional cuyos graduados no son separables por departamento en esa base; la especialización se omite de la tasa de vinculación por cobertura insuficiente. (3) La serie 2015–2017 de la base histórica del MEN se descartó por inconsistencias de reporte semestral. (4) Saber TyT usa la escala 0–200 vigente desde 2017-3; el sector de cada IES se toma del SNIES por errores de registro en la base ICFES. (5) Los grupos de investigación corresponden a los resultados finales de la Convocatoria 957 de 2024 (Resolución 1531 de dic. 2025, listado oficial de Minciencias); como el listado no trae departamento, este se asigna por código GrupLAC contra la base histórica de convocatorias (90 % de cobertura) y, para grupos nuevos, por institución avaladora domiciliada en Antioquia. (6) Los resultados Saber Pro (nivel universitario) no están disponibles como microdato abierto completo en datos.gov.co; se incorporarán desde DataIcfes en la próxima versión. (7) Los niveles MCER de inglés se agregan desde el microdato Saber TyT vía API; los rótulos históricos (A-, -A1, Pre-A1, B+) se homologan a la escala vigente. (8) La división subregional corresponde a la usada por la Gobernación de Antioquia. (9) El radar «La foto 2025–2026» recoge cifras autorreportadas en rendiciones de cuentas, informes de gestión, boletines estadísticos y tableros oficiales de las IES; sus cortes y definiciones varían entre instituciones y no son directamente comparables entre sí ni con el SNIES. El MEN publicó el agregado nacional SNIES 2025 el 15 de julio de 2026, pero la base consolidada descargable por departamento no estaba disponible al corte del 16 de julio. (10) La razón subregional de oferta divide la matrícula de pregrado 2024-II ofertada en la subregión por la población proyectada de 17 a 21 años (DANE, 2024): mide capacidad instalada, no es la tasa oficial de cobertura ni asistencia de residentes, por lo que las subregiones que atraen estudiantes pueden superar el 100 %. (11) El puntaje Saber TyT por municipio promedia los cinco módulos y solo se reporta con 50 o más evaluados. (12) El benchmark interdepartamental y la proyección de población 17-21 son cálculos propios sobre las bases consolidadas nacionales del SNIES y las proyecciones municipales del DANE (CNPV 2018), reproducibles con scripts/benchmark_deptos.py y scripts/proyeccion_demografica.py. (13) La sección de acreditación se construyó sobre las fuentes primarias del régimen (Ley 30 de 1992, Decreto 1330 de 2019, Acuerdos CESU 02 de 2020 y 01 de 2025 con su transición 2026-2027) y la verificación resolución por resolución del estado de cada IES en julio de 2026; los estados «en renovación» reflejan la información pública disponible y pueden resolverse en el segundo semestre de 2026. (14) La sección de finanzas lee los documentos primarios de cada IES (acuerdos de presupuesto 2026, ejecuciones y EEFF a dic-2025) y verifica las ejecuciones contra el CUIPO de la Contraloría vía datos.gov.co (ingresos 9axr-9gnb, gastos 4f7r-epif; códigos CHIP: UdeA 120205000, UNAL 27400000, ITM 260105001, Pascual Bravo 821505000, Colmayor 824505000, TdeA 121705000, Poli JIC 120305000, IU Digital 923272870, IUE 262505266); los porcentajes de dependencia «real» son estimaciones documentadas.</p>
+      <p style="margin-top:14px">Notas: (1) La matrícula anual corresponde al semestre con mayor total de cada vigencia — sumar semestres duplicaría estudiantes. Para 2024, el corte usado es 2024-II (313.583; 2024-I registró 300.246). (2) Los indicadores OLE se restringen a IES con domicilio en Antioquia; se excluyen SENA y UNAD por ser instituciones de alcance nacional cuyos graduados no son separables por departamento en esa base; la especialización se omite de la tasa de vinculación por cobertura insuficiente. (3) La serie 2015–2017 de la base histórica del MEN se descartó por inconsistencias de reporte semestral. (4) Saber TyT usa la escala 0–200 vigente desde 2017-3; el sector de cada IES se toma del SNIES por errores de registro en la base ICFES. (5) Los grupos de investigación corresponden a los resultados finales de la Convocatoria 957 de 2024 (Resolución 1531 de dic. 2025, listado oficial de Minciencias); como el listado no trae departamento, este se asigna por código GrupLAC contra la base histórica de convocatorias (90 % de cobertura) y, para grupos nuevos, por institución avaladora domiciliada en Antioquia. (6) Los resultados Saber Pro (nivel universitario) no están disponibles como microdato abierto completo en datos.gov.co; se incorporarán desde DataIcfes en la próxima versión. (7) Los niveles MCER de inglés se agregan desde el microdato Saber TyT vía API; los rótulos históricos (A-, -A1, Pre-A1, B+) se homologan a la escala vigente. (8) La división subregional corresponde a la usada por la Gobernación de Antioquia. (9) El radar «La foto 2025–2026» recoge cifras autorreportadas en rendiciones de cuentas, informes de gestión, boletines estadísticos y tableros oficiales de las IES; sus cortes y definiciones varían entre instituciones y no son directamente comparables entre sí ni con el SNIES. El MEN publicó el agregado nacional SNIES 2025 el 15 de julio de 2026, pero la base consolidada descargable por departamento seguía sin publicarse al corte del 24 de julio de 2026 (última vigencia disponible: 2024). Un vigía semanal revisa el portal de bases consolidadas; cuando aparezca el cierre 2025, la serie departamental se actualiza y esta nota se retira. (10) La razón subregional de oferta divide la matrícula de pregrado 2024-II ofertada en la subregión por la población proyectada de 17 a 21 años (DANE, 2024): mide capacidad instalada, no es la tasa oficial de cobertura ni asistencia de residentes, por lo que las subregiones que atraen estudiantes pueden superar el 100 %. (11) El puntaje Saber TyT por municipio promedia los cinco módulos y solo se reporta con 50 o más evaluados. (12) El benchmark interdepartamental y la proyección de población 17-21 son cálculos propios sobre las bases consolidadas nacionales del SNIES y las proyecciones municipales del DANE (CNPV 2018), reproducibles con scripts/benchmark_deptos.py y scripts/proyeccion_demografica.py. (13) La sección de acreditación se construyó sobre las fuentes primarias del régimen (Ley 30 de 1992, Decreto 1330 de 2019, Acuerdos CESU 02 de 2020 y 01 de 2025 con su transición 2026-2027) y la verificación resolución por resolución del estado de cada IES en julio de 2026; los estados «en renovación» reflejan la información pública disponible y pueden resolverse en el segundo semestre de 2026. (14) La sección de finanzas lee los documentos primarios de cada IES (acuerdos de presupuesto 2026, ejecuciones y EEFF a dic-2025) y verifica las ejecuciones contra el CUIPO de la Contraloría vía datos.gov.co (ingresos 9axr-9gnb, gastos 4f7r-epif; códigos CHIP: UdeA 120205000, UNAL 27400000, ITM 260105001, Pascual Bravo 821505000, Colmayor 824505000, TdeA 121705000, Poli JIC 120305000, IU Digital 923272870, IUE 262505266); los porcentajes de dependencia «real» son estimaciones documentadas.</p>
       <p style="margin-top:10px"><b style="color:var(--ink-2)">Nota 15 — redes sociales:</b> el capítulo compara una huella pública disponible en cortes 2025–2026. Los seguidores son audiencia potencial bruta, no alcance único; el índice pondera audiencia, eficiencia audiovisual, cadencia y equilibrio multicanal dentro de una muestra de 12 IES. TikTok y LinkedIn se presentan aparte porque no existe una extracción pública homogénea para toda la muestra. Datos, cortes y fórmula: <a href="redes-sociales.json" target="_blank" rel="noopener">redes-sociales.json ↗</a>.</p>
       <p style="margin-top:10px"><b style="color:var(--ink-2)">Nota 16 — IES del Distrito:</b> el capítulo mantiene cinco universos separados: Seguimiento al Plan Indicativo con corte 28 de febrero de 2026, convocatoria distrital 2026-2, páginas visibles de los catálogos institucionales al 15 de julio de 2026, registros comparables SNIES 2024 y estados financieros con sus cortes propios. «Programa acreditado vigente», «entrada web» y «registro SNIES» no son sinónimos. La variación de matrícula frente a 2025-2 es semestral, no anual. En finanzas, presupuesto, recaudo y resultado contable tampoco se restan entre sí. Datos y límites: <a href="ies-distritales.json" target="_blank" rel="noopener">ies-distritales.json ↗</a>.</p>
       <p style="margin-top:10px"><b style="color:var(--ink-2)">Nota 17 — Corporación Gilberto Echeverri Mejía:</b> la oferta publicada el 9 de julio de 2026 contiene 165 combinaciones de sede, institución y programa en 78 municipios. Una fila no es un cupo, una matrícula, un beneficiario ni un programa único. La apertura de grupos depende del mínimo de estudiantes y de condiciones operativas; el presupuesto 2026 es apropiación inicial, no ejecución. Datos, fuentes y validaciones: <a href="oferta-gilberto-echeverri.json" target="_blank" rel="noopener">oferta-gilberto-echeverri.json ↗</a>.</p>
@@ -2291,8 +2371,15 @@ html.light .opp-route,html.light .opp-kpi,html.light .opp-card{background:linear
       <h4>Sobre MaterIA Gris</h4>
       <p>Construido por <b style="color:var(--ink)">Santiago Jiménez Londoño</b> con datos abiertos oficiales descargados y procesados desde los portales del Ministerio de Educación Nacional (SNIES y OLE), el ICFES y MinCiencias vía datos.gov.co, complementados con fuentes públicas documentadas cuando el indicador no existe como dato oficial.</p>
       <p style="margin-top:12px"><b style="color:var(--ink)">Auditoría territorial:</b> el 14 de julio de 2026 se recalcularon los 51 municipios, las 9 subregiones, las 125 geometrías y todos los denominadores de 17–21 años desde los XLSX oficiales. Resultado: <b style="color:var(--ink)">0 diferencias</b>. <a href="auditoria.html">Ver auditoría explicada →</a> · <a href="auditoria-cifras.json" target="_blank" rel="noopener">JSON ↗</a>.</p>
-      <p style="margin-top:12px">Los microdatos y el código de procesamiento son reproducibles. Actualización con cada nueva vigencia publicada por el MEN.</p>
-      <p style="margin-top:12px;color:var(--ink-2)">© 2026 · Santiago Jiménez Londoño</p>
+      <p style="margin-top:12px">Los microdatos y el código de procesamiento son reproducibles. Actualización con cada nueva vigencia publicada por el MEN. <a href="https://github.com/sjimenezlon/observatorio-educacion-antioquia" target="_blank" rel="noopener">Código y scripts ↗</a>.</p>
+
+      <p style="margin-top:16px"><b style="color:var(--ink)">Cómo citar:</b> Jiménez Londoño, S. (2026). <i>MaterIA Gris: el cerebro de datos de la educación de Antioquia</i>. Cifras verificadas al 24 de julio de 2026. https://materia-gris.vercel.app/</p>
+
+      <p style="margin-top:12px"><b style="color:var(--ink)">Licencia:</b> este tablero y las bases derivadas se publican bajo <a href="https://creativecommons.org/licenses/by/4.0/deed.es" target="_blank" rel="noopener">Creative Commons Atribución 4.0 (CC BY 4.0) ↗</a>: puede copiar, adaptar y redistribuir las cifras, incluso con fines comerciales, citando la fuente. Los datos originales pertenecen a las entidades que los publican (MEN, ICFES, DANE, ICETEX, Minciencias, Contraloría General de la República, Gobernación de Antioquia y Distrito de Medellín) y conservan sus propios términos.</p>
+
+      <p style="margin-top:12px"><b style="color:var(--ink)">Alcance y límites:</b> MaterIA Gris es un proyecto independiente de análisis de datos públicos. No es un canal oficial de ninguna entidad, no recibe postulaciones, no tramita beneficios y no garantiza selección en ninguna de las rutas que reseña. Antes de decidir, confirme siempre en la fuente oficial enlazada en cada tarjeta.</p>
+
+      <p style="margin-top:16px;color:var(--ink-2)">© 2026 · Santiago Jiménez Londoño · CC BY 4.0</p>
     </div>
   </div>
 </footer>
@@ -4166,17 +4253,34 @@ lineChart('ch-demanda', D.serie_demanda.map(x=>String(x.anio)), [
 /* ---- contadores animados del hero ---- */
 (function(){
   if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  /* Se recogen los objetivos SIN tocar el DOM: si la pestaña está en segundo plano
+     requestAnimationFrame nunca corre, y escribir el 0 de arranque dejaría el hero
+     en ceros hasta que el usuario la enfoque. La cifra real solo se reemplaza
+     cuando la animación va a ejecutarse de verdad. */
+  const objetivos=[];
   document.querySelectorAll('#kpis .kpi .val').forEach(v=>{
     const raw=v.textContent.trim();
     if(!/^[\d.]+$/.test(raw)) return;
     const target=parseInt(raw.replace(/\./g,''),10); if(!target) return;
-    const t0=performance.now(), dur=900;
-    (function tick(t){
-      const k=Math.min(1,((t||t0)-t0)/dur), e=1-Math.pow(1-k,3);
-      v.textContent=fmt(Math.round(target*e));
-      if(k<1) requestAnimationFrame(tick);
-    })(t0);
+    objetivos.push({v,target,final:raw});
   });
+  if(!objetivos.length) return;
+  let corrido=false;
+  function animar(){
+    if(corrido) return; corrido=true;
+    objetivos.forEach(({v,target,final})=>{
+      const t0=performance.now(), dur=900;
+      (function tick(t){
+        const k=Math.min(1,((t||t0)-t0)/dur), e=1-Math.pow(1-k,3);
+        v.textContent = k<1 ? fmt(Math.round(target*e)) : final;
+        if(k<1) requestAnimationFrame(tick);
+      })(t0);
+    });
+  }
+  if(document.visibilityState==='visible') animar();
+  else document.addEventListener('visibilitychange',()=>{
+    if(document.visibilityState==='visible') animar();
+  },{once:true});
 })();
 
 /* ---- Ficha por institución (deep link #ies=codigo) ---- */
@@ -4549,12 +4653,12 @@ const FIN_AL=[
   const META={
     centro:['SNIES + DANE + ICFES + OLE + fuentes trazadas','2023–2026 · cortes separados','¿Qué evidencia sostiene la decisión y cuál sigue faltando?'],
     trayectorias:['SNIES + SPADIES + ICFES + OTE + OLE','2023–2025 · cortes separados','¿En qué etapa se rompe la trayectoria y qué evidencia falta?'],
-    producto:['Revisión de producto documentada','22 jul. 2026','¿Qué patrón externo mejora la decisión sin diluir la ventaja territorial?'],
+    producto:['Revisión de producto documentada','24 jul. 2026','¿Qué patrón externo mejora la decisión sin diluir la ventaja territorial?'],
     panorama:['SNIES','2018–2024','¿El sistema crece o cambia de composición?'],
     instituciones:['SNIES + IES','2024-II / señales 2026','¿Qué capacidad institucional sostiene el crecimiento?'],
     distrito:['Distrito + catálogos + SNIES + EEFF','2024–2026 · cortes separados','¿Cómo coordinar oferta, cupos y sostenibilidad de las tres IES públicas?'],
     territorio:['SNIES + DANE','2024','¿Dónde una inversión cerraría una brecha verificable?'],
-    oportunidades:['Gobernación + Distrito + Sapiencia + MEN + ICETEX + IES','Directorio verificado 22 jul. 2026','¿Qué ruta coincide, en qué estado está y cómo se convierte en matrícula efectiva?'],
+    oportunidades:['Gobernación + Distrito + Sapiencia + MEN + ICETEX + IES','Directorio verificado 24 jul. 2026','¿Qué ruta coincide, en qué estado está y cómo se convierte en matrícula efectiva?'],
     decidir:['SNIES','2024-II','¿Qué opciones cumplen los criterios sin usar un ranking?'],
     oferta:['SNIES','2024-II','¿Dónde hay diversidad y dónde oferta nominal?'],
     economia:['SNIES + DANE + OLE','2023–2024','¿La oferta dialoga con demanda, territorio y empleo?'],

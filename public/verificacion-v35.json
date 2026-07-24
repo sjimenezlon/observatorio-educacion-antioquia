@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Verificación V35 · antesala, financiación y retorno por programa",
-    "validated_on": "2026-07-22",
+    "validated_on": "2026-07-24",
     "method": "Sumas internas, umbrales, orden, referencias del registro, regla temporal de vigencias y presencia en la interfaz."
   },
   "summary": {
@@ -108,7 +108,7 @@
     {
       "check": "rutas_as_of",
       "status": "ok",
-      "detail": "directorio verificado al 2026-07-22"
+      "detail": "directorio verificado al 2026-07-24"
     },
     {
       "check": "html_id_antesala",
@@ -147,7 +147,7 @@
     }
   ],
   "caveats": [
-    "La regla temporal usa la fecha de verificación (2026-07-22); las vigencias de rutas deben reverificarse en cada corte.",
+    "La regla temporal usa la fecha de verificación (2026-07-24); las vigencias de rutas deben reverificarse en cada corte.",
     "Los insumos de data/ no están versionados: este validador exige tenerlos descargados (scripts basica_media.py, financiacion.py, sena_fpi.py)."
   ]
 }

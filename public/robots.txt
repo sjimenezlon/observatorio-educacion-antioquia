@@ -1,0 +1,9 @@
+# MaterIA Gris · El cerebro de datos de la educación de Antioquia
+# https://materia-gris.vercel.app/
+# Datos públicos de fuentes oficiales (MEN·SNIES, ICFES, DANE, ICETEX, Minciencias,
+# Gobernación de Antioquia, Distrito de Medellín, CGR·CUIPO). Uso libre con atribución.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://materia-gris.vercel.app/sitemap.xml

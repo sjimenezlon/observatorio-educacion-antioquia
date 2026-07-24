@@ -18,7 +18,7 @@ from urllib.parse import urlparse
 ROOT = Path(__file__).resolve().parents[1]
 PUBLIC = ROOT / "public"
 OUTPUT = PUBLIC / "oportunidades-antioquia.json"
-AS_OF = date(2026, 7, 22)
+AS_OF = date(2026, 7, 24)
 
 
 def route(
@@ -263,13 +263,13 @@ def main() -> None:
             "Municipio de Envigado · Corporación Gilberto Echeverri Mejía",
             "Financiarse",
             "legalizacion",
-            "Legalización en curso",
+            "Resultados el 28 de julio",
             "Municipal",
             "Envigado",
             "Educación superior",
             "Personas preseleccionadas del municipio que cumplan el reglamento",
             "Estímulo educativo administrado mediante fondo municipal",
-            "La legalización cerró el 22 de julio; resultados finales el martes 28 de julio de 2026",
+            "La legalización de preseleccionados cerró el 22 de julio; los resultados finales se publican el martes 28 de julio de 2026",
             "https://corporaciongilbertoecheverri.gov.co/programa-de-estimulos-supere/",
             "Programa de estímulos Superé",
             "Muestra cómo un fondo municipal complementa las rutas departamentales, distritales y nacionales.",

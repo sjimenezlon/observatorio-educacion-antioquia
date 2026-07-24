@@ -62,7 +62,7 @@ def main() -> None:
     payload = {
         "meta": {
             "title": "Verificación V34 · ecosistema general de oportunidades",
-            "validated_on": date(2026, 7, 16).isoformat(),
+            "validated_on": date(2026, 7, 24).isoformat(),
             "method": "Controles de esquema, unicidad, estados, fuentes, agregaciones, contrato de interfaz y neutralidad narrativa.",
         },
         "summary": {"status": "correcto", "checks": len(checks), "errors": 0},

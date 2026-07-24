@@ -77,7 +77,7 @@ def main() -> None:
 
     output = {
         "estado": "correcto",
-        "fecha_validacion": date(2026, 7, 16).isoformat(),
+        "fecha_validacion": date(2026, 7, 24).isoformat(),
         "version": "V34",
         "resumen": {
             "perspectivas": len(roles),
