@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IA para transformar el territorio · Educación superior como una oportunidad de oro</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,550;9..144,650&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
+<meta name="description" content="Conferencia: la educación superior como motor de desarrollo — lectura global, regional, colombiana, antioqueña y del Bajo Cauca — y el papel de la inteligencia artificial para cerrar la brecha técnica y de conocimiento. Santiago Jiménez Londoño, Universidad EAFIT.">
+<meta name="author" content="Santiago Jiménez Londoño">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="IA para transformar el territorio · Educación superior como una oportunidad de oro">
+<meta property="og:description" content="Del dato global al Bajo Cauca: por qué la educación superior sigue siendo la mejor apuesta de desarrollo y cómo la IA ayuda a cerrar la brecha.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://materia-gris.vercel.app/presentacion">
+<meta property="og:image" content="https://materia-gris.vercel.app/og.png">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://materia-gris.vercel.app/presentacion">
+<style>
+:root{
+  --page:#ffffff; --ink:#141922; --ink-2:#2f3a4a; --muted:#66738a; --faint:#94a1b5;
+  --line:#e4e9f0; --line-2:#cfd8e4; --wash:#f6f8fb;
+  --s1:#376fbd; --s2:#0d8565; --s3:#936200; --s4:#6956b9;
+  --display:"Fraunces",Georgia,serif;
+  --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,monospace;
+  --pad-y:clamp(46px,6.4vh,92px); --pad-x:clamp(26px,5.6vw,110px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  background:var(--page);color:var(--ink-2);
+  font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;
+  -webkit-font-smoothing:antialiased;overflow:hidden;
+}
+a{color:var(--s1);text-decoration:none;border-bottom:1px solid rgba(55,111,189,.3)}
+a:hover{border-bottom-color:var(--s1)}
+.sr-only{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important}
+
+/* ── escenario ─────────────────────────────────────────────────────────── */
+#escenario{position:fixed;inset:0}
+/* El aire lateral crece con la pantalla hasta topar en 1220 px de contenido:
+   así las láminas respiran en un proyector ancho sin que los bloques con
+   max-width propio (títulos, bajadas) queden centrados por accidente. */
+.lam{
+  position:absolute;inset:0;display:none;flex-direction:column;justify-content:center;
+  padding:var(--pad-y) max(var(--pad-x),calc((100% - 1220px)/2)) calc(var(--pad-y) + 18px);
+}
+.lam.on{display:flex;animation:entra .38s cubic-bezier(.2,.7,.3,1) both}
+@keyframes entra{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.lam.on{animation:none}}
+.lam > *{width:100%;margin-right:auto}
+
+/* ── piezas tipográficas ───────────────────────────────────────────────── */
+.kick{
+  font-family:var(--mono);font-size:clamp(.6rem,.86vw,.8rem);letter-spacing:.17em;
+  text-transform:uppercase;color:var(--s1);margin-bottom:clamp(14px,2.4vh,26px);
+  display:flex;align-items:center;gap:12px;
+}
+.kick::after{content:'';flex:1;height:1px;background:var(--line);max-width:180px}
+h1{
+  font-family:var(--display);font-weight:650;letter-spacing:-.035em;line-height:1;
+  font-size:clamp(2.1rem,5.6vw,4.6rem);color:var(--ink);
+}
+h2{
+  font-family:var(--display);font-weight:550;letter-spacing:-.028em;line-height:1.08;
+  font-size:clamp(1.55rem,3.5vw,3.05rem);color:var(--ink);max-width:22ch;
+}
+h2.ancha{max-width:30ch}
+h2 em{font-style:normal;color:var(--s1)}
+.frase{
+  font-family:var(--display);font-weight:550;letter-spacing:-.034em;line-height:1.06;
+  font-size:clamp(1.9rem,5vw,4.2rem);color:var(--ink);max-width:20ch;
+}
+.frase em{font-style:italic;font-weight:400;color:var(--s1)}
+.bajada{
+  font-size:clamp(.98rem,1.42vw,1.28rem);line-height:1.5;color:var(--ink-2);
+  max-width:62ch;margin-top:clamp(16px,2.4vh,28px);
+}
+.bajada b{color:var(--ink);font-weight:650}
+.fuente{
+  font-family:var(--mono);font-size:clamp(.56rem,.78vw,.72rem);color:var(--faint);
+  letter-spacing:.02em;line-height:1.5;margin-top:clamp(18px,2.8vh,34px);
+  padding-top:10px;border-top:1px solid var(--line);max-width:96ch;
+}
+
+/* ── portada ───────────────────────────────────────────────────────────── */
+.portada .marca{
+  font-family:var(--mono);font-size:clamp(.6rem,.9vw,.8rem);letter-spacing:.2em;
+  text-transform:uppercase;color:var(--muted);margin-bottom:clamp(26px,5vh,54px);
+}
+.portada .marca b{color:var(--ink);font-weight:650}
+.portada h1{font-size:clamp(2.2rem,6.4vw,5.5rem);max-width:17ch}
+.portada .sub{
+  font-family:var(--display);font-weight:400;font-size:clamp(1.05rem,2.2vw,1.9rem);
+  color:var(--muted);margin-top:.5em;max-width:30ch;line-height:1.24;letter-spacing:-.018em;
+}
+.portada .firma{
+  margin-top:clamp(30px,5.6vh,68px);padding-top:clamp(16px,2.4vh,24px);
+  border-top:2px solid var(--ink);display:flex;flex-wrap:wrap;gap:8px clamp(22px,3.4vw,46px);
+  font-family:var(--mono);font-size:clamp(.62rem,.95vw,.84rem);letter-spacing:.06em;color:var(--muted);
+}
+.portada .firma b{color:var(--ink);font-weight:650;letter-spacing:.04em}
+
+/* ── retículas ─────────────────────────────────────────────────────────── */
+.grid{display:grid;gap:clamp(14px,1.8vw,26px);margin-top:clamp(20px,3vh,36px)}
+.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.g5{grid-template-columns:repeat(5,minmax(0,1fr))}
+.split{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:clamp(22px,3.4vw,54px);align-items:center}
+.split.izq{grid-template-columns:minmax(0,1.06fr) minmax(0,.94fr)}
+@media (max-width:900px){.split,.g4,.g5,.g3{grid-template-columns:1fr}.g2{grid-template-columns:1fr}}
+
+/* ── cifras ────────────────────────────────────────────────────────────── */
+.dato .n{
+  font-family:var(--display);font-weight:650;letter-spacing:-.04em;line-height:.94;
+  font-size:clamp(1.9rem,4.2vw,3.5rem);color:var(--ink);display:block;
+}
+.dato .n small{font-size:.44em;letter-spacing:-.01em;color:var(--muted);font-weight:550}
+.dato .t{
+  font-size:clamp(.78rem,1.02vw,.94rem);color:var(--muted);line-height:1.36;margin-top:.5em;
+  display:block;max-width:26ch;
+}
+.dato .t b{color:var(--ink-2);font-weight:650}
+.dato{border-left:3px solid var(--line-2);padding-left:clamp(12px,1.2vw,18px)}
+.dato.a1{border-color:var(--s1)} .dato.a2{border-color:var(--s2)}
+.dato.a3{border-color:var(--s3)} .dato.a4{border-color:var(--s4)}
+.hero-n{
+  font-family:var(--display);font-weight:650;letter-spacing:-.05em;line-height:.86;
+  font-size:clamp(4rem,15vw,12rem);color:var(--ink);
+}
+.hero-n em{font-style:normal;color:var(--s1)}
+
+/* ── tarjetas y listas ─────────────────────────────────────────────────── */
+.card{
+  background:var(--wash);border:1px solid var(--line);border-radius:14px;
+  padding:clamp(14px,1.6vw,22px);
+}
+.card h3{
+  font-family:var(--display);font-weight:650;letter-spacing:-.02em;
+  font-size:clamp(.98rem,1.3vw,1.22rem);color:var(--ink);margin-bottom:.42em;line-height:1.16;
+}
+.card p{font-size:clamp(.79rem,1vw,.93rem);line-height:1.46;color:var(--muted)}
+.card p b{color:var(--ink-2);font-weight:650}
+.card .num{
+  font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;color:var(--s1);
+  display:block;margin-bottom:.7em;
+}
+.card.acc2 .num{color:var(--s2)} .card.acc3 .num{color:var(--s3)} .card.acc4 .num{color:var(--s4)}
+ul.pasos{list-style:none;margin-top:clamp(16px,2.4vh,30px);display:grid;gap:clamp(9px,1.2vh,15px)}
+ul.pasos li{
+  display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(12px,1.4vw,20px);align-items:baseline;
+  padding-bottom:clamp(9px,1.2vh,15px);border-bottom:1px solid var(--line);
+}
+ul.pasos li:last-child{border-bottom:0;padding-bottom:0}
+ul.pasos .p-n{
+  font-family:var(--mono);font-size:clamp(.66rem,.86vw,.78rem);color:var(--s1);
+  letter-spacing:.1em;padding-top:.28em;min-width:2.4em;
+}
+ul.pasos .p-t{
+  font-family:var(--display);font-weight:650;font-size:clamp(.95rem,1.32vw,1.24rem);
+  color:var(--ink);letter-spacing:-.018em;display:block;line-height:1.2;
+}
+ul.pasos .p-d{font-size:clamp(.79rem,1vw,.94rem);color:var(--muted);line-height:1.44;display:block;margin-top:.24em}
+
+/* ── gráficas ──────────────────────────────────────────────────────────── */
+.chart{width:100%;margin-top:clamp(10px,1.6vh,20px)}
+.chart svg{display:block;width:100%;height:auto;overflow:visible}
+.chart text{font-family:system-ui,-apple-system,sans-serif}
+.leyenda{
+  display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:12px;
+  font-size:clamp(.72rem,.92vw,.84rem);color:var(--muted);
+}
+.leyenda span{display:inline-flex;align-items:center;gap:7px}
+.leyenda i{width:11px;height:11px;border-radius:3px;display:inline-block}
+
+/* ── enlace destacado ──────────────────────────────────────────────────── */
+.url-chip{
+  display:inline-flex;align-items:center;gap:14px;margin-top:clamp(20px,3vh,34px);
+  width:auto;max-width:max-content;
+  background:var(--ink);color:#fff;border-radius:999px;padding:clamp(12px,1.5vh,18px) clamp(20px,2.4vw,34px);
+  font-family:var(--mono);font-size:clamp(.82rem,1.5vw,1.32rem);letter-spacing:.01em;border:0;
+}
+.url-chip:hover{background:var(--s1)}
+.url-chip .fl{opacity:.55;font-size:.82em}
+.pill{
+  display:inline-block;font-family:var(--mono);font-size:clamp(.6rem,.8vw,.72rem);
+  letter-spacing:.12em;text-transform:uppercase;color:var(--s2);
+  border:1px solid rgba(13,133,101,.32);border-radius:999px;padding:5px 12px;
+}
+
+/* ── cronómetro / cromo de navegación ──────────────────────────────────── */
+#barra{position:fixed;left:0;top:0;height:3px;background:var(--s1);width:0;z-index:30;transition:width .3s ease}
+#pie{
+  position:fixed;left:0;right:0;bottom:0;height:clamp(34px,4.6vh,46px);z-index:25;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 max(var(--pad-x),calc((100% - 1220px)/2));pointer-events:none;
+  font-family:var(--mono);font-size:clamp(.56rem,.76vw,.7rem);letter-spacing:.12em;color:var(--faint);
+  text-transform:uppercase;
+}
+#pie b{color:var(--ink);font-weight:650}
+#pie .der{pointer-events:auto;display:flex;gap:16px;align-items:center}
+#pie button{
+  font:inherit;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);
+  background:none;border:0;cursor:pointer;padding:4px 2px;
+}
+#pie button:hover{color:var(--s1)}
+.zona{position:fixed;top:0;bottom:clamp(34px,4.6vh,46px);width:16%;z-index:20;cursor:pointer;border:0;background:none}
+.zona.izq{left:0} .zona.der{right:0}
+.zona:focus-visible{outline:2px solid var(--s1);outline-offset:-4px}
+
+/* ── notas del expositor ───────────────────────────────────────────────── */
+.notas{display:none}
+body.con-notas .notas{
+  display:block;position:fixed;left:0;right:0;bottom:clamp(34px,4.6vh,46px);z-index:26;
+  background:var(--ink);color:#e7edf6;padding:16px var(--pad-x) 18px;
+  font-size:clamp(.76rem,.95vw,.9rem);line-height:1.5;max-height:34vh;overflow-y:auto;
+}
+body.con-notas .notas b{color:#fff}
+body.con-notas .lam{padding-bottom:calc(34vh + 40px)}
+
+/* ── índice ────────────────────────────────────────────────────────────── */
+#indice{
+  position:fixed;inset:0;z-index:40;background:rgba(255,255,255,.98);
+  padding:clamp(26px,4.6vh,54px) max(var(--pad-x),calc((100% - 1220px)/2));overflow-y:auto;display:none;
+}
+#indice.on{display:block}
+#indice h2{margin-bottom:clamp(16px,2.6vh,28px)}
+#ix-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px;
+}
+#ix-grid button{
+  text-align:left;background:var(--wash);border:1px solid var(--line);border-radius:11px;
+  padding:12px 14px;cursor:pointer;font:inherit;display:block;
+}
+#ix-grid button:hover{border-color:var(--s1);background:#fff}
+#ix-grid button.aqui{border-color:var(--ink);background:#fff}
+#ix-grid .ix-n{font-family:var(--mono);font-size:.64rem;letter-spacing:.14em;color:var(--s1);display:block}
+#ix-grid .ix-t{
+  font-family:var(--display);font-weight:650;font-size:.98rem;color:var(--ink);
+  display:block;margin-top:5px;line-height:1.2;letter-spacing:-.015em;
+}
+
+/* ── impresión ─────────────────────────────────────────────────────────── */
+@media print{
+  @page{size:landscape;margin:12mm}
+  body{overflow:visible}
+  #barra,#pie,.zona,#indice{display:none!important}
+  #escenario{position:static}
+  .lam{display:flex!important;position:relative;inset:auto;page-break-after:always;
+    min-height:170mm;padding:0 0 14mm;animation:none}
+  .notas{display:block!important;position:static;background:none;color:#444;
+    border-top:1px dashed #bbb;margin-top:10mm;padding:6px 0 0;font-size:9pt}
+  .card{background:#fff}
+}
+</style>
+</head>
+<body>
+
+<div id="barra" aria-hidden="true"></div>
+<p class="sr-only" aria-live="polite" id="anuncio"></p>
+
+<main id="escenario">
+
+<!-- 01 ───────────────────────────────────────────────────────────────── -->
+<section class="lam portada" data-t="Portada">
+  <p class="marca"><b>MaterIA Gris</b> · Universidad EAFIT</p>
+  <h1>IA para transformar el territorio</h1>
+  <p class="sub">Educación superior como una oportunidad de oro</p>
+  <div class="firma">
+    <span>Profesor <b>Santiago Jiménez Londoño</b></span>
+    <span>sjimene8@eafit.edu.co</span>
+    <span>300 296 9754</span>
+    <span>materia-gris.vercel.app</span>
+  </div>
+  <aside class="notas"><b>Arranque.</b> El título tiene trampa deliberada: en el Bajo Cauca «oro» no es una metáfora, es la economía. La tesis de la charla es que hay un segundo yacimiento —el conocimiento— que a diferencia del primero no se agota, no contamina el río y no se lo llevan otros. Presentarse rápido y decir de dónde salen las cifras: SNIES, DANE, ICFES, OLE, MEN, UNESCO, Banco Mundial y el observatorio MaterIA Gris.</aside>
+</section>
+
+<!-- 02 ───────────────────────────────────────────────────────────────── -->
+<section class="lam" data-t="La ruta">
+  <div class="kick">La ruta</div>
+  <h2 class="ancha">Cinco escalas y una herramienta</h2>
+  <div class="grid g3">
+    <div class="card"><span class="num">01 · Mundo</span><h3>El acceso se duplicó</h3><p>269 millones de estudiantes. Entrar dejó de ser el problema; <b>terminar</b> sí lo es.</p></div>
+    <div class="card acc2"><span class="num">02 · América Latina</span><h3>Matriculamos más de lo que graduamos</h3><p>53 % de matrícula bruta contra 24 % de graduación.</p></div>
+    <div class="card acc3"><span class="num">03 · Colombia</span><h3>Récord y reverso</h3><p>2,72 millones de matriculados y, a la vez, uno de los logros más bajos de la OCDE.</p></div>
+    <div class="card acc4"><span class="num">04 · Antioquia</span><h3>El sistema se angosta en la base</h3><p>Crece la universidad, se derrumba la técnica y la tecnológica.</p></div>
+    <div class="card"><span class="num">05 · Bajo Cauca</span><h3>La apuesta</h3><p>Dónde está rota la cadena y por qué esta subregión merece la inversión.</p></div>
+    <div class="card acc2"><span class="num">06 · IA</span><h3>La herramienta</h3><p>Qué cierra de verdad la brecha técnica, qué no, y qué hacer el lunes.</p></div>
+  </div>
+  <aside class="notas">Anunciar el contrato de la charla: cada afirmación viene con fuente y año, ninguna cifra es de opinión. Al final hay dos enlaces que se pueden usar mañana mismo.</aside>
+</section>
+
+<!-- 03 ───────────────────────────────────────────────────────────────── -->
+<section class="lam" data-t="Tesis: el yacimiento que no se agota">
+  <div class="kick">La tesis</div>
+  <p class="frase">Todo yacimiento se agota.<br><em>El conocimiento no.</em></p>
+  <p class="bajada">El oro aluvial del Bajo Cauca tiene una fecha de vencimiento geológica y una estructura de renta que se captura fácil, se reparte mal y deja el pasivo ambiental en el territorio. La educación superior es el único activo productivo que <b>se queda en las personas</b>, se multiplica cuando se comparte y no depende del precio internacional de nada.</p>
+  <aside class="notas">Este es el marco moral de toda la charla. No es un argumento contra la minería: es un argumento sobre qué hacer con la renta mientras dure. La pregunta que deja abierta: ¿qué le queda al Bajo Cauca cuando el oro deje de ser rentable? La respuesta de esta charla es: lo que hayamos puesto en la cabeza de la gente.</aside>
+</section>
+
+<!-- 04 ───────────────────────────────────────────────────────────────── -->
+<section class="lam" data-t="Mundo · el acceso se duplicó">
+  <div class="kick">01 · Lectura global</div>
+  <div class="split">
+    <div>
+      <h2>En una generación, el mundo pasó de 100 a 269 millones de universitarios</h2>
+      <p class="bajada">Es la expansión educativa más rápida de la historia. Ningún país que hoy consideramos desarrollado llegó ahí sin haber hecho antes exactamente este movimiento.</p>
+    </div>
+    <div>
+      <div class="chart" id="ch-mundo"></div>
+    </div>
+  </div>
+  <p class="fuente">UNESCO IESALC · Informe mundial sobre tendencias de la educación superior 2026 (matrícula global 2000 y 2023).</p>
+  <aside class="notas">Dato para dimensionar: el crecimiento mundial de la matrícula terciaria en 23 años equivale a matricular casi cuatro veces la población de Colombia. La expansión no fue un lujo de países ricos: la mayor parte del crecimiento ocurrió en Asia y América Latina.</aside>
+</section>
+
+<!-- 05 ───────────────────────────────────────────────────────────────── -->
+<section class="lam" data-t="Mundo · entrar no es terminar">
+  <div class="kick">01 · Lectura global</div>
+  <h2 class="ancha">Pero el mundo aprendió a <em>matricular</em> mucho más rápido de lo que aprendió a <em>graduar</em></h2>
+  <div class="grid g3">
+    <div class="dato a1"><span class="n">22 <small>→</small> 27 %</span><span class="t">Tasa bruta de <b>graduación</b> mundial entre 2013 y 2024: cinco puntos en once años</span></div>
+    <div class="dato a3"><span class="n">33 %</span><span class="t">De los países del mundo establece la <b>gratuidad por ley</b>. En los demás, el acceso lo decide el bolsillo</span></div>
+    <div class="dato a4"><span class="n">0,8 %</span><span class="t">Del PIB es la inversión promedio global en educación superior. Es una prioridad declarada, no financiada</span></div>
+  </div>
+  <p class="bajada">La consecuencia es una <b>crisis de equidad escondida dentro de una buena noticia</b>: se amplió la puerta de entrada sin ampliar la de salida. Quien abandona sin título carga el costo —tiempo, deuda, frustración— y no recibe la prima salarial.</p>
+  <p class="fuente">UNESCO IESALC · Informe mundial sobre tendencias de la educación superior 2026.</p>
+  <aside class="notas">Aquí se instala la idea que sostiene la parte de IA: el problema del mundo (y del Bajo Cauca) ya no es principalmente conseguir un cupo, es sostener la trayectoria hasta el título. Y sostener trayectorias es, precisamente, donde la tutoría personalizada tiene evidencia.</aside>
+</section>
+
+<!-- 06 ───────────────────────────────────────────────────────────────── -->
+<section class="lam" data-t="Mundo · por qué es desarrollo">
+  <div class="kick">01 · Lectura global</div>
+  <div class="split izq">
+    <div>
+      <h2>¿Por qué insistir? Porque el retorno está medido</h2>
+      <p class="bajada">No es un acto de fe pedagógica. Es una de las relaciones mejor documentadas de la economía del desarrollo, y en Colombia está medida <b>municipio por municipio</b>.</p>
+    </div>
+    <div class="grid" style="margin-top:0">
+      <div class="card"><span class="num">Banco Mundial · 2024</span><h3>Cada punto porcentual más de personas con educación superior en un municipio colombiano se asocia con <b>1,1 puntos menos</b> de incidencia de pobreza</h3><p>Evaluación de la pobreza y la equidad: trayectorias de prosperidad en el territorio colombiano.</p></div>
+      <div class="card acc2"><span class="num">OCDE · Education at a Glance 2025</span><h3>28 puntos de brecha de empleo entre quien tiene título superior y quien solo terminó la media</h3><p>El título no garantiza empleo: cambia la probabilidad y, sobre todo, la formalidad del que se consigue.</p></div>
+    </div>
+  </div>
+  <p class="fuente">Banco Mundial (2024), «Colombia — Evaluación de la pobreza y la equidad», citado por Antioquia Cómo Vamos · OCDE, Education at a Glance 2025, nota país Colombia.</p>
+  <aside class="notas">Si solo se recuerda una cifra de toda la charla, que sea la del Banco Mundial: 1 punto más de educación superior = 1,1 puntos menos de pobreza en el municipio. Es la traducción exacta de «educación» a «desarrollo» y funciona en la escala en la que decide un alcalde.</aside>
+</section>
+
+<!-- 07 ───────────────────────────────────────────────────────────────── -->
+<section class="lam" data-t="América Latina">
+  <div class="kick">02 · Lectura regional</div>
+  <div class="split">
+    <div>
+      <h2>América Latina abrió la puerta. La salida sigue estrecha</h2>
+      <p class="bajada">La región subió trece puntos de cobertura en una década y hoy está <b>por encima del promedio mundial</b>. Pero de cada 100 jóvenes en edad, 53 se matriculan y apenas 24 se gradúan.</p>
+      <p class="bajada">Esa distancia —29 puntos— es el verdadero problema regional: no es un problema de cupos, es de <b>permanencia, nivelación y pertinencia</b>.</p>
+    </div>
+    <div><div class="chart" id="ch-alc"></div></div>
+  </div>
+  <p class="fuente">UNESCO IESALC · Informe mundial sobre tendencias de la educación superior 2026: tasa bruta de matrícula de América Latina y el Caribe 40 % (2013) → 53 % (2023); tasa bruta de graduación 24 % (2023).</p>
+  <aside class="notas">Ojo con la comparación: matrícula y graduación bruta se calculan sobre poblaciones de referencia distintas, así que la resta es indicativa, no aritmética exacta. Aun así la brecha es del tamaño de un sistema educativo entero.</aside>
+</section>
+
+<!-- 08 ───────────────────────────────────────────────────────────────── -->
+<section class="lam" data-t="Colombia · récord 2025">
+  <div class="kick">03 · Colombia</div>
+  <p class="hero-n">2.723.364</p>
+  <p class="bajada" style="max-width:52ch;font-size:clamp(1.05rem,1.6vw,1.45rem)">estudiantes matriculados en educación superior en <b>2025</b>: la cifra más alta de la historia del país. La cobertura llegó a <b>61,75 %</b> y superó por primera vez el 60 %, seis puntos y medio más que en 2022.</p>
+  <p class="fuente">Ministerio de Educación Nacional · SNIES, informe publicado el 15 de julio de 2026. Con la metodología ajustada de población, la cobertura equivale a 56,55 %. La base departamental descargable de la vigencia 2025 aún no se publica: las series por municipio y programa de este país cierran en 2024.</p>
+  <aside class="notas">Aclarar el matiz metodológico sin enredar: hay dos formas de calcular cobertura según la población de referencia; el MEN reporta ambas. La honestidad con el dato es parte del mensaje —y es exactamente lo que hace MaterIA Gris.</aside>
+</section>
+
+<!-- 09 ───────────────────────────────────────────────────────────────── -->
+<section class="lam" data-t="Colombia · lo que sí avanzó">
+  <div class="kick">03 · Colombia</div>
+  <h2 class="ancha">Lo que sí se movió entre 2022 y 2025</h2>
+  <div class="grid g4">
+    <div class="dato a1"><span class="n">41,1 <small>→</small> 47,9 %</span><span class="t">Tránsito inmediato: bachilleres que entran a la superior <b>el año siguiente</b></span></div>
+    <div class="dato a2"><span class="n">24,7 <small>→</small> 31,9 %</span><span class="t">Tránsito inmediato <b>rural</b>: subió siete puntos, y sigue veinte por debajo del urbano (51,5 %)</span></div>
+    <div class="dato a3"><span class="n">939.282</span><span class="t">Beneficiarios de gratuidad en 2025: el <b>97 %</b> de la matrícula pública del país</span></div>
+    <div class="dato a4"><span class="n">$15,2 <small>billones</small></span><span class="t">Presupuesto de educación superior 2026, con un crecimiento real de <b>38,2 %</b> frente a 2022</span></div>
+  </div>
+  <p class="bajada">Traducción: el país resolvió buena parte del problema de <b>precio</b> —la matrícula pública es gratuita para casi todos— y avanzó en el de <b>puerta</b>. Lo que no resolvió es el de <b>trayectoria</b>.</p>
+  <p class="fuente">MEN · SNIES (15 de julio de 2026) y balance sectorial 2022-2026 (23 de julio de 2026).</p>
+  <aside class="notas">Punto político delicado: hay una discusión pública sobre cuántos cupos son «nuevos» realmente. Evitar ese debate y quedarse en los indicadores que el propio SNIES publica, que son los que aquí se citan.</aside>
+</section>
+
+<!-- 10 ──────────────────────────────────────────────────────────────── -->
+<section class="lam" data-t="Colombia · el reverso">
+  <div class="kick">03 · Colombia</div>
+  <h2 class="ancha">El reverso: entramos mucho, terminamos poco</h2>
+  <div class="grid g4">
+    <div class="dato a3"><span class="n">36,6 %</span><span class="t">De los jóvenes de <b>25 a 34 años</b> tiene título superior: uno de los logros más bajos de la OCDE</span></div>
+    <div class="dato a3"><span class="n">+20 %</span><span class="t">Abandona <b>en el primer año</b> de un programa de pregrado</span></div>
+    <div class="dato a3"><span class="n">16 %</span><span class="t">Se gradúa <b>a tiempo</b>. A tres años del plazo teórico, apenas el 44 %</span></div>
+    <div class="dato a4"><span class="n">11,2 %</span><span class="t">Desempleo entre quienes <b>sí</b> tienen título superior: más alto que entre quienes no terminaron la media</span></div>
+  </div>
+  <p class="bajada">La última cifra es la más incómoda y la más útil: en Colombia el título <b>no compra empleo automáticamente, compra formalidad y estabilidad</b>. Por eso la pregunta correcta no es «¿estudiar sirve?», sino «¿estudiar <b>qué</b>, dónde y con qué acompañamiento?».</p>
+  <p class="fuente">OCDE · Education at a Glance 2025, nota país Colombia.</p>
+  <aside class="notas">Esta lámina prepara las dos ideas fuertes del final: (1) pertinencia —qué se estudia frente a qué demanda el territorio— y (2) permanencia —quién acompaña al que se está cayendo—. La IA entra justo en esos dos huecos, no en el de «dar clase».</aside>
+</section>
+
+<!-- 11 ──────────────────────────────────────────────────────────────── -->
+<section class="lam" data-t="Antioquia · la foto">
+  <div class="kick">04 · Antioquia</div>
+  <div class="split izq">
+    <div>
+      <h2>Antioquia: un sistema grande, concentrado y desigual</h2>
+      <p class="bajada">El departamento tiene la segunda oferta más grande del país. Y aun así <b>74 de sus 125 municipios no tienen un solo programa activo</b>.</p>
+    </div>
+    <div class="grid g2" style="margin-top:0">
+      <div class="dato a1"><span class="n">313.583</span><span class="t">Matriculados en 2024-II, todos los niveles</span></div>
+      <div class="dato a2"><span class="n">73</span><span class="t">Instituciones con oferta en el departamento</span></div>
+      <div class="dato a3"><span class="n">2.107</span><span class="t">Programas activos</span></div>
+      <div class="dato a4"><span class="n">51 <small>de 125</small></span><span class="t">Municipios con oferta. Medellín concentra el 78 % de la matrícula</span></div>
+    </div>
+  </div>
+  <p class="fuente">SNIES · bases consolidadas del MEN, vigencia 2024 (semestre pico 2024-II), procesadas por MaterIA Gris.</p>
+  <aside class="notas">Cuando se habla de «Antioquia la más educada» se habla, estadísticamente, del Valle de Aburrá. El resto del departamento es otro país educativo. Esa es la puerta de entrada al argumento territorial.</aside>
+</section>
+
+<!-- 12 ──────────────────────────────────────────────────────────────── -->
+<section class="lam" data-t="Antioquia · se angosta en la base">
+  <div class="kick">04 · Antioquia</div>
+  <div class="split">
+    <div>
+      <h2>El hallazgo central: el sistema <em>se angosta en la base</em></h2>
+      <p class="bajada">Mientras la matrícula universitaria creció <b>6,8 %</b> desde 2018, la técnica y la tecnológica —la puerta de entrada más barata, más corta y más cercana al empleo— se <b>desplomó 28,5 %</b>: de 112.129 a 80.135 estudiantes.</p>
+      <p class="bajada">Es exactamente el nivel del que depende un territorio como el Bajo Cauca, donde el <b>62 %</b> de la matrícula superior es técnica y tecnológica.</p>
+    </div>
+    <div><div class="chart" id="ch-tyt"></div></div>
+  </div>
+  <p class="fuente">SNIES 2018-2024, procesado por MaterIA Gris. Antioquia sigue 5,6 % por debajo de su matrícula de 2018 — la peor brecha entre los departamentos grandes (Bogotá +11,2 %, Atlántico +6,5 %, Valle +5,6 %).</p>
+  <aside class="notas">Dato de contraste que suele sorprender: Antioquia es el único departamento grande que todavía no recupera su nivel prepandemia. No es un problema de demanda de educación: es un problema de oferta corta y pertinente, que es justamente la que se cerró.</aside>
+</section>
+
+<!-- 13 ──────────────────────────────────────────────────────────────── -->
+<section class="lam" data-t="Antioquia · brecha territorial">
+  <div class="kick">04 · Antioquia</div>
+  <h2 class="ancha">Cupos por cada 100 jóvenes de 17 a 21 años, por subregión</h2>
+  <div class="chart" id="ch-cobertura"></div>
+  <p class="fuente">Cálculo propio de MaterIA Gris: matrícula de pregrado 2024-II ofertada en la subregión sobre población proyectada de 17 a 21 años (DANE, CNPV 2018). Mide <b>capacidad instalada</b>, no cobertura de residentes: el Valle de Aburrá supera el 80 % porque atrae estudiantes de todo el departamento.</p>
+  <aside class="notas">Señalar el Bajo Cauca en la gráfica: 11,1 cupos por cada 100 jóvenes. Está por encima de Occidente, Nordeste y Suroeste, pero a ocho veces de distancia del Valle de Aburrá. Y advertir el límite del indicador: mide oferta instalada, no asistencia.</aside>
+</section>
+
+<!-- 14 ──────────────────────────────────────────────────────────────── -->
+<section class="lam" data-t="Antioquia · el impuesto demográfico">
+  <div class="kick">04 · Antioquia</div>
+  <div class="split izq">
+    <div>
+      <h2>Y hay un reloj corriendo: el impuesto demográfico</h2>
+      <p class="bajada">La población de 17 a 21 años de Antioquia tocó techo en <b>2020</b> con 550.160 jóvenes. De ahí en adelante solo baja: <b>−13,2 % a 2035</b> y <b>−21,9 % a 2042</b>.</p>
+      <p class="bajada">Cada año que no se amplía la oferta en el territorio, se amplía sobre una base de jóvenes más pequeña. <b>La ventana de oportunidad no está abierta indefinidamente.</b></p>
+    </div>
+    <div>
+      <div class="grid g2" style="margin-top:0">
+        <div class="dato a1"><span class="n">550.160</span><span class="t">Jóvenes de 17 a 21 en el pico de <b>2020</b></span></div>
+        <div class="dato a3"><span class="n">−13,2 %</span><span class="t">Proyección a <b>2035</b></span></div>
+        <div class="dato a3"><span class="n">−21,9 %</span><span class="t">Proyección a <b>2042</b></span></div>
+        <div class="dato a2"><span class="n">−9,7 %</span><span class="t">Bajo Cauca a 2035: <b>la caída más suave</b> de las nueve subregiones</span></div>
+      </div>
+    </div>
+  </div>
+  <p class="fuente">Proyecciones municipales DANE (CNPV 2018), agregadas por subregión en MaterIA Gris (scripts/proyeccion_demografica.py).</p>
+  <aside class="notas">Este es el pivote de toda la charla hacia el Bajo Cauca: en un departamento que se está quedando sin jóvenes, el Bajo Cauca es donde menos se caen. Invertir allí no es solidaridad territorial, es aritmética.</aside>
+</section>
+
+<!-- 15 ──────────────────────────────────────────────────────────────── -->
+<section class="lam" data-t="Bajo Cauca · el territorio">
+  <div class="kick">05 · Bajo Cauca</div>
+  <div class="split izq">
+    <div>
+      <h2>Bajo Cauca: la subregión que <em>crece</em></h2>
+      <p class="bajada">Seis municipios —Caucasia, El Bagre, Cáceres, Tarazá, Zaragoza y Nechí— y <b>268.459 habitantes</b>. En dos décadas la población creció <b>34 %</b>: el mayor crecimiento relativo de Antioquia. En el Suroeste, para comparar, creció 3 %.</p>
+      <p class="bajada">Es también un territorio de llegada: <b>más de 59.000 personas</b> que viven allí no nacieron allí.</p>
+    </div>
+    <div class="grid g2" style="margin-top:0">
+      <div class="dato a1"><span class="n">268.459</span><span class="t">Habitantes en 2024 · <b>3,9 %</b> de Antioquia, quinta subregión más poblada</span></div>
+      <div class="dato a2"><span class="n">+34 %</span><span class="t">Crecimiento poblacional en dos décadas: <b>el mayor del departamento</b></span></div>
+      <div class="dato a3"><span class="n">69 %</span><span class="t">De la población en tres municipios: Caucasia 36 %, El Bagre 21 %, Cáceres 12 %</span></div>
+      <div class="dato a4"><span class="n">9 %</span><span class="t">Del valor agregado de Antioquia <b>sin</b> el Valle de Aburrá</span></div>
+    </div>
+  </div>
+  <p class="fuente">Antioquia Cómo Vamos · «Oportunidades y retos de calidad de vida en la subregión Bajo Cauca» (2025), con proyecciones DANE (CNPV 2018) y desagregación del PIB municipal de la Gobernación de Antioquia.</p>
+  <aside class="notas">Contraste con la lámina anterior: mientras el departamento envejece, aquí llega gente y nacen jóvenes. Un sistema de educación superior se construye donde hay demanda futura, no donde hubo demanda pasada.</aside>
+</section>
+
+<!-- 16 ──────────────────────────────────────────────────────────────── -->
+<section class="lam" data-t="Bajo Cauca · el embudo">
+  <div class="kick">05 · Bajo Cauca</div>
+  <div class="split">
+    <div>
+      <h2>El embudo: dónde se pierde una generación</h2>
+      <p class="bajada">De cada mil estudiantes que hoy están en el sistema escolar del Bajo Cauca, <b>126</b> están en la media y apenas <b>46</b> alcanzan un cupo de educación superior en la subregión.</p>
+      <p class="bajada">No es que los jóvenes no quieran: es que <b>4 de los 6 municipios no tienen una sola oferta activa</b>. Solo Caucasia y El Bagre reportan matrícula.</p>
+    </div>
+    <div><div class="chart" id="ch-embudo"></div></div>
+  </div>
+  <p class="fuente">MEN, matrícula de preescolar a media 2024 (dataset ngw5-c5nw) y SNIES 2024-II, procesados por MaterIA Gris.</p>
+  <aside class="notas">Cuidado con la lectura: no son las mismas personas en un mismo año (es una foto por niveles, no una cohorte seguida). Pero el orden de magnitud del estrechamiento es el correcto y sirve para mostrar dónde está el cuello de botella físico: la oferta municipal.</aside>
+</section>
+
+<!-- 17 ──────────────────────────────────────────────────────────────── -->
+<section class="lam" data-t="Bajo Cauca · la oferta">
+  <div class="kick">05 · Bajo Cauca</div>
+  <h2 class="ancha">La oferta que hay —y la que falta</h2>
+  <div class="grid g4">
+    <div class="dato a1"><span class="n">2.989</span><span class="t">Matriculados en educación superior en 2024-II, de los cuales <b>1.867 en técnica y tecnológica</b> (62 %)</span></div>
+    <div class="dato a2"><span class="n">7 <small>IES</small></span><span class="t"><b>41 programas</b> activos. Caucasia es el 5.º municipio con mayor oferta de Antioquia</span></div>
+    <div class="dato a3"><span class="n">11,1</span><span class="t">Cupos de pregrado por cada <b>100 jóvenes</b> de 17 a 21 años (26.625 en la subregión)</span></div>
+    <div class="dato a4"><span class="n">21</span><span class="t">Matriculados en <b>posgrado</b> en toda la subregión. El sistema termina donde empieza el posgrado</span></div>
+  </div>
+  <p class="bajada">La Universidad de Antioquia tiene sede en Caucasia con más de <b>1.750 egresados</b> y una infraestructura reciente. La base institucional <b>existe</b>: lo que falta es densidad de programas y presencia en los otros cuatro municipios.</p>
+  <p class="fuente">SNIES 2024-II procesado por MaterIA Gris · Universidad de Antioquia, seccional Bajo Cauca · Antioquia Cómo Vamos (2025).</p>
+  <aside class="notas">Mensaje para tomadores de decisión: no hay que fundar una universidad. Hay que densificar una que ya está, y llevar oferta corta y pertinente a Cáceres, Tarazá, Nechí y Zaragoza, que hoy son desierto de cupos.</aside>
+</section>
+
+<!-- 18 ──────────────────────────────────────────────────────────────── -->
+<section class="lam" data-t="Bajo Cauca · la trayectoria escolar">
+  <div class="kick">05 · Bajo Cauca</div>
+  <div class="split izq">
+    <div>
+      <h2>Antes de la universidad, la trayectoria ya viene golpeada</h2>
+      <p class="bajada">En un salón promedio de <b>25 estudiantes</b> del Bajo Cauca: uno abandona el colegio en el año y dos pierden el año.</p>
+      <p class="bajada">Y de los 97 colegios que presentan Saber 11, solo 67 alcanzan a ser clasificados: <b>9 de cada 10 de los clasificados están en las categorías C y D</b>, las más bajas.</p>
+    </div>
+    <div class="grid g2" style="margin-top:0">
+      <div class="dato a3"><span class="n">1 <small>de 25</small></span><span class="t">Abandona el colegio cada año</span></div>
+      <div class="dato a3"><span class="n">2 <small>de 25</small></span><span class="t">Reprueban el año</span></div>
+      <div class="dato a3"><span class="n">9 <small>de 10</small></span><span class="t">Colegios clasificados en las categorías <b>C y D</b> de Saber 11</span></div>
+      <div class="dato a4"><span class="n">81,1</span><span class="t">Puntaje Saber TyT de Caucasia: <b>el más bajo</b> de los 14 municipios medibles de Antioquia (tope: 106,8)</span></div>
+    </div>
+  </div>
+  <p class="fuente">Antioquia Cómo Vamos a partir del MEN y el Icfes (2023) · ICFES, Saber TyT vía datos.gov.co, procesado por MaterIA Gris (municipios con 50 o más evaluados).</p>
+  <aside class="notas">Esta es la brecha «de conocimiento» en su forma más concreta: el que llega al primer semestre llega con vacíos de matemáticas y lectura, y esos vacíos son la causa número uno de la deserción del primer año. Retener esta lámina: es la que justifica la nivelación con IA más adelante.</aside>
+</section>
+
+<!-- 19 ──────────────────────────────────────────────────────────────── -->
+<section class="lam" data-t="Bajo Cauca · las señales buenas">
+  <div class="kick">05 · Bajo Cauca</div>
+  <div class="split">
+    <div>
+      <h2>Y sin embargo, hay señales que casi nadie mira</h2>
+      <p class="bajada">Caucasia tiene un <b>tránsito inmediato de 46 %</b>: más alto que el promedio departamental (41 %). Donde hay oferta, los jóvenes entran.</p>
+      <p class="bajada">Entre 2019 y 2023 la matrícula de <b>media creció 27,4 puntos</b> mientras la de primaria caía: hay una cohorte cada vez más grande tocando la puerta de la educación superior.</p>
+    </div>
+    <div><div class="chart" id="ch-transito"></div></div>
+  </div>
+  <p class="fuente">Antioquia Cómo Vamos a partir de datos del MEN, 2023. Tasa departamental de referencia: 41 %.</p>
+  <aside class="notas">Este es el argumento causal más fuerte de la charla: la demanda no es el problema. Caucasia, que tiene oferta, transita por encima del departamento. Tarazá, Nechí y Zaragoza, que no la tienen, transitan 27-29 %. La oferta crea su propia demanda.</aside>
+</section>
+
+<!-- 20 ──────────────────────────────────────────────────────────────── -->
+<section class="lam" data-t="Bajo Cauca · el retorno">
+  <div class="kick">05 · Bajo Cauca</div>
+  <h2 class="ancha">Vale la pena: la informalidad se derrumba con cada nivel educativo</h2>
+  <div class="chart" id="ch-informalidad"></div>
+  <p class="fuente">Antioquia Cómo Vamos a partir de la Encuesta de Calidad de Vida de Antioquia 2023 (Gobernación de Antioquia). Promedio subregional de informalidad: 65,6 %. En el Bajo Cauca solo <b>1 de cada 11</b> personas en edad de trabajar tiene empleo formal.</p>
+  <aside class="notas">La cifra que hay que subrayar: pasar de la media a un título técnico o tecnológico —dos años, no cinco— parte la informalidad por la mitad. Es el mejor argumento para defender la TyT, que es justo el nivel que se está cayendo en Antioquia. El 0,0 % del posgrado es un dato de muestra pequeña: mencionarlo con cuidado.</aside>
+</section>
+
+<!-- 21 ──────────────────────────────────────────────────────────────── -->
+<section class="lam" data-t="Bajo Cauca · el desajuste">
+  <div class="kick">05 · Bajo Cauca</div>
+  <div class="split">
+    <div>
+      <h2>El desajuste: se estudia una cosa y se contrata otra</h2>
+      <p class="bajada">El <b>45 %</b> de los matriculados del Bajo Cauca está en administración y derecho, que explican el 26 % de las vacantes. <b>Salud</b> concentra el 15 % de las vacantes y solo el 2 % de la matrícula.</p>
+      <p class="bajada">El 69 % de los jóvenes de Antioquia dice que <b>no hay relación</b> entre lo que estudió y el trabajo que tiene.</p>
+    </div>
+    <div><div class="chart" id="ch-pertinencia"></div></div>
+  </div>
+  <p class="fuente">Antioquia Cómo Vamos a partir de SNIES y del Servicio Público de Empleo (2023): 2.875 matriculados y 2.421 vacantes clasificadas por área CINE-F · Encuesta de Opinión en Educación — Jóvenes, Fundación Empresarios por la Educación.</p>
+  <aside class="notas">Aquí no hay culpables: el joven elige lo que existe, y lo que existe es lo barato de ofertar. Corregir esto requiere información —saber qué demanda el territorio— y capacidad de diseñar programas nuevos rápido. Las dos cosas se pueden acelerar con IA, y por ahí entra la última parte.</aside>
+</section>
+
+<!-- 22 ──────────────────────────────────────────────────────────────── -->
+<section class="lam" data-t="Bajo Cauca · cinco razones">
+  <div class="kick">05 · Bajo Cauca</div>
+  <h2 class="ancha">Cinco razones para seguirle apostando</h2>
+  <ul class="pasos">
+    <li><span class="p-n">01</span><span><b class="p-t">Aquí sí hay jóvenes, y seguirá habiéndolos</b><span class="p-d">La población creció 34 % en dos décadas y la de 17 a 21 años caerá solo 9,7 % a 2035: la caída más suave de las nueve subregiones. Es donde el retorno demográfico de la inversión dura más.</span></span></li>
+    <li><span class="p-n">02</span><span><b class="p-t">La base institucional ya está puesta</b><span class="p-d">Siete instituciones, 41 programas y una sede universitaria pública consolidada en Caucasia con más de 1.750 egresados. No hay que empezar de cero: hay que densificar y extender a los otros cuatro municipios.</span></span></li>
+    <li><span class="p-n">03</span><span><b class="p-t">Donde hay oferta, los jóvenes entran</b><span class="p-d">Caucasia transita a la educación superior por encima del promedio departamental (46 % contra 41 %). El cuello de botella es la oferta, no la voluntad.</span></span></li>
+    <li><span class="p-n">04</span><span><b class="p-t">El retorno social es medible y grande</b><span class="p-d">La informalidad cae de 61,8 % con media a 29,7 % con título técnico o tecnológico. Y cada punto porcentual más de población con educación superior se asocia con 1,1 puntos menos de pobreza municipal.</span></span></li>
+    <li><span class="p-n">05</span><span><b class="p-t">Hay una economía real que financiar y que transformar</b><span class="p-d">La subregión aporta el 9 % del valor agregado de Antioquia sin el Valle de Aburrá, con una estructura primaria (52 %) de oro y agro. Una economía extractiva con renta presente es exactamente la que puede pagar su propia transición al conocimiento.</span></span></li>
+  </ul>
+  <aside class="notas">Si la audiencia es institucional, esta es la lámina para detenerse. Cerrar con la pregunta: ¿cuál de estas cinco razones sería más fuerte dentro de diez años? Ninguna: todas se debilitan con el tiempo. Por eso es ahora.</aside>
+</section>
+
+<!-- 23 ──────────────────────────────────────────────────────────────── -->
+<section class="lam" data-t="La brecha técnica">
+  <div class="kick">06 · La brecha</div>
+  <div class="split izq">
+    <div>
+      <h2>La brecha técnica, con nombre y número</h2>
+      <p class="bajada">Colombia tendrá <b>85.000 vacantes digitales sin cubrir en 2026</b> y necesita 498.000 profesionales tecnológicos en cinco años. En el Bajo Cauca, las TIC son el <b>7 %</b> de la matrícula.</p>
+      <p class="bajada">Esta es la brecha que un territorio puede cerrar rápido —son formaciones cortas— <b>si</b> resuelve el problema de fondo: nivelar a quien llega con vacíos.</p>
+    </div>
+    <div class="grid g2" style="margin-top:0">
+      <div class="dato a3"><span class="n">85.000</span><span class="t">Vacantes digitales <b>sin cubrir</b> en Colombia en 2026</span></div>
+      <div class="dato a3"><span class="n">498.000</span><span class="t">Profesionales tecnológicos que demandará el país en <b>cinco años</b></span></div>
+      <div class="dato a4"><span class="n">40 %</span><span class="t">Déficit en <b>nube y análisis de datos</b>; 35 % en desarrollo de software</span></div>
+      <div class="dato a1"><span class="n">113.000</span><span class="t">Personas que el Estado se propuso formar con <b>Talento Tech</b> entre 2024 y 2026</span></div>
+    </div>
+  </div>
+  <p class="fuente">MinTIC y Fedesoft, 2025-2026 · MinTIC, programa Talento Tech · Distribución de matrícula del Bajo Cauca: SNIES vía Antioquia Cómo Vamos (2023).</p>
+  <aside class="notas">Conectar con el desajuste de la lámina 21: hay vacantes que nadie estudia. Y el punto siguiente es el corazón de la charla: la razón por la que no se estudian no es falta de interés, es que el salto de entrada es demasiado alto para quien salió de un colegio de categoría C o D. Ahí es donde la IA tiene evidencia.</aside>
+</section>
+
+<!-- 24 ──────────────────────────────────────────────────────────────── -->
+<section class="lam" data-t="Evidencia IA · Banco Mundial">
+  <div class="kick">06 · La herramienta</div>
+  <div class="split">
+    <div>
+      <h2>Primera evidencia: la tutoría con IA <em>sí</em> mueve el aprendizaje</h2>
+      <p class="bajada">El Banco Mundial evaluó con un ensayo aleatorio a 800 estudiantes de secundaria en Nigeria: seis semanas de clases extracurriculares con un tutor de IA guiado por el docente.</p>
+      <p class="bajada">Resultado: <b>0,31 desviaciones estándar</b> de mejora, equivalente a <b>entre 1,5 y 2 años</b> de escolaridad normal. Uno de los programas educativos más costo-efectivos jamás medidos.</p>
+    </div>
+    <div class="grid" style="margin-top:0">
+      <div class="dato a2"><span class="n">6 <small>semanas</small></span><span class="t">Duración de la intervención</span></div>
+      <div class="dato a2"><span class="n">0,31 <small>DE</small></span><span class="t">Efecto sobre el aprendizaje medido</span></div>
+      <div class="dato a2"><span class="n">1,5–2 <small>años</small></span><span class="t">Equivalente en escolaridad regular</span></div>
+    </div>
+  </div>
+  <p class="fuente">Banco Mundial · «From Chalkboards to Chatbots: Evaluating the Impact of Generative AI on Learning Outcomes in Nigeria» (2024-2025). Detalle clave del diseño: <b>el docente conducía la sesión</b>; la IA no reemplazó la clase, la amplificó.</p>
+  <aside class="notas">Subrayar los dos detalles que hacen creíble el estudio: es un ensayo aleatorio (no una encuesta de satisfacción) y ocurrió en un contexto de bajos recursos, no en un colegio de élite. Y el detalle que hace la diferencia: había un docente dirigiendo. Sin docente, no hay efecto.</aside>
+</section>
+
+<!-- 25 ──────────────────────────────────────────────────────────────── -->
+<section class="lam" data-t="Evidencia IA · el nivelador">
+  <div class="kick">06 · La herramienta</div>
+  <div class="split">
+    <div>
+      <h2>Segunda evidencia: la IA le sirve <em>más</em> a quien menos sabe</h2>
+      <p class="bajada">El estudio de referencia sobre IA generativa en el trabajo siguió a 5.179 agentes de servicio al cliente. La productividad subió <b>14 % en promedio</b>. Pero el promedio esconde el hallazgo:</p>
+      <p class="bajada"><b>+34 % en los trabajadores nuevos y menos calificados; casi nada en los expertos.</b> La IA difunde las buenas prácticas de los mejores y acelera la curva de aprendizaje de los que empiezan.</p>
+    </div>
+    <div><div class="chart" id="ch-nivelador"></div></div>
+  </div>
+  <p class="fuente">Brynjolfsson, Li &amp; Raymond · «Generative AI at Work», NBER Working Paper 31161. Evidencia convergente en desarrollo de software: los programadores menos experimentados adoptan más y ganan más.</p>
+  <aside class="notas">Este es el argumento central de toda la conferencia: si una tecnología produce el mayor efecto en los menos experimentados, entonces es una tecnología <b>redistributiva</b> —y un territorio con brecha es exactamente donde más rinde—. Con una condición: que llegue. Sin conectividad y sin formación docente, el efecto es cero y la brecha se amplía en vez de cerrarse.</aside>
+</section>
+
+<!-- 26 ──────────────────────────────────────────────────────────────── -->
+<section class="lam" data-t="Lo que la IA no resuelve">
+  <div class="kick">06 · La herramienta</div>
+  <p class="frase">La IA amplifica la capacidad instalada.<br><em>No la crea.</em></p>
+  <div class="grid g4">
+    <div class="card acc3"><span class="num">Límite 01</span><h3>No pone conectividad</h3><p>En un territorio con conexión intermitente, la IA en la nube es una promesa que no se cumple.</p></div>
+    <div class="card acc3"><span class="num">Límite 02</span><h3>No reemplaza al docente</h3><p>En el estudio de Nigeria el efecto existe <b>porque</b> había un profesor conduciendo la sesión.</p></div>
+    <div class="card acc3"><span class="num">Límite 03</span><h3>No otorga títulos</h3><p>La formalidad laboral la abre el título, no la habilidad suelta. La IA acelera el camino; no lo sustituye.</p></div>
+    <div class="card acc3"><span class="num">Límite 04</span><h3>No sabe del territorio</h3><p>Los modelos saben poco de Cáceres, del oro aluvial o del plátano. Ese conocimiento hay que ponerlo nosotros.</p></div>
+  </div>
+  <aside class="notas">Lámina de honestidad, y también de autoridad: quien reconoce los límites de su herramienta es más creíble cuando defiende sus usos. Si hay escépticos en la sala, esta lámina los desarma.</aside>
+</section>
+
+<!-- 27 ──────────────────────────────────────────────────────────────── -->
+<section class="lam" data-t="Seis movimientos para el Bajo Cauca">
+  <div class="kick">06 · Qué hacer</div>
+  <h2 class="ancha">Seis movimientos concretos para el Bajo Cauca</h2>
+  <div class="grid g3">
+    <div class="card"><span class="num">Movimiento 01</span><h3>Nivelación antes del primer semestre</h3><p>Un curso puente de matemáticas y lectura con tutoría de IA guiada por docentes, para el mes previo a entrar. Ataca la causa número uno de la deserción del primer año.</p></div>
+    <div class="card acc2"><span class="num">Movimiento 02</span><h3>Oferta corta donde no hay ninguna</h3><p>Técnicas y tecnológicas en Cáceres, Tarazá, Nechí y Zaragoza, diseñadas contra las vacantes reales del Servicio Público de Empleo, no contra el catálogo disponible.</p></div>
+    <div class="card acc3"><span class="num">Movimiento 03</span><h3>Traducir la economía local a datos</h3><p>Oro, ganadería, plátano y logística fluvial como laboratorio: analítica aplicada a lo que el territorio ya produce. Formación pertinente y con empleador identificado.</p></div>
+    <div class="card acc4"><span class="num">Movimiento 04</span><h3>Alerta temprana de deserción</h3><p>Modelos sobre datos que las instituciones ya tienen —asistencia, notas parciales, pagos— para intervenir en la semana 4, no en el semestre 3.</p></div>
+    <div class="card"><span class="num">Movimiento 05</span><h3>Docentes primero</h3><p>Formar al profesorado antes que a los estudiantes. Un docente con criterio multiplica; una herramienta suelta se abandona en tres semanas.</p></div>
+    <div class="card acc2"><span class="num">Movimiento 06</span><h3>Medir y publicar</h3><p>Cada intervención con línea base, meta y publicación abierta del resultado, incluso cuando falle. Sin eso, no es política pública: es anécdota.</p></div>
+  </div>
+  <aside class="notas">Si hay tiempo para una sola pregunta a la sala, que sea aquí: ¿cuál de los seis se puede empezar este semestre con lo que ya existe? La respuesta casi siempre es el 01 y el 05, porque no requieren nueva normativa ni presupuesto grande.</aside>
+</section>
+
+<!-- 28 ──────────────────────────────────────────────────────────────── -->
+<section class="lam" data-t="CTA · ¿Qué IA necesito? Docentes">
+  <div class="kick">Para los docentes</div>
+  <h2 class="ancha">El movimiento 05 ya tiene herramienta, y es gratuita</h2>
+  <p class="bajada" style="max-width:56ch">Una guía abierta para profesores: qué herramienta usar según lo que se quiere lograr, con principios, escenarios de aula listos para copiar y un plan de cinco días para empezar sin rediseñar el curso entero.</p>
+  <a class="url-chip" href="https://que-ia-necesito.vercel.app/docentes" target="_blank" rel="noopener">que-ia-necesito.vercel.app/docentes <span class="fl">↗</span></a>
+  <div class="grid g4" style="margin-top:clamp(22px,3.2vh,38px)">
+    <div class="dato a1"><span class="n">4</span><span class="t">Principios de uso responsable</span></div>
+    <div class="dato a2"><span class="n">12</span><span class="t">Escenarios de aula replicables</span></div>
+    <div class="dato a3"><span class="n">6</span><span class="t">Pasos del ciclo docente asistido</span></div>
+    <div class="dato a4"><span class="n">5 <small>días</small></span><span class="t">Plan para empezar mañana</span></div>
+  </div>
+  <aside class="notas">Dictar la URL despacio y dos veces. Es corta a propósito. Decir que no pide registro ni correo y que el kit se puede descargar para trabajarlo sin conexión —importante en municipios con conectividad intermitente—.</aside>
+</section>
+
+<!-- 29 ──────────────────────────────────────────────────────────────── -->
+<section class="lam" data-t="Docentes · las cuatro reglas">
+  <div class="kick">Para los docentes</div>
+  <h2 class="ancha">Las cuatro reglas de la casa</h2>
+  <div class="grid g4">
+    <div class="card"><span class="num">01</span><h3>La pedagogía manda</h3><p>Se empieza por el objetivo de aprendizaje y por la evidencia que se espera observar. <b>La herramienta se elige al final</b>, nunca al principio.</p></div>
+    <div class="card acc2"><span class="num">02</span><h3>La IA propone; usted responde</h3><p>El criterio profesional, la relación con el grupo y la decisión sobre qué enseñar siguen siendo humanos.</p></div>
+    <div class="card acc3"><span class="num">03</span><h3>Haga visible el proceso</h3><p>Pida borradores, fuentes, decisiones y reflexión. Evalúe <b>cómo se llegó</b> al resultado, no solo el producto final.</p></div>
+    <div class="card acc4"><span class="num">04</span><h3>Proteja antes de probar</h3><p>Nada de datos personales, calificaciones ni trabajos identificables sin autorización y protocolo institucional.</p></div>
+  </div>
+  <p class="bajada">Y una repartición sencilla de tareas: <b>conserve</b> las decisiones de alto impacto (calificar, acompañar, intervenir); <b>co-cree</b> el trabajo pedagógico (variantes, errores frecuentes, preguntas); <b>explore</b> alternativas; <b>automatice con revisión</b> lo repetitivo (formato, transcripción, clasificación).</p>
+  <p class="fuente">¿Qué IA necesito? · Guía para docentes · Alineada con el Marco de competencias en IA para docentes de la UNESCO (niveles adquirir, profundizar y crear; fase de integración curricular y formación docente 2025-2027).</p>
+  <aside class="notas">La regla 03 es la que resuelve el pánico por «los estudiantes hacen trampa con IA». Si se evalúa el proceso y no solo el producto, la trampa deja de ser rentable. Esa es la respuesta corta a la pregunta que siempre aparece.</aside>
+</section>
+
+<!-- 30 ──────────────────────────────────────────────────────────────── -->
+<section class="lam" data-t="Docentes · el plan de cinco días">
+  <div class="kick">Para los docentes</div>
+  <div class="split izq">
+    <div>
+      <h2>Cinco días, una fricción, una decisión</h2>
+      <p class="bajada">No se trata de rediseñar el curso. Se trata de <b>una sola pieza pequeña</b>: una pregunta, un ejemplo, una guía.</p>
+      <a class="url-chip" href="https://que-ia-necesito.vercel.app/docentes" target="_blank" rel="noopener">que-ia-necesito.vercel.app/docentes <span class="fl">↗</span></a>
+    </div>
+    <ul class="pasos" style="margin-top:0">
+      <li><span class="p-n">Día 1</span><span><b class="p-t">Elija una fricción</b><span class="p-d">Una tarea repetitiva que le quite tiempo y no involucre datos personales.</span></span></li>
+      <li><span class="p-n">Día 2</span><span><b class="p-t">Compare dos borradores</b><span class="p-d">La misma instrucción en dos herramientas. Evalúe precisión, sesgos y facilidad de edición.</span></span></li>
+      <li><span class="p-n">Día 3</span><span><b class="p-t">Llévelo a una clase</b><span class="p-d">Una pieza pequeña. No rediseñe todo el curso.</span></span></li>
+      <li><span class="p-n">Día 4</span><span><b class="p-t">Recoja evidencia</b><span class="p-d">¿Mejoró la comprensión, la participación o su tiempo? Pregúntele al grupo qué cambió.</span></span></li>
+      <li><span class="p-n">Día 5</span><span><b class="p-t">Decida con criterio</b><span class="p-d">Conserve, modifique o descarte. Documente el prompt, el resultado y la regla que aprendió.</span></span></li>
+    </ul>
+  </div>
+  <aside class="notas">Insistir en el día 5: documentar la regla aprendida es lo que convierte un experimento individual en conocimiento institucional. Si cada docente de una IE hace esto una vez, la institución tiene en un semestre un manual propio que ningún proveedor le puede vender.</aside>
+</section>
+
+<!-- 31 ──────────────────────────────────────────────────────────────── -->
+<section class="lam" data-t="IA para la gestión educativa">
+  <div class="kick">Para quien dirige</div>
+  <h2 class="ancha">La IA también entra por la puerta administrativa —y ahí rinde antes</h2>
+  <div class="grid g3">
+    <div class="card"><span class="num">Frente 01</span><h3>Alerta temprana de deserción</h3><p>Cruzar asistencia, notas parciales y pagos para saber <b>en la semana 4</b> quién se está cayendo. Es el uso con mayor retorno inmediato en una IES regional.</p></div>
+    <div class="card acc2"><span class="num">Frente 02</span><h3>Focalización de cupos y apoyos</h3><p>Priorizar becas, transporte y alimentación con criterios auditables en vez de orden de llegada.</p></div>
+    <div class="card acc3"><span class="num">Frente 03</span><h3>Diseño de oferta pertinente</h3><p>Leer vacantes, egresados y matrícula para decidir <b>qué programa abrir</b>: el análisis que hoy tarda meses puede tardar días.</p></div>
+    <div class="card acc4"><span class="num">Frente 04</span><h3>Atención y trámites</h3><p>PQR, admisiones y matrícula asistidas, con respuestas trazables y una persona revisando lo que sale.</p></div>
+    <div class="card"><span class="num">Frente 05</span><h3>Documentación y acreditación</h3><p>Autoevaluación, planes de mejora e informes: redacción asistida sobre evidencia propia, con el criterio siempre humano.</p></div>
+    <div class="card acc2"><span class="num">Frente 06</span><h3>Rendición de cuentas</h3><p>Convertir bases públicas en tableros que un concejo, un consejo directivo o una comunidad puedan leer sin ser expertos.</p></div>
+  </div>
+  <aside class="notas">Punto práctico para rectores y secretarios de educación: los frentes 01 y 06 se pueden montar con datos que la institución <b>ya tiene</b> y sin comprar software nuevo. Los frentes 02 y 04 tocan datos personales y exigen protocolo antes de tocar nada.</aside>
+</section>
+
+<!-- 32 ──────────────────────────────────────────────────────────────── -->
+<section class="lam" data-t="Gestión · el caso y las reglas">
+  <div class="kick">Para quien dirige</div>
+  <div class="split izq">
+    <div>
+      <h2>Este observatorio es la prueba</h2>
+      <p class="bajada">Todo lo que se mostró hoy sobre Antioquia y el Bajo Cauca sale de <b>MaterIA Gris</b>: un observatorio construido con IA por una persona, sobre bases oficiales, con cada cifra verificada y trazable a su fuente.</p>
+      <a class="url-chip" href="https://materia-gris.vercel.app/" target="_blank" rel="noopener">materia-gris.vercel.app <span class="fl">↗</span></a>
+    </div>
+    <div class="grid g2" style="margin-top:0">
+      <div class="card"><span class="num">Marco legal</span><h3>CONPES 4144 de 2025</h3><p>Política nacional de IA a 2030: <b>106 acciones</b> y $479.273 millones. Ética y gobernanza, datos e infraestructura, I+D+i, <b>talento digital</b>, riesgos y adopción.</p></div>
+      <div class="card acc2"><span class="num">Marco pedagógico</span><h3>UNESCO · competencias docentes en IA</h3><p>Tres niveles —adquirir, profundizar, crear— con integración curricular y formación docente prevista entre <b>2025 y 2027</b>.</p></div>
+      <div class="card acc3"><span class="num">Regla mínima</span><h3>Datos personales, nunca</h3><p>Ningún microdato de estudiantes —menos aún de menores— entra a una herramienta sin protocolo institucional y base legal.</p></div>
+      <div class="card acc4"><span class="num">Regla mínima</span><h3>Publicar el método</h3><p>Si el resultado no se puede auditar, no sirve para decidir. Fuente, corte y límite en cada cifra.</p></div>
+    </div>
+  </div>
+  <p class="fuente">DNP · CONPES 4144 del 14 de febrero de 2025 · UNESCO · Marco de competencias en IA para docentes.</p>
+  <aside class="notas">Ofrecer el observatorio como bien público: está abierto, tiene licencia CC BY 4.0 y las secciones de oportunidades y territorio sirven para orientar a jóvenes del Bajo Cauca hoy mismo.</aside>
+</section>
+
+<!-- 33 ──────────────────────────────────────────────────────────────── -->
+<section class="lam" data-t="Cierre">
+  <div class="kick">Cierre</div>
+  <p class="frase">Sacar oro del río toma siglos.<br><em>Sacar una generación adelante toma una década.</em></p>
+  <p class="bajada" style="max-width:60ch">El Bajo Cauca tiene lo que a Antioquia se le está acabando: <b>jóvenes</b>. Tiene una institución pública instalada, un tránsito inmediato por encima del promedio departamental y una economía con renta presente para financiar su propia transición. Lo que falta es oferta donde no la hay y acompañamiento para quien llega con vacíos. Para lo primero se necesita decisión. Para lo segundo, por primera vez, tenemos una herramienta con evidencia.</p>
+  <aside class="notas">Cerrar mirando a la sala, sin lámina de agradecimientos. Si hay preguntas, las tres más frecuentes suelen ser: trampa estudiantil (responder con la regla 03), reemplazo docente (responder con Nigeria: el efecto existe porque hay docente) y costo (responder con costo-efectividad del estudio del Banco Mundial).</aside>
+</section>
+
+<!-- 34 ──────────────────────────────────────────────────────────────── -->
+<section class="lam portada" data-t="Contacto">
+  <p class="marca">Gracias</p>
+  <h1 style="font-size:clamp(1.9rem,5vw,4rem);max-width:20ch">IA para transformar el territorio</h1>
+  <p class="sub">Educación superior como una oportunidad de oro</p>
+  <div class="grid g2" style="margin-top:clamp(24px,4vh,44px)">
+    <div class="card"><span class="num">Los datos</span><h3><a href="https://materia-gris.vercel.app/" target="_blank" rel="noopener">materia-gris.vercel.app</a></h3><p>MaterIA Gris — la educación de Antioquia del preescolar al posgrado, con fuentes verificadas y licencia abierta CC BY 4.0.</p></div>
+    <div class="card acc2"><span class="num">La herramienta</span><h3><a href="https://que-ia-necesito.vercel.app/docentes" target="_blank" rel="noopener">que-ia-necesito.vercel.app/docentes</a></h3><p>¿Qué IA necesito? — guía abierta para docentes: principios, escenarios de aula y plan de cinco días.</p></div>
+  </div>
+  <div class="firma">
+    <span>Profesor <b>Santiago Jiménez Londoño</b></span>
+    <span>Universidad EAFIT</span>
+    <span>sjimene8@eafit.edu.co</span>
+    <span>300 296 9754</span>
+  </div>
+  <aside class="notas">Dejar esta lámina proyectada durante las preguntas.</aside>
+</section>
+
+<!-- 35 ──────────────────────────────────────────────────────────────── -->
+<section class="lam" data-t="Fuentes">
+  <div class="kick">Fuentes</div>
+  <h2 class="ancha">De dónde sale cada cifra</h2>
+  <div class="grid g2">
+    <div class="card"><span class="num">Global y regional</span><h3>UNESCO IESALC</h3><p>Informe mundial sobre tendencias de la educación superior 2026: matrícula global 100 M (2000) → 269 M (2023); graduación bruta mundial 22 % (2013) → 27 % (2024); América Latina y el Caribe 40 % → 53 % de matrícula bruta y 24 % de graduación; 33 % de países con gratuidad por ley; 0,8 % del PIB de inversión promedio. <b>OCDE</b>, Education at a Glance 2025, nota país Colombia. <b>Banco Mundial</b> (2024), evaluación de pobreza y equidad en Colombia.</p></div>
+    <div class="card acc2"><span class="num">Colombia</span><h3>MEN · SNIES</h3><p>Informe del 15 de julio de 2026 (matrícula 2025: 2.723.364; cobertura 61,75 %; gratuidad 939.282; tránsito inmediato 47,9 %) y balance sectorial del 23 de julio de 2026 (presupuesto 2026 de $15,2 billones). <b>MinTIC y Fedesoft</b>: brecha de talento digital 2026. <b>DNP</b>: CONPES 4144 de 2025.</p></div>
+    <div class="card acc3"><span class="num">Antioquia</span><h3>MaterIA Gris</h3><p>Procesamiento propio de las bases consolidadas del SNIES 2018-2024, microdato Saber TyT del ICFES, OLE del MEN y proyecciones municipales del DANE (CNPV 2018). Metodología, límites y notas: <a href="https://materia-gris.vercel.app/" target="_blank" rel="noopener">materia-gris.vercel.app</a>.</p></div>
+    <div class="card acc4"><span class="num">Bajo Cauca</span><h3>Antioquia Cómo Vamos</h3><p>«Oportunidades y retos de calidad de vida en la subregión Bajo Cauca» (2025), a partir del MEN, el Icfes, el SNIES, el Servicio Público de Empleo, las cajas de compensación y la Encuesta de Calidad de Vida de Antioquia 2023. <b>Banco Mundial</b>: «From Chalkboards to Chatbots» (Nigeria). <b>NBER</b> 31161: «Generative AI at Work».</p></div>
+  </div>
+  <p class="fuente">Las cifras de matrícula anual corresponden al semestre con mayor total de cada vigencia. La base departamental del SNIES para la vigencia 2025 no estaba publicada al cierre de esta presentación: las series por municipio, programa y nivel cierran en 2024.</p>
+  <aside class="notas">Lámina de respaldo. Útil si alguien pide la fuente exacta de un dato durante las preguntas.</aside>
+</section>
+
+</main>
+
+<button class="zona izq" id="z-izq" aria-label="Lámina anterior"></button>
+<button class="zona der" id="z-der" aria-label="Lámina siguiente"></button>
+
+<footer id="pie">
+  <span id="rotulo"></span>
+  <span class="der">
+    <button id="b-notas" type="button" title="Notas del expositor (N)">Notas</button>
+    <button id="b-indice" type="button" title="Índice (G)">Índice</button>
+    <span><b id="n-actual">1</b> / <span id="n-total">35</span></span>
+  </span>
+</footer>
+
+<div id="indice" role="dialog" aria-modal="true" aria-label="Índice de láminas">
+  <h2>Índice</h2>
+  <div id="ix-grid"></div>
+</div>
+
+<script>
+(function(){
+'use strict';
+const $=(s,r)=>(r||document).querySelector(s), $$=(s,r)=>[...(r||document).querySelectorAll(s)];
+const LAM=$$('.lam'), TOT=LAM.length;
+let cur=0;
+
+/* ── paleta validada para fondo blanco (dataviz: los cuatro pares pasan) ── */
+const C={s1:'#376fbd',s2:'#0d8565',s3:'#936200',s4:'#6956b9',ink:'#141922',muted:'#66738a',line:'#e4e9f0'};
+const fmt=n=>n.toLocaleString('es-CO');
+
+/* ══ helpers de gráficas ═══════════════════════════════════════════════════
+   Barras horizontales con etiqueta directa en cada marca: con nueve series o
+   menos la etiqueta es más legible que un eje, y garantiza que la identidad
+   nunca dependa solo del color. Extremo redondeado de 4 px anclado a la línea
+   base y 2 px de aire entre barras contiguas.                              */
+function svgEl(w,h){
+  const s=document.createElementNS('http://www.w3.org/2000/svg','svg');
+  s.setAttribute('viewBox','0 0 '+w+' '+h);
+  s.setAttribute('preserveAspectRatio','xMidYMid meet');
+  s.setAttribute('role','img');
+  return s;
+}
+function txt(s,x,y,t,o){
+  o=o||{};
+  const e=document.createElementNS('http://www.w3.org/2000/svg','text');
+  e.setAttribute('x',x); e.setAttribute('y',y);
+  e.setAttribute('fill',o.fill||C.muted);
+  e.setAttribute('font-size',o.size||13);
+  e.setAttribute('font-weight',o.weight||400);
+  if(o.anchor)e.setAttribute('text-anchor',o.anchor);
+  e.textContent=t; s.appendChild(e); return e;
+}
+function rect(s,x,y,w,h,fill,r){
+  const e=document.createElementNS('http://www.w3.org/2000/svg','rect');
+  e.setAttribute('x',x); e.setAttribute('y',y);
+  e.setAttribute('width',Math.max(0,w)); e.setAttribute('height',h);
+  e.setAttribute('fill',fill); if(r)e.setAttribute('rx',r);
+  s.appendChild(e); return e;
+}
+function tip(el,t){
+  const e=document.createElementNS('http://www.w3.org/2000/svg','title');
+  e.textContent=t; el.appendChild(e);
+}
+
+/* barras horizontales de una serie */
+function hbar(id,rows,opt){
+  opt=opt||{}; const host=$('#'+id); if(!host)return;
+  /* El viewBox se estrecha cuando la gráfica vive en media lámina: al escalar
+     al ancho del contenedor, un lienzo más angosto agranda tipografía y marcas
+     lo suficiente para leerse proyectadas. */
+  const W=opt.W||760, lw=opt.lw||150, rw=opt.rw||72, rowH=opt.rowH||40, barH=opt.barH||20;
+  const H=rows.length*rowH+14;
+  const s=svgEl(W,H); s.setAttribute('aria-label',opt.alt||'');
+  const max=Math.max.apply(null,rows.map(r=>r.v));
+  const x0=lw, iw=W-lw-rw;
+  rows.forEach((r,i)=>{
+    const y=i*rowH+8, col=r.c||opt.color||C.s1;
+    txt(s,x0-12,y+barH/2+5,r.k,{anchor:'end',fill:r.destacar?C.ink:C.muted,size:opt.fs||15,weight:r.destacar?650:400});
+    rect(s,x0,y,iw,barH,'#f0f3f8',4);
+    const b=rect(s,x0,y,iw*(r.v/max),barH,col,4);
+    tip(b,r.k+': '+(r.etq||fmt(r.v)));
+    txt(s,x0+iw*(r.v/max)+10,y+barH/2+5,r.etq||fmt(r.v),{fill:C.ink,size:opt.fs||15,weight:650});
+  });
+  host.appendChild(s);
+}
+
+/* barras horizontales pareadas (dos series) */
+function hbar2(id,rows,opt){
+  opt=opt||{}; const host=$('#'+id); if(!host)return;
+  const W=opt.W||760, lw=opt.lw||210, rw=opt.rw||58, rowH=opt.rowH||52, barH=17, gap=5;
+  const H=rows.length*rowH+12;
+  const s=svgEl(W,H); s.setAttribute('aria-label',opt.alt||'');
+  const max=Math.max.apply(null,rows.map(r=>Math.max(r.a,r.b)));
+  const x0=lw, iw=W-lw-rw;
+  rows.forEach((r,i)=>{
+    const y=i*rowH+8;
+    txt(s,x0-12,y+barH+4,r.k,{anchor:'end',size:14.5});
+    const b1=rect(s,x0,y,iw*(r.a/max),barH,C.s1,4);
+    tip(b1,r.k+' · matriculados: '+r.a+' %');
+    txt(s,x0+iw*(r.a/max)+9,y+barH-3,r.a+' %',{fill:C.ink,size:14,weight:650});
+    const y2=y+barH+gap+2;
+    const b2=rect(s,x0,y2,iw*(r.b/max),barH,C.s3,4);
+    tip(b2,r.k+' · vacantes: '+r.b+' %');
+    txt(s,x0+iw*(r.b/max)+9,y2+barH-3,r.b+' %',{fill:C.ink,size:14,weight:650});
+  });
+  host.appendChild(s);
+}
+
+/* ══ las gráficas de este deck ════════════════════════════════════════════ */
+
+/* 04 · matrícula terciaria mundial */
+hbar('ch-mundo',[
+  {k:'2000',v:100,etq:'100 millones'},
+  {k:'2023',v:269,etq:'269 millones',destacar:true}
+],{W:580,lw:66,rw:140,rowH:74,barH:34,fs:17,color:C.s1,alt:'Matrícula terciaria mundial: 100 millones en 2000 y 269 millones en 2023'});
+
+/* 07 · América Latina y el Caribe */
+hbar('ch-alc',[
+  {k:'Matrícula 2013',v:40,etq:'40 %',c:'#a9c3e6'},
+  {k:'Matrícula 2023',v:53,etq:'53 %',c:C.s1,destacar:true},
+  {k:'Graduación 2023',v:24,etq:'24 %',c:C.s3,destacar:true}
+],{W:580,lw:148,rw:62,rowH:58,barH:26,fs:16,alt:'América Latina: matrícula bruta 40 % en 2013 y 53 % en 2023; graduación bruta 24 %'});
+
+/* 12 · universitaria vs técnica y tecnológica en Antioquia */
+hbar('ch-tyt',[
+  {k:'Universitaria',v:6.8,etq:'+6,8 %',c:C.s2},
+  {k:'Técnica y tecnológica',v:28.5,etq:'−28,5 %',c:C.s3,destacar:true}
+],{W:580,lw:178,rw:86,rowH:70,barH:30,fs:16,alt:'Variación de matrícula en Antioquia entre 2018 y 2024: universitaria +6,8 %, técnica y tecnológica −28,5 %'});
+
+/* 13 · razón de oferta por subregión */
+hbar('ch-cobertura',[
+  {k:'Valle de Aburrá',v:87.7,etq:'87,7'},
+  {k:'Urabá',v:23.0,etq:'23,0'},
+  {k:'Oriente',v:20.4,etq:'20,4'},
+  {k:'Norte',v:19.1,etq:'19,1'},
+  {k:'Magdalena Medio',v:15.5,etq:'15,5'},
+  {k:'Bajo Cauca',v:11.1,etq:'11,1',c:C.s3,destacar:true},
+  {k:'Occidente',v:5.3,etq:'5,3'},
+  {k:'Nordeste',v:3.1,etq:'3,1'},
+  {k:'Suroeste',v:1.9,etq:'1,9'}
+],{lw:160,rw:60,rowH:34,barH:17,color:C.s1,alt:'Cupos de pregrado por cada 100 jóvenes de 17 a 21 años por subregión de Antioquia'});
+
+/* 16 · el embudo del Bajo Cauca */
+hbar('ch-embudo',[
+  {k:'Preescolar a media',v:64856,etq:'64.856'},
+  {k:'Solo la media',v:8178,etq:'8.178',c:C.s4},
+  {k:'Educación superior',v:2989,etq:'2.989',c:C.s3,destacar:true}
+],{W:580,lw:172,rw:92,rowH:62,barH:28,fs:16,color:C.s1,alt:'Bajo Cauca 2024: 64.856 estudiantes de preescolar a media, 8.178 en la media y 2.989 en educación superior'});
+
+/* 19 · tránsito inmediato por municipio */
+hbar('ch-transito',[
+  {k:'Caucasia',v:46,etq:'46 %',c:C.s2,destacar:true},
+  {k:'Cáceres',v:36,etq:'36 %'},
+  {k:'El Bagre',v:30,etq:'30 %'},
+  {k:'Zaragoza',v:29,etq:'29 %'},
+  {k:'Nechí',v:28,etq:'28 %'},
+  {k:'Tarazá',v:27,etq:'27 %'}
+],{W:580,lw:112,rw:62,rowH:44,barH:20,fs:16,color:C.s1,alt:'Tasa de tránsito inmediato a educación superior por municipio del Bajo Cauca, 2023'});
+
+/* 20 · informalidad por nivel educativo */
+hbar('ch-informalidad',[
+  {k:'Ninguno o preescolar',v:82,etq:'82 %'},
+  {k:'Primaria',v:78,etq:'78 %'},
+  {k:'Secundaria',v:74,etq:'74 %'},
+  {k:'Media',v:61.8,etq:'61,8 %',c:C.s3,destacar:true},
+  {k:'Técnica o tecnológica',v:29.7,etq:'29,7 %',c:C.s2,destacar:true},
+  {k:'Universitaria',v:26.5,etq:'26,5 %',c:C.s2},
+  {k:'Posgrado',v:0.6,etq:'0,0 %',c:C.s2}
+],{lw:200,rw:64,rowH:40,barH:19,color:'#9db4d4',alt:'Tasa de informalidad laboral en el Bajo Cauca según nivel educativo, 2023'});
+
+/* 21 · matriculados vs vacantes */
+hbar2('ch-pertinencia',[
+  {k:'Administración y derecho',a:45,b:26},
+  {k:'Ingeniería e industria',a:16,b:19},
+  {k:'Agro, pesca y veterinaria',a:13,b:2},
+  {k:'TIC',a:7,b:2},
+  {k:'Salud y bienestar',a:2,b:15}
+],{W:580,lw:196,rw:56,rowH:56,alt:'Distribución de matriculados y de vacantes por área de conocimiento en el Bajo Cauca, 2023'});
+$('#ch-pertinencia').insertAdjacentHTML('beforeend',
+  '<div class="leyenda"><span><i style="background:'+C.s1+'"></i>Matriculados (2.875)</span>'+
+  '<span><i style="background:'+C.s3+'"></i>Vacantes del SPE (2.421)</span></div>');
+
+/* 25 · el efecto nivelador */
+hbar('ch-nivelador',[
+  {k:'Trabajadores nuevos',v:34,etq:'+34 %',c:C.s2,destacar:true},
+  {k:'Promedio general',v:14,etq:'+14 %',c:C.s1},
+  {k:'Expertos',v:2,etq:'casi nulo',c:'#b9c4d4'}
+],{W:580,lw:186,rw:100,rowH:62,barH:28,fs:16,alt:'Efecto de la IA generativa sobre la productividad: +34 % en trabajadores nuevos, +14 % en promedio, casi nulo en expertos'});
+
+/* ══ navegación ═══════════════════════════════════════════════════════════ */
+const rot=$('#rotulo'), nAct=$('#n-actual'), barra=$('#barra'), anuncio=$('#anuncio');
+$('#n-total').textContent=TOT;
+
+function ir(i,silencioso){
+  i=Math.max(0,Math.min(TOT-1,i));
+  LAM[cur].classList.remove('on');
+  cur=i; LAM[cur].classList.add('on');
+  const t=LAM[cur].dataset.t||'';
+  rot.textContent=t; nAct.textContent=i+1;
+  barra.style.width=((i+1)/TOT*100)+'%';
+  anuncio.textContent='Lámina '+(i+1)+' de '+TOT+': '+t;
+  if(!silencioso)history.replaceState(null,'','#'+(i+1));
+  $$('#ix-grid button').forEach((b,j)=>b.classList.toggle('aqui',j===i));
+}
+const sig=()=>ir(cur+1), ant=()=>ir(cur-1);
+
+document.addEventListener('keydown',e=>{
+  if(e.metaKey||e.ctrlKey||e.altKey)return;
+  const ix=$('#indice').classList.contains('on');
+  switch(e.key){
+    case 'ArrowRight': case 'ArrowDown': case ' ': case 'PageDown': e.preventDefault(); sig(); break;
+    case 'ArrowLeft': case 'ArrowUp': case 'PageUp': e.preventDefault(); ant(); break;
+    case 'Home': e.preventDefault(); ir(0); break;
+    case 'End': e.preventDefault(); ir(TOT-1); break;
+    case 'n': case 'N': document.body.classList.toggle('con-notas'); break;
+    case 'g': case 'G': toggleIndice(); break;
+    case 'Escape': if(ix)toggleIndice(); break;
+  }
+});
+$('#z-der').addEventListener('click',sig);
+$('#z-izq').addEventListener('click',ant);
+$('#b-notas').addEventListener('click',()=>document.body.classList.toggle('con-notas'));
+$('#b-indice').addEventListener('click',toggleIndice);
+
+/* deslizar en pantallas táctiles */
+let tx=0,ty=0;
+addEventListener('touchstart',e=>{tx=e.changedTouches[0].clientX;ty=e.changedTouches[0].clientY;},{passive:true});
+addEventListener('touchend',e=>{
+  const dx=e.changedTouches[0].clientX-tx, dy=e.changedTouches[0].clientY-ty;
+  if(Math.abs(dx)>56&&Math.abs(dx)>Math.abs(dy)*1.4){dx<0?sig():ant();}
+},{passive:true});
+
+/* índice */
+$('#ix-grid').innerHTML=LAM.map((l,i)=>
+  '<button type="button" data-i="'+i+'"><span class="ix-n">'+String(i+1).padStart(2,'0')+
+  '</span><span class="ix-t">'+(l.dataset.t||'')+'</span></button>').join('');
+$$('#ix-grid button').forEach(b=>b.addEventListener('click',()=>{toggleIndice();ir(+b.dataset.i);}));
+function toggleIndice(){
+  const el=$('#indice'), abre=!el.classList.contains('on');
+  el.classList.toggle('on',abre);
+  if(abre)$$('#ix-grid button')[cur].focus();
+}
+
+/* arranque: respeta el ancla de la URL */
+const h=parseInt(location.hash.slice(1),10);
+ir(Number.isInteger(h)&&h>0?h-1:0,true);
+addEventListener('hashchange',()=>{
+  const n=parseInt(location.hash.slice(1),10);
+  if(Number.isInteger(n)&&n-1!==cur)ir(n-1,true);
+});
+})();
+</script>
+</body>
+</html>
