@@ -1,4 +1,7 @@
 {
   "buildCommand": "",
-  "outputDirectory": "public"
+  "outputDirectory": "public",
+  "rewrites": [
+    { "source": "/presentacion", "destination": "/presentacion.html" }
+  ]
 }
