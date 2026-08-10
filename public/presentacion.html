@@ -298,6 +298,28 @@ body.con-notas .lam{padding-bottom:calc(34vh + 40px)}
   display:block;margin-top:5px;line-height:1.2;letter-spacing:-.015em;
 }
 
+/* ── pantallas bajas ───────────────────────────────────────────────────────
+   Un proyector de 1280×720 tiene 90 px menos de alto útil que un portátil.
+   En vez de recortar contenido lámina por lámina, se comprime el ritmo
+   vertical: márgenes, separaciones de retícula y relleno de tarjetas. */
+@media (max-height:820px){
+  :root{--pad-y:clamp(26px,4.2vh,52px)}
+  .grid{gap:clamp(9px,1.2vw,16px);margin-top:clamp(11px,1.9vh,20px)}
+  .card{padding:clamp(10px,1.2vw,15px)}
+  .bajada,.impulso{margin-top:clamp(9px,1.5vh,17px)}
+  .fuente{margin-top:clamp(10px,1.7vh,20px);padding-top:8px}
+  .chart,.mapa{margin-top:clamp(6px,1vh,12px)}
+  table.deck{margin-top:clamp(9px,1.4vh,16px)}
+  table.deck td{padding:6px 10px 6px 0}
+  ul.pasos{gap:clamp(5px,.8vh,11px);margin-top:clamp(10px,1.6vh,20px)}
+  ul.pasos li{padding-bottom:clamp(5px,.8vh,11px)}
+  .cols2{margin-top:clamp(8px,1.2vh,15px)}
+  h2{font-size:clamp(1.45rem,3.15vw,2.75rem)}
+  .kick{margin-bottom:clamp(10px,1.8vh,20px)}
+  .card h3{margin-bottom:.34em}
+  table.deck th{padding-bottom:6px}
+}
+
 /* ── impresión ─────────────────────────────────────────────────────────── */
 @media print{
   @page{size:landscape;margin:12mm}
@@ -769,6 +791,21 @@ body.con-notas .lam{padding-bottom:calc(34vh + 40px)}
   <aside class="notas">Si en la sala hay rectores o secretarios, este es el momento de mirar a los ojos. El hueco 01 es el más rentable socialmente: salud tiene vacantes, tiene empleador público (hospitales) y tiene demanda estudiantil comprobada en todo el país.</aside>
 </section>
 
+<!-- ─────────────────────────────────────────────────────────────────── -->
+<section class="lam" data-t="Bajo Cauca · lo que ya se está moviendo">
+  <div class="kick">05 · Bajo Cauca · lo más reciente</div>
+  <h2 class="ancha">El SNIES toma la foto. Las instituciones ya van más adelante</h2>
+  <div class="grid g2">
+    <div class="card acc2"><span class="num">SENA · junio de 2026</span><h3>8.370 cupos gratuitos, y Zaragoza entra al mapa</h3><p>La tercera convocatoria de 2026 en Antioquia abrió cupos de nivel auxiliar, técnico y tecnólogo con oferta en <b>Caucasia, El Bagre y Zaragoza</b>. Las áreas priorizadas: tecnología, <b>salud</b>, industria, servicios y gestión administrativa. Zaragoza no registra matrícula presencial en el SNIES 2025: aquí ya la hay.</p></div>
+    <div class="card acc1"><span class="num">UdeA y MinEducación · 2026-1</span><h3>Un pregrado nuevo en El Bagre</h3><p>Dentro del Plan Integral de Cobertura con Enfoque Territorial, la UdeA abrió <b>Creación Digital en El Bagre</b> —programa diseñado según las características del territorio— con matrículas hasta abril de 2026. Es oferta que la vigencia 2025 todavía no alcanza a mostrar.</p></div>
+    <div class="card acc4"><span class="num">Universidad de Antioquia</span><h3>Una casa consolidada, no un experimento</h3><p>El campus de Caucasia funciona desde <b>1997</b> y ha graduado a más de <b>2.500 profesionales</b>. La UdeA tiene acreditación institucional de alta calidad <b>multicampus vigente hasta 2033</b>: el sello cubre las seccionales. Y el puntaje mínimo de admisión en regiones es 50 sobre 100, frente a 53 en Medellín.</p></div>
+    <div class="card acc3"><span class="num">SESA · Gobernación y IES públicas</span><h3>5.000 cupos de cursos para Bajo Cauca y Nordeste</h3><p>El Sistema de Educación Superior de Antioquia articula a cinco universidades públicas del departamento. En su convocatoria más reciente, <b>Bajo Cauca y Nordeste fueron las dos subregiones con más matriculados</b>, superando los 5.000 cupos entre ambas.</p></div>
+  </div>
+  <p class="impulso">La demanda no está esperando permiso: cada vez que se abre una puerta en el Bajo Cauca, se llena.</p>
+  <p class="fuente">SENA Regional Antioquia, tercera convocatoria de 2026 (inscripciones desde el 5 de junio de 2026) · Universidad de Antioquia y Ministerio de Educación, estrategia PIC-ET 2026-1 · Universidad de Antioquia, seccional Bajo Cauca y acreditación institucional multicampus · Gobernación de Antioquia, Sistema de Educación Superior de Antioquia.</p>
+  <aside class="notas">Lámina importante metodológicamente: el SNIES cierra vigencias y sale con un año de rezago; los boletines institucionales van al día. Las dos fuentes se necesitan — una da comparabilidad, la otra da actualidad. Y el caso de Zaragoza lo prueba: aparece como desierto en la base nacional y ya tiene oferta abierta.</aside>
+</section>
+
 <!-- 18 ──────────────────────────────────────────────────────────────── -->
 <section class="lam" data-t="Bajo Cauca · la base escolar">
   <div class="kick">05 · Bajo Cauca · estado actual</div>
@@ -861,6 +898,44 @@ body.con-notas .lam{padding-bottom:calc(34vh + 40px)}
   </div>
   <p class="fuente">Antioquia Cómo Vamos a partir de SNIES y del Servicio Público de Empleo (2023): 2.875 matriculados y 2.421 vacantes clasificadas por área CINE-F · Encuesta de Opinión en Educación — Jóvenes, Fundación Empresarios por la Educación.</p>
   <aside class="notas">Aquí no hay culpables: el joven elige lo que existe, y lo que existe es lo barato de ofertar. Corregir esto requiere información —saber qué demanda el territorio— y capacidad de diseñar programas nuevos rápido. Las dos cosas se pueden acelerar con IA, y por ahí entra la última parte.</aside>
+</section>
+
+<!-- ─────────────────────────────────────────────────────────────────── -->
+<section class="lam" data-t="El mundo · qué hacen las regiones mineras">
+  <div class="kick">Tendencias · regiones como esta</div>
+  <h2 class="ancha">El Bajo Cauca no es un caso raro: es un caso <em>estudiado</em></h2>
+  <div class="grid g3">
+    <div class="card"><span class="num">Antofagasta · Chile</span><h3>La universidad local, coautora de la estrategia</h3><p>La minería es el <b>72 % del PIB regional</b> y el 39,4 % de las exportaciones de Chile. La región construyó con la OCDE y con la <b>Universidad Católica del Norte</b> una Estrategia Minera Regional <b>a 2050</b>. La universidad no fue invitada al final: escribió el documento.</p></div>
+    <div class="card acc2"><span class="num">Norte de Ontario · Canadá</span><h3>Formar en habilidades transferibles</h3><p>La recomendación central de la OCDE: la minería debe <b>nutrir habilidades que sirvan en otros sectores</b> y crear incentivos para alianzas entre empresas mineras y otras industrias, de modo que el trabajador pueda moverse cuando el ciclo cambie.</p></div>
+    <div class="card acc4"><span class="num">Pilbara · Australia</span><h3>La transición verde como palanca</h3><p>La región minera más rica de Australia leyó la transición energética no como amenaza sino como <b>la oportunidad de diversificar</b> y de convertirse en actor estratégico de una minería más sostenible. Eso exige perfiles nuevos, no los de siempre.</p></div>
+  </div>
+  <p class="impulso">En octubre de 2026 la conferencia mundial de regiones mineras de la OCDE se reúne en Antofagasta, con una sesión dedicada a cómo las universidades locales forman ante la automatización. El debate ya existe: falta que el Bajo Cauca se siente en esa mesa.</p>
+  <p class="fuente">OCDE · «Mining Regions and Cities»: Antofagasta (Chile), Northern Ontario (Canadá) y Pilbara (Australia) · Estrategia Minera Regional de Antofagasta 2023-2050, construida con el Instituto de Políticas Públicas del Norte de la Universidad Católica del Norte · Conferencia OCDE de Regiones y Ciudades Mineras, Antofagasta, 28 a 30 de octubre de 2026.</p>
+  <aside class="notas">El punto que hay que dejar clavado: en todos los casos estudiados, el actor que sostiene la diversificación es una institución de educación superior local con capacidad de investigación. No una sede de paso: una casa con laboratorios y profesores que viven ahí. Eso es lo que la UdeA ya empezó en Caucasia y lo que hay que profundizar.</aside>
+</section>
+
+<!-- ─────────────────────────────────────────────────────────────────── -->
+<section class="lam" data-t="En qué formar">
+  <div class="kick">Tendencias · la respuesta</div>
+  <h2 class="ancha">¿En qué formar? Donde coinciden las tres señales</h2>
+  <table class="deck">
+    <thead><tr><th>Campo</th><th>Señal global · WEF 2030</th><th>Señal de regiones mineras · OCDE</th><th>Señal local · Bajo Cauca</th></tr></thead>
+    <tbody>
+      <tr class="bien"><td>Datos y analítica aplicada</td><td><b>IA y big data</b> encabezan las habilidades en alza</td><td>Automatización y digitalización de la mina</td><td>TIC: 7 % de la matrícula; brecha nacional de 40 %</td></tr>
+      <tr class="bien"><td>Ambiental y restauración</td><td>Sostenibilidad entre las competencias en alza</td><td>La transición verde como palanca de diversificación</td><td>Cierre minero, agua y suelo: obligación normativa presente</td></tr>
+      <tr class="bien"><td>Salud y cuidado</td><td>De los sectores que más empleo crean en volumen</td><td>Bienestar como condición para retener talento</td><td>15 % de las vacantes, 0 programas presenciales</td></tr>
+      <tr><td>Mantenimiento y automatización industrial</td><td>Técnicos de operación entre los perfiles resistentes</td><td>El empleo minero se vuelve más técnico, no menos</td><td>Ingeniería: 16 % de matrícula frente a 19 % de vacantes</td></tr>
+      <tr><td>Agroindustria y trazabilidad</td><td>Cadenas cortas y certificación ganan peso</td><td>Valor agregado local sobre la materia prima</td><td>El agro crece en el valor agregado y solo tiene 193 matriculados</td></tr>
+      <tr><td>Habilidades humanas</td><td><b>Pensamiento creativo, resiliencia y curiosidad</b></td><td>Transferibilidad entre sectores</td><td>Lo que sostiene una trayectoria cuando cambia el ciclo del oro</td></tr>
+    </tbody>
+  </table>
+  <div class="grid g3" style="margin-top:clamp(10px,1.6vh,18px)">
+    <div class="dato a1"><span class="n">39 %</span><span class="t">De las habilidades clave de un trabajador <b>habrán cambiado en 2030</b></span></div>
+    <div class="dato a2"><span class="n">78 <small>millones</small></span><span class="t">De empleos netos nuevos en el mundo hacia <b>2030</b></span></div>
+    <div class="dato a3"><span class="n">1 <small>de cada 9</small></span><span class="t">Trabajadores necesitará formación y <b>no tendrá cómo acceder a ella</b></span></div>
+  </div>
+  <p class="fuente">Foro Económico Mundial · Future of Jobs Report 2025 (proyecciones a 2030) · OCDE, serie «Mining Regions and Cities» · SNIES 2025-II y Servicio Público de Empleo para las señales locales.</p>
+  <aside class="notas">La lámina responde la pregunta más frecuente de cualquier secretario de educación: «¿y entonces qué abrimos?». La regla de decisión es la de las tres señales: si un campo aparece en las tres columnas, es apuesta segura. Los tres primeros están en las tres. Y el último dato del WEF es el que más duele: uno de cada nueve trabajadores del mundo va a necesitar formarse y no va a tener dónde. En el Bajo Cauca esa proporción es mucho peor.</aside>
 </section>
 
 <!-- ─────────────────────────────────────────────────────────────────── -->
@@ -1165,7 +1240,7 @@ body.con-notas .lam{padding-bottom:calc(34vh + 40px)}
     <div class="card"><span class="num">Marco y mundo</span><h3>Harvard y UNESCO</h3><p><b>Growth Lab de Harvard</b> · Atlas of Economic Complexity: rankings y perfil de Colombia con datos a 2024 y metodología revisada en 2026, y «Accessing Knowhow for Development». <b>UNESCO IESALC</b>, Informe mundial de tendencias 2026: 100 M (2000) → 269 M (2023) de matrícula global; graduación bruta mundial 22 % → 27 %; América Latina 53 % de matrícula y 24 % de graduación. <b>OCDE</b>, Education at a Glance 2025. <b>Banco Mundial</b> (2024), pobreza y equidad en Colombia.</p></div>
     <div class="card acc2"><span class="num">Colombia</span><h3>MEN · SNIES</h3><p>Informe del 15 de julio de 2026 (matrícula 2025: 2.723.364; cobertura 61,75 %; gratuidad 939.282; tránsito inmediato 47,9 %) y balance sectorial del 23 de julio de 2026 (presupuesto 2026 de $15,2 billones). <b>MinTIC y Fedesoft</b>: brecha de talento digital 2026. <b>DNP</b>: CONPES 4144 de 2025.</p></div>
     <div class="card acc3"><span class="num">Antioquia y Bajo Cauca</span><h3>MaterIA Gris · SNIES 2025</h3><p>Procesamiento propio de las bases consolidadas del SNIES <b>2018-2025</b> —la vigencia 2025 se publicó a finales de julio de 2026—, microdato Saber TyT del ICFES, OLE del MEN y proyecciones municipales del DANE (CNPV 2018). Método: semestre pico de cada vigencia y municipio de oferta del programa. Metodología y límites: <a href="https://materia-gris.vercel.app/" target="_blank" rel="noopener">materia-gris.vercel.app</a>.</p></div>
-    <div class="card acc4"><span class="num">Bajo Cauca</span><h3>Antioquia Cómo Vamos</h3><p>«Oportunidades y retos de calidad de vida en la subregión Bajo Cauca» (2025), a partir del MEN, el Icfes, el SNIES, el Servicio Público de Empleo, las cajas de compensación y la Encuesta de Calidad de Vida de Antioquia 2023. <b>Banco Mundial</b>: «From Chalkboards to Chatbots» (Nigeria). <b>NBER</b> 31161: «Generative AI at Work».</p></div>
+    <div class="card acc4"><span class="num">Bajo Cauca y tendencias</span><h3>Antioquia Cómo Vamos, instituciones y OCDE</h3><p>«Oportunidades y retos de calidad de vida en la subregión Bajo Cauca» (2025), a partir del MEN, el Icfes, el SNIES, el Servicio Público de Empleo, las cajas de compensación y la ECV de Antioquia 2023. Boletines propios del <b>SENA Regional Antioquia</b>, la <b>Universidad de Antioquia</b> y el <b>SESA</b> (2026). <b>OCDE</b>, serie «Mining Regions and Cities». <b>WEF</b>, Future of Jobs 2025. <b>Banco Mundial</b>, «From Chalkboards to Chatbots». <b>NBER</b> 31161.</p></div>
   </div>
   <p class="fuente"><b>Nota de método:</b> la matrícula anual corresponde al semestre con mayor total de cada vigencia. En 2025 el SNIES reporta matrícula en los 125 municipios de Antioquia porque atribuye la virtual al municipio del estudiante: por eso aquí se distingue siempre entre matrícula total y oferta con sede física.</p>
   <aside class="notas">Lámina de respaldo. Útil si alguien pide la fuente exacta de un dato durante las preguntas.</aside>
