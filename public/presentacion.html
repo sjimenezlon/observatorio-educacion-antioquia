@@ -79,6 +79,16 @@ h2 em{font-style:normal;color:var(--s1)}
   max-width:62ch;margin-top:clamp(16px,2.4vh,28px);
 }
 .bajada b{color:var(--ink);font-weight:650}
+/* Frase de impulso: una afirmación que levanta la mirada, pero anclada al dato
+   que acaba de mostrarse en la misma lámina. Nunca va sola ni sin cifra detrás. */
+.impulso{
+  font-family:var(--display);font-weight:550;letter-spacing:-.022em;line-height:1.22;
+  font-size:clamp(1.02rem,1.62vw,1.48rem);color:var(--ink);max-width:44ch;
+  margin-top:clamp(16px,2.4vh,28px);padding-left:clamp(14px,1.4vw,20px);
+  border-left:3px solid var(--s2);
+}
+.impulso.a1{border-color:var(--s1)} .impulso.a3{border-color:var(--s3)} .impulso.a4{border-color:var(--s4)}
+.impulso.ancha{max-width:64ch}
 .fuente{
   font-family:var(--mono);font-size:clamp(.56rem,.78vw,.72rem);color:var(--faint);
   letter-spacing:.02em;line-height:1.5;margin-top:clamp(18px,2.8vh,34px);
@@ -275,7 +285,7 @@ body.con-notas .lam{padding-bottom:calc(34vh + 40px)}
     <span>300 296 9754</span>
     <span>materia-gris.vercel.app</span>
   </div>
-  <aside class="notas"><b>Arranque.</b> El título tiene trampa deliberada: en el Bajo Cauca «oro» no es una metáfora, es la economía. La tesis de la charla es que hay un segundo yacimiento —el conocimiento— que a diferencia del primero no se agota, no contamina el río y no se lo llevan otros. Presentarse rápido y decir de dónde salen las cifras: SNIES, DANE, ICFES, OLE, MEN, UNESCO, Banco Mundial y el observatorio MaterIA Gris.</aside>
+  <aside class="notas"><b>Arranque.</b> El título es literal y es un elogio: en el Bajo Cauca el oro no es una metáfora, es una economía que produce, que emplea y que demanda talento. La tesis de la charla es que esa riqueza ya está aquí y que la educación superior es la manera de multiplicarla y de que se quede en la gente del territorio. Presentarse rápido y decir de dónde salen las cifras: SNIES, DANE, ICFES, OLE, MEN, UNESCO, Banco Mundial y el observatorio MaterIA Gris.</aside>
 </section>
 
 <!-- 02 ───────────────────────────────────────────────────────────────── -->
@@ -287,18 +297,19 @@ body.con-notas .lam{padding-bottom:calc(34vh + 40px)}
     <div class="card acc2"><span class="num">02 · América Latina</span><h3>Matriculamos más de lo que graduamos</h3><p>53 % de matrícula bruta contra 24 % de graduación.</p></div>
     <div class="card acc3"><span class="num">03 · Colombia</span><h3>Récord y reverso</h3><p>2,72 millones de matriculados y, a la vez, uno de los logros más bajos de la OCDE.</p></div>
     <div class="card acc4"><span class="num">04 · Antioquia</span><h3>El sistema se angosta en la base</h3><p>Crece la universidad, se derrumba la técnica y la tecnológica.</p></div>
-    <div class="card"><span class="num">05 · Bajo Cauca</span><h3>La apuesta</h3><p>Dónde está rota la cadena y por qué esta subregión merece la inversión.</p></div>
+    <div class="card"><span class="num">05 · Bajo Cauca</span><h3>La oportunidad</h3><p>La riqueza que ya produce, los jóvenes que ya tiene y lo mucho que falta por construir.</p></div>
     <div class="card acc2"><span class="num">06 · IA</span><h3>La herramienta</h3><p>Qué cierra de verdad la brecha técnica, qué no, y qué hacer el lunes.</p></div>
   </div>
   <aside class="notas">Anunciar el contrato de la charla: cada afirmación viene con fuente y año, ninguna cifra es de opinión. Al final hay dos enlaces que se pueden usar mañana mismo.</aside>
 </section>
 
 <!-- 03 ───────────────────────────────────────────────────────────────── -->
-<section class="lam" data-t="Tesis: el yacimiento que no se agota">
+<section class="lam" data-t="Tesis: la riqueza y la capacidad">
   <div class="kick">La tesis</div>
-  <p class="frase">Todo yacimiento se agota.<br><em>El conocimiento no.</em></p>
-  <p class="bajada">El oro aluvial del Bajo Cauca tiene una fecha de vencimiento geológica y una estructura de renta que se captura fácil, se reparte mal y deja el pasivo ambiental en el territorio. La educación superior es el único activo productivo que <b>se queda en las personas</b>, se multiplica cuando se comparte y no depende del precio internacional de nada.</p>
-  <aside class="notas">Este es el marco moral de toda la charla. No es un argumento contra la minería: es un argumento sobre qué hacer con la renta mientras dure. La pregunta que deja abierta: ¿qué le queda al Bajo Cauca cuando el oro deje de ser rentable? La respuesta de esta charla es: lo que hayamos puesto en la cabeza de la gente.</aside>
+  <p class="frase">El Bajo Cauca ya produce riqueza.<br><em>Ahora puede producir capacidad.</em></p>
+  <p class="bajada">Oro, ganadería, agro y logística fluvial sostienen una economía que crece y que <b>demanda talento todos los días</b>: geología y minas, ambiental, seguridad y salud ocupacional, agroindustria, salud, logística, contabilidad, datos. La educación superior es la forma de que esa demanda se llene <b>con gente de aquí</b> —y de que la riqueza que ya se genera se quede, se multiplique y se diversifique en el territorio.</p>
+  <p class="impulso">Esta no es una subregión que haya que rescatar. Es una subregión con economía, con jóvenes y con instituciones, a la que le falta una cosa: oferta.</p>
+  <aside class="notas">Marco de toda la charla, y hay que decirlo con afecto: la minería y el agro del Bajo Cauca no son el problema, son la base sobre la que se construye. El argumento es de suma, no de reemplazo: una economía productiva necesita profesionales, técnicos y tecnólogos, y hoy muchos de esos cargos se llenan con gente traída de afuera porque aquí no hay dónde formarse. Eso es lo que se puede cambiar.</aside>
 </section>
 
 <!-- 04 ───────────────────────────────────────────────────────────────── -->
@@ -480,11 +491,28 @@ body.con-notas .lam{padding-bottom:calc(34vh + 40px)}
       <div class="dato a1"><span class="n">268.459</span><span class="t">Habitantes en 2024 · <b>3,9 %</b> de Antioquia, quinta subregión más poblada</span></div>
       <div class="dato a2"><span class="n">+34 %</span><span class="t">Crecimiento poblacional en dos décadas: <b>el mayor del departamento</b></span></div>
       <div class="dato a3"><span class="n">69 %</span><span class="t">De la población en tres municipios: Caucasia 36 %, El Bagre 21 %, Cáceres 12 %</span></div>
-      <div class="dato a4"><span class="n">9 %</span><span class="t">Del valor agregado de Antioquia <b>sin</b> el Valle de Aburrá</span></div>
+      <div class="dato a4"><span class="n">+59.000</span><span class="t">Personas que viven aquí y <b>llegaron de otra parte</b>: un territorio que atrae</span></div>
     </div>
   </div>
-  <p class="fuente">Antioquia Cómo Vamos · «Oportunidades y retos de calidad de vida en la subregión Bajo Cauca» (2025), con proyecciones DANE (CNPV 2018) y desagregación del PIB municipal de la Gobernación de Antioquia.</p>
+  <p class="impulso a1">Antioquia se está quedando sin jóvenes. El Bajo Cauca, no. Donde el departamento ve periferia, la demografía muestra futuro.</p>
+  <p class="fuente">Antioquia Cómo Vamos · «Oportunidades y retos de calidad de vida en la subregión Bajo Cauca» (2025), con proyecciones DANE (CNPV 2018).</p>
   <aside class="notas">Contraste con la lámina anterior: mientras el departamento envejece, aquí llega gente y nacen jóvenes. Un sistema de educación superior se construye donde hay demanda futura, no donde hubo demanda pasada.</aside>
+</section>
+
+<!-- 16 ───────────────────────────────────────────────────────────────── -->
+<section class="lam" data-t="Bajo Cauca · la riqueza que ya está">
+  <div class="kick">05 · Bajo Cauca</div>
+  <h2 class="ancha">La riqueza no hay que inventarla: <em>ya está produciendo</em></h2>
+  <div class="grid g4">
+    <div class="dato a2"><span class="n">$3,5 <small>billones</small></span><span class="t">Producción de la subregión, <b>creciendo desde 2019</b> (precios de 2015)</span></div>
+    <div class="dato a2"><span class="n">9 %</span><span class="t">Del valor agregado de toda Antioquia <b>sin</b> el Valle de Aburrá</span></div>
+    <div class="dato a1"><span class="n">945</span><span class="t">Empresas <b>creadas en un solo año</b>, en su mayoría micro y pequeñas</span></div>
+    <div class="dato a1"><span class="n">+63 %</span><span class="t">Crecimiento de los afiliados a cajas de compensación entre 2020 y 2023: <b>10.969 → 17.882</b></span></div>
+  </div>
+  <p class="bajada">Oro, ganadería, plátano, arroz, pesca y logística sobre el río. Una base productiva diversa, con empresas naciendo y con formalización en aumento. <b>Todo eso demanda perfiles que hoy se contratan por fuera</b> porque en la subregión no existe dónde formarlos.</p>
+  <p class="impulso">Un territorio que produce 3,5 billones y crea 945 empresas al año no necesita que lo sostengan: necesita quién lo piense, lo mida y lo dirija desde adentro.</p>
+  <p class="fuente">Antioquia Cómo Vamos (2025) a partir de la desagregación del PIB municipal de la Gobernación de Antioquia, Cámara de Comercio y datos de Comfama y Comfenalco Antioquia (corte 2023-2024).</p>
+  <aside class="notas">Lámina de orgullo, y de argumento económico. El dato de cajas de compensación es el más elocuente: la formalización viene subiendo fuerte. Formalizar exige contabilidad, seguridad y salud en el trabajo, gestión ambiental, logística, sistemas — exactamente la lista de programas técnicos y tecnológicos que podrían abrirse mañana.</aside>
 </section>
 
 <!-- 16 ──────────────────────────────────────────────────────────────── -->
@@ -533,6 +561,7 @@ body.con-notas .lam{padding-bottom:calc(34vh + 40px)}
       <div class="dato a4"><span class="n">81,1</span><span class="t">Puntaje Saber TyT de Caucasia: <b>el más bajo</b> de los 14 municipios medibles de Antioquia (tope: 106,8)</span></div>
     </div>
   </div>
+  <p class="impulso a4">Ninguno de estos vacíos es definitivo. Son de matemáticas y de lectura, se diagnostican y se cierran —y hoy, por primera vez, sabemos con qué y a qué costo.</p>
   <p class="fuente">Antioquia Cómo Vamos a partir del MEN y el Icfes (2023) · ICFES, Saber TyT vía datos.gov.co, procesado por MaterIA Gris (municipios con 50 o más evaluados).</p>
   <aside class="notas">Esta es la brecha «de conocimiento» en su forma más concreta: el que llega al primer semestre llega con vacíos de matemáticas y lectura, y esos vacíos son la causa número uno de la deserción del primer año. Retener esta lámina: es la que justifica la nivelación con IA más adelante.</aside>
 </section>
@@ -545,6 +574,7 @@ body.con-notas .lam{padding-bottom:calc(34vh + 40px)}
       <h2>Y sin embargo, hay señales que casi nadie mira</h2>
       <p class="bajada">Caucasia tiene un <b>tránsito inmediato de 46 %</b>: más alto que el promedio departamental (41 %). Donde hay oferta, los jóvenes entran.</p>
       <p class="bajada">Entre 2019 y 2023 la matrícula de <b>media creció 27,4 puntos</b> mientras la de primaria caía: hay una cohorte cada vez más grande tocando la puerta de la educación superior.</p>
+      <p class="impulso">No falta vocación: falta puerta. Cada vez que se abre una, aparecen los estudiantes.</p>
     </div>
     <div><div class="chart" id="ch-transito"></div></div>
   </div>
@@ -557,6 +587,7 @@ body.con-notas .lam{padding-bottom:calc(34vh + 40px)}
   <div class="kick">05 · Bajo Cauca</div>
   <h2 class="ancha">Vale la pena: la informalidad se derrumba con cada nivel educativo</h2>
   <div class="chart" id="ch-informalidad"></div>
+  <p class="impulso ancha">Dos años de formación técnica parten la informalidad por la mitad. Pocas decisiones cambian tanto una vida en tan poco tiempo.</p>
   <p class="fuente">Antioquia Cómo Vamos a partir de la Encuesta de Calidad de Vida de Antioquia 2023 (Gobernación de Antioquia). Promedio subregional de informalidad: 65,6 %. En el Bajo Cauca solo <b>1 de cada 11</b> personas en edad de trabajar tiene empleo formal.</p>
   <aside class="notas">La cifra que hay que subrayar: pasar de la media a un título técnico o tecnológico —dos años, no cinco— parte la informalidad por la mitad. Es el mejor argumento para defender la TyT, que es justo el nivel que se está cayendo en Antioquia. El 0,0 % del posgrado es un dato de muestra pequeña: mencionarlo con cuidado.</aside>
 </section>
@@ -566,9 +597,10 @@ body.con-notas .lam{padding-bottom:calc(34vh + 40px)}
   <div class="kick">05 · Bajo Cauca</div>
   <div class="split">
     <div>
-      <h2>El desajuste: se estudia una cosa y se contrata otra</h2>
+      <h2>Y una oportunidad escrita en los datos</h2>
       <p class="bajada">El <b>45 %</b> de los matriculados del Bajo Cauca está en administración y derecho, que explican el 26 % de las vacantes. <b>Salud</b> concentra el 15 % de las vacantes y solo el 2 % de la matrícula.</p>
-      <p class="bajada">El 69 % de los jóvenes de Antioquia dice que <b>no hay relación</b> entre lo que estudió y el trabajo que tiene.</p>
+      <p class="bajada">Cada barra desalineada es un programa que <b>tiene empleador esperando</b> antes de abrirse.</p>
+      <p class="impulso a3">Diseñar oferta aquí no es apostar a ciegas: el mercado ya dijo qué necesita y en qué cantidad.</p>
     </div>
     <div><div class="chart" id="ch-pertinencia"></div></div>
   </div>
@@ -585,9 +617,10 @@ body.con-notas .lam{padding-bottom:calc(34vh + 40px)}
     <li><span class="p-n">02</span><span><b class="p-t">La base institucional ya está puesta</b><span class="p-d">Siete instituciones, 41 programas y una sede universitaria pública consolidada en Caucasia con más de 1.750 egresados. No hay que empezar de cero: hay que densificar y extender a los otros cuatro municipios.</span></span></li>
     <li><span class="p-n">03</span><span><b class="p-t">Donde hay oferta, los jóvenes entran</b><span class="p-d">Caucasia transita a la educación superior por encima del promedio departamental (46 % contra 41 %). El cuello de botella es la oferta, no la voluntad.</span></span></li>
     <li><span class="p-n">04</span><span><b class="p-t">El retorno social es medible y grande</b><span class="p-d">La informalidad cae de 61,8 % con media a 29,7 % con título técnico o tecnológico. Y cada punto porcentual más de población con educación superior se asocia con 1,1 puntos menos de pobreza municipal.</span></span></li>
-    <li><span class="p-n">05</span><span><b class="p-t">Hay una economía real que financiar y que transformar</b><span class="p-d">La subregión aporta el 9 % del valor agregado de Antioquia sin el Valle de Aburrá, con una estructura primaria (52 %) de oro y agro. Una economía extractiva con renta presente es exactamente la que puede pagar su propia transición al conocimiento.</span></span></li>
+    <li><span class="p-n">05</span><span><b class="p-t">Hay una economía real que demanda y que puede financiar</b><span class="p-d">La subregión aporta el 9 % del valor agregado de Antioquia sin el Valle de Aburrá, con oro, ganadería y agro creciendo y 945 empresas nuevas en un año. Es una economía con caja y con vacantes: puede contratar a quien se forme y puede cofinanciar su propia formación.</span></span></li>
   </ul>
-  <aside class="notas">Si la audiencia es institucional, esta es la lámina para detenerse. Cerrar con la pregunta: ¿cuál de estas cinco razones sería más fuerte dentro de diez años? Ninguna: todas se debilitan con el tiempo. Por eso es ahora.</aside>
+  <p class="impulso">Cinco razones que hoy están todas alineadas al mismo tiempo. Esa coincidencia es la oportunidad, y no dura para siempre.</p>
+  <aside class="notas">Si la audiencia es institucional, esta es la lámina para detenerse. Cerrar con la pregunta: ¿cuál de estas cinco razones sería más fuerte dentro de diez años? Todas pesan más hoy que mañana —sobre todo la demográfica—. Por eso es ahora.</aside>
 </section>
 
 <!-- 23 ──────────────────────────────────────────────────────────────── -->
@@ -598,6 +631,7 @@ body.con-notas .lam{padding-bottom:calc(34vh + 40px)}
       <h2>La brecha técnica, con nombre y número</h2>
       <p class="bajada">Colombia tendrá <b>85.000 vacantes digitales sin cubrir en 2026</b> y necesita 498.000 profesionales tecnológicos en cinco años. En el Bajo Cauca, las TIC son el <b>7 %</b> de la matrícula.</p>
       <p class="bajada">Esta es la brecha que un territorio puede cerrar rápido —son formaciones cortas— <b>si</b> resuelve el problema de fondo: nivelar a quien llega con vacíos.</p>
+      <p class="impulso a3">85.000 puestos sin quién los llene es la mejor noticia que puede recibir alguien que hoy está eligiendo qué estudiar.</p>
     </div>
     <div class="grid g2" style="margin-top:0">
       <div class="dato a3"><span class="n">85.000</span><span class="t">Vacantes digitales <b>sin cubrir</b> en Colombia en 2026</span></div>
@@ -637,6 +671,7 @@ body.con-notas .lam{padding-bottom:calc(34vh + 40px)}
       <h2>Segunda evidencia: la IA le sirve <em>más</em> a quien menos sabe</h2>
       <p class="bajada">El estudio de referencia sobre IA generativa en el trabajo siguió a 5.179 agentes de servicio al cliente. La productividad subió <b>14 % en promedio</b>. Pero el promedio esconde el hallazgo:</p>
       <p class="bajada"><b>+34 % en los trabajadores nuevos y menos calificados; casi nada en los expertos.</b> La IA difunde las buenas prácticas de los mejores y acelera la curva de aprendizaje de los que empiezan.</p>
+      <p class="impulso">Por primera vez una tecnología rinde más en quien va empezando que en quien ya llegó. Esa asimetría juega a favor del Bajo Cauca.</p>
     </div>
     <div><div class="chart" id="ch-nivelador"></div></div>
   </div>
@@ -760,8 +795,9 @@ body.con-notas .lam{padding-bottom:calc(34vh + 40px)}
 <!-- 33 ──────────────────────────────────────────────────────────────── -->
 <section class="lam" data-t="Cierre">
   <div class="kick">Cierre</div>
-  <p class="frase">Sacar oro del río toma siglos.<br><em>Sacar una generación adelante toma una década.</em></p>
-  <p class="bajada" style="max-width:60ch">El Bajo Cauca tiene lo que a Antioquia se le está acabando: <b>jóvenes</b>. Tiene una institución pública instalada, un tránsito inmediato por encima del promedio departamental y una economía con renta presente para financiar su propia transición. Lo que falta es oferta donde no la hay y acompañamiento para quien llega con vacíos. Para lo primero se necesita decisión. Para lo segundo, por primera vez, tenemos una herramienta con evidencia.</p>
+  <p class="frase">El Bajo Cauca no es un territorio por rescatar.<br><em>Es una oportunidad de oro.</em></p>
+  <p class="bajada" style="max-width:60ch">Tiene lo que a Antioquia se le está acabando: <b>jóvenes</b>, y cada vez más. Tiene una economía que produce, que formaliza y que contrata. Tiene una universidad pública sembrada en Caucasia y un tránsito inmediato por encima del promedio departamental. Falta oferta donde todavía no la hay y acompañamiento para quien llega con vacíos: lo primero es una decisión que se puede tomar este semestre, y para lo segundo, por primera vez, hay una herramienta con evidencia.</p>
+  <p class="impulso ancha">Nada de esto hay que esperarlo: los jóvenes ya están, la economía ya produce y la institución ya está puesta. Lo único que falta es empezar.</p>
   <aside class="notas">Cerrar mirando a la sala, sin lámina de agradecimientos. Si hay preguntas, las tres más frecuentes suelen ser: trampa estudiantil (responder con la regla 03), reemplazo docente (responder con Nigeria: el efecto existe porque hay docente) y costo (responder con costo-efectividad del estudio del Banco Mundial).</aside>
 </section>
 
@@ -807,7 +843,7 @@ body.con-notas .lam{padding-bottom:calc(34vh + 40px)}
   <span class="der">
     <button id="b-notas" type="button" title="Notas del expositor (N)">Notas</button>
     <button id="b-indice" type="button" title="Índice (G)">Índice</button>
-    <span><b id="n-actual">1</b> / <span id="n-total">35</span></span>
+    <span><b id="n-actual">1</b> / <span id="n-total">36</span></span>
   </span>
 </footer>
 
