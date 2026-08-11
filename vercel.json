@@ -2,6 +2,7 @@
   "buildCommand": "",
   "outputDirectory": "public",
   "rewrites": [
-    { "source": "/presentacion", "destination": "/presentacion.html" }
+    { "source": "/presentacion", "destination": "/presentacion.html" },
+    { "source": "/pptexp", "destination": "/pptexp.html" }
   ]
 }
