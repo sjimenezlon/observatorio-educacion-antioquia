@@ -79,6 +79,7 @@ h2 em{font-style:normal;color:var(--s1)}
   max-width:62ch;margin-top:clamp(16px,2.4vh,28px);
 }
 .bajada b{color:var(--ink);font-weight:650}
+.bajada.ancha{max-width:92ch}
 /* Frase de impulso: una afirmación que levanta la mirada, pero anclada al dato
    que acaba de mostrarse en la misma lámina. Nunca va sola ni sin cifra detrás. */
 .impulso{
@@ -389,7 +390,7 @@ body.con-notas .lam{padding-bottom:calc(34vh + 40px)}
       <p class="impulso">Y cierra en positivo: Colombia está posicionada para aprovechar <b>muchas oportunidades</b> de diversificación con el conocimiento que ya tiene. Faltan las personas que crucen esas puertas.</p>
     </div>
     <div class="grid g2" style="margin-top:0">
-      <div class="dato a3"><span class="n">68 <small>de 146</small></span><span class="t">Puesto de Colombia en el Índice de Complejidad Económica: bajó dos en cinco años</span></div>
+      <div class="dato a3"><span class="n">68 <small>de 145</small></span><span class="t">Puesto de Colombia en el Índice de Complejidad Económica: bajó dos en cinco años</span></div>
       <div class="dato a3"><span class="n">54,8 %</span><span class="t">De lo que exportó Antioquia entre enero y mayo de 2026 fue <b>oro no monetario</b></span></div>
       <div class="dato a1"><span class="n">US$6.346 <small>M</small></span><span class="t">Exportó Antioquia en cinco meses, <b>+53,3 %</b>: es el mayor exportador del país</span></div>
       <div class="dato a2"><span class="n">2,42 %</span><span class="t">Crecimiento anual proyectado para Colombia hasta 2034</span></div>
@@ -765,6 +766,11 @@ function hbar2(id,rows,opt){
   host.appendChild(s);
 }
 
+/* ══ canastas exportadoras ════════════════════════════════════════════════
+   Las genera scripts/complejidad_canastas.py desde la API del Atlas of
+   Economic Complexity de Harvard (HS12, 2024). No editar a mano. */
+/* CANASTAS_INICIO */window.DECK_CANASTAS={"anio":2024,"clase":"HS12","deN":145,"paises":[{"k":"kor","n":"Corea del Sur","eci":1.56,"puesto":4,"total":817.5,"bandas":[0.7,9.4,24.4,41.5,24.0],"pciProm":0.35,"sec":[{"s":"Electrónica","v":199035.3,"n":46,"p":[["Circuitos integrados",114288.7,1.453],["Telefonos",13614.2,0.701],["Soportes para grabar sonido",10633.8,0.934],["Partes de radios, teléfonos, y TVs",9603.1,0.827],["Acumuladores eléctricos",7451.3,0.758],["Transformadores eléctricos",4937.5,0.644],["Circuitos impresos",4727.1,1.242],["Aparatos relacionados con circuitos eléctricos < 1000 voltios",4339.5,0.688],["Conductores aislados para electricidad",4141.0,-0.254],["Dispositivos semiconductores",3580.5,0.52],["Cuadros para control o distribución de electricidad",2373.9,0.756],["Aparatos eléctricos con función propia n.c.p.",2001.0,0.944],["Partes de aparatos relacionados con circuitos eléctricos",1995.2,0.873],["Condensadores eléctricos",1741.4,1.147],["Aparatos de alumbrado para automóviles",1589.1,0.852],["Motores y generadores, eléctricos",1451.8,0.878],["Calentadores eléctricos",812.6,0.763],["Monitores y proyectores",782.8,0.625],["Desperdicios de pilas, baterías",780.2,-1.356],["Aparatos relacionados con circuitos eléctricos > 1000 voltios",772.7,0.978],["Aparatos emisores de radiodifusión o televisión",697.8,0.624],["Aparatos eléctricos de señalización acústica o visual",567.5,0.821],["Máquinas y aparatos para soldar",566.7,0.625],["Micrófonos",562.5,0.829],["Aparatos eléctricos de encendido",555.1,0.814],["Señales eléctricas para vías",493.5,1.261],["Partes para generadores eléctricos",476.3,0.954],["Juego de generación eléctrica y convertidores rotativos",471.8,-0.008],["Aparatos receptores de radiodifusión",402.6,1.016],["Aparatos de radar",371.2,0.768],["Partes y accesorios de equipo de vídeo o sonido",353.6,1.47],["Otros productos",1899.4,null]]},{"s":"Servicios","v":142034.0,"n":5,"p":[["Servicios a empresas",68142.2,-0.499],["Transporte",39939.6,-0.774],["Turismo y viajes",19405.8,-1.08],["Servicios financieros",6083.9,-0.579],["Otros productos",8462.5,null]]},{"s":"Maquinaria","v":114721.8,"n":170,"p":[["Partes y accesorios de máquinas de oficina",17111.8,1.2],["Máquinas para semiconductores",13016.3,1.961],["Máquinas con función propia n.p.c.",6691.1,0.919],["Instrumentos para medida o verificación",5299.5,1.069],["Centrifugadoras",3406.9,0.831],["Partes para motores de encendido por chispa",3162.3,0.645],["Instrumentos y aparatos de medicina, odontología o veterinaria",3116.4,0.718],["Bombas, compresores, ventiladores, etc",2972.4,0.854],["Fibras ópticas",2906.6,0.887],["Dispositivos de cristal líquido",2647.3,1.245],["Aparatos para tratar materias mediante cambio de temperatura",2644.1,0.799],["Refrigeradores, congeladores",2587.3,0.611],["Impresoras y copiadoras",2352.1,0.945],["Artículos de grifería para tuberías, calderas, etc.",2328.5,0.861],["Partes para montacargas y maquinaria de excavación",2246.1,0.218],["Topadoras frontales, angulares etc. autopropulsadas",2207.1,-0.334],["Osciloscopios e instrumentos de medición de electricidad",2027.1,1.0],["Motores de émbolo de encendido por compresión",1670.0,0.8],["Las demás máquinas de elevación",1646.8,0.858],["Bombas para líquidos",1589.5,0.552],["Motores de émbolo alternativo de encendido por chispa",1534.5,0.945],["Turbinas de gas",1443.1,0.498],["Árboles de transmisión",1390.1,0.975],["Municiones y proyectiles",1370.9,0.657],["Aire acondicionado",1369.0,0.785],["Aparatos para regulación automáticos",1287.9,0.952],["Artículos y aparatos de ortopedia",1220.6,0.792],["Armas de guerra, excepto los pistolas",1198.1,0.659],["Aparatos de rayos X",1157.8,1.096],["Cajas de fundición",1146.3,0.822],["Máquinas para lavar vajillas",1079.7,0.758],["Máquinas para el procesamiento de tela",897.4,0.769],["Lavadoras de ropa",871.7,0.574],["Computadores",864.4,1.126],["Carretillas apiladoras",851.0,1.163],["Rodamientos de bolas",848.8,1.112],["Tornos que trabajen por arranque de metal",819.8,1.203],["Instrumentos para análisis físicos o químicos",684.0,1.193],["Máquinas y aparatos para trabajar caucho o plástico",654.9,0.978],["Partes para máquinas para trabajar maderas o metales",641.0,1.195],["Los demás motores",599.1,0.695],["Aparatos mecánico para proyectar materias líquidas o en polvo",571.6,0.714],["Máquinas para prensar y forjar metal",525.2,0.808],["Instrumentos de medición de caudal y presión de líquidos o gases",519.2,0.735],["Centros de mecanizado para trabajar metal",500.6,1.609],["Densímetros, termómetros etc.",449.2,0.815],["Laminadores para metal",447.3,0.903],["Lentes y demás elementos de óptica",383.8,1.167],["Los demás contadores",374.3,1.235],["Artículos para deportes",327.0,0.547],["Otros productos",7064.3,null]]},{"s":"Vehículos","v":113160.1,"n":38,"p":[["Carros",61192.3,0.896],["Trasatlánticos, transbordadores y barcos similares",22535.7,-0.546],["Partes de vehículos",20070.6,0.84],["Vehículos automóviles para mercancías",1796.2,0.076],["Plataformas flotantes o sumergibles",1632.4,-0.952],["Partes de otras aeronaves",1377.0,0.075],["Tanques y demás vehículos automóviles blindados de combate",1318.9,0.764],["Tractores",731.3,0.611],["Las demás aeronaves y vehículos espaciales",554.1,-0.08],["Automotores para vías férreas",451.3,1.02],["Vehículos automóviles para >10 personas",417.4,0.075],["Otros productos",1082.9,null]]},{"s":"Química","v":107848.8,"n":222,"p":[["Hidrocarburos cíclicos",9595.0,0.537],["Preparaciones de maquillaje",8469.2,0.115],["Sangre",6099.5,1.215],["Sales de los ácidos oxometálicos",6099.3,0.627],["Polímeros de etileno",5682.9,0.184],["Poliacetales",5422.9,-0.288],["Polímeros de propileno",4444.0,0.21],["Hidrocarburos acíclicos",3949.3,0.194],["Otras placas de plástico no celular",3226.0,-0.071],["Polímeros de estireno",3220.9,0.616],["Caucho sintético",3138.1,0.321],["Neumáticos nuevos de caucho",3127.2,0.3],["Ácidos policarboxílicos",2189.0,0.932],["Productos químicos n.c.p.",2182.0,0.166],["Polímeros acrílicos",2055.2,0.564],["Tiras autoadhesivas de plástico",1908.7,0.765],["Químicos para uso en electrónica",1836.0,1.765],["Las demás placas de plástico",1769.5,0.442],["Las demás manufacturas de plástico",1707.7,0.403],["Tapones y demás encierros de plástico",1564.7,-0.415],["Resinas amínicas y poliuretanos",1139.9,0.932],["Compuestos con otras funciones nitrogenadas",937.3,1.027],["Colas y demás adhesivos",902.0,0.451],["Medicamentos, envasados",858.4,0.458],["Químicas para uso fotográfico",786.8,1.572],["Alcoholes acíclicos",776.0,-0.567],["Insecticidas, raticidas, fungicidas, etc.",756.4,-0.322],["Agentes de limpieza orgánicos (excepto el jabón)",731.5,-0.261],["Productos para afeitar",702.9,0.125],["Compuestos heterocíclicos con heteroátomo(s) solo de nitrógeno",665.0,1.489],["Resinas de petróleo y demás productos",663.8,1.102],["Revestimientos de plástico para suelos",660.7,0.795],["Materias colorantes orgánicas sintéticas",658.2,0.403],["Pinturas y barnices, non-acuosos",639.9,0.123],["Polímeros de cloruro de vinilo",615.6,0.292],["Pigmentos preparados",604.8,0.464],["Otras manufacturas de caucho vulcanizado",552.9,0.669],["Fenoles; fenoles-alcoholes",483.5,1.098],["Reactivos de diagnóstico o de laboratorio",481.0,1.176],["Jabón",469.7,-0.704],["Los demás compuestos órgano-inorgánicos",424.0,1.188],["Poliamidas",421.0,1.281],["Derivados halogenados de los hidrocarburos",414.9,0.815],["Preparaciones capilares",407.6,0.174],["Tubos de plástico",384.5,-0.144],["Carbono",383.7,0.131],["Celulosa n.c.p.",371.7,0.604],["Ácidos monocarboxílicos acíclicos no saturados",364.4,0.92],["Ácidos nucleicos y sus sales",356.1,1.755],["Peróxidos y hidróxidos de sodio o de potasio",353.9,-0.253],["Ceras, artificiales y preparadas",347.7,0.685],["Otros productos",11846.1,null]]},{"s":"Minerales","v":52628.1,"n":60,"p":[["Derivados del petróleo",47823.8,-1.426],["Aceites destilados de alquitranes a alta temperatura",2137.3,-0.048],["Minerales de cobre",782.4,-2.588],["Coque de petróleo",677.1,-0.715],["Gas de petróleo",412.8,-2.33],["Otros productos",794.7,null]]},{"s":"Metales","v":51412.3,"n":148,"p":[["Laminados planos de hierro, ancho > 600 mm, chapados",6332.9,-0.004],["Laminados planos de hierro, anchura > 600 mm, laminados en caliente, sin chapar",5807.4,0.385],["Productos laminados planos otros aceros aleados, anchura > 600 mm.",2606.4,1.375],["Chapas de aluminio, de espesor > 0.2 mm",2563.3,0.625],["Laminados planos de hierro, anchura > 600 mm, laminados en frío, sin chapar",2413.0,0.269],["Cobre refinado y aleaciones de cobre, en bruto",1947.6,-2.303],["Construcciones y sus partes de fundición, hierro o acero",1864.0,0.146],["Productos laminados planos de acero inoxidable, anchura > 600 mm",1800.5,1.346],["Las demás manufacturas de hierro o acero",1723.0,0.4],["Los demás tubos y perfiles huecos, hierro o acero",1300.9,-0.506],["Cinc en bruto",1300.0,-0.105],["Ferroaleaciones",1189.4,-0.874],["Útiles intercambiables para herramientas de mano",1183.5,0.833],["Tornillos y similares de fundición, hierro o acero",1025.7,0.928],["Accesorios de tubería de fundición, hierro o acero",891.3,0.57],["Guarniciones, herrajes y similares, de metal común",872.4,0.801],["Hojas y tiras de cobre de espesor < 0.15 mm",819.8,-1.149],["Chapas y tiras, de cobre, espesor > 0.15 mm",777.0,0.462],["Aluminio en bruto",747.8,-1.571],["Plomo en bruto",688.8,-2.222],["Perfiles de hierro o acero sin alear",676.5,-0.281],["Los demás tubos, diámetro > 406.4 mm, hierro o acero",642.1,-0.011],["Alambre de cobre",546.1,-0.209],["Las demás manufacturas de aluminio",484.6,0.603],["Tubos de cobre",471.2,0.685],["Hojas de aluminio, delgadas de < 0.2 mm",425.0,0.563],["Desperdicios y desechos, de cobre",404.5,-1.796],["Cables de hierro o acero sin aislar",380.4,0.387],["Alambrón de hierro o acero sin alear",373.6,-0.352],["Tubos, sin costura, de hierro o acero",367.2,0.144],["Artículos para útiles, de cermet",362.2,1.623],["Productos intermedios de hierro",355.2,-0.794],["Barras y perfiles, de los demás aceros aleados",351.1,0.272],["Otros productos",7718.2,null]]},{"s":"Agro y alimentos","v":15636.9,"n":266,"p":[["Pasta",1437.0,-0.769],["Papel y cartón estucados con caolín",1063.4,0.747],["Otras preparaciones alimenticias",920.7,-0.105],["Pescado congelado, excepto los filetes",776.4,-1.872],["Aguas, aromatizadas",769.6,-0.812],["Cigarros y cigarrillos",747.6,-1.104],["Frutas conservadas de otro modo",684.7,-1.03],["Papel de celulosa, estucados",473.3,0.65],["Algarrobas, caña de azúcar, etc.",469.5,-1.766],["Productos de panadería",414.7,-0.477],["Salsas y sazonadores",385.7,-0.416],["Baúles, maletas, etc",331.0,-0.143],["Otros productos",7163.3,null]]},{"s":"Textiles","v":12131.9,"n":178,"p":[["Tejidos de hilados de filamentos sintéticos",1220.4,-0.184],["Telas impregnadas con plástico",816.7,0.778],["Asientos",813.1,0.333],["Fibras sintéticas discontinuas",812.5,-0.381],["Otros tejidos de punto",647.8,-0.549],["Hilados de filamentos sintéticos",605.1,0.356],["Tejidos de punto elásticos",567.4,-0.341],["Los demás complementos de vestir",388.0,-0.477],["Artículos de prendería",344.3,-0.297],["Tejidos de punto por urdimbre",343.6,0.631],["Otros productos",5573.2,null]]},{"s":"Piedra y metales preciosos","v":8912.0,"n":66,"p":[["Plata",1856.1,-0.679],["Oro",1230.6,-2.62],["Artículos de orfebrería de metal precioso",722.3,0.821],["Artículos de joyería de metal precioso",544.6,-0.05],["Vidrio, trabajado",503.4,1.422],["Vidrio estirado o soplado",426.0,0.251],["Vidrio colado o laminado",412.2,0.375],["Platino",374.8,0.18],["Otros productos",2842.0,null]]}]},{"k":"col","n":"Colombia","eci":0.24,"puesto":68,"total":66.3,"bandas":[41.5,24.2,23.7,10.3,0.2],"pciProm":-1.58,"sec":[{"s":"Minerales","v":22561.8,"n":54,"p":[["Petróleo crudo",11670.3,-3.606],["Carbón",6238.4,-2.199],["Derivados del petróleo",2635.4,-1.426],["Coque",1051.2,-0.727],["Energía eléctrica",322.0,-0.879],["Coque de petróleo",258.4,-0.715],["Minerales de los metales preciosos",140.5,-2.262],["Cementos",88.5,-1.535],["Minerales de cobre",86.2,-2.588],["Otros productos",70.8,null]]},{"s":"Servicios","v":18037.1,"n":5,"p":[["Turismo y viajes",8699.0,-1.08],["Servicios a empresas",5109.9,-0.499],["Transporte",2949.6,-0.774],["Servicios financieros",231.9,-0.579],["Otros productos",1046.7,null]]},{"s":"Agro y alimentos","v":11429.0,"n":245,"p":[["Café sin tostar",3244.1,-2.203],["Flores cortadas",2269.5,-1.524],["Bananas y plátanos",1142.7,-2.109],["Azúcar de caña, en bruto",397.0,-1.497],["Aceite de palma, crudo",395.2,-2.895],["Extractos de café, té o yerba mate",337.9,-0.538],["Dátiles, piñas, aguacates, etc.",297.0,-2.018],["Azúcar para confitería",278.2,-0.437],["Bovinos",178.3,-0.506],["Frutas conservadas de otro modo",152.8,-1.03],["Agrios",141.8,-1.312],["Productos de panadería",125.2,-0.477],["Chocolates",121.7,-0.183],["Otras preparaciones alimenticias",118.1,-0.105],["Otras frutas frescas",104.0,-1.484],["Aceites de coco, crudo",97.6,-2.377],["Carne bovina (congelada)",95.0,-1.059],["Papel higiénico y papeles similares",88.9,-0.212],["Preparaciones para comida de animales",81.6,-0.426],["Filetes de pescado",79.4,-1.072],["Papel de celulosa, estucados",78.8,0.65],["Cacao en grano, crudo o tostado",55.2,-4.837],["Margarina",54.9,-0.675],["Harina de cereales",52.0,-1.346],["Grasas y aceites, animales o vegetales",51.7,-0.134],["Manteca, grasa y aceite de cacao",50.3,-1.846],["Plantas medicinales y de perfumería",47.7,-1.968],["Aceite de soja, crudo",45.1,-1.216],["Libros e impresos similares",43.9,0.079],["Preparaciones y conservas de pescado",42.8,-1.223],["Alcohol etílico <80% vol",42.2,-0.475],["Salsas y sazonadores",41.9,-0.416],["Papel y cartón Kraft, sin estucar",41.1,0.036],["Cajas y demás envases de papel o cartón",41.1,-0.519],["Leche, concentrada",38.1,-0.966],["Extracto de malta",34.3,-0.333],["Los demás papeles y cartones, sin estucar",33.3,0.022],["Grasas y aceites animales o vegetales, hidrogenados",32.9,-0.947],["Aguas, aromatizadas",32.2,-0.812],["Glándulas y sustancias de origen animal para farmacéuticos",31.4,-1.545],["Papel y cartón, para escribir",31.2,0.617],["Madera en bruto",28.9,-1.954],["Papelería de contabilidad",28.4,-0.461],["Los demás papeles cortados en formato",27.6,0.111],["Otros productos",676.0,null]]},{"s":"Química","v":4458.4,"n":207,"p":[["Insecticidas, raticidas, fungicidas, etc.",498.0,-0.322],["Medicamentos, envasados",342.3,0.458],["Polímeros de cloruro de vinilo",330.0,0.292],["Preparaciones de maquillaje",280.6,0.115],["Polímeros de propileno",278.9,0.21],["Tapones y demás encierros de plástico",226.5,-0.415],["Otras placas de plástico no celular",175.2,-0.071],["Preparaciones capilares",152.3,0.174],["Agentes de limpieza orgánicos (excepto el jabón)",151.2,-0.261],["Las demás placas de plástico",118.0,0.442],["Jabón",111.9,-0.704],["Perfumes y aguas de tocador",95.4,0.088],["Tubos de plástico",92.2,-0.144],["Polímeros de estireno",84.4,0.616],["Poliacetales",84.0,-0.288],["Mezclas de sustancias odoríferas",78.9,-0.104],["Carbono",78.3,0.131],["Ácidos carboxílicos con funciones oxigenadas",71.7,0.695],["Productos de higiene dental",64.6,0.242],["Neumáticos nuevos de caucho",61.9,0.3],["Hidrocarburos cíclicos",54.9,0.537],["Productos químicos n.c.p.",45.6,0.166],["Abonos, mixtos",44.0,-0.962],["Tiras autoadhesivas de plástico",43.3,0.765],["Las demás manufacturas de plástico",43.0,0.403],["Productos para afeitar",42.9,0.125],["Las demás materias colorantes",40.4,0.62],["Pinturas y barnices, non-acuosos",37.4,0.123],["Colas y demás adhesivos",37.1,0.451],["Artículos de uso doméstico, de plástico",34.3,-0.554],["Artículos para la construcción, de plástico",31.2,0.143],["Polímeros acrílicos",30.6,0.564],["Polímeros de etileno",28.5,0.184],["Guatas, gasas, y vendas",27.8,0.72],["Aprestos y aceleradores de tintura",27.6,0.404],["Otros productos",513.7,null]]},{"s":"Piedra y metales preciosos","v":4067.4,"n":59,"p":[["Oro",3487.3,-2.62],["Piedras preciosas",163.6,-2.146],["Fregaderos y lavabos de cerámica, para usos sanitarios",40.9,-0.156],["Vidrio de seguridad",40.5,0.507],["Bisutería",34.0,0.195],["Vidrio colado o laminado",33.2,0.375],["Artículos de vidrio para adorno de interiores",30.8,0.484],["Placas y baldosas, de cerámica, barnizadas",29.3,-1.264],["Otros productos",208.0,null]]},{"s":"Metales","v":2270.0,"n":133,"p":[["Partes de aluminio para construcción",589.6,0.407],["Ferroaleaciones",530.4,-0.874],["Desperdicios y desechos, de cobre",383.1,-1.796],["Desperdicios y desechos, de aluminio",99.8,-1.626],["Tubos, sin costura, de hierro o acero",78.2,0.144],["Accesorios de tubería de fundición, hierro o acero",63.7,0.57],["Construcciones y sus partes de fundición, hierro o acero",43.3,0.146],["Barras de aluminio",38.4,-0.078],["Artículos de uso doméstico de aluminio",31.3,-0.186],["Otros productos",412.3,null]]},{"s":"Textiles","v":995.8,"n":153,"p":[["Los demás muebles y sus partes",107.7,0.205],["Sostenes y artículos similares",99.6,-0.667],["Ropa de cama",68.1,-0.6],["Trajes y pantalones para mujeres",53.2,-0.763],["\"T-shirts\" y camisetas, de punto",51.6,-0.96],["Tejidos de hilados de filamentos sintéticos",39.9,-0.184],["Tejidos de punto elásticos",39.8,-0.341],["Asientos",38.4,0.333],["Otros productos",497.5,null]]},{"s":"Electrónica","v":992.6,"n":46,"p":[["Transformadores eléctricos",386.4,0.644],["Acumuladores eléctricos",162.1,0.758],["Conductores aislados para electricidad",88.1,-0.254],["Soportes para grabar sonido",72.6,0.934],["Cuadros para control o distribución de electricidad",53.8,0.756],["Telefonos",41.5,0.701],["Aparatos relacionados con circuitos eléctricos < 1000 voltios",37.2,0.688],["Otros productos",150.9,null]]},{"s":"Maquinaria","v":937.8,"n":167,"p":[["Refrigeradores, congeladores",151.8,0.611],["Compresas y pañales",103.2,-0.465],["Bombas para líquidos",82.2,0.552],["Instrumentos y aparatos de medicina, odontología o veterinaria",29.4,0.718],["Centrifugadoras",27.7,0.831],["Artículos de grifería para tuberías, calderas, etc.",26.7,0.861],["Otros productos",516.8,null]]},{"s":"Vehículos","v":554.5,"n":32,"p":[["Carros",168.5,0.896],["Vehículos automóviles para >10 personas",145.5,0.075],["Vehículos automóviles para mercancías",63.6,0.076],["Partes de vehículos",47.2,0.84],["Otros productos",129.7,null]]}]}]};/* CANASTAS_FIN */
+
 /* ══ mapas ════════════════════════════════════════════════════════════════
    La geometría la genera scripts/mapa_presentacion.py desde public/mapa.js
    (Marco Geoestadístico Nacional del DANE) y la escribe entre los marcadores
@@ -861,6 +867,167 @@ mapa('mapa-bc','bc',{
   txt(s,370,148,'Pocos lugares del mundo pueden hacerlo.',{size:13.5,fill:C.muted});
   txt(s,370,168,'Paga más, y el que aprende a hacerlo puede hacer más cosas.',{size:13.5,fill:C.muted});
   host.appendChild(s);
+})();
+
+/* ══ canastas exportadoras · treemap del Atlas de Harvard ═════════════════
+   Réplica de la ficha de país del Atlas: un rectángulo por partida
+   arancelaria, de área proporcional a lo que pesa en la canasta exportadora
+   y de color según el PCI de ese producto. Las partidas se agrupan por sector
+   con más aire entre grupos —como en el original— y sin rótulo de sector: los
+   bloques grandes lo dicen solos y un rótulo por grupo chocaría con ellos.
+   Cada panel vale 100 % de SU canasta: las áreas se comparan hacia adentro,
+   nunca entre países (Corea exporta doce veces más que Colombia).
+
+   Escala divergente en cinco tramos de PCI, validada con la skill dataviz
+   sobre blanco: separación CVD 16,2 y visión normal 17,4 en el par más
+   apretado. El tramo crema queda debajo de cero a propósito —cero es el
+   promedio del mundo—, así que cruzar a verde se ve como un escalón. */
+const PCI_CORTES=[-2,-1,0,1];
+const PCI_COLOR=['#8a5a08','#c08f36','#ead9b6','#5cae95','#0a6e54'];
+const PCI_OSCURO=[1,0,0,0,1];
+const PCI_ROTULO=['menos de −2','−2 a −1','−1 a 0','0 a 1','más de 1'];
+const SIN_PCI='#dfe3ea';
+function bandaPci(p){
+  if(p==null)return -1;
+  for(let i=0;i<PCI_CORTES.length;i++) if(p<PCI_CORTES[i]) return i;
+  return PCI_CORTES.length;
+}
+/* Dos decimales a la española; el «-0,00» de los PCI casi nulos sale sin signo. */
+const num2=n=>(Math.abs(n)<0.005?0:n).toFixed(2).replace('.',',').replace('-','−');
+
+/* Treemap escuadrado (Bruls, Huizing y van Wijk, 2000): va llenando el
+   rectángulo por franjas y decide dónde cortar cada franja comparando la
+   relación de aspecto del peor bloque con y sin la partida siguiente. */
+function squarify(items,x,y,w,h){
+  const salida=[], cola=items.filter(n=>n.v>0).sort((a,b)=>b.v-a.v);
+  const total=cola.reduce((a,b)=>a+b.v,0);
+  if(!total||w<=0||h<=0) return salida;
+  const k=(w*h)/total;
+  let cx=x, cy=y, cw=w, ch=h, fila=[], suma=0;
+  /* Peor relación de aspecto de la franja, opcionalmente con un bloque más. */
+  function peor(extra){
+    const lado=Math.min(cw,ch), s=(suma+(extra?extra.v:0))*k;
+    if(!s||!lado) return Infinity;
+    const areas=fila.map(n=>n.v*k).concat(extra?[extra.v*k]:[]);
+    const mx=Math.max.apply(null,areas), mn=Math.min.apply(null,areas);
+    return Math.max(lado*lado*mx/(s*s), (s*s)/(lado*lado*mn));
+  }
+  function volcar(){
+    const lado=Math.min(cw,ch), grueso=suma*k/lado;
+    let off=0;
+    if(cw>=ch){
+      fila.forEach(n=>{const hh=n.v*k/grueso; salida.push({n:n,x:cx,y:cy+off,w:grueso,h:hh}); off+=hh;});
+      cx+=grueso; cw-=grueso;
+    }else{
+      fila.forEach(n=>{const ww=n.v*k/grueso; salida.push({n:n,x:cx+off,y:cy,w:ww,h:grueso}); off+=ww;});
+      cy+=grueso; ch-=grueso;
+    }
+    fila=[]; suma=0;
+  }
+  cola.forEach(n=>{
+    if(!fila.length){fila.push(n); suma+=n.v; return;}
+    if(peor(n)<=peor(null)){fila.push(n); suma+=n.v;}
+    else{volcar(); fila.push(n); suma+=n.v;}
+  });
+  if(fila.length) volcar();
+  return salida;
+}
+
+/* El corte por número de caracteres es una estimación y con nombres largos se
+   sale del bloque; esta es la garantía dura: mide el texto ya dibujado y lo
+   recorta —o lo borra— hasta que quepa. Exige que el SVG esté en el documento,
+   por eso el treemap se cuelga del contenedor antes de dibujarse. */
+function ajustar(e,ancho){
+  if(e.getComputedTextLength()<=ancho) return;
+  let t=e.textContent;
+  while(t.length>1){
+    t=t.slice(0,-1);
+    e.textContent=t+'…';
+    if(e.getComputedTextLength()<=ancho) return;
+  }
+  e.remove();
+}
+
+/* Rótulo dentro de un bloque: nombre partido en líneas y, si cabe, el PCI. */
+function rotularBloque(s,b,nombre,pci,oscuro){
+  /* El cuerpo sale del área del bloque, pero se recorta para que la palabra más
+     larga quepa entera: si no, un bloque alto y angosto muestra «Circuit…» con
+     letra enorme y espacio de sobra debajo. */
+  const larga=Math.max.apply(null,nombre.split(' ').map(p=>p.length));
+  const size=Math.max(8,Math.min(25,Math.sqrt(b.w*b.h)/5.4,b.w/(larga*0.55)));
+  if(b.w<size*2.6||b.h<size*1.7) return;
+  const tinta=oscuro?'#fff':C.ink;
+  const cupo=Math.max(4,Math.floor(b.w/(size*0.53)));
+  const lineas=[]; let linea='';
+  nombre.split(' ').forEach(p=>{
+    if(!linea) linea=p;
+    else if((linea+' '+p).length<=cupo) linea+=' '+p;
+    else {lineas.push(linea); linea=p;}
+  });
+  if(linea) lineas.push(linea);
+  const maxL=Math.max(1,Math.min(3,Math.floor((b.h-8)/(size*1.12))-(pci!=null?1:0)));
+  if(lineas.length>maxL){lineas.length=maxL; lineas[maxL-1]+='…';}
+  /* Una palabra sola más larga que el bloque se sale del rectángulo: el corte
+     por palabras no la parte, así que hay que recortar línea por línea. */
+  for(let i=0;i<lineas.length;i++)
+    if(lineas[i].length>cupo) lineas[i]=lineas[i].slice(0,Math.max(1,cupo-1))+'…';
+  lineas.forEach((l,i)=>ajustar(txt(s,b.x+5,b.y+size*(0.95+i*1.12)+3,l,{size:size,fill:tinta,weight:400}),b.w-9));
+  const hueco=b.h-(lineas.length*size*1.12)-6;
+  if(pci!=null&&hueco>=size*0.95&&b.w>size*2.2)
+    ajustar(txt(s,b.x+5,b.y+b.h-6,num2(pci),{size:Math.max(9,size*0.86),fill:tinta,weight:650}),b.w-9);
+}
+
+/* Un panel = la canasta de un país repartida por sector y por partida. */
+function panelCanasta(s,pais,x,y,w,h,totalPais){
+  const sectores=pais.sec.map(sec=>({v:sec.v,sec:sec}));
+  squarify(sectores,x,y,w,h).forEach(caja=>{
+    const sec=caja.n.sec;
+    const gx=caja.x+2, gy=caja.y+2, gw=caja.w-4, gh=caja.h-4;
+    squarify(sec.p.map(p=>({v:p[1],p:p})),gx,gy,gw,gh).forEach(b=>{
+      const p=b.n.p, banda=bandaPci(p[2]);
+      const color=banda<0?SIN_PCI:PCI_COLOR[banda];
+      const r=rect(s,b.x+1,b.y+1,Math.max(0,b.w-2),Math.max(0,b.h-2),color,b.w>16&&b.h>16?2:0);
+      tip(r,p[0]+' · '+sec.s+' · US$ '+fmt(Math.round(p[1]))+' millones · '+
+        (100*p[1]/totalPais).toFixed(1).replace('.',',')+' % de la canasta'+
+        (p[2]==null?'':' · complejidad '+num2(p[2])));
+      rotularBloque(s,{x:b.x+1,y:b.y+1,w:b.w-2,h:b.h-2},p[0],p[2],banda>=0&&PCI_OSCURO[banda]);
+    });
+  });
+}
+
+(function(){
+  const host=$('#dg-canastas'); if(!host||!window.DECK_CANASTAS)return;
+  const D=window.DECK_CANASTAS;
+  /* El lienzo va apaisado a propósito: la lámina deja unos 480 px de alto para
+     la gráfica y unos 1.250 de ancho, así que un viewBox de 1000×392 llena el
+     hueco sin dejar franjas vacías y de paso agranda la tipografía un 25 %. */
+  const W=1000, H=406, PW=486, PY=50, PH=318;
+  const s=svgEl(W,H);
+  host.appendChild(s);   // ajustar() necesita medir texto ya renderizado
+  s.setAttribute('aria-label','Canastas exportadoras de Corea del Sur y Colombia en '+D.anio+
+    ' según el Atlas of Economic Complexity: cada rectángulo es un producto, su área es el peso en la canasta '+
+    'y su color la complejidad. La canasta coreana es mayoritariamente verde (alta complejidad) y la colombiana '+
+    'mayoritariamente café (baja complejidad).');
+
+  D.paises.forEach((pais,i)=>{
+    const x=i*(W-PW);
+    txt(s,x,18,pais.n,{size:19,weight:650,fill:C.ink});
+    txt(s,x,38,'ECI '+num2(pais.eci)+'  ·  puesto '+pais.puesto+' de '+D.deN+
+      '  ·  US$ '+num2(pais.total).replace(',0','')+' mil millones exportados',{size:12.5,fill:C.muted});
+    panelCanasta(s,pais,x,PY,PW,PH,pais.total*1000);
+  });
+
+  /* Leyenda: los mismos cinco tramos con los que se pintaron los bloques. */
+  const ly=PY+PH+14;
+  txt(s,0,ly,'Complejidad del producto (PCI)',{size:12,weight:650,fill:C.muted});
+  let lx=0;
+  PCI_COLOR.forEach((col,i)=>{
+    rect(s,lx,ly+9,24,12,col,2);
+    txt(s,lx+29,ly+19,PCI_ROTULO[i],{size:12,fill:C.ink});
+    lx+=29+PCI_ROTULO[i].length*6.3+20;
+  });
+  txt(s,W,ly+19,'← menos conocimiento acumulado   ·   más conocimiento acumulado →',
+    {size:12,fill:C.muted,anchor:'end'});
 })();
 
 /* ══ las gráficas de este deck ════════════════════════════════════════════ */
