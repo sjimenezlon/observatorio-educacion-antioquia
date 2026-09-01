@@ -1,0 +1,3159 @@
+{
+ "meta": {
+  "as_of": "2026-09-01",
+  "ventana": "vacantes publicadas del 1 al 25 de agosto de 2026",
+  "desde": "2026-08-01",
+  "hasta": "2026-08-24",
+  "fuente": "Servicio Público de Empleo (SPE) — API pública buscadordeempleo.gov.co",
+  "url": "https://www.serviciodeempleo.gov.co/",
+  "smmlv": 1750905,
+  "umbral_alto": 3000000,
+  "lexico": {
+   "habilidades": 69,
+   "familias": 5
+  }
+ },
+ "ambitos": {
+  "antioquia": {
+   "ambito": "Antioquia",
+   "vacantes": 21400,
+   "posiciones": 147973,
+   "desde": "2026-08-01",
+   "hasta": "2026-08-24",
+   "pct_con_salario": 81.3,
+   "pct_mas_3m": 13.5,
+   "banda_modal": {
+    "banda": "$1.500.001 - $2.000.000",
+    "vacantes": 10996,
+    "pct": 63.2
+   },
+   "familias": {
+    "Técnicas del oficio": {
+     "vacantes": 19248,
+     "pct": 89.9
+    },
+    "Socioemocionales": {
+     "vacantes": 8593,
+     "pct": 40.2
+    },
+    "Digitales y software": {
+     "vacantes": 3459,
+     "pct": 16.2
+    },
+    "Licencias y certificaciones": {
+     "vacantes": 2520,
+     "pct": 11.8
+    },
+    "Idiomas": {
+     "vacantes": 787,
+     "pct": 3.7
+    }
+   },
+   "educacion": [
+    {
+     "nivel": "Media",
+     "vacantes": 7507,
+     "pct": 35.1
+    },
+    {
+     "nivel": "Técnico",
+     "vacantes": 4515,
+     "pct": 21.1
+    },
+    {
+     "nivel": "Universitarios",
+     "vacantes": 3110,
+     "pct": 14.5
+    },
+    {
+     "nivel": "Tecnólogico",
+     "vacantes": 2443,
+     "pct": 11.4
+    },
+    {
+     "nivel": "Básica Secundaria",
+     "vacantes": 1264,
+     "pct": 5.9
+    },
+    {
+     "nivel": "No Aplica",
+     "vacantes": 1244,
+     "pct": 5.8
+    },
+    {
+     "nivel": "Primaria",
+     "vacantes": 631,
+     "pct": 2.9
+    },
+    {
+     "nivel": "Especilización",
+     "vacantes": 366,
+     "pct": 1.7
+    },
+    {
+     "nivel": "Otro",
+     "vacantes": 205,
+     "pct": 1.0
+    },
+    {
+     "nivel": "Doctorado",
+     "vacantes": 98,
+     "pct": 0.5
+    },
+    {
+     "nivel": "Maestria",
+     "vacantes": 17,
+     "pct": 0.1
+    }
+   ],
+   "contrato": [
+    {
+     "tipo": "Por obra o labor",
+     "pct": 36.5
+    },
+    {
+     "tipo": "Término indefinido",
+     "pct": 32.8
+    },
+    {
+     "tipo": "Término fijo",
+     "pct": 25.6
+    },
+    {
+     "tipo": "Otra",
+     "pct": 3.7
+    },
+    {
+     "tipo": "Prestación de servicios",
+     "pct": 1.2
+    },
+    {
+     "tipo": "Temporal",
+     "pct": 0.1
+    }
+   ],
+   "sin_habilidad": 4.5,
+   "teletrabajo_pct": 1.3,
+   "sin_experiencia_pct": 35.8,
+   "sectores": [
+    {
+     "sector": "RRHH / Personal",
+     "vacantes": 4461,
+     "pct": 20.8
+    },
+    {
+     "sector": "Servicios Profesionales",
+     "vacantes": 3988,
+     "pct": 18.6
+    },
+    {
+     "sector": "Telecomunicaciones",
+     "vacantes": 1422,
+     "pct": 6.6
+    },
+    {
+     "sector": "Otras actividades de servicios personales",
+     "vacantes": 891,
+     "pct": 4.2
+    },
+    {
+     "sector": "Venta al consumidor",
+     "vacantes": 776,
+     "pct": 3.6
+    },
+    {
+     "sector": "Fabricación",
+     "vacantes": 519,
+     "pct": 2.4
+    },
+    {
+     "sector": "Transporte",
+     "vacantes": 488,
+     "pct": 2.3
+    },
+    {
+     "sector": "Salud / Medicina",
+     "vacantes": 487,
+     "pct": 2.3
+    }
+   ],
+   "cargos": [
+    {
+     "cargo": "Asesor comercial",
+     "vacantes": 392,
+     "pct": 1.8,
+     "salario_mediano": 1750000,
+     "posiciones": 1848
+    },
+    {
+     "cargo": "Auxiliar contable",
+     "vacantes": 223,
+     "pct": 1.0,
+     "salario_mediano": 1750000,
+     "posiciones": 294
+    },
+    {
+     "cargo": "Auxiliar administrativo",
+     "vacantes": 221,
+     "pct": 1.0,
+     "salario_mediano": 1750000,
+     "posiciones": 843
+    },
+    {
+     "cargo": "Auxiliar de producción",
+     "vacantes": 208,
+     "pct": 1.0,
+     "salario_mediano": 1750000,
+     "posiciones": 3866
+    },
+    {
+     "cargo": "Auxiliar de bodega",
+     "vacantes": 202,
+     "pct": 0.9,
+     "salario_mediano": 1750000,
+     "posiciones": 2068
+    },
+    {
+     "cargo": "Auxiliar de cocina",
+     "vacantes": 199,
+     "pct": 0.9,
+     "salario_mediano": 1750000,
+     "posiciones": 1811
+    },
+    {
+     "cargo": "Operario de producción",
+     "vacantes": 109,
+     "pct": 0.5,
+     "salario_mediano": 1750000,
+     "posiciones": 2312
+    },
+    {
+     "cargo": "Auxiliar servicios generales",
+     "vacantes": 107,
+     "pct": 0.5,
+     "salario_mediano": 1750000,
+     "posiciones": 396
+    },
+    {
+     "cargo": "Conductor",
+     "vacantes": 70,
+     "pct": 0.3,
+     "salario_mediano": 1750000,
+     "posiciones": 538
+    },
+    {
+     "cargo": "Auxiliar enfermería",
+     "vacantes": 69,
+     "pct": 0.3,
+     "salario_mediano": 1750000,
+     "posiciones": 581
+    }
+   ]
+  },
+  "amva": {
+   "ambito": "Área Metropolitana del Valle de Aburrá",
+   "vacantes": 17097,
+   "posiciones": 127045,
+   "desde": "2026-08-01",
+   "hasta": "2026-08-24",
+   "pct_con_salario": 81.1,
+   "pct_mas_3m": 14.1,
+   "banda_modal": {
+    "banda": "$1.500.001 - $2.000.000",
+    "vacantes": 8667,
+    "pct": 62.5
+   },
+   "familias": {
+    "Técnicas del oficio": {
+     "vacantes": 15343,
+     "pct": 89.7
+    },
+    "Socioemocionales": {
+     "vacantes": 6888,
+     "pct": 40.3
+    },
+    "Digitales y software": {
+     "vacantes": 2934,
+     "pct": 17.2
+    },
+    "Licencias y certificaciones": {
+     "vacantes": 1927,
+     "pct": 11.3
+    },
+    "Idiomas": {
+     "vacantes": 731,
+     "pct": 4.3
+    }
+   },
+   "educacion": [
+    {
+     "nivel": "Media",
+     "vacantes": 6209,
+     "pct": 36.3
+    },
+    {
+     "nivel": "Técnico",
+     "vacantes": 3768,
+     "pct": 22.0
+    },
+    {
+     "nivel": "Universitarios",
+     "vacantes": 2590,
+     "pct": 15.1
+    },
+    {
+     "nivel": "Tecnólogico",
+     "vacantes": 1899,
+     "pct": 11.1
+    },
+    {
+     "nivel": "Básica Secundaria",
+     "vacantes": 977,
+     "pct": 5.7
+    },
+    {
+     "nivel": "No Aplica",
+     "vacantes": 728,
+     "pct": 4.3
+    },
+    {
+     "nivel": "Primaria",
+     "vacantes": 428,
+     "pct": 2.5
+    },
+    {
+     "nivel": "Especilización",
+     "vacantes": 294,
+     "pct": 1.7
+    },
+    {
+     "nivel": "Otro",
+     "vacantes": 120,
+     "pct": 0.7
+    },
+    {
+     "nivel": "Doctorado",
+     "vacantes": 68,
+     "pct": 0.4
+    },
+    {
+     "nivel": "Maestria",
+     "vacantes": 16,
+     "pct": 0.1
+    }
+   ],
+   "contrato": [
+    {
+     "tipo": "Por obra o labor",
+     "pct": 35.5
+    },
+    {
+     "tipo": "Término indefinido",
+     "pct": 34.1
+    },
+    {
+     "tipo": "Término fijo",
+     "pct": 25.1
+    },
+    {
+     "tipo": "Otra",
+     "pct": 4.0
+    },
+    {
+     "tipo": "Prestación de servicios",
+     "pct": 1.2
+    },
+    {
+     "tipo": "Temporal",
+     "pct": 0.1
+    }
+   ],
+   "sin_habilidad": 4.4,
+   "teletrabajo_pct": 1.3,
+   "sin_experiencia_pct": 36.1,
+   "sectores": [
+    {
+     "sector": "RRHH / Personal",
+     "vacantes": 3776,
+     "pct": 22.1
+    },
+    {
+     "sector": "Servicios Profesionales",
+     "vacantes": 3269,
+     "pct": 19.1
+    },
+    {
+     "sector": "Telecomunicaciones",
+     "vacantes": 1410,
+     "pct": 8.2
+    },
+    {
+     "sector": "Otras actividades de servicios personales",
+     "vacantes": 686,
+     "pct": 4.0
+    },
+    {
+     "sector": "Venta al consumidor",
+     "vacantes": 643,
+     "pct": 3.8
+    },
+    {
+     "sector": "Fabricación",
+     "vacantes": 479,
+     "pct": 2.8
+    },
+    {
+     "sector": "Transporte",
+     "vacantes": 448,
+     "pct": 2.6
+    },
+    {
+     "sector": "Salud / Medicina",
+     "vacantes": 408,
+     "pct": 2.4
+    }
+   ],
+   "cargos": [
+    {
+     "cargo": "Asesor comercial",
+     "vacantes": 307,
+     "pct": 1.8,
+     "salario_mediano": 1750000,
+     "posiciones": 1593
+    },
+    {
+     "cargo": "Auxiliar contable",
+     "vacantes": 198,
+     "pct": 1.2,
+     "salario_mediano": 1750000,
+     "posiciones": 255
+    },
+    {
+     "cargo": "Auxiliar de bodega",
+     "vacantes": 172,
+     "pct": 1.0,
+     "salario_mediano": 1750000,
+     "posiciones": 1711
+    },
+    {
+     "cargo": "Auxiliar administrativo",
+     "vacantes": 163,
+     "pct": 1.0,
+     "salario_mediano": 1750000,
+     "posiciones": 752
+    },
+    {
+     "cargo": "Auxiliar de producción",
+     "vacantes": 157,
+     "pct": 0.9,
+     "salario_mediano": 1750000,
+     "posiciones": 2880
+    },
+    {
+     "cargo": "Auxiliar de cocina",
+     "vacantes": 136,
+     "pct": 0.8,
+     "salario_mediano": 1750000,
+     "posiciones": 1274
+    },
+    {
+     "cargo": "Operario de producción",
+     "vacantes": 99,
+     "pct": 0.6,
+     "salario_mediano": 1750000,
+     "posiciones": 2241
+    },
+    {
+     "cargo": "Auxiliar servicios generales",
+     "vacantes": 81,
+     "pct": 0.5,
+     "salario_mediano": 1750000,
+     "posiciones": 328
+    },
+    {
+     "cargo": "Conductor",
+     "vacantes": 67,
+     "pct": 0.4,
+     "salario_mediano": 1750000,
+     "posiciones": 532
+    },
+    {
+     "cargo": "Auxiliar de enfermería",
+     "vacantes": 54,
+     "pct": 0.3,
+     "salario_mediano": 1750000,
+     "posiciones": 524
+    }
+   ]
+  },
+  "resto_antioquia": {
+   "ambito": "Antioquia sin AMVA",
+   "vacantes": 4303,
+   "posiciones": 20928,
+   "desde": "2026-08-01",
+   "hasta": "2026-08-24",
+   "pct_con_salario": 81.7,
+   "pct_mas_3m": 11.6,
+   "banda_modal": {
+    "banda": "$1.500.001 - $2.000.000",
+    "vacantes": 2329,
+    "pct": 66.3
+   },
+   "familias": {
+    "Técnicas del oficio": {
+     "vacantes": 3905,
+     "pct": 90.8
+    },
+    "Socioemocionales": {
+     "vacantes": 1705,
+     "pct": 39.6
+    },
+    "Licencias y certificaciones": {
+     "vacantes": 593,
+     "pct": 13.8
+    },
+    "Digitales y software": {
+     "vacantes": 525,
+     "pct": 12.2
+    },
+    "Idiomas": {
+     "vacantes": 56,
+     "pct": 1.3
+    }
+   },
+   "educacion": [
+    {
+     "nivel": "Media",
+     "vacantes": 1298,
+     "pct": 30.2
+    },
+    {
+     "nivel": "Técnico",
+     "vacantes": 747,
+     "pct": 17.4
+    },
+    {
+     "nivel": "Tecnólogico",
+     "vacantes": 544,
+     "pct": 12.6
+    },
+    {
+     "nivel": "Universitarios",
+     "vacantes": 520,
+     "pct": 12.1
+    },
+    {
+     "nivel": "No Aplica",
+     "vacantes": 516,
+     "pct": 12.0
+    },
+    {
+     "nivel": "Básica Secundaria",
+     "vacantes": 287,
+     "pct": 6.7
+    },
+    {
+     "nivel": "Primaria",
+     "vacantes": 203,
+     "pct": 4.7
+    },
+    {
+     "nivel": "Otro",
+     "vacantes": 85,
+     "pct": 2.0
+    },
+    {
+     "nivel": "Especilización",
+     "vacantes": 72,
+     "pct": 1.7
+    },
+    {
+     "nivel": "Doctorado",
+     "vacantes": 30,
+     "pct": 0.7
+    },
+    {
+     "nivel": "Maestria",
+     "vacantes": 1,
+     "pct": 0.0
+    }
+   ],
+   "contrato": [
+    {
+     "tipo": "Por obra o labor",
+     "pct": 40.5
+    },
+    {
+     "tipo": "Término fijo",
+     "pct": 28.0
+    },
+    {
+     "tipo": "Término indefinido",
+     "pct": 27.8
+    },
+    {
+     "tipo": "Otra",
+     "pct": 2.3
+    },
+    {
+     "tipo": "Prestación de servicios",
+     "pct": 1.3
+    },
+    {
+     "tipo": "Temporal",
+     "pct": 0.2
+    }
+   ],
+   "sin_habilidad": 4.9,
+   "teletrabajo_pct": 1.1,
+   "sin_experiencia_pct": 34.9,
+   "sectores": [
+    {
+     "sector": "Servicios Profesionales",
+     "vacantes": 719,
+     "pct": 16.7
+    },
+    {
+     "sector": "RRHH / Personal",
+     "vacantes": 685,
+     "pct": 15.9
+    },
+    {
+     "sector": "Otras actividades de servicios personales",
+     "vacantes": 205,
+     "pct": 4.8
+    },
+    {
+     "sector": "Produccion, Operarios y Manufactura",
+     "vacantes": 145,
+     "pct": 3.4
+    },
+    {
+     "sector": "Ventas",
+     "vacantes": 139,
+     "pct": 3.2
+    },
+    {
+     "sector": "Venta al consumidor",
+     "vacantes": 133,
+     "pct": 3.1
+    },
+    {
+     "sector": "Obras de ingeniería civil",
+     "vacantes": 110,
+     "pct": 2.6
+    },
+    {
+     "sector": "Bodega, logistica y transporte",
+     "vacantes": 107,
+     "pct": 2.5
+    }
+   ],
+   "cargos": [
+    {
+     "cargo": "Asesor comercial",
+     "vacantes": 85,
+     "pct": 2.0,
+     "salario_mediano": 1750000,
+     "posiciones": 255
+    },
+    {
+     "cargo": "Auxiliar de cocina",
+     "vacantes": 63,
+     "pct": 1.5,
+     "salario_mediano": 1750000,
+     "posiciones": 537
+    },
+    {
+     "cargo": "Auxiliar administrativo",
+     "vacantes": 58,
+     "pct": 1.3,
+     "salario_mediano": 1750000,
+     "posiciones": 91
+    },
+    {
+     "cargo": "Auxiliar de producción",
+     "vacantes": 51,
+     "pct": 1.2,
+     "salario_mediano": 1750000,
+     "posiciones": 986
+    },
+    {
+     "cargo": "Auxiliar bodega",
+     "vacantes": 30,
+     "pct": 0.7,
+     "salario_mediano": 1750000,
+     "posiciones": 357
+    },
+    {
+     "cargo": "Ayudante de obra",
+     "vacantes": 28,
+     "pct": 0.7,
+     "salario_mediano": 1750000,
+     "posiciones": 168
+    },
+    {
+     "cargo": "Auxiliar servicios generales",
+     "vacantes": 26,
+     "pct": 0.6,
+     "salario_mediano": 1750000,
+     "posiciones": 68
+    },
+    {
+     "cargo": "Auxiliar contable",
+     "vacantes": 25,
+     "pct": 0.6,
+     "salario_mediano": 1750000,
+     "posiciones": 39
+    },
+    {
+     "cargo": "Trabajador de oficios varios",
+     "vacantes": 22,
+     "pct": 0.5,
+     "salario_mediano": 1750000,
+     "posiciones": 393
+    },
+    {
+     "cargo": "Oficial de construcción",
+     "vacantes": 20,
+     "pct": 0.5,
+     "salario_mediano": 1750000,
+     "posiciones": 73
+    }
+   ]
+  },
+  "colombia": {
+   "ambito": "Colombia",
+   "vacantes": 98950,
+   "posiciones": 1107813,
+   "desde": "2026-08-01",
+   "hasta": "2026-08-25",
+   "pct_con_salario": 77.2,
+   "pct_mas_3m": 14.5,
+   "banda_modal": {
+    "banda": "$1.500.001 - $2.000.000",
+    "vacantes": 46101,
+    "pct": 60.4
+   },
+   "familias": {
+    "Técnicas del oficio": {
+     "vacantes": 88067,
+     "pct": 89.0
+    },
+    "Socioemocionales": {
+     "vacantes": 39807,
+     "pct": 40.2
+    },
+    "Digitales y software": {
+     "vacantes": 15921,
+     "pct": 16.1
+    },
+    "Licencias y certificaciones": {
+     "vacantes": 11303,
+     "pct": 11.4
+    },
+    "Idiomas": {
+     "vacantes": 3296,
+     "pct": 3.3
+    }
+   },
+   "educacion": [
+    {
+     "nivel": "Media",
+     "vacantes": 35011,
+     "pct": 35.4
+    },
+    {
+     "nivel": "Técnico",
+     "vacantes": 21925,
+     "pct": 22.2
+    },
+    {
+     "nivel": "Universitarios",
+     "vacantes": 17997,
+     "pct": 18.2
+    },
+    {
+     "nivel": "Tecnólogico",
+     "vacantes": 9676,
+     "pct": 9.8
+    },
+    {
+     "nivel": "Básica Secundaria",
+     "vacantes": 5492,
+     "pct": 5.6
+    },
+    {
+     "nivel": "Especilización",
+     "vacantes": 2538,
+     "pct": 2.6
+    },
+    {
+     "nivel": "Primaria",
+     "vacantes": 2426,
+     "pct": 2.5
+    },
+    {
+     "nivel": "No Aplica",
+     "vacantes": 2244,
+     "pct": 2.3
+    },
+    {
+     "nivel": "Otro",
+     "vacantes": 1096,
+     "pct": 1.1
+    },
+    {
+     "nivel": "Doctorado",
+     "vacantes": 303,
+     "pct": 0.3
+    },
+    {
+     "nivel": "Maestria",
+     "vacantes": 242,
+     "pct": 0.2
+    }
+   ],
+   "contrato": [
+    {
+     "tipo": "Por obra o labor",
+     "pct": 42.5
+    },
+    {
+     "tipo": "Término indefinido",
+     "pct": 31.2
+    },
+    {
+     "tipo": "Término fijo",
+     "pct": 21.2
+    },
+    {
+     "tipo": "Otra",
+     "pct": 2.8
+    },
+    {
+     "tipo": "Prestación de servicios",
+     "pct": 2.2
+    },
+    {
+     "tipo": "Temporal",
+     "pct": 0.1
+    }
+   ],
+   "sin_habilidad": 5.0,
+   "teletrabajo_pct": 0.9,
+   "sin_experiencia_pct": 31.4,
+   "sectores": [
+    {
+     "sector": "RRHH / Personal",
+     "vacantes": 23971,
+     "pct": 24.2
+    },
+    {
+     "sector": "Telecomunicaciones",
+     "vacantes": 11119,
+     "pct": 11.2
+    },
+    {
+     "sector": "Servicios Profesionales",
+     "vacantes": 10560,
+     "pct": 10.7
+    },
+    {
+     "sector": "Venta al consumidor",
+     "vacantes": 4735,
+     "pct": 4.8
+    },
+    {
+     "sector": "Salud / Medicina",
+     "vacantes": 3463,
+     "pct": 3.5
+    },
+    {
+     "sector": "Transporte",
+     "vacantes": 2962,
+     "pct": 3.0
+    },
+    {
+     "sector": "Otras actividades de servicios personales",
+     "vacantes": 2665,
+     "pct": 2.7
+    },
+    {
+     "sector": "Fabricación",
+     "vacantes": 2302,
+     "pct": 2.3
+    }
+   ],
+   "cargos": [
+    {
+     "cargo": "Asesor comercial",
+     "vacantes": 1397,
+     "pct": 1.4,
+     "salario_mediano": 1750000,
+     "posiciones": 16306
+    },
+    {
+     "cargo": "Auxiliar administrativo",
+     "vacantes": 718,
+     "pct": 0.7,
+     "salario_mediano": 1750000,
+     "posiciones": 7666
+    },
+    {
+     "cargo": "Auxiliar contable",
+     "vacantes": 704,
+     "pct": 0.7,
+     "salario_mediano": 1750000,
+     "posiciones": 1216
+    },
+    {
+     "cargo": "Auxiliar de bodega",
+     "vacantes": 677,
+     "pct": 0.7,
+     "salario_mediano": 1750000,
+     "posiciones": 7735
+    },
+    {
+     "cargo": "Auxiliar de cocina",
+     "vacantes": 622,
+     "pct": 0.6,
+     "salario_mediano": 1750000,
+     "posiciones": 6217
+    },
+    {
+     "cargo": "Auxiliar de producción",
+     "vacantes": 482,
+     "pct": 0.5,
+     "salario_mediano": 1750000,
+     "posiciones": 8728
+    },
+    {
+     "cargo": "Auxiliar de servicios generales",
+     "vacantes": 480,
+     "pct": 0.5,
+     "salario_mediano": 1750000,
+     "posiciones": 2589
+    },
+    {
+     "cargo": "Auxiliar de enfermería",
+     "vacantes": 346,
+     "pct": 0.3,
+     "salario_mediano": 1750000,
+     "posiciones": 3021
+    },
+    {
+     "cargo": "Operario de producción",
+     "vacantes": 314,
+     "pct": 0.3,
+     "salario_mediano": 1750000,
+     "posiciones": 4954
+    },
+    {
+     "cargo": "Conductor",
+     "vacantes": 268,
+     "pct": 0.3,
+     "salario_mediano": 1750000,
+     "posiciones": 2347
+    }
+   ]
+  }
+ },
+ "habilidades": [
+  {
+   "h": "Ventas y asesoría comercial",
+   "fam": "oficio",
+   "familia": "Técnicas del oficio",
+   "vac": 6131,
+   "pct": 28.6,
+   "pct3m": 12.8,
+   "sup": 16.6,
+   "media": 45.2,
+   "salmed": 1750000,
+   "sector": "Servicios Profesionales",
+   "cargos": [
+    "Asesor comercial",
+    "Asesor ventas",
+    "Mercaderista"
+   ],
+   "pct_pais": 30.8,
+   "indice": 0.93
+  },
+  {
+   "h": "Logística e inventarios",
+   "fam": "oficio",
+   "familia": "Técnicas del oficio",
+   "vac": 4847,
+   "pct": 22.6,
+   "pct3m": 7.5,
+   "sup": 10.7,
+   "media": 53.1,
+   "salmed": 1750000,
+   "sector": "Servicios Profesionales",
+   "cargos": [
+    "Auxiliar de bodega",
+    "Auxiliar de cocina",
+    "Asesor comercial"
+   ],
+   "pct_pais": 18.9,
+   "indice": 1.2
+  },
+  {
+   "h": "Servicio al cliente",
+   "fam": "oficio",
+   "familia": "Técnicas del oficio",
+   "vac": 4003,
+   "pct": 18.7,
+   "pct3m": 4.2,
+   "sup": 6.8,
+   "media": 56.1,
+   "salmed": 1750000,
+   "sector": "Telecomunicaciones",
+   "cargos": [
+    "Asesor comercial",
+    "Auxiliar administrativo",
+    "Auxiliar de servicio al cliente"
+   ],
+   "pct_pais": 19.9,
+   "indice": 0.94
+  },
+  {
+   "h": "Liderazgo",
+   "fam": "blanda",
+   "familia": "Socioemocionales",
+   "vac": 2109,
+   "pct": 9.9,
+   "pct3m": 38.9,
+   "sup": 44.0,
+   "media": 16.3,
+   "salmed": 2500000,
+   "sector": "Servicios Profesionales",
+   "cargos": [
+    "Administrador de punto de venta",
+    "Líder comercial",
+    "Ingeniero civil"
+   ],
+   "pct_pais": 9.2,
+   "indice": 1.08
+  },
+  {
+   "h": "Trabajo en equipo",
+   "fam": "blanda",
+   "familia": "Socioemocionales",
+   "vac": 2008,
+   "pct": 9.4,
+   "pct3m": 6.5,
+   "sup": 9.5,
+   "media": 49.5,
+   "salmed": 1750000,
+   "sector": "Servicios Profesionales",
+   "cargos": [
+    "Asesor comercial",
+    "Auxiliar administrativo",
+    "Auxiliar de producción"
+   ],
+   "pct_pais": 8.3,
+   "indice": 1.13
+  },
+  {
+   "h": "Aseo y servicios generales",
+   "fam": "oficio",
+   "familia": "Técnicas del oficio",
+   "vac": 1996,
+   "pct": 9.3,
+   "pct3m": 1.6,
+   "sup": 2.5,
+   "media": 75.6,
+   "salmed": 1750000,
+   "sector": "Servicios Profesionales",
+   "cargos": [
+    "Auxiliar de cocina",
+    "Auxiliar servicios generales",
+    "Auxiliar de producción"
+   ],
+   "pct_pais": 6.9,
+   "indice": 1.35
+  },
+  {
+   "h": "Contabilidad y finanzas",
+   "fam": "oficio",
+   "familia": "Técnicas del oficio",
+   "vac": 1955,
+   "pct": 9.1,
+   "pct3m": 26.2,
+   "sup": 35.2,
+   "media": 9.3,
+   "salmed": 2500000,
+   "sector": "Servicios Profesionales",
+   "cargos": [
+    "Auxiliar contable",
+    "Analista contable",
+    "Auxiliar administrativo"
+   ],
+   "pct_pais": 8.3,
+   "indice": 1.1
+  },
+  {
+   "h": "Responsabilidad y compromiso",
+   "fam": "blanda",
+   "familia": "Socioemocionales",
+   "vac": 1844,
+   "pct": 8.6,
+   "pct3m": 8.4,
+   "sup": 12.9,
+   "media": 55.4,
+   "salmed": 1750000,
+   "sector": "Servicios Profesionales",
+   "cargos": [
+    "Auxiliar de cocina",
+    "Auxiliar de producción",
+    "Auxiliar contable"
+   ],
+   "pct_pais": 7.2,
+   "indice": 1.19
+  },
+  {
+   "h": "Mantenimiento mecánico",
+   "fam": "oficio",
+   "familia": "Técnicas del oficio",
+   "vac": 1677,
+   "pct": 7.8,
+   "pct3m": 13.9,
+   "sup": 9.9,
+   "media": 33.0,
+   "salmed": 1750000,
+   "sector": "Servicios Profesionales",
+   "cargos": [
+    "Electromecánico",
+    "Auxiliar de mantenimiento",
+    "Mecánico automotriz"
+   ],
+   "pct_pais": 7.3,
+   "indice": 1.07
+  },
+  {
+   "h": "Construcción y obra",
+   "fam": "oficio",
+   "familia": "Técnicas del oficio",
+   "vac": 1510,
+   "pct": 7.1,
+   "pct3m": 18.8,
+   "sup": 16.8,
+   "media": 44.4,
+   "salmed": 1750000,
+   "sector": "Servicios Profesionales",
+   "cargos": [
+    "Ayudante de obra",
+    "Ayudante de construcción",
+    "Oficial de construcción"
+   ],
+   "pct_pais": 5.6,
+   "indice": 1.27
+  },
+  {
+   "h": "Proactividad",
+   "fam": "blanda",
+   "familia": "Socioemocionales",
+   "vac": 1426,
+   "pct": 6.7,
+   "pct3m": 6.7,
+   "sup": 11.1,
+   "media": 48.7,
+   "salmed": 1750000,
+   "sector": "Servicios Profesionales",
+   "cargos": [
+    "Asesor comercial",
+    "Auxiliar administrativo",
+    "Auxiliar contable"
+   ],
+   "pct_pais": 6.6,
+   "indice": 1.02
+  },
+  {
+   "h": "Calidad y mejora continua",
+   "fam": "oficio",
+   "familia": "Técnicas del oficio",
+   "vac": 1359,
+   "pct": 6.4,
+   "pct3m": 17.5,
+   "sup": 22.0,
+   "media": 41.6,
+   "salmed": 1750000,
+   "sector": "Servicios Profesionales",
+   "cargos": [
+    "Auxiliar de producción",
+    "Auxiliar de cocina",
+    "Cocinero"
+   ],
+   "pct_pais": 5.3,
+   "indice": 1.21
+  },
+  {
+   "h": "Ofimática / Office",
+   "fam": "digital",
+   "familia": "Digitales y software",
+   "vac": 1351,
+   "pct": 6.3,
+   "pct3m": 11.2,
+   "sup": 17.3,
+   "media": 19.2,
+   "salmed": 1750000,
+   "sector": "Servicios Profesionales",
+   "cargos": [
+    "Auxiliar administrativo",
+    "Auxiliar contable",
+    "Asesor comercial"
+   ],
+   "pct_pais": 6.1,
+   "indice": 1.03
+  },
+  {
+   "h": "Excel",
+   "fam": "digital",
+   "familia": "Digitales y software",
+   "vac": 1283,
+   "pct": 6.0,
+   "pct3m": 16.0,
+   "sup": 23.5,
+   "media": 11.2,
+   "salmed": 1750000,
+   "sector": "Servicios Profesionales",
+   "cargos": [
+    "Auxiliar contable",
+    "Auxiliar administrativo",
+    "Asesor comercial"
+   ],
+   "pct_pais": 6.4,
+   "indice": 0.94
+  },
+  {
+   "h": "Producción y operación de máquina",
+   "fam": "oficio",
+   "familia": "Técnicas del oficio",
+   "vac": 1243,
+   "pct": 5.8,
+   "pct3m": 4.3,
+   "sup": 5.1,
+   "media": 70.7,
+   "salmed": 1750000,
+   "sector": "Servicios Profesionales",
+   "cargos": [
+    "Auxiliar de producción",
+    "Operario de producción",
+    "Auxiliar de bodega"
+   ],
+   "pct_pais": 4.1,
+   "indice": 1.41
+  },
+  {
+   "h": "Licencia de conducción",
+   "fam": "licencia",
+   "familia": "Licencias y certificaciones",
+   "vac": 1210,
+   "pct": 5.7,
+   "pct3m": 5.5,
+   "sup": 3.5,
+   "media": 75.2,
+   "salmed": 1750000,
+   "sector": "Servicios Profesionales",
+   "cargos": [
+    "Conductor",
+    "Conductor c2",
+    "Conductor repartidor"
+   ],
+   "pct_pais": 4.9,
+   "indice": 1.16
+  },
+  {
+   "h": "Conducción y transporte",
+   "fam": "oficio",
+   "familia": "Técnicas del oficio",
+   "vac": 1205,
+   "pct": 5.6,
+   "pct3m": 4.1,
+   "sup": 1.7,
+   "media": 83.6,
+   "salmed": 1750000,
+   "sector": "Servicios Profesionales",
+   "cargos": [
+    "Conductor",
+    "Mensajero",
+    "Conductor c2"
+   ],
+   "pct_pais": 5.2,
+   "indice": 1.08
+  },
+  {
+   "h": "Orientación al logro",
+   "fam": "blanda",
+   "familia": "Socioemocionales",
+   "vac": 1168,
+   "pct": 5.5,
+   "pct3m": 12.7,
+   "sup": 15.7,
+   "media": 43.1,
+   "salmed": 1750000,
+   "sector": "Servicios Profesionales",
+   "cargos": [
+    "Asesor comercial",
+    "Asesor comercial externo",
+    "Asesor comercial bancario / medellín"
+   ],
+   "pct_pais": 6.1,
+   "indice": 0.9
+  },
+  {
+   "h": "Comunicación",
+   "fam": "blanda",
+   "familia": "Socioemocionales",
+   "vac": 1162,
+   "pct": 5.4,
+   "pct3m": 9.7,
+   "sup": 13.9,
+   "media": 40.9,
+   "salmed": 1750000,
+   "sector": "Servicios Profesionales",
+   "cargos": [
+    "Asesor comercial",
+    "Auxiliar administrativo",
+    "Auxiliar servicios generales"
+   ],
+   "pct_pais": 5.7,
+   "indice": 0.95
+  },
+  {
+   "h": "Empatía y vocación de servicio",
+   "fam": "blanda",
+   "familia": "Socioemocionales",
+   "vac": 1155,
+   "pct": 5.4,
+   "pct3m": 3.8,
+   "sup": 5.5,
+   "media": 65.7,
+   "salmed": 1750000,
+   "sector": "Telecomunicaciones",
+   "cargos": [
+    "Asesor comercial",
+    "Auxiliar de cocina",
+    "Auxiliar de servicios generales"
+   ],
+   "pct_pais": 6.0,
+   "indice": 0.9
+  },
+  {
+   "h": "Call center y BPO",
+   "fam": "oficio",
+   "familia": "Técnicas del oficio",
+   "vac": 1128,
+   "pct": 5.3,
+   "pct3m": 3.6,
+   "sup": 2.8,
+   "media": 62.7,
+   "salmed": 1750000,
+   "sector": "Telecomunicaciones",
+   "cargos": [
+    "Asesor call center",
+    "Auxiliar de enfermería",
+    "Asesorcomercial call center"
+   ],
+   "pct_pais": 9.1,
+   "indice": 0.58
+  },
+  {
+   "h": "Nómina y talento humano",
+   "fam": "oficio",
+   "familia": "Técnicas del oficio",
+   "vac": 1062,
+   "pct": 5.0,
+   "pct3m": 18.3,
+   "sup": 28.8,
+   "media": 19.2,
+   "salmed": 1750000,
+   "sector": "Servicios Profesionales",
+   "cargos": [
+    "Auxiliar contable",
+    "Auxiliar administrativo",
+    "Auxiliar gestión humana"
+   ],
+   "pct_pais": 5.1,
+   "indice": 0.98
+  },
+  {
+   "h": "Cocina y alimentos",
+   "fam": "oficio",
+   "familia": "Técnicas del oficio",
+   "vac": 1027,
+   "pct": 4.8,
+   "pct3m": 3.7,
+   "sup": 2.5,
+   "media": 67.6,
+   "salmed": 1750000,
+   "sector": "Servicios Profesionales",
+   "cargos": [
+    "Auxiliar de cocina",
+    "Mesero",
+    "Cocinero"
+   ],
+   "pct_pais": 3.6,
+   "indice": 1.33
+  },
+  {
+   "h": "Compras y proveedores",
+   "fam": "oficio",
+   "familia": "Técnicas del oficio",
+   "vac": 927,
+   "pct": 4.3,
+   "pct3m": 21.0,
+   "sup": 28.0,
+   "media": 22.7,
+   "salmed": 1750000,
+   "sector": "Servicios Profesionales",
+   "cargos": [
+    "Auxiliar contable",
+    "Analista de compras",
+    "Auxiliar de compras"
+   ],
+   "pct_pais": 3.3,
+   "indice": 1.3
+  },
+  {
+   "h": "Electricidad y automatización industrial",
+   "fam": "oficio",
+   "familia": "Técnicas del oficio",
+   "vac": 924,
+   "pct": 4.3,
+   "pct3m": 20.5,
+   "sup": 15.6,
+   "media": 18.0,
+   "salmed": 2500000,
+   "sector": "Servicios Profesionales",
+   "cargos": [
+    "Electromecánico",
+    "Electricista",
+    "Ayudante electricista"
+   ],
+   "pct_pais": 3.8,
+   "indice": 1.13
+  },
+  {
+   "h": "Atención al detalle",
+   "fam": "blanda",
+   "familia": "Socioemocionales",
+   "vac": 900,
+   "pct": 4.2,
+   "pct3m": 4.5,
+   "sup": 8.3,
+   "media": 45.2,
+   "salmed": 1750000,
+   "sector": "Servicios Profesionales",
+   "cargos": [
+    "Auxiliar contable",
+    "Auxiliar administrativo",
+    "Auxiliar bodega"
+   ],
+   "pct_pais": 3.4,
+   "indice": 1.24
+  },
+  {
+   "h": "Salud asistencial",
+   "fam": "oficio",
+   "familia": "Técnicas del oficio",
+   "vac": 897,
+   "pct": 4.2,
+   "pct3m": 23.6,
+   "sup": 27.4,
+   "media": 8.4,
+   "salmed": 1750000,
+   "sector": "Salud / Medicina",
+   "cargos": [
+    "Auxiliar enfermería",
+    "Auxiliar de farmacia",
+    "Regente de farmacia"
+   ],
+   "pct_pais": 5.8,
+   "indice": 0.72
+  },
+  {
+   "h": "Negociación",
+   "fam": "blanda",
+   "familia": "Socioemocionales",
+   "vac": 849,
+   "pct": 4.0,
+   "pct3m": 23.1,
+   "sup": 28.4,
+   "media": 33.7,
+   "salmed": 1750000,
+   "sector": "Servicios Profesionales",
+   "cargos": [
+    "Asesor comercial",
+    "Ejecutivo comercial",
+    "Analista de compras"
+   ],
+   "pct_pais": 4.4,
+   "indice": 0.91
+  },
+  {
+   "h": "Resolución de problemas",
+   "fam": "blanda",
+   "familia": "Socioemocionales",
+   "vac": 815,
+   "pct": 3.8,
+   "pct3m": 31.6,
+   "sup": 35.2,
+   "media": 21.7,
+   "salmed": 2500000,
+   "sector": "Servicios Profesionales",
+   "cargos": [
+    "Contador",
+    "Auxiliar contable",
+    "Analista contable"
+   ],
+   "pct_pais": 3.5,
+   "indice": 1.09
+  },
+  {
+   "h": "Manejo de caja y efectivo",
+   "fam": "oficio",
+   "familia": "Técnicas del oficio",
+   "vac": 791,
+   "pct": 3.7,
+   "pct3m": 1.8,
+   "sup": 4.0,
+   "media": 61.7,
+   "salmed": 1750000,
+   "sector": "Servicios Profesionales",
+   "cargos": [
+    "Asesor comercial",
+    "Cajero",
+    "Operador de tienda ara"
+   ],
+   "pct_pais": 3.3,
+   "indice": 1.12
+  },
+  {
+   "h": "Inglés",
+   "fam": "idioma",
+   "familia": "Idiomas",
+   "vac": 768,
+   "pct": 3.6,
+   "pct3m": 26.5,
+   "sup": 25.1,
+   "media": 56.4,
+   "salmed": 2500000,
+   "sector": "Telecomunicaciones",
+   "cargos": [
+    "Bilingual payment support",
+    "Bachiller sin experiencia",
+    "Estudia sin costo y recibe apoyo económico"
+   ],
+   "pct_pais": 3.3,
+   "indice": 1.09
+  },
+  {
+   "h": "Seguridad y salud en el trabajo",
+   "fam": "oficio",
+   "familia": "Técnicas del oficio",
+   "vac": 673,
+   "pct": 3.1,
+   "pct3m": 19.8,
+   "sup": 26.9,
+   "media": 16.6,
+   "salmed": 1750000,
+   "sector": "Servicios Profesionales",
+   "cargos": [
+    "Auxiliar sst",
+    "Técnico de salud ocupacional",
+    "Analista sst"
+   ],
+   "pct_pais": 2.9,
+   "indice": 1.07
+  },
+  {
+   "h": "Confección y textil",
+   "fam": "oficio",
+   "familia": "Técnicas del oficio",
+   "vac": 601,
+   "pct": 2.8,
+   "pct3m": 5.0,
+   "sup": 10.5,
+   "media": 61.2,
+   "salmed": 1750000,
+   "sector": "Servicios Profesionales",
+   "cargos": [
+    "Operarios de confección",
+    "Operariode confección",
+    "Auxiliar de producción"
+   ],
+   "pct_pais": 1.6,
+   "indice": 1.75
+  },
+  {
+   "h": "ERP (SAP, Siigo, Helisa)",
+   "fam": "digital",
+   "familia": "Digitales y software",
+   "vac": 596,
+   "pct": 2.8,
+   "pct3m": 18.6,
+   "sup": 27.2,
+   "media": 7.7,
+   "salmed": 2500000,
+   "sector": "Servicios Profesionales",
+   "cargos": [
+    "Auxiliar contable",
+    "Auxiliar administrativo",
+    "Analista contable"
+   ],
+   "pct_pais": 2.6,
+   "indice": 1.08
+  },
+  {
+   "h": "Manipulación de alimentos",
+   "fam": "licencia",
+   "familia": "Licencias y certificaciones",
+   "vac": 537,
+   "pct": 2.5,
+   "pct3m": 1.0,
+   "sup": 2.2,
+   "media": 75.6,
+   "salmed": 1750000,
+   "sector": "Servicios Profesionales",
+   "cargos": [
+    "Auxiliar de cocina",
+    "Cocinero",
+    "Auxiliar de producción"
+   ],
+   "pct_pais": 1.7,
+   "indice": 1.47
+  },
+  {
+   "h": "Tarjeta profesional",
+   "fam": "licencia",
+   "familia": "Licencias y certificaciones",
+   "vac": 509,
+   "pct": 2.4,
+   "pct3m": 29.0,
+   "sup": 34.6,
+   "media": 3.7,
+   "salmed": 2500000,
+   "sector": "Telecomunicaciones",
+   "cargos": [
+    "Auxiliar de enfermería",
+    "Auxiliar de farmacia",
+    "Contador"
+   ],
+   "pct_pais": 3.5,
+   "indice": 0.69
+  },
+  {
+   "h": "Creatividad",
+   "fam": "blanda",
+   "familia": "Socioemocionales",
+   "vac": 494,
+   "pct": 2.3,
+   "pct3m": 23.6,
+   "sup": 34.6,
+   "media": 22.1,
+   "salmed": 1750000,
+   "sector": "Telecomunicaciones",
+   "cargos": [
+    "Asesorcomercial desde bachiller",
+    "Asesor) comercial desde bachiller",
+    "Auxiliar de repostería"
+   ],
+   "pct_pais": 2.1,
+   "indice": 1.1
+  },
+  {
+   "h": "Tributaria e impuestos",
+   "fam": "oficio",
+   "familia": "Técnicas del oficio",
+   "vac": 402,
+   "pct": 1.9,
+   "pct3m": 33.9,
+   "sup": 44.0,
+   "media": 4.5,
+   "salmed": 2500000,
+   "sector": "Servicios Profesionales",
+   "cargos": [
+    "Auxiliar contable",
+    "Analista contable",
+    "Contador"
+   ],
+   "pct_pais": 1.6,
+   "indice": 1.19
+  },
+  {
+   "h": "CRM y fuerza de ventas",
+   "fam": "digital",
+   "familia": "Digitales y software",
+   "vac": 334,
+   "pct": 1.6,
+   "pct3m": 19.0,
+   "sup": 32.3,
+   "media": 17.1,
+   "salmed": 1750000,
+   "sector": "Servicios Profesionales",
+   "cargos": [
+    "Asesor comercial",
+    "Líder comercial",
+    "Asesora comercial crm floristería"
+   ],
+   "pct_pais": 1.2,
+   "indice": 1.33
+  },
+  {
+   "h": "Adaptabilidad",
+   "fam": "blanda",
+   "familia": "Socioemocionales",
+   "vac": 333,
+   "pct": 1.6,
+   "pct3m": 11.7,
+   "sup": 17.1,
+   "media": 44.4,
+   "salmed": 1750000,
+   "sector": "Servicios Profesionales",
+   "cargos": [
+    "Auxiliar de repostería",
+    "Asesorcomercial punto de venta",
+    "Auxiliar de producción"
+   ],
+   "pct_pais": 1.6,
+   "indice": 1.0
+  },
+  {
+   "h": "Vigilancia y seguridad física",
+   "fam": "oficio",
+   "familia": "Técnicas del oficio",
+   "vac": 332,
+   "pct": 1.6,
+   "pct3m": 13.0,
+   "sup": 14.8,
+   "media": 57.2,
+   "salmed": 1750000,
+   "sector": "Servicios Profesionales",
+   "cargos": [
+    "Vigilante",
+    "Guarda de seguridad",
+    "Conserje"
+   ],
+   "pct_pais": 1.9,
+   "indice": 0.84
+  },
+  {
+   "h": "Marketing digital",
+   "fam": "digital",
+   "familia": "Digitales y software",
+   "vac": 317,
+   "pct": 1.5,
+   "pct3m": 21.5,
+   "sup": 34.7,
+   "media": 17.7,
+   "salmed": 1750000,
+   "sector": "Servicios Profesionales",
+   "cargos": [
+    "Asesor comercial",
+    "Community manager",
+    "Community manager portugués b2 ( medellín)"
+   ],
+   "pct_pais": 1.1,
+   "indice": 1.36
+  },
+  {
+   "h": "Montacargas y equipo pesado",
+   "fam": "oficio",
+   "familia": "Técnicas del oficio",
+   "vac": 291,
+   "pct": 1.4,
+   "pct3m": 4.1,
+   "sup": 4.8,
+   "media": 66.7,
+   "salmed": 1750000,
+   "sector": "Servicios Profesionales",
+   "cargos": [
+    "Montacarguista",
+    "Operador de montacargas",
+    "Operario de montacargas"
+   ],
+   "pct_pais": 1.4,
+   "indice": 1.0
+  },
+  {
+   "h": "Soldadura",
+   "fam": "oficio",
+   "familia": "Técnicas del oficio",
+   "vac": 281,
+   "pct": 1.3,
+   "pct3m": 10.8,
+   "sup": 2.1,
+   "media": 46.3,
+   "salmed": 2500000,
+   "sector": "Servicios Profesionales",
+   "cargos": [
+    "Soldador",
+    "Soldadormig",
+    "Auxiliar de producción"
+   ],
+   "pct_pais": 1.0,
+   "indice": 1.3
+  },
+  {
+   "h": "Análisis de datos / BI",
+   "fam": "digital",
+   "familia": "Digitales y software",
+   "vac": 279,
+   "pct": 1.3,
+   "pct3m": 39.0,
+   "sup": 51.3,
+   "media": 3.9,
+   "salmed": 2500000,
+   "sector": "Servicios Profesionales",
+   "cargos": [
+    "Analista de costos",
+    "Analista comercial",
+    "Auxiliar de compras"
+   ],
+   "pct_pais": 1.4,
+   "indice": 0.93
+  },
+  {
+   "h": "Trabajo bajo presión",
+   "fam": "blanda",
+   "familia": "Socioemocionales",
+   "vac": 254,
+   "pct": 1.2,
+   "pct3m": 11.3,
+   "sup": 13.0,
+   "media": 46.5,
+   "salmed": 1750000,
+   "sector": "Servicios Profesionales",
+   "cargos": [
+    "Auxiliar de cocina",
+    "Piscinerosalvamento y oficios varios",
+    "Conductor"
+   ],
+   "pct_pais": 1.5,
+   "indice": 0.8
+  },
+  {
+   "h": "Comercio exterior",
+   "fam": "oficio",
+   "familia": "Técnicas del oficio",
+   "vac": 233,
+   "pct": 1.1,
+   "pct3m": 36.2,
+   "sup": 44.6,
+   "media": 9.0,
+   "salmed": 2500000,
+   "sector": "Servicios Profesionales",
+   "cargos": [
+    "Auxiliar de comercio exterior",
+    "Analista de compras",
+    "Auxiliar administrativo"
+   ],
+   "pct_pais": 1.0,
+   "indice": 1.1
+  },
+  {
+   "h": "Refrigeración y climatización",
+   "fam": "oficio",
+   "familia": "Técnicas del oficio",
+   "vac": 231,
+   "pct": 1.1,
+   "pct3m": 12.4,
+   "sup": 11.7,
+   "media": 26.8,
+   "salmed": 1750000,
+   "sector": "Servicios Profesionales",
+   "cargos": [
+    "Técnico refrigeración",
+    "Técnico en refrigeración con moto",
+    "Electromecánico"
+   ],
+   "pct_pais": 1.0,
+   "indice": 1.1
+  },
+  {
+   "h": "Cobranza",
+   "fam": "oficio",
+   "familia": "Técnicas del oficio",
+   "vac": 209,
+   "pct": 1.0,
+   "pct3m": 3.9,
+   "sup": 8.1,
+   "media": 33.5,
+   "salmed": 1750000,
+   "sector": "Telecomunicaciones",
+   "cargos": [
+    "Analista de crédito junior",
+    "Asesor comercial microfinanzas",
+    "Asesorde cobranza call center lunes a sabado"
+   ],
+   "pct_pais": 1.9,
+   "indice": 0.53
+  },
+  {
+   "h": "Trabajo en alturas",
+   "fam": "licencia",
+   "familia": "Licencias y certificaciones",
+   "vac": 206,
+   "pct": 1.0,
+   "pct3m": 8.6,
+   "sup": 7.8,
+   "media": 46.1,
+   "salmed": 1750000,
+   "sector": "Servicios Profesionales",
+   "cargos": [
+    "Inspector sst",
+    "Oficiales de acueducto y alcantarillado",
+    "Auxiliar sst"
+   ],
+   "pct_pais": 0.9,
+   "indice": 1.11
+  },
+  {
+   "h": "Agro y poscosecha",
+   "fam": "oficio",
+   "familia": "Técnicas del oficio",
+   "vac": 196,
+   "pct": 0.9,
+   "pct3m": 15.0,
+   "sup": 15.3,
+   "media": 32.1,
+   "salmed": 1750000,
+   "sector": "Agricultura, ganadería, caza y actividades de servicios conexas",
+   "cargos": [
+    "Auxiliar administrativo",
+    "Trabajador agropecuario",
+    "Jardinero"
+   ],
+   "pct_pais": 0.7,
+   "indice": 1.29
+  },
+  {
+   "h": "Docencia y formación",
+   "fam": "oficio",
+   "familia": "Técnicas del oficio",
+   "vac": 195,
+   "pct": 0.9,
+   "pct3m": 34.4,
+   "sup": 62.6,
+   "media": 5.6,
+   "salmed": 2500000,
+   "sector": "Educación",
+   "cargos": [
+    "Docente de matemáticas",
+    "Instructor inglés",
+    "Instructor de matemáticas"
+   ],
+   "pct_pais": 1.2,
+   "indice": 0.75
+  },
+  {
+   "h": "Inteligencia artificial",
+   "fam": "digital",
+   "familia": "Digitales y software",
+   "vac": 149,
+   "pct": 0.7,
+   "pct3m": 45.0,
+   "sup": 53.7,
+   "media": 5.4,
+   "salmed": 2500000,
+   "sector": "Servicios Profesionales",
+   "cargos": [
+    "Analista comercial",
+    "Ingeniero de sistemas",
+    "Analista de compras"
+   ],
+   "pct_pais": 0.7,
+   "indice": 1.0
+  },
+  {
+   "h": "Diseño y audiovisual",
+   "fam": "digital",
+   "familia": "Digitales y software",
+   "vac": 149,
+   "pct": 0.7,
+   "pct3m": 20.0,
+   "sup": 34.2,
+   "media": 11.4,
+   "salmed": 1750000,
+   "sector": "Servicios Profesionales",
+   "cargos": [
+    "Diseñador gráfico",
+    "Disenadorgrafico",
+    "Community manager"
+   ],
+   "pct_pais": 0.5,
+   "indice": 1.4
+  },
+  {
+   "h": "Programación",
+   "fam": "digital",
+   "familia": "Digitales y software",
+   "vac": 141,
+   "pct": 0.7,
+   "pct3m": 61.2,
+   "sup": 46.8,
+   "media": 7.1,
+   "salmed": 3500000,
+   "sector": "Servicios Profesionales",
+   "cargos": [
+    "Desarrollador de software",
+    "Ingeniero de sistemas",
+    "Desarrollador full stack java + angular"
+   ],
+   "pct_pais": 0.8,
+   "indice": 0.87
+  },
+  {
+   "h": "Belleza y estética",
+   "fam": "oficio",
+   "familia": "Técnicas del oficio",
+   "vac": 130,
+   "pct": 0.6,
+   "pct3m": 10.3,
+   "sup": 21.5,
+   "media": 43.1,
+   "salmed": 1750000,
+   "sector": "Servicios Profesionales",
+   "cargos": [
+    "Asesor comercial",
+    "Maquillador linea de lujo 5.000.000",
+    "Mercaderista"
+   ],
+   "pct_pais": 0.5,
+   "indice": 1.2
+  },
+  {
+   "h": "CAD / diseño técnico",
+   "fam": "digital",
+   "familia": "Digitales y software",
+   "vac": 109,
+   "pct": 0.5,
+   "pct3m": 44.9,
+   "sup": 45.0,
+   "media": 0.9,
+   "salmed": 2500000,
+   "sector": "Construcción",
+   "cargos": [
+    "Dibujante industrial",
+    "Arquitecto) bilingüe",
+    "Digitador/delineante"
+   ],
+   "pct_pais": 0.5,
+   "indice": 1.0
+  },
+  {
+   "h": "Facturación electrónica",
+   "fam": "digital",
+   "familia": "Digitales y software",
+   "vac": 104,
+   "pct": 0.5,
+   "pct3m": 11.7,
+   "sup": 22.1,
+   "media": 4.8,
+   "salmed": 1750000,
+   "sector": "Servicios Profesionales",
+   "cargos": [
+    "Auxiliar contable",
+    "Analista contable",
+    "Auxiliar administrativo"
+   ],
+   "pct_pais": 0.4,
+   "indice": 1.25
+  },
+  {
+   "h": "Formulación y gestión de proyectos",
+   "fam": "oficio",
+   "familia": "Técnicas del oficio",
+   "vac": 102,
+   "pct": 0.5,
+   "pct3m": 67.1,
+   "sup": 68.6,
+   "media": 8.8,
+   "salmed": 3500000,
+   "sector": "Servicios Profesionales",
+   "cargos": [
+    "Analista de proyectos",
+    "Referente de gestión territorial",
+    "Desarrollador de software"
+   ],
+   "pct_pais": 0.7,
+   "indice": 0.71
+  },
+  {
+   "h": "SQL y motores de datos",
+   "fam": "digital",
+   "familia": "Digitales y software",
+   "vac": 84,
+   "pct": 0.4,
+   "pct3m": 72.0,
+   "sup": 56.0,
+   "media": 4.8,
+   "salmed": 5000000,
+   "sector": "Servicios Profesionales",
+   "cargos": [
+    "Desarrollador de software",
+    "Ingeniero de datos",
+    "Ingeniero de sistemas"
+   ],
+   "pct_pais": 0.4,
+   "indice": 1.0
+  },
+  {
+   "h": "Certificación en SST",
+   "fam": "licencia",
+   "familia": "Licencias y certificaciones",
+   "vac": 79,
+   "pct": 0.4,
+   "pct3m": 19.0,
+   "sup": 30.4,
+   "media": 1.3,
+   "salmed": 2500000,
+   "sector": "Servicios Profesionales",
+   "cargos": [
+    "Analista de salud ocupacional",
+    "Asistente sst",
+    "Auxiliar hseq salud"
+   ],
+   "pct_pais": 0.5,
+   "indice": 0.8
+  },
+  {
+   "h": "Nube e infraestructura",
+   "fam": "digital",
+   "familia": "Digitales y software",
+   "vac": 76,
+   "pct": 0.4,
+   "pct3m": 56.5,
+   "sup": 51.3,
+   "media": 3.9,
+   "salmed": 3500000,
+   "sector": "Servicios Profesionales",
+   "cargos": [
+    "Desarrollador de software",
+    "Ingeniero de datos",
+    "Soporte técnico nivel 1 ccna vigente medellín"
+   ],
+   "pct_pais": 0.5,
+   "indice": 0.8
+  },
+  {
+   "h": "Otro idioma (fr/it/de)",
+   "fam": "idioma",
+   "familia": "Idiomas",
+   "vac": 70,
+   "pct": 0.3,
+   "pct3m": 7.7,
+   "sup": 10.0,
+   "media": 78.6,
+   "salmed": 2500000,
+   "sector": "Telecomunicaciones",
+   "cargos": [
+    "Asesor bilingüe francés",
+    "Docente de inglés / presencial / zona sur",
+    "Lider de operaciones bilingue"
+   ],
+   "pct_pais": 0.2,
+   "indice": 1.5
+  },
+  {
+   "h": "Ciberseguridad",
+   "fam": "digital",
+   "familia": "Digitales y software",
+   "vac": 65,
+   "pct": 0.3,
+   "pct3m": 48.9,
+   "sup": 53.8,
+   "media": 0.0,
+   "salmed": 2500000,
+   "sector": "Servicios Profesionales",
+   "cargos": [
+    "Auxiliar de soporte de sistemas e informática",
+    "Soporte técnico nivel 1 ccna vigente medellín",
+    "Profesional de seguridad de la información"
+   ],
+   "pct_pais": 0.4,
+   "indice": 0.75
+  },
+  {
+   "h": "Automatización / RPA",
+   "fam": "digital",
+   "familia": "Digitales y software",
+   "vac": 51,
+   "pct": 0.2,
+   "pct3m": 45.5,
+   "sup": 70.6,
+   "media": 0.0,
+   "salmed": 2500000,
+   "sector": "Servicios Profesionales",
+   "cargos": [
+    "Desarrollador junior",
+    "Analista financiero",
+    "Desarrollador junior inglés b2"
+   ],
+   "pct_pais": 0.2,
+   "indice": 1.0
+  },
+  {
+   "h": "Credencial de vigilancia",
+   "fam": "licencia",
+   "familia": "Licencias y certificaciones",
+   "vac": 45,
+   "pct": 0.2,
+   "pct3m": 0.0,
+   "sup": 0.0,
+   "media": 84.4,
+   "salmed": 1750000,
+   "sector": "Servicios Profesionales",
+   "cargos": [
+    "Guarda de seguridad",
+    "Vigilante",
+    "Conserje"
+   ],
+   "pct_pais": 0.3,
+   "indice": 0.67
+  },
+  {
+   "h": "Cuidado de personas",
+   "fam": "oficio",
+   "familia": "Técnicas del oficio",
+   "vac": 38,
+   "pct": 0.2,
+   "pct3m": 13.3,
+   "sup": 21.1,
+   "media": 34.2,
+   "salmed": 1750000,
+   "sector": "Servicios Profesionales",
+   "cargos": [
+    "Auxiliar enfermería",
+    "Cuidador de personas mayores",
+    "Educador de primera infancia"
+   ],
+   "pct_pais": 0.2,
+   "indice": 1.0
+  },
+  {
+   "h": "Esquema de vacunación",
+   "fam": "licencia",
+   "familia": "Licencias y certificaciones",
+   "vac": 38,
+   "pct": 0.2,
+   "pct3m": 31.2,
+   "sup": 34.2,
+   "media": 10.5,
+   "salmed": 2500000,
+   "sector": "Salud / Medicina",
+   "cargos": [
+    "Auxiliar de enfermería hemodiálisis",
+    "Jefe de enfermería hemodiálisis",
+    "Panadero lonchero urgente"
+   ],
+   "pct_pais": 0.5,
+   "indice": 0.4
+  },
+  {
+   "h": "Portugués",
+   "fam": "idioma",
+   "familia": "Idiomas",
+   "vac": 22,
+   "pct": 0.1,
+   "pct3m": 47.1,
+   "sup": 68.2,
+   "media": 31.8,
+   "salmed": 2500000,
+   "sector": "Telecomunicaciones",
+   "cargos": [
+    "Community manager portugués b2 ( medellín)",
+    "Docente de portugués",
+    "Ejecutivo comercial b2b"
+   ],
+   "pct_pais": 0.1,
+   "indice": 1.0
+  }
+ ],
+ "plano": {
+  "regla": "Las 15 más pedidas unidas a las 15 mejor pagadas, entre las que aparecen en al menos el 0.4 % de las vacantes.",
+  "n": 28,
+  "piso_pct": 0.4,
+  "media_pct3m": 13.5,
+  "r": -0.51,
+  "r_n": 62,
+  "r_seleccionadas": -0.87,
+  "items": [
+   {
+    "h": "Ventas y asesoría comercial",
+    "fam": "oficio",
+    "familia": "Técnicas del oficio",
+    "vac": 6131,
+    "pct": 28.6,
+    "pct3m": 12.8,
+    "sup": 16.6,
+    "media": 45.2,
+    "salmed": 1750000,
+    "sector": "Servicios Profesionales",
+    "cargos": [
+     "Asesor comercial",
+     "Asesor ventas",
+     "Mercaderista"
+    ],
+    "pct_pais": 30.8,
+    "indice": 0.93
+   },
+   {
+    "h": "Logística e inventarios",
+    "fam": "oficio",
+    "familia": "Técnicas del oficio",
+    "vac": 4847,
+    "pct": 22.6,
+    "pct3m": 7.5,
+    "sup": 10.7,
+    "media": 53.1,
+    "salmed": 1750000,
+    "sector": "Servicios Profesionales",
+    "cargos": [
+     "Auxiliar de bodega",
+     "Auxiliar de cocina",
+     "Asesor comercial"
+    ],
+    "pct_pais": 18.9,
+    "indice": 1.2
+   },
+   {
+    "h": "Servicio al cliente",
+    "fam": "oficio",
+    "familia": "Técnicas del oficio",
+    "vac": 4003,
+    "pct": 18.7,
+    "pct3m": 4.2,
+    "sup": 6.8,
+    "media": 56.1,
+    "salmed": 1750000,
+    "sector": "Telecomunicaciones",
+    "cargos": [
+     "Asesor comercial",
+     "Auxiliar administrativo",
+     "Auxiliar de servicio al cliente"
+    ],
+    "pct_pais": 19.9,
+    "indice": 0.94
+   },
+   {
+    "h": "Liderazgo",
+    "fam": "blanda",
+    "familia": "Socioemocionales",
+    "vac": 2109,
+    "pct": 9.9,
+    "pct3m": 38.9,
+    "sup": 44.0,
+    "media": 16.3,
+    "salmed": 2500000,
+    "sector": "Servicios Profesionales",
+    "cargos": [
+     "Administrador de punto de venta",
+     "Líder comercial",
+     "Ingeniero civil"
+    ],
+    "pct_pais": 9.2,
+    "indice": 1.08
+   },
+   {
+    "h": "Trabajo en equipo",
+    "fam": "blanda",
+    "familia": "Socioemocionales",
+    "vac": 2008,
+    "pct": 9.4,
+    "pct3m": 6.5,
+    "sup": 9.5,
+    "media": 49.5,
+    "salmed": 1750000,
+    "sector": "Servicios Profesionales",
+    "cargos": [
+     "Asesor comercial",
+     "Auxiliar administrativo",
+     "Auxiliar de producción"
+    ],
+    "pct_pais": 8.3,
+    "indice": 1.13
+   },
+   {
+    "h": "Aseo y servicios generales",
+    "fam": "oficio",
+    "familia": "Técnicas del oficio",
+    "vac": 1996,
+    "pct": 9.3,
+    "pct3m": 1.6,
+    "sup": 2.5,
+    "media": 75.6,
+    "salmed": 1750000,
+    "sector": "Servicios Profesionales",
+    "cargos": [
+     "Auxiliar de cocina",
+     "Auxiliar servicios generales",
+     "Auxiliar de producción"
+    ],
+    "pct_pais": 6.9,
+    "indice": 1.35
+   },
+   {
+    "h": "Contabilidad y finanzas",
+    "fam": "oficio",
+    "familia": "Técnicas del oficio",
+    "vac": 1955,
+    "pct": 9.1,
+    "pct3m": 26.2,
+    "sup": 35.2,
+    "media": 9.3,
+    "salmed": 2500000,
+    "sector": "Servicios Profesionales",
+    "cargos": [
+     "Auxiliar contable",
+     "Analista contable",
+     "Auxiliar administrativo"
+    ],
+    "pct_pais": 8.3,
+    "indice": 1.1
+   },
+   {
+    "h": "Responsabilidad y compromiso",
+    "fam": "blanda",
+    "familia": "Socioemocionales",
+    "vac": 1844,
+    "pct": 8.6,
+    "pct3m": 8.4,
+    "sup": 12.9,
+    "media": 55.4,
+    "salmed": 1750000,
+    "sector": "Servicios Profesionales",
+    "cargos": [
+     "Auxiliar de cocina",
+     "Auxiliar de producción",
+     "Auxiliar contable"
+    ],
+    "pct_pais": 7.2,
+    "indice": 1.19
+   },
+   {
+    "h": "Mantenimiento mecánico",
+    "fam": "oficio",
+    "familia": "Técnicas del oficio",
+    "vac": 1677,
+    "pct": 7.8,
+    "pct3m": 13.9,
+    "sup": 9.9,
+    "media": 33.0,
+    "salmed": 1750000,
+    "sector": "Servicios Profesionales",
+    "cargos": [
+     "Electromecánico",
+     "Auxiliar de mantenimiento",
+     "Mecánico automotriz"
+    ],
+    "pct_pais": 7.3,
+    "indice": 1.07
+   },
+   {
+    "h": "Construcción y obra",
+    "fam": "oficio",
+    "familia": "Técnicas del oficio",
+    "vac": 1510,
+    "pct": 7.1,
+    "pct3m": 18.8,
+    "sup": 16.8,
+    "media": 44.4,
+    "salmed": 1750000,
+    "sector": "Servicios Profesionales",
+    "cargos": [
+     "Ayudante de obra",
+     "Ayudante de construcción",
+     "Oficial de construcción"
+    ],
+    "pct_pais": 5.6,
+    "indice": 1.27
+   },
+   {
+    "h": "Proactividad",
+    "fam": "blanda",
+    "familia": "Socioemocionales",
+    "vac": 1426,
+    "pct": 6.7,
+    "pct3m": 6.7,
+    "sup": 11.1,
+    "media": 48.7,
+    "salmed": 1750000,
+    "sector": "Servicios Profesionales",
+    "cargos": [
+     "Asesor comercial",
+     "Auxiliar administrativo",
+     "Auxiliar contable"
+    ],
+    "pct_pais": 6.6,
+    "indice": 1.02
+   },
+   {
+    "h": "Calidad y mejora continua",
+    "fam": "oficio",
+    "familia": "Técnicas del oficio",
+    "vac": 1359,
+    "pct": 6.4,
+    "pct3m": 17.5,
+    "sup": 22.0,
+    "media": 41.6,
+    "salmed": 1750000,
+    "sector": "Servicios Profesionales",
+    "cargos": [
+     "Auxiliar de producción",
+     "Auxiliar de cocina",
+     "Cocinero"
+    ],
+    "pct_pais": 5.3,
+    "indice": 1.21
+   },
+   {
+    "h": "Ofimática / Office",
+    "fam": "digital",
+    "familia": "Digitales y software",
+    "vac": 1351,
+    "pct": 6.3,
+    "pct3m": 11.2,
+    "sup": 17.3,
+    "media": 19.2,
+    "salmed": 1750000,
+    "sector": "Servicios Profesionales",
+    "cargos": [
+     "Auxiliar administrativo",
+     "Auxiliar contable",
+     "Asesor comercial"
+    ],
+    "pct_pais": 6.1,
+    "indice": 1.03
+   },
+   {
+    "h": "Excel",
+    "fam": "digital",
+    "familia": "Digitales y software",
+    "vac": 1283,
+    "pct": 6.0,
+    "pct3m": 16.0,
+    "sup": 23.5,
+    "media": 11.2,
+    "salmed": 1750000,
+    "sector": "Servicios Profesionales",
+    "cargos": [
+     "Auxiliar contable",
+     "Auxiliar administrativo",
+     "Asesor comercial"
+    ],
+    "pct_pais": 6.4,
+    "indice": 0.94
+   },
+   {
+    "h": "Producción y operación de máquina",
+    "fam": "oficio",
+    "familia": "Técnicas del oficio",
+    "vac": 1243,
+    "pct": 5.8,
+    "pct3m": 4.3,
+    "sup": 5.1,
+    "media": 70.7,
+    "salmed": 1750000,
+    "sector": "Servicios Profesionales",
+    "cargos": [
+     "Auxiliar de producción",
+     "Operario de producción",
+     "Auxiliar de bodega"
+    ],
+    "pct_pais": 4.1,
+    "indice": 1.41
+   },
+   {
+    "h": "Resolución de problemas",
+    "fam": "blanda",
+    "familia": "Socioemocionales",
+    "vac": 815,
+    "pct": 3.8,
+    "pct3m": 31.6,
+    "sup": 35.2,
+    "media": 21.7,
+    "salmed": 2500000,
+    "sector": "Servicios Profesionales",
+    "cargos": [
+     "Contador",
+     "Auxiliar contable",
+     "Analista contable"
+    ],
+    "pct_pais": 3.5,
+    "indice": 1.09
+   },
+   {
+    "h": "Inglés",
+    "fam": "idioma",
+    "familia": "Idiomas",
+    "vac": 768,
+    "pct": 3.6,
+    "pct3m": 26.5,
+    "sup": 25.1,
+    "media": 56.4,
+    "salmed": 2500000,
+    "sector": "Telecomunicaciones",
+    "cargos": [
+     "Bilingual payment support",
+     "Bachiller sin experiencia",
+     "Estudia sin costo y recibe apoyo económico"
+    ],
+    "pct_pais": 3.3,
+    "indice": 1.09
+   },
+   {
+    "h": "Tarjeta profesional",
+    "fam": "licencia",
+    "familia": "Licencias y certificaciones",
+    "vac": 509,
+    "pct": 2.4,
+    "pct3m": 29.0,
+    "sup": 34.6,
+    "media": 3.7,
+    "salmed": 2500000,
+    "sector": "Telecomunicaciones",
+    "cargos": [
+     "Auxiliar de enfermería",
+     "Auxiliar de farmacia",
+     "Contador"
+    ],
+    "pct_pais": 3.5,
+    "indice": 0.69
+   },
+   {
+    "h": "Tributaria e impuestos",
+    "fam": "oficio",
+    "familia": "Técnicas del oficio",
+    "vac": 402,
+    "pct": 1.9,
+    "pct3m": 33.9,
+    "sup": 44.0,
+    "media": 4.5,
+    "salmed": 2500000,
+    "sector": "Servicios Profesionales",
+    "cargos": [
+     "Auxiliar contable",
+     "Analista contable",
+     "Contador"
+    ],
+    "pct_pais": 1.6,
+    "indice": 1.19
+   },
+   {
+    "h": "Análisis de datos / BI",
+    "fam": "digital",
+    "familia": "Digitales y software",
+    "vac": 279,
+    "pct": 1.3,
+    "pct3m": 39.0,
+    "sup": 51.3,
+    "media": 3.9,
+    "salmed": 2500000,
+    "sector": "Servicios Profesionales",
+    "cargos": [
+     "Analista de costos",
+     "Analista comercial",
+     "Auxiliar de compras"
+    ],
+    "pct_pais": 1.4,
+    "indice": 0.93
+   },
+   {
+    "h": "Comercio exterior",
+    "fam": "oficio",
+    "familia": "Técnicas del oficio",
+    "vac": 233,
+    "pct": 1.1,
+    "pct3m": 36.2,
+    "sup": 44.6,
+    "media": 9.0,
+    "salmed": 2500000,
+    "sector": "Servicios Profesionales",
+    "cargos": [
+     "Auxiliar de comercio exterior",
+     "Analista de compras",
+     "Auxiliar administrativo"
+    ],
+    "pct_pais": 1.0,
+    "indice": 1.1
+   },
+   {
+    "h": "Docencia y formación",
+    "fam": "oficio",
+    "familia": "Técnicas del oficio",
+    "vac": 195,
+    "pct": 0.9,
+    "pct3m": 34.4,
+    "sup": 62.6,
+    "media": 5.6,
+    "salmed": 2500000,
+    "sector": "Educación",
+    "cargos": [
+     "Docente de matemáticas",
+     "Instructor inglés",
+     "Instructor de matemáticas"
+    ],
+    "pct_pais": 1.2,
+    "indice": 0.75
+   },
+   {
+    "h": "Programación",
+    "fam": "digital",
+    "familia": "Digitales y software",
+    "vac": 141,
+    "pct": 0.7,
+    "pct3m": 61.2,
+    "sup": 46.8,
+    "media": 7.1,
+    "salmed": 3500000,
+    "sector": "Servicios Profesionales",
+    "cargos": [
+     "Desarrollador de software",
+     "Ingeniero de sistemas",
+     "Desarrollador full stack java + angular"
+    ],
+    "pct_pais": 0.8,
+    "indice": 0.87
+   },
+   {
+    "h": "Inteligencia artificial",
+    "fam": "digital",
+    "familia": "Digitales y software",
+    "vac": 149,
+    "pct": 0.7,
+    "pct3m": 45.0,
+    "sup": 53.7,
+    "media": 5.4,
+    "salmed": 2500000,
+    "sector": "Servicios Profesionales",
+    "cargos": [
+     "Analista comercial",
+     "Ingeniero de sistemas",
+     "Analista de compras"
+    ],
+    "pct_pais": 0.7,
+    "indice": 1.0
+   },
+   {
+    "h": "Formulación y gestión de proyectos",
+    "fam": "oficio",
+    "familia": "Técnicas del oficio",
+    "vac": 102,
+    "pct": 0.5,
+    "pct3m": 67.1,
+    "sup": 68.6,
+    "media": 8.8,
+    "salmed": 3500000,
+    "sector": "Servicios Profesionales",
+    "cargos": [
+     "Analista de proyectos",
+     "Referente de gestión territorial",
+     "Desarrollador de software"
+    ],
+    "pct_pais": 0.7,
+    "indice": 0.71
+   },
+   {
+    "h": "CAD / diseño técnico",
+    "fam": "digital",
+    "familia": "Digitales y software",
+    "vac": 109,
+    "pct": 0.5,
+    "pct3m": 44.9,
+    "sup": 45.0,
+    "media": 0.9,
+    "salmed": 2500000,
+    "sector": "Construcción",
+    "cargos": [
+     "Dibujante industrial",
+     "Arquitecto) bilingüe",
+     "Digitador/delineante"
+    ],
+    "pct_pais": 0.5,
+    "indice": 1.0
+   },
+   {
+    "h": "SQL y motores de datos",
+    "fam": "digital",
+    "familia": "Digitales y software",
+    "vac": 84,
+    "pct": 0.4,
+    "pct3m": 72.0,
+    "sup": 56.0,
+    "media": 4.8,
+    "salmed": 5000000,
+    "sector": "Servicios Profesionales",
+    "cargos": [
+     "Desarrollador de software",
+     "Ingeniero de datos",
+     "Ingeniero de sistemas"
+    ],
+    "pct_pais": 0.4,
+    "indice": 1.0
+   },
+   {
+    "h": "Nube e infraestructura",
+    "fam": "digital",
+    "familia": "Digitales y software",
+    "vac": 76,
+    "pct": 0.4,
+    "pct3m": 56.5,
+    "sup": 51.3,
+    "media": 3.9,
+    "salmed": 3500000,
+    "sector": "Servicios Profesionales",
+    "cargos": [
+     "Desarrollador de software",
+     "Ingeniero de datos",
+     "Soporte técnico nivel 1 ccna vigente medellín"
+    ],
+    "pct_pais": 0.5,
+    "indice": 0.8
+   }
+  ],
+  "sobre_media": 6
+ },
+ "especializacion": [
+  {
+   "h": "Confección y textil",
+   "fam": "oficio",
+   "familia": "Técnicas del oficio",
+   "vac": 601,
+   "pct": 2.8,
+   "pct_pais": 1.3,
+   "indice": 2.15,
+   "pct3m": 5.0,
+   "sup": 10.5
+  },
+  {
+   "h": "Manipulación de alimentos",
+   "fam": "licencia",
+   "familia": "Licencias y certificaciones",
+   "vac": 537,
+   "pct": 2.5,
+   "pct_pais": 1.4,
+   "indice": 1.79,
+   "pct3m": 1.0,
+   "sup": 2.2
+  },
+  {
+   "h": "Producción y operación de máquina",
+   "fam": "oficio",
+   "familia": "Técnicas del oficio",
+   "vac": 1243,
+   "pct": 5.8,
+   "pct_pais": 3.6,
+   "indice": 1.61,
+   "pct3m": 4.3,
+   "sup": 5.1
+  },
+  {
+   "h": "Marketing digital",
+   "fam": "digital",
+   "familia": "Digitales y software",
+   "vac": 317,
+   "pct": 1.5,
+   "pct_pais": 1.0,
+   "indice": 1.5,
+   "pct3m": 21.5,
+   "sup": 34.7
+  },
+  {
+   "h": "Agro y poscosecha",
+   "fam": "oficio",
+   "familia": "Técnicas del oficio",
+   "vac": 196,
+   "pct": 0.9,
+   "pct_pais": 0.6,
+   "indice": 1.5,
+   "pct3m": 15.0,
+   "sup": 15.3
+  },
+  {
+   "h": "Aseo y servicios generales",
+   "fam": "oficio",
+   "familia": "Técnicas del oficio",
+   "vac": 1996,
+   "pct": 9.3,
+   "pct_pais": 6.3,
+   "indice": 1.48,
+   "pct3m": 1.6,
+   "sup": 2.5
+  },
+  {
+   "h": "Cocina y alimentos",
+   "fam": "oficio",
+   "familia": "Técnicas del oficio",
+   "vac": 1027,
+   "pct": 4.8,
+   "pct_pais": 3.3,
+   "indice": 1.45,
+   "pct3m": 3.7,
+   "sup": 2.5
+  },
+  {
+   "h": "Soldadura",
+   "fam": "oficio",
+   "familia": "Técnicas del oficio",
+   "vac": 281,
+   "pct": 1.3,
+   "pct_pais": 0.9,
+   "indice": 1.44,
+   "pct3m": 10.8,
+   "sup": 2.1
+  },
+  {
+   "h": "Compras y proveedores",
+   "fam": "oficio",
+   "familia": "Técnicas del oficio",
+   "vac": 927,
+   "pct": 4.3,
+   "pct_pais": 3.0,
+   "indice": 1.43,
+   "pct3m": 21.0,
+   "sup": 28.0
+  },
+  {
+   "h": "Construcción y obra",
+   "fam": "oficio",
+   "familia": "Técnicas del oficio",
+   "vac": 1510,
+   "pct": 7.1,
+   "pct_pais": 5.2,
+   "indice": 1.37,
+   "pct3m": 18.8,
+   "sup": 16.8
+  },
+  {
+   "h": "CRM y fuerza de ventas",
+   "fam": "digital",
+   "familia": "Digitales y software",
+   "vac": 334,
+   "pct": 1.6,
+   "pct_pais": 1.2,
+   "indice": 1.33,
+   "pct3m": 19.0,
+   "sup": 32.3
+  },
+  {
+   "h": "Atención al detalle",
+   "fam": "blanda",
+   "familia": "Socioemocionales",
+   "vac": 900,
+   "pct": 4.2,
+   "pct_pais": 3.2,
+   "indice": 1.31,
+   "pct3m": 4.5,
+   "sup": 8.3
+  },
+  {
+   "h": "Calidad y mejora continua",
+   "fam": "oficio",
+   "familia": "Técnicas del oficio",
+   "vac": 1359,
+   "pct": 6.4,
+   "pct_pais": 5.0,
+   "indice": 1.28,
+   "pct3m": 17.5,
+   "sup": 22.0
+  },
+  {
+   "h": "Logística e inventarios",
+   "fam": "oficio",
+   "familia": "Técnicas del oficio",
+   "vac": 4847,
+   "pct": 22.6,
+   "pct_pais": 17.8,
+   "indice": 1.27,
+   "pct3m": 7.5,
+   "sup": 10.7
+  },
+  {
+   "h": "Tributaria e impuestos",
+   "fam": "oficio",
+   "familia": "Técnicas del oficio",
+   "vac": 402,
+   "pct": 1.9,
+   "pct_pais": 1.5,
+   "indice": 1.27,
+   "pct3m": 33.9,
+   "sup": 44.0
+  }
+ ],
+ "municipios_amva": [
+  {
+   "municipio": "Medellín",
+   "vacantes": 13937,
+   "pct": 81.5,
+   "pct_mas_3m": 14.6,
+   "distintiva": "Call center y BPO",
+   "indice": 1.15
+  },
+  {
+   "municipio": "Itagüí",
+   "vacantes": 916,
+   "pct": 5.4,
+   "pct_mas_3m": 11.4,
+   "distintiva": "Producción y operación de máquina",
+   "indice": 2.05
+  },
+  {
+   "municipio": "Envigado",
+   "vacantes": 448,
+   "pct": 2.6,
+   "pct_mas_3m": 15.4,
+   "distintiva": "Adaptabilidad",
+   "indice": 3.08
+  },
+  {
+   "municipio": "La Estrella",
+   "vacantes": 425,
+   "pct": 2.5,
+   "pct_mas_3m": 8.0,
+   "distintiva": "Montacargas y equipo pesado",
+   "indice": 4.21
+  },
+  {
+   "municipio": "Bello",
+   "vacantes": 391,
+   "pct": 2.3,
+   "pct_mas_3m": 12.5,
+   "distintiva": "Docencia y formación",
+   "indice": 3.14
+  },
+  {
+   "municipio": "Sabaneta",
+   "vacantes": 363,
+   "pct": 2.1,
+   "pct_mas_3m": 14.9,
+   "distintiva": "Confección y textil",
+   "indice": 2.49
+  },
+  {
+   "municipio": "Girardota",
+   "vacantes": 295,
+   "pct": 1.7,
+   "pct_mas_3m": 12.8,
+   "distintiva": "Soldadura",
+   "indice": 5.52
+  },
+  {
+   "municipio": "Caldas",
+   "vacantes": 170,
+   "pct": 1.0,
+   "pct_mas_3m": 6.5,
+   "distintiva": "Logística e inventarios",
+   "indice": 2.21
+  },
+  {
+   "municipio": "Copacabana",
+   "vacantes": 102,
+   "pct": 0.6,
+   "pct_mas_3m": 3.5,
+   "distintiva": "Calidad y mejora continua",
+   "indice": 3.58
+  },
+  {
+   "municipio": "Barbosa",
+   "vacantes": 50,
+   "pct": 0.3,
+   "pct_mas_3m": 23.3,
+   "distintiva": "Calidad y mejora continua",
+   "indice": 4.13
+  }
+ ],
+ "departamentos": [
+  {
+   "departamento": "Bogotá, D.C.",
+   "vacantes": 41129,
+   "pct": 41.6
+  },
+  {
+   "departamento": "Antioquia",
+   "vacantes": 21402,
+   "pct": 21.6
+  },
+  {
+   "departamento": "Cundinamarca",
+   "vacantes": 7699,
+   "pct": 7.8
+  },
+  {
+   "departamento": "Valle Del Cauca",
+   "vacantes": 6859,
+   "pct": 6.9
+  },
+  {
+   "departamento": "Santander",
+   "vacantes": 3841,
+   "pct": 3.9
+  },
+  {
+   "departamento": "Atlántico",
+   "vacantes": 3445,
+   "pct": 3.5
+  },
+  {
+   "departamento": "Bolívar",
+   "vacantes": 1715,
+   "pct": 1.7
+  },
+  {
+   "departamento": "Risaralda",
+   "vacantes": 1409,
+   "pct": 1.4
+  },
+  {
+   "departamento": "Meta",
+   "vacantes": 1298,
+   "pct": 1.3
+  },
+  {
+   "departamento": "Tolima",
+   "vacantes": 1194,
+   "pct": 1.2
+  }
+ ],
+ "puente_nivel": {
+  "anio_matricula": 2024,
+  "vacantes_total": 21400,
+  "vacantes_declaradas": 19951,
+  "vacantes_superior": 10549,
+  "pct_exige_superior": 52.9,
+  "pct_sin_superior": 47.1,
+  "sin_declarar": 1449,
+  "pct_sin_declarar": 6.8,
+  "matricula_total": 313583,
+  "niveles": [
+   {
+    "nivel": "Técnica y tecnológica",
+    "vac": 6958,
+    "vac_pct": 66.0,
+    "mat": 80135,
+    "mat_pct": 25.6
+   },
+   {
+    "nivel": "Universitaria",
+    "vac": 3110,
+    "vac_pct": 29.5,
+    "mat": 212833,
+    "mat_pct": 67.9
+   },
+   {
+    "nivel": "Posgrado",
+    "vac": 481,
+    "vac_pct": 4.6,
+    "mat": 20615,
+    "mat_pct": 6.6
+   }
+  ],
+  "media": {
+   "nivel": "Media o menos",
+   "vac": 9402,
+   "pct_declaradas": 47.1
+  }
+ }
+}

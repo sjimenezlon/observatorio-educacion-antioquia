@@ -16,7 +16,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "public" / "fuentes-antioquia.json"
-CUT = date(2026, 7, 24)
+CUT = date(2026, 9, 1)
 
 
 SOURCES = [
@@ -449,6 +449,20 @@ SOURCES = [
         "role": "Permite el retorno salarial a nivel de programa, no solo por área.",
         "refresh": "Anual con rezago; sin corte 2024",
     },
+    {
+        "id": "spe-vacantes-2026-08",
+        "institution": "Unidad del Servicio Público de Empleo",
+        "title": "Vacantes publicadas por los prestadores autorizados",
+        "source_type": "oficial",
+        "publication_date": "2026-08",
+        "data_cut": "Vacantes publicadas del 1 al 25 de agosto de 2026",
+        "territory": "Antioquia y Colombia",
+        "level": "Demanda laboral",
+        "url": "https://www.serviciodeempleo.gov.co/",
+        "role": ("Única fuente pública que dice qué piden las empresas, con qué nivel "
+                 "de formación y en qué banda salarial, en una ventana de semanas."),
+        "refresh": "Continua; la ventana se vuelve a descargar en cada corte",
+    },
 ]
 
 
@@ -531,6 +545,9 @@ INDICATORS = [
     indicator("gob-scholarships-total", "Becas históricas de la Gobernación", 14566, "14.566", "beneficiarios", "2013-2024", "Financiación educativa", "Equidad", "Antioquia · 9 subregiones", "Beneficiarios acumulados del programa departamental de becas; 81,6 % de estratos 1 y 2", "gob-becas-2013-2024", "directa", "Leer a quién llegó la beca pública y su colapso reciente (43 nuevas en 2024).", "Base congelada desde mayo de 2024; 2024 es parcial."),
     indicator("gob-scholarships-graduation", "Graduación de becarios de la Gobernación", 59.4, "59,4 %", "por ciento", "Cohortes 2013-2018", "Financiación educativa", "Permanencia", "Antioquia", "Becarios de cohortes con al menos seis años al corte de la base", "gob-becas-2013-2024", "derivada", "Aproximar la efectividad de la beca como vía de graduación.", "La foto de graduación es a mayo de 2024 sin fecha de grado; las cohortes recientes aún no alcanzan a graduarse."),
     indicator("sena-apprentices", "Aprendices SENA en fichas vigentes", 168420, "168.420", "aprendices", "feb-2024", "Sistema educativo", "Escala", "Regional Antioquia", "Fichas vigentes de titulada (90.156) y cursos especiales y eventos (78.264)", "sena-fpi-2024", "directa", "Dimensionar el otro sistema de formación con su registro propio.", "Foto al corte que acumula cohortes de varios años; no comparable con matrícula SNIES de semestre pico; la complementaria corta regular no está."),
+    indicator("spe-vacancies-antioquia", "Vacantes publicadas en Antioquia", 21400, "21.400", "vacantes", "1-25 ago. 2026", "Demanda laboral", "Demanda", "Antioquia", "Avisos publicados por prestadores autorizados del Servicio Público de Empleo en la ventana", "spe-vacantes-2026-08", "derivada", "Contrastar la oferta educativa con lo que el empleador pide en el mismo territorio.", "Una vacante no es un empleo ni una plaza: el aviso declara sus propias posiciones (mediana 1, media 6,9) y el SPE sólo cubre lo que se publica formalmente."),
+    indicator("spe-tyt-share-antioquia", "Vacantes de nivel TyT entre las que exigen educación superior", 66.0, "66,0 %", "por ciento", "1-25 ago. 2026", "Demanda laboral", "Pertinencia", "Antioquia", "Vacantes que exigen título técnico o tecnológico sobre las 10.549 que exigen algún título de educación superior", "spe-vacantes-2026-08", "derivada", "Confrontar el nivel que pide el mercado con el nivel en el que el sistema matricula (25,6 % en TyT).", "El «Técnico» que declara el empleador no distingue el técnico profesional del SNIES de la formación laboral del SENA y las ETDH; además una matrícula es un acervo y una vacante un flujo."),
+    indicator("spe-high-pay-share-antioquia", "Vacantes que superan los $3 millones", 13.5, "13,5 %", "por ciento", "1-25 ago. 2026", "Demanda laboral", "Retorno", "Antioquia", "Vacantes con salario declarado por encima de $3.000.000", "spe-vacantes-2026-08", "derivada", "Medir el techo salarial de la demanda publicada y compararlo entre habilidades.", "El SPE publica bandas y no cifras: la mediana se aplana en la banda modal ($1.500.001-$2.000.000, 63,2 % de los avisos con salario), por eso se usa el porcentaje sobre el umbral y no la mediana."),
     indicator("ole-programs-published", "Programas con retorno salarial publicado", 1044, "1.044", "programas × IES", "IBC 2023", "Educación superior", "Oferta", "IES con domicilio en Antioquia", "Cruces programa-institución con 20 o más cotizantes en la Base IBC 2023", "ole-base-ibc-2023", "derivada", "Comparar el salario de enganche programa a programa, no solo por área.", "El IBC se estima desde siete rangos salariales (el superior está censurado) y cada cotizante cuenta en su máximo nivel de formación."),
 ]
 

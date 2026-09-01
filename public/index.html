@@ -780,6 +780,8 @@ html.light .trend.up{color:#0b7a2f;background:rgba(12,122,55,.10)}
 html.light .trend.down{color:#b33636;background:rgba(200,60,60,.10)}
 html.light .trend.flat{color:var(--ink-2);background:rgba(0,0,0,.06)}
 html.light .card:hover{border-color:rgba(0,0,0,.28)}
+html.light .cards>.card:nth-child(4n+2){background:linear-gradient(145deg,rgba(255,255,255,.98),rgba(242,246,251,.94))}html.light .cards>.card:nth-child(4n+3){background:linear-gradient(145deg,rgba(255,255,255,.98),rgba(246,249,253,.94))}
+
 html.light #tip{box-shadow:0 6px 24px rgba(0,0,0,.16)}
 html.light .chip{background:rgba(43,102,194,.10)}
 html.light .seg button.on{background:rgba(43,102,194,.12)}
@@ -859,7 +861,7 @@ html.light .opp-route,html.light .opp-kpi,html.light .opp-card{background:linear
   <div class="nav-chapter-head"><b>Explorar MaterIA Gris</b><span>Cinco recorridos principales y todos los capítulos especializados</span></div>
   <div class="nav-chapter-grid">
     <a class="nav-chapter-link" href="#ejecutivo"><small>Decidir</small><b>Sala Ejecutiva</b></a><a class="nav-chapter-link" href="#trayectorias"><small>Entender</small><b>Trayectorias y retorno</b></a><a class="nav-chapter-link" href="#panorama"><small>Sistema</small><b>Panorama</b></a><a class="nav-chapter-link" href="#distrito"><small>Medellín</small><b>IES del Distrito</b></a><a class="nav-chapter-link" href="#oportunidades"><small>Acceder</small><b>Oportunidades educativas</b></a>
-    <a class="nav-chapter-link" href="#ranking"><small>País</small><b>Antioquia en el ranking nacional</b></a><a class="nav-chapter-link" href="#antesala"><small>Antes</small><b>La antesala</b></a><a class="nav-chapter-link" href="#oferta"><small>Estudiar</small><b>Oferta académica</b></a><a class="nav-chapter-link" href="#economia"><small>Pertinencia</small><b>Oferta y demanda</b></a><a class="nav-chapter-link" href="#laboral"><small>Resultados</small><b>Mercado laboral</b></a><a class="nav-chapter-link" href="#calidad"><small>Resultados</small><b>Calidad</b></a><a class="nav-chapter-link" href="#acreditacion"><small>Gestión</small><b>Acreditación</b></a>
+    <a class="nav-chapter-link" href="#ranking"><small>País</small><b>Antioquia en el ranking nacional</b></a><a class="nav-chapter-link" href="#antesala"><small>Antes</small><b>La antesala</b></a><a class="nav-chapter-link" href="#oferta"><small>Estudiar</small><b>Oferta académica</b></a><a class="nav-chapter-link" href="#economia"><small>Pertinencia</small><b>Oferta y demanda</b></a><a class="nav-chapter-link" href="#habilidades"><small>Mercado</small><b>Habilidades demandadas</b></a><a class="nav-chapter-link" href="#laboral"><small>Resultados</small><b>Mercado laboral</b></a><a class="nav-chapter-link" href="#calidad"><small>Resultados</small><b>Calidad</b></a><a class="nav-chapter-link" href="#acreditacion"><small>Gestión</small><b>Acreditación</b></a>
     <a class="nav-chapter-link" href="#innovacion"><small>Conocimiento</small><b>Innovación</b></a><a class="nav-chapter-link" href="#social"><small>Equidad</small><b>Impacto social</b></a><a class="nav-chapter-link" href="#redes"><small>Comunidad</small><b>Redes sociales</b></a><a class="nav-chapter-link" href="#finanzas"><small>Sostenibilidad</small><b>Finanzas</b></a><a class="nav-chapter-link" href="#financiacion"><small>Pagar</small><b>Financiación</b></a><a class="nav-chapter-link" href="#vacios"><small>Agenda</small><b>Lo que no se mide</b></a><a class="nav-chapter-link" href="#producto"><small>Producto</small><b>Comparativo y hoja de ruta</b></a>
   </div>
 </div></div>
@@ -1732,6 +1734,57 @@ html.light .opp-route,html.light .opp-kpi,html.light .opp-card{background:linear
   <div class="callout" id="hallazgo-economia"></div>
 </section>
 
+<!-- ================= HABILIDADES DEMANDADAS ================= -->
+<section id="habilidades">
+  <div class="sec-head"><span class="sec-num">V38</span><h2>Habilidades: lo que las empresas están pidiendo</h2></div>
+  <p class="sec-desc">Todo el resto del sitio mira la oferta educativa: quién enseña, dónde, con qué calidad y con qué resultado salarial años después. Este capítulo mira el otro lado y lo mira <b style="color:var(--ink-2)">en tiempo casi real</b>: las <b style="color:var(--ink-2)">21.400 vacantes</b> que las empresas publicaron en Antioquia durante <b style="color:var(--ink-2)">tres semanas de agosto de 2026</b> en el Servicio Público de Empleo, leídas aviso por aviso con un léxico de 69 habilidades. No reemplaza al OLE —que mide lo que <i>ganan</i> los graduados— sino que responde una pregunta que ninguna base educativa contesta: <b style="color:var(--ink-2)">qué está pidiendo hoy el empleador, con qué nivel de formación y a qué precio</b>.</p>
+  <div class="kpis" id="hb-kpis"></div>
+  <div class="cards">
+
+    <div class="card">
+      <h3>La inversión: el sistema forma universitarios, el mercado pide técnicos</h3>
+      <p class="note">Dos repartos sobre el mismo universo —sólo educación superior— para que la comparación sea legítima. A la izquierda, cómo se distribuye la matrícula de Antioquia entre los tres niveles; a la derecha, cómo se distribuyen las vacantes que exigen alguno de ellos. Las vacantes que no piden título de educación superior y las que no declaran nivel quedan fuera de las dos barras y se reportan aparte.</p>
+      <div id="ch-puente" class="chart"></div>
+      <p class="note" style="margin-top:12px;margin-bottom:0" id="hb-puente-lectura"></p>
+    </div>
+
+    <div class="card">
+      <h3>El plano: qué tan pedida y qué tan bien pagada es cada habilidad</h3>
+      <p class="note">Cada punto es una habilidad. Horizontal, en escala logarítmica: en qué porcentaje de las vacantes de Antioquia aparece. Vertical: qué porcentaje de esas vacantes supera los $3 millones. Se dibujan las 15 más pedidas unidas a las 15 mejor pagadas, entre las que aparecen en al menos el 0,4 % de los avisos (85 vacantes: por debajo el porcentaje es ruido). La línea horizontal es el promedio departamental. Pase el cursor por cada punto.</p>
+      <div id="ch-plano" class="chart"></div>
+      <p class="note" style="margin-top:12px;margin-bottom:0" id="hb-plano-lectura"></p>
+    </div>
+
+    <div class="card half">
+      <h3>Lo que Antioquia pide por encima del país</h3>
+      <p class="note">Cociente de localización: cuántas veces más frecuente es la habilidad en las vacantes de Antioquia que en las de Colombia, sobre el mismo corpus y la misma ventana. Un valor de 2,0 significa que aparece el doble de seguido aquí que en el promedio nacional.</p>
+      <div id="ch-espec" class="chart"></div>
+    </div>
+
+    <div class="card half">
+      <h3>El Aburrá no es un solo mercado</h3>
+      <p class="note">Para cada municipio del Área Metropolitana, la habilidad que pide de forma más distintiva frente al promedio del área, y cuántas veces por encima de ese promedio la pide. Medellín concentra el 81,5 % de las vacantes del área; los demás dibujan un corredor industrial nítido.</p>
+      <div class="tscroll" id="tb-amva"></div>
+    </div>
+
+    <div class="card">
+      <h3>Las 69 habilidades del léxico, una por una</h3>
+      <p class="note">Frecuencia, pago y nivel educativo exigido para cada habilidad rastreada. «Pide superior» es el porcentaje de las vacantes de esa habilidad en las que el empleador exige título técnico, tecnológico, universitario o de posgrado. «vs país» es el cociente de localización contra Colombia.</p>
+      <div class="seg" id="hb-filtro" role="group" aria-label="Filtro por familia de habilidad">
+        <button type="button" class="on" data-f="todas" aria-pressed="true">Todas</button>
+        <button type="button" data-f="oficio" aria-pressed="false">Técnicas del oficio</button>
+        <button type="button" data-f="blanda" aria-pressed="false">Socioemocionales</button>
+        <button type="button" data-f="digital" aria-pressed="false">Digitales</button>
+        <button type="button" data-f="licencia" aria-pressed="false">Licencias</button>
+        <button type="button" data-f="idioma" aria-pressed="false">Idiomas</button>
+      </div>
+      <div class="tscroll" style="max-height:560px;overflow-y:auto" id="tb-habilidades"></div>
+    </div>
+
+  </div>
+  <div class="callout" id="hallazgo-habilidades"></div>
+</section>
+
 <!-- ================= MERCADO LABORAL ================= -->
 <section id="laboral">
   <div class="sec-head"><span class="sec-num">06</span><h2>Mercado laboral: del aula a la cotización</h2></div>
@@ -2388,6 +2441,7 @@ html.light .opp-route,html.light .opp-kpi,html.light .opp-card{background:linear
       <p style="margin-top:14px">Notas: (1) La matrícula anual corresponde al semestre con mayor total de cada vigencia — sumar semestres duplicaría estudiantes. Para 2024, el corte usado es 2024-II (313.583; 2024-I registró 300.246). (2) Los indicadores OLE se restringen a IES con domicilio en Antioquia; se excluyen SENA y UNAD por ser instituciones de alcance nacional cuyos graduados no son separables por departamento en esa base; la especialización se omite de la tasa de vinculación por cobertura insuficiente. (3) La serie 2015–2017 de la base histórica del MEN se descartó por inconsistencias de reporte semestral. (4) Saber TyT usa la escala 0–200 vigente desde 2017-3; el sector de cada IES se toma del SNIES por errores de registro en la base ICFES. (5) Los grupos de investigación corresponden a los resultados finales de la Convocatoria 957 de 2024 (Resolución 1531 de dic. 2025, listado oficial de Minciencias); como el listado no trae departamento, este se asigna por código GrupLAC contra la base histórica de convocatorias (90 % de cobertura) y, para grupos nuevos, por institución avaladora domiciliada en Antioquia. (6) Los resultados Saber Pro (nivel universitario) no están disponibles como microdato abierto completo en datos.gov.co; se incorporarán desde DataIcfes en la próxima versión. (7) Los niveles MCER de inglés se agregan desde el microdato Saber TyT vía API; los rótulos históricos (A-, -A1, Pre-A1, B+) se homologan a la escala vigente. (8) La división subregional corresponde a la usada por la Gobernación de Antioquia. (9) El radar «La foto 2025–2026» recoge cifras autorreportadas en rendiciones de cuentas, informes de gestión, boletines estadísticos y tableros oficiales de las IES; sus cortes y definiciones varían entre instituciones y no son directamente comparables entre sí ni con el SNIES. El MEN publicó el agregado nacional SNIES 2025 el 15 de julio de 2026 y, a finales de julio, la matrícula 2025 institución por institución (ver nota 15 y el capítulo «Antioquia en el país»); la base consolidada descargable por departamento seguía sin publicarse al corte del 30 de julio de 2026 (última vigencia disponible: 2024), por lo que las series municipales, por programa y por nivel de este sitio siguen cerrando en 2024. Un vigía semanal revisa el portal de bases consolidadas; cuando aparezca el cierre 2025, la serie departamental se actualiza y esta nota se retira. (10) La razón subregional de oferta divide la matrícula de pregrado 2024-II ofertada en la subregión por la población proyectada de 17 a 21 años (DANE, 2024): mide capacidad instalada, no es la tasa oficial de cobertura ni asistencia de residentes, por lo que las subregiones que atraen estudiantes pueden superar el 100 %. (11) El puntaje Saber TyT por municipio promedia los cinco módulos y solo se reporta con 50 o más evaluados. (12) El benchmark interdepartamental y la proyección de población 17-21 son cálculos propios sobre las bases consolidadas nacionales del SNIES y las proyecciones municipales del DANE (CNPV 2018), reproducibles con scripts/benchmark_deptos.py y scripts/proyeccion_demografica.py. (13) La sección de acreditación se construyó sobre las fuentes primarias del régimen (Ley 30 de 1992, Decreto 1330 de 2019, Acuerdos CESU 02 de 2020 y 01 de 2025 con su transición 2026-2027) y la verificación resolución por resolución del estado de cada IES en julio de 2026; los estados «en renovación» reflejan la información pública disponible y pueden resolverse en el segundo semestre de 2026. (14) La sección de finanzas lee los documentos primarios de cada IES (acuerdos de presupuesto 2026, ejecuciones y EEFF a dic-2025) y verifica las ejecuciones contra el CUIPO de la Contraloría vía datos.gov.co (ingresos 9axr-9gnb, gastos 4f7r-epif; códigos CHIP: UdeA 120205000, UNAL 27400000, ITM 260105001, Pascual Bravo 821505000, Colmayor 824505000, TdeA 121705000, Poli JIC 120305000, IU Digital 923272870, IUE 262505266); los porcentajes de dependencia «real» son estimaciones documentadas. (15) El capítulo «Antioquia en el país» ordena las 39 IES con domicilio en Antioquia dentro del listado nacional de las 275 instituciones que reportaron matrícula en 2025, publicado por El Observatorio de la Universidad Colombiana el 29 de julio de 2026 sobre las cifras que el MEN entregó en sus informes de sector. Son <b>totales por institución a corte 2025-2, seccionales y sedes de todo el país incluidas</b>: no equivalen a la matrícula ofertada en Antioquia que usa el resto del sitio, y por eso su suma (253.823) no es comparable con los 313.583 del panorama departamental. La cifra de 2024 y las variaciones no se toman del texto de la fuente sino que se calculan aquí sobre la base consolidada del SNIES 2024, agregada por IES padre y semestre 2 (<code style="font-size:11px">scripts/ranking_nacional_2025.py</code>); ese método reproduce exactamente el ordenamiento 2024 que publicó la misma fuente, y permite calcular la variación de las 39 antioqueñas y no sólo de las que entran al top 50. Dos discrepancias detectadas al reproducirlo se resuelven a favor del SNIES: la fuente atribuye a Uniremington una caída de 1.421 estudiantes porque su ranking de 2024 registró 17.621 donde el SNIES tiene 16.721 —una transposición de dígitos—, de modo que la caída real es de 521; y el crecimiento del SENA es de 57.791 y no de 57.593. Cuando la cifra de 2025 es idéntica a la de 2024 se marca con asterisco, porque puede ser estabilidad real o arrastre del dato anterior.</p>
       <p style="margin-top:10px"><b style="color:var(--ink-2)">Nota 15 — redes sociales:</b> el capítulo compara una huella pública disponible en cortes 2025–2026. Los seguidores son audiencia potencial bruta, no alcance único; el índice pondera audiencia, eficiencia audiovisual, cadencia y equilibrio multicanal dentro de una muestra de 12 IES. TikTok y LinkedIn se presentan aparte porque no existe una extracción pública homogénea para toda la muestra. Datos, cortes y fórmula: <a href="redes-sociales.json" target="_blank" rel="noopener">redes-sociales.json ↗</a>.</p>
       <p style="margin-top:10px"><b style="color:var(--ink-2)">Nota 16 — IES del Distrito:</b> el capítulo mantiene cinco universos separados: Seguimiento al Plan Indicativo con corte 28 de febrero de 2026, convocatoria distrital 2026-2, páginas visibles de los catálogos institucionales al 15 de julio de 2026, registros comparables SNIES 2024 y estados financieros con sus cortes propios. «Programa acreditado vigente», «entrada web» y «registro SNIES» no son sinónimos. La variación de matrícula frente a 2025-2 es semestral, no anual. En finanzas, presupuesto, recaudo y resultado contable tampoco se restan entre sí. Datos y límites: <a href="ies-distritales.json" target="_blank" rel="noopener">ies-distritales.json ↗</a>.</p>
+      <p style="margin-top:10px"><b style="color:var(--ink-2)">Nota 18 — habilidades demandadas por las empresas:</b> el capítulo se construye sobre las <b>21.400 vacantes</b> que los prestadores autorizados publicaron para Antioquia en el <a href="https://www.serviciodeempleo.gov.co/" target="_blank" rel="noopener">Servicio Público de Empleo</a> entre el 1 y el 25 de agosto de 2026 (API pública <code style="font-size:11px">buscadordeempleo.gov.co/backbue</code>; la misma ventana se descarga para Colombia, 98.950 vacantes, y el Área Metropolitana se obtiene filtrando Antioquia por sus diez municipios, de modo que los tres ámbitos comparten corpus y método). <b>Una vacante no es un empleo:</b> el aviso declara sus propias plazas —mediana 1, media 6,9, con avisos de hasta 400— y el SPE cubre lo que se publica formalmente, no la demanda laboral total. La detección de habilidades es un <b>cálculo propio</b>: un léxico de 69 habilidades en cinco familias se aplica como expresión regular al título, el cargo y la descripción de cada aviso, previa eliminación de una lista de frases de relleno que producía falsos positivos («centro comercial» contaba como habilidad comercial; «capacitación de 28 días», la que recibe el candidato, como docencia). Se cuenta presencia por vacante, no menciones, y queda un 4,5 % de avisos sin ninguna habilidad detectada. <b>El salario se publica en bandas, no en cifras:</b> la mediana se aplana en la banda modal ($1.500.001–$2.000.000 en el 63,2 % de los avisos con salario) y no discrimina, así que la medida de pago que se usa es el porcentaje de vacantes que supera los $3 millones. La correlación entre frecuencia y pago se calcula sobre las 62 habilidades que superan el piso del 0,4 %, no sobre las 28 dibujadas en el plano: seleccionarlas por los extremos de los dos ejes llevaría la correlación de −0,51 a −0,87 midiendo la regla de selección y no el mercado. <b>La comparación con la matrícula tiene un límite explícito:</b> el nivel «Técnico» que declara el empleador no distingue el técnico profesional del SNIES de la formación laboral del SENA y las ETDH, y una matrícula es un acervo mientras una vacante es un flujo; por eso las dos distribuciones se normalizan sobre el mismo universo (sólo educación superior) y se leen como reparto, nunca como cantidades comparables. Reproducible con <code style="font-size:11px">scripts/habilidades_spe.py</code>; datos y cortes en <a href="habilidades.json" target="_blank" rel="noopener">habilidades.json ↗</a>.</p>
       <p style="margin-top:10px"><b style="color:var(--ink-2)">Nota 17 — Corporación Gilberto Echeverri Mejía:</b> la oferta publicada el 9 de julio de 2026 contiene 165 combinaciones de sede, institución y programa en 78 municipios. Una fila no es un cupo, una matrícula, un beneficiario ni un programa único. La apertura de grupos depende del mínimo de estudiantes y de condiciones operativas; el presupuesto 2026 es apropiación inicial, no ejecución. Datos, fuentes y validaciones: <a href="oferta-gilberto-echeverri.json" target="_blank" rel="noopener">oferta-gilberto-echeverri.json ↗</a>.</p>
       <p style="margin-top:10px"><b style="color:var(--ink-2)">Nota 18 — la antesala (básica y media):</b> la matrícula de preescolar a media viene de los microagregados del MEN por sede (ngw5-c5nw, sectores oficial y no oficial, con los ciclos de adultos CLEI asignados a su nivel equivalente; el año 2018 no existe en el dataset). La cobertura y la deserción intraanual salen de la fila departamental oficial de tasas (ji8i-4anb), verificada contra la ponderación municipal — el salto de cobertura entre 2017 y 2018 es un artefacto de la reestimación de población del Censo 2018, no una mejora real, y la deserción la calcula el MEN solo sobre el sector oficial. Los bachilleres (5c2k-ahfc) suman aprobados de grado 11 y ciclo 26 de adultos; el año 2022 venía duplicado en el origen y se depuró fila a fila. El agregado subregional usa el mismo mapeo municipio→subregión del resto del tablero (125/125 municipios casados).</p>
       <p style="margin-top:10px"><b style="color:var(--ink-2)">Nota 19 — SENA:</b> los datasets de formación profesional integral (vv8g-8u9u, u4ze-bi7k, 28vu-5tx7) son una foto al corte de febrero de 2024 de las fichas vigentes de cursos largos, especiales y eventos — la formación complementaria corta regular no existe como dato abierto; no son series anuales de flujo ni son comparables con la matrícula SNIES de semestre pico.</p>
@@ -2767,6 +2821,38 @@ function divbars(id, rows, {height=null, valueFmt=fmt, tipRows=null}={}){
     hit.addEventListener('pointerleave',()=>{p.setAttribute('opacity','1');hideTip();});
   });
   legend(box,[{color:POS,name:'Gana estudiantes'},{color:NEG,name:'Pierde estudiantes'}]);
+  return svg;
+}
+
+/* Barras pareadas: una misma categoría medida en dos universos distintos, con
+   las dos barras pegadas y 4 px de aire entre ellas. Comparte escala —el punto
+   es que un píxel valga lo mismo en las dos series— y cada barra lleva su valor
+   escrito, de modo que la identidad no depende sólo del color. */
+function parbars(id, rows, series, {valueFmt=fmt, tipRows=null, labelW=null}={}){
+  const box=document.getElementById(id); if(!box)return; box.innerHTML='';
+  const W=Math.max(box.clientWidth||620,320);
+  const barH=17, gap=4, rowH=barH*2+gap+30;
+  const lw=labelW||Math.min(190,Math.max(110,W*0.26));
+  const m={t:10,r:66,b:10,l:lw};
+  const H=rows.length*rowH+m.t+m.b, iw=W-m.l-m.r;
+  const vMax=Math.max(...rows.flatMap(r=>series.map(s=>r[s.key])))||1;
+  const svg=el('svg',{viewBox:`0 0 ${W} ${H}`,role:'img'},box);
+  el('line',{x1:m.l,y1:m.t,x2:m.l,y2:H-m.b,stroke:BASE,'stroke-width':1},svg);
+  rows.forEach((r,i)=>{
+    const yTop=m.t+i*rowH+(rowH-(barH*2+gap))/2;
+    txt(svg,m.l-10,yTop+barH+gap/2+4,r.label,{anchor:'end',fill:INK,size:12.5,weight:600});
+    series.forEach((s,j)=>{
+      const y=yTop+j*(barH+gap), w=Math.max(2,r[s.key]/vMax*iw);
+      const p=el('path',{d:hbarPath(m.l,y,w,barH,4),fill:s.color,class:'barra'},svg);
+      p.style.transitionDelay=((i*series.length+j)*70)+'ms';
+      txt(svg,m.l+w+7,y+barH/2+4,valueFmt(r[s.key]),{fill:INK2,size:11.5,weight:600,tabular:true});
+      const hit=el('rect',{x:0,y,width:W,height:barH,fill:'transparent'},svg);
+      hit.addEventListener('pointermove',ev=>{p.setAttribute('opacity','.85');
+        showTip(ev,`${r.label} · ${s.name}`,tipRows?tipRows(r,s):[{color:s.color,value:valueFmt(r[s.key]),name:s.name}]);});
+      hit.addEventListener('pointerleave',()=>{p.setAttribute('opacity','1');hideTip();});
+    });
+  });
+  legend(box,series.map(s=>({color:s.color,name:s.name})));
   return svg;
 }
 
@@ -3418,6 +3504,232 @@ hbars('ch-fila',[...OD].sort((a,b)=>b.fila-a.fila).map(o=>({label:o.a,value:o.fi
   render(OD[0]);
   document.getElementById('eco-contexto').innerHTML=["<li style=\"padding-left:16px;position:relative\"><b style=\"position:absolute;left:0;color:var(--s1)\">→</b><b style=\"color:var(--ink)\">Estudiar protege, sobre todo, de la informalidad:</b> la tasa de informalidad cae de 89,6 % (sin educación) a 32,3 % (técnica/tecnológica), 22,3 % (universitaria) y 10,1 % (posgrado) — cálculo MaterIA Gris sobre el <a href=\"https://www.dane.gov.co/files/operaciones/GEIH/anex-GEIHEISS-mar-may2026.xlsx\" target=\"_blank\" rel=\"noopener\">anexo GEIH del DANE (mar-may 2026)</a>.</li>", "<li style=\"padding-left:16px;position:relative\"><b style=\"position:absolute;left:0;color:var(--s1)\">→</b><b style=\"color:var(--ink)\">Y paga cerca del doble:</b> los colombianos con educación superior ganan una prima de ≈99 % sobre quienes solo terminaron el colegio (<a href=\"https://www.oecd.org/en/publications/education-at-a-glance-2025_1a3543e2-en/colombia_32e069b7-en.html\" target=\"_blank\" rel=\"noopener\">OCDE, Education at a Glance 2025</a>); la tasa de retorno de la educación superior en Colombia se estima entre 7,4 % y 12,8 % anual (<a href=\"https://ideas.repec.org/a/taf/edecon/v22y2014i3p328-344.html\" target=\"_blank\" rel=\"noopener\">García-Suaza et al.</a>).</li>", "<li style=\"padding-left:16px;position:relative\"><b style=\"position:absolute;left:0;color:var(--s1)\">→</b><b style=\"color:var(--ink)\">Con una paradoja incómoda:</b> el desempleo de los jóvenes (25-34) <i>con</i> educación superior es 11,2 % — mayor que el de quienes no terminaron el colegio (10,3 %) y el tercero más alto entre 39 países OCDE, donde el promedio es 4,9 % (<a href=\"https://www.elcolombiano.com/empleos/contenidos/colombia-desempleo-mayor-formacion-ocde-2025-JO29142380\" target=\"_blank\" rel=\"noopener\">OCDE 2025</a>).</li>", "<li style=\"padding-left:16px;position:relative\"><b style=\"position:absolute;left:0;color:var(--s1)\">→</b><b style=\"color:var(--ink)\">El mercado pide técnicos justo donde la matrícula cae:</b> el 70,8 % de las vacantes formales no exige título universitario (<a href=\"https://www.serviciodeempleo.gov.co/wp-content/uploads/2025/08/Boletin-Demanda-Noviembre-2023.pdf\" target=\"_blank\" rel=\"noopener\">SPE</a>), a Colombia le faltan ~85.000 perfiles TI (<a href=\"https://www.mintic.gov.co/portal/715/w3-article-425772.html\" target=\"_blank\" rel=\"noopener\">MinTIC-Fedesoft, dic. 2025</a>) — y aun así Medellín perdió más de 20.000 estudiantes técnicos y tecnológicos entre 2019 y 2024 (<a href=\"https://www.medellincomovamos.org/wp-content/uploads/2025/12/20251202_Boletin-de-Prensa_ICV-EPC.pdf\" target=\"_blank\" rel=\"noopener\">Medellín Cómo Vamos</a>).</li>", "<li style=\"padding-left:16px;position:relative\"><b style=\"position:absolute;left:0;color:var(--s1)\">→</b><b style=\"color:var(--ink)\">La economía que espera a los graduados:</b> Antioquia es la segunda del país — 15,0 % del PIB nacional, creció 3,0 % en 2025 (vs 2,6 % nacional) y su PIB por habitante supera en 14,5 % el promedio (<a href=\"https://www.dane.gov.co/files/operaciones/PIB/bol-PIBDep-2025pr.pdf\" target=\"_blank\" rel=\"noopener\">DANE, jul. 2026</a>); generó 19 de cada 100 nuevos empleos de Colombia y el sector profesional-científico-técnico ya es el 4.º empleador de Medellín (<a href=\"https://www.camaramedellin.com.co/Portals/0/Documentos/2026/Mesa_del_Empleo_2026.pdf\" target=\"_blank\" rel=\"noopener\">Mesa del Empleo 2026</a>).</li>", "<li style=\"padding-left:16px;position:relative\"><b style=\"position:absolute;left:0;color:var(--s1)\">→</b><b style=\"color:var(--ink)\">La fricción es el bolsillo:</b> un semestre en una privada top cuesta 15,3 salarios mínimos de 2026 (cálculo MaterIA Gris sobre <a href=\"https://www.eltiempo.com/vida/educacion/cuales-son-las-universidades-y-las-carreras-mas-costosas-de-colombia-en-2026-mas-de-una-superan-los-30-millones-de-pesos-el-semestre-3548431\" target=\"_blank\" rel=\"noopener\">tarifas 2026</a>); los créditos nuevos del ICETEX cayeron −83,6 % en 2025 (57.252 → 9.375, <a href=\"https://web.icetex.gov.co/el-icetex/informacion-institucional/estadisticas-oficiales-icetex\" target=\"_blank\" rel=\"noopener\">serie oficial</a>) mientras la gratuidad cubrió 930.000 estudiantes; resultado: la matrícula pública de pregrado está en máximo histórico (1.388.005) y la privada perdió 57.000 estudiantes desde 2015 (<a href=\"https://www.javeriana.edu.co/recursosdb/d/lee/inf-123-estadisticas-en-educacion-superior-en-pregrado-en-colombia-lee-ago-2024-2-2\" target=\"_blank\" rel=\"noopener\">LEE Javeriana</a>).</li>", "<li style=\"padding-left:16px;position:relative\"><b style=\"position:absolute;left:0;color:var(--s1)\">→</b><b style=\"color:var(--ink)\">Y el ajuste no siempre es fino:</b> el 48,2 % de los trabajadores con educación superior ocupa empleos que exigen menos título del que tienen (<a href=\"https://portal.amelica.org/ameli/journal/737/7374194008/html/\" target=\"_blank\" rel=\"noopener\">estudio sobre GEIH 2022</a>), y en Medellín solo el 49 % de los bachilleres pasa de inmediato a la educación superior — por debajo de Bogotá (54 %) y Barranquilla (57 %).</li>"].join('');
   document.getElementById('hallazgo-economia').innerHTML=`<b>El mercado habla, pero no manda solo:</b> donde el salario es alto la demanda crece (Ingeniería +31&nbsp;%, Matemáticas +42&nbsp;%), salvo cuando el cupo la contiene — Salud paga lo máximo y aun así sus inscripciones caen, con <b>7,8 aspirantes por silla</b>. Y donde el salario es bajo la demanda no siempre huye: Educación crece +22&nbsp;% pagando 2,1 SMMLV. Entre el precio, el cupo, la gratuidad y la vocación, el sistema asigna 343.927 aspiraciones a 120.979 sillas cada año.`;
+})();
+
+/* ---- V38 Habilidades demandadas por las empresas (SPE) ---- */
+(function(){
+  const host=document.getElementById('tb-habilidades'); if(!host)return;
+  const un=n=>n.toLocaleString('es-CO',{minimumFractionDigits:1,maximumFractionDigits:1});
+  const p1=n=>un(n)+' %';
+  /* Dos colores, no cinco: el par azul/ámbar es el único que pasa la separación
+     para daltonismo con margen (ΔE 23,6 protan). La familia de cada habilidad
+     vive en el tooltip y en la tabla, no en un sexto tono indistinguible. */
+  const DIG=S3, RESTO=S1;
+
+  fetch('habilidades.json',{cache:'no-store'})
+    .then(r=>{if(!r.ok)throw new Error('HTTP '+r.status);return r.json()})
+    .then(H=>{
+      const A=H.ambitos.antioquia, P=H.puente_nivel, M=H.meta;
+      const tyt=P.niveles.find(n=>/Técnica/.test(n.nivel));
+      const uni=P.niveles.find(n=>/Universitaria/.test(n.nivel));
+
+      /* ---- KPIs ---- */
+      const kpis=[
+        {lbl:'Vacantes publicadas en Antioquia',val:fmt(A.vacantes),
+         sub:`${un(100*A.vacantes/H.ambitos.colombia.vacantes)} % de las ${fmtK(H.ambitos.colombia.vacantes)} del país en la misma ventana`},
+        {lbl:'Exigen educación superior',val:p1(P.pct_exige_superior),
+         sub:`de las ${fmt(P.vacantes_declaradas)} que declaran nivel; ${p1(P.pct_sin_declarar)} no lo declara`},
+        {lbl:'De esas, piden técnica o tecnológica',val:p1(tyt.vac_pct),
+         sub:`el sistema matricula ${p1(tyt.mat_pct)} de sus estudiantes en ese nivel`},
+        {lbl:'Superan los $3 millones',val:p1(A.pct_mas_3m),
+         sub:`la banda modal es ${A.banda_modal.banda.replace(/\$/g,'$').replace(' - ','–')} en el ${un(A.banda_modal.pct)} % de los avisos con salario`},
+        {lbl:'Piden una habilidad digital',val:p1(A.familias['Digitales y software'].pct),
+         sub:`frente al ${p1(A.familias['Técnicas del oficio'].pct)} que pide una técnica del oficio`},
+      ];
+      const kbox=document.getElementById('hb-kpis');
+      if(kbox)kbox.innerHTML=kpis.map(k=>`<div class="kpi"><div class="lbl">${k.lbl}</div><div class="val">${k.val}</div><div class="sub">${k.sub}</div></div>`).join('');
+
+      /* ---- El puente: matrícula vs vacantes, mismo universo ---- */
+      parbars('ch-puente',P.niveles.map(n=>({label:n.nivel,mat:n.mat_pct,vac:n.vac_pct,n})),
+        [{key:'mat',color:RESTO,name:`Matrícula ${P.anio_matricula} · ${fmtK(P.matricula_total)} estudiantes`},
+         {key:'vac',color:DIG,name:`Vacantes que exigen ese nivel · ${fmt(P.vacantes_superior)} avisos`}],
+        {valueFmt:p1,
+         tipRows:(r,s)=>s.key==='mat'
+           ? [{color:RESTO,value:p1(r.mat),name:'de la matrícula de educación superior'},
+              {color:MUT,value:fmt(r.n.mat),name:'estudiantes ('+P.anio_matricula+'-II)'}]
+           : [{color:DIG,value:p1(r.vac),name:'de las vacantes que exigen educación superior'},
+              {color:MUT,value:fmt(r.n.vac),name:'vacantes'}]});
+      const lp=document.getElementById('hb-puente-lectura');
+      if(lp)lp.innerHTML=`<b style="color:var(--ink)">La lectura:</b> los dos repartos están casi invertidos. `+
+        `De cada tres vacantes que exigen educación superior, <b>dos piden técnica o tecnológica</b> (${p1(tyt.vac_pct)}) `+
+        `y una pide universitaria (${p1(uni.vac_pct)}); en la matrícula la proporción es exactamente al revés `+
+        `(${p1(tyt.mat_pct)} y ${p1(uni.mat_pct)}). Es el respaldo empírico, desde el lado del empleador, de lo que `+
+        `<a href="#panorama">el panorama</a> muestra desde el lado de la oferta: <b>la TyT tocó fondo en 2023</b> justo en el nivel `+
+        `donde el mercado publica la mayoría de sus requisitos. Con dos cautelas: el «Técnico» que declara el empleador no distingue `+
+        `el técnico profesional del SNIES de la formación laboral del SENA y las ETDH, así que esa barra incluye formación que no está `+
+        `en la matrícula de educación superior; y el otro ${p1(P.media.pct_declaradas)} de los avisos con nivel declarado no pide `+
+        `ningún título de educación superior.`;
+
+      /* ---- El plano frecuencia × pago ---- */
+      (function(){
+        const box=document.getElementById('ch-plano'); if(!box)return; box.innerHTML='';
+        const pts=H.plano.items;
+        const W=Math.max(box.clientWidth||760,320), H0=430, m={t:26,r:26,b:52,l:52};
+        const iw=W-m.l-m.r, ih=H0-m.t-m.b;
+        const x0=Math.log10(0.3), x1=Math.log10(40);
+        const yMax=Math.ceil(Math.max(...pts.map(p=>p.pct3m))/10)*10;
+        const X=v=>m.l+(Math.log10(v)-x0)/(x1-x0)*iw;
+        const Y=v=>m.t+ih-v/yMax*ih;
+        const svg=el('svg',{viewBox:`0 0 ${W} ${H0}`,role:'img',
+          'aria-label':'Frecuencia y pago de 28 habilidades demandadas en Antioquia'},box);
+        [0.3,1,3,10,30].forEach(v=>{el('line',{x1:X(v),x2:X(v),y1:m.t,y2:m.t+ih,stroke:GRID,'stroke-width':1},svg);
+          txt(svg,X(v),H0-32,un(v).replace(',0','')+' %',{anchor:'middle',tabular:true});});
+        niceTicks(yMax,4).forEach(v=>{el('line',{x1:m.l,x2:W-m.r,y1:Y(v),y2:Y(v),stroke:GRID,'stroke-width':1},svg);
+          txt(svg,m.l-8,Y(v)+4,v+' %',{anchor:'end',tabular:true});});
+        /* la única referencia del gráfico: el promedio departamental de pago */
+        const yMed=Y(H.plano.media_pct3m);
+        el('line',{x1:m.l,x2:W-m.r,y1:yMed,y2:yMed,stroke:BASE,'stroke-width':1.5,'stroke-dasharray':'5 4'},svg);
+        txt(svg,W-m.r-2,yMed-7,`promedio de Antioquia · ${p1(H.plano.media_pct3m)} supera $3 M`,
+          {anchor:'end',size:10.5,fill:MUT});
+        txt(svg,m.l+iw/2,H0-8,'% de las vacantes que piden la habilidad (escala logarítmica)',{anchor:'middle',size:11});
+        const yl=txt(svg,0,0,'% de esas vacantes que supera $3 millones',{anchor:'middle',size:11});
+        yl.setAttribute('transform',`translate(13,${m.t+ih/2}) rotate(-90)`);
+        /* el rincón vacío es el hallazgo, así que va rotulado */
+        txt(svg,X(26),Y(yMax*0.88),'nada es a la vez',{anchor:'middle',size:11,fill:MUT,weight:600});
+        txt(svg,X(26),Y(yMax*0.88)+13,'masivo y bien pagado',{anchor:'middle',size:11,fill:MUT,weight:600});
+
+        /* Etiquetas: se colocan por orden de importancia y sólo si no chocan con
+           una ya puesta. Sin acomodo iterativo —que oscila— y sin rotular los 28
+           puntos: los que se quedan sin etiqueta se leen en el hover y la tabla. */
+        /* los 28 puntos ocupan sitio desde el principio: una etiqueta encima de un
+           punto ajeno es peor que una etiqueta ausente. Cada punto se excluye de
+           su propia prueba, si no ninguna posición cabría nunca. */
+        const solapa=(b,o)=>!(b.x1<o.x0||b.x0>o.x1||b.y1<o.y0||b.y0>o.y1);
+        const puntos=pts.map(p=>({x0:X(p.pct)-7,x1:X(p.pct)+7,y0:Y(p.pct3m)-7,y1:Y(p.pct3m)+7,h:p.h}));
+        const puestas=[];
+        const cabe=(b,h)=>!puestas.some(o=>solapa(b,o))&&!puntos.some(o=>o.h!==h&&solapa(b,o));
+        const orden=[...pts].sort((a,b)=>(b.pct3m/H.plano.media_pct3m+Math.log10(b.pct))-(a.pct3m/H.plano.media_pct3m+Math.log10(a.pct)));
+        const etiqueta=new Map();
+        orden.forEach(p=>{
+          const w=p.h.length*5.9, cx=X(p.pct), cy=Y(p.pct3m);
+          for(const [dx,dy,anchor] of [[10,4,'start'],[-10,4,'end'],[0,-12,'middle'],[0,18,'middle']]){
+            const x=cx+dx, y=cy+dy;
+            const x0b=anchor==='start'?x:anchor==='end'?x-w:x-w/2;
+            const b={x0:x0b-2,x1:x0b+w+2,y0:y-10,y1:y+3};
+            if(b.x0<m.l||b.x1>W-4||b.y0<m.t-14||b.y1>m.t+ih-2) continue;
+            if(!cabe(b,p.h)) continue;
+            puestas.push(b); etiqueta.set(p.h,{x,y,anchor}); break;
+          }
+        });
+        pts.forEach((p,i)=>{
+          const col=p.fam==='digital'?DIG:RESTO;
+          const c=el('circle',{cx:X(p.pct),cy:Y(p.pct3m),r:6,fill:col,'fill-opacity':.72,
+            stroke:SURF,'stroke-width':2,class:'burbuja'},svg);
+          c.style.transitionDelay=(i*22)+'ms'; c.style.cursor='pointer';
+          const e=etiqueta.get(p.h);
+          if(e)txt(svg,e.x,e.y,p.h,{fill:INK2,size:11,weight:600,anchor:e.anchor});
+          const mostrar=ev=>{c.setAttribute('fill-opacity','1');
+            showTip(ev,p.h,[
+              {color:col,value:p1(p.pct),name:`de las vacantes · ${fmt(p.vac)} avisos`},
+              {value:p1(p.pct3m),name:'de esas, supera $3 millones'},
+              {value:p1(p.sup),name:'exige título de educación superior'},
+              {value:p.indice!=null?un(p.indice)+'×':'—',name:'frente al promedio del país'},
+              {value:p.familia,name:'familia'},
+              {value:p.cargos.slice(0,2).join(' · '),name:'cargos típicos'},
+            ]);};
+          c.addEventListener('pointerenter',mostrar);
+          c.addEventListener('pointermove',moveTip);
+          c.addEventListener('pointerleave',()=>{c.setAttribute('fill-opacity','.72');hideTip();});
+        });
+        legend(box,[{color:RESTO,name:'Del oficio, socioemocionales, idiomas y licencias'},
+                    {color:DIG,name:'Digitales y software'}]);
+        tableTwin(box,['Habilidad','Familia','% de vacantes','Vacantes','% que supera $3 M','% que exige superior'],
+          pts.map(p=>[p.h,p.familia,p.pct,p.vac,p.pct3m,p.sup]));
+      })();
+      const lg=document.getElementById('hb-plano-lectura');
+      if(lg){
+        const top=H.habilidades[0], sql=H.habilidades.find(h=>/^SQL/.test(h.h));
+        const dat=H.habilidades.find(h=>/Análisis de datos/.test(h.h));
+        const lid=H.habilidades.find(h=>/^Liderazgo/.test(h.h));
+        lg.innerHTML=`<b style="color:var(--ink)">La lectura:</b> lo que más se pide paga el mínimo y lo que mejor paga casi no se pide. `+
+          `<b>${top.h}</b> aparece en el ${p1(top.pct)} de las vacantes y sólo el ${p1(top.pct3m)} de ellas supera los $3 millones; `+
+          `<b>${dat.h}</b> aparece en el ${p1(dat.pct)} y el ${p1(dat.pct3m)} los supera. `+
+          `Pero la relación es una tendencia, no una ley: la correlación entre frecuencia (en logaritmo) y pago es <b>r = ${un(H.plano.r).replace('-','−')}</b> `+
+          `sobre las ${H.plano.r_n} habilidades con frecuencia suficiente —y no sobre las ${H.plano.n} dibujadas, donde elegir los extremos de los dos ejes `+
+          `la forzaría hasta ${un(H.plano.r_seleccionadas).replace('-','−')}—. `+
+          `De las quince más pedidas, <b>${H.plano.sobre_media} pagan por encima del promedio</b>, y ${lid.h.toLowerCase()} entra en el grupo de las mejor pagadas `+
+          `con una frecuencia del ${p1(lid.pct)}: «lo bien pagado es raro» sólo describe a las primeras de la lista.`;
+      }
+
+      /* ---- Especialización frente al país ---- */
+      const esp=H.especializacion;
+      hbars('ch-espec',esp.map(e=>({label:e.h,value:e.indice,e})),{
+        color:RESTO,valueFmt:v=>un(v)+'×',
+        tipRows:r=>[
+          {color:RESTO,value:un(r.value)+'×',name:'frente al promedio del país'},
+          {value:p1(r.e.pct),name:'de las vacantes de Antioquia'},
+          {value:p1(r.e.pct_pais),name:'de las vacantes de Colombia'},
+          {value:fmt(r.e.vac),name:'avisos'},
+        ]});
+
+      /* ---- El Aburrá municipio a municipio ---- */
+      (function(){
+        const box=document.getElementById('tb-amva'); if(!box)return;
+        const t=document.createElement('table'); t.style.minWidth='430px';
+        t.innerHTML='<thead><tr><th>Municipio</th><th class="num">Vacantes</th>'+
+          '<th>Habilidad distintiva</th><th class="num">Veces sobre el área</th></tr></thead>';
+        const tb=document.createElement('tbody');
+        H.municipios_amva.forEach(m=>{
+          const tr=document.createElement('tr');
+          tr.title=`${un(m.pct)} % de las vacantes del área · ${un(m.pct_mas_3m)} % supera $3 millones`;
+          tr.innerHTML=`<td><b style="color:var(--ink)">${m.municipio}</b></td>`+
+            `<td class="num">${fmt(m.vacantes)}</td>`+
+            `<td class="wrapcell" style="min-width:150px">${m.distintiva}</td>`+
+            `<td class="num" style="color:var(--ink);font-weight:650">${un(m.indice)}×</td>`;
+          tb.appendChild(tr);
+        });
+        t.appendChild(tb); box.appendChild(t);
+      })();
+
+      /* ---- Tabla de las 69 ---- */
+      let filtro='todas';
+      function render(){
+        const rows=H.habilidades.filter(h=>filtro==='todas'||h.fam===filtro);
+        host.innerHTML='';
+        const t=document.createElement('table'); t.style.minWidth='760px';
+        t.innerHTML='<thead><tr><th>Habilidad</th><th>Familia</th><th class="num">% de vacantes</th>'+
+          '<th class="num">Avisos</th><th class="num">Supera $3 M</th><th class="num">Pide superior</th><th class="num">vs país</th></tr></thead>';
+        const tb=document.createElement('tbody');
+        rows.forEach(h=>{
+          const alto=h.pct3m>=A.pct_mas_3m;
+          const tr=document.createElement('tr');
+          tr.innerHTML=`<td class="wrapcell" style="min-width:190px"><b style="color:var(--ink)">${h.h}</b></td>`+
+            `<td style="color:var(--muted);font-size:12px">${h.familia}</td>`+
+            `<td class="num" style="color:var(--ink);font-weight:650">${un(h.pct)} %</td>`+
+            `<td class="num">${fmt(h.vac)}</td>`+
+            `<td class="num"${alto?' style="color:var(--ink);font-weight:650"':''}>${un(h.pct3m)} %</td>`+
+            `<td class="num">${un(h.sup)} %</td>`+
+            `<td class="num">${h.indice!=null?un(h.indice)+'×':'—'}</td>`;
+          tb.appendChild(tr);
+        });
+        t.appendChild(tb); host.appendChild(t);
+        const foot=document.createElement('p'); foot.className='note'; foot.style.margin='10px 12px';
+        foot.innerHTML=`${rows.length} de ${H.habilidades.length} habilidades. Se cuenta presencia por vacante: un aviso suma una vez aunque nombre la habilidad cinco veces, y una misma vacante puede pedir varias, así que las columnas no suman 100 %. El ${un(A.sin_habilidad)} % de los avisos no menciona ninguna habilidad del léxico.`;
+        host.appendChild(foot);
+      }
+      document.querySelectorAll('#hb-filtro button').forEach(b=>b.addEventListener('click',()=>{
+        document.querySelectorAll('#hb-filtro button').forEach(x=>{const on=x===b;x.classList.toggle('on',on);x.setAttribute('aria-pressed',String(on));});
+        filtro=b.dataset.f; render();
+      }));
+      render();
+      csvDownload(host.parentElement.querySelector('h3'),
+        ['Habilidad','Familia','% de vacantes','Avisos','% que supera 3 millones','% que exige educación superior','Índice vs país','Sector principal'],
+        H.habilidades.map(h=>[h.h,h.familia,h.pct,h.vac,h.pct3m,h.sup,h.indice??'',h.sector]),
+        'materia-gris-habilidades-spe-'+M.as_of);
+
+      const mejores=H.plano.items.slice().sort((a,b)=>b.pct3m-a.pct3m).slice(0,5);
+      const cal=document.getElementById('hallazgo-habilidades');
+      if(cal)cal.innerHTML=`<b>El hallazgo:</b> en tres semanas de agosto de 2026 las empresas publicaron <b>${fmt(A.vacantes)} vacantes</b> en Antioquia, `+
+        `y entre las que exigen educación superior <b>dos de cada tres piden técnica o tecnológica</b> — el nivel en el que el sistema matricula sólo a uno de cada cuatro estudiantes. `+
+        `El precio va en la dirección contraria al volumen: la habilidad más pedida supera los $3 millones en el ${p1(H.habilidades[0].pct3m)} de sus avisos, `+
+        `mientras las cinco mejor pagadas —${mejores.slice(0,3).map(h=>h.h).join(', ')}…— lo hacen entre el ${p1(mejores[4].pct3m)} y el ${p1(mejores[0].pct3m)} `+
+        `y ninguna aparece en más del ${p1(Math.max(...mejores.map(h=>h.pct)))} de las vacantes. `+
+        `Y el mercado tiene geografía: el <b>${un(100*H.ambitos.amva.vacantes/A.vacantes)} %</b> de los avisos del departamento está en el Valle de Aburrá, `+
+        `donde cada municipio pide algo distinto —soldadura en Girardota, montacargas en La Estrella, confección en Sabaneta—. `+
+        `La ventana es corta y sólo cubre lo que se publica en el SPE, así que esto no mide toda la demanda laboral: mide <b>lo que el empleador escribe cuando busca</b>, `+
+        `que es justo lo que un currículo puede leer.`;
+    })
+    .catch(e=>{host.innerHTML='<p class="note">No fue posible cargar el rastreo de habilidades ('+e.message+').</p>';});
 })();
 
 /* ---- 06 Mercado laboral ---- */
@@ -4852,6 +5164,7 @@ const FIN_AL=[
     decidir:{q:'¿Cómo reducir opciones sin aceptar un ranking opaco?',i:'El Modo Decisión cruza territorio, nivel, modalidad y área sobre los 2.107 programas activos. Devuelve coincidencias verificables, no una puntuación inventada.',n:'La matrícula de programas multisede está consolidada; úsela como señal de escala del programa, nunca como matrícula del municipio elegido.',f:'SNIES 2024-II · cálculo reproducible',to:'oferta',cta:'Abrir el universo completo'},
     oferta:{q:'¿La diversidad de programas responde al territorio?',i:'La oferta se concentra en Medellín y en áreas tradicionales. Filtrar por municipio, nivel y modalidad revela dónde existen opciones y dónde solo hay presencia nominal.',n:'Cruce programa, institución y municipio antes de interpretar un conteo agregado.',f:'SNIES 2024-II · fuente oficial',to:'economia',cta:'Contrastar oferta y demanda'},
     economia:{q:'¿Lo que se estudia coincide con la economía regional?',i:'La comparación expone desajustes entre vocaciones productivas, demanda estudiantil y concentración de la oferta académica.',n:'No confunda peso económico de una actividad con demanda automática de un programa: la relación requiere lectura territorial.',f:'SNIES + DANE + fuentes sectoriales',to:'laboral',cta:'Seguir al mercado laboral'},
+    habilidades:{q:'¿Qué está pidiendo hoy el empleador?',i:'Entre las vacantes que exigen educación superior, dos de cada tres piden técnica o tecnológica: casi el reparto inverso al de la matrícula. Y el precio va contra el volumen — lo más pedido paga el mínimo.',n:'Es una ventana de tres semanas y sólo cubre lo publicado en el Servicio Público de Empleo: mide lo que el empleador escribe cuando busca, no toda la demanda laboral.',f:'Servicio Público de Empleo · vacantes de agosto de 2026 · léxico y clasificación propios',to:'economia',cta:'Ver la economía del sistema'},
     laboral:{q:'¿Qué sucede después del grado?',i:'La vinculación formal y el ingreso cambian por nivel y área. La educación superior mejora oportunidades, pero no distribuye el retorno de manera homogénea.',n:'OLE observa cotización formal; no captura todo el empleo independiente ni la informalidad.',f:'OLE 2023 + GEIH · fuentes oficiales',to:'calidad',cta:'Revisar calidad'},
     calidad:{q:'¿Cómo se observa la calidad sin reducirla a un sello?',i:'Acreditación y resultados Saber se complementan: una mide procesos institucionales y la otra ofrece señales de aprendizaje comparables.',n:'Ningún indicador aislado resume la experiencia educativa completa.',f:'ICFES + CNA/MEN · fuentes oficiales',to:'acreditacion',cta:'Abrir la guía de acreditación'},
     acreditacion:{q:'¿Qué hace falta para demostrar alta calidad?',i:'La acreditación exige evidencia sostenida: resultados, autorregulación, comunidad académica, recursos, investigación e impacto, no solo una visita de pares.',n:'La guía protegida organiza el camino; la decisión formal pertenece al CNA y al Ministerio de Educación.',f:'CNA/MEN · resoluciones y lineamientos',to:'innovacion',cta:'Ver capacidad investigativa'},

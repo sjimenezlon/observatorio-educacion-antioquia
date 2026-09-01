@@ -2,18 +2,18 @@
   "meta": {
     "title": "Fuentes vivas de educación en Antioquia",
     "version": "V35",
-    "research_cut": "2026-07-24",
+    "research_cut": "2026-09-01",
     "method": "Curaduría de fuentes primarias y observatorios reconocidos; cada cifra conserva periodo, territorio, universo, tipo de evidencia, uso y cautela.",
     "latest_comparable_higher_ed_cut": "2024-II",
     "next_expected_release": "SNIES 2025 · agregado nacional publicado; base departamental consolidada pendiente"
   },
   "summary": {
-    "sources": 33,
-    "official_sources": 29,
+    "sources": 34,
+    "official_sources": 30,
     "observatory_sources": 4,
-    "indicators": 55,
+    "indicators": 58,
     "evidence": {
-      "derivada": 12,
+      "derivada": 15,
       "directa": 35,
       "reportada": 8
     }
@@ -447,6 +447,19 @@
       "url": "https://ole.mineducacion.gov.co/portal/",
       "role": "Permite el retorno salarial a nivel de programa, no solo por área.",
       "refresh": "Anual con rezago; sin corte 2024"
+    },
+    {
+      "id": "spe-vacantes-2026-08",
+      "institution": "Unidad del Servicio Público de Empleo",
+      "title": "Vacantes publicadas por los prestadores autorizados",
+      "source_type": "oficial",
+      "publication_date": "2026-08",
+      "data_cut": "Vacantes publicadas del 1 al 25 de agosto de 2026",
+      "territory": "Antioquia y Colombia",
+      "level": "Demanda laboral",
+      "url": "https://www.serviciodeempleo.gov.co/",
+      "role": "Única fuente pública que dice qué piden las empresas, con qué nivel de formación y en qué banda salarial, en una ventana de semanas.",
+      "refresh": "Continua; la ventana se vuelve a descargar en cada corte"
     }
   ],
   "indicators": [
@@ -1313,6 +1326,54 @@
       "evidence": "directa",
       "decision_use": "Dimensionar el otro sistema de formación con su registro propio.",
       "caveat": "Foto al corte que acumula cohortes de varios años; no comparable con matrícula SNIES de semestre pico; la complementaria corta regular no está."
+    },
+    {
+      "id": "spe-vacancies-antioquia",
+      "title": "Vacantes publicadas en Antioquia",
+      "value": 21400,
+      "display": "21.400",
+      "unit": "vacantes",
+      "period": "1-25 ago. 2026",
+      "level": "Demanda laboral",
+      "topic": "Demanda",
+      "territory": "Antioquia",
+      "universe": "Avisos publicados por prestadores autorizados del Servicio Público de Empleo en la ventana",
+      "source_id": "spe-vacantes-2026-08",
+      "evidence": "derivada",
+      "decision_use": "Contrastar la oferta educativa con lo que el empleador pide en el mismo territorio.",
+      "caveat": "Una vacante no es un empleo ni una plaza: el aviso declara sus propias posiciones (mediana 1, media 6,9) y el SPE sólo cubre lo que se publica formalmente."
+    },
+    {
+      "id": "spe-tyt-share-antioquia",
+      "title": "Vacantes de nivel TyT entre las que exigen educación superior",
+      "value": 66.0,
+      "display": "66,0 %",
+      "unit": "por ciento",
+      "period": "1-25 ago. 2026",
+      "level": "Demanda laboral",
+      "topic": "Pertinencia",
+      "territory": "Antioquia",
+      "universe": "Vacantes que exigen título técnico o tecnológico sobre las 10.549 que exigen algún título de educación superior",
+      "source_id": "spe-vacantes-2026-08",
+      "evidence": "derivada",
+      "decision_use": "Confrontar el nivel que pide el mercado con el nivel en el que el sistema matricula (25,6 % en TyT).",
+      "caveat": "El «Técnico» que declara el empleador no distingue el técnico profesional del SNIES de la formación laboral del SENA y las ETDH; además una matrícula es un acervo y una vacante un flujo."
+    },
+    {
+      "id": "spe-high-pay-share-antioquia",
+      "title": "Vacantes que superan los $3 millones",
+      "value": 13.5,
+      "display": "13,5 %",
+      "unit": "por ciento",
+      "period": "1-25 ago. 2026",
+      "level": "Demanda laboral",
+      "topic": "Retorno",
+      "territory": "Antioquia",
+      "universe": "Vacantes con salario declarado por encima de $3.000.000",
+      "source_id": "spe-vacantes-2026-08",
+      "evidence": "derivada",
+      "decision_use": "Medir el techo salarial de la demanda publicada y compararlo entre habilidades.",
+      "caveat": "El SPE publica bandas y no cifras: la mediana se aplana en la banda modal ($1.500.001-$2.000.000, 63,2 % de los avisos con salario), por eso se usa el porcentaje sobre el umbral y no la mediana."
     },
     {
       "id": "ole-programs-published",

@@ -93,7 +93,7 @@
     {
       "check": "registro_referencias",
       "status": "ok",
-      "detail": "los 55 indicadores referencian fuentes existentes"
+      "detail": "los 58 indicadores referencian fuentes existentes"
     },
     {
       "check": "registro_conteos",
