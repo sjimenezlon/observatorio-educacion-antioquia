@@ -859,7 +859,7 @@ html.light .opp-route,html.light .opp-kpi,html.light .opp-card{background:linear
   <div class="nav-chapter-head"><b>Explorar MaterIA Gris</b><span>Cinco recorridos principales y todos los capítulos especializados</span></div>
   <div class="nav-chapter-grid">
     <a class="nav-chapter-link" href="#ejecutivo"><small>Decidir</small><b>Sala Ejecutiva</b></a><a class="nav-chapter-link" href="#trayectorias"><small>Entender</small><b>Trayectorias y retorno</b></a><a class="nav-chapter-link" href="#panorama"><small>Sistema</small><b>Panorama</b></a><a class="nav-chapter-link" href="#distrito"><small>Medellín</small><b>IES del Distrito</b></a><a class="nav-chapter-link" href="#oportunidades"><small>Acceder</small><b>Oportunidades educativas</b></a>
-    <a class="nav-chapter-link" href="#antesala"><small>Antes</small><b>La antesala</b></a><a class="nav-chapter-link" href="#oferta"><small>Estudiar</small><b>Oferta académica</b></a><a class="nav-chapter-link" href="#economia"><small>Pertinencia</small><b>Oferta y demanda</b></a><a class="nav-chapter-link" href="#laboral"><small>Resultados</small><b>Mercado laboral</b></a><a class="nav-chapter-link" href="#calidad"><small>Resultados</small><b>Calidad</b></a><a class="nav-chapter-link" href="#acreditacion"><small>Gestión</small><b>Acreditación</b></a>
+    <a class="nav-chapter-link" href="#ranking"><small>País</small><b>Antioquia en el ranking nacional</b></a><a class="nav-chapter-link" href="#antesala"><small>Antes</small><b>La antesala</b></a><a class="nav-chapter-link" href="#oferta"><small>Estudiar</small><b>Oferta académica</b></a><a class="nav-chapter-link" href="#economia"><small>Pertinencia</small><b>Oferta y demanda</b></a><a class="nav-chapter-link" href="#laboral"><small>Resultados</small><b>Mercado laboral</b></a><a class="nav-chapter-link" href="#calidad"><small>Resultados</small><b>Calidad</b></a><a class="nav-chapter-link" href="#acreditacion"><small>Gestión</small><b>Acreditación</b></a>
     <a class="nav-chapter-link" href="#innovacion"><small>Conocimiento</small><b>Innovación</b></a><a class="nav-chapter-link" href="#social"><small>Equidad</small><b>Impacto social</b></a><a class="nav-chapter-link" href="#redes"><small>Comunidad</small><b>Redes sociales</b></a><a class="nav-chapter-link" href="#finanzas"><small>Sostenibilidad</small><b>Finanzas</b></a><a class="nav-chapter-link" href="#financiacion"><small>Pagar</small><b>Financiación</b></a><a class="nav-chapter-link" href="#vacios"><small>Agenda</small><b>Lo que no se mide</b></a><a class="nav-chapter-link" href="#producto"><small>Producto</small><b>Comparativo y hoja de ruta</b></a>
   </div>
 </div></div>
@@ -1328,6 +1328,33 @@ html.light .opp-route,html.light .opp-kpi,html.light .opp-card{background:linear
     </div>
   </div>
   <div class="callout" id="hallazgo-ies"></div>
+</section>
+
+<!-- ================= RANKING NACIONAL ================= -->
+<section id="ranking">
+  <div class="sec-head"><span class="sec-num">V37</span><h2>Antioquia en el país: el tamaño de cada IES en 2025</h2></div>
+  <p class="sec-desc">El MEN ya entregó la matrícula 2025 institución por institución, aunque todavía no publique la base descargable. Aquí están las <b style="color:var(--ink-2)">39 instituciones con domicilio en Antioquia</b> dentro del ordenamiento nacional de las 275 IES que reportaron estudiantes, con su variación frente a 2024. <b style="color:var(--ink-2)">Ojo con la unidad:</b> son totales de cada institución en todo el país, seccionales incluidas — no es la matrícula ofertada <i>en</i> Antioquia que usa el resto del sitio.</p>
+  <div class="kpis" id="rk-kpis"></div>
+  <div class="cards">
+    <div class="card">
+      <h3>Quién ganó y quién perdió estudiantes, 2024 → 2025</h3>
+      <p class="note">Variación absoluta de la matrícula total de cada IES antioqueña entre el segundo semestre de 2024 y el de 2025. Se grafican las instituciones con más de 1.000 estudiantes; la tabla siguiente trae las 39. El dato 2024 es cálculo propio sobre la base consolidada del SNIES (agregada por IES padre), método que reproduce exactamente el ordenamiento 2024 publicado por la misma fuente.</p>
+      <div id="ch-ranking" class="chart"></div>
+      <p class="note" style="margin-top:12px;margin-bottom:0" id="rk-lectura"></p>
+    </div>
+    <div class="card">
+      <h3>Las 39 IES de Antioquia en el ordenamiento nacional</h3>
+      <p class="note">Posición entre las 275 instituciones del país con matrícula reportada en 2025. «Δ posición» positivo significa que la institución subió puestos.</p>
+      <div class="seg" id="rk-filtro" role="group" aria-label="Filtro del ranking nacional">
+        <button type="button" class="on" data-f="todas" aria-pressed="true">Todas</button>
+        <button type="button" data-f="Oficial" aria-pressed="false">Oficiales</button>
+        <button type="button" data-f="Privada" aria-pressed="false">Privadas</button>
+        <button type="button" data-f="top100" aria-pressed="false">En el top 100</button>
+      </div>
+      <div class="tscroll" style="max-height:620px;overflow-y:auto" id="tb-ranking"></div>
+    </div>
+  </div>
+  <div class="callout" id="hallazgo-ranking"></div>
 </section>
 
 <!-- ================= IES DEL DISTRITO ================= -->
@@ -2358,7 +2385,7 @@ html.light .opp-route,html.light .opp-kpi,html.light .opp-card{background:linear
     <div>
       <h4>Metodología y fuentes</h4>
       <ul id="fuentes"></ul>
-      <p style="margin-top:14px">Notas: (1) La matrícula anual corresponde al semestre con mayor total de cada vigencia — sumar semestres duplicaría estudiantes. Para 2024, el corte usado es 2024-II (313.583; 2024-I registró 300.246). (2) Los indicadores OLE se restringen a IES con domicilio en Antioquia; se excluyen SENA y UNAD por ser instituciones de alcance nacional cuyos graduados no son separables por departamento en esa base; la especialización se omite de la tasa de vinculación por cobertura insuficiente. (3) La serie 2015–2017 de la base histórica del MEN se descartó por inconsistencias de reporte semestral. (4) Saber TyT usa la escala 0–200 vigente desde 2017-3; el sector de cada IES se toma del SNIES por errores de registro en la base ICFES. (5) Los grupos de investigación corresponden a los resultados finales de la Convocatoria 957 de 2024 (Resolución 1531 de dic. 2025, listado oficial de Minciencias); como el listado no trae departamento, este se asigna por código GrupLAC contra la base histórica de convocatorias (90 % de cobertura) y, para grupos nuevos, por institución avaladora domiciliada en Antioquia. (6) Los resultados Saber Pro (nivel universitario) no están disponibles como microdato abierto completo en datos.gov.co; se incorporarán desde DataIcfes en la próxima versión. (7) Los niveles MCER de inglés se agregan desde el microdato Saber TyT vía API; los rótulos históricos (A-, -A1, Pre-A1, B+) se homologan a la escala vigente. (8) La división subregional corresponde a la usada por la Gobernación de Antioquia. (9) El radar «La foto 2025–2026» recoge cifras autorreportadas en rendiciones de cuentas, informes de gestión, boletines estadísticos y tableros oficiales de las IES; sus cortes y definiciones varían entre instituciones y no son directamente comparables entre sí ni con el SNIES. El MEN publicó el agregado nacional SNIES 2025 el 15 de julio de 2026, pero la base consolidada descargable por departamento seguía sin publicarse al corte del 24 de julio de 2026 (última vigencia disponible: 2024). Un vigía semanal revisa el portal de bases consolidadas; cuando aparezca el cierre 2025, la serie departamental se actualiza y esta nota se retira. (10) La razón subregional de oferta divide la matrícula de pregrado 2024-II ofertada en la subregión por la población proyectada de 17 a 21 años (DANE, 2024): mide capacidad instalada, no es la tasa oficial de cobertura ni asistencia de residentes, por lo que las subregiones que atraen estudiantes pueden superar el 100 %. (11) El puntaje Saber TyT por municipio promedia los cinco módulos y solo se reporta con 50 o más evaluados. (12) El benchmark interdepartamental y la proyección de población 17-21 son cálculos propios sobre las bases consolidadas nacionales del SNIES y las proyecciones municipales del DANE (CNPV 2018), reproducibles con scripts/benchmark_deptos.py y scripts/proyeccion_demografica.py. (13) La sección de acreditación se construyó sobre las fuentes primarias del régimen (Ley 30 de 1992, Decreto 1330 de 2019, Acuerdos CESU 02 de 2020 y 01 de 2025 con su transición 2026-2027) y la verificación resolución por resolución del estado de cada IES en julio de 2026; los estados «en renovación» reflejan la información pública disponible y pueden resolverse en el segundo semestre de 2026. (14) La sección de finanzas lee los documentos primarios de cada IES (acuerdos de presupuesto 2026, ejecuciones y EEFF a dic-2025) y verifica las ejecuciones contra el CUIPO de la Contraloría vía datos.gov.co (ingresos 9axr-9gnb, gastos 4f7r-epif; códigos CHIP: UdeA 120205000, UNAL 27400000, ITM 260105001, Pascual Bravo 821505000, Colmayor 824505000, TdeA 121705000, Poli JIC 120305000, IU Digital 923272870, IUE 262505266); los porcentajes de dependencia «real» son estimaciones documentadas.</p>
+      <p style="margin-top:14px">Notas: (1) La matrícula anual corresponde al semestre con mayor total de cada vigencia — sumar semestres duplicaría estudiantes. Para 2024, el corte usado es 2024-II (313.583; 2024-I registró 300.246). (2) Los indicadores OLE se restringen a IES con domicilio en Antioquia; se excluyen SENA y UNAD por ser instituciones de alcance nacional cuyos graduados no son separables por departamento en esa base; la especialización se omite de la tasa de vinculación por cobertura insuficiente. (3) La serie 2015–2017 de la base histórica del MEN se descartó por inconsistencias de reporte semestral. (4) Saber TyT usa la escala 0–200 vigente desde 2017-3; el sector de cada IES se toma del SNIES por errores de registro en la base ICFES. (5) Los grupos de investigación corresponden a los resultados finales de la Convocatoria 957 de 2024 (Resolución 1531 de dic. 2025, listado oficial de Minciencias); como el listado no trae departamento, este se asigna por código GrupLAC contra la base histórica de convocatorias (90 % de cobertura) y, para grupos nuevos, por institución avaladora domiciliada en Antioquia. (6) Los resultados Saber Pro (nivel universitario) no están disponibles como microdato abierto completo en datos.gov.co; se incorporarán desde DataIcfes en la próxima versión. (7) Los niveles MCER de inglés se agregan desde el microdato Saber TyT vía API; los rótulos históricos (A-, -A1, Pre-A1, B+) se homologan a la escala vigente. (8) La división subregional corresponde a la usada por la Gobernación de Antioquia. (9) El radar «La foto 2025–2026» recoge cifras autorreportadas en rendiciones de cuentas, informes de gestión, boletines estadísticos y tableros oficiales de las IES; sus cortes y definiciones varían entre instituciones y no son directamente comparables entre sí ni con el SNIES. El MEN publicó el agregado nacional SNIES 2025 el 15 de julio de 2026 y, a finales de julio, la matrícula 2025 institución por institución (ver nota 15 y el capítulo «Antioquia en el país»); la base consolidada descargable por departamento seguía sin publicarse al corte del 30 de julio de 2026 (última vigencia disponible: 2024), por lo que las series municipales, por programa y por nivel de este sitio siguen cerrando en 2024. Un vigía semanal revisa el portal de bases consolidadas; cuando aparezca el cierre 2025, la serie departamental se actualiza y esta nota se retira. (10) La razón subregional de oferta divide la matrícula de pregrado 2024-II ofertada en la subregión por la población proyectada de 17 a 21 años (DANE, 2024): mide capacidad instalada, no es la tasa oficial de cobertura ni asistencia de residentes, por lo que las subregiones que atraen estudiantes pueden superar el 100 %. (11) El puntaje Saber TyT por municipio promedia los cinco módulos y solo se reporta con 50 o más evaluados. (12) El benchmark interdepartamental y la proyección de población 17-21 son cálculos propios sobre las bases consolidadas nacionales del SNIES y las proyecciones municipales del DANE (CNPV 2018), reproducibles con scripts/benchmark_deptos.py y scripts/proyeccion_demografica.py. (13) La sección de acreditación se construyó sobre las fuentes primarias del régimen (Ley 30 de 1992, Decreto 1330 de 2019, Acuerdos CESU 02 de 2020 y 01 de 2025 con su transición 2026-2027) y la verificación resolución por resolución del estado de cada IES en julio de 2026; los estados «en renovación» reflejan la información pública disponible y pueden resolverse en el segundo semestre de 2026. (14) La sección de finanzas lee los documentos primarios de cada IES (acuerdos de presupuesto 2026, ejecuciones y EEFF a dic-2025) y verifica las ejecuciones contra el CUIPO de la Contraloría vía datos.gov.co (ingresos 9axr-9gnb, gastos 4f7r-epif; códigos CHIP: UdeA 120205000, UNAL 27400000, ITM 260105001, Pascual Bravo 821505000, Colmayor 824505000, TdeA 121705000, Poli JIC 120305000, IU Digital 923272870, IUE 262505266); los porcentajes de dependencia «real» son estimaciones documentadas. (15) El capítulo «Antioquia en el país» ordena las 39 IES con domicilio en Antioquia dentro del listado nacional de las 275 instituciones que reportaron matrícula en 2025, publicado por El Observatorio de la Universidad Colombiana el 29 de julio de 2026 sobre las cifras que el MEN entregó en sus informes de sector. Son <b>totales por institución a corte 2025-2, seccionales y sedes de todo el país incluidas</b>: no equivalen a la matrícula ofertada en Antioquia que usa el resto del sitio, y por eso su suma (253.823) no es comparable con los 313.583 del panorama departamental. La cifra de 2024 y las variaciones no se toman del texto de la fuente sino que se calculan aquí sobre la base consolidada del SNIES 2024, agregada por IES padre y semestre 2 (<code style="font-size:11px">scripts/ranking_nacional_2025.py</code>); ese método reproduce exactamente el ordenamiento 2024 que publicó la misma fuente, y permite calcular la variación de las 39 antioqueñas y no sólo de las que entran al top 50. Dos discrepancias detectadas al reproducirlo se resuelven a favor del SNIES: la fuente atribuye a Uniremington una caída de 1.421 estudiantes porque su ranking de 2024 registró 17.621 donde el SNIES tiene 16.721 —una transposición de dígitos—, de modo que la caída real es de 521; y el crecimiento del SENA es de 57.791 y no de 57.593. Cuando la cifra de 2025 es idéntica a la de 2024 se marca con asterisco, porque puede ser estabilidad real o arrastre del dato anterior.</p>
       <p style="margin-top:10px"><b style="color:var(--ink-2)">Nota 15 — redes sociales:</b> el capítulo compara una huella pública disponible en cortes 2025–2026. Los seguidores son audiencia potencial bruta, no alcance único; el índice pondera audiencia, eficiencia audiovisual, cadencia y equilibrio multicanal dentro de una muestra de 12 IES. TikTok y LinkedIn se presentan aparte porque no existe una extracción pública homogénea para toda la muestra. Datos, cortes y fórmula: <a href="redes-sociales.json" target="_blank" rel="noopener">redes-sociales.json ↗</a>.</p>
       <p style="margin-top:10px"><b style="color:var(--ink-2)">Nota 16 — IES del Distrito:</b> el capítulo mantiene cinco universos separados: Seguimiento al Plan Indicativo con corte 28 de febrero de 2026, convocatoria distrital 2026-2, páginas visibles de los catálogos institucionales al 15 de julio de 2026, registros comparables SNIES 2024 y estados financieros con sus cortes propios. «Programa acreditado vigente», «entrada web» y «registro SNIES» no son sinónimos. La variación de matrícula frente a 2025-2 es semestral, no anual. En finanzas, presupuesto, recaudo y resultado contable tampoco se restan entre sí. Datos y límites: <a href="ies-distritales.json" target="_blank" rel="noopener">ies-distritales.json ↗</a>.</p>
       <p style="margin-top:10px"><b style="color:var(--ink-2)">Nota 17 — Corporación Gilberto Echeverri Mejía:</b> la oferta publicada el 9 de julio de 2026 contiene 165 combinaciones de sede, institución y programa en 78 municipios. Una fila no es un cupo, una matrícula, un beneficiario ni un programa único. La apertura de grupos depende del mínimo de estudiantes y de condiciones operativas; el presupuesto 2026 es apropiación inicial, no ejecución. Datos, fuentes y validaciones: <a href="oferta-gilberto-echeverri.json" target="_blank" rel="noopener">oferta-gilberto-echeverri.json ↗</a>.</p>
@@ -2695,6 +2722,54 @@ function hbars(id, rows, {color=S1, colors=null, valueFmt=fmt, tipRows=null, lab
   return svg;
 }
 
+/* Barras divergentes horizontales: la polaridad (ganó / perdió estudiantes) es
+   el dato, así que el eje cero va al centro y cada lado lleva su propio color.
+   Par teal/ámbar en vez del verde/rojo de las flechas: separación CVD ΔE 11
+   (protan) contra 20 en visión normal. Cada barra lleva además su valor con
+   signo, de modo que la identidad nunca depende sólo del color. */
+function divbars(id, rows, {height=null, valueFmt=fmt, tipRows=null}={}){
+  const box=document.getElementById(id); if(!box)return; box.innerHTML='';
+  const POS=S2, NEG=S3;
+  const W=Math.max(box.clientWidth||620, 320);
+  const rowH=27, barH=15;
+  const lw=Math.min(230,Math.max(120,W*0.29));
+  const padNeg=62;                            // sitio para las etiquetas del lado negativo
+  const m={t:20,r:58,b:6,l:lw};
+  const H=height||rows.length*rowH+m.t+m.b;
+  const x0=m.l+padNeg, x1=W-m.r, iw=x1-x0;
+  const vMax=Math.max(0,...rows.map(r=>r.value));
+  const vMin=Math.min(0,...rows.map(r=>r.value));
+  const span=(vMax-vMin)||1;
+  // el cero va en su posición proporcional, de modo que un píxel vale lo mismo
+  // a ambos lados: sin esto las caídas (mucho menores) se leerían infladas
+  const zero=x0+iw*(Math.abs(vMin)/span);
+  const escala=v=>Math.abs(v)/span*iw;
+  const svg=el('svg',{viewBox:`0 0 ${W} ${H}`,role:'img'},box);
+  el('line',{x1:zero,y1:m.t-6,x2:zero,y2:H-m.b,stroke:BASE,'stroke-width':1},svg);
+  txt(svg,zero,m.t-10,'0',{anchor:'middle',size:10,fill:MUT});
+  rows.forEach((r,i)=>{
+    const y=m.t+i*rowH+(rowH-barH)/2;
+    const w=Math.max(2,escala(r.value));
+    const positivo=r.value>=0;
+    const fill=positivo?POS:NEG;
+    const maxCh=Math.floor((m.l-14)/6);
+    const lab=r.label.length>maxCh?r.label.slice(0,Math.max(3,maxCh-1))+'…':r.label;
+    txt(svg,m.l-10,y+barH/2+4,lab,{anchor:'end',fill:INK2,size:11.5});
+    // el path redondea el extremo del dato; para las negativas se refleja sobre el cero
+    const p=el('path',{d:hbarPath(positivo?zero:zero-w,y,w,barH,4),fill,class:'barra'},svg);
+    if(!positivo)p.setAttribute('transform',`rotate(180 ${zero-w/2} ${y+barH/2})`);
+    p.style.transitionDelay=(i*40)+'ms';
+    txt(svg,positivo?zero+w+7:zero-w-7,y+barH/2+4,valueFmt(r.value),
+        {anchor:positivo?'start':'end',fill:INK2,size:11.5,weight:600,tabular:true});
+    const hit=el('rect',{x:0,y:m.t+i*rowH,width:W,height:rowH,fill:'transparent'},svg);
+    hit.addEventListener('pointermove',ev=>{p.setAttribute('opacity','.85');
+      showTip(ev,r.label,tipRows?tipRows(r):[{color:fill,value:valueFmt(r.value),name:''}]);});
+    hit.addEventListener('pointerleave',()=>{p.setAttribute('opacity','1');hideTip();});
+  });
+  legend(box,[{color:POS,name:'Gana estudiantes'},{color:NEG,name:'Pierde estudiantes'}]);
+  return svg;
+}
+
 /* ============================================================
    RENDER
 ============================================================ */
@@ -2890,6 +2965,88 @@ const RADAR26=[
   render();
   csvDownload(host.parentElement.querySelector('h3'),['Institución','Sector','Última cifra','Corte','Qué incluye','Tendencia','Fuente'],
     RADAR26.map(r=>[r.ies,r.sector,r.cifra,r.corte,r.alcance,r.ttxt+' ('+({up:'sube',flat:'estable',down:'baja'})[r.t]+')',r.url]),'obs-antioquia-radar-2025-2026');
+})();
+
+/* ---- Antioquia en el ranking nacional 2025 (V37) ---- */
+(function(){
+  const host=document.getElementById('tb-ranking'); if(!host)return;
+  const sgn=n=>(n>0?'+':n<0?'−':'')+fmt(Math.abs(n));
+  const dec=n=>n.toLocaleString('es-CO',{minimumFractionDigits:1,maximumFractionDigits:1});
+  const sgnPct=n=>(n>0?'+':n<0?'−':'')+dec(Math.abs(n))+' %';
+  fetch('ranking_nacional.json',{cache:'no-store'})
+    .then(r=>{if(!r.ok)throw new Error('HTTP '+r.status);return r.json()})
+    .then(R=>{
+      const res=R.resumen;
+
+      /* KPIs */
+      const kpis=[
+        {lbl:'IES con domicilio en Antioquia',val:fmt(res.ies_antioquia),sub:`de las ${fmt(R.meta.nacional.ies_con_matricula)} del país con matrícula reportada`},
+        {lbl:'En el top 50 nacional',val:fmt(res.en_top50),sub:`${fmt(res.en_top100)} están entre las 100 más grandes`},
+        {lbl:'Estudiantes que suman',val:fmt(res.matricula25),sub:`${dec(res.peso_nacional)} % de la matrícula del país`},
+        {lbl:'Variación 2024 → 2025',val:sgnPct(res.pct),sub:`${sgn(res.delta)} estudiantes en un año`},
+        {lbl:'Crecen / caen',val:`${res.crecen} / ${res.caen}`,sub:'instituciones que ganan y que pierden matrícula'},
+      ];
+      const kbox=document.getElementById('rk-kpis');
+      if(kbox)kbox.innerHTML=kpis.map(k=>`<div class="kpi"><div class="lbl">${k.lbl}</div><div class="val">${k.val}</div><div class="sub">${k.sub}</div></div>`).join('');
+
+      /* Gráfico divergente: las de más de 1.000 estudiantes, ordenadas por variación */
+      const graf=R.ies.filter(r=>r.mat25>=1000).slice().sort((a,b)=>b.delta-a.delta);
+      divbars('ch-ranking',graf.map(r=>({label:r.ies.replace(/^(Universidad|Institución Universitaria|Corporación Universitaria|Fundación Universitaria|Politécnico|Instituto|Tecnológico) /,m=>({'Universidad ':'U. ','Institución Universitaria ':'IU ','Corporación Universitaria ':'C.U. ','Fundación Universitaria ':'F.U. '})[m]||m),value:r.delta,r})),
+        {valueFmt:sgn,
+         tipRows:x=>[{color:x.value>=0?S2:S3,value:sgn(x.value)+` (${sgnPct(x.r.pct)})`,name:'2024 → 2025'},
+                     {color:MUT,value:fmt(x.r.mat25),name:'matrícula 2025-2'},
+                     {color:MUT,value:'#'+x.r.pos25+' del país',name:'posición'}]});
+
+      const alza=R.ies.slice().sort((a,b)=>b.delta-a.delta)[0];
+      const caida=R.ies.slice().sort((a,b)=>a.delta-b.delta)[0];
+      const lec=document.getElementById('rk-lectura');
+      if(lec)lec.innerHTML=`<b style="color:var(--ink)">La lectura:</b> el crecimiento está concentrado en las <b>oficiales</b>. `+
+        `${alza.ies} suma <b>${sgn(alza.delta)}</b> estudiantes (${sgnPct(alza.pct)}) — la <b>7.ª IES que más creció de Colombia</b> y la única antioqueña en ese top 10 nacional. `+
+        `Detrás vienen IU Digital (${sgnPct(R.ies.find(r=>/IU Digital/.test(r.ies)).pct)}), la IU de Envigado (${sgnPct(R.ies.find(r=>/Envigado/.test(r.ies)).pct)}) y Pascual Bravo (${sgnPct(R.ies.find(r=>/Pascual/.test(r.ies)).pct)}). `+
+        `Del otro lado, la caída más fuerte en términos absolutos es ${caida.ies} (<b>${sgn(caida.delta)}</b>), y entre las privadas medianas el retroceso es transversal.`;
+
+      /* Tabla */
+      let filtro='todas';
+      function render(){
+        const rows=R.ies.filter(r=>filtro==='todas'?true:filtro==='top100'?r.pos25<=100:r.sector===filtro);
+        host.innerHTML='';
+        const t=document.createElement('table');t.style.minWidth='820px';
+        t.innerHTML='<thead><tr><th class="num">#2025</th><th>Institución</th><th>Sector</th><th class="num">Matrícula 2025-2</th><th class="num">Δ vs 2024</th><th class="num">Δ %</th><th class="num">Δ posición</th></tr></thead>';
+        const tb=document.createElement('tbody');
+        rows.forEach(r=>{
+          const cls=r.delta>0?'up':r.delta<0?'down':'flat', sym=r.delta>0?'▲':r.delta<0?'▼':'▬';
+          const dp=r.dpos>0?`<span class="trend up">▲</span> ${r.dpos}`:r.dpos<0?`<span class="trend down">▼</span> ${Math.abs(r.dpos)}`:'—';
+          const tr=document.createElement('tr');
+          tr.innerHTML=`<td class="num" style="color:var(--ink);font-weight:650">${r.pos25}</td>`+
+            `<td class="wrapcell" style="min-width:230px"><b style="color:var(--ink)">${r.ies}</b>${r.sin_variacion?' <span title="Cifra idéntica a la de 2024: puede ser estabilidad real o arrastre del dato anterior" style="color:var(--muted);font-size:11px">*</span>':''}</td>`+
+            `<td><span class="tag ${r.sector==='Oficial'?'of':'pr'}">${r.sector}</span></td>`+
+            `<td class="num" style="color:var(--ink);font-weight:650">${fmt(r.mat25)}</td>`+
+            `<td class="num"><span class="${'trend '+cls}">${sym}</span> ${sgn(r.delta)}</td>`+
+            `<td class="num">${sgnPct(r.pct)}</td>`+
+            `<td class="num">${dp}</td>`;
+          tb.appendChild(tr);
+        });
+        t.appendChild(tb);host.appendChild(t);
+        const foot=document.createElement('p');foot.className='note';foot.style.margin='10px 12px';
+        foot.innerHTML='* Cifra 2025 idéntica a la de 2024: puede ser estabilidad real o arrastre del dato anterior cuando la institución no reportó. Δ posición se mide contra el ordenamiento nacional de 2024 reconstruido con el mismo método.';
+        host.appendChild(foot);
+      }
+      document.querySelectorAll('#rk-filtro button').forEach(b=>b.addEventListener('click',()=>{
+        document.querySelectorAll('#rk-filtro button').forEach(x=>{const on=x===b;x.classList.toggle('on',on);x.setAttribute('aria-pressed',String(on));});
+        filtro=b.dataset.f;render();
+      }));
+      render();
+      csvDownload(host.parentElement.querySelector('h3'),
+        ['Posición 2025','Posición 2024','Institución','Sector','Matrícula 2025-2','Matrícula 2024-2','Variación','Variación %'],
+        R.ies.map(r=>[r.pos25,r.pos24,r.ies,r.sector,r.mat25,r.mat24,r.delta,r.pct]),'materia-gris-ranking-nacional-2025');
+
+      const cal=document.getElementById('hallazgo-ranking');
+      if(cal)cal.innerHTML=`<b>El hallazgo:</b> Antioquia aporta <b>${fmt(res.matricula25)} estudiantes</b> desde sus propias instituciones — el <b>${dec(res.peso_nacional)} %</b> del sistema colombiano — y creció <b>${sgnPct(res.pct)}</b> en un año. `+
+        `Pero el saldo se reparte casi por mitades: <b>${res.crecen} instituciones ganan matrícula y ${res.caen} la pierden</b>. `+
+        `Las que crecen son sobre todo <b>públicas y virtuales</b> (Tecnológico de Antioquia, IU Digital, IU de Envigado, Pascual Bravo, Colegio Mayor); las que caen son <b>privadas medianas</b> con oferta presencial. `+
+        `Es el mismo patrón que ya mostraba <a href="#instituciones">el radar institucional</a>, ahora con una fuente homogénea para todas: la gratuidad sostiene lo público mientras el segmento privado de precio medio se contrae.`;
+    })
+    .catch(e=>{host.innerHTML='<p class="note">No fue posible cargar el ranking nacional ('+e.message+').</p>';});
 })();
 
 /* ---- 02c Rankings (verificados jul-2026; ver fuentes en cada ranking) ---- */
